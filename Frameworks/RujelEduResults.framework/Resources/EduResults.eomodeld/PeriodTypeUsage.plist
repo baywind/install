@@ -1,0 +1,36 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "EDU_COURSE"; 
+            name = eduCourseID; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_GROUP"; 
+            name = eduGroupID; 
+            prototypeName = integer; 
+        }, 
+        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }, 
+        {columnName = PKEY; name = pKey; prototypeName = "int_3"; }, 
+        {columnName = "PERTYPE_ID"; name = perTypeID; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (eduYear, eduGroupID, perTypeID, eduCourseID); 
+    className = EOGenericRecord; 
+    classProperties = (periodType, eduYear); 
+    externalName = "PERTYPE_USAGE"; 
+    fetchSpecificationDictionary = {}; 
+    name = PeriodTypeUsage; 
+    primaryKeyAttributes = (pKey); 
+    relationships = (
+        {
+            destination = PeriodType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = typeID; sourceAttribute = perTypeID; }); 
+            name = periodType; 
+        }
+    ); 
+}

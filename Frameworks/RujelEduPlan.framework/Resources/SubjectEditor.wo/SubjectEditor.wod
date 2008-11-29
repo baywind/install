@@ -1,0 +1,47 @@
+Form1: WOForm {
+	
+}
+
+AreaTitle : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.area;
+  valueWhenEmpty = "Area";
+}
+
+SubjectName : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.subject;
+  valueWhenEmpty = "Subject";
+}
+Subject : WOTextField {
+  value = subject.subject;
+  style = "width:98%;";
+  name = "subject";
+  disabled = cantChange;
+}
+
+FullSubjectName : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.fullName;
+}
+
+FullNameInput : WOText {
+  rows = "2";
+  style = "width:98%;text-align:center;";
+  value = subject.fullName;
+  disabled = cantChange;
+}
+
+AreaPopUp : WOPopUpButton {
+  list = areas;
+  item = areaItem;
+  displayString = areaItem.areaName;
+  selection = subject.area;
+  disabled = cantChange;
+}
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+    disabled = cantChange;
+}
+ResetButton1: WOResetButton {
+	value = application.strings.uiElements.Cancel;
+	onclick = "cancel();";
+}

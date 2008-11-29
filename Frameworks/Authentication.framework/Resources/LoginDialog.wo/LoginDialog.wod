@@ -1,0 +1,33 @@
+Conditional1: WOConditional {
+	condition = timeout;
+}
+
+HiddenField1: WOHiddenField {
+	name = currKey;
+	value = formValue;
+}
+
+Repetition1: WORepetition {
+	list = formValueKeys;
+	item = currKey;
+}
+
+String1: WOString {
+	value = message;
+}
+
+TextField1: WOTextField {
+	name = "username";
+	value = login;
+}
+
+TextField2: WOTextField {
+	disabled = true;
+	name = "counter";
+	size = 4;
+	value = timeout;
+}
+
+Timeout: WOString {
+	value = timeout;
+}

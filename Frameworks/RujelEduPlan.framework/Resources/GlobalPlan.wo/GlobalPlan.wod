@@ -1,0 +1,178 @@
+Wrapper : PageWrapper {
+	title = application.extStrings.RujelEduPlan_EduPlan.GlobalPlan;
+	cssResource = "EduPlan.css";
+	resourcesFramework = "RujelEduPlan";
+	hasChanges = ec.hasChanges;
+}
+
+SorterScriptLink : ResourceLink {
+	jsLink = "sorting.js";
+	framework = "RujelBase";
+}
+
+AreaTitle : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.area;
+  valueWhenEmpty = "Area";
+}
+
+SubjectName : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.subject;
+  valueWhenEmpty = "Subject";
+}
+
+GradeTitle : WOString {
+  value = gradeTitle;
+}
+
+SubjectRow : WOGenericContainer {
+  elementName = "tr";
+  class = rowClass;
+}
+
+CycleCell : WOGenericContainer {
+  elementName = "td";
+  class = cellClass;
+  style = cellStyle;
+  align = "center";
+}
+GroupsCell2 : WOGenericContainer {
+  elementName = "td";
+  class = "groups";
+  style = cellStyle;
+  align = "center";
+}
+
+Area : WOString {
+  value = area.areaName;
+}
+
+Subject : WOString {
+  value = subjectItem.subject;
+}
+
+Form : WOForm {
+}
+
+SubjectsRepetition : WORepetition {
+	list = subjects;
+	item = subjectItem;
+}
+
+CyclesRepetition : WORepetition {
+	list = grades;
+	item = gradeItem;
+}
+
+CycleHours : WOTextField {
+  value = planHours;
+  numberformat = "0";
+  style = "width:2em;";
+  onchange = "checkChanges(this);";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+Cancel: WOResetButton {
+	value = application.strings.uiElements.Cancel;
+}
+CanEdit : WOConditional {
+  condition = editable;
+}
+
+CntEdit : WOConditional {
+  condition = editable;
+  negate = true;
+}
+
+ReadHours : WOString {
+  value = planHours;
+}
+
+PlusImage : WOImage {
+	framework = "RujelBase";
+	filename = "plus.png";
+	align = "right";
+	style = "cursor:pointer;";
+}
+
+AddArea : WOGenericContainer {
+  elementName = "span";
+  invokeAction = addArea;
+  onclick = session.ajaxPopup;
+  height = "20";
+}
+AddSuject : WOGenericContainer {
+  elementName = "span";
+  invokeAction = addSubject;
+  onclick = session.ajaxPopup;
+}
+
+SubjectCell : OnClickContainer {
+  elementName = "td";
+  class = rowClass;
+  onclick = session.ajaxPopup;
+  invokeAction = editSubject;
+  disabled = session.readAccess._edit.subjectItem;
+  style = cellStyle;
+  title = subjectItem.fullName;
+}
+AreaCell : OnClickContainer {
+  elementName = "td";
+  class = areaClass;
+  onclick = session.ajaxPopup;
+  invokeAction = editArea;
+  disabled = cantEditArea;
+}
+CanAddArea : WOConditional {
+  condition = canAddArea;
+}
+
+CanAddSubject : WOConditional {
+  condition = canAddSubject;
+}
+
+ShowRow : WOConditional {
+  condition = showRow;
+}
+
+NextArea : WOConditional {
+  condition = area;
+}
+
+TogleAllButton : OnClickContainer {
+  elementName = "td";
+  invokeAction = toggleAll;
+  class = "grey";
+  colspan = colspan;
+}
+
+ToggleAll : WOString {
+  value = toggleAllTitle;
+}
+
+GroupsTitle : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.subgroups;
+  valueWhenEmpty = "groups";
+}
+
+GroupsCell : WOGenericContainer {
+  elementName = "th";
+  title = application.extStrings.RujelEduPlan_EduPlan.properties.subgrTitle;
+  class = "groups";
+}
+
+GroupsField : WOTextField {
+  value = subjectItem.subgroupsPresent;
+  numberformat = "0";
+  disabled = access._edit;
+  style = "width:2em;";
+  onchange = "checkChanges(this);";
+}
+
+Title : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.GlobalPlan;
+  valueWhenEmpty = "Edu Plan";
+}

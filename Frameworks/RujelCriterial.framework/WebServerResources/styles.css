@@ -1,0 +1,54 @@
+.classWeight {
+	background-color:#ff9966;
+}
+
+.classPlain {
+	background-color:#ffcc66;
+}
+
+.homeWeight {
+	background-color:#ccff99;
+}
+
+.homework {
+	background-color:#ccffcc;
+}
+
+.project {
+	background-color:#ff66ff;
+}
+
+.optional {
+	background-color:#ccffff;
+}
+
+.classWeightDim , .classPlainDim , .homeWeightDim , .homeworkDim , .projectDim , .optionalDim {
+	cursor:pointer;	
+	text-decoration:underline;
+}
+
+.classWeightDim {
+	background-color:#cc6633;
+}
+
+.classPlainDim {
+	background-color:#cc9933;
+}
+
+.homeWeightDim {
+	background-color:#99cc66;
+}
+
+.homeworkDim {
+	background-color:#99cc99;
+}
+
+.projectDim {
+	background-color:#cc33cc;
+}
+
+.optionalDim {
+	background-color:#99cccc;
+}
+
+

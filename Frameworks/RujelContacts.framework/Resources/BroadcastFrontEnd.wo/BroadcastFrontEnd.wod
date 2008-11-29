@@ -1,0 +1,12 @@
+PersonSelector1: PersonSelector {
+	list = dict.students;
+	nameFormat = "220";
+}
+
+String1: WOString {
+	value = application.extStrings.RujelContacts_Contacts.broadcastInitiated;
+}
+
+String2: WOString {
+	value = dict.reporter.hover;
+}

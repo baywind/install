@@ -1,0 +1,134 @@
+AllCourses: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.ui.allCourses;
+	escapeHTML = false;
+	valueWhenEmpty = "all courses";
+}
+
+CanChange: WOConditional {
+	condition = readOnly;
+	negate = true;
+}
+
+CanDelete: WOConditional {
+	condition = session.readAccess.delete.timeout;
+}
+
+CourseCheckBox: WOCheckBox {
+	checked = forCourse;
+	disabled = readOnly;
+}
+
+CycleCheckBox: WOCheckBox {
+	checked = forCycle;
+	disabled = readOnly;
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.tryLoad;
+	elementName = "input";
+	type = "button";
+}
+
+DueDate: WOTextField {
+	maxlength = 10;
+	size = 10;
+	value = dueDate;
+	dateformat = application.prefs.ui.dateFormat;
+	disabled = readOnly;
+}
+
+DueDateTitle: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.dueDate;
+	escapeHTML = false;
+}
+
+EduGroupCheckBox: WOCheckBox {
+	checked = forEduGroup;
+	disabled = readOnly;
+}
+
+ForCourse: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.course;
+	escapeHTML = false;
+	valueWhenEmpty = "CourseTimeout";
+}
+
+ForCycle: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.cycle;
+	escapeHTML = false;
+	valueWhenEmpty = "of this subject and grade";
+}
+
+ForEduGroup: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.eduGroup;
+	escapeHTML = false;
+	valueWhenEmpty = "of this edu group";
+}
+
+ForTeacher: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.teacher;
+	escapeHTML = false;
+	valueWhenEmpty = "of this teacher";
+}
+
+Form1: WOForm {
+}
+
+Header: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.this;
+	escapeHTML = false;
+	valueWhenEmpty = "CourseTimeout";
+}
+
+ReasonText: WOText {
+	value = reason;
+	style = "width:94%;";
+	disabled = readOnly;
+	rows = 2;
+}
+
+ReasonTitle: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.reason;
+}
+
+ResetButton1: WOResetButton {
+	value = application.strings.uiElements.Cancel;
+	onclick = "closePopup();";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+SetTimeoutFor: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.ui.setTimeoutFor;
+	escapeHTML = false;
+	valueWhenEmpty = "Set timeout";
+}
+
+TeacherCheckBox: WOCheckBox {
+	checked = forTeacher;
+	disabled = readOnly;
+}
+
+TeacherName: WOString {
+	escapeHTML = false;
+	value = teacherName;
+}
+
+TeacherName2: WOString {
+	value = course.eduGroup.name;
+	escapeHTML = false;
+}
+
+TeacherName3: WOString {
+	value = course.cycle.subject;
+	escapeHTML = false;
+}
+
+TeacherName4: WOString {
+	value = course.cycle.grade;
+}

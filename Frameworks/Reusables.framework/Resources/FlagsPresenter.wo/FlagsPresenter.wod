@@ -1,0 +1,20 @@
+FlagList: WORepetition {
+	index = idx;
+	item = item;
+	list = flagNames;
+}
+
+FlagTitle: WOString {
+	value = item;
+}
+
+IsInRow: WOConditional {
+	condition = ^inRow;
+	negate = true;
+}
+
+flagBox: WOCheckBox {
+	checked = flag;
+	title = item;
+	disabled = ^disabled;
+}

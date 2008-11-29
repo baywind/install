@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = COURSE; name = courseID; prototypeName = short; }, 
+        {columnName = "DATE_PERFORMED"; name = date; prototypeName = date; }, 
+        {
+            allowsNull = N; 
+            columnName = "L_ID"; 
+            name = lessonID; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NUMBER_ORDER"; 
+            name = number; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TASK; 
+            name = taskID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {columnName = THEME; name = theme; prototypeName = string; }, 
+        {columnName = TITLE; name = title; prototypeName = anagram; }
+    ); 
+    attributesUsedForLocking = (lessonID, courseID, number, date, theme, title, taskID); 
+    className = "net.rujel.base.BaseLesson"; 
+    classProperties = (number, date, course, notes, theme, title, taskText, taskID); 
+    externalName = "BASE_LESSON"; 
+    fetchSpecificationDictionary = {}; 
+    name = BaseLesson; 
+    primaryKeyAttributes = (lessonID); 
+    relationships = (
+        {
+            destination = BaseCourse; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
+            name = course; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = BaseNote; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lessonID; sourceAttribute = lessonID; }); 
+            name = notes; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = TextStore; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tID; sourceAttribute = taskID; }); 
+            name = taskText; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

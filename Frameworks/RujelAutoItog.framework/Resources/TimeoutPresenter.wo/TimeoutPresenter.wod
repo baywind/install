@@ -1,0 +1,56 @@
+CanDefinePeriod: WOConditional {
+	condition = eduPeriod;
+}
+
+Conditional1: WOConditional {
+	condition = timeout;
+	negate = true;
+}
+
+CourseTimeoutDueDate: WOString {
+	value = courseTimeout.dueDate;
+	escapeHTML = false;
+	dateformat = application.prefs.ui.dateFormat;
+}
+
+Header: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.timeoutHead;
+	escapeHTML = false;
+}
+
+IsRow: WOConditional {
+	condition = ^student;
+}
+
+IsTitle: WOConditional {
+	condition = ^student;
+	negate = true;
+}
+
+TimeoutContainer: WOGenericContainer {
+	align = "center";
+	elementName = "td";
+	title = timeout.reason;
+	class = style;
+	onclick = onclick;
+	invokeAction = editTimeout;
+	onmouseover = onmouseover;
+	onmouseout = onmouseout;
+}
+
+TimeoutDueDate: WOString {
+	value = timeout.dueDate;
+	escapeHTML = false;
+	dateformat = application.prefs.ui.dateFormat;
+}
+
+TimeoutTitleContainer: WOGenericContainer {
+	elementName = "th";
+	style = "width:10ex;";
+	title = eduPeriod.title;
+	invokeAction = editCourseTimeout;
+	class = style;
+	onclick = onclick;
+	onmouseover = onmouseover;
+	onmouseout = onmouseout;
+}

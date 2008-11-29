@@ -1,0 +1,77 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "B_ID"; 
+            name = bID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = CYCLE; 
+            name = cycleID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = MARK; 
+            name = mark; 
+            prototypeName = anagram; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = PERIOD; 
+            name = periodID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = REASON; 
+            name = reason; 
+            prototypeName = text; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = STUDENT; 
+            name = studentID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = VALUE; 
+            name = value; 
+            prototypeName = decimal; 
+            scale = 4; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (cycleID, mark, periodID, reason, value); 
+    className = "net.rujel.autoitog.Bonus"; 
+    classProperties = (eduPeriod, mark, prognoses, reason, value); 
+    externalName = BONUS; 
+    fetchSpecificationDictionary = {}; 
+    name = Bonus; 
+    primaryKeyAttributes = (bID); 
+    relationships = (
+        {
+            destination = EduPeriod; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
+            name = eduPeriod; 
+        }, 
+        {
+            destination = Prognosis; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bonusID; sourceAttribute = bID; }); 
+            name = prognoses; 
+        }
+    ); 
+}

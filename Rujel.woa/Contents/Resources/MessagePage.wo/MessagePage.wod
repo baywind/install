@@ -1,0 +1,42 @@
+Wrapper : PageWrapper {
+  title = title;
+  onLoad = "redirectCountdown();";
+}
+
+Message : WOString {
+  value = message;
+  escapeHTML = false;
+}
+
+HasRedirect : WOConditional {
+  condition = redirect;
+}
+
+RedirectMessage : WOString {
+  value = application.extStrings.Components.ErrorPages.autoRedirect;
+  escapeHTML = false;
+}
+
+Timeout : WOString {
+  value = timeout;
+  valueWhenEmpty = 0;
+  numberformat = "0";
+}
+
+Redirect : WOString {
+  value = redirect;
+  escapeHTML = false;
+}
+
+Seconds : WOString {
+  value = application.extStrings.Components.login.seconds;
+  escapeHTML = false;
+}
+ManualRedirect : WOString {
+  value = application.extStrings.Components.ErrorPages.manualRedirect;
+  escapeHTML = false;
+}
+
+RedirectHyperlink : WOHyperlink {
+  href = redirect;
+}

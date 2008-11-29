@@ -1,0 +1,36 @@
+{
+    attributes = (
+        {
+            columnName = ID; 
+            externalType = int; 
+            name = id; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ID_STUPEN"; 
+            externalType = int; 
+            name = idStupen; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = NAME; 
+            externalType = varchar; 
+            name = name; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }
+    ); 
+    attributesUsedForLocking = (id, name, idStupen); 
+    className = EOGenericRecord; 
+    classProperties = (name, idStupen); 
+    externalName = "sl_nameparallel"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VOSlNameparallel; 
+    primaryKeyAttributes = (id); 
+}

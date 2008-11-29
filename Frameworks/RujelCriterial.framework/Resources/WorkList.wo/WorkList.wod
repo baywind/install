@@ -1,0 +1,271 @@
+AddButton: WOSubmitButton {
+	value = application.strings.uiElements.Add;
+	onclick = "changed=false;";
+	disabled = access._create;
+	action = ^addLesson;
+}
+
+AllowEdit: WOConditional {
+	condition = access.edit;
+}
+
+CanEdit: WOConditional {
+	condition = ^canEdit;
+}
+
+CanMove: WOString {
+	value = canMove;
+}
+
+Conditional1: WOConditional {
+	condition = ^currLesson.access.delete;
+}
+
+
+Conditional3: WOConditional {
+	condition = ^currLesson.access.edit;
+}
+
+CritHead: WOGenericContainer {
+	elementName = "th";
+	style = "width:2em;";
+	title = critItem.comment;
+}
+
+CritMaximum: WOString {
+	value = criterMax;
+}
+
+CurrAnnounceDateField: WOTextField {
+	size = lessonTitle.length;
+	value = announce;
+	disabled = session.readAccess._edit.lessonItem;
+	onChange = "checkChanges(this);";
+	onFocus = "if(!tryLoad(false)) blur();";
+	style = "text-align:center;";
+	tabindex = "1";
+	maxlength="10";
+	onkeypress = "return isNumberInput(event,true);";
+}
+
+CurrLessonDateField: WOTextField {
+	size = lessonTitle.length;
+	value = lessonTitle;
+	disabled = lessonItem.access._edit;
+	onChange = "checkChanges(this);";
+	onFocus = "if(!tryLoad(false)) blur();";
+	style = "text-align:center;";
+	id = dateFieldID;
+	tabindex = "2";
+	maxlength="10";
+}
+
+CurrLessonThemeField: WOText {
+	style = "width:100%";
+	rows = 2;
+	value = ^currLesson.theme;
+	disabled = lessonItem.access._edit;
+	onChange = "checkChanges(this);";
+	onFocus = "if(!tryLoad(false)) blur();";
+	id = themeFieldID;
+	tabindex = "3";
+}
+
+DeadLineTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.shortDeadline;
+	valueWhenEmpty = application.strings.dataTypes.date;
+}
+AnnounceTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.shortAnnounce;
+	valueWhenEmpty = application.strings.dataTypes.date;
+}
+
+
+DeleteButton: WOSubmitButton {
+	action = ^delete;
+	value = application.strings.uiElements.Delete;
+	onclick = session.confirmMessage;
+}
+DispalayPopup: WOString {
+	value = dispalayPopup;
+}
+
+HTtitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.weight;
+	valueWhenEmpty = "weight";
+}
+
+HasStudent: WOConditional {
+	condition = ^student;
+}
+
+OpenIspector : WOActionURL {
+  action = inspectorPopup;
+}
+
+InspectorCaller : WOGenericContainer {
+  elementName = "td";
+  align = "center";
+  invokeAction = inspectorPopup;
+  onclick = session.ajaxPopup;
+  title = application.extStrings.RujelCriterial_Strings.inspector;
+}
+
+InspectorImage : WOImage {
+	filename = "ActionIconInspect.gif";
+	framework = "RujelCriterial";
+	style = "cursor:pointer;";
+}
+
+IfFull: WOConditional {
+	condition = ^wide;
+}
+
+CritTitle: WOString {
+	value = critItem.title;
+}
+
+
+
+CriterList: WORepetition {
+	item = critItem;
+	list = criteria;
+}
+
+IsRecent: WOConditional {
+	value = lessonItem;
+	condition = canEdit;
+}
+
+LessonAnnounceDate: WOString {
+	value = work.announce;
+	formatter = dateFormat;
+}
+LessonDate: WOString {
+	value = lessonTitle;
+}
+
+LessonNumber: WOString {
+	numberformat = "0";
+	value = lessonItem.number;
+}
+
+LessonRow: OnClickContainer {
+	elementName = "tr";
+	onclick = session.checkRun;
+	invokeAction = selectLesson;
+	class = rowClass;
+	title = work.workType;
+}
+
+LessonTheme: WOString {
+	value = lessonItem.theme;
+}
+
+LessonsListing: WORepetition {
+	elementName = "tr";
+	useStyles = true;
+	selection = ^currLesson;
+	item = lessonItem;
+	list = ^lessonsList;
+	inactivateSelection = true;
+	selectAction = selectLesson;
+}
+
+MoveDown: WOImageButton {
+	action = ^down;
+	filename = "down.png";
+	framework = "app";
+}
+
+MoveUp: WOImageButton {
+	action = ^up;
+	filename = "up.png";
+	framework = "app";
+	align = "center";
+	valign = "top";
+}
+
+Regular: WOConditional {
+	negate = true;
+	condition = canEdit;
+}
+
+SaveButton: WOSubmitButton {
+	action = ^save;
+	value = application.strings.uiElements.Save;
+}
+
+SplitTab: WOImageButton {
+	action = ^splitTab;
+	filename = "tab.png";
+	framework = "app";
+	align = "center";
+	valign = "middle";
+	style = "margin:3px 0;";
+	onmouseover = "this.style.border='1px blue solid';";
+	onmouseout = "this.style.border='none';";
+}
+
+Weight: WOString {
+	numberformat = "0.##";
+	value = work.weight;
+}
+StudentPresenter: WOSwitchComponent {
+	WOComponentName = studentPresenter;
+	lesson = lessonItem;
+	isSelected = false;
+	readOnly = true;
+	student = ^student;
+	denyCreation = false;
+	full=true;
+}
+
+ThemeTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.theme;
+}
+
+TitlePresenter: WOSwitchComponent {
+	course = ^course;
+	WOComponentName = studentPresenter;
+	isSelected = false;
+	readOnly = true;
+	full=true;
+}
+
+IsNew : WOConditional {
+  condition = lessonIsNew;
+}
+
+AnnounceContainer : WOGenericContainer {
+  elementName = "th";
+  title = application.extStrings.RujelCriterial_Strings.announce;
+  style = dateStyle;
+}
+DeadlineContainer : WOGenericContainer {
+  elementName = "th";
+  title = application.extStrings.RujelCriterial_Strings.deadline;
+  style = dateStyle;
+}
+
+AnnounceCell : WOGenericContainer {
+  elementName = "td";
+  class = announceStyle;
+}
+
+DeadlineCell : WOGenericContainer {
+  elementName = "td";
+  class = dateCellStyle;
+}
+
+HasLink : WOConditional {
+  condition = lessonItem.homeTask;
+}
+
+LinkImage : WOImage {
+	framework = "RujelBase";
+	filename = "link.png";
+	align = "right";
+	title = lessonItem.taskUrl;
+	onclick = "window.open(this.title);";
+}

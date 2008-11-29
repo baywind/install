@@ -1,0 +1,67 @@
+ClassListing1: ClassListing {
+	selection = currClass;
+	width = "100%";
+	selectAction = selectClass;
+	editingContext = ec;
+	onClick = session.checkRun;
+}
+
+ClassTitle: WOString {
+	value = application.strings.properties.EduGroup.this;
+}
+
+Conditional1: WOConditional {
+	condition = currPerson;
+}
+
+Conditional2: WOConditional {
+	condition = currClass;
+}
+
+Conditional3: WOConditional {
+	condition = currPerson;
+	negate = true;
+}
+
+ContactType: WOString {
+	value = typeItem.type;
+}
+
+Heading: WOString {
+	value = title;
+}
+
+PageWrapper1: PageWrapper {
+	title = title;
+	hasChanges = ec.hasChanges;
+}
+
+PersonSelector1: PersonSelector {
+	list = currClass.list;
+	addOns = listContacts;
+	selectedItem = currPerson;
+	selectAction = selectPerson;
+	nameWidth = "16em";
+	onClick = session.checkRun;
+}
+
+PesonSetected: WOConditional {
+	condition = currPerson;
+}
+
+Repetition1: WORepetition {
+	list = contypes;
+	item = typeItem;
+}
+
+StudentTitle: WOString {
+	value = application.strings.properties.Student.this;
+}
+
+SwitchComponent1: WOSwitchComponent {
+	WOComponentName = presenter;
+	list = listOfType;
+	person = currPerson;
+	selection = selectedContact;
+	access = access;
+}

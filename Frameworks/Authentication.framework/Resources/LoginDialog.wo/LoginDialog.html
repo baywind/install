@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta name="generator" content="WebObjects 5.3.1">
+        <title>Login</title>
+    </head>
+	<script type="text/javascript" language="JavaScript">
+		var timeout = <webobject name="Timeout"></webobject>;
+		var timerID = null;
+		function countdown() {
+			if(timeout == 0) return true;
+			step();
+		}
+		
+		function step() {
+			if(timerID != null) {
+				clearTimeout(timerID);
+			}
+			document.forms[0].counter.value = timeout;
+			if(timeout <= 0) {
+			//	alert ("bye!");
+				return false;
+			}
+			timeout = timeout -1;
+			timerID = setTimeout("step()",1000);
+		}
+	</script>
+    <body onLoad="countdown();">
+	<h3><webobject name="String1"></webobject></h3>
+	<form onsubmit="return (timeout &lt;= 0);" method="post">
+<table>
+<webobject name="Repetition1"><webobject name="HiddenField1"></webobject></webobject>
+	<tr><td align="right">
+	<b>Имя</b>
+	</td><td>
+	<webobject name="TextField1"></webobject>
+	</td></tr><tr><td align="right">
+	<b>Пароль</b>
+	</td><td>
+	<input type="password" name="password">
+	</td></tr>
+	<webobject name="Conditional1"><tr><td>ждитe</td><td><webobject name="TextField2"></webobject> секунд</td></tr>
+	</webobject><tr><td align="center" colspan="2">
+	<input type="submit" value="Вход">
+	</td></tr>
+	</table></form>
+	</body>
+</html>

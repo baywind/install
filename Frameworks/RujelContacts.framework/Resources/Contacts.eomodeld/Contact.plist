@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {columnName = "CON_ID"; name = conID; prototypeName = integer; }, 
+        {columnName = CONTACT; name = contact; prototypeName = string; }, 
+        {columnName = FLAGS; name = flags; prototypeName = short; }, 
+        {columnName = KIND; name = kind; prototypeName = word; }, 
+        {
+            allowsNull = N; 
+            columnName = "PERS_ENTITY"; 
+            name = perEntID; 
+            prototypeName = short; 
+        }, 
+        {columnName = PERSON; name = persID; prototypeName = integer; }, 
+        {allowsNull = N; columnName = TYPE; name = typeID; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (persID, perEntID, contact, kind, typeID, flags); 
+    className = "net.rujel.contacts.Contact"; 
+    classProperties = (persID, contact, kind, type, personEntity, flags); 
+    externalName = CONTACT; 
+    fetchSpecificationDictionary = {}; 
+    name = Contact; 
+    primaryKeyAttributes = (conID); 
+    relationships = (
+        {
+            destination = EntityIndex; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eID; sourceAttribute = perEntID; }); 
+            name = personEntity; 
+        }, 
+        {
+            destination = ConType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ctID; sourceAttribute = typeID; }); 
+            name = type; 
+        }
+    ); 
+}

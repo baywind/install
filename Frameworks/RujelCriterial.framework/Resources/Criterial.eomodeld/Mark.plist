@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = CRITER; name = critID; prototypeName = short; }, 
+        {columnName = "DATE_SET"; name = dateSet; prototypeName = date; }, 
+        {columnName = STUDENT; name = studentID; prototypeName = integer; }, 
+        {allowsNull = Y; columnName = VALUE; name = value; prototypeName = short; }, 
+        {allowsNull = N; columnName = WORK; name = workID; prototypeName = "int_3"; }
+    ); 
+    attributesUsedForLocking = (dateSet, value); 
+    className = "net.rujel.criterial.Mark"; 
+    classProperties = (dateSet, value, work, criterion, allmarks, criterMask); 
+    externalName = MARK; 
+    fetchSpecificationDictionary = {}; 
+    name = Mark; 
+    primaryKeyAttributes = (workID, critID, studentID); 
+    relationships = (
+        {
+            destination = Mark; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = studentID; sourceAttribute = studentID; }, 
+                {destinationAttribute = workID; sourceAttribute = workID; }
+            ); 
+            name = allmarks; 
+        }, 
+        {
+            destination = CriterMask; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = criterID; sourceAttribute = critID; }, 
+                {destinationAttribute = workID; sourceAttribute = workID; }
+            ); 
+            name = criterMask; 
+        }, 
+        {
+            destination = Criterion; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = critID; sourceAttribute = critID; }); 
+            name = criterion; 
+        }, 
+        {
+            destination = Work; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = workID; sourceAttribute = workID; }); 
+            name = work; 
+        }
+    ); 
+}

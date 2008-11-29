@@ -1,0 +1,151 @@
+CanSearch: WOConditional {
+	condition = access.search;
+}
+
+Form1: WOForm {
+	onsubmit = onSubmit;
+}
+
+SearchField: WOTextField {
+	value = searchString;
+	id = "searchString";
+	style = "width:80%;";
+}
+
+ImageButton1: WOImageButton {
+	action = search;
+	filename = "arrow.png";
+	framework = "app";
+	height = 20;
+}
+
+Conditional2: WOConditional {
+	condition = searchMessage;
+}
+
+SearchMessage: WOString {
+	value = searchMessage;
+	escapeHTML = false;
+}
+
+Conditional1: WOConditional {
+	condition = canCreate;
+}
+
+CreateLink: WOHyperlink {
+	action = create;
+	string = application.strings.uiElements.Create;
+}
+
+Hyperlink3: WOHyperlink {
+	action = undo;
+	string = application.strings.uiElements.Cancel;
+}
+
+Repetition1: WORepetition {
+	item = item;
+	list = personList;
+	index = index;
+}
+
+NotOnEdit: WOConditional {
+	condition = onEdit;
+	negate = true;
+}
+
+StyledRow: WOGenericContainer {
+	class = style;
+	elementName = "tr";
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+	onclick = onClick;
+	invokeAction = select;
+	title = itemFullName;
+}
+
+ItemLastName: WOString {
+	value = item.lastName;
+}
+
+ComposeName: WOString {
+	value = itemName;
+}
+
+CanEdit: WOConditional {
+	condition = item.access._edit;
+	negate = true;
+}
+
+EditLink: WOHyperlink {
+	action = edit;
+	style = "z-index:4;";
+}
+
+files_edit: WOImage {
+	align = "right";
+	filename = "files_edit.png";
+}
+
+RemoveFromList: WOHyperlink {
+	action = delete;
+	style = "z-index:4;";
+}
+
+cross: WOImage {
+	align = "right";
+	filename = "cross.png";
+	framework = "RujelBase";
+	height = 12;
+	width = 12;
+	valign = "middle";
+}
+
+OnEdit: WOConditional {
+	condition = onEdit;
+}
+
+PersonEditor1: PersonEditor {
+	cancelAction = cancel;
+	deleteAction = delete;
+	person = item;
+	saveAction = select;
+}
+
+Select: WOHyperlink {
+	action = select;
+}
+
+NotPopup : WOConditional {
+  condition = ^showPopup;
+  negate = true;
+}
+
+ShowPopup : WOConditional {
+  condition = ^showPopup;
+}
+
+PopupForm : WOForm {
+	action = submit;
+	onsubmit = onSubmit;
+}
+
+PopUpButton : WOPopUpButton {
+  list = personList;
+  item = item;
+  displayString = displayString;
+  selection = selection;
+  onchange = onChange;
+  noSelectionString = application.strings.uiElements.Search;
+}
+
+HasList : WOConditional {
+  condition = listIsEmpty;
+  negate = true;
+}
+
+NoList : WOGenericContainer {
+  elementName = "div";
+  style = "display:none;";
+  omitTags = listIsEmpty;
+  id = "searchArea";
+}

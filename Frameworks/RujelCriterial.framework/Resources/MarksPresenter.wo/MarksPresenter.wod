@@ -1,0 +1,130 @@
+CanCreate: WOConditional {
+	condition = cantCreate;
+	negate = true;
+}
+
+CanCreateMark: WOConditional {
+	condition = cantCreateMark;
+	negate = true;
+}
+
+Conditional1: WOConditional {
+	condition = ^student;
+	negate = true;
+}
+
+Content: WOConditional {
+	condition = ^student;
+}
+
+CriterTD: WOGenericContainer {
+	elementName = td;
+	title = markTitle;
+	align = "center";
+	style = "width:2em;";
+}
+
+Criters: WORepetition {
+	item = critItem;
+	list = usedCriteria;
+}
+
+Display: WOConditional {
+	condition = display;
+}
+
+Div: WOGenericContainer {
+	elementName = "div";
+	style = noteWidth;
+}
+
+IntegralTD: OnClickContainer {
+	bgcolor = integralColor;
+	elementName = td;
+	invokeAction = ^selectAction;
+	align = "center";
+	class = tdStyle;
+	style = "width:2em;";
+	disabled = single;
+	title = title;
+}
+
+IntegralTitle: WOString {
+	value = integralTitle;
+	escapeHTML = false;
+}
+
+IsRecent: WOConditional {
+	condition = isSelected;
+}
+
+MarkEdit: WOTextField {
+	value = markValue;
+	disabled = ^readOnly;
+	style = "text-align:center;width:94%;";
+	onchange = "checkChanges(this);";
+	numberformat = "0";
+	onkeypress = "return isNumberInput(event);";
+}
+
+MarkView: WOString {
+	value = markValue;
+	escapeHTML = false;
+}
+
+NotNote: WOConditional {
+	condition = showNote;
+	negate = true;
+}
+
+Note: NotePresenter {
+	cellID = ^cellID;
+	defaultStyle = ^defaultStyle;
+	denyCreation = ^denyCreation;
+	isSelected = ^isSelected;
+	lesson = ^lesson;
+	readOnly = ^readOnly;
+	selectAction = ^selectAction;
+	student = ^student;
+	maxlen = 3;
+}
+
+Note2: WOString {
+	value = shortNoteForStudent;
+	escapeHTML = false;
+}
+
+NoteEdit: WOTextField {
+	value = noteForStudent;
+	disabled = ^readOnly;
+	style = "width:94%;";
+	id = ^cellID;
+	onclick = "ext(this,5);";
+	onkeypress = "return extOnSpace(event,this,8);";
+	onchange = "checkChanges(this);";
+}
+
+NoteTitle: WOString {
+	value = application.strings.dataTypes.text;
+	valueWhenEmpty = "text";
+}
+
+OnlyNote: WOConditional {
+	condition = showNote;
+}
+
+Regular: WOConditional {
+	negate = true;
+	condition = isSelected;
+}
+
+Single: WOConditional {
+	condition = single;
+}
+
+StyledTD: WOGenericContainer {
+	align = ^align;
+	elementName = td;
+	title = fullNoteForStudent;
+	style = noteWidth;
+}

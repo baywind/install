@@ -1,0 +1,38 @@
+{
+    attributes = (
+        {columnName = "DUE_DATE"; name = dueDate; prototypeName = date; }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_COURSE"; 
+            name = eduCourseID; 
+            prototypeName = integer; 
+        }, 
+        {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
+        {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }, 
+        {columnName = REASON; name = reason; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = STUDENT; 
+            name = studentID; 
+            prototypeName = integer; 
+        }, 
+        {columnName = "T_ID"; name = tID; prototypeName = "int_3"; }
+    ); 
+    attributesUsedForLocking = (periodID, studentID, dueDate, reason, eduCourseID, flags); 
+    className = "net.rujel.autoitog.StudentTimeout"; 
+    classProperties = (dueDate, eduPeriod, flags, reason); 
+    externalName = TIMEOUT; 
+    fetchSpecificationDictionary = {}; 
+    name = StudentTimeout; 
+    primaryKeyAttributes = (tID); 
+    relationships = (
+        {
+            destination = EduPeriod; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
+            name = eduPeriod; 
+        }
+    ); 
+}

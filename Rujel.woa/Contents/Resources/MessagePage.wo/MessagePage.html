@@ -1,0 +1,26 @@
+<webobject name = "Wrapper">
+<p style = "font-size:larger;"><webobject name = "Message"/></p>
+<webobject name = "HasRedirect">
+<script language = "JavaScript">
+var redirectTimeout = <webobject name = "Timeout"/>;
+var redirectTimer = null;
+function redirectCountdown() {
+	if(redirectTimer != null) {
+		clearTimeout(redirectTimer);
+	}
+	o = document.getElementById('redirectTimeout');
+	if(redirectTimeout <= 0) {
+		window.location = '<webobject name = "Redirect"/>';
+	} else {
+		o.innerHTML = redirectTimeout;
+	}
+	
+	redirectTimeout = redirectTimeout -1;
+	redirectTimer = setTimeout("redirectCountdown();",1000);
+}
+</script>
+<p><webobject name = "RedirectMessage"/> <span id = "redirectTimeout"></span> <webobject name = "Seconds"/></p>
+<p><webobject name = "RedirectHyperlink"><webobject name = "ManualRedirect"/></webobject></p>
+</webobject>
+ 
+</webobject>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Layouts</key>
+	<dict>
+		<key>Default</key>
+		<dict>
+			<key>EntityOption</key>
+			<string>All</string>
+			<key>RelationshipOption</key>
+			<string>None</string>
+			<key>ViewPositions</key>
+			<dict>
+				<key>ConType</key>
+				<array>
+					<string>413.000000</string>
+					<string>328.000000</string>
+					<string>99.000000</string>
+					<string>60.000000</string>
+				</array>
+				<key>Contact</key>
+				<array>
+					<string>211.000000</string>
+					<string>192.000000</string>
+					<string>147.000000</string>
+					<string>168.000000</string>
+				</array>
+				<key>PersonEntity</key>
+				<array>
+					<string>411.000000</string>
+					<string>122.000000</string>
+					<string>141.000000</string>
+					<string>60.000000</string>
+				</array>
+			</dict>
+			<key>orthoLines</key>
+			<string>Y</string>
+		</dict>
+	</dict>
+	<key>Version</key>
+	<string>1</string>
+</dict>
+</plist>

@@ -1,0 +1,149 @@
+MailForm : WOForm {
+  multipleSubmit = true;
+}
+
+ShowList : WOConditional {
+  condition = showList;
+}
+
+MessageText : WOText {
+  value = text;
+  style = "width:99%;";
+  rows = 12;
+}
+
+Title : WOString {
+  value = application.extStrings.RujelContacts_Contacts.SendMailForm.title;
+  valueWhenEmpty = "Send Mail";
+}
+
+To : WOString {
+  value = application.extStrings.RujelContacts_Contacts.SendMailForm.to;
+  valueWhenEmpty = "To";
+}
+
+Subject : WOString {
+  value = application.extStrings.RujelContacts_Contacts.SendMailForm.subject;
+  valueWhenEmpty = "Subject";
+}
+
+SubjectField : WOTextField {
+  value = subject;
+  style = "width:98%;";
+}
+
+Tick : WOCheckBox {
+  checked = useMail;
+}
+
+ToggleList : WOSubmitButton {
+  action = toggleList;
+  value = button;
+}
+
+SendMail : WOSubmitButton {
+  action = send;
+  value = application.extStrings.RujelContacts_Contacts.SendMailForm.send;
+}
+
+StudentsList : WORepetition {
+  list = dict.students;
+  item = persItem;
+}
+
+ContactsList : WORepetition {
+  list = persContacts;
+  item = contItem;
+}
+
+ContactName : WOString {
+  value = contItem.utiliser.name;
+}
+
+ContactAdr : WOString {
+  value = contItem.utiliser.address;
+}
+
+CountAdrs : WOString {
+  value = adrSet.count;
+}
+
+SessionMessage : WOString {
+  value = session.message;
+}
+
+FName : WOString {
+  value = persItem.person.firstName;
+}
+
+LName : WOString {
+  value = persItem.person.lastName;
+}
+
+PersonTitle : WOString {
+  value = application.strings.properties.Person.this;
+  valueWhenEmpty = "Person";
+}
+
+AdresTitle : WOString {
+  value = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.contect;
+  valueWhenEmpty = "Address";
+}
+
+SubjStart : WOString {
+  value = subjStart;
+}
+
+CanAttach : WOConditional {
+  condition = session.readAccess.edit;
+}
+
+IfAttach : WOCheckBox {
+	checked = attach;
+}
+
+Attach : WOString {
+  value = application.extStrings.RujelContacts_Contacts.SendMailForm.attach;
+  valueWhenEmpty = "Attach";
+}
+
+Attachment : WOString {
+  value = dict.reporter.winTitle;
+  valueWhenEmpty = dict.reporter.title;
+}
+
+SinceTitle : WOString {
+	value = application.strings.dataTypes.since;
+	valueWhenEmpty = "since";
+}
+
+SinceField : WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = dict.since;
+	size = 10;
+	maxlength = 10;
+	name = "begin";
+}
+
+ToTitile : WOString {
+	value = application.strings.dataTypes.to;
+	valueWhenEmpty = "to";
+}
+
+ToField: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = dict.to;
+	size = 10;
+	maxlength = 10;
+	name = "end";
+}
+
+PeriodsPopUp: WOPopUpButton {
+	displayString = perItem.title;
+	item = perItem;
+	list = periods;
+	noSelectionString = application.strings.dataTypes.period;
+	selection = period;
+	name = "periods";
+}
+

@@ -1,0 +1,24 @@
+{
+    attributes = (
+        {columnName = LESSON; name = lessonID; prototypeName = integer; }, 
+        {columnName = NOTE; name = note; prototypeName = string; }, 
+        {columnName = STUDENT; name = studentID; prototypeName = integer; }
+    ); 
+    attributesUsedForLocking = (lessonID, studentID, note); 
+    className = EOGenericRecord; 
+    classProperties = (note, lesson); 
+    externalName = "BASE_NOTE"; 
+    fetchSpecificationDictionary = {}; 
+    name = BaseNote; 
+    primaryKeyAttributes = (studentID, lessonID); 
+    relationships = (
+        {
+            destination = BaseLesson; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lessonID; sourceAttribute = lessonID; }); 
+            name = lesson; 
+        }
+    ); 
+}

@@ -1,0 +1,168 @@
+PrognosEditForm:WOForm{
+}
+Heading : WOString {
+  value = eduPerod.name;
+}
+
+CompleteProperty : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.complete;
+  valueWhenEmpty = "complete";
+}
+
+Complete : WOString {
+  value = completePercent;
+}
+
+ValueProperty : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.value;
+  valueWhenEmpty = "value";
+}
+
+Value : WOString {
+  value = valuePercent;
+}
+
+ShowPercents : WOConditional {
+  condition = showPercent;
+}
+
+MarkProperty : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.mark;
+}
+
+Mark : WOTextField {
+  value = mark;
+  disabled = addOn.usage.namedFlags._manual;
+  maxlength = 5;
+  style = "text-align:center;width:5ex;";
+}
+CanChange: WOConditional {
+	condition = canChange;
+}
+
+CanDelete: WOConditional {
+	condition = addOn.access.delete;
+}
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.uiElements.Cancel;
+	type = "button";
+	elementName = "input";
+	invokeAction = cancel;
+	onclick = "closePopup();";
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.tryLoad;
+	elementName = "input";
+	type = "button";
+}
+
+
+FireDateProperty : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.fireDate;
+  valueWhenEmpty = "fire date";
+}
+
+FireDate : WOString {
+	value = prognosis.fireDate;
+  	dateformat = application.prefs.ui.dateFormat;
+}
+
+PrognosExist : WOConditional {
+  condition = prognosis;
+}
+
+FlagKey1 : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.flags.disable;
+  valueWhenEmpty = "disable";
+}
+
+CheckBoxFlag1 : WOCheckBox {
+	checked = flags.disable;
+}
+
+KeepString : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.flags.keepBonus;
+  valueWhenEmpty = "keep";
+}
+
+CheckBoxFlag2 : WOCheckBox {
+	checked = flags.keep;
+}
+
+PrognosTitle : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.this;
+  valueWhenEmpty = "Prognosis";
+}
+
+CanCancel : WOConditional {
+  condition = noCancel;
+  negate = true;
+}
+
+Student : WOString {
+  value = studentName;
+}
+
+CanManual : WOConditional {
+  condition = addOn.usage.namedFlags.manual;
+}
+
+BonusPercent : WOString {
+  value = bonusPercent;
+}
+
+BonusText : WOString {
+  value = bonusText;
+}
+
+SetBonus : WOCheckBox {
+	checked = hasBonus;
+	disabled = session.readAccess._edit.Bonus;
+}
+
+KeepBonus : WOCheckBox {
+	checked = flags.keepBonus;
+	disabled = session.readAccess._edit.Bonus;
+}
+
+BonusTextArea : WOText {
+  value = bonusText;
+  style = "width:96%;";
+}
+
+CanEditText : WOConditional {
+  condition = editBonusText;
+}
+
+CanReadBonus : WOConditional {
+  condition = session.readAccess.read.Bonus;
+}
+
+SetBonusString : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.ui.setBonus;
+  valueWhenEmpty = "Set Bonus";
+}
+KeepTr : WOGenericContainer {
+  elementName = "tr";
+  title = application.extStrings.RujelAutoItog_AutoItog.ui.keepBonusHover;
+}
+
+BonusTitle : WOString {
+  value = bonusTitle;
+}
+
+HasText : WOConditional {
+  condition = bonusText;
+}
+
+CanBonus : WOConditional {
+  condition = bonusPercent;
+}

@@ -1,0 +1,26 @@
+Area: WOGenericElement {
+	coords = area.coords;
+	elementName = "area";
+	href = areaHref;
+	shape = area.shape;
+}
+
+AreasList: WORepetition {
+	item = area;
+	list = mapResources.areas;
+}
+
+Image: WOGenericElement {
+	elementName = "img";
+	src = imgSrc;
+	usemap = usemap;
+	border = 0;
+	height = ^height;
+	width = ^width;
+	align = ^align;
+}
+
+Map: WOGenericContainer {
+	elementName = "map";
+	name = mapResources.mapName;
+}

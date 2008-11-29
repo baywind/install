@@ -1,0 +1,31 @@
+Conditional1: WOConditional {
+	condition = application.prefs.ui.allowTimeMachine;
+}
+
+Form1: WOForm {
+	onsubmit = "return tryLoad();";
+}
+
+GenericContainer1: WOGenericContainer {
+	border = 1;
+	elementName = "table";
+	width = ^width;
+}
+
+String1: WOString {
+	value = session.eduYear;
+}
+
+SubmitButton1: WOGenericElement {
+	elementName = "input";
+	type = "submit";
+	value = application.strings.uiElements.Change;
+}
+
+TextField1: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	maxlength = 10;
+	size = 10;
+	value = session.today;
+	disabled = session.readAccess._edit.timeMachine;
+}

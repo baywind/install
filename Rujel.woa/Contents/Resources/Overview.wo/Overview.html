@@ -1,0 +1,70 @@
+<webobject name="PageWrapper1">
+	<style type="text/css">
+	.student {
+		font-size:large;
+		font-weight:bold;
+		padding-left:2em;
+	}
+	.dates {
+		padding-left:3em;
+		font-style:italic;
+		white-space:nowrap;
+	}
+	.max {
+		font-size:small;
+		font-weight:bold;
+		background-color:#cccccc;
+	}
+	.withWeight {
+		font-weight:bold;
+	}
+	</style>
+	<div style = "text-align:right;margin-right:10%;">
+	<webobject name="Form1"><webobject name="PeriodTitle"></webobject>
+        :
+        <webobject name="PeriodTitle2"></webobject><webobject name="SinceField"></webobject>
+        <webobject name="PeriodTitle3"></webobject><webobject name="ToField"></webobject>
+        <span style="align:right;">
+		<webobject name="PeriodsPopUp"></webobject>  
+		<webobject name="SubmitButton1"></webobject></span></webobject>
+			<webobject name = "SubsReport"></webobject>
+		
+	</div>
+<table cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+<th valign="bottom" width="15%"><webobject name="ClassTitle"></webobject></th>
+<td align="center" valign="bottom" width="25%"><webobject name="Modes"></webobject></td>
+<td align = "center" valign="bottom"><webobject name="SubjectMode">
+<webobject name="HasSelector">
+<webobject name="CriterSelector1"></webobject>
+</webobject><br/>
+<webobject name="PresentTabs"/></webobject></td>
+</tr><tr>
+<td class="backfield2 selectionBorder" width="10%" valign="top"><webobject name="ClassListing1"></webobject></td>
+<td valign="top"  class="backfield1 selectionBorder" style="border-left-style:none;"><webobject name="SubjectMode"><webobject name="AccesssSubjects"><table border="0" width="100%">
+<webobject name="Subjects"><webobject name="SubjectContainer">
+<td><webobject name="SubjectName"></webobject></td>
+</webobject></webobject></table></webobject></webobject><webobject name="StudentsMode"><webobject name="AccessStudents"><webobject name="Form2"><table border="0" width="100%"><tr><td align="left" colspan="2"><webobject name="Ticker1"></webobject></td></tr>
+<webobject name="Conditional2"><webobject name="Subjects2"><webobject name="StudentContainer"><td style="width:1.2em;text-align:center;"><webobject name="CheckBox1"></webobject></td><webobject name="StudentNameContainer"><webobject name="StudentName"></webobject>
+<webobject name="StudentName2"></webobject></webobject></webobject></webobject></webobject>
+<webobject name="PersonSelector1"></webobject><webobject name="HasClass"><tr><td align="center" colspan="2"><webobject name="ShowMarks"></webobject></td></tr></webobject><webobject name="Repetition2"><tr><td colspan="2"><webobject name="ShowMarks2"></webobject></td></tr></webobject></table></webobject></webobject></webobject></td>
+<td class="backfield2 selectionBorder" style="border-style:none;border-top-style:solid;padding:3pt;text-align:left;" valign="top">
+<webobject name="SubjectMode">
+<table border="1" width="100%"><webobject name="Repetition1"><tr class="course"><td><webobject name="CourseComment"></webobject></td><td><webobject name="TeacherLastName"></webobject> <webobject name="TeacherFirstName"></webobject>
+                <webobject name="TeacherSecondName"></webobject></td>
+                <td><webobject name = "ShowThemes"><webobject name = "LessonsLink"/></webobject></td>
+                </tr><tr><td valign="top" colspan="3">
+<table cellspacing="0" border="0" width="100%" cellpadding="0"><tr><td valign="top" class="selectionBorder" style="border-left-style:none;">
+<webobject name="NotesPage1"></webobject></td>
+<webobject name="IfTabs"><td width="5%" valign="top"><webobject name="LessonTabs1"></webobject></td></webobject></tr></table>
+</td></tr><tr><td height="1" colspan="3"></td></tr></webobject></table></webobject><webobject name="StudentsMode"><webobject name="AccessStudents"><webobject name="ShowReporterSelector">
+<div style="text-align:left;padding:1ex;"><webobject name="ReportersList"><webobject name="ReporterContainer"><webobject name="ReportetTitle"></webobject></webobject>&nbsp; &nbsp;</webobject><hr width="100%" align="center"></div>
+</webobject><webobject name="StudentSelected"><div style="margin-top:10pt;line-height:200%;text-align:left;"><span class="student"><webobject name="StudentLastName"></webobject>
+    <webobject name="StudentFirstName"></webobject>
+    <webobject name="StudentSecondName"></webobject></span>
+<span class="dates"><webobject name="Conditional1"><webobject name="Since"></webobject>
+    -
+    <webobject name="To"></webobject></webobject>
+    <br clear="all"></span></div>
+    <webobject name="StudentMarks"></webobject></webobject></webobject></webobject></td>
+</tr></table>
+</webobject>

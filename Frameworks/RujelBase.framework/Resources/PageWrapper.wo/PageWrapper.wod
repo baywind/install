@@ -1,0 +1,152 @@
+AccessPath: WORepetition {
+	item = pathItem;
+	list = session.pathStack;
+}
+BackUrl: WOResourceURL {
+	framework = "app";
+	filename = "back.png";
+}
+
+Body: WOGenericContainer {
+	elementName = "body";
+	onunload = ^onUnload;
+	onload = onLoad;
+}
+
+
+CSSurl: WOString {
+	value = ^cssURL;
+}
+
+ComponentContent: WOComponentContent {
+}
+
+Exit: WOString {
+	value = application.strings.uiElements.Exit;
+	valueWhenEmpty = "Exit";
+}
+
+ExitButton: WOGenericContainer {
+	class = "button";
+	elementName = "span";
+	onclick = logout;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+}
+
+HasCSS: WOConditional {
+	condition = ^cssURL;
+}
+
+HasChanges: WOString {
+	value = ^hasChanges;
+	valueWhenEmpty = "false ";
+}
+
+HasMessage: WOConditional {
+	condition = session.message;
+}
+
+HasScript: WOConditional {
+	condition = ^scriptURL;
+}
+
+HasStyles: WOConditional {
+	condition = ^styles;
+}
+
+IsRefusingSessions: WOConditional {
+	condition = application.isRefusingNewSessions;
+}
+
+Message: WOString {
+	value = session.message;
+	escapeHTML = false;
+}
+
+PathTitle: WOString {
+	value = pathItem.title;
+	valueWhenEmpty = pathItem.name;
+}
+
+PleaseWait: WOString {
+	value = application.strings.messages.pleaseWait;
+	valueWhenEmpty = "Please Wait";
+}
+
+ScriptLink: WOString {
+	value = ^scriptURL;
+}
+
+Span: WOGenericContainer {
+	class = "button";
+	elementName = "span";
+	invokeAction = goTo;
+	onclick = session.checkRun;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+}
+
+Styles: WOString {
+	value = ^styles;
+}
+
+TerminatingMessage: WOString {
+	value = application.strings.messages.refusingSessions;
+	escapeHTML = false;
+}
+
+Timeout: WOString {
+	numberformat = "0";
+	value = session.timeOut;
+}
+
+TimeoutContainer: WOGenericContainer {
+	elementName = "span";
+	id="sessionTimeout";
+	style = timeoutStyle;
+}
+
+Title: WOString {
+	value = ^title;
+}
+
+UnsavedAlert: WOString {
+	value = application.strings.messages.unsavedChanges;
+	valueWhenEmpty = "Unsaved Changes will be lost";
+}
+
+cross: WOImage {
+	filename = "cross.png";
+	height = 12;
+	binding1 = 0;
+	width = 12;
+	framework = "RujelBase";
+	onclick = "cancelLoading();";
+	style = "position:absolute;top:3px;right:3px;cursor:pointer;";
+}
+
+JsAndCSS : ResourceLink {
+	jsLink = "scripts.js";
+	cssLink = "style.css";
+	framework = "app";
+}
+
+OuterResources : ResourceLink {
+	cssLink = ^cssResource;
+	jsLink = ^scriptResource;
+	framework = ^resourcesFramework;
+}
+
+Rujel : WOString {
+  value = application.strings.title;
+  escapeHTML = false;
+}
+
+HasTitle : WOConditional {
+  condition = ^title;
+}
+
+HasSesion : WOConditional {
+  condition = context.hasSession;
+}

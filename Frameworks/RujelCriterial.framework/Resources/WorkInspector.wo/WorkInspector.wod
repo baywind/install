@@ -1,0 +1,173 @@
+Form1 : WOForm {	
+}
+
+Title : WOString {
+	value = application.extStrings.RujelCriterial_Strings.Work;
+	escapeHTML = false;
+}
+
+AnnounceDate : WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = work.announce;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+}
+
+Date: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = work.date;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+}
+
+WeightTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.weight;
+	escapeHTML = false;
+}
+
+
+WorkWeight: WOTextField {
+	maxlength = 5;
+	numberformat = "0.##";
+	size = 3;
+	value = work.weight;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+}
+
+Number : WOString {
+  value = work.number;
+  escapeHTML = false;
+}
+
+LessonTitle : WOString {
+  value = lessonTitle;
+  escapeHTML = false;
+}
+
+DateTitle : WOString {
+	value = application.extStrings.RujelCriterial_Strings.dates;
+  escapeHTML = false;
+}
+
+TypeTitle : WOString {
+	value = application.extStrings.RujelCriterial_Strings.type;
+  escapeHTML = false;
+}
+
+TypePopUp : WOPopUpButton {
+  list = types;
+  selection = work.workType;
+}
+
+AnnounceTitle : WOString {
+  value = application.extStrings.RujelCriterial_Strings.announce;
+  escapeHTML = false;
+}
+
+DeadlineTitle : WOString {
+  value = application.extStrings.RujelCriterial_Strings.deadline;
+  escapeHTML = false;
+}
+
+NameTitle : WOString {
+  value = application.extStrings.RujelCriterial_Strings.theme;
+  escapeHTML = false;
+}
+
+URLField : WOTextField {
+  value = work.homeTask;
+  id = "URLfield";
+  style = "display:none;";
+}
+
+URLpic : WOImage {
+	filename = "link.png";
+	framework = "RujelBase";
+	style = "cursor:pointer;";
+	onclick = "returnField=document.getElementById('URLfield');myPrompt(this.title,null,this);";
+	title = application.extStrings.RujelCriterial_Strings.URL;
+}
+
+NameField : WOText {
+  value = work.theme;
+  rows = 3;
+  style = "width:96%;";
+}
+
+LoadTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.load;
+	escapeHTML = false;
+}
+
+CriterHead: WOString {
+	value = application.extStrings.RujelCriterial_Strings.criteria;
+	escapeHTML = false;
+}
+
+Hours : WOTextField {
+  value = hours;
+  size = 2;
+  style = "text-align:center;";
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event,false);";
+}
+
+Minutes : WOTextField {
+  value = minutes;
+  size = 2;
+  style = "text-align:center;";
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event,false);";
+}
+
+CriteriaList : WORepetition {
+  list = criteria;
+  item = critItem;
+}
+
+CriterTitle : WOString {
+  value = critItem.title;
+  escapeHTML = false;
+}
+
+CriterMax : WOString {
+	value = application.extStrings.RujelCriterial_Strings.criterMax;
+	escapeHTML = false;
+}
+
+MaxField : WOTextField {
+	size = 2;
+	value = criterMax;
+	style = "text-align:center;";
+ 	numberformat = "0";	
+	onkeypress = "return isNumberInput(event);";
+}
+
+CriterWeight : WOString {
+	value = application.extStrings.RujelCriterial_Strings.criterWeight;
+	escapeHTML = false;
+}
+
+WeightField : WOTextField {
+	size = 2;
+	value = criterWeight;
+	style = "text-align:center;";
+  	numberformat = "0";
+	onkeypress = "return isNumberInput(event);";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+    disabled = session.readAccess._edit.work;
+}
+
+ResetButton1: WOResetButton {
+	value = application.strings.uiElements.Cancel;
+	onclick = "closePopup();";
+}

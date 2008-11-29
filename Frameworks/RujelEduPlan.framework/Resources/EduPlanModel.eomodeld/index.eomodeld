@@ -1,0 +1,28 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/EduPlan? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        username = rujel; 
+    }; 
+    entities = (
+        {className = "net.rujel.eduplan.PlanCycle"; name = PlanCycle; }, 
+        {className = EOGenericRecord; name = PlanDetail; }, 
+        {className = "net.rujel.eduplan.Subject"; name = Subject; }, 
+        {className = EOGenericRecord; name = SubjectArea; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/EduPlan? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        username = rujel; 
+                    }; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

@@ -1,0 +1,36 @@
+CSSLink: ResourceLink {
+	cssLink = "styles.css";
+	framework = "RujelCriterial";
+}
+
+WorkContainer : OnClickContainer {
+  elementName = "tr";
+  invokeAction = selectWork;
+  class = rowClass;
+  title = workItem.workType;
+  style = rowStyle;
+}
+
+Works : WORepetition {
+  list = workList;
+  item = workItem;
+}
+
+WorkName : WOString {
+  value = workItem.theme;
+}
+InspectorCaller : WOGenericContainer {
+  elementName = "td";
+  align = "center";
+  valign = "middle";
+  invokeAction = inspectorPopup;
+  onclick = session.ajaxPopup;
+  title = inspectorTitle;
+}
+
+InspectorImage : WOImage {
+	filename = inspectorIcon;
+	framework = "RujelBase";
+	style = "cursor:pointer;";
+	width = 24;
+}

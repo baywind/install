@@ -1,0 +1,94 @@
+NumTitle: WOString {
+	value = application.extStrings.RujelEduResults-EduResults.properties.EduPeriod.num;
+}
+
+TypeTitle: WOString {
+	value = application.extStrings.RujelEduResults-EduResults.properties.PeriodType.this;
+}
+
+IsWide: WOConditional {
+	condition = ^wide;
+}
+
+BeginTitle: WOString {
+	value = application.extStrings.RujelEduResults-EduResults.properties.EduPeriod.begin;
+}
+
+EndTitle: WOString {
+	value = application.extStrings.RujelEduResults-EduResults.properties.EduPeriod.end;
+}
+
+Repetition1: WORepetition {
+	item = perItem;
+	list = ^lessonsList;
+}
+
+PeriodRow: WOGenericContainer {
+	elementName = "tr";
+	onclick = session.checkRun;
+	onmouseover = "dim(this);";
+	onmouseout = "unDim(this);";
+	class = rowClass;
+	invokeAction = selectPeriod;
+}
+
+PeriodNum: WOString {
+	value = perItem.title;
+}
+
+PeriodType: WOString {
+	value = perItem.periodType.name;
+}
+
+PeriodBegin: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = perItem.begin;
+}
+
+PeriodEnd: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = perItem.end;
+}
+
+Form1: WOForm {
+}
+
+TypeListTitle: WOString {
+	value = application.extStrings.RujelEduResults-EduResults.properties.PeriodType.coursePeriodType;
+}
+
+TypeTitle2: WOString {
+	value = application.extStrings.RujelEduResults-EduResults.properties.PeriodType.inYearCount;
+}
+
+Repetition2: WORepetition {
+	class = pertypeItem.color;
+	list = periodTypes;
+	item = pertypeItem;
+}
+
+PerTypeContainer: WOGenericContainer {
+	class = pertypeItem.color;
+	elementName = "tr";
+}
+
+CheckBox1: WOCheckBox {
+	checked = usesPerType;
+}
+
+PeriodType2: WOString {
+	value = pertypeItem.name;
+}
+
+Generate: WOHyperlink {
+	action = generatePeriods;
+}
+
+InYearCount: WOString {
+	value = pertypeItem.inYearCount;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = usePerTypes;
+	value = application.strings.uiElements.Submit;
+}

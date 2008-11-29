@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SendMailForm</key>
+	<dict>
+		<key>failed</key>
+		<string>Не удалось отправить сообщение</string>
+		<key>hideList</key>
+		<string>Скрыть список</string>
+		<key>noRecipients</key>
+		<string>Не указано ни одного получателя</string>
+		<key>noText</key>
+		<string>Нет текста сообщения</string>
+		<key>send</key>
+		<string>Отправить</string>
+		<key>showList</key>
+		<string>Показать список</string>
+		<key>subject</key>
+		<string>Тема</string>
+		<key>success</key>
+		<string>Сообщение отправлено</string>
+		<key>title</key>
+		<string>Отправить письмо</string>
+		<key>to</key>
+		<string>Кому</string>
+		<key>attach</key>
+		<string>Приложить файл</string>
+	</dict>
+	<key>broadcastInitiated</key>
+	<string>Письма добавлены в очередь на отправку</string>
+	<key>properties</key>
+	<dict>
+		<key>EMailUtiliser</key>
+		<dict>
+			<key>address</key>
+			<string>Адрес</string>
+			<key>contact</key>
+			<string>электронная почта</string>
+			<key>flags</key>
+			<array>
+				<string>Использовать для расылки</string>
+			</array>
+			<key>name</key>
+			<string>Имя получателя</string>
+		</dict>
+		<key>kind</key>
+		<string>Комментарий</string>
+	</dict>
+	<key>sendmailAction</key>
+	<dict>
+		<key>component</key>
+		<string>SendMailForm</string>
+		<key>sort</key>
+		<string>10</string>
+		<key>name</key>
+		<string>Написать</string>
+	</dict>
+	<key>isInAttachment</key>
+	<string>во вложенном файле</string>
+	<key>title</key>
+	<string>Контактная информация</string>
+</dict>
+</plist>

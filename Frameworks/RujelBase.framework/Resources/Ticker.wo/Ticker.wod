@@ -1,0 +1,69 @@
+Block: WOConditional {
+	condition = ^inline;
+	negate = true;
+}
+
+GenericContainer1: WOGenericContainer {
+	align = ^align;
+	elementName = "table";
+	width = ^width;
+}
+
+SelectTitle: WOString {
+	value = application.strings.uiElements.Select;
+	valueWhenEmpty = "Select";
+}
+
+SelectAll: WOString {
+	value = application.strings.uiElements.All;
+	valueWhenEmpty = "All";
+}
+
+SelectNone: WOString {
+	value = application.strings.uiElements.None;
+	valueWhenEmpty = "None";
+}
+
+SelectInvert: WOString {
+	value = application.strings.uiElements.Invert;
+	valueWhenEmpty = "Invert";
+}
+
+Inline: WOConditional {
+	condition = ^inline;
+}
+
+CheckAll: WOGenericElement {
+	elementName = "input";
+	type="checkbox";
+	title = application.strings.uiElements.Select;
+	id="checkAll";
+	onclick="setAll(true);checked=defaultChecked;";
+	checked = true;
+}
+
+ToggleSpan: WOGenericContainer {
+	elementName = "span";
+	title = application.strings.uiElements.Invert;
+	id="toggle";
+	onclick="setAll('toggle');return false;";
+	style="color:blue;cursor:pointer;";
+}
+
+CheckAll2: WOGenericElement {
+	elementName = "input";
+	type="checkbox";
+	title = application.strings.uiElements.None;
+	id="uncheckAll";
+	onclick="setAll(false);checked=defaultChecked;";
+}
+
+FormIdentifier: WOString {
+	value = ^form;
+	valueWhenEmpty = "document.forms[0]";
+}
+
+All: WOString {
+	value = ^all;
+	valueWhenEmpty = "null";
+}

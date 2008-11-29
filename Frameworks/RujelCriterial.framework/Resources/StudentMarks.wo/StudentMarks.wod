@@ -1,0 +1,125 @@
+DeadLineTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.shortDeadline;
+	valueWhenEmpty = application.strings.dataTypes.date;
+}
+AnnounceTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.shortAnnounce;
+	valueWhenEmpty = application.strings.dataTypes.date;
+}
+
+ThemeTitle: WOString {
+	value = application.extStrings.RujelCriterial_Strings.theme;
+}
+Conditional1: WOConditional {
+	condition = isMax;
+	negate = true;
+}
+
+GenericContainer1: WOGenericContainer {
+	colspan = courseItem.criteria.count;
+	elementName = "td";
+	style = "border-left:none;text-align:left;";
+}
+
+GenericContainer3: WOGenericContainer {
+	class = workItem.kind;
+	elementName = "tr";
+	bgcolor = "#cccccc";
+}
+
+IsMax: WOConditional {
+	condition = isMax;
+}
+
+TextHeader: WOGenericContainer {
+	elementName = "th";
+	title = application.extStrings.RujelCriterial_Strings.comments;
+	align = "left";
+}
+
+TextTitle: WOString {
+	value = application.strings.dataTypes.text;
+}
+
+Repetition1: WORepetition {
+	item = workItem;
+	list = courseItem.criteria;
+}
+
+String1: WOString {
+	value = workItem.title;
+}
+
+GenericContainer2: WOGenericContainer {
+	elementName = "th";
+	align = "center";
+	title = workItem.comment;
+}
+
+MarksPresenter1: MarksPresenter {
+	denyCreation = false;
+	full = true;
+	isSelected = false;
+	lesson = workItem.work;
+	readOnly = true;
+	student = ^student;
+	maxlen = 255;
+	align = "left";
+}
+
+Repetition2: WORepetition {
+	item = critItem;
+	list = workItem.values;
+}
+
+String2: WOString {
+	value = critItem;
+}
+
+ThemeContainer: WOGenericContainer {
+	class = workItem.kind;
+	elementName = "td";
+	align = "left";
+}
+
+
+WorkTheme: WOString {
+	value = workItem.theme;
+}
+
+WorkAnnounce: WOString {
+	value = workItem.announce;
+}
+
+WorkDate: WOString {
+	value = workItem.date;
+}
+
+Works: WORepetition {
+	item = workItem;
+	list = courseItem.works;
+}
+
+workRow: WOGenericContainer {
+	class = "grid";
+	elementName = "tr";
+	style = workItem.style;
+}
+
+WorksTitle : WOString {
+  value = application.extStrings.RujelCriterial_Strings.works;
+  valueWhenEmpty = "works";
+}
+
+CriteriaTitle : WOString {
+  value = application.extStrings.RujelCriterial_Strings.criteria;
+  valueWhenEmpty = "criteria";
+}
+
+Type : WOString {
+  value = workItem.type;
+}
+
+IntegralTitle : WOString {
+  value = courseItem.integral;
+}

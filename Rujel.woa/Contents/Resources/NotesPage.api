@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="NotesPage" wocomponentcontent="false">
+
+		<binding name="currLesson"/>
+		<binding name="lessonsList"/>
+		<binding name="studentsList"/>
+		<binding name="selectStudentAction"/>
+		<binding name="present"/>
+		<binding name="course"/>
+		<binding name="allAddOns"/>
+		<binding name="activeAddOns"/>
+
+		<validation message="&apos;lessonsList&apos; is a required binding">
+			<unbound name="lessonsList"/>
+		</validation>
+
+		<validation message="&apos;studentsList&apos; is a required binding">
+			<unbound name="studentsList"/>
+		</validation>
+
+		<validation message="&apos;currLesson&apos; must be bound to a settable value">
+			<unsettable name="currLesson"/>
+		</validation>
+	</wo>
+</wodefinitions>

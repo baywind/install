@@ -1,0 +1,76 @@
+Title : WOString {
+  value = title;
+}
+
+EduYear : WOString {
+  value = eduYear;
+}
+
+EduPeriod : WOString {
+  value = persentPeriod;
+}
+
+Subject : WOString {
+  value = course.cycle.subject;
+}
+
+Teacher : WOString {
+  value = teacher;
+}
+
+DateTitle : WOString {
+  value = application.strings.dataTypes.date;
+  valueWhenEmpty = "Date";
+}
+ThemeTitle : WOString {
+  value = application.strings.properties.EduLesson.theme;
+  valueWhenEmpty = "Theme";
+}
+HometaskTitle : WOString {
+  value = application.strings.properties.EduLesson.homeTask;
+  valueWhenEmpty = "Home task";
+}
+
+IfCriterial : WOConditional {
+  condition = hasWeight;
+}
+
+WeightTitle : WOString {
+  value = application.extStrings.RujelCriterial-Strings.weight;
+  valueWhenEmpty = "weight";
+}
+
+Date : WOString {
+  value = lessonItem.date;
+  dateformat = "%d.%m";
+}
+Weight : WOString {
+  value = lessonItem.weight;
+}
+Theme : WOString {
+  value = lessonItem.theme;
+}
+HomeTask : WOString {
+  value = lessonItem.homeTask;
+}
+
+LessonsRepetition : WORepetition {
+	list = lessonList;
+	item = lessonItem;
+}
+
+IfSubstitute : WOConditional {
+  condition = substitute;
+}
+
+Sub : WOString {
+  value = substitutor;
+}
+
+ClassName : WOString {
+  value = course.eduGroup.name;
+}
+
+Substitute : WOString {
+  value = substitute.title;
+}

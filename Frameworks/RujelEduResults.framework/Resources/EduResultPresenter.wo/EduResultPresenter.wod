@@ -1,0 +1,80 @@
+HasStudent: WOConditional {
+	condition = ^student;
+}
+
+MarkContainer: WOGenericContainer {
+	elementName = "td";
+	title = hover;
+}
+
+CanNotEdit: WOConditional {
+	condition = canEdit;
+	negate = true;
+}
+
+MarkString: WOString {
+	value = itog.mark;
+}
+
+CanEdit: WOConditional {
+	condition = canEdit;
+}
+
+MarkField: WOTextField {
+	disabled = ^readOnly;
+	style = "text-align:center;width:94%;";
+	value = itog.mark;
+	id = ^cellID;
+	onChange = "checkChanges(this);";
+}
+
+Selected: WOConditional {
+	condition = ^isSelected;
+}
+
+CommentContainer: WOGenericContainer {
+	elementName = "td";
+	title = itog.comment;
+}
+CanComment: WOConditional {
+	condition = canComment;
+}
+
+CommentField: WOTextField {
+	disabled = ^readOnly;
+	value = itog.comment;
+	onFocus = "return ext(this,10);";
+	style = "text-align:center;";
+	maxlength = 250;
+	size = 10;
+	onChange = "checkChanges(this);";
+}
+
+CantComment: WOConditional {
+	condition = canComment;
+	negate = true;
+}
+
+CommentString: WOString {
+	value = itog.comment;
+}
+
+IsTitle: WOConditional {
+	condition = ^student;
+	negate = true;
+}
+
+TitleContainer: WOGenericContainer {
+	class = ^lesson.periodType.color;
+	elementName = "td";
+	style = "width:2em;font-weight:bold;text-align:center;";
+	title = ^lesson.periodType.name;
+}
+
+ItogTitle: WOString {
+	value = ^lesson.title;
+}
+
+CommentTitle: WOString {
+	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.comment;
+}

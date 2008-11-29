@@ -1,0 +1,53 @@
+<div style="display:block;position:absolute;top:30%;left:20%;width:60%;padding:10pt;" class="backfield1" id="ajaxPopup">
+<webobject name="Form1"><table border="1" bordercolor = "#cccccc" cellspacing = "0" width="100%" align="center">
+<tr>
+<td align = "center">№ <webobject name = "Number"/></td>
+<th align = "center"><webobject name = "LessonTitle"/></th>
+<th colspan = "2"><webobject name = "Title"/></th>
+</tr><tr>
+<td colspan = "2" align = "center"><webobject name = "DateTitle"/></td>
+<td><webobject name = "TypeTitle"/> : <webobject name = "TypePopUp"/></td>
+<td><webobject name = "WeightTitle"/> : <webobject name = "WorkWeight"/></td>
+</tr><tr>
+<td><webobject name = "AnnounceTitle"/></td>
+<td><webobject name = "DeadlineTitle"/></td>
+<td align = "left"><webobject name = "NameTitle"/>:</td>
+<td><webobject name = "URLField"/><webobject name = "URLpic"/>
+<span style = "cursor:pointer;display:none;" onclick = "t=document.getElementById('URLfield');window.open(t.value);">
+&gt;&gt;&gt;</span>
+</td></tr><tr>
+<td style = "width:12ex;"><webobject name = "AnnounceDate"/></td>
+<td style = "width:12ex;"><webobject name = "Date"/></td>
+<td colspan = "2" rowspan = "2" valign = "top"><webobject name = "NameField"/></td>
+</tr><tr>
+<td colspan = "2"><webobject name = "LoadTitle"/>
+<nobr>
+<webobject name = "Hours"/> : <webobject name = "Minutes"/>
+</nobr></td></tr><tr>
+<td colspan = "2"></td>
+<td colspan = "2">
+	<table align = "center" border = "1" cellspacing = "1">
+	<thead>
+	<tr><th onclick = "toggleObj('weights');"><webobject name = "CriterHead"/></th>
+		<webobject name = "CriteriaList">
+		<th><webobject name = "CriterTitle"/></th>
+		</webobject>
+	</tr></thead>
+	<tbody><tr>
+		<td><webobject name = "CriterMax"/></td>
+		<webobject name = "CriteriaList">
+		<td><webobject name = "MaxField"/></td>
+		</webobject>
+	</tr><tr style = "display:none;" id = "weights">
+		<td onclick = "parentNode.style.display='none';"><webobject name = "CriterWeight"/></td>
+		<webobject name = "CriteriaList">
+		<td><webobject name = "WeightField"/></td>
+		</webobject>
+	</tr></tbody>
+	</table>
+</td></tr>
+<tr><td colspan = "4" style = "padding:1ex;">
+	<webobject name="Save"/>  <webobject name="ResetButton1"/>
+</td></tr>
+</table></webobject>
+</div>

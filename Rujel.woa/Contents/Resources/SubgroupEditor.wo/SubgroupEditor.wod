@@ -1,0 +1,105 @@
+PageWrapper1: PageWrapper {
+	title = title;
+}
+
+OverGroupName2: WOString {
+	value = course.eduGroup.name;
+}
+
+SubjectName2: WOString {
+	value = course.cycle.subject;
+}
+
+Comment: WOString {
+	value = course.comment;
+	valueWhenEmpty = " - ";
+}
+
+TeacherLN2: WOString {
+	value = course.teacher.person.lastName;
+}
+
+TeacherFN: WOString {
+	value = course.teacher.person.firstName;
+}
+
+TeacherSN: WOString {
+	value = course.teacher.person.secondName;
+}
+
+HeadTitle: WOString {
+	value = title;
+	valueWhenEmpty = "Subgroup List";
+}
+
+Ticker1: Ticker {
+	align = "right";
+}
+
+Form1: WOForm {
+}
+
+StudentTitle: WOString {
+	value = application.strings.properties.Student.this;
+	valueWhenEmpty = "Student";
+}
+
+SubgroupTitle: WOString {
+	value = title;
+	valueWhenEmpty = "subgroup";
+}
+
+Repetition1: WORepetition {
+	list = studentsList;
+	item = studentItem;
+	index = idx;
+}
+
+StudentRow: WOGenericContainer {
+	class = studentStyle;
+	elementName = "tr";
+}
+
+Index: WOString {
+	value = idx;
+}
+
+StudentLastName: WOString {
+	value = studentItem.person.lastName;
+}
+
+StudentInitials: WOString {
+	value = studentItem.person.firstName;
+}
+
+CheckBox1: WOCheckBox {
+	checked = isInSubgroup;
+	onclick = onClick;
+	id = "cb";
+}
+
+SaveButton: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+ResetButton: WOResetButton {
+	value = application.strings.uiElements.Reset;
+	onclick = "setAll('default');";
+}
+
+TextField1: WOTextField {
+	disabled = true;
+	name = "total";
+	size = 3;
+	value = total;
+}
+
+CSSLink: WOResourceURL {
+	filename = "style.css";
+	framework = "app";
+}
+
+JSLink: WOResourceURL {
+	filename = "scripts.js";
+}

@@ -1,0 +1,13 @@
+Generic1: WOGenericContainer {
+	elementName = "span";
+	invokeAction = toggleActive;
+	onClick = session.checkRun;
+	style = "cursor:pointer;vertical-align:middle;margin:2pt;";
+}
+
+Image1: WOImage {
+	class = styleClass;
+	filename = image;
+	framework = framework;
+	title = currAddOn.title;
+}

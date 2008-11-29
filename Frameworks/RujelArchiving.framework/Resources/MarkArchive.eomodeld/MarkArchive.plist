@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = DATA; name = data; prototypeName = text; }, 
+        {columnName = KEY1; name = key1; prototypeName = integer; }, 
+        {columnName = KEY2; name = key2; prototypeName = integer; }, 
+        {columnName = KEY3; name = key3; prototypeName = integer; }, 
+        {columnName = ENTITY; name = objEntity; prototypeName = short; }, 
+        {columnName = ID; name = pKey; prototypeName = integer; }, 
+        {columnName = STAMP; name = timestamp; prototypeName = timestamp; }, 
+        {allowsNull = N; columnName = USER; name = user; prototypeName = string; }, 
+        {allowsNull = N; columnName = WOSID; name = wosid; prototypeName = word; }
+    ); 
+    attributesUsedForLocking = (key1, key2, key3, data, user, wosid, objEntity); 
+    className = "net.rujel.markarchive.MarkArchive"; 
+    classProperties = (timestamp, key1, key2, key3, data, user, wosid, usedEntity); 
+    externalName = "MARK_ARCHIVE"; 
+    fetchSpecificationDictionary = {}; 
+    name = MarkArchive; 
+    primaryKeyAttributes = (pKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = UsedEntity; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = entID; sourceAttribute = objEntity; }); 
+            name = usedEntity; 
+        }
+    ); 
+}

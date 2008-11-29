@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Substitute</key>
+	<string>Замена</string>
+	<key>Join</key>
+	<string>Совмещение</string>
+	<key>Reason</key>
+	<string>Причина</string>
+	<key>wrongTeacherMessage</key>
+	<string>В замене должен быть указан учитель отличный от ведущего курс.</string>
+	<key>subsReport</key>
+	<string>Замен: %d (загрузить сводку)</string>
+	<key>OrigTeacher</key>
+	<string>Замененный</string>
+	<key>Substitutor</key>
+	<string>Заменяющий</string>
+	<key>titles</key>
+	<dict>
+		<key>OrigTeacher</key>
+		<string>ФИО учителя, пропустившего урок</string>
+		<key>Reason</key>
+		<string>Причина пропуска урока</string>
+		<key>Substitutor</key>
+		<string>ФИО учителя, заменившего урок</string>
+	</dict>
+</dict>
+</plist>

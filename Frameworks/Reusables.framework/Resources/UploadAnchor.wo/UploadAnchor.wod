@@ -1,0 +1,30 @@
+ActionURL1: WOActionURL {
+	pageName = "DumbUpload";
+}
+
+ActionURL2: WOActionURL {
+	action = gogogo;
+}
+
+ComponentContent1: WOComponentContent {
+}
+
+Conditional1: WOConditional {
+	condition = ^submitButton;
+}
+
+Conditional2: WOConditional {
+	condition = ^submitButton;
+	negate = true;
+}
+
+Hyperlink1: WOHyperlink {
+	action = ^saveAction;
+	onclick = "makeWindow()";
+}
+
+SubmitButton1: WOSubmitButton {
+	action = ^saveAction;
+	onclick = "makeWindow()";
+	value = title;
+}

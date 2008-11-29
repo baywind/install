@@ -1,0 +1,12 @@
+Container: WOGenericContainer {
+	elementName = elementName;
+	onclick = onClick;
+	onmouseout = onMouseOut;
+	onmouseover = onMouseOver;
+	title = currAddOn.title;
+}
+
+String1: WOString {
+	escapeHTML = false;
+	value = currAddOn.string;
+}

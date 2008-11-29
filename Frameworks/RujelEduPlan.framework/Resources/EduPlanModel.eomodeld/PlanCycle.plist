@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = "C_ID"; name = cID; prototypeName = short; }, 
+        {
+            allowsNull = Y; 
+            columnName = "SPEC_CLASS"; 
+            name = classID; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = GRADE; 
+            name = grade; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {allowsNull = N; columnName = HOURS; name = hours; prototypeName = short; }, 
+        {allowsNull = N; columnName = LEVEL; name = level; prototypeName = short; }, 
+        {allowsNull = N; columnName = SCHOOL; name = school; prototypeName = short; }, 
+        {allowsNull = N; columnName = SUBJECT; name = subjID; prototypeName = short; }, 
+        {
+            definition = "subjectEO.subject"; 
+            isReadOnly = Y; 
+            name = subject; 
+            prototypeName = word; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = YEAR; 
+            name = year; 
+            prototypeName = byte; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (classID, grade, hours, level, school, subjID, subject, year); 
+    className = "net.rujel.eduplan.PlanCycle"; 
+    classProperties = (grade, hours, level, school, subject, subjectEO, year); 
+    externalName = CYCLE; 
+    fetchSpecificationDictionary = {}; 
+    name = PlanCycle; 
+    primaryKeyAttributes = (cID); 
+    relationships = (
+        {
+            destination = Subject; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = subjID; }); 
+            name = subjectEO; 
+        }
+    ); 
+}

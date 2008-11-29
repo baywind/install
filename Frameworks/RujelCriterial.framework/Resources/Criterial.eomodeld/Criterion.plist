@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {columnName = COMMENT; name = comment; prototypeName = string; }, 
+        {columnName = "CR_ID"; name = critID; prototypeName = short; }, 
+        {columnName = "CRIT_SET"; name = critSet; prototypeName = short; }, 
+        {
+            allowsNull = Y; 
+            columnName = "DFLT_MAX"; 
+            name = dfltMax; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DFLT_WEIGHT"; 
+            name = dfltWeight; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INDEX_ID"; 
+            name = indexID; 
+            prototypeName = short; 
+        }, 
+        {allowsNull = N; columnName = SORT; name = sort; prototypeName = byte; }, 
+        {columnName = TITLE; name = title; prototypeName = anagram; }
+    ); 
+    attributesUsedForLocking = (title, sort, comment, indexID, dfltMax, dfltWeight); 
+    className = EOGenericRecord; 
+    classProperties = (title, sort, comment, criteriaSet, indexer, dfltMax, dfltWeight); 
+    externalName = CRITERION; 
+    fetchSpecificationDictionary = {}; 
+    name = Criterion; 
+    primaryKeyAttributes = (critID); 
+    relationships = (
+        {
+            destination = CriteriaSet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = setID; sourceAttribute = critSet; }); 
+            name = criteriaSet; 
+        }, 
+        {
+            destination = Indexer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = indID; sourceAttribute = indexID; }); 
+            name = indexer; 
+        }
+    ); 
+}

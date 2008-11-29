@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PrognosPresenter" wocomponentcontent="false">
+
+		<binding name="student"/>
+		<binding name="course"/>
+		<binding name="single" defaults="Boolean"/>
+	</wo>
+</wodefinitions>

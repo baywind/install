@@ -1,0 +1,23 @@
+{
+    attributes = (
+        {columnName = COURSE; name = courseID; prototypeName = short; }, 
+        {columnName = STUDENT; name = studentID; prototypeName = integer; }
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (course); 
+    externalName = "COURSE_AUDIENCE"; 
+    fetchSpecificationDictionary = {}; 
+    name = CourseAudience; 
+    primaryKeyAttributes = (courseID, studentID); 
+    relationships = (
+        {
+            destination = BaseCourse; 
+            internalInfo = {"_nameInObjectStore" = basecourse; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
+            name = course; 
+        }
+    ); 
+}

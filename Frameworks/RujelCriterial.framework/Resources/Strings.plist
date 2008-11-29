@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Work</key>
+	<string>Работа</string>
+	<key>works</key>
+	<string>Работы</string>
+	<key>workTypes</key>
+	<dict>
+		<key>classwork</key>
+		<string>классная</string>
+		<key>homework</key>
+		<string>домашняя</string>
+		<key>project</key>
+		<string>проектная</string>
+		<key>optional</key>
+		<string>дополнительная</string>
+	</dict>
+	<key>Mark</key>
+	<string>Оценка</string>
+	<key>theme</key>
+	<string>Содержание</string>
+	<key>type</key>
+	<string>тип</string>
+	<key>weight</key>
+	<string>вес</string>
+	<key>weightInfo</key>
+	<string>вклад в итоговую отметку</string>
+	<key>criteria</key>
+	<string>критерии</string>
+	<key>dates</key>
+	<string>Даты</string>
+	<key>announce</key>
+	<string>объявления</string>
+	<key>deadline</key>
+	<string>срок сдачи</string>
+	<key>shortAnnounce</key>
+	<string>задано</string>
+	<key>shortDeadline</key>
+	<string>сдать</string>
+	<key>load</key>
+	<string>трудозатраты ( ч:м )</string>
+	<key>integral</key>
+	<string>успешность</string>
+	<key>URL</key>
+	<string>ссылка</string>
+	<key>materials</key>
+	<string>материалы для подготовки</string>
+	<key>criterMax</key>
+	<string>Максимумы</string>
+	<key>criterWeight</key>
+	<string>Веса</string>
+	<key>comments</key>
+	<string>заметки</string>
+	<key>inspector</key>
+	<string>Подробное описание</string>
+	<key>messages</key>
+	<dict>
+		<key>critersRequired</key>
+		<string>В работе с ненулевым весом должен быть хотя бы один критерий с ненулевым весом.</string>
+		<key>notSaved</key>
+		<string>Нужно сохранить изменения</string>
+		<key>longText</key>
+		<string>Описание работы не должно быть длиннее 255 символов. Вы использовали %d.</string>
+		<key>lateAnnounce</key>
+		<string>Дата объявления работы не должна быть позже даты сдачи</string>
+		<key>nullDate</key>
+		<string>Должны быть указаны обе даты - объявления и сдачи работы</string>
+		<key>markValueOverMax</key>
+		<string>Величина оценки по критерию &apos;%s&apos; больше предусмотренного максимума</string>
+		<key>maxShouldBeOverZero</key>
+		<string>Максимум по критерию &apos;%s&apos; не может быть меньше нуля</string>
+		<key>unavailbleCriterion</key>
+		<string>Оценка по недоступному критерию</string>
+	</dict>
+	<key>worksTab</key>
+	<dict>
+		<key>title</key>
+		<string>работы</string>
+		<key>hover</key>
+		<string>оцениваемые работы (контрольные, домашние, проектные)</string>
+		<key>listPresenter</key>
+		<string>WorkList</string>
+		<key>id</key>
+		<string>worksTab</string>
+		<key>sort</key>
+		<string>10</string>
+		<key>entityName</key>
+		<string>Work</string>
+		<key>courseAttribute</key>
+		<string>course</string>
+		<key>single</key>
+		<string>true</string>
+		<key>presenter</key>
+		<string>MarksPresenter</string>
+		<key>selector</key>
+		<string>CriterSelector</string>
+		<key>cssResource</key>
+		<string>styles.css</string>
+		<key>framework</key>
+		<string>RujelCriterial</string>
+	</dict>
+	<key>tabs</key>
+	<array>
+		<dict>
+			<key>hover</key>
+			<string>По датам</string>
+			<key>listPresenter</key>
+			<string>WorkList</string>
+			<key>mode</key>
+			<string>byDate</string>
+			<key>presenter</key>
+			<string>MarksPresenter</string>
+			<key>selector</key>
+			<string>CriterSelector</string>
+			<key>single</key>
+			<string>false</string>
+			<key>sort</key>
+			<string>10</string>
+			<key>title</key>
+			<string>1|2|3</string>
+			<key>toggleSingle</key>
+			<string>criteria</string>
+		</dict>
+		<dict>
+			<key>hover</key>
+			<string>Развернуть критерии</string>
+			<key>listPresenter</key>
+			<string>WorkList</string>
+			<key>mode</key>
+			<string>criteria</string>
+			<key>presenter</key>
+			<string>MarksPresenter</string>
+			<key>single</key>
+			<string>true</string>
+			<key>sort</key>
+			<string>20</string>
+			<key>title</key>
+			<string>A|B|C</string>
+			<key>toggleSingle</key>
+			<string>byDate</string>
+		</dict>
+	</array>
+	<key>reportSettings</key>
+	<dict>
+		<key>title</key>
+		<string>marks</string>
+		<key>name</key>
+		<string>Работы</string>
+		<key>on</key>
+		<true/>
+		<key>options</key>
+		<array>
+			<dict>
+				<key>flag</key>
+				<string>marked</string>
+				<key>title</key>
+				<string>оцененные</string>
+				<key>on</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>flag</key>
+				<string>markable</string>
+				<key>title</key>
+				<string>оцениваемые</string>
+				<key>on</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>flag</key>
+				<string>all</string>
+				<key>title</key>
+				<string>все</string>
+				<key>on</key>
+				<false/>
+			</dict>
+		</array>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
+	<key>marksReport</key>
+	<dict>
+		<key>title</key>
+		<string>marks</string>
+		<key>component</key>
+		<string>StudentMarks</string>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
+</dict>
+</plist>

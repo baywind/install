@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            columnName = ID; 
+            externalType = int; 
+            name = id; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ID_NAMEPARALLEL"; 
+            externalType = int; 
+            name = idNameparallel; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ID_STUPEN"; 
+            externalType = int; 
+            name = idStupen; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = YEAR; 
+            externalType = int; 
+            name = year; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (id, idNameparallel, idStupen, year); 
+    className = EOGenericRecord; 
+    classProperties = (idStupen, year, classs, slnameparallel); 
+    externalName = parallel; 
+    fetchSpecificationDictionary = {}; 
+    name = VOParallel; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = VOClass; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = idParallel; sourceAttribute = id; }); 
+            name = classs; 
+        }, 
+        {
+            destination = VOSlNameparallel; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = idNameparallel; }); 
+            name = slnameparallel; 
+        }
+    ); 
+}

@@ -1,0 +1,73 @@
+Conditional1: WOConditional {
+	condition = cantCreate;
+	negate = true;
+}
+
+ForLesson: WOConditional {
+	condition = ^student;
+	negate = true;
+}
+
+ForStudent: WOConditional {
+	condition = ^student;
+}
+
+IsRecent: WOConditional {
+	condition = isSelected;
+}
+
+LessonTitle: WOString {
+	value = lessonTitle;
+	escapeHTML = false;
+}
+
+Note: WOString {
+	value = shortNoteForStudent;
+	escapeHTML = false;
+}
+
+NoteEdit: WOTextField {
+	value = noteForStudent;
+	disabled = ^readOnly;
+	onChange = "checkChanges(this);";
+	style = style;
+	id = ^cellID;
+	onclick = "ext(this,5);";
+	onkeypress = "return extOnSpace(event,this,3);";
+}
+
+Regular: WOConditional {
+	negate = true;
+	condition = isSelected;
+}
+
+StyledTD: WOGenericContainer {
+	align = "center";
+	class = tdStyle;
+	elementName = td;
+	invokeAction = ^selectAction;
+	onmouseover="dim(this)";
+	onmouseout="unDim(this)";
+	onclick = onClick;
+	valign = "middle";
+	title = fullNoteForStudent;
+	style = "width:2em;padding:1pt;";
+}
+
+Div : WOGenericContainer {
+	elementName = "div";
+	style = style;
+}
+
+InList : WOConditional {
+  condition = ^single;
+  negate = true;
+}
+
+IsSingle : WOConditional {
+  condition = ^single;
+}
+
+FullNote : WOString {
+  value = noteForStudent;
+}

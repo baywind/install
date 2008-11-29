@@ -1,0 +1,28 @@
+Generic1: WOGenericContainer {
+	elementName = "span";
+	invokeAction = toggleActive;
+	onClick = session.checkRun;
+	style = "cursor:pointer;vertical-align:middle;margin:2pt;";
+}
+
+Image1: WOImage {
+	filename = image;
+	framework = framework;
+	title = currAddOn.title;
+}
+TimeoutGeneric: WOGenericContainer {
+	elementName = "span";
+	invokeAction = currAddOn.toggleTimeOuts;
+	onClick = session.checkRun;
+	style = "cursor:pointer;vertical-align:middle;margin-right:2pt;";
+}
+
+TimeoutImage : WOImage {
+	filename = timeoutImage;
+	framework = framework;
+	title = currAddOn.timeoutsTitle;
+}
+
+AllowTimeout : WOConditional {
+  condition = timeouts;
+}

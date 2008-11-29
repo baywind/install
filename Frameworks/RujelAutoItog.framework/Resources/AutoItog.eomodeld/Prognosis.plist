@@ -1,0 +1,70 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = BONUS; 
+            name = bonusID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = COMPLETE; 
+            name = complete; 
+            precision = 5; 
+            prototypeName = decimal; 
+            scale = 4; 
+        }, 
+        {columnName = "EDU_COURSE"; name = eduCourseID; prototypeName = integer; }, 
+        {
+            allowsNull = Y; 
+            columnName = "FIRE_DATE"; 
+            name = fireDate; 
+            prototypeName = date; 
+        }, 
+        {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
+        {columnName = MARK; name = mark; prototypeName = anagram; }, 
+        {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }, 
+        {columnName = "PR_ID"; name = prID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = N; 
+            columnName = STUDENT; 
+            name = studentID; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = VALUE; 
+            name = value; 
+            precision = 5; 
+            prototypeName = decimal; 
+            scale = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (value, complete, mark, fireDate, flags, bonusID); 
+    className = "net.rujel.autoitog.Prognosis"; 
+    classProperties = (value, complete, mark, fireDate, eduPeriod, flags, bonus); 
+    externalName = PROGNOSIS; 
+    fetchSpecificationDictionary = {}; 
+    name = Prognosis; 
+    primaryKeyAttributes = (prID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Bonus; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bID; sourceAttribute = bonusID; }); 
+            name = bonus; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = EduPeriod; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
+            name = eduPeriod; 
+        }
+    ); 
+}

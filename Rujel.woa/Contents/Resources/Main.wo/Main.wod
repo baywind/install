@@ -1,0 +1,95 @@
+UserField : WOTextField {
+  value = login;
+  name = "username";
+}
+
+Timeout: WOString {
+	value = timeout;
+}
+Message : WOString {
+  value = message;
+  escapeHTML = false;
+}
+
+GuestUserName : WOString {
+  value = guestUser;
+}
+
+GuestPassword : WOString {
+  value = guestPassword;
+}
+
+CanGuest : WOConditional {
+  condition = guestUser;
+}
+
+ShowCounter : WOConditional {
+  condition = timeout;
+}
+
+Body : WOBody {
+  filename = "welcome.jpg";
+  style="background-position:top center;";
+  onload = "onLoad();";
+}
+
+HelpImage : WOImage {
+  framework = "RujelBase";
+  filename = "help.png";
+  style="border:none;";
+  height=24;
+  alt="Help";
+}
+
+Title : WOString {
+  value = application.strings.title;
+  escapeHTML = false;
+}
+
+Descript : WOString {
+  value = application.extStrings.Components.login.descript;
+  escapeHTML = false;
+}
+
+Username : WOString {
+  value = application.extStrings.Components.login.username;
+  escapeHTML = false;
+}
+
+Password : WOString {
+  value = application.extStrings.Components.login.password;
+  escapeHTML = false;
+}
+
+Wait : WOString {
+  value = application.extStrings.Components.login.wait;
+  escapeHTML = false;
+}
+
+Seconds : WOString {
+  value = application.extStrings.Components.login.seconds;
+  escapeHTML = false;
+}
+
+PhotoBy : WOString {
+  value = application.extStrings.Components.login.photo;
+  escapeHTML = false;
+}
+
+Copyright : WOString {
+  value = application.extStrings.Components.login.copy;
+  escapeHTML = false;
+}
+
+Enter : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = application.extStrings.Components.login.Enter;
+}
+
+Guest : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = application.extStrings.Components.login.Guest;
+  onclick="guest();";
+}

@@ -1,0 +1,111 @@
+AreasRepetition : WORepetition {
+	list = areaList;
+	item = areaItem;
+}
+
+MoveUp: WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(get(this,'tr',0));";
+	style = "cursor:pointer;";
+}
+MoveDown: WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(get(this,'tr',0));";
+	style = "cursor:pointer;";
+}
+
+
+AreasTitle : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.area;
+  valueWhenEmpty = "Area";
+}
+
+IfNotCurrent : WOConditional {
+  condition = isCurr;
+  negate = true;
+}
+
+AreaNumField : WOTextField {
+  value = areaItem.num;
+  class = "areaNum";
+  numberformat = "0";
+}
+
+IsNew : WOConditional {
+	condition = currArea;
+	negate = true;
+}
+
+NewNumField : WOTextField {
+  value = newNum;
+  class = "areaNum";
+  numberformat = "0";
+}
+
+Form : WOForm {
+}
+
+AreaName : WOString {
+  value = areaItem.areaName;
+}
+
+
+IsCurrent : WOConditional {
+  condition = isCurr;
+}
+
+AreaNameField : WOTextField {
+  value = areaName;
+}
+
+SubjectsRepetition : WORepetition {
+	list = subjectsList;
+	item = subjItem;
+}
+
+SubjectsTitle : WOString {
+  value = application.extStrings.RujelEduPlan_EduPlan.properties.subjects;
+  valueWhenEmpty = "Subjects";
+}
+
+SubjectNumField : WOTextField {
+  value = subjItem.num;
+  class = "subjNum";
+  numberformat = "0";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+	onclick = "try{return enumAll();}catch(e){alert(e);}";
+}
+ResetButton1: WOResetButton {
+	value = application.strings.uiElements.Cancel;
+	onclick = "closePopup();";
+}
+
+SubjectName : WOString {
+  value = subjItem.subject;
+}
+
+CurrUp : WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(document.getElementById('currArea'));";
+	style = "cursor:pointer;";
+}
+
+CurrDown : WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(document.getElementById('currArea'));";
+	style = "cursor:pointer;";
+}

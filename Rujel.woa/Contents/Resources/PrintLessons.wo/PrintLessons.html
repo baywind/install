@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title><webobject name = "Title"/></title>
+</head>
+<style type = "text/css">
+body {
+	font-family: serif;
+}
+td {
+	border-color:black;
+	border-width:1px;
+	border-style:none;
+	border-top-style:solid;
+}
+th {
+	border-color:black;
+	border-width:1px;
+	border-style:none;
+	border-bottom-style:solid;
+}
+</style>
+<body>
+<table border = "0" align = "left" style = "font-size:large;font-weight:bold;"><tr>
+<td style = "border:none;">
+<webobject name = "EduYear"/>
+</td>
+<td style = "border:none;padding-left:2em;">
+<webobject name = "EduPeriod"/>
+</td></tr></table>
+
+<table border = "0" align = "right" style = "font-size:large;font-weight:bold;"><tr>
+<td style = "border:none;">
+<webobject name = "ClassName"/>
+</td><td style = "border:none;padding-left:2em;">
+<webobject name = "Subject"/>
+</td><td style = "border:none;padding-left:2em;">
+<webobject name = "Teacher"/>
+</td></tr></table>
+
+<br clear = "all"/>
+
+<table border = "0" cellspacing = "0" cellpadding = "2" style = "margin-top:2em;width:100%;">
+<tr style="border:black 1px solid;">
+<th style="width:5ex;border-right:black 1px solid;"><webobject name = "DateTitle"/></th>
+<webobject name = "IfCriterial">
+	<th style="width:3ex;border-right:black 1px solid;"><webobject name = "WeightTitle" /></th>
+</webobject>
+<th style="width:45%;border-right:black 1px solid;"><webobject name = "ThemeTitle"/></th>
+<th><webobject name = "HometaskTitle"/></th>
+</tr>
+<webobject name = "LessonsRepetition">
+	<tr style = "border-top:black 1px solid;">
+	<td style = "text-align:center;border-right-style:solid;">
+		<webobject name = "Date"/></td>
+	<webobject name = "IfCriterial">
+		<td style = "text-align:center;border-right-style:solid;">
+			<webobject name = "Weight"/></td>
+	</webobject>
+	<td style = "border-right-style:solid;">
+		<webobject name = "Theme"/></td>
+	<td><webobject name = "IfSubstitute">
+		<table border="0" align = "right" cellspacing = "0" cellpadding = "0" 
+				style="margin-left:1ex; padding-left:2pt;">
+		<tr><td style = "border-top-style:none;">
+			<b><webobject name = "Substitute"/>:</b>
+			<i><webobject name = "Sub"/></i>
+		</td></tr>
+		</table>
+		</webobject> 
+		<webobject name = "HomeTask"/>
+	</td>
+	</tr>
+</webobject>
+
+</table>
+
+</body>
+</html>

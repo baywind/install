@@ -1,0 +1,63 @@
+Hide: WOConditional {
+	condition = false;
+}
+
+StudentFirstName: WOString {
+	value = student.person.firstName;
+}
+
+StudentLastName: WOString {
+	value = student.person.lastName;
+}
+
+StudentSecondName: WOString {
+	value = student.person.secondName;
+}
+
+Since: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = since;
+}
+
+To: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = to;
+}
+
+CoursesList : WORepetition {
+	list = courses;
+	item = courseItem;
+}
+
+Subject : WOString {
+  value = courseItem.cycle.subject;
+}
+
+HasComment : WOConditional {
+  condition = courseItem.comment;
+}
+
+CourseComment : WOString {
+  value = courseItem.comment;
+}
+
+Teacher : WOString {
+  value = teacher;
+}
+
+Reports : WORepetition {
+  list = reports;
+  item = reportItem;
+}
+
+ShowReport : WOConditional {
+  condition = report;
+}
+
+Reporter : WOSwitchComponent {
+  WOComponentName = reportItem.component;
+  value = report;
+  student = student;
+  course = courseItem;
+  period = period;
+}

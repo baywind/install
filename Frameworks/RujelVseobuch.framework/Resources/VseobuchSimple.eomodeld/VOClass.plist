@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            definition = "parallel.year"; 
+            externalType = int; 
+            name = eduYear; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            adaptorValueConversionMethodName = toString; 
+            definition = "parallel.slnameparallel.name"; 
+            externalType = varchar; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsNSString; 
+            isReadOnly = Y; 
+            name = grade; 
+            valueClassName = Integer; 
+            valueFactoryMethodName = "valueOf:"; 
+        }, 
+        {
+            columnName = ID; 
+            externalType = int; 
+            name = id; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ID_PARALLEL"; 
+            externalType = int; 
+            name = idParallel; 
+            precision = 11; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = CODE; 
+            externalType = varchar; 
+            name = name; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (id, idParallel, name, grade, eduYear); 
+    className = "net.rujel.vseobuch.VOClass"; 
+    classProperties = (name, fullList, grade, eduYear, grouping); 
+    externalName = class; 
+    name = VOClass; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            definition = "grouping.student"; 
+            internalInfo = {"_nameInObjectStore" = "teachs_student"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = fullList; 
+        }, 
+        {
+            destination = VOList; 
+            internalInfo = {"_nameInObjectStore" = teachs; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = idClass; sourceAttribute = id; }); 
+            name = grouping; 
+        }, 
+        {
+            destination = VOParallel; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = idParallel; }); 
+            name = parallel; 
+        }
+    ); 
+}

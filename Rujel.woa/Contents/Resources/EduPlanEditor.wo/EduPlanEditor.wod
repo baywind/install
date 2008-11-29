@@ -1,0 +1,172 @@
+AddCycle: WOImageButton {
+	action = addCycle;
+	filename = "button_ok.gif";
+	framework = "app";
+	title = application.strings.uiElements.Add;
+}
+
+CanCreate: WOConditional {
+	condition = access.create;
+}
+
+CanDelete: WOConditional {
+	condition = access.delete;
+}
+
+CurrSubgroups: WOTextField {
+	maxlength = 3;
+	numberformat = "0";
+	size = 2;
+	value = currCycle.subgroups;
+	onChange = "checkChanges(this);";
+	onFocus = "if(!tryLoad(false)) blur();";
+}
+
+CurrSubject: WOTextField {
+	maxlength = 28;
+	size = 28;
+	value = currCycle.subject;
+	onfocus = "if(!tryLoad(false)) blur();";
+	onchange = "checkChanges(this);";
+}
+
+CycleRow: WOGenericContainer {
+	elementName = "tr";
+	class = "grey";
+	invokeAction = selectCycle;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+	onclick = session.checkRun;
+	valign = "middle";
+}
+
+DeleteImage: WOImage {
+	filename = "button_cance.gif";
+	align = "right";
+	alt = application.strings.uiElements.Delete;
+	title = application.strings.uiElements.Delete;
+	valign = "middle";
+}
+
+Form1: WOForm {
+	onsubmit = session.tryLoad;
+}
+
+GradeItem: WOString {
+	value = gradeItem;
+}
+
+GradeRow: WOGenericContainer {
+	class = gradeRowStyle;
+	elementName = "tr";
+	invokeAction = selectGrade;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+	onclick = session.checkRun;
+}
+
+GradeTitle: WOString {
+	value = application.strings.properties.EduCycle.grade;
+	valueWhenEmpty = "grade";
+}
+
+Grades: WORepetition {
+	item = gradeItem;
+	list = gradeList;
+}
+
+Hyperlink1: WOHyperlink {
+	action = delete;
+	onclick = session.confirmMessage;
+}
+
+ImageButton1: WOImageButton {
+	action = makeNewGrade;
+	filename = "button_ok.gif";
+	framework = "app";
+	title = application.strings.uiElements.Add;
+}
+
+ItemSubgroups: WOString {
+	value = cycleItem.subgroups;
+}
+
+ItemSubject: WOString {
+	value = cycleItem.subject;
+}
+
+NewCycleForm: WOForm {
+	onsubmit = session.tryLoad;
+}
+
+NewGrade: WOTextField {
+	maxlength = 3;
+	numberformat = "0";
+	size = 2;
+	value = newGrade;
+}
+
+NewGradeForm: WOForm {
+	onsubmit = session.checkRun;
+}
+
+NoneSelected: WOConditional {
+	negate = true;
+	condition = currCycle;
+}
+
+PageWrapper1: PageWrapper {
+	title = title;
+	hasChanges = ec.hasChanges;
+	styles = "input, td {text-align:center;}";
+}
+
+Recent: WOKeyValueConditional {
+	key = "currCycle";
+	negate = false;
+	value = cycleItem;
+}
+
+Regular: WOKeyValueConditional {
+	key = "currCycle";
+	negate = true;
+	value = cycleItem;
+}
+
+Repetition1: WORepetition {
+	item = cycleItem;
+	list = cycles;
+}
+
+SaveCycle: WOImageButton {
+	action = save;
+	filename = "button_ok.gif";
+	framework = "app";
+	title = application.strings.uiElements.Save;
+	align = "right";
+}
+
+Subgroups: WOString {
+	value = application.strings.properties.EduCycle.subgroups;
+	valueWhenEmpty = "Subgroups";
+}
+
+Subject: WOString {
+	value = application.strings.properties.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+}
+
+TextField1: WOTextField {
+	maxlength = 28;
+	size = 28;
+	value = subject;
+}
+
+Title: WOString {
+	value = title;
+	valueWhenEmpty = "Edu Plan";
+}
+
+UnsavedAlert: WOString {
+	value = application.strings.messages.unsavedChanges;
+}

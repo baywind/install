@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {columnName = COMMENT; name = comment; prototypeName = string; }, 
+        {columnName = "CS_ID"; name = setID; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (comment); 
+    className = "net.rujel.criterial.CriteriaSet"; 
+    classProperties = (comment, criteria, cycleCritSet); 
+    externalName = "CRIT_SET"; 
+    fetchSpecificationDictionary = {}; 
+    name = CriteriaSet; 
+    primaryKeyAttributes = (setID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Criterion; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = critSet; sourceAttribute = setID; }); 
+            name = criteria; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = CycleCritSet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = critSet; sourceAttribute = setID; }); 
+            name = cycleCritSet; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

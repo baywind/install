@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="UploadAnchor" wocomponentcontent="true">
+
+		<binding name="targetFilePath"/>
+		<binding name="prefsDict"/>
+		<binding name="attributeToSet"/>
+		<binding name="prefsFile" defaults="Resources"/>
+		<binding name="framework" defaults="Frameworks"/>
+		<binding name="saveAction"/>
+		<binding name="submitButton" defaults="Boolean"/>
+
+		<validation message="&apos;targetFilePath&apos; is a required binding">
+			<unbound name="targetFilePath"/>
+		</validation>
+
+		<validation message="&apos;prefsDict&apos; and &apos;pefsFile&apos; can not be bound simultaneously">
+			<and>
+				<bound name="prefsDict"/>
+				<bound name="prefsFile"/>
+			</and>
+		</validation>
+
+		<validation message="either of &apos;prefsDict&apos; or &apos;prefsFile&apos; should be bound">
+			<and>
+				<unbound name="prefsDict"/>
+				<unbound name="prefsFile"/>
+			</and>
+		</validation>
+
+		<validation message="&apos;attributeToSet&apos; must be bound to a settable value">
+			<unsettable name="attributeToSet"/>
+		</validation>
+
+		<validation message="&apos;saveAction&apos; is a required binding">
+			<unbound name="saveAction"/>
+		</validation>
+	</wo>
+</wodefinitions>

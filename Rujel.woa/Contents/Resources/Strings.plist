@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>РУЖЭЛЬ</string>
+	<key>dataTypes</key>
+	<dict>
+		<key>date</key>
+		<string>дата</string>
+		<key>Date</key>
+		<string>Дата</string>
+		<key>int</key>
+		<string>целое</string>
+		<key>number</key>
+		<string>число</string>
+		<key>ofDate</key>
+		<string>даты</string>
+		<key>ofNumber</key>
+		<string>числа</string>
+		<key>ofRequest</key>
+		<string>запроса</string>
+		<key>period</key>
+		<string>период</string>
+		<key>request</key>
+		<string>запрос</string>
+		<key>since</key>
+		<string>с</string>
+		<key>text</key>
+		<string>текст</string>
+		<key>to</key>
+		<string>по</string>
+		<key>comment</key>
+		<string>Комментарий</string>
+	</dict>
+	<key>messages</key>
+	<dict>
+		<key>areYouShure</key>
+		<string>Вы уверены, что хотите %s?</string>
+		<key>cantDelete</key>
+		<string>Невозможно удалить</string>
+		<key>createNew</key>
+		<string>Создать нового</string>
+		<key>error</key>
+		<string>Произошла ошибка</string>
+		<key>errorInModule</key>
+		<string>Ошибка в модуле </string>
+		<key>illegalFormat</key>
+		<string>Неверный формат </string>
+		<key>invalidNegativeValue</key>
+		<string>Значение %s не может быть отрицательным</string>
+		<key>invalidValue</key>
+		<string>Неверное значение параметра %s</string>
+		<key>invalidZeroValue</key>
+		<string>Значение %s не может быть нулем</string>
+		<key>longString</key>
+		<string>Слишком длинный текст в поле &quot;%1$s&quot;, поддерживается не более %2$d</string>
+		<key>noAccess</key>
+		<string>Недостаточно прав доступа</string>
+		<key>nothingFound</key>
+		<string>По вашему запросу ничего не найдено, попробуйте задействовать меньше параметров</string>
+		<key>nullProhibit</key>
+		<string>Поле &quot;%s&quot; не может быть пустым</string>
+		<key>parameterRequired</key>
+		<string>Необходимо указать &quot;%s&quot;</string>
+		<key>pleaseWait</key>
+		<string>Пожалуйста подождите</string>
+		<key>refusingSessions</key>
+		<string>РУЖЕЛЬ просит Вас закончить работу и нажать &quot;Выход&quot;. &lt;br/&gt;Ждем Вас сразу после завершения технических работ</string>
+		<key>starterNotifier</key>
+		<string>Не оставляйте открытый журнал без присмотра &lt;br /&gt;Таймер автоматического закрытия сессии выведен слева от кнопки &quot;Выход&quot;</string>
+		<key>unsavedChanges</key>
+		<string>Несохраненные изменения будут потеряны</string>
+	</dict>
+	<key>presets</key>
+	<dict>
+		<key>monthShort</key>
+		<array>
+			<string>янв</string>
+			<string>фев</string>
+			<string>мар</string>
+			<string>апр</string>
+			<string>май</string>
+			<string>июн</string>
+			<string>июл</string>
+			<string>авг</string>
+			<string>сен</string>
+			<string>окт</string>
+			<string>ноя</string>
+			<string>дек</string>
+		</array>
+		<key>sexLetter</key>
+		<dict>
+			<key>female</key>
+			<string>Ж</string>
+			<key>male</key>
+			<string>М</string>
+		</dict>
+		<key>weekdayShort</key>
+		<array>
+			<string>вс</string>
+			<string>пн</string>
+			<string>вт</string>
+			<string>ср</string>
+			<string>чт</string>
+			<string>пт</string>
+			<string>сб</string>
+			<string>вс</string>
+		</array>
+	</dict>
+	<key>properties</key>
+	<dict>
+		<key>EduCourse</key>
+		<dict>
+			<key>comment</key>
+			<string>Комментарий</string>
+			<key>cycle</key>
+			<string>Учебный цикл</string>
+			<key>eduGroup</key>
+			<string>Учебная группа</string>
+			<key>eduYear</key>
+			<string>Учебный год</string>
+			<key>lessons</key>
+			<string>уроки</string>
+			<key>subgroup</key>
+			<string>Подгруппа</string>
+			<key>teacher</key>
+			<string>Преподаватель</string>
+			<key>this</key>
+			<string>Учебный курс</string>
+		</dict>
+		<key>EduCycle</key>
+		<dict>
+			<key>grade</key>
+			<string>Поток</string>
+			<key>subgroups</key>
+			<string>Подгрупп</string>
+			<key>subject</key>
+			<string>Предмет</string>
+			<key>this</key>
+			<string>Учебный План</string>
+		</dict>
+		<key>EduGroup</key>
+		<dict>
+			<key>count</key>
+			<string>Численность</string>
+			<key>grade</key>
+			<string>Поток</string>
+			<key>list</key>
+			<string>список</string>
+			<key>name</key>
+			<string>Полное название</string>
+			<key>this</key>
+			<string>Класс</string>
+			<key>title</key>
+			<string>Буква класса</string>
+		</dict>
+		<key>EduLesson</key>
+		<dict>
+			<key>course</key>
+			<string>Учебный курс</string>
+			<key>date</key>
+			<string>Дата проведения</string>
+			<key>flags</key>
+			<dict>
+				<key>lastOnPage</key>
+				<string>Последний на странице</string>
+				<key>notLesson</key>
+				<string>Не является уроком</string>
+			</dict>
+			<key>homeTask</key>
+			<string>Домашнее Задание</string>
+			<key>ht</key>
+			<string>Д/З</string>
+			<key>note</key>
+			<string>Отметка</string>
+			<key>noteForStudent</key>
+			<string>Отметка ученика</string>
+			<key>number</key>
+			<string>Номер п/п</string>
+			<key>theme</key>
+			<string>Тема</string>
+			<key>this</key>
+			<string>Урок</string>
+		</dict>
+		<key>Person</key>
+		<dict>
+			<key>birthDate</key>
+			<string>Дата рождения</string>
+			<key>firstName</key>
+			<string>Имя</string>
+			<key>initials</key>
+			<string>Инициалы</string>
+			<key>lastName</key>
+			<string>Фамилия</string>
+			<key>person</key>
+			<string>персона</string>
+			<key>secondName</key>
+			<string>Отчество</string>
+			<key>sex</key>
+			<string>Пол</string>
+			<key>this</key>
+			<string>Персона</string>
+		</dict>
+		<key>Student</key>
+		<dict>
+			<key>recentMainEduGroup</key>
+			<string>В классе</string>
+			<key>this</key>
+			<string>Ученик</string>
+		</dict>
+		<key>Teacher</key>
+		<dict>
+			<key>this</key>
+			<string>Учитель</string>
+		</dict>
+	</dict>
+	<key>uiElements</key>
+	<dict>
+		<key>Add</key>
+		<string>Добавить</string>
+		<key>All</key>
+		<string>Все</string>
+		<key>Back</key>
+		<string>Назад</string>
+		<key>Cancel</key>
+		<string>Отменить</string>
+		<key>Change</key>
+		<string>Изменить</string>
+		<key>Create</key>
+		<string>Создать</string>
+		<key>Delete</key>
+		<string>Удалить</string>
+		<key>Done</key>
+		<string>Готово</string>
+		<key>Edit</key>
+		<string>Править</string>
+		<key>Exit</key>
+		<string>Выход</string>
+		<key>Invert</key>
+		<string>Инвертировать</string>
+		<key>None</key>
+		<string>Ничего</string>
+		<key>Other</key>
+		<string>Другое</string>
+		<key>Reset</key>
+		<string>Вернуть</string>
+		<key>Save</key>
+		<string>Сохранить</string>
+		<key>Search</key>
+		<string>Искать</string>
+		<key>Select</key>
+		<string>Отметить</string>
+		<key>Submit</key>
+		<string>Подтвердить</string>
+	</dict>
+</dict>
+</plist>

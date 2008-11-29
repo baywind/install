@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "LESSON_DATE"; 
+            name = date; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = FLAGS; 
+            name = flags; 
+            prototypeName = byte; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = LESSON; 
+            name = lessonID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = REASON; 
+            name = reasonID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = SCHOOL; 
+            name = school; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = TEACHER; 
+            name = teacherID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (date, flags, school, teacherID); 
+    className = "net.rujel.curriculum.Substitute"; 
+    classProperties = (date, flags, reason, school); 
+    externalName = SUBSTITUTE; 
+    fetchSpecificationDictionary = {}; 
+    name = Substitute; 
+    primaryKeyAttributes = (lessonID); 
+    relationships = (
+        {
+            destination = Reason; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = rID; sourceAttribute = reasonID; }); 
+            name = reason; 
+        }
+    ); 
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="CriterSelector" wocomponentcontent="false">
+
+		<binding name="cycle"/>
+		<binding name="selection"/>
+		<binding name="integralPresenter"/>
+		<binding name="selectAction"/>
+
+		<validation message="&apos;cycle&apos; is a required binding">
+			<unbound name="cycle"/>
+		</validation>
+
+		<validation message="&apos;selection&apos; must be bound to a settable value">
+			<unsettable name="selection"/>
+		</validation>
+	</wo>
+</wodefinitions>

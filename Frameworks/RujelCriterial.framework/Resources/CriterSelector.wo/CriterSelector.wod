@@ -1,0 +1,52 @@
+IntegralContainer: WOGenericContainer {
+	class = intClass;
+	elementName = "td";
+	style = "border-right:3px black double;";
+	title = application.extStrings.RujelCriterial_Strings.integral;
+	onmouseover = "dim(this);";
+	onmouseout = "unDim(this);";
+	invokeAction = selectIntegral;
+	onclick = session.checkRun;
+}
+
+IntegralTitle: WOString {
+	value = integral;
+	valueWhenEmpty = "*";
+	escapeHTML = false;
+}
+
+CritListing: WORepetition {
+	index = idx;
+	item = critItem;
+	list = criteria;
+}
+
+CritContainer: WOGenericContainer {
+	class = crClass;
+	elementName = "td";
+	title = critItem.comment;
+	onmouseover = "dim(this);";
+	onmouseout = "unDim(this);";
+	invokeAction = selectCriter;
+	onclick = session.checkRun;
+}
+
+CritTitle: WOString {
+	value = critItem.title;
+}
+
+TextContainer: WOGenericContainer {
+	class = textClass;
+	elementName = "td";
+	title = application.extStrings.RujelCriterial_Strings.comments;
+	style = "border-left:3px black double;";
+	onmouseover = "dim(this);";
+	onmouseout = "unDim(this);";
+	invokeAction = selectText;
+	onclick = session.checkRun;
+}
+
+TextTitle: WOString {
+	value = application.strings.dataTypes.text;
+	valueWhenEmpty = "text";
+}

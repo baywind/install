@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = BEGIN; 
+            name = begin; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = END; 
+            name = end; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = REASON; 
+            name = reason; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "R_ID"; 
+            name = rID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (begin, end, reason); 
+    className = EOGenericRecord; 
+    classProperties = (begin, end, reason, substitutes); 
+    externalName = REASON; 
+    fetchSpecificationDictionary = {}; 
+    name = Reason; 
+    primaryKeyAttributes = (rID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = Substitute; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = reasonID; sourceAttribute = rID; }); 
+            name = substitutes; 
+        }
+    ); 
+}

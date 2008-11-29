@@ -1,0 +1,45 @@
+input {
+	text-align:center;
+}
+
+.special {
+	width:2em;
+	border-style:none double;
+	border-width:0px 3px;
+	text-align:center;
+}
+
+.unused {
+	background-color: #ccc;
+}
+
+.unusedDim {
+	background-color: #aaa;
+	text-decoration:underline;
+	cursor:pointer;		
+}
+
+.areaNum {
+	display: none;
+}
+.subjNum {
+	display: none;
+}
+
+.startArea {
+	border-top-color: #ffcc66;
+	border-top-style: solid;
+	border-top-width: 2px;
+}
+
+.groups {
+	border-collor: black; 
+	border-style: none double;
+	border-width: 3px;
+}
+
+.planBackfield {
+	background-color:#ccffcc;
+	vertical-align:top;
+	text-align:center;
+}

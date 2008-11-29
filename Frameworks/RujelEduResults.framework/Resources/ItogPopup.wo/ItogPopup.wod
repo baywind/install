@@ -1,0 +1,81 @@
+CanChange: WOConditional {
+	condition = readOnly;
+	negate = true;
+}
+
+CanDelete: WOConditional {
+	condition = addOn.access.delete;
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.uiElements.Cancel;
+	type = "button";
+	elementName = "input";
+	onclick = "closePopup();";
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.tryLoad;
+	elementName = "input";
+	type = "button";
+}
+
+DueDateTitle: WOString {
+	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.mark;
+}
+
+EduPeriodTitle: WOString {
+	value = eduPeriod.title;
+}
+
+FlagCheckBox: WOCheckBox {
+	checked = flagStatus;
+	disabled = true;
+}
+
+FlagList: WORepetition {
+	item = flagItem;
+	list = flaglist;
+}
+
+FlagName: WOString {
+	value = flagName;
+}
+
+FlagsTitle: WOString {
+	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.flags.this;
+}
+
+ItogDefined: WOConditional {
+	condition = itog;
+}
+
+ItogEditForm: WOForm {
+}
+
+MarkField: WOTextField {
+	maxlength = 10;
+	size = 5;
+	value = mark;
+	style = "text-align:center;";
+	disabled = readOnly;
+}
+
+PopupTitle: WOString {
+	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.this;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+StudentFirstName: WOString {
+	value = student.person.firstName;
+}
+
+StudentLastName: WOString {
+	value = student.person.lastName;
+}

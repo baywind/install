@@ -1,0 +1,57 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "BEGIN_DAY"; 
+            name = beginDay; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "BEGIN_MONTH"; 
+            name = beginMonth; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "END_DAY"; 
+            name = endDay; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "END_MONTH"; 
+            name = endMonth; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "PER_NUM"; 
+            name = perNum; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {columnName = "PER_TYPE"; name = perType; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (perNum, beginMonth, beginDay, endDay, endMonth); 
+    className = "net.rujel.eduresults.PeriodTemplate"; 
+    classProperties = (perNum, beginMonth, beginDay, periodType, endDay, endMonth); 
+    externalName = "PER_TEMPLATE"; 
+    fetchSpecificationDictionary = {}; 
+    name = PeriodTemplate; 
+    primaryKeyAttributes = (perType, perNum); 
+    relationships = (
+        {
+            destination = PeriodType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = typeID; sourceAttribute = perType; }); 
+            name = periodType; 
+        }
+    ); 
+}

@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = CRITERION; 
+            name = criterID; 
+            prototypeName = short; 
+        }, 
+        {columnName = MAX; name = max; prototypeName = short; }, 
+        {columnName = WEIGHT; name = weight; prototypeName = short; }, 
+        {allowsNull = N; columnName = WORK; name = workID; prototypeName = "int_3"; }
+    ); 
+    attributesUsedForLocking = (workID, criterID, max, weight); 
+    className = EOGenericRecord; 
+    classProperties = (work, max, weight, criterion, marks); 
+    externalName = "CRITER_MASK"; 
+    fetchSpecificationDictionary = {}; 
+    name = CriterMask; 
+    primaryKeyAttributes = (criterID, workID); 
+    relationships = (
+        {
+            destination = Criterion; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = critID; sourceAttribute = criterID; }); 
+            name = criterion; 
+        }, 
+        {
+            destination = Mark; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = critID; sourceAttribute = criterID; }, 
+                {destinationAttribute = workID; sourceAttribute = workID; }
+            ); 
+            name = marks; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = Work; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = workID; sourceAttribute = workID; }); 
+            name = work; 
+        }
+    ); 
+}

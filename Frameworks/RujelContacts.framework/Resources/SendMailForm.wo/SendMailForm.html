@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title><webobject name = "Title"/></title>
+	
+	<style type="text/css">
+.backfield1 {
+	background-color:#ffffcc;
+	vertical-align:top;
+	text-align:center;
+}
+.message {
+	font-size:large;
+	color:#ff6600;
+	text-align:center;
+}
+	
+	</style>
+</head>
+<body>
+<div class = "message" style = "margin:1em;"><webobject name = "SessionMessage"/></div>
+<webobject name = "MailForm">
+	<table width = "96%" align = "center" border = "1" cellpadding = "4" class = "backfield1">
+		<tr>
+		<th align = "right" style="width:6em;"><webobject name = "To"/></th>
+		<td align = "left"> ( <webobject name = "CountAdrs"/> ) <webobject name = "ToggleList"/>
+			<webobject name = "ShowList">
+				<table border = "1" cellspacing = "0" bordercolor = "#999999">
+				<tr>
+				<th><webobject name = "PersonTitle"/></th><th><webobject name = "AdresTitle"/></th>
+				</tr>
+				<webobject name = "StudentsList">
+					<tr>
+					<td><webobject name = "FName"/> <webobject name = "LName"/></td>
+						<td><webobject name = "ContactsList">
+						<webobject name = "Tick"/> "<webobject name = "ContactName"/>" &lt;<webobject name = "ContactAdr"/>&gt;<br/>
+						</webobject></td>
+					</tr>
+				</webobject>
+				</table>
+			</webobject>
+		</td>
+		</tr>
+		<tr>
+		<th align = "right"><webobject name = "Subject"/></th>
+		<td align = "left">
+		<table width = "100%" cellpadding = "0" cellspacing = "0" border = "0">
+		<tr><td style = "width:8ex;text-align:right;white-space:nowrap;"><webobject name = "SubjStart"/></td>
+		<td align = "center"><webobject name = "SubjectField"/></td></tr></table>
+		</td>
+		</tr>
+		<tr>
+		<td colspan = "2" align = "center"><webobject name = "MessageText"/></td>
+		</tr>
+		<webobject name = "CanAttach"><tr><td colspan = "2" align = "left" valign = "middle">
+		<webobject name = "IfAttach"/>  <webobject name = "Attach"/>
+		<strong><webobject name = "Attachment"/></strong>
+		<table border = "0" cellspacing = "0" align = "right"><tr>
+			<td><webobject name = "SinceTitle"/></td>
+			<td><webobject name = "SinceField"/></td>
+			<td><webobject name = "ToTitile"/></td>
+			<td><webobject name="ToField"/></td>
+			<td><webobject name="PeriodsPopUp"/></td>
+		</tr></table>
+		</td></tr></webobject>
+		<tr>
+		<td colspan = "2" align = "center"><webobject name = "SendMail"/></td>
+		</tr>
+	</table>
+	</webobject>
+
+
+</body>
+</html>

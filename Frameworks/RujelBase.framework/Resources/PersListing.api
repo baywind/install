@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="PersListing" wocomponentcontent="false">
+
+		<binding name="selection"/>
+		<binding name="entity"/>
+		<binding name="firstNameDisplay"/>
+		<binding name="secondNameDisplay"/>
+		<binding defaults="Boolean" name="useStyles"/>
+		<binding name="selectAction"/>
+
+		<validation message="'selection' must be bound to a settable value">
+			<unsettable name="selection"/>
+		</validation>
+
+		<validation message="'entity' is a required binding">
+			<unbound name="entity"/>
+		</validation>
+	<binding defaults="Boolean" name="showPopup"/>
+        <binding defaults="Boolean" name="useAjaxPost"/>
+    <binding name="forcedList"/>
+    </wo>
+</wodefinitions>

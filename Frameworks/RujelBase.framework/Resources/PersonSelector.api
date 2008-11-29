@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PersonSelector" wocomponentcontent="false">
+
+		<binding name="list"/>
+		<binding name="selection"/>
+		<binding name="selectedItem"/>
+		<binding name="nameFormat"/>
+		<binding name="selectAction"/>
+		<binding name="addOns"/>
+		<binding name="nameWidth"/>
+
+		<validation message="&apos;list&apos; is a required binding">
+			<unbound name="list"/>
+		</validation>
+
+		<validation message="&apos;selection&apos; must be bound to a settable value">
+			<unsettable name="selection"/>
+		</validation>
+
+		<validation message="&apos;selectedItem&apos; must be bound to a settable value">
+			<unsettable name="selectedItem"/>
+		</validation>
+	</wo>
+</wodefinitions>

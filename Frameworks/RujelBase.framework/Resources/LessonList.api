@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="LessonList" wocomponentcontent="false">
+
+		<binding name="wide" defaults="Boolean"/>
+		<binding name="access"/>
+		<binding name="lessonsList"/>
+		<binding name="currLesson"/>
+		<binding name="addLesson"/>
+		<binding name="save"/>
+		<binding name="delete"/>
+
+		<validation message="&apos;lessonsList&apos; is a required binding">
+			<unbound name="lessonsList"/>
+		</validation>
+
+		<validation message="&apos;access&apos; is a required binding">
+			<unbound name="access"/>
+		</validation>
+
+		<validation message="&apos;currLesson&apos; must be bound to a settable value">
+			<unsettable name="currLesson"/>
+		</validation>
+	</wo>
+</wodefinitions>

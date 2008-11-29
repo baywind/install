@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {columnName = FLAGS; name = flags; prototypeName = byte; }, 
+        {columnName = "EDU_CYCLE"; name = eduCycleID; prototypeName = "int_3"; }, 
+        {columnName = MARK; name = mark; prototypeName = anagram; }, 
+        {columnName = PERIOD; name = periodID; prototypeName = short; }, 
+        {columnName = STUDENT; name = studentID; prototypeName = integer; }, 
+        {
+            columnName = VALUE; 
+            name = value; 
+            precision = 5; 
+            prototypeName = decimal; 
+            scale = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (value, mark, flags); 
+    className = "net.rujel.eduresults.ItogMark"; 
+    classProperties = (value, mark, flags, eduPeriod); 
+    externalName = "ITOG_MARK"; 
+    fetchSpecificationDictionary = {}; 
+    name = ItogMark; 
+    primaryKeyAttributes = (eduCycleID, periodID, studentID); 
+    relationships = (
+        {
+            destination = EduPeriod; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
+            name = eduPeriod; 
+        }
+    ); 
+}

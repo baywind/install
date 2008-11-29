@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {columnName = COMMENT; name = comment; prototypeName = string; }, 
+        {columnName = "CR_ID"; name = courseID; prototypeName = short; }, 
+        {allowsNull = N; columnName = CYCLE; name = cycleID; prototypeName = short; }, 
+        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }, 
+        {columnName = "EDU_GROUP"; name = groupID; prototypeName = "int_3"; }, 
+        {columnName = TEACHER; name = teacherID; prototypeName = "int_3"; }
+    ); 
+    attributesUsedForLocking = (cycleID, teacherID, groupID, eduYear, comment); 
+    className = "net.rujel.base.BaseCourse"; 
+    classProperties = (cycle, lessons, eduYear, audience, lessonTabs, comment); 
+    externalName = "BASE_COURSE"; 
+    fetchSpecificationDictionary = {}; 
+    name = BaseCourse; 
+    primaryKeyAttributes = (courseID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CourseAudience; 
+            internalInfo = {"_nameInObjectStore" = courseaudience; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
+            name = audience; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = PrimitiveEduCycle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cycleID; sourceAttribute = cycleID; }); 
+            name = cycle; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = BaseTab; 
+            internalInfo = {"_nameInObjectStore" = baselessontabs; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = "c_id"; sourceAttribute = courseID; }); 
+            name = lessonTabs; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = BaseLesson; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
+            name = lessons; 
+        }
+    ); 
+}

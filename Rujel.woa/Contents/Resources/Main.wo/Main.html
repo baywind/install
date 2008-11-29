@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title><webobject name = "Title"/> (RUJEL)</title>
+        
+		<script type="text/javascript"><!--
+		var timeout = <webobject name="Timeout"></webobject>;
+		var timerID = null;
+
+		function onLoad() {
+			var w = 1040 - Math.max(window.innerWidth,document.width);
+			if(w > 0) w = 0;
+			var h = 700 - Math.max(window.innerHeight,document.height);
+			if(h > 0) h = 0;
+			if((h + w) < 0)
+				window.resizeBy(w,h);
+			if(timeout > 0) {
+				document.getElementById("buttons").style.display="none";
+				step();
+			}
+		}
+
+		<webobject name = "CanGuest">
+			function guest() {
+				document.forms[0].username.value = "<webobject name = "GuestUserName"/>";
+				document.forms[0].password.value = "<webobject name = "GuestPassword"/>";
+			}
+		</webobject>
+			
+		function step() {
+			if(timerID != null) {
+				clearTimeout(timerID);
+			}
+			document.forms[0].counter.value = timeout;
+			if(timeout <= 0) {
+			//	alert ("bye!");
+				document.getElementById("buttons").style.display="";
+				document.getElementById("counter").style.display="none";
+				return false;
+			}
+			timeout = timeout -1;
+			timerID = setTimeout("step()",1000);
+		}
+-->		</script>
+
+		<style type="text/css">
+
+		.colored {
+		color:#ffff00;
+		letter-spacing:0.2ex;
+		word-spacing:1ex;
+		}
+
+		h1, h2 {
+		  text-align:center;
+		  }
+
+    
+
+		th {
+		  font-weight:bold;
+		  }
+
+		</style>
+        
+    </head>
+    
+<webobject name = "Body">
+<h2 class="colored">
+<webobject name = "Descript"/>
+</h2>
+
+<div class="colored" style="text-align:center;position:absolute;top:42%;left:0;width:100%;font-size:48pt;letter-spacing:0.8em;">
+<webobject name = "Title"/>
+</div>
+
+<div style="position:absolute;right:1%;bottom:1%;">
+	<div class = "colored" style = "text-align:right;font-weight:bold">
+		<webobject name = "Message"/></div>
+    <form onsubmit="return (timeout &lt;= 0);"  method="post" action="">
+	<table align="right">
+    	<tr><th class="colored" align="right">
+    		      <webobject name = "Username"/>
+    		</th><td>
+    			<webobject name = "UserField"/>
+    		</td></tr>
+    	<tr><th class="colored" align="right">
+    			<webobject name = "Password"/>
+    		</th><td>
+    			<input type="password" name="password" />
+    		</td></tr>
+    	<tr valign="middle">
+    	<td align = "center">
+    	<a href="http://www.rujel.net"><webobject name = "HelpImage"/></a>
+    	</td>
+    	<td align="left">
+    		    
+    			<webobject name = "ShowCounter">
+    			<span id = "counter">
+    				<webobject name = "Wait"/> 
+    				<input type="text" name="counter" style = "width:3ex;text-align:center;"  disabled>
+    				<webobject name = "Seconds"/>
+    			</span>
+    			</webobject>
+    			<span id="buttons">
+    			<webobject name = "Enter"/>
+				<webobject name = "CanGuest">
+    			<webobject name = "Guest"/>
+				</webobject>
+				</span>
+			</td></tr>
+		</table>
+    	</form>
+</div>
+
+<div style="text-align:left;position:absolute;bottom:1%;left:10;font-size:10pt;color:#ff88ff;">
+<webobject name = "PhotoBy"/></div>
+
+<div class="colored" style="text-align:center;position:absolute;bottom:1%;left:0px;width:100%;font-size:10pt;">
+&copy;<webobject name = "Copyright"/>
+</div>
+
+</webobject>
+
+</html>

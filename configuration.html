@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Описание файла настройки rujel.plist</title>
+        
+        <style type="text/css">
+       	li {margin-top:1ex;
+		}
+        
+		h1, h2 {
+		  text-align:center;
+		 }
+		 
+		 .node {
+		 	font-size: larger;
+		 	text-decoration: underline;
+		 }
+		 
+		</style>
+        
+    </head>
+    
+<body>
+<h1>Файл настроек rujel.plist</h1>
+
+<ol type="I"><li> <strong>Введение</strong>
+<p>rujel.plist - XML-файл в кодировке UTF-8 (//Apple//DTD PLIST 1.0)</p>
+
+<p>Его можно корректировать в любом редакторе для простых текстов. Для удобства можно использовать редакторы с подсветкой тегов или выделением ключевых значений. 
+</p><p>Для работы в Mac OS X можно использовать бесплатные программы:
+</p>
+<ul><li>Property List Editor из пакета XCode
+</li><li> <a href="http://www.nightproductions.net/prefsetter.html" target="_blank">Pref Setter</a> от независимых разработчиков
+</li></ul>
+<p>
+Настройки хранятся в иерархической структуре. Уровни иерархии размечаются при помощи &quot;словарей&quot; - тегов &lt;dict&gt;
+</p><p>
+Каждая настройка представляет собой пару &quot;ключ-значение&quot; в двух последовательных строках:
+<ol>
+<li><strong>Имя ключа</strong> - заключено в теги &lt;key&gt;</li>
+<li><strong>Значение ключа</strong> - заключено в теги, обозначающие тип данных (обычно &lt;string&gt;) </li>
+</ol>
+<p>
+В дальнейшем для обозначения имени ключа (<em>key</em>) с учетом его вложенности будем пользоваться обозначением &quot;ключевого пути&quot; (<em>keyPath</em>), используя точку. Например, путь <tt>auth.ldap.useSSL</tt> означает: ключ <tt>useSSL</tt> в словаре <tt>ldap</tt>, который вложен в словарь <tt>auth</tt>.
+</p><p>
+Некоторые ключи в файле <strong>rujel.plist</strong> начинаются с подчерка '_'. Это позволяет игнорировать значение ключа в настройках, чтобы использовалось значение по умолчанию. Если Вы уверены, что данный ключ не придется перенастраивать в дальнейшем, его можно просто удалить в паре со значением.
+</p>
+</li><li>
+<strong>Ключи настройки</strong> (по разделам)
+
+<h3>корневые</h3>
+<ul><li>
+<strong>schoolNumber</strong> - номер школы. Используется при размещении нескольких школ на одном сервере. Для демо-версии оставить 0.
+
+</li><li><strong>loggingProperties</strong> - указывает на расположение файла настройки лога. Если не указано, используется настройка в файле Rujel.woa/Contents/Resources/logging.properties
+Данный файл форматируется в соответствии со спецификацией <a href="http://java.sun.com/j2se/1.5.0/docs/guide/logging/overview.html" target="_blank">Java logging</a>
+</li></ul>
+
+<h3>auth</h3>
+<div>Настройки аутентикации и авторизации пользователей</div>
+
+<ul></li>
+<li><strong>loginPageName</strong> - имя страницы (компонента), на которой осуществляется ввод пароля.
+Не меняйте это значение (&quot;Main&quot;), если не уверены в своих действиях.
+
+</li><li><strong>loginHandlerClass</strong> - имя класса java, который используется для аутентикации пользователей: 
+<ul><li><strong>net.rujel.auth.PrefsDrivenUser</strong> - хранит список пользователей и их пароли в этом же файле plist в разделе auth.usersList</div>
+</li><li><strong>net.rujel.auth.ldap.LdapAuthentication</strong> - использует LDAP для аутентикации пользователей</div>
+</li></ul>
+<div>(<tt>если ничего не указано, аутентикация не производится: пользователь без ввода пароля сразу попадает в журнал с полными правами доступа; этот режим можно использовать только при тестировании</tt>)</div>
+</li><li><strong>accessHandlerClass</strong> - имя класса java, который используется для определения прав доступа; пока единственный доступный вариант:
+<ul><li>
+<strong>net.rujel.auth.PrefsAccessHandler</strong> - описания прав хранятся в этом же файле plist в разделе auth.access
+</li></ul>
+
+</li><li><span class="node">auth.acces</span> - подраздел для настройки прав доступа (пока он действует только для <tt>net.rujel.auth.PrefsAccessHandler</tt>).
+<div>Каждый подраздел этого раздела носит имя объекта, для которого в нем описываются права доступа. Обычно это имена типов данных и страниц пользовательского интерфейса.
+Кроме этого есть несколько специальных объектов:</div>
+<ul><li><strong>login</strong> - права войти в систему
+</li><li><strong>default</strong> - права для объектов, для которых доступ не определен явным образом
+</ul>
+<div>В каждом разделе: 
+<ul><li>ключ - имя пользователя или группы пользователей,
+</li><li>значение - права доступа этой группы к данному объекту.
+</li></ul>
+</div>
+<div>Права доступа определяются двоичным представлением числа. Каждому разряду двоичного числа соответствует то или иное право. В большинстве случаев это:</div>
+<ul><li>1 - чтение, 
+</li><li>2 - создание, 
+</li><li>4 - редактирование (изменение существующего), 
+</li><li>8 - удаление
+</li>
+<p>Для некоторых объектов определены специальные права доступа. Они описаны в таблице:</p>
+<table border="1">
+<tr>
+<th>Module</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>8</th>
+<th>16</th>
+<th>32</th>
+<th>64</th>
+</tr>
+<tr>
+<th>login</th>
+<td>login</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>default</th>
+<td>read</td>
+<td>create</td>
+<td>edit</td>
+<td>delete</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr></tr>
+<tr>
+<th>LessonNoteEditor</th>
+<td>open</td>
+<td>rightSide</td>
+<td>leftSide</td>
+<td>byDate</td>
+<td>oneLesson</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>SrcMark</th>
+<td>read</td>
+<td>create</td>
+<td>edit</td>
+<td>delete</td>
+<td>openCourses</td>
+<td>createNewEduPlanCourses</td>
+<td>editSubgroups</td>
+</tr>
+<tr>
+<th>BaseCourse</th>
+<td>read</td>
+<td>create</td>
+<td>edit</td>
+<td>delete</td>
+<td>openCourses</td>
+<td>createNewEduPlanCourses</td>
+<td>editSubgroups</td>
+</tr>
+<tr>
+<th>Work</th>
+<td>read</td>
+<td>create</td>
+<td>edit</td>
+<td>delete</td>
+<td>changeCritSet</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>Mark</th>
+<td>read</td>
+<td>create</td>
+<td>edit</td>
+<td>delete</td>
+<td>changeDate</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+В будущем планируется избавиться от нестандартных прав
+</ul>
+<p>Права каждого конкретного пользователя определяются объединением прав всех групп, в которых он состоит.</p>
+<p>Изначально в файле права доступа настроены так же, как в Гимназии 45. Если Вас это устраивает, можно их не менять.</p>
+</li><li><strong>allowNone</strong> - разрешить ли подключение анонимного пользователя (без ввода логина)
+<div>Пока такая возможность не предусматривается, поэтому лучше оставить значение 'false' (по умолчанию 'false').</div>
+
+</li><li><strong>guestUser / guestPassword</strong> - имя / пароль для пользователя &quot;Гость&quot;.
+<div>Если эти значения указаны, на странице аутентикации будет показана кнопка &quot;Гость&quot;: это позволит просматривать общедоступную информацию из журнала людям без своего логина (например, родителям).</div>
+
+</li><li><strong><em>(*разные*)</em>Мessage</strong> - тексты сообщений, которые будут выводиться на странице аутентикации.
+
+</li><li><strong>welcomeAction</strong> - действие, которое будет выполнено после успешной аутентикации пользователя (не меняйте значение &quot;success&quot;, если не уверены в своих действиях)
+
+</li><li><strong>refuseAction</strong> - действие, которое будет выполнено в случае, если пользователю запрещен доступ в журнал (не меняйте значение &quot;refuse&quot;, если  не уверены в своих действиях; Вы можете отключить этот параметр в пользу следующего)
+
+</li><li><strong>refuseUrl</strong> - URL-адрес, на который будет переадресован пользователь, если ему запрещен доступ в журнал
+
+</li><li><strong>useHTTPS</strong> - переходить на использование HTTPS для шифрованной пересылки пароля. Включайте этот режим только если у Вас настроен HTTPS на web-сервере Apache
+
+</li><li><span class="node">auth.customURL</span> - этот раздел для настройки переадресаций.
+<div>Полезен, если ваш сервер работает одновременно в нескольких сетях. Например, в локальной сети школы и в Интернет.</div>
+<p>В подразделах <strong>secure</strong> и <strong>insecure</strong>: </p>
+<ul><li>ключи - IP-адреса и  маски сетей, с которых подключаются к серверу клиенты, 
+</li><li>значения - URL-адреса сервера для клиентов из этих сетей.
+</li></ul>
+</li><li><span class="node">auth.ldap</span> - подраздел для настройки подключения LDAP (для net.rujel.auth.ldap.LdapAuthentication)
+<p>При использовании LDAP, аутентикация пользователя происходит по имени и паролю на сервере LDAP. Группы пользователя для выяснения прав доступа определяются LDAP-атрибутом securityEquals, если иного не указано в настройке groupAttribute. Пользователь считается членом всех групп-контейнеров LDAP по иерархии своего полного distinguished name(dn) и полных dn своих securityEquals.</p>
+<ul>
+<li><strong>providerUrl</strong> - URL-адрес сервера LDAP
+
+</li><li><strong>authentication</strong> - тип аутентикации LDAP
+
+</li><li><strong>useSSL</strong> - использовать ли SSL-шифрование при подключении к серверу
+
+</li><li><span class="node">auth.ldap.ssl</span> - подраздел для настройки шифрования SSL <a href ="http://java.sun.com/j2se/1.4.2/docs/guide/security/jsse/JSSERefGuide.html" target="_blank"> (документация)</a>
+<ul>
+<li><strong>protocol</strong> - протокол шифрования: SSL, TLS
+
+</li><li><strong>trustAny</strong> - не проверять подлинность сертификата сервера LDAP. <div>Эта настройка полезна, когда сертификат Вашего сервера не подписан международной authority.</div>
+
+</li><li><strong>customKeystore</strong> - местоположение файла с установленными сертификатами, если Вы все же хотите их проверять. Файл хранилища сертификатов в формате <strong>java.security.KeyStore</strong>
+</li></ul>
+</li></ul>
+
+</li><li><span class="node">auth.usersList</span> - подраздел со списком пользователей (для net.rujel.auth.PrefsDrivenUser)
+<div>Каждый подраздел этого раздела носит имя пользователя (login). Основные параметры пользователя:</div>
+<ul>
+<li><strong>password</strong> - пароль (хранится в нешифрованном виде, поэтому лучше используйте LDAP)
+
+</li><li><strong>groups</strong> - список групп пользователя (для определения прав доступа). 
+<ul><li>список разделяется точкой с запятой (;) 
+</li><li>вместо имени группы может быть имя другого пользователя, как эквивалент прав доступа
+</li></ul>
+</li></ul>
+</li></ul>
+
+<h3>dbConnection</h3>
+<div>Настройки подключения к базе данных</div>
+<ul>
+
+</li><li><strong>serverURL</strong> - URL-адрес сервера БД в формате, соответствующем спецификации JDBC
+</li><li><strong>urlSuffix</strong> - дополнительные параметры подключения JDBC, указываемые в конце URL-адреса базы данных.
+<div>Для работы с MySQL лучше оставить без изменений</div>
+
+</li><li><strong>username</strong> - имя пользователя, используемое для подключения к серверу БД
+</li><li><strong>password</strong> - пароль этого пользователя для БД
+
+</li><li>дополнительные возможные параметры подключения JDBC:
+<ul><li>driver, plugin - мы их пока не использовали, но они предусмотрены
+</li></ul>
+</li><li>далее предусмотрен отдельный раздел настроек для каждой используемой базы данных <br />
+(точнее, в терминах WebObjects, - <strong>модели</strong>  - папки *.eomodeld внутри папки *.framework/Resources/).  
+<div>Имя раздела совпадает с именем модели, в большинстве случаев совпадает с именем БД.</div>
+<div>Возможные настройки:
+<ul><li><strong>URL</strong> - полный JDBC URL-адрес подключения к БД
+</li><li><strong>dbName</strong> - имя базы данных, если используется отличное от указанного в модели
+</li><li><strong>skip</strong> - пропустить. не подключаться к этой БД
+</li><li>а также, уточнения параметров <strong>username</strong>, <strong>password</strong>, <strong>driver</strong>, <strong>plugin</strong>
+</li></ul>
+</div>
+</li></ul>
+
+<h3>interfaces</h3>
+<div>Указание, какие классы Java используются для реальзации каких интерфейсов.<br />
+Это одни из важнейших настроек режима работы РУЖЭЛЬ</div>
+<ul>
+<li><strong>EduCourse</strong> - описывает учебные курсы. Единственно возможное значение:
+<ul><li><strong>net.rujel.base.BaseCourse</strong>
+</li></ul>
+</li><li><strong>EduCycle</strong> - описывает учебные циклы (учебный план) возможные значения:
+<ul><li><strong>net.rujel.eduplan.PlanCycle</strong>
+</li><li><strong>net.rujel.base.PrimitiveEduCycle.java</strong>
+</li></ul>
+
+</li><li><strong>EduGroup</strong> - описывает учебную группу. Сейчас реализован только
+<ul><li><strong>net.rujel.vseobuch.VOClass</strong>
+</li></ul>
+</li><li><strong>EduLesson</strong> - описывает урок. Возможные значения:
+<ul><li><strong>net.rujel.base.BaseLesson</strong> - для ведения журнала уроков
+</li><li><strong>net.rujel.criterial.Work.java</strong> - для ведения только работ с критериальным оцениванием
+</li></ul>
+
+</li><li><strong>Student</strong> - описывает ученика. Сейчас реализован только
+<ul><li><strong>net.rujel.vseobuch.VOStudent</strong>
+</li></ul>
+</li><li><strong>Teacher</strong> - описывает учителя. Сейчас реализован только
+<ul><li><strong>net.rujel.vseobuch.VOTeacher</strong>
+</li></ul>
+
+</li></ul>
+
+<h3>modules</h3>
+<div>Здесь перечислены подключаемые модули</div>
+<ul><li>каждый ключ - имя класса Java, отвечающего на запросы к модулю
+</li><li>значение для каждого ключа - определяет активность модуля: true / false
+</li></ul>
+<p>За что отвечают модули:</p>
+
+<ul><li><strong>net.rujel.base.BaseModule</strong> - уроки
+</li><li><strong>net.rujel.eduplan.PlanCycle</strong> - учебный план
+</li><li><strong>net.rujel.autoitog.AutoItogModule</strong> - автоматический расчет и выставление итоговых (прогнозы)
+</li><li><strong>net.rujel.contacts.EMailBroadcast</strong> - почтовая рассылка
+</li><li><strong>net.rujel.criterial.ModuleInit</strong> - критериальное оценивание (работы)
+</li><li><strong>net.rujel.eduresults.ModuleInit</strong> - итоговые оценки и периодичность
+</li><li><strong>net.rujel.curriculum.CurriculumModule</strong> - учебный процесс (замены)
+
+</li></ul>
+
+<h3>edu</h3>
+<div>Настройки режимов учебного процесса</div>
+<ul>
+
+<li><strong>minGrade, maxGrade</strong> - минимальный и максимальный номера потока, которые должны отображаться в учебном плане
+
+</li><li><strong>autoItogLagDays</strong> - задержка (в сутках) автоматического выставления итоговой отметки относительно конца учебного периода (1, чтобы отметки выставлялись утром следующего дня)
+
+</li><li><strong>autogenerateEduPeriods</strong> - используется, если происходит обращение к учебному периоду, который еще не описан явно: автоматически генерировать учебные периоды из заготовок
+
+</li><li><strong>newYearMonth, newYearDay</strong> - месяца и дата (в числовом виде), которые определяют границу учебного года (по умолчанию, 1 июля)
+
+</li><li><strong>overwriteItogsScheduled</strong> - перезаписывать итоговую отметку в соответствии с прогнозом при автоматическом выставлении итоговых в конце учебного периода (по умолчанию - false: если итоговая уже была выставлена ранее, она не будет перезаписана)
+
+</li><li><strong>weightToMax</strong> - автоматически приравнивать веса критериев к максимумам по этим критериям (при критериальном оценивании работы)
+
+</li><li><span class="node">edu.presenters</span> - подраздел для настройки способа отображения интегральных оценок  (при критериальном оценивании работы)
+<ul>
+<li><strong>workIntegral</strong> - интегральная отметка за работу
+</li><li><strong>integralColor</strong> - цвет фоновой подсветки
+</li><li><strong>weightless</strong> - интегральная отметка за работу с нулевым весом (если не указано, используется workIntegral)
+</li><li><strong>weightlessColor</strong> - цвет фоновой подсветки для работы с нулевым весом (если не указано, используется integralColor)
+</li>
+<p>Возможные значения для всех ключей:</p>
+<ul><li>могут использоваться имена (title) граничных наборов из таблицы Criterial.BORDER_SET,
+</li><li>а также специальные значения:</div>
+<ul><li>% - процент, или %N, где N - целое число, означающее количество десятичных знаков
+</li><li>
+<strong>none</strong> - в любом случае пустота, или noneТЕКСТ, где ТЕКСТ - значение, возвращаемое в любом случае
+</li></ul>
+</li></ul>
+</ul>
+</li></ul>
+
+<h3>mail</h3>
+<div>Настройки почтовой рассылки</div>
+<ul>
+
+</li><li><strong>smtpServerURL</strong> - URL-адрес SMTP-сервера, через который будет отправляться почта
+
+</li><li><strong>secure</strong> - нужно ли использовать шифрованную передачу данных (start TLS)
+
+</li><li><strong>smtpUser</strong> - имя пользователя для авторизации на SMTP-сервере
+</li><li><strong>smtpPassword</strong> - пароль пользователя
+
+</li><li><strong>mailFrom</strong> - значение для заголовка письма "От"
+
+</li><li><strong>replyTo</strong> - значение для заголовка письма "Ответить"
+
+</li><li><strong>messageLag</strong> - задержка в миллисекундах между отправкой последовательных сообщений
+
+</li><li><strong>messageFilePath</strong> - путь до файла с текстом тела письма при автоматической рассылке
+
+</li><li><strong>dontSend</strong> - не отправлять письма (для тестового режима)
+
+</li><li><strong>writeToFile</strong> - сохранять в файл письмо, которое должно быть отправлено (для отладки)
+
+</li><li><strong>writeFileDir</strong> - путь до папки, в которую сохранять письма
+
+</li></ul>
+
+<h3>markarchive</h3>
+<div>Настройки архивации исправлений</div>
+<ul>
+
+<li><strong>itemThreshold / sessionThreshold</strong> - критическое количество исправлений Одного объекта / За одну сессию (при достижении указанного количества, генерируется оповещение для администратора) - пока неиспользуется
+
+<p>Объекты, доступные для архивации исправлений:
+<br />значения &quot;true/false&quot; &quot;включают/выключают&quot; архивацию (по умолчанию, отключено)
+</p>
+</li><li><strong>Mark</strong> - критериальные оценки
+</li><li><strong>ItogMark</strong> - итоговые отметки
+
+
+</li></ul>
+
+<h3>schedule</h3>
+<div>Настройки фоновых задач, выполняемых по расписанию</div>
+<ul>
+
+<div>Подразделы:</div>
+</li><li><strong>DAILY</strong> - ежедневные задачи
+</li><li><strong>WEEKLY</strong> - еженедельные
+</li><li><strong>MONTHLY</strong> - ежемесячные
+</li><li><strong>other</strong> - другие (программно могут регистрироваться другие периоды - например, учебные периоды)
+</li>
+
+<p>Настройки в подразделах:</p>
+<ul><li><strong>time</strong> - время запуска задач
+</li><li><strong>day</strong> - день от начала периода
+<ul><li>для DAILY недействительно 
+</li><li>для WEEKLY означает день недели, начиная с воскресенья: 1-ВС, 2-ПН ...
+</li></ul>
+</li><li>
+можно вписать подраздел <strong>tasks</strong>, в котором 
+<ul><li>ключи - имена классов Java,
+</li><li>значения - имена методов в этих классах, которые нужно выполнить <br/>
+(методы должны быть статическими и без параметров)
+</li></ul>
+</ul>
+</li></ul>
+
+<h3>ui</h3>
+<div>Настройки пользовательского интерфейса</div>
+<ul>
+
+<li><strong>allowTimeMachine</strong> - показывать &quot;машину времени&quot; на странице выбора режима (для имитации работы в произвольный день)
+
+</li><li><strong>dateFormat / shortDateFormat</strong> - форматы даты / краткой даты, применяемые в интерфейсах РУЖЭЛЬ (описываются по принципам java.text.SimpleDateFormat)
+
+</li><li><strong>defaultDate</strong> - дата, выставляемая автоматически в &quot;машине времени&quot; - применяется для демо режима (если не указано, выставляется текущая дата)
+
+</li><li><strong>keyValueCacheSize</strong> - настройка кеширования ключей: можно попытаться подобрать величину (целочисленную) для наилучшего быстродействия (если не указано, кеширование отключено)
+
+</li><li><strong>logoutScreen</strong> - URL-адрес, куда переадресуется клиент, при нажатии кнопки &quot;Выход&quot; (если не указано, возвращается на страницу ввода пароля)
+
+</li><li><strong>redirectTimeout</strong> - время в секундах, по истечении которого пользователь автоматически переадресуется со страницы сообщения (например, сообщения об истекшем времени сессии)
+
+</li><li><span class="node">ui.presenter</span> - технологический подраздел для компонентов (WOComponent), которые используются для отображения различных видов информации (в дальнейшем планируется его исключить)
+</li><li><span class="node">ui.regime</span> - подраздел для списка режимов, доступных с первой страницы
+<ul><li>ключ - отображаемое имя режима, 
+</li><li>значение - имя страницы (компонента), реализущего этот режим
+</li></ul>
+<div>На первой странице будут показываться только те режимы, к которым у пользователя есть права доступа. Доступ определяется по имени компонента.</div>
+
+</li><li><span class="node">ui.subRegime</span> - подраздел для имен страниц (компонентов), реализующих внутренние режимы (не стоит менять эти настройки; можно их удалить, т.к. по умолчанию используются те же)
+<ul>
+<li><strong>editCourseSubgroup</strong> - редактирование списка подгруппы для курса
+
+</li><li><strong>openCourse</strong> - открыть журнал курса (для ввода уроков и выставления оценок)
+</li></ul>
+</li></ul>
+</li></ol>
+</body>
+</html>

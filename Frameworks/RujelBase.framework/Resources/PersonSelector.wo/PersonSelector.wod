@@ -1,0 +1,48 @@
+AddOnsRepetition: WORepetition {
+	item = addOnItem;
+	list = allAddOns;
+}
+
+CheckBox1: WOCheckBox {
+	checked = checked;
+	id = "cb";
+	onclick = "changeMass(null);";
+}
+
+HasClass: WOConditional {
+	condition = currClass;
+}
+
+RowContainer: WOGenericContainer {
+	class = rowStyle;
+	elementName = "tr";
+}
+
+RowRepetition: WORepetition {
+	item = item;
+	list = ^list;
+}
+
+StudentName: WOString {
+	value = name;
+}
+
+StudentNameContainer: WOGenericContainer {
+	elementName = "td";
+	style = cellStyle;
+	invokeAction = select;
+	onclick = onClick;
+	onmouseout = onMouseOut;
+	onmouseover = onMouseOver;
+	class = rowStyle;
+}
+
+SwitchComponent1: WOSwitchComponent {
+	WOComponentName = currAddOn.presenter;
+	currAddOn = currAddOn;
+	person = item;
+}
+
+Ticks: WOConditional {
+	condition = ticks;
+}

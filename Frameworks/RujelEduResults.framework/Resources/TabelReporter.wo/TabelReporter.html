@@ -1,0 +1,20 @@
+
+<webobject name="CycleGroup">
+<table style="margin-top:1.2em;border-color:#666666;border-collapse:collapse;" cellpadding="2" cellspacing="0" border="1">
+<tr><th style="width:10em;"><webobject name="SubjectTitle"></webobject></th>
+<webobject name="PeriodList"><th style="width:3ex;"><webobject name="PeriodTitle"></webobject></th></webobject>
+<webobject name="HasTimeouts"><th style="width:10ex;border-left:3px double;"><webobject name="TimeoutTitle"></webobject></th>
+<th align="left"><webobject name="ReasonTitle"></webobject></th></webobject></tr>
+<webobject name="CycleList"><tr>
+<td align="left"><webobject name="Subject"></webobject></td>
+<webobject name="PeriodList"><td align="center"><webobject name="Mark"></webobject></td></webobject>
+<webobject name="HasTimeouts"><td align="center" style="border-left:3px double;"><webobject name="TimeoutDate"></webobject></td><td align="left"><webobject name="TimeoutReason"></webobject></td></webobject></tr>
+</webobject></table>
+</webobject>
+<webobject name="HasGlobalTimeout"><webobject name="TimeoutsLister"><p align="left">
+<webobject name = "GenTOTitle"/>:
+<i><webobject name="TimeoutPeriod"></webobject> <webobject name = "Upto"/> 
+<webobject name="TimeoutDate2"></webobject> </i>
+<webobject name = "HasReason"><br/>
+<webobject name="ReasonTitle"></webobject>:<i> <webobject name="TimeoutReason2"></webobject></i></webobject>
+</p></webobject></webobject>

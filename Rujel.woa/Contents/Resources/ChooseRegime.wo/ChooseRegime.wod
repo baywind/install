@@ -1,0 +1,38 @@
+CanAccess: WOConditional {
+	condition = allowedRegimes.count;
+}
+CanNotAccess: WOConditional {
+	condition = allowedRegimes.count;
+	negate = true;
+}
+
+GenericContainer1: WOGenericContainer {
+	elementName = "tr";
+	invokeAction = choose;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+	onclick = session.tryLoad;
+	class="orange";
+}
+
+Repetition1: WORepetition {
+	item = regime;
+	list = allowedRegimes;
+}
+
+String1: WOString {
+	value = regime;
+}
+
+String4: WOString {
+	escapeHTML = false;
+	value = application.strings.messages.starterNotifier;
+}
+
+TimeMachineWindow1: TimeMachineWindow {
+}
+
+Wrapper: PageWrapper {
+	styles = "td, th {text-align:center;}";
+	title = title;
+}

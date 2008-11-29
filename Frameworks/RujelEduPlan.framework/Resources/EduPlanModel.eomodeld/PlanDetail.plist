@@ -1,0 +1,24 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = COURSE; name = courseID; prototypeName = short; }, 
+        {allowsNull = N; columnName = HOURS; name = hours; prototypeName = short; }, 
+        {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (hours); 
+    className = EOGenericRecord; 
+    classProperties = (eduPeriod, hours); 
+    externalName = DETAIL; 
+    fetchSpecificationDictionary = {}; 
+    name = PlanDetail; 
+    primaryKeyAttributes = (courseID, periodID); 
+    relationships = (
+        {
+            destination = EduPeriod; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
+            name = eduPeriod; 
+        }
+    ); 
+}

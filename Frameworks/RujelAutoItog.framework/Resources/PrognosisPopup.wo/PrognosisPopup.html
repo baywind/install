@@ -1,0 +1,72 @@
+<div style="display:block;position:absolute;top:30%;left:30%;width:40%;padding:10pt;" class="backfield1" id="ajaxPopup">
+<webobject name="PrognosEditForm">
+<table width="100%" border="1">
+<tr><th colspan = "2"><webobject name = "PrognosTitle"/> : <webobject name = "Heading"/> - <webobject name = "Student"/></th></tr>
+<webobject name = "ShowPercents">
+	<tr>
+	<td align = "right"><webobject name = "CompleteProperty"/> :</td>
+	<td align="center" style="font-style:italic;"><webobject name = "Complete"/></td>
+	</tr>
+	<tr>
+	<td align = "right"><webobject name = "ValueProperty"/> :</td>
+	<td align="center" style="font-style:italic;"><webobject name = "Value"/></td>
+	</tr>
+</webobject>
+<tr>
+<td align = "right"><webobject name = "MarkProperty"/> :</td>
+<td class = "orange" align="center"><webobject name = "Mark"/></td>
+</tr>
+<webobject name = "CanManual">
+	<tr>
+	<td align = "right"><webobject name = "KeepString"/> :</td>
+	<td align = "center"><webobject name = "CheckBoxFlag2"/></td>
+	</tr>
+</webobject>
+<webobject name = "PrognosExist">
+	<tr>
+	<td colspan = "2">
+	<webobject name = "FireDateProperty"/> : <i><webobject name = "FireDate"/></i>
+	</td>
+	</tr>
+</webobject>
+<tr>
+<td align = "right"><webobject name = "FlagKey1"/> :</td>
+<td align = "center"><webobject name = "CheckBoxFlag1"/></td>
+</tr>
+<webobject name = "CanBonus">
+<tr><td colspan = "2"></td></tr>
+	<tr onclick = "if(toggleObj('bonusTextArea'))toggleObj('bonusText');">
+	  <td align = "right" style = "text-decoration:underline;font-weight:bold;"><webobject name = "BonusTitle"/></td>
+	  <td align="center" style="font-style:italic;"><webobject name = "BonusPercent"/></td>
+	</tr>
+	<webobject name = "CanEditText"><tr id = "bonusTextArea" style = "display:none;">
+	<td colspan = "2" align = "center">
+	 <webobject name = "BonusTextArea"/>
+	 </td></tr></webobject>
+	<webobject name = "HasText">
+		<tr id = "bonusText" style = "font-style:italic;"
+		 onclick = "if(toggleObj('bonusTextArea'))toggleObj(this);">
+		<td colspan = "2" align = "center">
+		    <webobject name = "BonusText"/>
+		 </td></tr>
+
+	
+	<webobject name = "CanReadBonus">
+	 <tr>
+	  <td align = "right"><webobject name = "SetBonusString"/> :</td>
+	  <td><webobject name = "SetBonus"/></td>
+	</tr>
+		<webobject name = "KeepTr">
+		  <td align = "right"><webobject name = "KeepString"/> :</td>
+		  <td><webobject name = "KeepBonus"/></td>
+		</webobject>
+	</webobject>
+	</webobject>
+</webobject>
+<tr><td align="center" colspan="2"><webobject name="CanChange"><webobject name="Save"></webobject></webobject>
+    <webobject name="CanDelete"><webobject name="DeleteButton"></webobject></webobject>
+    <webobject name = "CanCancel"><webobject name="CancelButton"></webobject></webobject>
+</td></tr>
+</table>
+</webobject>
+</div>

@@ -1,0 +1,24 @@
+{
+    attributes = (
+        {columnName = IDX; name = idx; prototypeName = short; }, 
+        {columnName = IND; name = indID; prototypeName = short; }, 
+        {columnName = VALUE; name = value; prototypeName = string; }
+    ); 
+    attributesUsedForLocking = (value); 
+    className = EOGenericRecord; 
+    classProperties = (value, indexer, idx); 
+    externalName = "INDEX_ROW"; 
+    fetchSpecificationDictionary = {}; 
+    name = IndexRow; 
+    primaryKeyAttributes = (idx, indID); 
+    relationships = (
+        {
+            destination = Indexer; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = indID; sourceAttribute = indID; }); 
+            name = indexer; 
+        }
+    ); 
+}

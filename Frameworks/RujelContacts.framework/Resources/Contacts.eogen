@@ -1,0 +1,1 @@
+ -destination Sources -extension java -java -javaTemplate _MyEntity.java -model Resources/Contacts.eomodeld -packagedirs -subclassDestination Sources -subclassJavaTemplate MyEntity.java -templatedir ../../../templates -verbose -loadModelGroup

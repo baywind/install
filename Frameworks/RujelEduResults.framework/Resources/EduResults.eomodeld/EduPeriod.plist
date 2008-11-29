@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {columnName = BEGIN; name = begin; prototypeName = date; }, 
+        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }, 
+        {columnName = END; name = end; prototypeName = date; }, 
+        {columnName = NUM; name = num; prototypeName = byte; valueType = i; }, 
+        {columnName = "ID_PER"; name = perID; prototypeName = short; }, 
+        {columnName = "PER_TYPE"; name = perType; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (perType, begin, end, num, eduYear); 
+    className = "net.rujel.eduresults.EduPeriod"; 
+    classProperties = (begin, eduYear, end, num, periodType, itogmarks); 
+    externalName = "EDU_PERIOD"; 
+    fetchSpecificationDictionary = {}; 
+    name = EduPeriod; 
+    primaryKeyAttributes = (perID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = ItogMark; 
+            internalInfo = {"_nameInObjectStore" = itogmark; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = periodID; sourceAttribute = perID; }); 
+            name = itogmarks; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = PeriodType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = typeID; sourceAttribute = perType; }); 
+            name = periodType; 
+        }
+    ); 
+}

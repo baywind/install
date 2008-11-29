@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Layouts</key>
+	<dict>
+		<key>Default</key>
+		<dict>
+			<key>EntityOption</key>
+			<string>All</string>
+			<key>RelationshipOption</key>
+			<string>None</string>
+			<key>ViewPositions</key>
+			<dict>
+				<key>CoursePeriodType</key>
+				<array>
+					<string>332.000000</string>
+					<string>438.000000</string>
+					<string>149.000000</string>
+					<string>78.000000</string>
+				</array>
+				<key>EduPeriod</key>
+				<array>
+					<string>34.000000</string>
+					<string>207.000000</string>
+					<string>140.000000</string>
+					<string>168.000000</string>
+				</array>
+				<key>ItogMark</key>
+				<array>
+					<string>37.000000</string>
+					<string>387.000000</string>
+					<string>140.000000</string>
+					<string>150.000000</string>
+				</array>
+				<key>PeriodTemplate</key>
+				<array>
+					<string>257.000000</string>
+					<string>100.000000</string>
+					<string>144.000000</string>
+					<string>150.000000</string>
+				</array>
+				<key>PeriodType</key>
+				<array>
+					<string>287.000000</string>
+					<string>273.000000</string>
+					<string>178.000000</string>
+					<string>114.000000</string>
+				</array>
+			</dict>
+			<key>orthoLines</key>
+			<string>Y</string>
+		</dict>
+	</dict>
+	<key>Version</key>
+	<string>1</string>
+</dict>
+</plist>

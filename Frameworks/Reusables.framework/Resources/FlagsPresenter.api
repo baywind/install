@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="FlagsPresenter" wocomponentcontent="false">
+
+		<binding name="flags"/>
+		<binding name="flagNames"/>
+		<binding name="inRow" defaults="Boolean"/>
+		<binding name="disabled" defaults="Boolean"/>
+	</wo>
+</wodefinitions>

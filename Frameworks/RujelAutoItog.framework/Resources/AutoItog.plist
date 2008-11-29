@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PrognosesAddOn</key>
+	<dict>
+		<key>accessKey</key>
+		<string>Prognosis</string>
+		<key>activeComponent</key>
+		<string>PrognosPresenter</string>
+		<key>component</key>
+		<string>PrognosAddOn</string>
+		<key>defaultOn</key>
+		<string>true</string>
+		<key>framework</key>
+		<string>app</string>
+		<key>id</key>
+		<string>prognosis</string>
+		<key>imageOff</key>
+		<string>down.png</string>
+		<key>imageOn</key>
+		<string>up.png</string>
+		<key>timeoutsOff</key>
+		<string>sandclock.png</string>
+		<key>timeoutsOn</key>
+		<string>sandside.png</string>
+		<key>timeoutsTitle</key>
+		<string>Отсрочка</string>
+		<key>title</key>
+		<string>Прогноз</string>
+	</dict>
+	<key>allCycles</key>
+	<string>По всем предметам</string>
+	<key>prognHead</key>
+	<string>Прог&lt;br/&gt;ноз</string>
+	<key>prognosis</key>
+	<string>Прогноз</string>
+	<key>properties</key>
+	<dict>
+		<key>CourseTimeout</key>
+		<dict>
+			<key>cycle</key>
+			<string>по предмету</string>
+			<key>eduGroup</key>
+			<string>у класса</string>
+			<key>eduPeriod</key>
+			<string>на уч. период</string>
+			<key>teacher</key>
+			<string>преподавателя</string>
+			<key>this</key>
+			<string>Отсрочка для Курса</string>
+		</dict>
+		<key>PrognosUsage</key>
+		<dict>
+			<key>calculatorName</key>
+			<string>Вычислитель</string>
+			<key>flags</key>
+			<dict>
+				<key>active</key>
+				<string>активен</string>
+				<key>manual</key>
+				<string>ручное выставление</string>
+				<key>noTimeouts</key>
+				<string>нет отсрочек</string>
+				<key>priority</key>
+				<string>приоритет</string>
+			</dict>
+		</dict>
+		<key>Prognosis</key>
+		<dict>
+			<key>complete</key>
+			<string>выполнено</string>
+			<key>fireDate</key>
+			<string>дата выставления</string>
+			<key>flags</key>
+			<dict>
+				<key>disable</key>
+				<string>не выставлять</string>
+				<key>keep</key>
+				<string>зафиксировать</string>
+				<key>keepBonus</key>
+				<string>сохранять при изменениях</string>
+			</dict>
+			<key>mark</key>
+			<string>отметка</string>
+			<key>this</key>
+			<string>Прогноз</string>
+			<key>value</key>
+			<string>успешность</string>
+		</dict>
+		<key>Timeout</key>
+		<dict>
+			<key>course</key>
+			<string>только этого курса</string>
+			<key>dueDate</key>
+			<string>Конечная дата</string>
+			<key>flags</key>
+			<dict>
+				<key>negative</key>
+				<string>досрочно</string>
+				<key>passed</key>
+				<string>отработал</string>
+				<key>priority</key>
+				<string>приоритет</string>
+			</dict>
+			<key>reason</key>
+			<string>Причина</string>
+			<key>this</key>
+			<string>Отсрочка</string>
+		</dict>
+	</dict>
+	<key>timeoutHead</key>
+	<string>Отсрочка</string>
+	<key>ui</key>
+	<dict>
+		<key>allCourses</key>
+		<string>всех курсов</string>
+		<key>generalTimeout</key>
+		<string>Отсрочка аттестации</string>
+		<key>timeoutFor</key>
+		<string>Отсрочка для</string>
+		<key>upTo</key>
+		<string>до</string>
+		<key>addedBonus</key>
+		<string>добавлено</string>
+		<key>requestBonus</key>
+		<string>добавить?</string>
+		<key>requestedBonus</key>
+		<string>предложено добавить</string>
+		<key>setBonus</key>
+		<string>утвердить</string>
+		<key>keepBonusHover</key>
+		<string>при изменении оценок и процента успешности добавка не будет сброшена</string>
+		<key>cantDeleteBonus</key>
+		<string>У Вас недостаточно прав доступа, чтобы снять добавку</string>
+	</dict>
+	<key>reportSettings</key>
+	<dict>
+		<key>title</key>
+		<string>autoitog</string>
+		<key>name</key>
+		<string>Прогноз</string>
+		<key>on</key>
+		<true/>
+		<key>options</key>
+		<array>
+			<dict>
+				<key>flag</key>
+				<string>timeout</string>
+				<key>title</key>
+				<string>отсрочки</string>
+				<key>on</key>
+				<true/>
+			</dict>
+		</array>
+		<key>sort</key>
+		<string>05</string>
+	</dict>
+	<key>prognosReport</key>
+	<dict>
+		<key>title</key>
+		<string>autoitog</string>
+		<key>component</key>
+		<string>PrognosReport</string>
+		<key>sort</key>
+		<string>05</string>
+	</dict>
+</dict>
+</plist>

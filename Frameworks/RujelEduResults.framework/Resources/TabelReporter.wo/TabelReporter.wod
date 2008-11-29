@@ -1,0 +1,95 @@
+HasGlobalTimeout: WOConditional {
+	condition = timeouts.count;
+}
+
+TimeoutsLister: WORepetition {
+	list = timeouts;
+	item = cycleItem;
+}
+
+TimeoutPeriod: WOString {
+	value = cycleItem.eduPeriod.title;
+}
+
+TimeoutDate2: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = cycleItem.dueDate;
+}
+
+TimeoutReason2: WOString {
+	value = cycleItem.reason;
+}
+
+CycleGroup: WORepetition {
+	item = perlist;
+	list = cyclesForPerlists.allKeys;
+}
+
+SubjectTitle: WOString {
+	value = application.strings.properties.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+	escapeHTML = false;
+}
+
+PeriodList: WORepetition {
+	index = perIdx;
+	item = perItem;
+	list = perlist;
+}
+
+PeriodTitle: WOString {
+	value = periodTitle;
+	escapeHTML = false;
+}
+
+HasTimeouts: WOConditional {
+	condition = timeoutsDict.count;
+}
+
+TimeoutTitle: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.this;
+	valueWhenEmpty = "Timeout";
+	escapeHTML = false;
+}
+
+ReasonTitle: WOString {
+	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.reason;
+	valueWhenEmpty = "Reason";
+	escapeHTML = false;
+}
+
+CycleList: WORepetition {
+	item = cycleItem;
+	list = cycles;
+}
+
+Subject: WOString {
+	value = cycleItem.subject;
+}
+
+Mark: WOString {
+	value = mark.mark;
+}
+
+TimeoutDate: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = timeout.dueDate;
+}
+
+TimeoutReason: WOString {
+	value = timeout.reason;
+}
+
+GenTOTitle : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.ui.generalTimeout;
+  valueWhenEmpty = "Timeout";
+}
+
+Upto : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.ui.upTo;
+  valueWhenEmpty = "up to";
+}
+
+HasReason : WOConditional {
+  condition = cycleItem.reason;
+}

@@ -1,0 +1,32 @@
+{
+    attributes = (
+        {columnName = ACCESS; name = access; prototypeName = integer; }, 
+        {columnName = "AL_ID"; name = alID; prototypeName = integer; }, 
+        {allowsNull = N; columnName = ENTITY; name = entity; prototypeName = word; }, 
+        {columnName = "P_KEY"; name = primaryKey; prototypeName = integer; }, 
+        {columnName = QUALIFIER; name = qualifier; prototypeName = string; }, 
+        {columnName = SCHEME; name = schemeID; prototypeName = integer; }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_GROUP"; 
+            name = userGroup; 
+            prototypeName = string; 
+        }
+    ); 
+    attributesUsedForLocking = (entity, primaryKey, userGroup, qualifier, schemeID, access); 
+    className = EOGenericRecord; 
+    classProperties = (entity, primaryKey, userGroup, qualifier, access, accessScheme); 
+    externalName = "ACCESS_LIST"; 
+    fetchSpecificationDictionary = {}; 
+    name = AccessList; 
+    primaryKeyAttributes = (alID); 
+    relationships = (
+        {
+            destination = AccessScheme; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = scID; sourceAttribute = schemeID; }); 
+            name = accessScheme; 
+        }
+    ); 
+}

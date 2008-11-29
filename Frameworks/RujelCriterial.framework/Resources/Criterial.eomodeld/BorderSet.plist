@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "ZERO_VALUE"; 
+            name = zeroValue; 
+            prototypeName = word; 
+        }, 
+        {columnName = "BS_ID"; name = bsID; prototypeName = short; }, 
+        {columnName = EXCLUDE; name = exclude; prototypeName = boolean; }, 
+        {allowsNull = N; columnName = TITLE; name = title; prototypeName = word; }, 
+        {allowsNull = Y; columnName = UPTO; name = upto; prototypeName = date; }, 
+        {columnName = "USE_CLASS"; name = useClass; prototypeName = string; }, 
+        {
+            columnName = "FORMAT_STRING"; 
+            name = formatString; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (title, upto, exclude, useClass, zeroValue, formatString); 
+    className = "net.rujel.criterial.BorderSet"; 
+    classProperties = (title, upto, borders, exclude, useClass, zeroValue, formatString); 
+    externalName = "BORDER_SET"; 
+    fetchSpecificationDictionary = {}; 
+    name = BorderSet; 
+    primaryKeyAttributes = (bsID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Border; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bSet; sourceAttribute = bsID; }); 
+            name = borders; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

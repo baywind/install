@@ -1,0 +1,39 @@
+Wrapper : PageWrapper {
+  title = application.extStrings.Components.ErrorPages.Error; 
+}
+
+Title : WOString {
+  value = application.extStrings.Components.ErrorPages.Error;
+}
+
+Message : WOString {
+  value = application.extStrings.Components.ErrorPages.exceptionMessage;
+  escapeHTML = false;
+}
+
+Form : WOForm {
+  directActionName = "report";
+}
+
+Submit : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = application.strings.uiElements.Submit;
+}
+
+
+Recomendations : WOString {
+  value = application.extStrings.Components.ErrorPages.recomendations;
+  escapeHTML = false;
+}
+
+
+ShowDetails : WOString {
+  value = application.extStrings.Components.ErrorPages.showDetails;
+  escapeHTML = false;
+}
+
+Details : WOString {
+  value = details;
+  escapeHTML = true;
+}

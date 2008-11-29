@@ -1,0 +1,48 @@
+<div style="display:block;position:absolute;top:30%;left:30%;padding:10pt;" class="planBackfield" id="ajaxPopup">
+
+<webobject name = "Form">
+<table border = "1">
+	<tr>
+		<td colspan = "2"></td>
+	</tr>
+	<tr><td>
+		<table><thead>
+		<tr>
+			<td width="24"><webobject name = "CurrUp"/><webobject name = "CurrDown"/></td>
+			<th><webobject name = "AreasTitle"/></th>
+		</tr>
+
+	</thead><tbody id="areaList"><webobject name = "AreasRepetition">
+	<webobject name = "IfNotCurrent"><tr class="ungerade">
+		<td><webobject name = "MoveUp"/> <webobject name = "MoveDown"/><webobject name = "AreaNumField"/></td>
+		<td><webobject name = "AreaName"/></td>
+	</tr></webobject>
+	<webobject name = "IsCurrent"><tr class = "selection" id="currArea">
+		<td><webobject name = "MoveUp"/><webobject name = "MoveDown"/><webobject name = "AreaNumField"/></td>
+		<td><webobject name = "AreaNameField"/>
+	</tr></webobject>
+	</webobject>
+	<webobject name = "IsNew"><tr class="selection">
+		<td><webobject name = "MoveUp"/><webobject name = "MoveDown"/><webobject name = "NewNumField"/></td>
+		<td><webobject name = "AreaNameField"/>
+	</tr></webobject>
+	</tbody></table></td>
+
+	<td><table><thead>
+		<tr>
+			<th><webobject name = "SubjectsTitle"/></th><td width = "24"></td>
+		</tr>
+	</thead><tbody id="subjectList"><webobject name = "SubjectsRepetition">
+	<tr class = "gerade">
+		<td><webobject name = "SubjectName"/></td>
+		<td><webobject name = "MoveUp"/><webobject name = "MoveDown"/><webobject name = "SubjectNumField"/></td>
+	</tr>
+	</webobject></table></td>
+</tr>
+	<tr>
+		<td colspan = "2">
+			<webobject name="Save"/>  <webobject name="ResetButton1"/>
+		</td>
+	</tr>
+</table></webobject>
+</div>

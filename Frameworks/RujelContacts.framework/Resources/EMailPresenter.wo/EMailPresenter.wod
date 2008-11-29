@@ -1,0 +1,122 @@
+AddButton: WOSubmitButton {
+	action = add;
+	value = application.strings.uiElements.Add;
+}
+
+AddressField: WOTextField {
+	onchange = "checkChanges(this);";
+	onfocus = "if(!tryLoad(false)) blur();";
+	style = "width:96%;";
+	value = item.utiliser.address;
+}
+
+AddressString: WOString {
+	value = item.utiliser.address;
+	valueWhenEmpty = "-=-";
+}
+
+AddressTitle: WOString {
+	value = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.address;
+	valueWhenEmpty = "Address";
+}
+
+CancelButton: WOSubmitButton {
+	action = undo;
+	value = application.strings.uiElements.Cancel;
+}
+
+Conditional1: WOConditional {
+	condition = selected;
+	negate = true;
+}
+
+Conditional2: WOConditional {
+	condition = ^selection;
+}
+
+Conditional3: WOConditional {
+	condition = access.delete;
+}
+
+Conditional4: WOConditional {
+	condition = access.create;
+}
+
+Delete: WOSubmitButton {
+	action = delete;
+	value = application.strings.uiElements.Delete;
+}
+
+FlagsPresenter1: FlagsPresenter {
+	flagNames = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.flags;
+	flags = item.utiliser.flags;
+	inRow = true;
+}
+
+FlagsPresenter2: FlagsPresenter {
+	flagNames = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.flags;
+	flags = item.utiliser.flags;
+	disabled = true;
+	inRow = true;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+IfSelected: WOConditional {
+	condition = selected;
+}
+
+KindField: WOTextField {
+	onchange = "checkChanges(this);";
+	onfocus = "if(!tryLoad(false)) blur();";
+	style = "width:96%;";
+	value = item.kind;
+}
+
+KindString: WOString {
+	value = item.kind;
+	valueWhenEmpty = "-=-";
+}
+
+KindTitle: WOString {
+	value = application.extStrings.RujelContacts_Contacts.properties.kind;
+	valueWhenEmpty = "Kind";
+}
+
+NameField: WOTextField {
+	onchange = "checkChanges(this);";
+	onfocus = "if(!tryLoad(false)) blur();";
+	style = "width:96%;";
+	value = item.utiliser.name;
+}
+
+NameString: WOString {
+	value = item.utiliser.name;
+	valueWhenEmpty = "-=-";
+}
+
+NameTitle: WOString {
+	value = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.name;
+	valueWhenEmpty = "Name";
+}
+
+Repetition1: WORepetition {
+	item = item;
+	list = ^list;
+}
+
+RowContainer: WOGenericContainer {
+	class = styleClass;
+	elementName = "tr";
+	invokeAction = select;
+	onclick = session.tryLoad;
+	onmouseout = "unDim(this);";
+	onmouseover = "dim(this);";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}

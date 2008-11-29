@@ -1,0 +1,87 @@
+SubstituteTitle : WOString {
+  value = application.extStrings.RujelCurriculum_Curriculum.Substitute;
+}
+
+LessonDate : WOString {
+  value = lesson.date;
+  dateformat = application.prefs.ui.dateFormat; 
+}
+
+LessonTheme : WOString {
+  value = lesson.theme;
+}
+
+SubstitutorTitle : WOString {
+  value = application.strings.properties.Teacher.this;
+}
+
+SubstitutorSelect : PersListing {
+	entity = "Teacher";
+	useAjaxPost = true;
+	showPopup = true;
+	forcedList = forcedList;
+	selection = teacher;
+}
+
+JoinTitle : WOString {
+	value = application.extStrings.RujelCurriculum_Curriculum.Join;
+}
+
+CommentTitle : WOString {
+	value = application.extStrings.RujelCurriculum_Curriculum.Reason;
+}
+
+Comment : WOText {
+	value = comment;
+	disabled = cantEdit;
+	style = "width:98%;";
+	rows = "2";
+}
+
+CanSelect : WOConditional {
+  condition = cantSelect;
+  negate = true;
+}
+
+CantSelect : WOConditional {
+  condition = cantSelect;
+}
+
+Teacher : WOString {
+  value = teacherName;
+}
+
+Form : WOForm {
+}
+
+CanChange: WOConditional {
+	condition = cantEdit;
+	negate = true;
+}
+
+CanDelete: WOConditional {
+	condition = canDelete;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.tryLoad;
+	elementName = "input";
+	type = "button";
+}
+
+ResetButton1: WOResetButton {
+	value = application.strings.uiElements.Cancel;
+	onclick = "closePopup();";
+}
+
+JoinCheckBox : WOCheckBox {
+	checked = join;
+	disabled = cantEdit;
+}

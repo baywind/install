@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beginEndPeriod</key>
+	<string>Конец периода не может быть раньше начала</string>
+	<key>invalidDateInMonth</key>
+	<string>Неверная дата для выбранного месяца</string>
+	<key>invalidPeriodNum</key>
+	<string>Номер периода данного типа не может быть больше %d или меньше единицы</string>
+	<key>itogAddOn</key>
+	<dict>
+		<key>activeComponent</key>
+		<string>ItogsPresenter</string>
+		<key>component</key>
+		<string>GenericAddOn</string>
+		<key>defaultOn</key>
+		<string>false</string>
+		<key>framework</key>
+		<string>RujelEduResults</string>
+		<key>id</key>
+		<string>itogs</string>
+		<key>imageOff</key>
+		<string>tick.png</string>
+		<key>imageOn</key>
+		<string>tickDim.png</string>
+		<key>title</key>
+		<string>Итоговые</string>
+	</dict>
+	<key>itogTab</key>
+	<dict>
+		<key>hover</key>
+		<string>Итоговые за периоды</string>
+		<key>listPresenter</key>
+		<string>PeriodsList</string>
+		<key>mode</key>
+		<string>itogs</string>
+		<key>presenter</key>
+		<string>EduResultPresenter</string>
+		<key>single</key>
+		<string>false</string>
+		<key>sort</key>
+		<string>60</string>
+		<key>title</key>
+		<string>итог</string>
+	</dict>
+	<key>properties</key>
+	<dict>
+		<key>EduPeriod</key>
+		<dict>
+			<key>begin</key>
+			<string>Начало</string>
+			<key>eduYear</key>
+			<string>Учебный год</string>
+			<key>end</key>
+			<string>Конец</string>
+			<key>num</key>
+			<string>№</string>
+			<key>this</key>
+			<string>Учебный период</string>
+		</dict>
+		<key>ItogMark</key>
+		<dict>
+			<key>comment</key>
+			<string>комментарий</string>
+			<key>eduCycle</key>
+			<string>цикл</string>
+			<key>eduPeriod</key>
+			<string>период</string>
+			<key>flags</key>
+			<dict>
+				<key>calculated</key>
+				<string>вычислена</string>
+				<key>changed</key>
+				<string>изменялась</string>
+				<key>constituents</key>
+				<string>изменения в составляющих</string>
+				<key>incomplete</key>
+				<string>остались задолженности</string>
+				<key>scheduled</key>
+				<string>выставлена автоматически</string>
+				<key>this</key>
+				<string>Свойства</string>
+			</dict>
+			<key>mark</key>
+			<string>оценка</string>
+			<key>student</key>
+			<string>ученик</string>
+			<key>this</key>
+			<string>Итоговая оценка</string>
+			<key>value</key>
+			<string>величина(%)</string>
+		</dict>
+		<key>PeriodType</key>
+		<dict>
+			<key>archiveSince</key>
+			<string>не используется с</string>
+			<key>color</key>
+			<string>цвет</string>
+			<key>coursePeriodType</key>
+			<string>Учебные периоды для курса</string>
+			<key>inYearCount</key>
+			<string>В году</string>
+			<key>name</key>
+			<string>Название</string>
+			<key>templates</key>
+			<string>Заголовки</string>
+			<key>this</key>
+			<string>Тип периода</string>
+		</dict>
+	</dict>
+	<key>studentReporter</key>
+	<dict>
+		<key>component</key>
+		<string>TabelReporter</string>
+		<key>hideDates</key>
+		<string>true</string>
+		<key>hover</key>
+		<string>Табель итоговых оценок</string>
+		<key>sort</key>
+		<string>5</string>
+		<key>title</key>
+		<string>Итоговые</string>
+	</dict>
+</dict>
+</plist>

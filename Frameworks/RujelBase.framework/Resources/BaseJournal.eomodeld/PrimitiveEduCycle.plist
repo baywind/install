@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {columnName = "C_ID"; name = cycleID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = GRADE; 
+            name = grade; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = SUBGROUPS; 
+            name = subgroups; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {allowsNull = N; columnName = SUBJECT; name = subject; prototypeName = word; }
+    ); 
+    attributesUsedForLocking = (subject, grade, subgroups); 
+    className = "net.rujel.base.PrimitiveEduCycle"; 
+    classProperties = (subject, grade, subgroups, courses); 
+    externalName = "PRIMITIVE_EDU_CYCLE"; 
+    fetchSpecificationDictionary = {}; 
+    name = PrimitiveEduCycle; 
+    primaryKeyAttributes = (cycleID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = BaseCourse; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cycleID; sourceAttribute = cycleID; }); 
+            name = courses; 
+        }
+    ); 
+}

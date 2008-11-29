@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ImageMap" wocomponentcontent="false">
+
+		<binding name="mapFile" defaults="Resources"/>
+
+		<validation message="&apos;mapFile&apos; is a required binding">
+			<unbound name="mapFile"/>
+		</validation>
+	</wo>
+</wodefinitions>

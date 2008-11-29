@@ -1,0 +1,176 @@
+{
+    attributes = (
+        {
+            columnName = ""; 
+            externalType = BIT; 
+            internalInfo = {"_nameInObjectStore" = BOOLEAN; }; 
+            name = boolean; 
+            valueClassName = NSNumber; 
+            valueType = c; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = DECIMAL; 
+            internalInfo = {"_nameInObjectStore" = DECIMAL; }; 
+            name = decimal; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            adaptorValueConversionMethodName = toBytes; 
+            columnName = ""; 
+            externalType = TINYINT; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsBytes; 
+            internalInfo = {"_nameInObjectStore" = FLAGS; }; 
+            name = flags; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = "net.rujel.reusables.Flags"; 
+            valueFactoryMethodName = "makeFlags:"; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = INTEGER; 
+            name = integer; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = string; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = TEXT; 
+            internalInfo = {"_nameInObjectStore" = ""; }; 
+            name = text; 
+            valueClassName = NSString; 
+            width = 65533; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = TIMESTAMP; 
+            internalInfo = {"_nameInObjectStore" = DATE; }; 
+            name = timestamp; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = anagram; 
+            valueClassName = NSString; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = TINYINT; 
+            name = byte; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = DATE; 
+            name = date; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = DATETIME; 
+            name = datetime; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = MEDIUMINT; 
+            name = "int_3"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = BIGINT; 
+            name = long; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = SMALLINT; 
+            name = short; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = TIME; 
+            name = time; 
+            valueClassName = NSCalendarDate; 
+            valueType = t; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            externalType = VARCHAR; 
+            name = word; 
+            valueClassName = NSString; 
+            width = 28; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        word, 
+        anagram, 
+        date, 
+        time, 
+        datetime, 
+        byte, 
+        short, 
+        "int_3", 
+        long, 
+        boolean, 
+        decimal, 
+        flags, 
+        integer, 
+        string, 
+        text, 
+        timestamp
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (
+        word, 
+        anagram, 
+        date, 
+        time, 
+        datetime, 
+        byte, 
+        short, 
+        "int_3", 
+        long, 
+        boolean, 
+        decimal, 
+        flags, 
+        integer, 
+        string, 
+        text, 
+        timestamp
+    ); 
+    fetchSpecificationDictionary = {}; 
+    name = EOJDBCPrototypes; 
+    primaryKeyAttributes = ("int_3"); 
+}

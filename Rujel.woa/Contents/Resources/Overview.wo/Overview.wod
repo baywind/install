@@ -1,0 +1,327 @@
+AccessStudents: WOConditional {
+	condition = access.students;
+}
+
+AccesssSubjects: WOConditional {
+	condition = access.subjects;
+}
+
+CheckBox1: WOCheckBox {
+	checked = studentSelected;
+	id = "cb";
+	onclick = "changeMass(null);";
+}
+
+ClassListing1: ClassListing {
+	selection = currClass;
+	width = "100%";
+	selectAction = selectClass;
+	editingContext = ec;
+	onClick = session.tryLoad;
+}
+
+ClassTitle: WOString {
+	value = application.strings.properties.EduGroup.this;
+}
+
+Conditional1: WOConditional {
+	condition = reporter.hideDates;
+	negate = true;
+}
+
+Conditional2: WOConditional {
+	condition = false;
+}
+
+CourseComment: WOString {
+	value = courseItem.course.comment;
+}
+
+Form1: WOForm {
+}
+
+Form2: WOForm {
+	target = "_blank";
+	multipleSubmit = true;
+}
+
+HasClass: WOConditional {
+	condition = currClass;
+}
+
+IfTabs: WOConditional {
+	condition = false;
+}
+
+LessonTabs1: Tabs {
+	currTab = currTab;
+	tablist = courseItem.tablist;
+	onClick = session.tryLoad;
+	vertical = true;
+	formatter = "%1$d...%2$d";
+	key1 = "lessonsInTab.@min.number";
+	key2 = "lessonsInTab.@max.number";
+	hformatter = "%3$te.%3$tm - %4$te.%4$tm";	key3 = "lessonsInTab.@min.date";	key4 = "lessonsInTab.@max.date";}
+
+Modes: Tabs {
+	currTab = currentMode;
+	tablist = application.extStrings.Overview.tabs;
+	onClick = session.tryLoad;
+	vertical = false;
+	numeric = true;
+}
+HasSelector: WOConditional {
+	condition = showSelector;
+}
+
+CriterSelector1: WOSwitchComponent {
+	WOComponentName = present.selector;
+	cycle = currSubject.cycle;
+}
+PresentTabs: Tabs {
+	currTab = present;
+	tablist = presentTabs;
+	onClick = session.tryLoad;
+	vertical = false;
+	titleAttribute = "title";
+	hoverAttribute = "hover";
+}
+
+NotesPage1: NotesPage {
+	lessonsList = courseItem.lessonsList;
+	studentsList = courseItem.course.groupList;
+	course = courseItem.course;
+	activeAddOns = activeNotesAddOns;
+	allAddOns = notesAddOns;
+	present = present;
+}
+
+PageWrapper1: PageWrapper {
+	hasChanges = false;
+	title = application.extStrings.Overview.title;
+	cssURL = present.cssURL;
+	cssResource = present.cssResource;
+	scriptURL = present.scriptURL;
+	scriptResource = present.scriptResource;
+	resourcesFramework = present.framework;
+}
+
+PeriodTitle: WOString {
+	value = application.strings.dataTypes.period;
+	valueWhenEmpty = "period";
+}
+
+PeriodTitle2: WOString {
+	value = application.strings.dataTypes.since;
+	valueWhenEmpty = "since";
+}
+
+PeriodTitle3: WOString {
+	value = application.strings.dataTypes.to;
+	valueWhenEmpty = "to";
+}
+
+PeriodsPopUp: WOPopUpButton {
+	displayString = perItem.title;
+	item = perItem;
+	list = periods;
+	noSelectionString = application.strings.dataTypes.period;
+	selection = period;
+	name = "periods";
+}
+
+PersonSelector1: PersonSelector {
+	list = currClass.list;
+	nameFormat = "220+";
+	selectedItem = currStudent;
+	selection = selectedStudents;
+	selectAction = selectStudent;
+}
+
+Repetition1: WORepetition {
+	item = courseItem;
+	list = courses;
+}
+
+Repetition2: WORepetition {
+	item = reporterItem;
+	list = session.modules.overviewAction;
+}
+
+ReporterContainer: WOGenericContainer {
+	elementName = "span";
+	invokeAction = selectReporter;
+	onclick = session.tryLoad;
+	onmouseout = "style.textDecoration='none';";
+	onmouseover = "style.textDecoration='underline';";
+	style = reporterItemStyle;
+	title = reporterItem.hover;
+}
+
+ReportersList: WORepetition {
+	item = reporterItem;
+	list = reporterList;
+}
+
+ReportetTitle: WOString {
+	value = reporterItem.title;
+}
+
+ShowMarks: WOSubmitButton {
+	action = printSelectedStudents;
+	value = application.extStrings.Overview.showMarks;
+}
+
+ShowMarks2: WOSubmitButton {
+	action = overviewAction;
+	value = reporterItem.name;
+}
+
+ShowReporterSelector: WOConditional {
+	condition = showReporterSelector;
+}
+
+Since: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = since;
+}
+
+SinceField: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = since;
+	size = 10;
+	maxlength = 10;
+	name = "begin";
+}
+
+StudentContainer: WOGenericContainer {
+	class = studentStyle;
+	elementName = "tr";
+}
+
+StudentFirstName: WOString {
+	value = currStudent.person.firstName;
+}
+
+StudentLastName: WOString {
+	value = currStudent.person.lastName;
+}
+
+StudentMarks : WOSwitchComponent {
+	since = since;
+	student = currStudent;
+	to = to;
+	courses = existingCourses;
+	WOComponentName = reporter.component;
+	reporter = reporter;
+	period = period;
+}
+
+StudentName: WOString {
+	value = studentItem.person.lastName;
+}
+
+StudentName2: WOString {
+	value = studentItem.person.firstName;
+}
+
+StudentNameContainer: WOGenericContainer {
+	elementName = "td";
+	style = "white-space:nowrap;";
+	invokeAction = selectStudent;
+	onclick = session.tryLoad;
+	onmouseout = "unDim(this.parentElement);";
+	onmouseover = "dim(this. parentElement);";
+}
+
+StudentSecondName: WOString {
+	value = currStudent.person.secondName;
+}
+
+StudentSelected: WOConditional {
+	condition = currStudent;
+}
+
+StudentsMode: WOConditional {
+	condition = currentMode;
+}
+
+SubjectContainer: WOGenericContainer {
+	class = subjItem.style;
+	elementName = "tr";
+	invokeAction = selectSubject;
+	onclick = session.tryLoad;
+	onmouseout = "unDim(this);";
+	onmouseover = "dim(this);";
+}
+
+SubjectMode: WOConditional {
+	condition = currentMode;
+	negate = true;
+}
+
+SubjectName: WOString {
+	value = subjItem.subject;
+}
+
+Subjects: WORepetition {
+	item = subjItem;
+	list = subjects;
+}
+
+Subjects2: WORepetition {
+	item = studentItem;
+	list = currClass.list;
+}
+
+SubmitButton1: WOSubmitButton {
+	value = application.strings.uiElements.Change;
+	action = updateLessonLists;
+}
+
+TeacherFirstName: WOString {
+	value = courseItem.course.teacher.firstName;
+}
+
+TeacherLastName: WOString {
+	value = courseItem.course.teacher.lastName;
+}
+
+TeacherSecondName: WOString {
+	value = courseItem.course.teacher.secondName;
+}
+
+Ticker1: Ticker {
+	align = "left";
+	form = "document.forms[1]";
+	inline = true;
+}
+
+To: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = to;
+}
+
+ToField: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = to;
+	size = 10;
+	maxlength = 10;
+	name = "end";
+}
+
+ShowThemes : WOHyperlink {
+	action = showThemes;
+	target = "_blank";
+}
+
+LessonsLink : WOString {
+  value = application.strings.properties.EduCourse.lessons;
+  valueWhenEmpty = "lessons";
+}
+
+SubsReport : WOHyperlink {
+  action = subsReport;
+  disabled = session.readAccess._read.SubsReport;
+  string = subTitle;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+	<HEAD>
+		<META NAME="generator" CONTENT="WebObjects 5.2">
+		<TITLE>File Upload</TITLE>
+<script type="text/javascript" language="JavaScript">
+function finish() {
+	opener.location='<WEBOBJECT NAME=ActionURL1></WEBOBJECT>';
+	window.close();
+}
+function nextBatch() {
+	location = '<WEBOBJECT NAME=ActionURL2></WEBOBJECT>';
+}
+</script>
+	</HEAD>
+	<WEBOBJECT NAME=Body1><BIG><WEBOBJECT NAME=String1></WEBOBJECT></BIG>
+
+<WEBOBJECT NAME=Conditional1><WEBOBJECT NAME=Form1><WEBOBJECT NAME=FileUpload1></WEBOBJECT><WEBOBJECT NAME=SubmitButton1></WEBOBJECT></WEBOBJECT></WEBOBJECT><WEBOBJECT NAME=Conditional3>
+		<!-- TABLE ALIGN=CENTER BORDER=1 WIDTH="100%">
+			<TR>
+				<TD onClick="finish();">
+				Закрыть</TD>
+			</TR>
+		</TABLE -->
+	<WEBOBJECT NAME=Form2><WEBOBJECT NAME=Conditional5>Пожалуйста, укажите, на какой файл делать ссылку.
+			<BR><WEBOBJECT NAME=RadioButtonList1></WEBOBJECT>
+			
+	</WEBOBJECT><WEBOBJECT NAME=Conditional2><INPUT VALUE="Готово" TYPE="SUBMIT"></WEBOBJECT></WEBOBJECT></WEBOBJECT></WEBOBJECT>
+</HTML>

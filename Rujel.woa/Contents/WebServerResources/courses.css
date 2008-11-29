@@ -1,0 +1,19 @@
+.course {
+	background-color:#ccffcc;
+}
+
+.eduPlan {
+	background-color:#cccccc;
+}
+
+.courseDim {
+	background-color:#99cc99;
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.eduPlanDim {
+	background-color:#999999;
+	text-decoration:underline;
+	cursor:pointer;
+}

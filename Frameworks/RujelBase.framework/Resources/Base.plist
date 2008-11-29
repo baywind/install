@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>lessons</key>
+	<string>Уроки</string>
+	<key>lessonsTab</key>
+	<dict>
+		<key>title</key>
+		<string>уроки</string>
+		<key>hover</key>
+		<string>проведенные уроки</string>
+		<key>listPresenter</key>
+		<string>LessonList</string>
+		<key>id</key>
+		<string>lessonsTab</string>
+		<key>sort</key>
+		<string>05</string>
+		<key>entityName</key>
+		<string>BaseLesson</string>
+		<key>courseAttribute</key>
+		<string>course</string>
+		<key>presenter</key>
+		<string>NotePresenter</string>
+	</dict>
+	<key>reportSettings</key>
+	<dict>
+		<key>title</key>
+		<string>lessons</string>
+		<key>name</key>
+		<string>Уроки</string>
+		<key>on</key>
+		<true/>
+		<key>options</key>
+		<array>
+			<dict>
+				<key>flag</key>
+				<string>all</string>
+				<key>title</key>
+				<string>без оценок</string>
+				<key>on</key>
+				<false/>
+			</dict>
+		</array>
+		<key>sort</key>
+		<string>12</string>
+	</dict>
+	<key>lessonReport</key>
+	<dict>
+		<key>title</key>
+		<string>lessons</string>
+		<key>component</key>
+		<string>LessonReport</string>
+		<key>sort</key>
+		<string>12</string>
+	</dict>
+	<key>notMoreXwords</key>
+	<string>Можно использовать не более %d слов</string>
+</dict>
+</plist>

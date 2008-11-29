@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="DynamicTableRow" wocomponentcontent="true">
+
+		<binding name="list"/>
+		<binding name="item"/>
+		<binding name="selectedColor"/>
+		<binding name="geradeColor"/>
+		<binding name="ungeradeColor"/>
+		<binding name="selection"/>
+		<binding defaults="Boolean" name="useStyles"/>
+		<binding name="styleSuffix"/>
+		<binding name="onClick"/>
+		<binding defaults="Boolean" name="inactivateSelection"/>
+		<binding name="selectAction"/>
+
+		<validation message="'item' must be bound to a settable value">
+			<unsettable name="item"/>
+		</validation>
+
+		<validation message="'list' is a required binding">
+			<unbound name="list"/>
+		</validation>
+
+		<validation message="'item' is a required binding">
+			<unbound name="item"/>
+		</validation>
+	<binding name="switchParam"/>
+    </wo>
+</wodefinitions>

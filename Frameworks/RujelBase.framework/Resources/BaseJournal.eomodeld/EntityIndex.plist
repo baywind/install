@@ -1,0 +1,31 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "E_ID"; 
+            name = eID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "ENT_NAME"; 
+            name = entName; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = "SQL_TABLE"; 
+            name = sqlTable; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (entName, sqlTable); 
+    className = "net.rujel.base.EntityIndex"; 
+    classProperties = (entName, sqlTable); 
+    externalName = "ENT_INDEX"; 
+    fetchSpecificationDictionary = {}; 
+    name = EntityIndex; 
+    primaryKeyAttributes = (eID); 
+}

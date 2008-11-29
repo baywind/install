@@ -1,0 +1,194 @@
+Comment: WOString {
+	value = course.comment;
+	valueWhenEmpty = " - ";
+}
+
+CommentForm: WOForm {
+	name = "commentForm";
+	onsubmit = session.checkRun;
+	style = "display:none;";
+}
+
+Conditional3: WOConditional {
+	condition = access.editSubgroups;
+}
+
+Conditional4: WOConditional {
+	condition = access.edit;
+}
+
+CourseComment: WOTextField {
+	value = course.comment;
+}
+
+EditCommentLink: WOGenericContainer {
+	elementName = "a";
+	href = "#";
+	onclick = "document.commentForm.style.display = (document.commentForm.style.display == 'none')?'':'none';";
+	title = application.strings.properties.EduCourse.comment;
+	omitTags = access._edit;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	onSubmit = "return tryLoad();";
+}
+
+GoLeft: WOImageButton {
+	filename = "lft-OSarw.gif";
+	framework = "JavaWOExtensions";
+	action = moveLeft;
+	title = application.extStrings.LessonNoteEditor.regime.left;
+}
+
+GoRight: WOImageButton {
+	filename = "rt-OSarw.gif";
+	framework = "JavaWOExtensions";
+	action = moveRight;
+	title = application.extStrings.LessonNoteEditor.regime.right;
+}
+
+LessonList1: WOSwitchComponent {
+	WOComponentName = listPresenter;
+	course = course;
+	student = student;
+	lessonsList = lessonsList;
+	currLesson = currPerPersonLink;
+	selector = selector;
+	save = save;
+	delete = delete;
+	addLesson = addLesson;
+	accessAssistant = lessonsAssistant;
+	wide = hideLeft;
+	down = down;
+	splitTab = splitTab;
+	up = up;
+}
+
+LessonTabs1: Tabs {
+	currTab = currTab;
+	tablist = tablist;
+	onClick = session.checkRun;
+	vertical = true;
+}
+
+BaseTabs: Tabs {
+	currTab = currTab;
+	tablist = baseTabs;
+	onClick = session.checkRun;
+	vertical = true;
+}
+
+NotePageContainer: WOGenericContainer {
+	class = "selectionBorder";
+	elementName = "td";
+	style = "border-left-style:none;";
+	width = tdWidth;
+	valign = "top";
+}
+
+NotesPage1: NotesPage {
+	course = course;
+	currLesson = currPerPersonLink;
+	lessonsList = lessonsList;
+	studentsList = course.groupList;
+	selectStudent = selector;
+	selectStudentAction = selectStudent;
+	single = single;
+	present = present;
+	activeAddOns = activeNotesAddOns;
+	allAddOns = notesAddOns;
+}
+
+OverGroupName: WOString {
+	value = course.eduGroup.name;
+}
+
+PageWrapper1: PageWrapper {
+	hasChanges = ec.hasChanges;
+	title = title;
+	onLoad="focus();";
+	styles = "a {font-style:italic;text-decoration:none;color:blue;} a:hover{color:red;}";
+	cssURL = present.cssURL;
+	cssResource = present.cssResource;
+	scriptURL = present.scriptURL;
+	scriptResource = present.scriptResource;
+	resourcesFramework = present.framework;
+}
+
+PathTitle: WOString {
+	value = application.strings.properties.EduCourse.subgroup;
+	valueWhenEmpty = "SubGroup";
+}
+
+ShowLeft: WOConditional {
+	condition = hideLeft;
+	negate = true;
+}
+
+ShowRight: WOConditional {
+	condition = showRight;
+}
+
+ShowSeparator: WOConditional {
+	condition = showSeparator;
+}
+
+ShowTablist: WOConditional {
+	condition = allTabs;
+}
+
+Span: WOGenericContainer {
+	class = "button";
+	elementName = "span";
+	invokeAction = editSubgroup;
+	onclick = session.checkRun;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+}
+
+SubjectName: WOString {
+	value = course.cycle.subject;
+}
+
+SubmitComment: WOImageButton {
+	action = save;
+	filename = "button_ok.gif";
+	framework = "app";
+}
+
+HasSelector: WOConditional {
+	condition = present.selector;
+}
+
+CriterSelector1: WOSwitchComponent {
+	WOComponentName = present.selector;
+	cycle = course.cycle;
+}
+
+PresentTabs: Tabs {
+	currTab = present;
+	tablist = presentTabs;
+	onClick = session.checkRun;
+	vertical = false;
+	titleAttribute = "title";
+	align = "center";
+	hoverAttribute = "hover";
+}
+
+TeacherFN: WOString {
+	value = course.teacher.person.firstName;
+}
+
+TeacherLN: WOString {
+	value = course.teacher.person.lastName;
+}
+
+TeacherSN: WOString {
+	value = course.teacher.person.secondName;
+}
+
+TabsRepetition : WORepetition {
+	list = allTabs;
+	item = tablist;
+}

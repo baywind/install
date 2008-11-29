@@ -1,0 +1,28 @@
+PrognTitle : WOString {
+  value = application.extStrings.RujelAutoItog_AutoItog.prognosis;
+}
+
+Mark : WOString {
+  value = ^value.mark;
+  valueWhenEmpty = "...";
+}
+
+IfTimeout : WOConditional {
+  condition = ^value.timeout;
+}
+
+TimeoutTitle : WOString {
+  value = timeoutUpTo;
+}
+
+Reason : WOString {
+  value = ^value.reason;
+}
+
+Timeout : WOString {
+  value = ^value.timeout;
+}
+
+Period : WOString {
+  value = ^value.period;
+}

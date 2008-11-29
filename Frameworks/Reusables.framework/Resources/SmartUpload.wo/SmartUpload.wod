@@ -1,0 +1,58 @@
+ActionURL1: WOActionURL {
+	action = saveResult;
+}
+
+ActionURL2: WOActionURL {
+	action = nextPortion;
+}
+Body1: WOBody {
+	bgcolor = "#FFFFFF";
+	onLoad = onLoad;
+}
+
+Conditional1: WOConditional {
+	condition = completed;
+	negate = true;
+}
+
+Conditional2: WOConditional {
+	condition = completed;
+}
+
+Conditional3: WOConditional {
+	condition = done;
+	negate = true;
+}
+
+Conditional5: WOConditional {
+	condition = zipSelection;
+}
+
+FileUpload1: WOFileUpload {
+	filePath = fileName;
+	mimeType = mimeType;
+	inputStream = inputStream;
+}
+
+Form1: WOForm {
+	enctype = "multipart/form-data";
+}
+
+Form2: WOForm {
+	action = finish;
+}
+
+RadioButtonList1: WORadioButtonList {
+	list = zipContent;
+	selection = zipSelection;
+	suffix = "<br/>";
+}
+
+String1: WOString {
+	value = message;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = performUpload;
+	value = "Загрузить";
+}

@@ -1,0 +1,262 @@
+PageWrapper1: PageWrapper {
+	hasChanges = ec.hasChanges;
+	title = title;
+	cssResource = "courses.css";
+	resourcesFramework = "app";
+	onLoad = "focus();";
+}
+
+Title: WOString {
+	value = title;
+}
+
+Tabs1: Tabs {
+	currTab = tabSelected;
+	tablist = tablist;
+	onClick = session.tryLoad;
+}
+
+EduGroupLabel: WOString {
+	value = application.strings.properties.EduGroup.this;
+	valueWhenEmpty = "Class";
+}
+
+EduPlanLabel: WOString {
+	value = application.strings.properties.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+}
+
+CountTitle: WOString {
+	value = application.strings.properties.EduCourse.lessons;
+}
+
+TeacherLabel: WOString {
+	value = application.strings.properties.EduCourse.teacher;
+	valueWhenEmpty = "Teacher";
+}
+
+ClassSelector: WOConditional {
+	condition = tabindex;
+	
+	negate = true;
+}
+
+ClassListing1: ClassListing {
+	selection = currClass;
+	width = "100%";
+	selectAction = selectClass;
+	editingContext = ec;
+	onClick = onClick;
+}
+
+TeacherSelector: WOConditional {
+	condition = tabindex;
+	negate = false;
+}
+
+TeacherSelector2: PersListing {
+	entity = "Teacher";
+	firstNameDisplay = 1;
+	secondNameDisplay = 1;
+	selectAction = selectTeacher;
+	selection = currTeacher;
+	onClick = onClick;
+	searchRequest = teacherName;
+}
+
+Repetition1: WORepetition {
+	list = courses;
+	item = item;
+	index = cursIndex;
+}
+
+UnSelected: WOConditional {
+	condition = isSelected;
+	negate = true;
+}
+
+IfEduPlan: WOConditional {
+	condition = isEduPlan;
+}
+
+
+GenericContainer: WOGenericContainer {
+	class = rowStyle;
+	elementName = "tr";
+	invokeAction = select;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+	onclick = onClick;
+}
+
+CycleGrade: WOString {
+	value = item.grade;
+}
+
+CycleSubject: WOString {
+	value = item.subject;
+}
+
+IfExistingCourse: WOConditional {
+	condition = isEduPlan;
+	negate = true;
+}
+
+ClassName: WOString {
+	value = item.eduGroup.name;
+}
+
+CourseSubject: WOString {
+	value = item.cycle.subject;
+}
+
+HasComment: WOConditional {
+	condition = item.comment;
+}
+
+Comment: WOString {
+	value = item.comment;
+}
+
+TeacherLN: WOString {
+	value = item.teacher.person.lastName;
+}
+
+TeacherInitials: WOString {
+	value = item.teacher.person.initials;
+}
+
+EditLink: WOHyperlink {
+	action = selectCourse;
+	style = "z-index:4;";
+}
+
+files_edit: WOImage {
+	align = "right";
+	filename = "files_edit.png";
+}
+
+Selected: WOConditional {
+	condition = isSelected;
+}
+
+NewCourseFom: WOForm {
+}
+
+TeacherName: WOTextField {
+	value = teacherName;
+	id = "focus";
+}
+
+SubmitName: WOImageButton {
+	action = submitTeacher;
+	filename = "button_ok.gif";
+	framework = "app";
+}
+
+Conditional1: WOConditional {
+	condition = canCreate;
+}
+
+AddLesson: WOGenericContainer {
+	elementName = "tr";
+	invokeAction = addCourse;
+	onmouseover="dim(this);";
+	onmouseout="unDim(this);";
+	onclick = session.checkRun;
+	class="orange";
+}
+
+Add: WOString {
+	value = application.strings.uiElements.Add;
+	valueWhenEmpty = "Add";
+}
+
+LessonEntity2: WOString {
+	value = application.strings.properties.EduCourse.this;
+}
+
+CourseSelected: WOConditional {
+	condition = aCourse;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	onSubmit = "return tryLoad();";
+}
+
+EduGroupPopUp: WOPopUpButton {
+	disabled = byClass;
+	displayString = item.name;
+	item = item;
+	list = classes;
+	noSelectionString = application.strings.properties.EduGroup.this;
+	selection = aCourse.eduGroup;
+	onChange = "classChanged(this);";
+}
+
+CyclesSelector: WOConditional {
+	condition = gradeCycles;
+}
+
+GradeCyclesPopup: WOPopUpButton {
+	displayString = item.subject;
+	item = item;
+	list = gradeCycles;
+	noSelectionString = application.strings.uiElements.Other;
+	selection = aCourse.cycle;
+	name = "cyclePopup";
+	onChange = "cycleChanged(this);";
+}
+
+TextField1: WOTextField {
+	name = "subjTitle";
+	value = subject;
+	disabled = access._createNewEduPlanCourses;
+	onChange = "checkChanges(this);";
+}
+
+TeacherPopUp: WOPopUpButton {
+	displayString = itemToString;
+	item = item;
+	list = teachers;
+	selection = aCourse.teacher;
+	onChange = "checkChanges(this);";
+}
+
+Save: WOSubmitButton {
+	action = saveCourse;
+	value = application.strings.uiElements.Save;
+}
+
+CancelButton: WOSubmitButton {
+	action = undoCreation;
+	value = application.strings.uiElements.Cancel;
+}
+
+CanEditSubgroup: WOConditional {
+	condition = access.editSubgroups;
+}
+
+Delete2: WOSubmitButton {
+	action = editSubgroup;
+	value = application.strings.properties.EduCourse.subgroup;
+	target = "_balnc";
+}
+
+CanDelete: WOConditional {
+	condition = aCourse.access.delete;
+}
+
+Delete: WOSubmitButton {
+	action = delete;
+	value = application.strings.uiElements.Delete;
+}
+
+CanEditCourse : WOConditional {
+  condition = session.readAccess.edit.item;
+}
+
+LessonsCount : WOString {
+  value = item.lessons.count;
+}

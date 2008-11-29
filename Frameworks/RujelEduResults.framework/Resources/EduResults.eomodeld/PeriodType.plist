@@ -1,0 +1,44 @@
+{
+    attributes = (
+        {columnName = "ARCHIVE_SINCE"; name = archiveSince; prototypeName = short; }, 
+        {columnName = COLOR; name = color; prototypeName = word; }, 
+        {
+            allowsNull = N; 
+            columnName = "IN_YEAR_COUNT"; 
+            name = inYearCount; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {columnName = NAME; name = name; prototypeName = word; }, 
+        {columnName = TITLE; name = title; prototypeName = anagram; }, 
+        {columnName = "ID_TYPE"; name = typeID; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (name, inYearCount, archiveSince, color, title); 
+    className = "net.rujel.eduresults.PeriodType"; 
+    classProperties = (inYearCount, name, templates, archiveSince, color, title); 
+    externalName = "PER_TYPE"; 
+    fetchSpecificationDictionary = {}; 
+    name = PeriodType; 
+    primaryKeyAttributes = (typeID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = EduPeriod; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perType; sourceAttribute = typeID; }); 
+            name = periods; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PeriodTemplate; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = perType; sourceAttribute = typeID; }); 
+            name = templates; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

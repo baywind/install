@@ -1,0 +1,65 @@
+AllStudents: WORepetition {
+	item = studentItem;
+	list = students;
+}
+
+Conditional1: WOConditional {
+	condition = reporter.hideDates;
+	negate = true;
+}
+
+Parent: WOString {
+	value = application.extStrings.PrintReport.parent;
+}
+
+PeriodTitle: WOString {
+	value = period.title;
+}
+
+Since: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = since;
+}
+
+StudentFirstName: WOString {
+	value = studentItem.person.firstName;
+}
+
+StudentLastName: WOString {
+	value = studentItem.person.lastName;
+}
+
+StudentMarks : WOSwitchComponent {
+	WOComponentName = reporter.component;
+	since = since;
+	student = studentItem;
+	to = to;
+	courses = courses;
+	reporter = reporter;
+	period = period;
+}
+
+Title: WOString {
+	value = title;
+}
+
+To: WOString {
+	dateformat = application.prefs.ui.dateFormat;
+	value = to;
+}
+
+Tutor: WOString {
+	value = application.extStrings.PrintReport.tutor;
+}
+
+StudentTitle : WOString {
+  value = application.strings.properties.Student.this;
+}
+
+IfGroup : WOConditional {
+  condition = eduGroup;
+}
+
+GroupName : WOString {
+  value = eduGroup.name;
+}

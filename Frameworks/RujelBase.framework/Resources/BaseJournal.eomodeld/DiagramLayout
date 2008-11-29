@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Layouts</key>
+	<dict>
+		<key>Default</key>
+		<dict>
+			<key>EntityOption</key>
+			<string>All</string>
+			<key>RelationshipOption</key>
+			<string>None</string>
+			<key>ViewPositions</key>
+			<dict>
+				<key>BaseCourse</key>
+				<array>
+					<string>358.000000</string>
+					<string>239.000000</string>
+					<string>163.000000</string>
+					<string>186.000000</string>
+				</array>
+				<key>BaseLesson</key>
+				<array>
+					<string>152.000000</string>
+					<string>187.000000</string>
+					<string>126.000000</string>
+					<string>186.000000</string>
+				</array>
+				<key>BaseLessonTab</key>
+				<array>
+					<string>150.000000</string>
+					<string>381.000000</string>
+					<string>185.000000</string>
+					<string>114.000000</string>
+				</array>
+				<key>BaseNote</key>
+				<array>
+					<string>154.000000</string>
+					<string>78.000000</string>
+					<string>131.000000</string>
+					<string>96.000000</string>
+				</array>
+				<key>CourseAudience</key>
+				<array>
+					<string>548.000000</string>
+					<string>398.000000</string>
+					<string>131.000000</string>
+					<string>78.000000</string>
+				</array>
+				<key>PrimitiveEduCycle</key>
+				<array>
+					<string>482.000000</string>
+					<string>112.000000</string>
+					<string>119.000000</string>
+					<string>114.000000</string>
+				</array>
+			</dict>
+			<key>orthoLines</key>
+			<string>Y</string>
+		</dict>
+	</dict>
+	<key>Version</key>
+	<string>1</string>
+</dict>
+</plist>

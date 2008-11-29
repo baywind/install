@@ -1,0 +1,31 @@
+Generic1: WOGenericContainer {
+	elementName = "table";
+	width = ^width;
+	border = ^border;
+	class = ^class;
+	spacing = ^spacing;
+	padding = ^padding;
+}
+
+DynamicTableRow1: DynamicTableRow {
+	list = groups;
+	item = currClass;
+	selection = ^selection;
+	useStyles = true;
+	selectAction = anAction;
+	onClick = ^onClick;
+	switchParam = currClass.grade;
+}
+
+String1: WOString {
+	value = currClass.grade;
+}
+
+String2: WOString {
+	value = currClass.title;
+}
+
+Hyperlink1: WOHyperlink {
+	disabled = noAction;
+	action = anAction;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="generator" content="WebObjects 5.3.1">
+        <title><webobject name="Title"></webobject></title>
+	<style type="text/css">
+	.student {
+		font-size:large;
+		font-weight:bold;
+		padding-left:2em;
+	}
+	.dates {
+		padding-left:3em;
+		font-style:italic;
+		white-space:nowrap;
+	}
+	.max {
+		font-size:small;
+		font-weight:bold;
+		background-color:#cccccc;
+	}
+	.withWeight {
+		font-weight:bold;
+	}
+	.noWeight {
+		color:#333333;
+	}
+	</style>
+    </head>
+    <body>
+	<webobject name="AllStudents">
+	<div style="page-break-after:always;">
+	<h1><webobject name="Title"></webobject></h1>
+    <div class="student"><webobject name = "StudentTitle"/> : 
+    	<webobject name="StudentLastName"></webobject>
+        <webobject name="StudentFirstName"></webobject>
+        <webobject name = "IfGroup">, <webobject name = "GroupName"/></webobject>
+    </div>
+<webobject name="Conditional1"><div class="dates"><webobject name="Since"></webobject>
+        - <webobject name="To"></webobject></div></webobject>
+        
+<webobject name="StudentMarks"></webobject>
+<table border="0" width="100%" style="margin:2ex 0;">
+<tr><td align="left" width="50%">
+	<webobject name="Tutor"></webobject>
+</td><td align="left" width="50%">
+	<webobject name="Parent"></webobject>
+</td></tr></table>
+</div>
+</webobject>
+</body>
+</html>

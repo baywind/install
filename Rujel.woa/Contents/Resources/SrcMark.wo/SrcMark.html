@@ -1,0 +1,104 @@
+<webobject name="PageWrapper1">
+<script language="JavaScript"><!--
+	function cycleChanged(selector) {
+		var fld = document.getElementsByName("subjTitle")[0];
+		if(selector.selectedIndex > 0)  {
+			fld.value = selector.options[selector.selectedIndex].text;
+			fld.style.display = "none";						
+		} else {
+			fld.value="";
+			fld.style.display = "";
+		}
+		checkChanges(selector);
+	}
+	
+	function classChanged(selector) {
+		var fld = document.getElementsByName("subjTitle")[0];
+		var sel = document.getElementsByName("cyclePopup")[0];
+		if(otherGrade(selector)) {
+			fld.style.display = "";
+			sel.style.display = "none";
+			sel.selectedIndex = 0;
+		} else {
+			sel.style.display = "";
+			evalSubjField(fld,sel);
+		}
+		checkChanges(selector);
+	}
+	
+	function evalSubjField(fld,sel) {
+			if(sel == null)
+				return;
+			var txt = fld.value;
+			if(txt != null && txt.length > 0) {
+				var opts = sel.options;
+				var curr;
+				sel.selectedIndex = 0;
+				for(var i = 1; i < opts.length; i++) {
+					curr = opts[i];
+					if(curr.text == txt) {
+						curr.selected = true;
+						fld.style.display = "none";						
+					}
+				}
+			} else {
+				cycleChanged(sel);
+			}
+	}
+	
+	function otherGrade(selector) {
+		var opts = selector.options;
+		var curr;
+		var dflt;
+		var sel;
+		for(var i = 1; i < opts.length; i++) {
+			curr = opts[i];
+			if(curr.defaultSelected) {
+				dflt = curr.text.substring(0,2);
+				if(dflt == sel) return false;
+			}
+			if(curr.selected) {
+				sel = curr.text.substring(0,2);
+				if(dflt == sel) return false;
+			}
+			if(dflt != null && sel != null && dflt.length > 0 && sel.length > 0)
+				return true;
+		}
+		return true;
+	}
+--></script> 
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr><td align="center" colspan="3"><h2><webobject name="Title"></webobject></h2></td></tr>
+<tr><td valign="bottom" colspan="2"><webobject name="Tabs1"></webobject></td><td width="60%">
+<table width="100%"><tr><th align="center" width="15%"><webobject name="EduGroupLabel"></webobject></th>
+<th align="center" width="55%"><webobject name="EduPlanLabel"></webobject>
+<span style="color:#aaaaaa;">[<webobject name = "CountTitle"/>]</span>
+</th>
+<th><webobject name="TeacherLabel"></webobject></th></tr></table></td></tr>
+<tr><td class="selection" colspan="3" height="3px"></td></tr><tr><td class="backfield2"><webobject name="ClassSelector"><webobject name="ClassListing1"></webobject></webobject><webobject name="TeacherSelector"><webobject name="TeacherSelector2"></webobject></webobject></td><td class="selection" width="2px"></td><td class="backfield1">
+<table width="100%"><col width="15%" /><col width="55%" /><col />
+<webobject name="Repetition1"><webobject name="UnSelected">
+<webobject name="IfEduPlan"><webobject name="GenericContainer"><td align="center"><webobject name="CycleGrade"></webobject></td>
+<td align="center"><webobject name="CycleSubject"></webobject></td><td>--</td></webobject></webobject>
+<webobject name="IfExistingCourse"><webobject name="GenericContainer"><td align="center"><webobject name="ClassName"></webobject></td>
+<td align="center"><webobject name="CourseSubject"></webobject> 
+<webobject name="HasComment"><i>/<webobject name="Comment"></webobject>/</i></webobject>
+<span style="color:#999999;">[<webobject name = "LessonsCount"/>]</span></td>
+<td><webobject name="TeacherLN"></webobject> <webobject name="TeacherInitials"></webobject>
+<webobject name = "CanEditCourse"><webobject name="EditLink"><webobject name="files_edit"/></webobject></webobject>
+</td></webobject></webobject></webobject>
+<webobject name="Selected"><tr class="selection" style="height:1.5em;"><td align="center"><webobject name="CycleGrade"></webobject></td>
+<td align="center"><webobject name="CycleSubject"></webobject></td>
+<webobject name="NewCourseFom"><td nowrap><webobject name="TeacherName"></webobject> <webobject name="SubmitName"></webobject></td></webobject></tr></webobject></webobject>
+<webobject name="Conditional1"><webobject name="AddLesson"><td align="center" colspan="3"><webobject name="Add"></webobject> <webobject name="LessonEntity2"></webobject></td></webobject></webobject><webobject name="CourseSelected">
+<webobject name="Form1">
+<tr class="orange"><td><b><webobject name="EduGroupPopUp"></webobject></b></td>
+<td><webobject name="CyclesSelector"><webobject name="GradeCyclesPopup"></webobject></webobject> <webobject name="TextField1"></webobject></td>
+<td><b><webobject name="TeacherPopUp"></webobject></b></td></tr>
+<tr class="orange"><td align="center" colspan="3"><webobject name="Save"></webobject> <webobject name="CancelButton"></webobject><webobject name="CanEditSubgroup"> <webobject name="Delete2"></webobject></webobject><webobject name="CanDelete"> <webobject name="Delete"></webobject></webobject>
+</td></tr></webobject></webobject></table>
+	<script language="JavaScript"><!--
+		evalSubjField(document.getElementsByName("subjTitle")[0],document.getElementsByName("cyclePopup")[0]);
+	--></script>
+</td></tr>
+</table></webobject>

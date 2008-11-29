@@ -1,0 +1,26 @@
+{
+    attributes = (
+        {columnName = "IND_ID"; name = indID; prototypeName = short; }, 
+        {columnName = TITLE; name = title; prototypeName = word; }, 
+        {allowsNull = N; columnName = TYPE; name = type; prototypeName = byte; }
+    ); 
+    attributesUsedForLocking = (type, title); 
+    className = "net.rujel.criterial.Indexer"; 
+    classProperties = (type, title, indexRow); 
+    externalName = INDEXER; 
+    fetchSpecificationDictionary = {}; 
+    name = Indexer; 
+    primaryKeyAttributes = (indID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = IndexRow; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = indID; sourceAttribute = indID; }); 
+            name = indexRow; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

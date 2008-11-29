@@ -1,0 +1,71 @@
+<webobject name = "Wrapper">
+<webobject name = "SorterScriptLink"/>
+<script type="text/javascript" language = "JavaScript">
+function enumAll() {
+	var areaList = document.getElementById("areaList");
+	enumerate(areaList,"areaNum",1);
+	var subjectList = document.getElementById("subjectList");
+	enumerate(subjectList,"subjNum",1);
+	return true;
+}
+function cancel() {
+  var subjField = document.getElementsByName('subject')[0];
+  if(subjField.defaultValue == null || subjField.defaultValue.length == 0) {
+  	subjField.value = null;
+  	subjField.form.submit();
+  } else {
+  	closePopup();
+  }
+}
+</script>
+<h1><webobject name = "Title"/></h1>
+<webobject name = "Form">
+	<table cellpadding = "2" align = "center">
+	<thead>
+		<tr class="backfield1" valign = "middle">
+			<th style="padding: 2px 1ex;">
+			<webobject name = "CanAddArea"><webobject name = "AddArea">
+			<webobject name = "PlusImage"/></webobject></webobject>
+			<webobject name = "AreaTitle"/>
+			</th>
+			<th style="padding: 2px 1em;">
+			<webobject name = "CanAddSubject"><webobject name = "AddSuject">
+			<webobject name = "PlusImage"/></webobject></webobject>
+			<webobject name = "SubjectName"/>
+			</th>
+			<webobject name = "GroupsCell"><webobject name = "GroupsTitle"/></webobject>
+			<webobject name = "CyclesRepetition">
+				<th style="width:2em;"><webobject name = "GradeTitle"/></th>
+			</webobject>
+		</tr>
+		</thead>
+		<tfoot><tr>
+			<webobject name = "TogleAllButton"><webobject name = "ToggleAll"/></webobject>
+		</tr></tfoot>
+		<tbody>
+	<webobject name = "SubjectsRepetition">
+		<webobject name = "ShowRow">
+			<webobject name = "SubjectRow">
+				<webobject name = "AreaCell"><webobject name = "Area"/></webobject>
+				<webobject name = "SubjectCell"><webobject name = "Subject"/></webobject>
+				<webobject name = "GroupsCell2"><webobject name = "GroupsField"/></webobject>
+				<webobject name = "CyclesRepetition">
+					<webobject name = "CycleCell">
+					<webobject name = "CanEdit">
+					<webobject name = "CycleHours"/>
+					</webobject>
+					<webobject name = "CntEdit">
+					<webobject name = "ReadHours"/>
+					</webobject>
+				</webobject>
+				</webobject>
+			</webobject>
+			</webobject>
+		
+	</webobject>
+	</tbody>
+	</table>
+<webobject name = "CanEdit">
+<p align = "center">
+<webobject name="Save"/> <webobject name="Cancel"/></p>
+</webobject></webobject></webobject>

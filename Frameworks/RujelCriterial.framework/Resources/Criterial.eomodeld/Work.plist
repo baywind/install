@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = ANNOUNCE; 
+            name = announce; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {columnName = COURSE; name = courseID; prototypeName = short; }, 
+        {columnName = DEADLINE; name = date; prototypeName = date; }, 
+        {
+            allowsNull = N; 
+            columnName = "LOAD_TIME"; 
+            name = load; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {columnName = NUMBER; name = number; prototypeName = short; }, 
+        {
+            allowsNull = Y; 
+            columnName = TASK; 
+            name = taskID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {columnName = THEME; name = theme; prototypeName = string; }, 
+        {columnName = TITLE; name = title; prototypeName = anagram; }, 
+        {
+            allowsNull = N; 
+            columnName = TYPE; 
+            name = type; 
+            prototypeName = byte; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueType = i; 
+        }, 
+        {allowsNull = N; columnName = WEIGHT; name = weight; prototypeName = decimal; }, 
+        {columnName = "W_ID"; name = workID; prototypeName = "int_3"; }
+    ); 
+    attributesUsedForLocking = (title, date, theme, number, weight, announce, type, load, taskID); 
+    className = "net.rujel.criterial.Work"; 
+    classProperties = (
+        title, 
+        date, 
+        marks, 
+        criterMask, 
+        theme, 
+        number, 
+        weight, 
+        announce, 
+        type, 
+        load, 
+        notes, 
+        taskID, 
+        taskText
+    ); 
+    externalName = WORK; 
+    fetchSpecificationDictionary = {}; 
+    name = Work; 
+    primaryKeyAttributes = (workID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CriterMask; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = workID; sourceAttribute = workID; }); 
+            name = criterMask; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Mark; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = workID; sourceAttribute = workID; }); 
+            name = marks; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = WorkNote; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lessonID; sourceAttribute = workID; }); 
+            name = notes; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = TextStore; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tID; sourceAttribute = taskID; }); 
+            name = taskText; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

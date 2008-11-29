@@ -1,0 +1,57 @@
+<div style="display:block;position:absolute;top:30%;left:30%;width:40%;padding:10pt;" class="backfield1" id="ajaxPopup">
+<webobject name="Form1"><table border="1" width="100%" align="center">
+<tr><th colspan="3"><webobject name = "Title"/></th></tr>
+<tr><td align="center" colspan="3">
+<webobject name="DueDateTitle"></webobject> : <webobject name="DueDate"></webobject>
+</td></tr><tr><td>
+<webobject name="CourseCheckBox"></webobject>
+</td><td colspan="2">
+<webobject name="SetTimeoutFor"></webobject> <webobject name="ForCourse"></webobject>
+</td></tr>
+<webobject name = "IsForCourse">
+	<tr><td colspan="3">
+	<webobject name="SetTimeoutFor"></webobject> <webobject name="AllCourses"></webobject>
+	</td></tr>
+	<tr><td>
+	<webobject name="TeacherCheckBox"></webobject>
+	</td><td>
+	<webobject name="ForTeacher"></webobject>
+	</td><td>
+	<webobject name="TeacherName"></webobject>
+	</td></tr><tr><td>
+	<webobject name="EduGroupCheckBox"></webobject>
+	</td><td>
+	<webobject name="ForEduGroup"></webobject>
+	</td><td>
+	<webobject name="TeacherName2"></webobject>
+	</td></tr><tr><td>
+	<webobject name="CycleCheckBox"></webobject>
+	</td><td>
+	<webobject name="ForCycle"></webobject>
+	</td><td>
+	<webobject name="SubjectName"></webobject> (<webobject name="GradeName"></webobject>)
+	</td></tr>
+	</webobject>
+<tr><td valign="top" colspan="3">
+<webobject name="ReasonTitle"></webobject> : <br/>
+<webobject name="ReasonText"></webobject>
+</td></tr>
+<tr>
+<td align = "center"><webobject name = "CheckBoxFlag1"/></td>
+<td align = "center"><webobject name = "FlagKey1"/></td>
+<td width = "50%"></td>
+</tr>
+<webobject name = "IsForCourse">
+<tr>
+<td align = "center"><webobject name = "CheckBoxFlag2"/></td>
+<td align = "center"><webobject name = "FlagKey2"/></td>
+<td></td>
+</tr>
+</webobject>
+<tr><td valign="top" colspan="3">
+<webobject name="CanChange"><webobject name="Save"></webobject></webobject> 
+<webobject name="CanDelete"><webobject name="DeleteButton"></webobject></webobject> 
+<webobject name="ResetButton1"></webobject>
+</td></tr>
+</table></webobject>
+</div>

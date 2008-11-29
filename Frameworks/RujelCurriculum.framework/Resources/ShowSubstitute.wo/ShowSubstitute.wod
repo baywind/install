@@ -1,0 +1,19 @@
+SubsTitle : WOString {
+  value = substitute.title;
+  valueWhenEmpty = application.extStrings.RujelCurriculum_Curriculum.Substitute;
+}
+
+Substitutor : WOString {
+  value = substitutor;
+}
+
+SubstituteTD : OnClickContainer {
+  elementName = "td";
+  invokeAction = edit;
+  class = cellClass;
+  disabled = cantEdit;
+  onclick = session.ajaxPopup;
+  colspan = "2";
+  style = "border-bottom:solid 1px lime;";
+  title = substitute.reason.reason;
+}

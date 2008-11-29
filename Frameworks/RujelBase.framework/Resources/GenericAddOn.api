@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="GenericAddOn" wocomponentcontent="false">
+
+		<binding name="course"/>
+		<binding name="activeAddOns"/>
+		<binding name="currAddOn"/>
+
+		<validation message="&apos;currAddOn&apos; is a required binding">
+			<unbound name="currAddOn"/>
+		</validation>
+
+		<validation message="&apos;activeAddOns&apos; is a required binding">
+			<unbound name="activeAddOns"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ResourceLink.java" wocomponentcontent="false">
+
+        <binding defaults="Frameworks" name="framework"/>
+        <binding defaults="Resources" name="cssLink"/>
+        <binding defaults="Resources" name="jsLink"/>
+    <binding name="languagesList"/>
+    </wo>
+</wodefinitions>

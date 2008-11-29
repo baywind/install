@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "B_DATE"; 
+            name = birthDate; 
+            prototypeName = date; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "F_NAME"; 
+            name = firstName; 
+            prototypeName = word; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "L_NAME"; 
+            name = lastName; 
+            prototypeName = word; 
+        }, 
+        {columnName = "S_NAME"; name = secondName; prototypeName = word; }, 
+        {allowsNull = Y; columnName = SEX; name = sex; prototypeName = boolean; }, 
+        {columnName = "T_ID"; name = teacherID; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (lastName, firstName, secondName, sex, birthDate); 
+    className = "net.rujel.base.PrimitiveTeacher"; 
+    classProperties = (lastName, firstName, secondName, sex, birthDate, person); 
+    externalName = "PRIMITIVE_TEACHER"; 
+    fetchSpecificationDictionary = {}; 
+    name = PrimitiveTeacher; 
+    primaryKeyAttributes = (teacherID); 
+    relationships = (
+        {
+            destination = PrimitiveTeacher; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = teacherID; sourceAttribute = teacherID; }); 
+            name = person; 
+        }
+    ); 
+}

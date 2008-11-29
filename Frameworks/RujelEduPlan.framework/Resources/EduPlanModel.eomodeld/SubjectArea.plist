@@ -1,0 +1,24 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = NAME; name = areaName; prototypeName = word; }, 
+        {allowsNull = N; columnName = "CG_ID"; name = cgID; prototypeName = short; }, 
+        {allowsNull = N; columnName = NUM; name = num; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (areaName, cgID, num); 
+    className = EOGenericRecord; 
+    classProperties = (areaName, num); 
+    externalName = "SUBJ_AREA"; 
+    fetchSpecificationDictionary = {}; 
+    name = SubjectArea; 
+    primaryKeyAttributes = (cgID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = Subject; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = areaID; sourceAttribute = cgID; }); 
+            name = subjects; 
+        }
+    ); 
+}

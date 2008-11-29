@@ -1,0 +1,119 @@
+StudentTitle: WOString {
+	value = application.strings.properties.Student.this;
+}
+
+IfSave: WOConditional {
+	condition = currLesson.access.edit;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	align = "right";
+	value = application.strings.uiElements.Save;
+}
+
+LessonsNumeration: WORepetition {
+	item = lessonItem;
+	list = lessonsListing;
+}
+
+TitlePresenter: WOSwitchComponent {
+	WOComponentName = presenter;
+	lesson = lessonItem;
+	isSelected = isSelected;
+	readOnly = ^readOnly;
+	defaultStyle = studentStyle;
+	single=single;
+	selectAction = selectLesson;
+}
+
+ActiveAddOnsRepetition: WORepetition {
+	item = addOnItem;
+	list = activeAddOns;
+}
+
+ActiveAddOnComponent: WOSwitchComponent {
+	WOComponentName = addOnItem.activeComponent;
+	student = studentItem;
+	course = ^course;
+	single=^single;
+	currAddOn = addOnItem;
+}
+
+Repetition1: WORepetition {
+	list = ^studentsList;
+	item = studentItem;
+	index = idx;
+}
+
+StudentRow: WOGenericContainer {
+	class = studentStyle;
+	elementName = "tr";
+	style = "height:2.2em;";
+}
+
+Index: WOString {
+	value = idx;
+}
+
+StudentTD: WOGenericContainer {
+	align = "left";
+	elementName = "td";
+	invokeAction = studentSelection;
+	onmouseover=onmouseover;
+	onmouseout="this.className='';";
+	onclick = onclick;
+	title = studentItem.person.secondName;
+	colspan = 2;
+}
+
+StudentLastName: WOString {
+	value = studentItem.person.lastName;
+}
+
+StudentInitials: WOString {
+	value = studentItem.person.firstName;
+}
+
+NotePresenter1: WOSwitchComponent {
+	WOComponentName = presenter;
+	lesson = lessonItem;
+	isSelected = isSelected;
+	cellID = cellID;
+	readOnly = ^readOnly;
+	defaultStyle = studentStyle;
+	selectAction = selectLesson;
+	student = studentItem;
+	single=^single;
+}
+
+AllAddOnsRepetition: WORepetition {
+	item = addOnItem;
+	list = allAddOns;
+}
+
+AddOnSetupComponent: WOSwitchComponent {
+	WOComponentName = addOnItem.component;
+	course = ^course;
+	activeAddOns = activeAddOns;
+	currAddOn = addOnItem;
+}
+
+Repetition2: WORepetition {
+	list = unmentionedStudents;
+	item = studentItem;
+	index = idx;
+}
+
+NotePresenter2: WOSwitchComponent {
+	WOComponentName = presenter;
+	lesson = lessonItem;
+	isSelected = isSelected;
+	cellID = cellID;
+	readOnly = ^readOnly;
+	defaultStyle = studentStyle;
+	selectAction = selectLesson;
+	student = studentItem;
+	denyCreation = true;
+	single=^single;
+}

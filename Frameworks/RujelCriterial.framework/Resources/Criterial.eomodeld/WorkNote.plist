@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = WORK; 
+            name = lessonID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = NOTE; 
+            name = note; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = STUDENT; 
+            name = studentID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (lessonID, note, studentID); 
+    className = EOGenericRecord; 
+    classProperties = (note, work); 
+    externalName = "WORK_NOTE"; 
+    fetchSpecificationDictionary = {}; 
+    name = WorkNote; 
+    primaryKeyAttributes = (lessonID, studentID); 
+    relationships = (
+        {
+            destination = Work; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = workID; sourceAttribute = lessonID; }); 
+            name = work; 
+        }
+    ); 
+}

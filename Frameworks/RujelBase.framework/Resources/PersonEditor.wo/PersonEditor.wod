@@ -1,0 +1,114 @@
+Form2: WOForm {
+	multipleSubmit = true;
+	onSubmit = "return tryLoad(true);";
+}
+
+LastNameLabel: WOString {
+	value = application.strings.properties.Person.lastName;
+	valueWhenEmpty = "Last Name";
+}
+
+LastName: WOTextField {
+	maxlength = 28;
+	size = 15;
+	value = person.lastName;
+}
+
+Hyperlink1: WOHyperlink {
+	action = ^cancelAction;
+	onclick = "return tryLoad(true);";
+}
+
+cross: WOImage {
+	align = "right";
+	filename = "cross.png";
+	framework = "RujelBase";
+	height = 12;
+	width = 12;
+	valign = "top";
+}
+
+CanEdit: WOConditional {
+	condition = person.access._edit;
+	negate = true;
+}
+
+SaveButton: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+}
+
+CanDelete: WOConditional {
+	condition = person.access._delete;
+	negate = true;
+}
+
+DeleteButton: WOSubmitButton {
+	action = delete;
+	value = application.strings.uiElements.Delete;
+}
+
+ResetButton: WOResetButton {
+	value = application.strings.uiElements.Reset;
+}
+
+FirstNameLabel: WOString {
+	value = application.strings.properties.Person.firstName;
+	valueWhenEmpty = "First Name";
+}
+
+FirstName: WOTextField {
+	maxlength = 28;
+	size = 15;
+	value = person.firstName;
+}
+
+SecondNameLabel: WOString {
+	value = application.strings.properties.Person.secondName;
+	valueWhenEmpty = "Second Name";
+}
+
+SecondName: WOTextField {
+	maxlength = 28;
+	size = 15;
+	value = person.secondName;
+}
+
+SexLabel: WOString {
+	value = application.strings.properties.Person.sex;
+	valueWhenEmpty = "Sex";
+}
+
+SexM: WORadioButton {
+	name = "sex";
+	selection = person.sex;
+	value = true;
+}
+
+Male: WOString {
+	value = application.strings.presets.sexLetter.male;
+	valueWhenEmpty = "M";
+}
+
+SexF: WORadioButton {
+	name = "sex";
+	selection = person.sex;
+	value = false;
+}
+
+Female: WOString {
+	value = application.strings.presets.sexLetter.female;
+	valueWhenEmpty = "F";
+}
+
+BirthDateLabel: WOString {
+	value = application.strings.properties.Person.birthDate;
+	valueWhenEmpty = "Birth Date";
+}
+
+BirthDate: WOTextField {
+	value = person.birthDate;
+	dateformat = "%d.%m.%Y";
+	size = 10;
+	maxlength = 10;
+}

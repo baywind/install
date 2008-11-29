@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="PageWrapper" wocomponentcontent="true">
+
+		<binding defaults="Boolean" name="hasChanges"/>
+		<binding name="styles"/>
+		<binding name="title"/>
+		<binding name="scriptURL"/>
+		<binding name="cssURL"/>
+	<binding defaults="Resources" name="cssResource"/>
+        <binding defaults="Resources" name="scriptResource"/>
+        <binding defaults="Frameworks" name="resourcesFramework"/>
+    <binding name="onLoad"/>
+    <binding name="onUnload"/>
+    </wo>
+</wodefinitions>

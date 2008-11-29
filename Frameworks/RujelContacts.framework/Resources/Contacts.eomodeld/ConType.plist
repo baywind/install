@@ -1,0 +1,14 @@
+{
+    attributes = (
+        {columnName = "CT_ID"; name = ctID; prototypeName = short; }, 
+        {columnName = TYPE; name = type; prototypeName = word; }, 
+        {columnName = UTILISER; name = utiliserClass; prototypeName = string; }
+    ); 
+    attributesUsedForLocking = (type, utiliserClass); 
+    className = EOGenericRecord; 
+    classProperties = (type, utiliserClass); 
+    externalName = CONTYPE; 
+    fetchSpecificationDictionary = {}; 
+    name = ConType; 
+    primaryKeyAttributes = (ctID); 
+}

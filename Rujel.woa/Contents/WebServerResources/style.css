@@ -1,0 +1,194 @@
+h1 , h2 , h3 , h4 {
+	text-align:center;
+}
+
+img {
+	border:none;
+}
+
+.titles {
+	text-align:right;
+}
+
+.popup {
+	text-align:center;
+	background-color:#ffff99;
+	width:80%;
+	position:absolute;
+	top:10em;
+	left:10%;
+	padding:10pt;
+}
+
+body {margin:2pt;}
+
+.attention {
+	position:fixed;
+	top:35%;
+	left:35%;
+	cursor:wait;
+	z-index:300;
+	border:3px double #ff0000;
+	font:x-large bold;
+	text-align:center;
+	padding:10% 3%;
+	background-color:#ffcc66;
+}
+
+.message {
+	font-size:large;
+	color:#ff6600;
+	text-align:center;
+}
+
+.dimtext {
+	color:#aaaaaa;
+	text-decoration:inherit;
+}
+
+.timeout {
+	background-color:#cccc66;
+}
+.timeoutDim {
+	background-color:#999966;
+}
+
+.backfield1 {
+	background-color:#ffffcc;
+	vertical-align:top;
+	text-align:center;
+}
+
+.backfield2 {
+	background-color:#e6e6e6;
+	vertical-align:top;
+	text-align:center;
+}
+
+.gerade {
+	background-color:#ffffaa;
+}
+
+.ungerade {
+	background-color:#ccffff;
+}
+
+.selection {
+	background-color:#00ff00;
+}
+
+.selectionBorder {
+	border-color:#00ff00;
+	border-width: 2pt;
+	border-style:solid;
+	margin:0;
+}
+
+#refusingSessions {
+	margin:1em 5%;
+	border-color:#00ff00;
+	border-width: 3pt;
+	border-style:double;
+	background-color:#ffff33;
+	text-align:center;
+	font:large bold;
+	color:#330033;
+	padding:1em;
+	line-height:150%;
+}
+
+.male {
+	background-color:#ccccff;
+}
+
+.female {
+	background-color:#ffcccc;
+}
+
+.foundMale {
+	background-color:#6699ff;
+}
+
+.foundFemale {
+	background-color:#ff9999;
+}
+
+.grey {
+	background-color:#cccccc;
+}
+
+.orange {
+	background-color:#ffcc66;
+}
+
+.button, .buttonDim {
+	display:inline-block;
+	margin:1pt 2pt 3pt;
+	border:2pt grey;
+	padding:2pt;
+}
+
+.button {
+	background-color:#ffcc66;
+	border-style:outset;
+}
+
+.buttonDim {
+	background-color:#cc9933;
+	border-style:inset;
+}
+
+.highlight {background-color:#ffff66;}
+
+.highlightDim {background-color:#cccc33;}
+
+.highlight2 {background-color:#66ffff;}
+
+.highlight2Dim {background-color:#33cccc;}
+
+
+
+.selectionDim , .maleDim , .femaleDim , .foundMaleDim , .foundFemaleDim , .greyDim , .geradeDim , .ungeradeDim, .orangeDim, .buttonDim , .highlightDim, .highlight2Dim {
+	text-decoration:underline;
+	cursor:pointer;	
+}
+.selectionDim {
+	background-color:#00cc00;
+}
+
+.maleDim {
+	background-color:#99cccc;
+}
+
+.femaleDim {
+	background-color:#cc9999;
+}
+
+.foundMaleDim {
+	background-color:#3366cc;
+}
+
+.foundFemaleDim {
+	background-color:#cc6666;
+}
+
+.greyDim {
+	background-color:#999999;
+}
+
+.geradeDim {
+	background-color:#cccc99;
+}
+
+.ungeradeDim {
+	background-color:#99cccc;
+}
+
+.orangeDim {
+	background-color:#cc9933;
+}
+
+.course {background-color:#ccffcc;}
+.eduPlan {background-color:#cccccc;}
+.courseDim {background-color:#99cc99;text-decoration:underline;cursor:pointer;}
+.eduPlanDim {background-color:#999999;text-decoration:underline;cursor:pointer;}

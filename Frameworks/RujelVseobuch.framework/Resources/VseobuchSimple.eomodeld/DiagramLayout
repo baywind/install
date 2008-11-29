@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Layouts</key>
+	<dict>
+		<key>Default</key>
+		<dict>
+			<key>EntityOption</key>
+			<string>All</string>
+			<key>RelationshipOption</key>
+			<string>None</string>
+			<key>ViewPositions</key>
+			<dict>
+				<key>VOClass</key>
+				<array>
+					<string>386.000000</string>
+					<string>270.000000</string>
+					<string>141.000000</string>
+					<string>168.000000</string>
+				</array>
+				<key>VOList</key>
+				<array>
+					<string>387.000000</string>
+					<string>73.000000</string>
+					<string>130.000000</string>
+					<string>132.000000</string>
+				</array>
+				<key>VOParallel</key>
+				<array>
+					<string>583.000000</string>
+					<string>224.000000</string>
+					<string>162.000000</string>
+					<string>132.000000</string>
+				</array>
+				<key>VOSlNameparallel</key>
+				<array>
+					<string>618.000000</string>
+					<string>98.000000</string>
+					<string>126.000000</string>
+					<string>78.000000</string>
+				</array>
+				<key>VOStudent</key>
+				<array>
+					<string>178.000000</string>
+					<string>164.000000</string>
+					<string>149.000000</string>
+					<string>168.000000</string>
+				</array>
+			</dict>
+			<key>orthoLines</key>
+			<string>Y</string>
+		</dict>
+	</dict>
+	<key>Version</key>
+	<string>1</string>
+</dict>
+</plist>

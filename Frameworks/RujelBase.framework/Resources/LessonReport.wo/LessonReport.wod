@@ -1,0 +1,37 @@
+LessonsTitle : WOString {
+  value = application.extStrings.RujelBase_Base.lessons;
+  valueWhenEmpty = "Lessons";
+}
+
+DateTitle: WOString {
+	value = application.strings.dataTypes.date;
+}
+
+ThemeTitle: WOString {
+	value = application.strings.properties.EduLesson.theme;
+}
+
+NoteTitle : WOString {
+  value = application.strings.properties.EduLesson.note;
+}
+
+LessonsRepetition : WORepetition {
+	list = ^value;
+	item = lessonItem;
+}
+
+LessonNum : WOString {
+  value = lessonItem.number;
+}
+
+LessonDate : WOString {
+  value = lessonItem.date;
+}
+
+LessonTheme : WOString {
+  value = lessonItem.theme;
+}
+
+StudentNote : WOString {
+  value = lessonItem.note;
+}
