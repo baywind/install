@@ -20,6 +20,14 @@ img {
 	padding:10pt;
 }
 
+.sup {
+	vertical-align: baseline;
+	position: relative;
+	top: -1em;
+	font-size:60%;
+}
+
+
 body {margin:2pt;}
 
 .attention {

@@ -1,25 +1,3 @@
-HasGlobalTimeout: WOConditional {
-	condition = timeouts.count;
-}
-
-TimeoutsLister: WORepetition {
-	list = timeouts;
-	item = cycleItem;
-}
-
-TimeoutPeriod: WOString {
-	value = cycleItem.eduPeriod.title;
-}
-
-TimeoutDate2: WOString {
-	dateformat = application.prefs.ui.dateFormat;
-	value = cycleItem.dueDate;
-}
-
-TimeoutReason2: WOString {
-	value = cycleItem.reason;
-}
-
 CycleGroup: WORepetition {
 	item = perlist;
 	list = cyclesForPerlists.allKeys;
@@ -42,54 +20,60 @@ PeriodTitle: WOString {
 	escapeHTML = false;
 }
 
-HasTimeouts: WOConditional {
-	condition = timeoutsDict.count;
-}
-
-TimeoutTitle: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.this;
-	valueWhenEmpty = "Timeout";
-	escapeHTML = false;
-}
-
-ReasonTitle: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.reason;
-	valueWhenEmpty = "Reason";
-	escapeHTML = false;
-}
-
 CycleList: WORepetition {
-	item = cycleItem;
+	item = item;
 	list = cycles;
 }
 
 Subject: WOString {
-	value = cycleItem.subject;
+	value = item.subject;
 }
 
 Mark: WOString {
-	value = mark.mark;
+	value = mark;
+	escapeHTML = false;
 }
 
-TimeoutDate: WOString {
-	dateformat = application.prefs.ui.dateFormat;
-	value = timeout.dueDate;
+Comments : WORepetition {
+  list = comments;
+  item = item;
 }
 
-TimeoutReason: WOString {
-	value = timeout.reason;
+CommentText : WOString {
+  value = item.text;
+  escapeHTML = false;
 }
 
-GenTOTitle : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.ui.generalTimeout;
-  valueWhenEmpty = "Timeout";
+NextPeriod : WOConditional {
+  condition = commentPeriod;
 }
 
-Upto : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.ui.upTo;
-  valueWhenEmpty = "up to";
+PeriodName : WOString {
+  value = perItem.name;
 }
 
-HasReason : WOConditional {
-  condition = cycleItem.reason;
+CommentSubject : WOString {
+  value = commentSubj;
+  escapeHTML = false;
+}
+
+Li : WOGenericContainer {
+  elementName = "li";
+  style = liStyle;
+}
+
+Ol : WOGenericElement {
+  elementName = "ol";
+  type = "1";
+  start = num;
+  
+}
+
+Num : WOString {
+  value = item.alias;
+}
+
+CommentsTitle : WOString {
+  value = application.extStrings.RujelEduResults_EduResults.comments;
+  valueWhenEmpty = "Comments";
 }

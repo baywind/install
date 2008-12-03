@@ -133,6 +133,8 @@
 		<string>при изменении оценок и процента успешности добавка не будет сброшена</string>
 		<key>cantDeleteBonus</key>
 		<string>У Вас недостаточно прав доступа, чтобы снять добавку</string>
+		<key>markHasBonus</key>
+		<string>Оценка была повышена</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>
