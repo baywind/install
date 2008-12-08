@@ -38,16 +38,20 @@ var loading = false;
 		if(formElementChanged(fld)) {
 			changed = true;
 		} else {
-			var elts = fld.form.elements;
-			for(var i = 0; i < elts.length; i++) {
-				if(formElementChanged(elts[i])) {
-					changed = true;
-					return changed;
-				}				
-			}
-			changed = false;
+			changed = formHasChanges(fld.form);
 		}
 		return changed;
+	}
+	
+	function formHasChanges(aForm) {
+		var elts = aForm.elements;
+		for(var i = 0; i < elts.length; i++) {
+			if(formElementChanged(elts[i])) {
+				//alert(elts[i]);
+				return true;
+			}				
+		}
+		return false;
 	}
 	
 	function formElementChanged(elt) {
@@ -76,12 +80,19 @@ var loading = false;
 		case "SELECT":
 			var opts = elt.options;
 			var curr;
+			//var d = false;
 			for(var i = 0; i < opts.length; i++) {
 				curr = opts[i];
 				var val = curr.text;
 				if(curr.selected != curr.defaultSelected) {
-					return true;
+					if(i > 0 || elt.multiple)
+						return true;
 				}
+				/*  else
+						d = true;
+				}
+				if(d && curr.defaultSelected)
+					return true;*/
 			}
 			return false;
 			break;
@@ -266,17 +277,18 @@ function applyPrompt(event) {
 		returnField.value = event.target.value;
 	else if (event.srcElement)
 		returnField.value = event.srcElement.value;
+	closePrompt();
 	try {
 		returnField.onchange();
 	} catch (e) {
 		//alert(e.description);
 	}
-	closePrompt();
 }
 
 function closePrompt() {
 	prmt = document.getElementById('prompt');
 	prmt.parentNode.removeChild(prmt);
+//	alert(changed);
 }
 
 function dim(obj) {
@@ -525,9 +537,16 @@ function positionPopup(popup,pos) {
 	//alert('left: ' + popup.style.left);
 }
 
-function closePopup() {
+function closePopup(aForm) {
 	container = document.getElementById('ajaxMask');
-	container.style.display='none';	
+	container.style.display='none';
+	if(aForm != null) {
+		for(var i = 0; i < document.forms.length; i++) {
+			if(document.forms[i] == aForm)
+				continue;
+			changed = formHasChanges(document.forms[i]);
+		}
+	}
 }
 
 function showObj(obj) {

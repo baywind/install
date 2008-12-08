@@ -1,0 +1,118 @@
+PopupForm : WOForm {
+	action = save;
+	onsubmit = "q=(this.reasonText.value.length > 0);if(!q){alert(saveArchive.title);reasonText.focus()}return q;";
+}
+
+SaveButton: WOSubmitButton {
+	action = save;
+	value = application.strings.uiElements.Save;
+	id = "saveArchive";
+	name = "saveArchive";
+	disabled = true;
+	title = application.extStrings.RujelArchiving_Archive.requiredReason;
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.uiElements.Cancel;
+	type = "button";
+	elementName = "input";
+	onclick = "closePopup(this.form);";
+}
+
+Archives : WORepetition {
+	list = archives;
+	item = archItem;
+}
+
+ArchDate : WOString {
+  value = archItem.timestamp;
+  dateformat = application.prefs.ui.shortDateFormat;
+}
+ArchTime : WOString {
+  value = archItem.timestamp;
+  dateformat = "%H:%M:%S";
+}
+Author : WOString {
+  value = archItem.user;
+}
+
+Reason : WOString {
+  value = showReason;
+  escapeHTML = false;
+}
+
+Presenter : WOSwitchComponent {
+  WOComponentName = presenter;
+  initData = initData;
+  data = archItem.archiveDictionary;
+  object = obj;
+  readOnly = true;
+}
+
+TitlePresenter : WOSwitchComponent {
+  WOComponentName = presenter;
+  initData = initData;
+  readOnly = true;
+}
+
+DateTitle : WOString {
+  value = application.strings.dataTypes.Date;
+  valueWhenEmpty = "Date";
+  escapeHTML = false;
+}
+
+TimeTitle : WOString {
+  value = application.strings.dataTypes.Time;
+  valueWhenEmpty = "Time";
+  escapeHTML = false;
+}
+
+AuthorTitle : WOString {
+  value = application.extStrings.RujelArchiving_Archive.author;
+  valueWhenEmpty = "Author";
+  escapeHTML = false;
+}
+
+ReasonTitle : WOString {
+  value = application.extStrings.RujelArchiving_Archive.reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}
+
+CanEdit : WOConditional {
+  condition = changeable;
+}
+
+NewTitle : WOString {
+  value = application.extStrings.RujelArchiving_Archive.newValues;
+  valueWhenEmpty = "Change";
+  escapeHTML = false;
+}
+
+UserName : WOString {
+  value = session.user.present;
+}
+
+EditPresenter : WOSwitchComponent {
+  WOComponentName = presenter;
+  initData = initData;
+  object = obj;
+  archive = archive;
+}
+
+ReasonText : WOTextField {
+  name = "reasonText";
+  value = reason;
+  style = "width:90%;";
+  onclick = "ext(this,8);";
+  onkeypress = "this.form.saveArchive.disabled=false;return extOnSpace(event,this,10);";
+  onchange = "this.form.saveArchive.disabled = (value == null || value.length < 2);";
+}
+
+HasTitle : WOConditional {
+  condition = title;
+}
+
+TitleString : WOString {
+  value = title;
+}

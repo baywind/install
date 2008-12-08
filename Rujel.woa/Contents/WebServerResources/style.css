@@ -156,7 +156,7 @@ body {margin:2pt;}
 
 
 
-.selectionDim , .maleDim , .femaleDim , .foundMaleDim , .foundFemaleDim , .greyDim , .geradeDim , .ungeradeDim, .orangeDim, .buttonDim , .highlightDim, .highlight2Dim {
+.Dim , .selectionDim , .maleDim , .femaleDim , .foundMaleDim , .foundFemaleDim , .greyDim , .geradeDim , .ungeradeDim, .orangeDim, .buttonDim , .highlightDim, .highlight2Dim {
 	text-decoration:underline;
 	cursor:pointer;	
 }

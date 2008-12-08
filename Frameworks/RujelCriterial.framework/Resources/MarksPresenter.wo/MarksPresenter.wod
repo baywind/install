@@ -9,28 +9,28 @@ CanCreateMark: WOConditional {
 }
 
 Conditional1: WOConditional {
-	condition = ^student;
+	condition = student;
 	negate = true;
 }
 
 Content: WOConditional {
-	condition = ^student;
+	condition = student;
 }
 
-CriterTD: WOGenericContainer {
+CriterTD: OnClickContainer {
+	onclick = session.ajaxPopup;
+	disabled = deactivate;
+	invokeAction = archivePopup;
 	elementName = td;
 	title = markTitle;
 	align = "center";
 	style = "width:2em;";
+	class = ^defaultStyle;
 }
 
 Criters: WORepetition {
 	item = critItem;
 	list = usedCriteria;
-}
-
-Display: WOConditional {
-	condition = display;
 }
 
 Div: WOGenericContainer {
@@ -39,14 +39,15 @@ Div: WOGenericContainer {
 }
 
 IntegralTD: OnClickContainer {
+	onclick = onClick;
 	bgcolor = integralColor;
 	elementName = td;
-	invokeAction = ^selectAction;
+	invokeAction = selectAction;
 	align = "center";
-	class = tdStyle;
 	style = "width:2em;";
-	disabled = single;
+	disabled = deactivateIntegral;
 	title = title;
+	class = tdStyle;
 }
 
 IntegralTitle: WOString {
@@ -60,8 +61,8 @@ IsRecent: WOConditional {
 
 MarkEdit: WOTextField {
 	value = markValue;
-	disabled = ^readOnly;
-	style = "text-align:center;width:94%;";
+	disabled = noAccess;
+	style = "text-align:center;width:75%;";
 	onchange = "checkChanges(this);";
 	numberformat = "0";
 	onkeypress = "return isNumberInput(event);";
@@ -72,23 +73,6 @@ MarkView: WOString {
 	escapeHTML = false;
 }
 
-NotNote: WOConditional {
-	condition = showNote;
-	negate = true;
-}
-
-Note: NotePresenter {
-	cellID = ^cellID;
-	defaultStyle = ^defaultStyle;
-	denyCreation = ^denyCreation;
-	isSelected = ^isSelected;
-	lesson = ^lesson;
-	readOnly = ^readOnly;
-	selectAction = ^selectAction;
-	student = ^student;
-	maxlen = 3;
-}
-
 Note2: WOString {
 	value = shortNoteForStudent;
 	escapeHTML = false;
@@ -96,21 +80,17 @@ Note2: WOString {
 
 NoteEdit: WOTextField {
 	value = noteForStudent;
-	disabled = ^readOnly;
-	style = "width:94%;";
+	disabled = noAccess;
+	style = "width:80%;";
 	id = ^cellID;
 	onclick = "ext(this,5);";
-	onkeypress = "return extOnSpace(event,this,8);";
+	onkeypress = "return extOnSpace(event,this,5);";
 	onchange = "checkChanges(this);";
 }
 
 NoteTitle: WOString {
 	value = application.strings.dataTypes.text;
 	valueWhenEmpty = "text";
-}
-
-OnlyNote: WOConditional {
-	condition = showNote;
 }
 
 Regular: WOConditional {
@@ -122,9 +102,18 @@ Single: WOConditional {
 	condition = single;
 }
 
-StyledTD: WOGenericContainer {
-	align = ^align;
+StyledTD: OnClickContainer {
+	onclick = session.ajaxPopup;
+	disabled = deactivate;
+	invokeAction = archivePopup;
+	align = "center";
 	elementName = td;
 	title = fullNoteForStudent;
 	style = noteWidth;
+	class = ^defaultStyle;
+}
+
+NotArchive : WOConditional {
+  condition = ^initData;
+  negate = true;
 }

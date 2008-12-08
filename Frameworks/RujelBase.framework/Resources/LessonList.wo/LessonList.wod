@@ -159,7 +159,7 @@ HomeTaskImage2: WOImage {
 
 HomeTaskHiddenField: WOTextField {
 	id = "homeTask";
-	onchange = "t=document.getElementById('taskImage');t.title = this.value;";
+	onchange = "checkChanges(this);t=document.getElementById('taskImage');t.title = this.value;";
 	value = ^currLesson.homeTask;
 	style = "display:none;";
 }

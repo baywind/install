@@ -28,7 +28,7 @@ Note: WOString {
 
 NoteEdit: WOTextField {
 	value = noteForStudent;
-	disabled = ^readOnly;
+	disabled = noAccess;
 	onChange = "checkChanges(this);";
 	style = style;
 	id = ^cellID;
@@ -41,14 +41,13 @@ Regular: WOConditional {
 	condition = isSelected;
 }
 
-StyledTD: WOGenericContainer {
+StyledTD: OnClickContainer {
+	disabled = deactivate;
+	onclick = onClick;
 	align = "center";
 	class = tdStyle;
 	elementName = td;
 	invokeAction = ^selectAction;
-	onmouseover="dim(this)";
-	onmouseout="unDim(this)";
-	onclick = onClick;
 	valign = "middle";
 	title = fullNoteForStudent;
 	style = "width:2em;padding:1pt;";

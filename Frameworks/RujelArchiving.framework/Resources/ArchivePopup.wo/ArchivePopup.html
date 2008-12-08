@@ -1,0 +1,38 @@
+<div style="display:block;position:absolute;top:30%;left:30%;padding:10pt;" class="backfield1" id="ajaxPopup">
+<webobject name = "PopupForm">
+<table border = "1">
+<webobject name = "HasTitle">
+<tr><th style = "text-align:center;padding:1ex;"><webobject name = "TitleString"/></th></tr></webobject>
+<tr><td class = "backfield2">
+<table border="0">
+<thead>
+<tr class = "grey">
+    <th style = "width:5ex;"><webobject name = "DateTitle"/></th>
+    <th style = "width:7ex;"><webobject name = "TimeTitle"/></th>
+    <th style = "width:8em;"><webobject name = "AuthorTitle"/></th>
+    <webobject name = "TitlePresenter"/>
+    <th style = "width:5em;"><webobject name = "ReasonTitle"/></th>
+</tr>
+</thead>
+<webobject name = "CanEdit"><tfoot><tr class = "gerade">
+	<th colspan = "2"><webobject name = "NewTitle"/></th>
+	<td><webobject name = "UserName"/></td>
+	<webobject name = "EditPresenter"/>
+	<td><webobject name = "ReasonText"/></td>
+	</tr></tfoot></webobject>
+<tbody>
+<webobject name = "Archives"><tr style = "height:2em;" class = "ungerade">
+    <td style = "padding:0px 2pt;"><webobject name = "ArchDate"/></td>
+    <td style = "padding:0px 2pt;"><webobject name = "ArchTime"/></td>
+    <td style = "padding:0px 3pt;"><webobject name = "Author"/></td>
+    <webobject name = "Presenter"/>
+    <td align = "center"><webobject name = "Reason"/></td>
+</tr></webobject>
+</tbody>
+</table>
+</td></tr>
+<tr><td style = "text-align:center;padding:1ex;">
+<webobject name="SaveButton"/> <webobject name="CancelButton"/>
+</td></tr></table>
+</webobject>
+</div>

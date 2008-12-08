@@ -433,6 +433,8 @@
 		<dict>
 			<key>gena</key>
 			<dict>
+				<key>fullName</key>
+				<string>Gennady Kushnir</string>
 				<key>givenName</key>
 				<string>Gena</string>
 				<key>groups</key>
@@ -589,6 +591,8 @@
 		<string>5</string>
 		<key>sessionThreshold</key>
 		<string>15</string>
+		<key>forceArchives</key>
+		<string>true</string>
 		<key>Mark</key>
 		<string>true</string>
 		<key>ItogMark</key>
@@ -627,7 +631,7 @@
 		<key>shortDateFormat</key>
 		<string>dd.MM</string>
 		<key>_defaultDate</key>
-		<string>19.10.2008</string>
+		<string>25.05.2008</string>
 		<key>keyValueCacheSize</key>
 		<string>2</string>
 		<key>logoutScreen</key>

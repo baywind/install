@@ -1,18 +1,17 @@
 <webobject name="Wrapper"><webobject name="TimeMachineWindow1"></webobject>
 
-<h1>Вас приветствует Ружэль!</h1>
-<h2 align="center"><nobr>Электронная система</nobr> <nobr>классных журналов</nobr> <nobr>на русском языке</nobr></h2>
+<h1><webobject name = "Welcome"/></h1>
+<h2 align="center"><webobject name = "Introduce"/></h2>
 <webobject name="CanAccess">
 <table cellspacing="3" cellpadding="2" align="center">
-<tr><th>Вам предлагается:</th></tr>
+<tr><th><webobject name = "SelectRegime"/></th></tr>
 <webobject name="Repetition1"><webobject name="GenericContainer1"><td>
 <webobject name="String1"></webobject>
 </td></webobject></webobject></table>
 </webobject>
-<webobject name="CanNotAccess">
-<div style="text-align:center;margin-top:20pt;">
-<p>У Вас нет прав доступа ни к одному из модулей</p>
-<p>Oбратитесь к администратору</p>
-</div>
-</webobject><div style="position:absolute;bottom:2em;width:99%;text-align:center;"><webobject name="String4"></webobject></div>
+<webobject name="CanNotAccess"><div style="text-align:center;margin-top:20pt;">
+<webobject name = "NoAccess"/>
+</div></webobject>
+<div style="position:absolute;bottom:2em;width:99%;text-align:center;">
+<webobject name="Notice"></webobject></div>
 </webobject>

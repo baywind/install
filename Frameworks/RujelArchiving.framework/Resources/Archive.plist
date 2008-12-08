@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archive</key>
+	<string>архив</string>
+	<key>author</key>
+	<string>Автор</string>
+	<key>reason</key>
+	<string>Причина исправления</string>
+	<key>newValues</key>
+	<string>Изменить</string>
+	<key>requiredReason</key>
+	<string>Необходимо указать причину изменения</string>
+</dict>
+</plist>

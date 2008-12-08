@@ -9,8 +9,21 @@
 	</array>
 	<key>SrcMarkTitle</key>
 	<string>Выбор журнала</string>
-	<key>ChooseRegimeTitle</key>
-	<string>Выбор Режима</string>
+	<key>ChooseRegime</key>
+	<dict>
+		<key>title</key>
+		<string>Выбор Режима</string>
+		<key>welcome</key>
+		<string>Вас приветствует РУЖЭЛЬ !</string>
+		<key>introduce</key>
+		<string>&lt;nobr&gt;Электронная система&lt;/nobr&gt; &lt;nobr&gt;классных журналов&lt;/nobr&gt; &lt;nobr&gt;на русском языке&lt;/nobr&gt;</string>
+		<key>selectRegime</key>
+		<string>Вам предлагается:</string>
+		<key>noAccess</key>
+		<string>&lt;p&gt;У Вас нет прав доступа ни к одному из модулей&lt;/p&gt;&lt;p&gt;Oбратитесь к администратору&lt;/p&gt;</string>
+		<key>notice</key>
+		<string>Не оставляйте открытый журнал без присмотра &lt;br /&gt;Таймер автоматического закрытия сессии выведен слева от кнопки &quot;Выход&quot;</string>
+	</dict>
 	<key>login</key>
 	<dict>
 		<key>descript</key>

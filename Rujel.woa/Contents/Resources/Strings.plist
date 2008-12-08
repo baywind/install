@@ -10,6 +10,8 @@
 		<string>дата</string>
 		<key>Date</key>
 		<string>Дата</string>
+		<key>Time</key>
+		<string>Время</string>
 		<key>int</key>
 		<string>целое</string>
 		<key>number</key>
@@ -67,8 +69,6 @@
 		<string>Пожалуйста подождите</string>
 		<key>refusingSessions</key>
 		<string>РУЖЕЛЬ просит Вас закончить работу и нажать &quot;Выход&quot;. &lt;br/&gt;Ждем Вас сразу после завершения технических работ</string>
-		<key>starterNotifier</key>
-		<string>Не оставляйте открытый журнал без присмотра &lt;br /&gt;Таймер автоматического закрытия сессии выведен слева от кнопки &quot;Выход&quot;</string>
 		<key>unsavedChanges</key>
 		<string>Несохраненные изменения будут потеряны</string>
 	</dict>
