@@ -1,15 +1,3 @@
-function get(point, toGet, skip) {
-	if(skip == null)
-		skip = 0;
-	var found = 0;
-	while (found <= skip) {
-		point = point.parentNode;
-		if(point.nodeName.toLowerCase() == toGet.toLowerCase())
-			found++;
-	}
-	return point;
-}
-
 function up(obj) {
 	var prev = obj.previousSibling;
 		if(prev == null)

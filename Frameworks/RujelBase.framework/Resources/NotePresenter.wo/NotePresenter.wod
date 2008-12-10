@@ -32,8 +32,8 @@ NoteEdit: WOTextField {
 	onChange = "checkChanges(this);";
 	style = style;
 	id = ^cellID;
-	onclick = "ext(this,5);";
-	onkeypress = "return extOnSpace(event,this,3);";
+	onclick = "ext(this,5,null,'tr');";
+	onkeypress = "return extOnSpace(event,this,3,null,'tr');";
 }
 
 Regular: WOConditional {

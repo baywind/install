@@ -325,3 +325,7 @@ SubsReport : WOHyperlink {
   disabled = session.readAccess._read.SubsReport;
   string = subTitle;
 }
+
+CoursesCSS : ResourceLink {
+  cssLink = "courses.css";
+}

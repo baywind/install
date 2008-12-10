@@ -83,8 +83,8 @@ NoteEdit: WOTextField {
 	disabled = noAccess;
 	style = "width:80%;";
 	id = ^cellID;
-	onclick = "ext(this,5);";
-	onkeypress = "return extOnSpace(event,this,5);";
+	onclick = "ext(this,5,null,'tr');";
+	onkeypress = "return extOnSpace(event,this,5,null,'tr');";
 	onchange = "checkChanges(this);";
 }
 

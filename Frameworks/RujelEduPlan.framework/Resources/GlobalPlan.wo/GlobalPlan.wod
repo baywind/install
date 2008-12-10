@@ -147,6 +147,7 @@ TogleAllButton : OnClickContainer {
   invokeAction = toggleAll;
   class = "grey";
   colspan = colspan;
+  onclick = session.checkRun;
 }
 
 ToggleAll : WOString {

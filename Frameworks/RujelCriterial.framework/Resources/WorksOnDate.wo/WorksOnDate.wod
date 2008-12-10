@@ -6,6 +6,7 @@ CSSLink: ResourceLink {
 WorkContainer : OnClickContainer {
   elementName = "tr";
   invokeAction = selectWork;
+  onclick = session.checkRun;
   class = rowClass;
   title = workItem.workType;
   style = rowStyle;

@@ -109,10 +109,17 @@ ReasonText : WOTextField {
   onchange = "this.form.saveArchive.disabled = (value == null || value.length < 2);";
 }
 
-HasTitle : WOConditional {
-  condition = title;
+HasDescription : WOConditional {
+  condition = description;
 }
 
 TitleString : WOString {
-  value = title;
+  value = application.extStrings.RujelArchiving_Archive.archiveTitle;
+  valueWhenEmpty = "Changes Archive";
+  escapeHTML = false;
+}
+
+DescriptionString : WOString {
+  value = description;
+  escapeHTML = false;
 }

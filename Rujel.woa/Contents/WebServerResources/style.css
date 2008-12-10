@@ -73,6 +73,17 @@ body {margin:2pt;}
 	text-align:center;
 }
 
+.prompt {
+	background-color:#ccffcc;
+	position:absolute;
+	width:15em;
+	padding:1em;
+	z-index:10;
+	border-color:#00ff00;
+	border-width: 1px;
+	border-style:solid;
+}
+
 .gerade {
 	background-color:#ffffaa;
 }
@@ -148,55 +159,5 @@ body {margin:2pt;}
 
 .highlight {background-color:#ffff66;}
 
-.highlightDim {background-color:#cccc33;}
-
 .highlight2 {background-color:#66ffff;}
 
-.highlight2Dim {background-color:#33cccc;}
-
-
-
-.Dim , .selectionDim , .maleDim , .femaleDim , .foundMaleDim , .foundFemaleDim , .greyDim , .geradeDim , .ungeradeDim, .orangeDim, .buttonDim , .highlightDim, .highlight2Dim {
-	text-decoration:underline;
-	cursor:pointer;	
-}
-.selectionDim {
-	background-color:#00cc00;
-}
-
-.maleDim {
-	background-color:#99cccc;
-}
-
-.femaleDim {
-	background-color:#cc9999;
-}
-
-.foundMaleDim {
-	background-color:#3366cc;
-}
-
-.foundFemaleDim {
-	background-color:#cc6666;
-}
-
-.greyDim {
-	background-color:#999999;
-}
-
-.geradeDim {
-	background-color:#cccc99;
-}
-
-.ungeradeDim {
-	background-color:#99cccc;
-}
-
-.orangeDim {
-	background-color:#cc9933;
-}
-
-.course {background-color:#ccffcc;}
-.eduPlan {background-color:#cccccc;}
-.courseDim {background-color:#99cc99;text-decoration:underline;cursor:pointer;}
-.eduPlanDim {background-color:#999999;text-decoration:underline;cursor:pointer;}

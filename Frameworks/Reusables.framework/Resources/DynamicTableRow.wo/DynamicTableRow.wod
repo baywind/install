@@ -1,14 +1,13 @@
 ComponentContent1: WOComponentContent {
 }
 
-Generic1: WOGenericContainer {
+Generic1: OnClickContainer {
 	bgcolor = color;
 	elementName = "TR";
+	disabled = disabled;
 	class = style;
 	invokeAction = ^selectAction;
-	onMouseOut = onMouseOut;
-	onMouseOver = onMouseOver;
-	onClick = onClick;
+	onclick = ^onClick;
 }
 
 Repetition1: WORepetition {

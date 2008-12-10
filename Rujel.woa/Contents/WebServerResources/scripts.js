@@ -183,26 +183,26 @@ function isNumberInput(event,dot) {
 	return false;
 }
 
-function extOnSpace(event,fld,maxLen,message) {
+function extOnSpace(event,fld,maxLen,message,extParent) {
 	if(eventKey(event) == 32) {
 		var cont = fld.value;
 		if(maxLen != null && (cont == null || cont.length <= maxLen))
 			return true;
 		returnField = fld;
-		myPrompt(message, cont + ' ');
+		myPrompt(message, cont + ' ',fld,extParent);
 		return false;
 	}
 	return true;
 }
 
-function extByName(fldName,maxLen,message) {
+function extByName(fldName,maxLen,message,extParent) {
 	if(fldName == null) return true;
 	var fld = document.getElementById(fldName);
 	if(fld == null) return true;
-	return ext(fld,maxLen,message);
+	return ext(fld,maxLen,message,extParent);
 }
 
-function ext(fld,maxLen,message) {
+function ext(fld,maxLen,message,extParent) {
 	if(fld == null) return true;
 	if(typeof fld == 'string') {
 		fld = document.getElementById(fld);
@@ -215,7 +215,7 @@ function ext(fld,maxLen,message) {
 	var cont = fld.value;
 	if(maxLen != null && (cont == null || cont.length <= maxLen)) return true;
 	returnField = fld;
-	return myPrompt(message, cont);
+	return myPrompt(message, cont,fld,extParent);
 	//cont = prompt(message,cont);
 	//if(cont != null) fld.value = cont;
 	//checkChanges(fld);
@@ -223,17 +223,18 @@ function ext(fld,maxLen,message) {
 }
 
 var returnField;
-function myPrompt(message,cont,pos) {
+function myPrompt(message,cont,pos,extParent) {
 	if(cont == null && returnField.value != null)
 		cont = returnField.value;
 	var prmt = document.createElement('div');
 	prmt.setAttribute('id','prompt');
 	//prmt.setAttribute('class','backfield2');
-	prmt.style.backgroundColor = '#ccffcc';
+	prmt.className = 'prompt';
+	/*prmt.style.backgroundColor = '#ccffcc';
 	prmt.style.width = '15em';
 	prmt.style.padding = '1em';
 	prmt.style.position = 'absolute';
-	prmt.style.zIndex = 10;
+	prmt.style.zIndex = 10;*/
 	returnField.parentNode.appendChild(prmt);
 	var elt;
 	if(message) {
@@ -258,6 +259,23 @@ function myPrompt(message,cont,pos) {
 	positionPopup(prmt,pos);
 	elt.focus();
 	elt.value = cont;
+	if(extParent != null) {
+		var par = get(returnField,extParent);
+		elt = document.createElement(extParent);
+		elt.style.display = 'none';
+		//elt.style.backgroundColor = par.style.backgroundColor;
+		elt.className = par.className;
+		elt.id = 'colorCash';
+		prmt.appendChild(elt);
+		/*
+		if (prmt.currentStyle) {
+			par.style.backgroundColor = prmt.currentStyle.backgroundColor;
+		} else {
+			elt = document.defaultView.getComputedStyle(prmt, "");
+			par.style.backgroundColor = elt.getPropertyValue("background-color");
+		}*/
+		par.className = "selection";
+	}
 	return prmt;
 }
 
@@ -287,24 +305,71 @@ function applyPrompt(event) {
 
 function closePrompt() {
 	prmt = document.getElementById('prompt');
+	var colorCash = document.getElementById('colorCash');
+	if(colorCash != null) {
+		get(returnField,colorCash.nodeName).className = colorCash.className;
+		//style.backgroundColor = colorCash.style.backgroundColor;
+	}
 	prmt.parentNode.removeChild(prmt);
 //	alert(changed);
 }
 
+function getBgRGBColor(obj) {
+	try {
+		var color = null;
+		if (obj.currentStyle) {
+			color = obj.currentStyle.backgroundColor;
+		} else {
+			color = document.defaultView.getComputedStyle(obj, "");
+			color = color.getPropertyValue("background-color");
+		}
+		if(color == null && obl.bgColor) {
+			color = obj.bgColor;
+		}
+		if(color == null)
+			return null;
+		color = new RGBColor(color);
+		if(!color.ok) {
+			return null;
+		}
+		return color;
+	} catch (e) {
+		//alert(e);
+		return null;
+	}
+}
+
+var tmp;
 function dim(obj) {
-	classname = obj.className;
-	len = obj.className.length;
-	if(classname.substring(len - 3,len) != "Dim")
-		obj.className = classname + "Dim";
-	return true;
+	tmp = {
+	backgroundColor: obj.style.backgroundColor,
+	textDecoration: obj.style.textDecoration,
+	cursor: obj.style.cursor
+	};
+	obj.style.textDecoration = "underline";
+	obj.style.cursor = "pointer";
+	
+	var color = getBgRGBColor(obj);
+	if(color == null) {
+		obj.style.backgroundColor = "grey";
+		return;
+	}
+	color.r -= 0x33;
+	if(color.r < 0)
+		color.r = 0;
+	color.g -= 0x33;
+	if(color.g < 0)
+		color.g = 0;
+	color.b -= 0x33;
+	if(color.b < 0)
+		color.b = 0;
+	obj.style.backgroundColor = color.toHex();
 }
 
 function unDim(obj) {
-	classname = obj.className;
-	len = classname.length;
-	if(classname.substring(len - 3,len) == "Dim")
-		obj.className = classname.substring(0,len - 3);
-	return true;
+	obj.style.backgroundColor = tmp.backgroundColor;
+	obj.style.textDecoration = tmp.textDecoration;
+	obj.style.cursor = tmp.cursor;
 }
 
 function focus() {
@@ -549,22 +614,35 @@ function closePopup(aForm) {
 	}
 }
 
+function get(point, toGet, skip) {
+	if(skip == null)
+		skip = 0;
+	var found = 0;
+	while (found <= skip) {
+		point = point.parentNode;
+		if(point.nodeName.toLowerCase() == toGet.toLowerCase())
+			found++;
+	}
+	return point;
+}
+
+function setDisplay(obj,value) {
+	if(typeof obj == 'string') {
+		obj = document.getElementById(obj);
+		if(obj == null) return false;
+	}
+	obj.style.display = value;
+	return obj;
+}
+
 function showObj(obj) {
-	if(typeof obj == 'string') {
-		obj = document.getElementById(obj);
-		if(obj == null) return false;
-	}
-	obj.style.display = '';
-	return obj;
+	return setDisplay(obj,'');
 }
+
 function hideObj(obj) {
-	if(typeof obj == 'string') {
-		obj = document.getElementById(obj);
-		if(obj == null) return false;
-	}
-	obj.style.display = 'none';
-	return obj;
+	return setDisplay(obj,'');
 }
+
 function toggleObj(obj) {
 	if(typeof obj == 'string') {
 		obj = document.getElementById(obj);
