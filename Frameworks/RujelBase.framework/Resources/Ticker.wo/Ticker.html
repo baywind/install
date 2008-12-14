@@ -93,7 +93,16 @@
 		changeMass(value);
 	}
 
-	--></script><webobject name="Block"><webobject name="GenericContainer1"><tr><td align="center" colspan="2"><webobject name="SelectTitle"></webobject></td></tr><tr><td onclick="setAll(true)" class="male" onmouseover="className = className + 'Dim';" align="center" onmouseout="className = className.substring(0,className.length - 3);"><webobject name="SelectAll"></webobject></td><td onclick="setAll(false)" class="female" onmouseover="className = className + 'Dim';" align="center" onmouseout="className = className.substring(0,className.length - 3);"><webobject name="SelectNone"></webobject></td></tr><tr><td onclick="setAll('toggle')" class="gerade" onmouseover="className = className + 'Dim';" colspan="2" align="center" onmouseout="className = className.substring(0,className.length - 3);"><webobject name="SelectInvert"></webobject></td></tr></webobject>
+	--></script>
+<webobject name="Block"><webobject name="GenericContainer1">
+	<tr><td align="center" colspan="2"><webobject name="SelectTitle"></webobject></td></tr>
+	<tr>
+<td onmouseover="dim(this);" onmouseout="unDim(this);" onclick="setAll(true)" class="male" align="center">
+		<webobject name="SelectAll"></webobject></td>
+<td onmouseover="dim(this);" onmouseout="unDim(this);" onclick="setAll(false)" class="female" align="center">
+		<webobject name="SelectNone"></webobject></td></tr><tr>
+<td colspan="2" onmouseover="dim(this);" onmouseout="unDim(this);" onclick="setAll('toggle')" class="gerade" align="center">
+<webobject name="SelectInvert"></webobject></td></tr></webobject>
 	</webobject>
 <webobject name="Inline"><b><webobject name="SelectAll"></webobject> : </b>
 	<webobject name="CheckAll"></webobject>

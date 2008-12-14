@@ -225,13 +225,11 @@ StudentName2: WOString {
 	value = studentItem.person.firstName;
 }
 
-StudentNameContainer: WOGenericContainer {
+StudentNameContainer: OnClickContainer {
 	elementName = "td";
 	style = "white-space:nowrap;";
 	invokeAction = selectStudent;
 	onclick = session.tryLoad;
-	onmouseout = "unDim(this.parentElement);";
-	onmouseover = "dim(this. parentElement);";
 }
 
 StudentSecondName: WOString {
@@ -246,13 +244,11 @@ StudentsMode: WOConditional {
 	condition = currentMode;
 }
 
-SubjectContainer: WOGenericContainer {
+SubjectContainer: OnClickContainer {
 	class = subjItem.style;
 	elementName = "tr";
 	invokeAction = selectSubject;
 	onclick = session.tryLoad;
-	onmouseout = "unDim(this);";
-	onmouseover = "dim(this);";
 }
 
 SubjectMode: WOConditional {

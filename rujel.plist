@@ -234,9 +234,9 @@
 				<key>root</key>
 				<string>1023</string>
 				<key>zavuch</key>
-				<string>7</string>
+				<string>15</string>
 				<key>tutor</key>
-				<string>3</string>
+				<string>7</string>
 			</dict>
 			<key>SrcMark</key>
 			<dict>
@@ -537,8 +537,8 @@
 		<key>maxGrade</key>
 		<string>11</string>
 		<key>autoItogLagDays</key>
-		<string>-4</string>
-		<key>_ignorePrognosesAfterDays</key>
+		<string>1</string>
+		<key>ignorePrognosesAfterDays</key>
 		<string>45</string>
 		<key>autogenerateEduPeriods</key>
 		<string>true</string>
@@ -597,13 +597,15 @@
 		<string>true</string>
 		<key>ItogMark</key>
 		<string>true</string>
+		<key>BaseNote</key>
+		<string>true</string>
 	</dict>
 	<key>schedule</key>
 	<dict>
 		<key>DAILY</key>
 		<dict>
 			<key>time</key>
-			<string>13:01</string>
+			<string>13:43</string>
 		</dict>
 		<key>MONTHLY</key>
 		<dict/>
@@ -630,7 +632,7 @@
 		<string>dd.MM.yyyy</string>
 		<key>shortDateFormat</key>
 		<string>dd.MM</string>
-		<key>_defaultDate</key>
+		<key>defaultDate</key>
 		<string>25.05.2008</string>
 		<key>keyValueCacheSize</key>
 		<string>2</string>

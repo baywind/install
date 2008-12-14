@@ -28,4 +28,5 @@ TextField1: WOTextField {
 	size = 10;
 	value = session.today;
 	disabled = session.readAccess._edit.timeMachine;
+	style = "text-align:center;";
 }

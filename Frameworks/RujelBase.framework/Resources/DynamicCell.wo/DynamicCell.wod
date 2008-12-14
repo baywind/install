@@ -1,8 +1,6 @@
-Container: WOGenericContainer {
+Container: OnClickContainer {
 	elementName = elementName;
-	onclick = onClick;
-	onmouseout = onMouseOut;
-	onmouseover = onMouseOver;
+	disabled = disabled;
 	title = currAddOn.title;
 }
 

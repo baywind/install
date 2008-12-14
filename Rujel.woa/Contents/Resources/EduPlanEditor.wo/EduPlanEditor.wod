@@ -30,12 +30,10 @@ CurrSubject: WOTextField {
 	onchange = "checkChanges(this);";
 }
 
-CycleRow: WOGenericContainer {
+CycleRow: OnClickContainer {
 	elementName = "tr";
 	class = "grey";
 	invokeAction = selectCycle;
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 	onclick = session.checkRun;
 	valign = "middle";
 }
@@ -56,12 +54,10 @@ GradeItem: WOString {
 	value = gradeItem;
 }
 
-GradeRow: WOGenericContainer {
+GradeRow: OnClickContainer {
 	class = gradeRowStyle;
 	elementName = "tr";
 	invokeAction = selectGrade;
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 	onclick = session.checkRun;
 }
 

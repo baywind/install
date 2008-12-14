@@ -53,11 +53,9 @@ NotOnEdit: WOConditional {
 	negate = true;
 }
 
-StyledRow: WOGenericContainer {
+StyledRow: OnClickContainer {
 	class = style;
 	elementName = "tr";
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 	onclick = onClick;
 	invokeAction = select;
 	title = itemFullName;

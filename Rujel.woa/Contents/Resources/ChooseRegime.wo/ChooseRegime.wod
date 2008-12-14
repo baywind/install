@@ -6,11 +6,9 @@ CanNotAccess: WOConditional {
 	negate = true;
 }
 
-GenericContainer1: WOGenericContainer {
+GenericContainer1: OnClickContainer {
 	elementName = "tr";
 	invokeAction = choose;
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 	onclick = session.tryLoad;
 	class="orange";
 }

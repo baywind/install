@@ -138,13 +138,11 @@ ShowTablist: WOConditional {
 	condition = allTabs;
 }
 
-Span: WOGenericContainer {
+Span: OnClickContainer {
 	class = "button";
 	elementName = "span";
 	invokeAction = editSubgroup;
 	onclick = session.checkRun;
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 }
 
 SubjectName: WOString {

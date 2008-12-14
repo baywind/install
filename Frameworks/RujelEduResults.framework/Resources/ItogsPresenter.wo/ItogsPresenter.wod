@@ -2,13 +2,11 @@ HasStudent: WOConditional {
 	condition = ^student;
 }
 
-ItogMarkContainer: WOGenericContainer {
+ItogMarkContainer: OnClickContainer {
 	elementName = "td";
 	title = itog.value;
 	invokeAction = moreInfo;
 	onclick = session.ajaxPopup;
-	onmouseover = "dim(this);";
-	onmouseout = "unDim(this);";
 	align = "center";
 	class = styleClass;
 }

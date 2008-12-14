@@ -23,11 +23,9 @@ Repetition1: WORepetition {
 	list = ^lessonsList;
 }
 
-PeriodRow: WOGenericContainer {
+PeriodRow: OnClickContainer {
 	elementName = "tr";
 	onclick = session.checkRun;
-	onmouseover = "dim(this);";
-	onmouseout = "unDim(this);";
 	class = rowClass;
 	invokeAction = selectPeriod;
 }

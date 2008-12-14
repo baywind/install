@@ -22,7 +22,6 @@ TitlePresenter: WOSwitchComponent {
 	lesson = lessonItem;
 	isSelected = isSelected;
 	readOnly = ^readOnly;
-	defaultStyle = studentStyle;
 	single=single;
 	selectAction = selectLesson;
 }
@@ -56,13 +55,12 @@ Index: WOString {
 	value = idx;
 }
 
-StudentTD: WOGenericContainer {
+StudentTD: OnClickContainer {
 	align = "left";
 	elementName = "td";
 	invokeAction = studentSelection;
-	onmouseover=onmouseover;
-	onmouseout="this.className='';";
-	onclick = onclick;
+	onclick = session.checkRun;
+	disabled = cantSelectStudent;
 	title = studentItem.person.secondName;
 	colspan = 2;
 }
@@ -81,7 +79,6 @@ NotePresenter1: WOSwitchComponent {
 	isSelected = isSelected;
 	cellID = cellID;
 	readOnly = ^readOnly;
-	defaultStyle = studentStyle;
 	selectAction = selectLesson;
 	student = studentItem;
 	single=^single;
@@ -111,7 +108,6 @@ NotePresenter2: WOSwitchComponent {
 	isSelected = isSelected;
 	cellID = cellID;
 	readOnly = ^readOnly;
-	defaultStyle = studentStyle;
 	selectAction = selectLesson;
 	student = studentItem;
 	denyCreation = true;

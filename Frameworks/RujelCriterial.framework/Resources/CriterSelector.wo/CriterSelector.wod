@@ -1,10 +1,8 @@
-IntegralContainer: WOGenericContainer {
+IntegralContainer: OnClickContainer {
 	class = intClass;
 	elementName = "td";
 	style = "border-right:3px black double;";
 	title = application.extStrings.RujelCriterial_Strings.integral;
-	onmouseover = "dim(this);";
-	onmouseout = "unDim(this);";
 	invokeAction = selectIntegral;
 	onclick = session.checkRun;
 }
@@ -21,12 +19,10 @@ CritListing: WORepetition {
 	list = criteria;
 }
 
-CritContainer: WOGenericContainer {
+CritContainer: OnClickContainer {
 	class = crClass;
 	elementName = "td";
 	title = critItem.comment;
-	onmouseover = "dim(this);";
-	onmouseout = "unDim(this);";
 	invokeAction = selectCriter;
 	onclick = session.checkRun;
 }
@@ -35,13 +31,11 @@ CritTitle: WOString {
 	value = critItem.title;
 }
 
-TextContainer: WOGenericContainer {
+TextContainer: OnClickContainer {
 	class = textClass;
 	elementName = "td";
 	title = application.extStrings.RujelCriterial_Strings.comments;
 	style = "border-left:3px black double;";
-	onmouseover = "dim(this);";
-	onmouseout = "unDim(this);";
 	invokeAction = selectText;
 	onclick = session.checkRun;
 }

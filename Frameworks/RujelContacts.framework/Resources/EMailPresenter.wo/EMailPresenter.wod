@@ -107,13 +107,11 @@ Repetition1: WORepetition {
 	list = ^list;
 }
 
-RowContainer: WOGenericContainer {
+RowContainer: OnClickContainer {
 	class = styleClass;
 	elementName = "tr";
 	invokeAction = select;
 	onclick = session.tryLoad;
-	onmouseout = "unDim(this);";
-	onmouseover = "dim(this);";
 }
 
 Save: WOSubmitButton {

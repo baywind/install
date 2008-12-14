@@ -22,7 +22,7 @@ DeleteButton: WOGenericElement {
 	type = "button";
 }
 
-DueDateTitle: WOString {
+MarkTitle: WOString {
 	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.mark;
 }
 

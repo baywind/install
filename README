@@ -11,10 +11,10 @@ http://www.rujel.net/distribute/install
 
 RUJEL application and set of frameworks it uses.
 
-RUJEL is a web-portal application for maintaining electronic class journal in schools.
+RUJEL is a web-portal application for maintaining online markbook in schools.
 It supports criterial evaluation for International Baccalaureate schools.
 
-RUJEL has russian user interface but it can be easily losalised by rewriting *.plist files
+RUJEL has russian user interface but it can be easily localised by rewriting *.plist files
 located in Resources folder of each framework
 
 Here is precompiled installation ready java-application and related frameworks

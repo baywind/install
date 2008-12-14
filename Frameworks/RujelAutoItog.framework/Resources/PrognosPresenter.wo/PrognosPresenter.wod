@@ -20,28 +20,26 @@ IsRow: WOConditional {
 	condition = ^student;
 }
 
-PrognosisContainer: WOGenericContainer {
+PrognosisContainer: OnClickContainer {
 	align = "center";
 	elementName = "td";
+	disabled = noAccess;
 	title = currAddOn.prognosis.value;
 	style = style;
 	class = styleClass;
-	onclick = onclick;
+	onclick = session.ajaxPopup;
 	invokeAction = editPrognosis;
-	onmouseover = onmouseover;
-	onmouseout = onmouseout;
 }
 
-TimeoutContainer: WOGenericContainer {
+TimeoutContainer: OnClickContainer {
 	align = "center";
 	elementName = "td";
+	disabled = noAccess;
 	style = "width:10ex;text-align:center;";
 	title = currAddOn.timeout.reason;
 	class = styleClass;
-	onclick = onclick;
+	onclick = session.ajaxPopup;
 	invokeAction = editTimeout;
-	onmouseover = onmouseover;
-	onmouseout = onmouseout;
 }
 
 PrognosisPresentValue: WOString {

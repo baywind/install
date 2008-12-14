@@ -27,13 +27,11 @@ StudentName: WOString {
 	value = name;
 }
 
-StudentNameContainer: WOGenericContainer {
+StudentNameContainer: OnClickContainer {
 	elementName = "td";
 	style = cellStyle;
 	invokeAction = select;
 	onclick = onClick;
-	onmouseout = onMouseOut;
-	onmouseover = onMouseOver;
 	class = rowStyle;
 }
 

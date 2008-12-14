@@ -54,13 +54,11 @@ Regular: WOConditional {
 	condition = canEdit;
 }
 
-LessonRow: WOGenericContainer {
+LessonRow: OnClickContainer {
 	elementName = "tr";
 	onclick = session.checkRun;
 	invokeAction = selectLesson;
 	class = rowClass;
-	onmouseover = "dim(this);";
-	onmouseout = "unDim(this);";
 	title = lessonProperties.title;
 	style = lessonProperties.style;
 }

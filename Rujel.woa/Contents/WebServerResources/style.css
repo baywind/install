@@ -6,6 +6,10 @@ img {
 	border:none;
 }
 
+form {
+	margin:0px;
+}
+
 .titles {
 	text-align:right;
 }
@@ -160,4 +164,13 @@ body {margin:2pt;}
 .highlight {background-color:#ffff66;}
 
 .highlight2 {background-color:#66ffff;}
+
+#ajaxPopup {
+	display:block;
+	position:absolute;
+	top:30%;
+	left:30%;
+	padding:10pt;
+	border:1px #666 dotted;
+}
 

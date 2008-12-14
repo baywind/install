@@ -80,12 +80,10 @@ IfEduPlan: WOConditional {
 }
 
 
-GenericContainer: WOGenericContainer {
+GenericContainer: OnClickContainer {
 	class = rowStyle;
 	elementName = "tr";
 	invokeAction = select;
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 	onclick = onClick;
 }
 
@@ -158,11 +156,9 @@ Conditional1: WOConditional {
 	condition = canCreate;
 }
 
-AddLesson: WOGenericContainer {
+AddLesson: OnClickContainer {
 	elementName = "tr";
 	invokeAction = addCourse;
-	onmouseover="dim(this);";
-	onmouseout="unDim(this);";
 	onclick = session.checkRun;
 	class="orange";
 }

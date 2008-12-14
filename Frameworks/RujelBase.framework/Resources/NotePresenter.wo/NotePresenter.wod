@@ -4,12 +4,12 @@ Conditional1: WOConditional {
 }
 
 ForLesson: WOConditional {
-	condition = ^student;
+	condition = student;
 	negate = true;
 }
 
 ForStudent: WOConditional {
-	condition = ^student;
+	condition = student;
 }
 
 IsRecent: WOConditional {
@@ -30,10 +30,11 @@ NoteEdit: WOTextField {
 	value = noteForStudent;
 	disabled = noAccess;
 	onChange = "checkChanges(this);";
-	style = style;
+	size = len;
+	style = "text-align:center;";
 	id = ^cellID;
-	onclick = "ext(this,5,null,'tr');";
-	onkeypress = "return extOnSpace(event,this,3,null,'tr');";
+	onclick = "ext(this,this.size +1,null,'tr');";
+	onkeypress = "return extOnSpace(event,this,this.size -1,null,'tr');";
 }
 
 Regular: WOConditional {
@@ -47,7 +48,7 @@ StyledTD: OnClickContainer {
 	align = "center";
 	class = tdStyle;
 	elementName = td;
-	invokeAction = ^selectAction;
+	invokeAction = selectAction;
 	valign = "middle";
 	title = fullNoteForStudent;
 	style = "width:2em;padding:1pt;";
@@ -59,12 +60,12 @@ Div : WOGenericContainer {
 }
 
 InList : WOConditional {
-  condition = ^single;
+  condition = single;
   negate = true;
 }
 
 IsSingle : WOConditional {
-  condition = ^single;
+  condition = single;
 }
 
 FullNote : WOString {
