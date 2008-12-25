@@ -91,8 +91,6 @@ NotesPage1: NotesPage {
 	lessonsList = courseItem.lessonsList;
 	studentsList = courseItem.course.groupList;
 	course = courseItem.course;
-	activeAddOns = activeNotesAddOns;
-	allAddOns = notesAddOns;
 	present = present;
 }
 

@@ -96,8 +96,6 @@ NotesPage1: NotesPage {
 	selectStudentAction = selectStudent;
 	single = single;
 	present = present;
-	activeAddOns = activeNotesAddOns;
-	allAddOns = notesAddOns;
 }
 
 OverGroupName: WOString {

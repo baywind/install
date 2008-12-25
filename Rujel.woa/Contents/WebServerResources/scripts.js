@@ -486,15 +486,22 @@ function ajaxPopupAction (action,aevent) {
 	return true;
 }
 
-function ajaxPost(aForm) {
+function ajaxPost(ini) {
 	if(!tryLoad(false))
 		return false;
-	if(typeof aForm == "String")
-		aForm = document.getElementById(aForm);
+	if(typeof ini == "String")
+		ini = document.getElementById(aForm);
+	var aForm = ini;
+	if(ini.form && ini.type == "submit")
+		aForm = ini.form;
+	else
+		ini = null;
 	var params = "";	
 	for(var i=0;i<aForm.elements.length;i++) {
 		var elt = aForm.elements[i];
 		if(elt == null || elt.name == null || elt.value == null)
+			continue;
+		if(ini != null && elt.type == "submit" && elt != ini)
 			continue;
 		if(params.length > 0)
 			params = params + '&';

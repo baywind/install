@@ -8,7 +8,7 @@ SaveButton: WOSubmitButton {
 	value = application.strings.uiElements.Save;
 	id = "saveArchive";
 	name = "saveArchive";
-	disabled = true;
+	disabled = showReason;
 	title = application.extStrings.RujelArchiving_Archive.requiredReason;
 }
 

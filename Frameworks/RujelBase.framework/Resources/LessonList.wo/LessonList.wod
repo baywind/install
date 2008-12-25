@@ -185,13 +185,6 @@ SaveButton: WOSubmitButton {
 	value = application.strings.uiElements.Save;
 }
 
-AddButton: WOSubmitButton {
-	value = application.strings.uiElements.Add;
-	onclick = "changed=false;";
-	disabled = ^access._createLesson;
-	action = ^addLesson;
-}
-
 DeleteButton: WOSubmitButton {
 	action = ^delete;
 	value = application.strings.uiElements.Delete;
@@ -227,4 +220,15 @@ DateCell : WOGenericContainer {
   elementName = "td";
   class = dateCellStyle;
   align="center";
+}
+
+CanCreate : WOConditional {
+  condition = ^access._createLesson;
+  negate = true;
+}
+
+ShowAdd : WOSubmitButton {
+  value = application.strings.uiElements.Add;
+  action = newLessonPopup;
+  onclick = "ajaxPost(this);return false;";
 }

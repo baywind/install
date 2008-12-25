@@ -165,7 +165,7 @@ body {margin:2pt;}
 
 .highlight2 {background-color:#66ffff;}
 
-#ajaxPopup {
+#ajaxPopup, .popup {
 	display:block;
 	position:absolute;
 	top:30%;

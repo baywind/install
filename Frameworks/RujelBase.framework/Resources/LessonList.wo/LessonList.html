@@ -22,10 +22,6 @@
 <webobject name="IfAbbreviated"><th style="width:3em;"><webobject name="HTtitle"/></th></webobject>
 <webobject name="IfFull"><th width="35%"><webobject name="HomeTaskTitle"/></th></webobject></tr>
 </thead>
-<webobject name="AllowEdit"><tfoot>
-<tr><td align="center" colspan="4">
-<webobject name="Conditional1"><webobject name="SaveButton"></webobject>&nbsp; &nbsp;</webobject><webobject name="AddButton"></webobject><webobject name="Conditional1">&nbsp; &nbsp;<webobject name="DeleteButton"></webobject></webobject></td></tr>
-</tfoot></webobject>
 <tbody>
 <webobject name="LessonsListing"><webobject name="Regular"><webobject name="LessonRow">
 <webobject name="HasStudent"><webobject name="StudentPresenter"></webobject><td class="selection" width="2"></td></webobject>
@@ -49,3 +45,9 @@
 </webobject>
 <!-- tr><td colspan="3" class="grey" height="4"></td></tr -->
 </tbody></table>
+<webobject name="AllowEdit"><p align="center">
+<webobject name="Conditional1"><webobject name="SaveButton"/></webobject>
+<webobject name = "CanCreate"> &nbsp; &nbsp; <webobject name = "ShowAdd"/>
+</webobject>
+<webobject name="Conditional1">&nbsp; &nbsp; <webobject name="DeleteButton"/></webobject>
+</p></webobject>

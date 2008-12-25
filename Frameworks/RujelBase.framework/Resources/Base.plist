@@ -56,5 +56,11 @@
 	</dict>
 	<key>notMoreXwords</key>
 	<string>Можно использовать не более %d слов</string>
+	<key>newLesson</key>
+	<string>Новый урок</string>
+	<key>dateAndThemeRequired</key>
+	<string>Для создания нового урока необходимо указать дату проведения и тему урока</string>
+	<key>notInTab</key>
+	<string>Указанная дата не попадает в текущий диапазон. &lt;br/&gt; Перейдите на соответствующую закладку (справа) и попробуйте еще раз.</string>
 </dict>
 </plist>

@@ -1,0 +1,39 @@
+AddButton: WOSubmitButton {
+	value = application.strings.uiElements.Save;
+	action = save;
+}
+
+DateTitle: WOString {
+	value = application.strings.dataTypes.date;
+}
+
+ThemeTitle: WOString {
+	value = application.strings.properties.EduLesson.theme;
+}
+
+DateField : WOTextField {
+  value = newDate;
+  size = 10;
+}
+
+ThemeField : WOText {
+  value = newTheme;
+  rows = 2;
+  cols = 40;
+}
+
+Form : WOForm {
+}
+
+UndoButton : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  value = application.strings.uiElements.Cancel;
+  invokeAction = back;
+  onclick = session.tryLoad;
+}
+
+PopupTitle : WOString {
+  value = application.extStrings.RujelBase_Base.newLesson;
+  valueWhenEmpty = "New Lesson";
+}
