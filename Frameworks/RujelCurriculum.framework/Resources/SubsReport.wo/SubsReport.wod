@@ -33,29 +33,29 @@ Comment : WOString {
 }
 
 DateTitle : WOString {
-  value = application.strings.dataTypes.Date;
+  value = application.strings.Reusables_Strings.dataTypes.Date;
 }
 
 TeacherTitle : WOString {
-  value = application.extStrings.RujelCurriculum_Curriculum.titles.OrigTeacher;
+  value = application.strings.RujelCurriculum_Curriculum.titles.OrigTeacher;
 }
 
 SubjectTitle : WOString {
-  value = application.strings.properties.EduCycle.subject;
+  value = application.strings.RujelInterfaces_Names.EduCycle.subject;
 }
 
 ClassTitle : WOString {
-  value = application.strings.properties.EduGroup.this;
+  value = application.strings.RujelInterfaces_Names.EduGroup.this;
 }
 
 ReasonTitle : WOString {
-  value = application.extStrings.RujelCurriculum_Curriculum.titles.Reason;
+  value = application.strings.RujelCurriculum_Curriculum.titles.Reason;
 }
 
 SubstitutorTitle : WOString {
-  value = application.extStrings.RujelCurriculum_Curriculum.titles.Substitutor;
+  value = application.strings.RujelCurriculum_Curriculum.titles.Substitutor;
 }
 
 CommentTitle : WOString {
-  value = application.strings.dataTypes.comment;
+  value = application.strings.Reusables_Strings.dataTypes.comment;
 }

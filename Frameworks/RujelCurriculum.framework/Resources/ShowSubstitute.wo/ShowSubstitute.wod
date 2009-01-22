@@ -1,6 +1,6 @@
 SubsTitle : WOString {
   value = substitute.title;
-  valueWhenEmpty = application.extStrings.RujelCurriculum_Curriculum.Substitute;
+  valueWhenEmpty = application.strings.RujelCurriculum_Curriculum.Substitute;
 }
 
 Substitutor : WOString {

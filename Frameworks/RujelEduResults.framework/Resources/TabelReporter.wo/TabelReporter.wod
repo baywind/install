@@ -4,7 +4,7 @@ CycleGroup: WORepetition {
 }
 
 SubjectTitle: WOString {
-	value = application.strings.properties.EduCycle.subject;
+	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
 	valueWhenEmpty = "Subject";
 	escapeHTML = false;
 }
@@ -74,6 +74,6 @@ Num : WOString {
 }
 
 CommentsTitle : WOString {
-  value = application.extStrings.RujelEduResults_EduResults.comments;
+  value = application.strings.RujelEduResults_EduResults.comments;
   valueWhenEmpty = "Comments";
 }

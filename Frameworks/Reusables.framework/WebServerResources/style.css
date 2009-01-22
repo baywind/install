@@ -1,0 +1,53 @@
+h1 , h2 , h3 , h4 {
+	text-align:center;
+}
+
+img {
+	border:none;
+}
+
+form {
+	margin:0px;
+}
+
+body {margin:2pt;}
+
+.backfield1 {
+	background-color:#ffffcc;
+	vertical-align:top;
+	text-align:center;
+}
+
+.backfield2 {
+	background-color:#e6e6e6;
+	vertical-align:top;
+	text-align:center;
+}
+
+.gerade {
+	background-color:#ffffaa;
+}
+
+.ungerade {
+	background-color:#ccffff;
+}
+
+.selection {
+	background-color:#00ff00;
+}
+
+.selectionBorder {
+	border-color:#00ff00;
+	border-width: 2pt;
+	border-style:solid;
+	margin:0;
+}
+
+.grey {
+	background-color:#cccccc;
+}
+
+.orange {
+	background-color:#ffcc66;
+}
+

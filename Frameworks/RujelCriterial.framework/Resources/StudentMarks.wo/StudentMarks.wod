@@ -1,14 +1,14 @@
 DeadLineTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.shortDeadline;
-	valueWhenEmpty = application.strings.dataTypes.date;
+	value = application.strings.RujelCriterial_Strings.shortDeadline;
+	valueWhenEmpty = application.strings.Reusables_Strings.dataTypes.date;
 }
 AnnounceTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.shortAnnounce;
-	valueWhenEmpty = application.strings.dataTypes.date;
+	value = application.strings.RujelCriterial_Strings.shortAnnounce;
+	valueWhenEmpty = application.strings.Reusables_Strings.dataTypes.date;
 }
 
 ThemeTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.theme;
+	value = application.strings.RujelCriterial_Strings.theme;
 }
 Conditional1: WOConditional {
 	condition = isMax;
@@ -33,12 +33,12 @@ IsMax: WOConditional {
 
 TextHeader: WOGenericContainer {
 	elementName = "th";
-	title = application.extStrings.RujelCriterial_Strings.comments;
+	title = application.strings.RujelCriterial_Strings.comments;
 	align = "left";
 }
 
 TextTitle: WOString {
-	value = application.strings.dataTypes.text;
+	value = application.strings.Reusables_Strings.dataTypes.text;
 }
 
 Repetition1: WORepetition {
@@ -107,12 +107,12 @@ workRow: WOGenericContainer {
 }
 
 WorksTitle : WOString {
-  value = application.extStrings.RujelCriterial_Strings.works;
+  value = application.strings.RujelCriterial_Strings.works;
   valueWhenEmpty = "works";
 }
 
 CriteriaTitle : WOString {
-  value = application.extStrings.RujelCriterial_Strings.criteria;
+  value = application.strings.RujelCriterial_Strings.criteria;
   valueWhenEmpty = "criteria";
 }
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="generator" content="WebObjects 5.4.4" />
+		<title><webobject name = "Title"/> (<webobject name = "RecentGroupName"/>)</title>
+		<webobject name = "RGBColor"/>
+		<webobject name = "Reusables"/>
+		<webobject name = "LocalLinks"/>
+		<webobject name = "TabLinks"/>		
+	</head>
+	
+	<webobject name = "Body">
+	<table width = "100%" cellpadding = "0" cellspacing = "0" border = "0" style = "border-style:none none solid;height:2.4em;background-color:#ffffff;" class = "selectionBorder">
+		<tr><td align = "center" valign = "bottom" style = "width:5em;font-size:larger;">
+		<a href = "#" onclick = "toggleObj('groupList');"><webobject name = "RecentGroupName"/></a>
+		</td><td valign = "bottom" align = "left">
+		<webobject name = "Tabs"/>
+		</td><td align = "right" valign = "bottom" style = "padding:3pt;">
+		<form action = "" name = "request" method = "get" onsubmit = "removeDefault(this);return true;">
+		<input type = "submit" value = "" style = "position:absolute;z-index:-1;"/>
+		<webobject name = "RegimeField"/><webobject name = "GrField"/>
+		<webobject name = "ShowSince">
+		<webobject name = "PeriodTitle"/> <webobject name = "SinceTitle"/>:
+		<webobject name = "Since"/> <webobject name = "ToTitle"/>:</webobject>
+		<webobject name = "JustDate"><webobject name = "DateTitle"/>:</webobject>
+		<webobject name = "DateField"/>
+		</form>
+	</td></tr></table>
+		<div id = "groupList" class = "backfield2 selectionBorder"  style = "position:absolute;display:none;width:5em;padding:4pt;border-width:1px;">
+		<table width = "100%">
+		<webobject name = "GroupRow">
+		<td align = "right"><webobject name = "GoupGrade"/></td>
+		<td align = "left"><webobject name = "GroupName"/></td>
+		</webobject>
+		</table>
+		</div>
+		<webobject name = "FrontPage">
+		<script language = "JavaScript" type="text/javascript">
+			showObj("groupList");
+		</script>
+		
+		</webobject>
+		<webobject name = "GroupSelected">
+		<div class = "backfield1">
+		<br/>
+		<webobject name = "Component"/>
+		</div>
+		</webobject>
+	</webobject>
+</html>

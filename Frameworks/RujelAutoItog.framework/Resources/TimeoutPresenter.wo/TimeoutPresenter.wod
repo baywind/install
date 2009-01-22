@@ -14,7 +14,7 @@ CourseTimeoutDueDate: WOString {
 }
 
 Header: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.timeoutHead;
+	value = application.strings.RujelAutoItog_AutoItog.timeoutHead;
 	escapeHTML = false;
 }
 

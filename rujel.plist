@@ -599,6 +599,8 @@
 		<string>true</string>
 		<key>BaseNote</key>
 		<string>true</string>
+		<key>Prognosis</key>
+		<string>true</string>
 	</dict>
 	<key>schedule</key>
 	<dict>

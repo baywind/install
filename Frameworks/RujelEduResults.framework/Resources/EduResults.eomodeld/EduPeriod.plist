@@ -9,7 +9,7 @@
     ); 
     attributesUsedForLocking = (perType, begin, end, num, eduYear); 
     className = "net.rujel.eduresults.EduPeriod"; 
-    classProperties = (begin, eduYear, end, num, periodType, itogmarks); 
+    classProperties = (begin, eduYear, end, num, periodType); 
     externalName = "EDU_PERIOD"; 
     fetchSpecificationDictionary = {}; 
     name = EduPeriod; 

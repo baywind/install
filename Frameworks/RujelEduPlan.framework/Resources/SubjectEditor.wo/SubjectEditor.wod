@@ -3,12 +3,12 @@ Form1: WOForm {
 }
 
 AreaTitle : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.area;
+  value = application.strings.RujelEduPlan_EduPlan.properties.area;
   valueWhenEmpty = "Area";
 }
 
 SubjectName : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.subject;
+  value = application.strings.RujelEduPlan_EduPlan.properties.subject;
   valueWhenEmpty = "Subject";
 }
 Subject : WOTextField {
@@ -19,7 +19,7 @@ Subject : WOTextField {
 }
 
 FullSubjectName : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.fullName;
+  value = application.strings.RujelEduPlan_EduPlan.properties.fullName;
 }
 
 FullNameInput : WOText {
@@ -38,10 +38,10 @@ AreaPopUp : WOPopUpButton {
 }
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
     disabled = cantChange;
 }
 ResetButton1: WOResetButton {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "cancel();";
 }

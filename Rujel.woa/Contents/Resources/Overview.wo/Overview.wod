@@ -21,7 +21,7 @@ ClassListing1: ClassListing {
 }
 
 ClassTitle: WOString {
-	value = application.strings.properties.EduGroup.this;
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
 }
 
 Conditional1: WOConditional {
@@ -65,7 +65,7 @@ LessonTabs1: Tabs {
 
 Modes: Tabs {
 	currTab = currentMode;
-	tablist = application.extStrings.Overview.tabs;
+	tablist = application.strings.Strings.Overview.tabs;
 	onClick = session.tryLoad;
 	vertical = false;
 	numeric = true;
@@ -96,7 +96,7 @@ NotesPage1: NotesPage {
 
 PageWrapper1: PageWrapper {
 	hasChanges = false;
-	title = application.extStrings.Overview.title;
+	title = application.strings.Strings.Overview.title;
 	cssURL = present.cssURL;
 	cssResource = present.cssResource;
 	scriptURL = present.scriptURL;
@@ -105,17 +105,17 @@ PageWrapper1: PageWrapper {
 }
 
 PeriodTitle: WOString {
-	value = application.strings.dataTypes.period;
+	value = application.strings.Reusables_Strings.dataTypes.period;
 	valueWhenEmpty = "period";
 }
 
 PeriodTitle2: WOString {
-	value = application.strings.dataTypes.since;
+	value = application.strings.Reusables_Strings.dataTypes.since;
 	valueWhenEmpty = "since";
 }
 
 PeriodTitle3: WOString {
-	value = application.strings.dataTypes.to;
+	value = application.strings.Reusables_Strings.dataTypes.to;
 	valueWhenEmpty = "to";
 }
 
@@ -123,7 +123,7 @@ PeriodsPopUp: WOPopUpButton {
 	displayString = perItem.title;
 	item = perItem;
 	list = periods;
-	noSelectionString = application.strings.dataTypes.period;
+	noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
 	selection = period;
 	name = "periods";
 }
@@ -167,7 +167,7 @@ ReportetTitle: WOString {
 
 ShowMarks: WOSubmitButton {
 	action = printSelectedStudents;
-	value = application.extStrings.Overview.showMarks;
+	value = application.strings.Strings.Overview.showMarks;
 }
 
 ShowMarks2: WOSubmitButton {
@@ -269,7 +269,7 @@ Subjects2: WORepetition {
 }
 
 SubmitButton1: WOSubmitButton {
-	value = application.strings.uiElements.Change;
+	value = application.strings.Reusables_Strings.uiElements.Change;
 	action = updateLessonLists;
 }
 
@@ -310,7 +310,7 @@ ShowThemes : WOHyperlink {
 }
 
 LessonsLink : WOString {
-  value = application.strings.properties.EduCourse.lessons;
+  value = application.strings.RujelInterfaces_Names.EduCourse.lessons;
   valueWhenEmpty = "lessons";
 }
 

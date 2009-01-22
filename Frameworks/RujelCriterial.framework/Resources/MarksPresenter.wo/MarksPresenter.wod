@@ -88,7 +88,7 @@ NoteEdit: WOTextField {
 }
 
 NoteTitle: WOString {
-	value = application.strings.dataTypes.text;
+	value = application.strings.Reusables_Strings.dataTypes.text;
 	valueWhenEmpty = "text";
 }
 

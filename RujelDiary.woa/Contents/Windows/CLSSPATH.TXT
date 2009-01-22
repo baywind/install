@@ -1,0 +1,25 @@
+# JVM              == java
+# JVMOptions       == 
+# JDB              == jdb
+# JDBOptions       == 
+# ApplicationClass == net.rujel.diary.Application
+
+APPROOT\Resources\Java\
+APPROOT\Resources\Java\rujeldiary.jar
+
+LOCALROOT\Library\Frameworks\Authentication.framework\Resources\Java\authentication.jar
+LOCALROOT\Library\Frameworks\Reusables.framework\Resources\Java\reusables.jar
+LOCALROOT\Library\Frameworks\RujelBase.framework\Resources\Java\rujelbase.jar
+LOCALROOT\Library\Frameworks\RujelCriterial.framework\Resources\Java\rujelcriterial.jar
+LOCALROOT\Library\Frameworks\RujelEduPlan.framework\Resources\Java\rujeleduplan.jar
+LOCALROOT\Library\Frameworks\RujelEduResults.framework\Resources\Java\rujeleduresults.jar
+LOCALROOT\Library\Frameworks\RujelInterfaces.framework\Resources\Java\rujelinterfaces.jar
+LOCALROOT\Library\Frameworks\RujelVseobuch.framework\Resources\Java\rujelvseobuch.jar
+WOROOT\Library\Frameworks\JavaEOAccess.framework\Resources\Java\javaeoaccess.jar
+WOROOT\Library\Frameworks\JavaEOControl.framework\Resources\Java\javaeocontrol.jar
+WOROOT\Library\Frameworks\JavaFoundation.framework\Resources\Java\javafoundation.jar
+WOROOT\Library\Frameworks\JavaJDBCAdaptor.framework\Resources\Java\javajdbcadaptor.jar
+WOROOT\Library\Frameworks\JavaWebObjects.framework\Resources\Java\javawebobjects.jar
+WOROOT\Library\Frameworks\JavaWOExtensions.framework\Resources\Java\javawoextensions.jar
+WOROOT\Library\Frameworks\JavaXML.framework\Resources\Java\javaxml.jar
+

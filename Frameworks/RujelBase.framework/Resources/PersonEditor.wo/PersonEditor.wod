@@ -4,7 +4,7 @@ Form2: WOForm {
 }
 
 LastNameLabel: WOString {
-	value = application.strings.properties.Person.lastName;
+	value = application.strings.RujelInterfaces_Names.Person.lastName;
 	valueWhenEmpty = "Last Name";
 }
 
@@ -35,7 +35,7 @@ CanEdit: WOConditional {
 
 SaveButton: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 
 CanDelete: WOConditional {
@@ -45,15 +45,15 @@ CanDelete: WOConditional {
 
 DeleteButton: WOSubmitButton {
 	action = delete;
-	value = application.strings.uiElements.Delete;
+	value = application.strings.Reusables_Strings.uiElements.Delete;
 }
 
 ResetButton: WOResetButton {
-	value = application.strings.uiElements.Reset;
+	value = application.strings.Reusables_Strings.uiElements.Reset;
 }
 
 FirstNameLabel: WOString {
-	value = application.strings.properties.Person.firstName;
+	value = application.strings.RujelInterfaces_Names.Person.firstName;
 	valueWhenEmpty = "First Name";
 }
 
@@ -64,7 +64,7 @@ FirstName: WOTextField {
 }
 
 SecondNameLabel: WOString {
-	value = application.strings.properties.Person.secondName;
+	value = application.strings.RujelInterfaces_Names.Person.secondName;
 	valueWhenEmpty = "Second Name";
 }
 
@@ -75,7 +75,7 @@ SecondName: WOTextField {
 }
 
 SexLabel: WOString {
-	value = application.strings.properties.Person.sex;
+	value = application.strings.RujelInterfaces_Names.Person.sex;
 	valueWhenEmpty = "Sex";
 }
 
@@ -86,7 +86,7 @@ SexM: WORadioButton {
 }
 
 Male: WOString {
-	value = application.strings.presets.sexLetter.male;
+	value = application.strings.Reusables_Strings.presets.sexLetter.male;
 	valueWhenEmpty = "M";
 }
 
@@ -97,12 +97,12 @@ SexF: WORadioButton {
 }
 
 Female: WOString {
-	value = application.strings.presets.sexLetter.female;
+	value = application.strings.Reusables_Strings.presets.sexLetter.female;
 	valueWhenEmpty = "F";
 }
 
 BirthDateLabel: WOString {
-	value = application.strings.properties.Person.birthDate;
+	value = application.strings.RujelInterfaces_Names.Person.birthDate;
 	valueWhenEmpty = "Birth Date";
 }
 

@@ -1,9 +1,9 @@
 NumTitle: WOString {
-	value = application.extStrings.RujelEduResults-EduResults.properties.EduPeriod.num;
+	value = application.strings.RujelEduResults_EduResults.properties.EduPeriod.num;
 }
 
 TypeTitle: WOString {
-	value = application.extStrings.RujelEduResults-EduResults.properties.PeriodType.this;
+	value = application.strings.RujelEduResults_EduResults.properties.PeriodType.this;
 }
 
 IsWide: WOConditional {
@@ -11,11 +11,11 @@ IsWide: WOConditional {
 }
 
 BeginTitle: WOString {
-	value = application.extStrings.RujelEduResults-EduResults.properties.EduPeriod.begin;
+	value = application.strings.RujelEduResults_EduResults.properties.EduPeriod.begin;
 }
 
 EndTitle: WOString {
-	value = application.extStrings.RujelEduResults-EduResults.properties.EduPeriod.end;
+	value = application.strings.RujelEduResults_EduResults.properties.EduPeriod.end;
 }
 
 Repetition1: WORepetition {
@@ -52,11 +52,11 @@ Form1: WOForm {
 }
 
 TypeListTitle: WOString {
-	value = application.extStrings.RujelEduResults-EduResults.properties.PeriodType.coursePeriodType;
+	value = application.strings.RujelEduResults_EduResults.properties.PeriodType.coursePeriodType;
 }
 
 TypeTitle2: WOString {
-	value = application.extStrings.RujelEduResults-EduResults.properties.PeriodType.inYearCount;
+	value = application.strings.RujelEduResults_EduResults.properties.PeriodType.inYearCount;
 }
 
 Repetition2: WORepetition {
@@ -88,5 +88,5 @@ InYearCount: WOString {
 
 SubmitButton1: WOSubmitButton {
 	action = usePerTypes;
-	value = application.strings.uiElements.Submit;
+	value = application.strings.Reusables_Strings.uiElements.Submit;
 }

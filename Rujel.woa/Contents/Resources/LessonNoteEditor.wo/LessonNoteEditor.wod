@@ -25,7 +25,7 @@ EditCommentLink: WOGenericContainer {
 	elementName = "a";
 	href = "#";
 	onclick = "document.commentForm.style.display = (document.commentForm.style.display == 'none')?'':'none';";
-	title = application.strings.properties.EduCourse.comment;
+	title = application.strings.RujelInterfaces_Names.EduCourse.comment;
 	omitTags = access._edit;
 }
 
@@ -38,14 +38,14 @@ GoLeft: WOImageButton {
 	filename = "lft-OSarw.gif";
 	framework = "JavaWOExtensions";
 	action = moveLeft;
-	title = application.extStrings.LessonNoteEditor.regime.left;
+	title = application.strings.Strings.LessonNoteEditor.left;
 }
 
 GoRight: WOImageButton {
 	filename = "rt-OSarw.gif";
 	framework = "JavaWOExtensions";
 	action = moveRight;
-	title = application.extStrings.LessonNoteEditor.regime.right;
+	title = application.strings.Strings.LessonNoteEditor.right;
 }
 
 LessonList1: WOSwitchComponent {
@@ -115,7 +115,7 @@ PageWrapper1: PageWrapper {
 }
 
 PathTitle: WOString {
-	value = application.strings.properties.EduCourse.subgroup;
+	value = application.strings.RujelInterfaces_Names.EduCourse.subgroup;
 	valueWhenEmpty = "SubGroup";
 }
 

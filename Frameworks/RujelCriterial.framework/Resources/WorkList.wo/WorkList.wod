@@ -1,5 +1,5 @@
 AddButton: WOSubmitButton {
-	value = application.strings.uiElements.Add;
+	value = application.strings.Reusables_Strings.uiElements.Add;
 	onclick = "changed=false;";
 	disabled = access._create;
 	action = ^addLesson;
@@ -72,18 +72,18 @@ CurrLessonThemeField: WOText {
 }
 
 DeadLineTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.shortDeadline;
-	valueWhenEmpty = application.strings.dataTypes.date;
+	value = application.strings.RujelCriterial_Strings.shortDeadline;
+	valueWhenEmpty = application.strings.Reusables_Strings.dataTypes.date;
 }
 AnnounceTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.shortAnnounce;
-	valueWhenEmpty = application.strings.dataTypes.date;
+	value = application.strings.RujelCriterial_Strings.shortAnnounce;
+	valueWhenEmpty = application.strings.Reusables_Strings.dataTypes.date;
 }
 
 
 DeleteButton: WOSubmitButton {
 	action = ^delete;
-	value = application.strings.uiElements.Delete;
+	value = application.strings.Reusables_Strings.uiElements.Delete;
 	onclick = session.confirmMessage;
 }
 DispalayPopup: WOString {
@@ -91,7 +91,7 @@ DispalayPopup: WOString {
 }
 
 HTtitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.weight;
+	value = application.strings.RujelCriterial_Strings.weight;
 	valueWhenEmpty = "weight";
 }
 
@@ -108,7 +108,7 @@ InspectorCaller : WOGenericContainer {
   align = "center";
   invokeAction = inspectorPopup;
   onclick = session.ajaxPopup;
-  title = application.extStrings.RujelCriterial_Strings.inspector;
+  title = application.strings.RujelCriterial_Strings.inspector;
 }
 
 InspectorImage : WOImage {
@@ -193,7 +193,7 @@ Regular: WOConditional {
 
 SaveButton: WOSubmitButton {
 	action = ^save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 
 SplitTab: WOImageButton {
@@ -222,7 +222,7 @@ StudentPresenter: WOSwitchComponent {
 }
 
 ThemeTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.theme;
+	value = application.strings.RujelCriterial_Strings.theme;
 }
 
 TitlePresenter: WOSwitchComponent {
@@ -239,12 +239,12 @@ IsNew : WOConditional {
 
 AnnounceContainer : WOGenericContainer {
   elementName = "th";
-  title = application.extStrings.RujelCriterial_Strings.announce;
+  title = application.strings.RujelCriterial_Strings.announce;
   style = dateStyle;
 }
 DeadlineContainer : WOGenericContainer {
   elementName = "th";
-  title = application.extStrings.RujelCriterial_Strings.deadline;
+  title = application.strings.RujelCriterial_Strings.deadline;
   style = dateStyle;
 }
 

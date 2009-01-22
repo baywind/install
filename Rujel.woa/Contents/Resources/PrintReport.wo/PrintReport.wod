@@ -9,7 +9,7 @@ Conditional1: WOConditional {
 }
 
 Parent: WOString {
-	value = application.extStrings.PrintReport.parent;
+	value = application.strings.Strings.PrintReport.parent;
 }
 
 PeriodTitle: WOString {
@@ -49,11 +49,11 @@ To: WOString {
 }
 
 Tutor: WOString {
-	value = application.extStrings.PrintReport.tutor;
+	value = application.strings.Strings.PrintReport.tutor;
 }
 
 StudentTitle : WOString {
-  value = application.strings.properties.Student.this;
+  value = application.strings.RujelInterfaces_Names.Student.this;
 }
 
 IfGroup : WOConditional {

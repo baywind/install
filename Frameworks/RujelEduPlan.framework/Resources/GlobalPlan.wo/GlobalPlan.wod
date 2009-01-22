@@ -1,5 +1,5 @@
 Wrapper : PageWrapper {
-	title = application.extStrings.RujelEduPlan_EduPlan.GlobalPlan;
+	title = application.strings.RujelEduPlan_EduPlan.GlobalPlan;
 	cssResource = "EduPlan.css";
 	resourcesFramework = "RujelEduPlan";
 	hasChanges = ec.hasChanges;
@@ -11,12 +11,12 @@ SorterScriptLink : ResourceLink {
 }
 
 AreaTitle : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.area;
+  value = application.strings.RujelEduPlan_EduPlan.properties.area;
   valueWhenEmpty = "Area";
 }
 
 SubjectName : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.subject;
+  value = application.strings.RujelEduPlan_EduPlan.properties.subject;
   valueWhenEmpty = "Subject";
 }
 
@@ -72,11 +72,11 @@ CycleHours : WOTextField {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 
 Cancel: WOResetButton {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 }
 CanEdit : WOConditional {
   condition = editable;
@@ -155,13 +155,13 @@ ToggleAll : WOString {
 }
 
 GroupsTitle : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.subgroups;
+  value = application.strings.RujelEduPlan_EduPlan.properties.subgroups;
   valueWhenEmpty = "groups";
 }
 
 GroupsCell : WOGenericContainer {
   elementName = "th";
-  title = application.extStrings.RujelEduPlan_EduPlan.properties.subgrTitle;
+  title = application.strings.RujelEduPlan_EduPlan.properties.subgrTitle;
   class = "groups";
 }
 
@@ -174,6 +174,6 @@ GroupsField : WOTextField {
 }
 
 Title : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.GlobalPlan;
+  value = application.strings.RujelEduPlan_EduPlan.GlobalPlan;
   valueWhenEmpty = "Edu Plan";
 }

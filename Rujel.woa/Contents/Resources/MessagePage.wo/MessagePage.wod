@@ -13,7 +13,7 @@ HasRedirect : WOConditional {
 }
 
 RedirectMessage : WOString {
-  value = application.extStrings.Components.ErrorPages.autoRedirect;
+  value = application.strings.Strings.ErrorPages.autoRedirect;
   escapeHTML = false;
 }
 
@@ -29,11 +29,11 @@ Redirect : WOString {
 }
 
 Seconds : WOString {
-  value = application.extStrings.Components.login.seconds;
+  value = application.strings.Strings.login.seconds;
   escapeHTML = false;
 }
 ManualRedirect : WOString {
-  value = application.extStrings.Components.ErrorPages.manualRedirect;
+  value = application.strings.Strings.ErrorPages.manualRedirect;
   escapeHTML = false;
 }
 

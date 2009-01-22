@@ -1,18 +1,18 @@
 LessonsTitle : WOString {
-  value = application.extStrings.RujelBase_Base.lessons;
+  value = application.strings.RujelBase_Base.lessons;
   valueWhenEmpty = "Lessons";
 }
 
 DateTitle: WOString {
-	value = application.strings.dataTypes.date;
+	value = application.strings.Reusables_Strings.dataTypes.date;
 }
 
 ThemeTitle: WOString {
-	value = application.strings.properties.EduLesson.theme;
+	value = application.strings.RujelInterfaces_Names.EduLesson.theme;
 }
 
 NoteTitle : WOString {
-  value = application.strings.properties.EduLesson.note;
+  value = application.strings.RujelInterfaces_Names.EduLesson.note;
 }
 
 LessonsRepetition : WORepetition {

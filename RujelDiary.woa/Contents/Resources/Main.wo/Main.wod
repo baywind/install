@@ -1,0 +1,147 @@
+Title : WOString {
+  value = application.strings.Strings.title;
+  valueWhenEmpty = "RUJEL Diary";
+}
+
+Form : WOForm {
+	directActionName = "";
+	name = "request";
+	method = "get";
+	?grID = currGr;
+	?regime = currTab.id;
+	onsubmit = "removeDefault(this);";
+}
+
+RegimeField : WOHiddenField {
+  name = "regime";
+  value = currTab.id;
+}
+
+GrField : WOHiddenField {
+  name = "grID";
+  value = currGr;
+}
+
+DateField : DateField {
+  size = 10;
+  name = "date";
+  date = date;
+  style = "text-align:center;";
+}
+
+ShowSince : WOConditional {
+  condition = currTab.period;
+}
+
+Since : DateField {
+  size = 10;
+  name = "since";
+  date = since;
+  baseName = "date";
+  shift = -7;
+  style = "text-align:center;";
+}
+Reusables : ResourceLink {
+	framework = "Reusables";
+	jsLink = "scripts.js";
+	cssLink = "style.css";
+}
+
+LocalLinks : ResourceLink {
+	framework = "app";
+	jsLink = "scripts.js";
+	cssLink = "styles.css";
+}
+
+TabLinks : ResourceLink {
+	framework = currTab.framework;
+	jsLink = currTab.jsLink;
+	cssLink = currTab.cssLink;
+}
+
+GroupRow : DynamicTableRow {
+  item = item;
+  list = groupList;
+  onClick = item.onclick;
+  useStyles = true;
+  switchParam = item.grade;
+  isSelected = isSelected;
+}
+
+GroupName : WOString {
+  value = item.title;
+}
+
+RGBColor : ResourceLink {
+	framework = "Reusables";
+	jsLink = "rgbcolor.js";
+}
+
+GoupGrade : WOString {
+  value = item.grade;
+}
+
+Component : WOSwitchComponent {
+  WOComponentName = currTab.component;
+  tab = currTab;
+  group = currGr;
+  courses = courses;
+  date = date;
+  since = since;
+}
+
+Tabs : Tabs {
+  currTab = currTab.id;
+  tablist = tabs;
+  titleAttribute = "title";
+  idAttribute = "id";
+  onClick = "takeValueForKey(this.id,'regime',true);";
+}
+
+PeriodTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.period;
+}
+
+SinceTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.since;
+}
+
+ToTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.to;
+}
+
+DateTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.date;
+}
+
+JustDate : WOConditional {
+  condition = currTab.period;
+  negate = true;
+}
+
+RecentGroupName : WOString {
+  value = grName;
+}
+
+GroupSelected : WOConditional {
+  condition = courses.count;
+}
+
+FrontPage : WOConditional {
+  condition = currGr;
+  negate = true;
+}
+
+Image : WOImage {
+	filename = "Dairy.jpg";
+}
+
+Body : WOBody {
+	filename = "Dairy.jpg";
+}
+
+ImageButton : WOImageButton {
+	framework = "JavaWOExtensions";
+	filename = "TransparentPixel.gif";
+	directActionName = "";
+}

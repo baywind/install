@@ -2,7 +2,7 @@ AddCycle: WOImageButton {
 	action = addCycle;
 	filename = "button_ok.gif";
 	framework = "app";
-	title = application.strings.uiElements.Add;
+	title = application.strings.Reusables_Strings.uiElements.Add;
 }
 
 CanCreate: WOConditional {
@@ -41,8 +41,8 @@ CycleRow: OnClickContainer {
 DeleteImage: WOImage {
 	filename = "button_cance.gif";
 	align = "right";
-	alt = application.strings.uiElements.Delete;
-	title = application.strings.uiElements.Delete;
+	alt = application.strings.Reusables_Strings.uiElements.Delete;
+	title = application.strings.Reusables_Strings.uiElements.Delete;
 	valign = "middle";
 }
 
@@ -62,7 +62,7 @@ GradeRow: OnClickContainer {
 }
 
 GradeTitle: WOString {
-	value = application.strings.properties.EduCycle.grade;
+	value = application.strings.RujelInterfaces_Names.EduCycle.grade;
 	valueWhenEmpty = "grade";
 }
 
@@ -80,7 +80,7 @@ ImageButton1: WOImageButton {
 	action = makeNewGrade;
 	filename = "button_ok.gif";
 	framework = "app";
-	title = application.strings.uiElements.Add;
+	title = application.strings.Reusables_Strings.uiElements.Add;
 }
 
 ItemSubgroups: WOString {
@@ -138,17 +138,17 @@ SaveCycle: WOImageButton {
 	action = save;
 	filename = "button_ok.gif";
 	framework = "app";
-	title = application.strings.uiElements.Save;
+	title = application.strings.Reusables_Strings.uiElements.Save;
 	align = "right";
 }
 
 Subgroups: WOString {
-	value = application.strings.properties.EduCycle.subgroups;
+	value = application.strings.RujelInterfaces_Names.EduCycle.subgroups;
 	valueWhenEmpty = "Subgroups";
 }
 
 Subject: WOString {
-	value = application.strings.properties.EduCycle.subject;
+	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
 	valueWhenEmpty = "Subject";
 }
 
@@ -164,5 +164,5 @@ Title: WOString {
 }
 
 UnsavedAlert: WOString {
-	value = application.strings.messages.unsavedChanges;
+	value = application.strings.Strings.messages.unsavedChanges;
 }

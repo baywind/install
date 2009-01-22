@@ -24,7 +24,7 @@ String1: WOString {
 
 Notice: WOString {
 	escapeHTML = false;
-	value = application.extStrings.Components.ChooseRegime.notice;
+	value = application.strings.Strings.ChooseRegime.notice;
 }
 
 TimeMachineWindow1: TimeMachineWindow {
@@ -36,22 +36,22 @@ Wrapper: PageWrapper {
 }
 
 Welcome : WOString {
-  value = application.extStrings.Components.ChooseRegime.welcome;
+  value = application.strings.Strings.ChooseRegime.welcome;
   escapeHTML = false;
   valueWhenEmpty = "Welcome to RUJEL !";
 }
 
 Introduce : WOString {
-  value = application.extStrings.Components.ChooseRegime.introduce;
+  value = application.strings.Strings.ChooseRegime.introduce;
   escapeHTML = false;
 }
 
 SelectRegime : WOString {
-  value = application.extStrings.Components.ChooseRegime.selectRegime;
+  value = application.strings.Strings.ChooseRegime.selectRegime;
   escapeHTML = false;
 }
 
 NoAccess : WOString {
-  value = application.extStrings.Components.ChooseRegime.noAccess;
+  value = application.strings.Strings.ChooseRegime.noAccess;
   escapeHTML = false;
 }

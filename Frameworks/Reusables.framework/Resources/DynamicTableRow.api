@@ -26,5 +26,6 @@
 			<unbound name="item"/>
 		</validation>
 	<binding name="switchParam"/>
+    <binding defaults="Boolean" name="isSelected"/>
     </wo>
 </wodefinitions>

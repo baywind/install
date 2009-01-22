@@ -314,72 +314,6 @@ function closePrompt() {
 //	alert(changed);
 }
 
-function recursiveRGBColor(obj) {
-	var result = getBgRGBColor(obj);
-	if(result != null || obj.parentNode == null)
-		return result;
-	return recursiveRGBColor(obj.parentNode);
-}
-
-function getBgRGBColor(obj) {
-	try {
-		var color = null;
-		if (obj.currentStyle) {
-			color = obj.currentStyle.backgroundColor;
-		} else {
-			color = document.defaultView.getComputedStyle(obj, "");
-			color = color.getPropertyValue("background-color");
-		}
-		if(color == null && obl.bgColor) {
-			color = obj.bgColor;
-		}
-		if(color == null) {
-			return null;
-		}
-		color = new RGBColor(color);
-		if(!color.ok) {
-			return null;
-		}
-		return color;
-	} catch (e) {
-		//alert(e);
-		return null;
-	}
-}
-
-var tmp;
-function dim(obj) {
-	tmp = {
-	backgroundColor: obj.style.backgroundColor,
-	textDecoration: obj.style.textDecoration,
-	cursor: obj.style.cursor
-	};
-	obj.style.textDecoration = "underline";
-	obj.style.cursor = "pointer";
-	
-	var color = recursiveRGBColor(obj);
-	if(color == null) {
-		obj.style.backgroundColor = "grey";
-		return;
-	}
-	color.r -= 0x33;
-	if(color.r < 0)
-		color.r = 0;
-	color.g -= 0x33;
-	if(color.g < 0)
-		color.g = 0;
-	color.b -= 0x33;
-	if(color.b < 0)
-		color.b = 0;
-	obj.style.backgroundColor = color.toHex();
-}
-
-function unDim(obj) {
-	obj.style.backgroundColor = tmp.backgroundColor;
-	obj.style.textDecoration = tmp.textDecoration;
-	obj.style.cursor = tmp.cursor;
-}
-
 function focus() {
 	o = document.getElementById('focus');
 	if(o != null) {
@@ -627,45 +561,4 @@ function closePopup(aForm) {
 			changed = formHasChanges(document.forms[i]);
 		}
 	}
-}
-
-function get(point, toGet, skip) {
-	if(skip == null)
-		skip = 0;
-	var found = 0;
-	while (found <= skip) {
-		point = point.parentNode;
-		if(point.nodeName.toLowerCase() == toGet.toLowerCase())
-			found++;
-	}
-	return point;
-}
-
-function setDisplay(obj,value) {
-	if(typeof obj == 'string') {
-		obj = document.getElementById(obj);
-		if(obj == null) return false;
-	}
-	obj.style.display = value;
-	return obj;
-}
-
-function showObj(obj) {
-	return setDisplay(obj,'');
-}
-
-function hideObj(obj) {
-	return setDisplay(obj,'');
-}
-
-function toggleObj(obj) {
-	if(typeof obj == 'string') {
-		obj = document.getElementById(obj);
-		if(obj == null) return false;
-	}
-	if(obj.style.display == 'none')
-		obj.style.display = '';
-	else
-		obj.style.display = 'none';
-	return obj;
 }

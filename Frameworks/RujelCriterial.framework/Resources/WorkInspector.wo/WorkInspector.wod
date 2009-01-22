@@ -2,7 +2,7 @@ Form1 : WOForm {
 }
 
 Title : WOString {
-	value = application.extStrings.RujelCriterial_Strings.Work;
+	value = application.strings.RujelCriterial_Strings.Work;
 	escapeHTML = false;
 }
 
@@ -25,7 +25,7 @@ Date: WOTextField {
 }
 
 WeightTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.weight;
+	value = application.strings.RujelCriterial_Strings.weight;
 	escapeHTML = false;
 }
 
@@ -50,12 +50,12 @@ LessonTitle : WOString {
 }
 
 DateTitle : WOString {
-	value = application.extStrings.RujelCriterial_Strings.dates;
+	value = application.strings.RujelCriterial_Strings.dates;
   escapeHTML = false;
 }
 
 TypeTitle : WOString {
-	value = application.extStrings.RujelCriterial_Strings.type;
+	value = application.strings.RujelCriterial_Strings.type;
   escapeHTML = false;
 }
 
@@ -65,17 +65,17 @@ TypePopUp : WOPopUpButton {
 }
 
 AnnounceTitle : WOString {
-  value = application.extStrings.RujelCriterial_Strings.announce;
+  value = application.strings.RujelCriterial_Strings.announce;
   escapeHTML = false;
 }
 
 DeadlineTitle : WOString {
-  value = application.extStrings.RujelCriterial_Strings.deadline;
+  value = application.strings.RujelCriterial_Strings.deadline;
   escapeHTML = false;
 }
 
 NameTitle : WOString {
-  value = application.extStrings.RujelCriterial_Strings.theme;
+  value = application.strings.RujelCriterial_Strings.theme;
   escapeHTML = false;
 }
 
@@ -90,7 +90,7 @@ URLpic : WOImage {
 	framework = "RujelBase";
 	style = "cursor:pointer;";
 	onclick = "returnField=document.getElementById('URLfield');myPrompt(this.title,null,this);";
-	title = application.extStrings.RujelCriterial_Strings.URL;
+	title = application.strings.RujelCriterial_Strings.URL;
 }
 
 NameField : WOText {
@@ -100,12 +100,12 @@ NameField : WOText {
 }
 
 LoadTitle: WOString {
-	value = application.extStrings.RujelCriterial_Strings.load;
+	value = application.strings.RujelCriterial_Strings.load;
 	escapeHTML = false;
 }
 
 CriterHead: WOString {
-	value = application.extStrings.RujelCriterial_Strings.criteria;
+	value = application.strings.RujelCriterial_Strings.criteria;
 	escapeHTML = false;
 }
 
@@ -136,7 +136,7 @@ CriterTitle : WOString {
 }
 
 CriterMax : WOString {
-	value = application.extStrings.RujelCriterial_Strings.criterMax;
+	value = application.strings.RujelCriterial_Strings.criterMax;
 	escapeHTML = false;
 }
 
@@ -149,7 +149,7 @@ MaxField : WOTextField {
 }
 
 CriterWeight : WOString {
-	value = application.extStrings.RujelCriterial_Strings.criterWeight;
+	value = application.strings.RujelCriterial_Strings.criterWeight;
 	escapeHTML = false;
 }
 
@@ -163,11 +163,11 @@ WeightField : WOTextField {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
     disabled = session.readAccess._edit.work;
 }
 
 ResetButton1: WOResetButton {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
 }

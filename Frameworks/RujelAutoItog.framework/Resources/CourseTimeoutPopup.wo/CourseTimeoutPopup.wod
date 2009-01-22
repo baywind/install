@@ -1,5 +1,5 @@
 AllCourses: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.ui.allCourses;
+	value = application.strings.RujelAutoItog_AutoItog.ui.allCourses;
 	escapeHTML = false;
 	valueWhenEmpty = "all courses";
 }
@@ -24,7 +24,7 @@ CycleCheckBox: WOCheckBox {
 }
 
 DeleteButton: WOGenericElement {
-	value = application.strings.uiElements.Delete;
+	value = application.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
 	onclick = session.tryLoad;
 	elementName = "input";
@@ -40,7 +40,7 @@ DueDate: WOTextField {
 }
 
 DueDateTitle: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.dueDate;
+	value = application.strings.RujelAutoItog_AutoItog.properties.Timeout.dueDate;
 	escapeHTML = false;
 }
 
@@ -50,25 +50,25 @@ EduGroupCheckBox: WOCheckBox {
 }
 
 ForCourse: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.course;
+	value = application.strings.RujelAutoItog_AutoItog.properties.CourseTimeout.course;
 	escapeHTML = false;
 	valueWhenEmpty = "CourseTimeout";
 }
 
 ForCycle: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.cycle;
+	value = application.strings.RujelAutoItog_AutoItog.properties.CourseTimeout.cycle;
 	escapeHTML = false;
 	valueWhenEmpty = "of this subject and grade";
 }
 
 ForEduGroup: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.eduGroup;
+	value = application.strings.RujelAutoItog_AutoItog.properties.CourseTimeout.eduGroup;
 	escapeHTML = false;
 	valueWhenEmpty = "of this edu group";
 }
 
 ForTeacher: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.teacher;
+	value = application.strings.RujelAutoItog_AutoItog.properties.CourseTimeout.teacher;
 	escapeHTML = false;
 	valueWhenEmpty = "of this teacher";
 }
@@ -77,7 +77,7 @@ Form1: WOForm {
 }
 
 Header: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.CourseTimeout.this;
+	value = application.strings.RujelAutoItog_AutoItog.properties.CourseTimeout.this;
 	escapeHTML = false;
 	valueWhenEmpty = "CourseTimeout";
 }
@@ -90,21 +90,21 @@ ReasonText: WOText {
 }
 
 ReasonTitle: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.properties.Timeout.reason;
+	value = application.strings.RujelAutoItog_AutoItog.properties.Timeout.reason;
 }
 
 ResetButton1: WOResetButton {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
 }
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 
 SetTimeoutFor: WOString {
-	value = application.extStrings.RujelAutoItog_AutoItog.ui.setTimeoutFor;
+	value = application.strings.RujelAutoItog_AutoItog.ui.setTimeoutFor;
 	escapeHTML = false;
 	valueWhenEmpty = "Set timeout";
 }

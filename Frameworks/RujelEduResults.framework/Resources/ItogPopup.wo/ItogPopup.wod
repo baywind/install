@@ -8,14 +8,14 @@ CanDelete: WOConditional {
 }
 
 CancelButton: WOGenericElement {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	type = "button";
 	elementName = "input";
 	onclick = "closePopup();";
 }
 
 DeleteButton: WOGenericElement {
-	value = application.strings.uiElements.Delete;
+	value = application.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
 	onclick = session.tryLoad;
 	elementName = "input";
@@ -23,7 +23,7 @@ DeleteButton: WOGenericElement {
 }
 
 MarkTitle: WOString {
-	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.mark;
+	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.mark;
 }
 
 EduPeriodTitle: WOString {
@@ -36,7 +36,7 @@ FlagCheckBox: WOCheckBox {
 }
 
 FlagList: WORepetition {
-	item = flagItem;
+	item = item;
 	list = flaglist;
 }
 
@@ -45,7 +45,7 @@ FlagName: WOString {
 }
 
 FlagsTitle: WOString {
-	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.flags.this;
+	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.flags.this;
 }
 
 ItogDefined: WOConditional {
@@ -61,15 +61,17 @@ MarkField: WOTextField {
 	value = mark;
 	style = "text-align:center;";
 	disabled = readOnly;
+	onkeypress = onkeypress;
 }
 
 PopupTitle: WOString {
-	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.this;
+	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.this;
 }
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+	name = "save";
 }
 
 StudentFirstName: WOString {
@@ -78,4 +80,42 @@ StudentFirstName: WOString {
 
 StudentLastName: WOString {
 	value = student.person.lastName;
+}
+
+ShowHistory : WOConditional {
+  condition = ifArchive;
+}
+
+ArchiveTitle : ArchiveRow {
+	class = "grey";
+}
+
+ArchiveList : ArchiveRow {
+	class = "ungerade";
+	object = itog;
+	item = item;
+	identifierDict = identifierDictionary;
+}
+
+MarkInArchive : WOString {
+  value = item.@mark;
+}
+
+ArchiveContainer : WOGenericContainer {
+  elementName = "td";
+  title = item.@value;
+}
+
+ReasonTitle : WOString {
+  value = application.strings.RujelArchiving_Archive.reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}
+
+ChangeReason : WOText {
+  value = changeReason;
+  rows = "2";
+  style = "width:96%;";
+  name = "changeReason";
+  onkeypress = "form.save.disabled = (value == null || value.length < 2);";
 }

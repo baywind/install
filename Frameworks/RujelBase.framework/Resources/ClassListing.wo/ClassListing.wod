@@ -24,8 +24,3 @@ String1: WOString {
 String2: WOString {
 	value = currClass.title;
 }
-
-Hyperlink1: WOHyperlink {
-	disabled = noAction;
-	action = anAction;
-}

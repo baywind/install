@@ -7,7 +7,7 @@ ClassListing1: ClassListing {
 }
 
 ClassTitle: WOString {
-	value = application.strings.properties.EduGroup.this;
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
 }
 
 Conditional1: WOConditional {
@@ -55,7 +55,7 @@ Repetition1: WORepetition {
 }
 
 StudentTitle: WOString {
-	value = application.strings.properties.Student.this;
+	value = application.strings.RujelInterfaces_Names.Student.this;
 }
 
 SwitchComponent1: WOSwitchComponent {

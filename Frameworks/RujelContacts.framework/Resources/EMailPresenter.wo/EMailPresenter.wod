@@ -1,6 +1,6 @@
 AddButton: WOSubmitButton {
 	action = add;
-	value = application.strings.uiElements.Add;
+	value = application.strings.Reusables_Strings.uiElements.Add;
 }
 
 AddressField: WOTextField {
@@ -16,13 +16,13 @@ AddressString: WOString {
 }
 
 AddressTitle: WOString {
-	value = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.address;
+	value = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.address;
 	valueWhenEmpty = "Address";
 }
 
 CancelButton: WOSubmitButton {
 	action = undo;
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 }
 
 Conditional1: WOConditional {
@@ -44,17 +44,17 @@ Conditional4: WOConditional {
 
 Delete: WOSubmitButton {
 	action = delete;
-	value = application.strings.uiElements.Delete;
+	value = application.strings.Reusables_Strings.uiElements.Delete;
 }
 
 FlagsPresenter1: FlagsPresenter {
-	flagNames = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.flags;
+	flagNames = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.flags;
 	flags = item.utiliser.flags;
 	inRow = true;
 }
 
 FlagsPresenter2: FlagsPresenter {
-	flagNames = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.flags;
+	flagNames = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.flags;
 	flags = item.utiliser.flags;
 	disabled = true;
 	inRow = true;
@@ -81,7 +81,7 @@ KindString: WOString {
 }
 
 KindTitle: WOString {
-	value = application.extStrings.RujelContacts_Contacts.properties.kind;
+	value = application.strings.RujelContacts_Contacts.properties.kind;
 	valueWhenEmpty = "Kind";
 }
 
@@ -98,7 +98,7 @@ NameString: WOString {
 }
 
 NameTitle: WOString {
-	value = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.name;
+	value = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.name;
 	valueWhenEmpty = "Name";
 }
 
@@ -116,5 +116,5 @@ RowContainer: OnClickContainer {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 }

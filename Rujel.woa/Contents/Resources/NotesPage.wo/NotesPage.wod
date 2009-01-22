@@ -1,5 +1,5 @@
 StudentTitle: WOString {
-	value = application.strings.properties.Student.this;
+	value = application.strings.RujelInterfaces_Names.Student.this;
 }
 
 IfSave: WOConditional {
@@ -9,7 +9,7 @@ IfSave: WOConditional {
 Save: WOSubmitButton {
 	action = save;
 	align = "right";
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 
 LessonsNumeration: WORepetition {

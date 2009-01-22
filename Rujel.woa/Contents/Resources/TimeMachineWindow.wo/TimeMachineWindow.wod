@@ -19,7 +19,7 @@ String1: WOString {
 SubmitButton1: WOGenericElement {
 	elementName = "input";
 	type = "submit";
-	value = application.strings.uiElements.Change;
+	value = application.strings.Reusables_Strings.uiElements.Change;
 }
 
 TextField1: WOTextField {

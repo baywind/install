@@ -4,12 +4,23 @@
 <tr><th width="100%" colspan="2"><webobject name="PopupTitle"></webobject></th></tr>
 <tr><td align="center"><webobject name="StudentLastName"></webobject> <webobject name="StudentFirstName"></webobject></td>
 <td align="center"><webobject name="EduPeriodTitle"></webobject></td></tr>
-<tr><td align="right"><webobject name="MarkTitle"></webobject></td><td class="orange"><webobject name="MarkField"></webobject></td></tr>
+<tr><td align="right"><webobject name="MarkTitle"/></td><td class="orange"><webobject name="MarkField"></webobject></td></tr>
 <webobject name="ItogDefined">
+<webobject name = "ShowHistory"><tr id="itogChangeReason" style = "display:none;">
+<td colspan = "2" style = "text-align:left;padding-left:2%;">
+<webobject name = "ReasonTitle"/>:
+<webobject name = "ChangeReason"/>
+</td></tr></webobject>
 <tr><td width="100%" colspan="2"><webobject name="FlagsTitle"></webobject></td></tr>
 <webobject name="FlagList"><tr><td align="right"><webobject name="FlagName"></webobject></td><td><webobject name="FlagCheckBox"></webobject></td></tr></webobject></webobject>
-<tr><td align="center" colspan="2">
+<tr><td align="center" colspan="2" style = "padding:1ex;">
 <webobject name="CanChange"><webobject name="Save"></webobject></webobject> 
 <webobject name="CanDelete"><webobject name="DeleteButton"></webobject></webobject> <webobject name="CancelButton"></webobject></td></tr>
+<webobject name = "ShowHistory">
+<td colspan = "2"><table width = "100%">
+	<webobject name = "ArchiveTitle"><th><webobject name="MarkTitle"/></th></webobject>
+	<webobject name = "ArchiveList"><webobject name = "ArchiveContainer"><webobject name = "MarkInArchive"/></webobject></webobject>	
+</td></table>
+</webobject>
 </table></webobject>
 </div>

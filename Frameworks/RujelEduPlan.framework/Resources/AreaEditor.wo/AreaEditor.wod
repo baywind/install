@@ -21,7 +21,7 @@ MoveDown: WOImage {
 
 
 AreasTitle : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.area;
+  value = application.strings.RujelEduPlan_EduPlan.properties.area;
   valueWhenEmpty = "Area";
 }
 
@@ -69,7 +69,7 @@ SubjectsRepetition : WORepetition {
 }
 
 SubjectsTitle : WOString {
-  value = application.extStrings.RujelEduPlan_EduPlan.properties.subjects;
+  value = application.strings.RujelEduPlan_EduPlan.properties.subjects;
   valueWhenEmpty = "Subjects";
 }
 
@@ -81,11 +81,11 @@ SubjectNumField : WOTextField {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 	onclick = "try{return enumAll();}catch(e){alert(e);}";
 }
 ResetButton1: WOResetButton {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
 }
 

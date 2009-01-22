@@ -1,0 +1,10 @@
+TextField : WOTextField {
+  value = value;
+  name = fieldName;
+  class = className;
+  onfocus = onEnter;
+  onblur = onBlur;
+  size = ^size;
+  style = ^style;
+  id = ^id;
+}

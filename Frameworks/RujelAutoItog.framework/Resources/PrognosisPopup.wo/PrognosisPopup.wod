@@ -1,11 +1,11 @@
 PrognosEditForm:WOForm{
 }
 Heading : WOString {
-  value = eduPerod.name;
+  value = eduPeriod.name;
 }
 
 CompleteProperty : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.complete;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.complete;
   valueWhenEmpty = "complete";
 }
 
@@ -14,7 +14,7 @@ Complete : WOString {
 }
 
 ValueProperty : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.value;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.value;
   valueWhenEmpty = "value";
 }
 
@@ -27,7 +27,7 @@ ShowPercents : WOConditional {
 }
 
 MarkProperty : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.mark;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.mark;
 }
 
 Mark : WOTextField {
@@ -35,6 +35,7 @@ Mark : WOTextField {
   disabled = addOn.usage.namedFlags._manual;
   maxlength = 5;
   style = "text-align:center;width:5ex;";
+  onkeypress = onkeypress;
 }
 CanChange: WOConditional {
 	condition = canChange;
@@ -45,11 +46,12 @@ CanDelete: WOConditional {
 }
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+	name = "save";
 }
 
 CancelButton: WOGenericElement {
-	value = application.strings.uiElements.Cancel;
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	type = "button";
 	elementName = "input";
 	invokeAction = cancel;
@@ -57,7 +59,7 @@ CancelButton: WOGenericElement {
 }
 
 DeleteButton: WOGenericElement {
-	value = application.strings.uiElements.Delete;
+	value = application.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
 	onclick = session.tryLoad;
 	elementName = "input";
@@ -66,7 +68,7 @@ DeleteButton: WOGenericElement {
 
 
 FireDateProperty : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.fireDate;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.fireDate;
   valueWhenEmpty = "fire date";
 }
 
@@ -80,7 +82,7 @@ PrognosExist : WOConditional {
 }
 
 FlagKey1 : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.flags.disable;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.flags.disable;
   valueWhenEmpty = "disable";
 }
 
@@ -89,7 +91,7 @@ CheckBoxFlag1 : WOCheckBox {
 }
 
 KeepString : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.flags.keepBonus;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.flags.keepBonus;
   valueWhenEmpty = "keep";
 }
 
@@ -98,7 +100,7 @@ CheckBoxFlag2 : WOCheckBox {
 }
 
 PrognosTitle : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.properties.Prognosis.this;
+  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.this;
   valueWhenEmpty = "Prognosis";
 }
 
@@ -147,12 +149,12 @@ CanReadBonus : WOConditional {
 }
 
 SetBonusString : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.ui.setBonus;
+  value = application.strings.RujelAutoItog_AutoItog.ui.setBonus;
   valueWhenEmpty = "Set Bonus";
 }
 KeepTr : WOGenericContainer {
   elementName = "tr";
-  title = application.extStrings.RujelAutoItog_AutoItog.ui.keepBonusHover;
+  title = application.strings.RujelAutoItog_AutoItog.ui.keepBonusHover;
 }
 
 BonusTitle : WOString {
@@ -165,4 +167,49 @@ HasText : WOConditional {
 
 CanBonus : WOConditional {
   condition = bonusPercent;
+}
+
+ShowHistory : WOConditional {
+  condition = ifArchive;
+}
+
+ArchiveTitle : ArchiveRow {
+	class = "grey";
+}
+
+ArchiveList : ArchiveRow {
+	class = "ungerade";
+	object = prognosis;
+	item = item;
+	identifierDict = identifierDictionary;
+}
+
+MarkInArchive : WOString {
+  value = item.@mark;
+}
+
+ArchiveContainer : WOGenericContainer {
+  elementName = "td";
+  class = archDict.styleClass;
+  title = archDict.title;
+  style = archDict.style;
+}
+
+BonusString : WOString {
+  value = archDict.bonusString;
+  escapeHTML = false;
+}
+
+ReasonTitle : WOString {
+  value = application.strings.RujelArchiving_Archive.reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}
+
+ChangeReason : WOText {
+  value = changeReason;
+  rows = "2";
+  style = "width:96%;";
+  name = "changeReason";
+  onkeypress = "form.save.disabled = (value == null || value.length < 2);";
 }

@@ -1,5 +1,5 @@
 PrognTitle : WOString {
-  value = application.extStrings.RujelAutoItog_AutoItog.prognosis;
+  value = application.strings.RujelAutoItog_AutoItog.prognosis;
 }
 
 Mark : WOString {

@@ -1,19 +1,20 @@
 AddButton: WOSubmitButton {
-	value = application.strings.uiElements.Save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
 	action = save;
 }
 
 DateTitle: WOString {
-	value = application.strings.dataTypes.date;
+	value = application.strings.Reusables_Strings.dataTypes.date;
 }
 
 ThemeTitle: WOString {
-	value = application.strings.properties.EduLesson.theme;
+	value = application.strings.RujelInterfaces_Names.EduLesson.theme;
 }
 
 DateField : WOTextField {
   value = newDate;
   size = 10;
+  style = "text-align:center;";
 }
 
 ThemeField : WOText {
@@ -28,12 +29,12 @@ Form : WOForm {
 UndoButton : WOGenericElement {
   elementName = "input";
   type = "button";
-  value = application.strings.uiElements.Cancel;
+  value = application.strings.Reusables_Strings.uiElements.Cancel;
   invokeAction = back;
   onclick = session.tryLoad;
 }
 
 PopupTitle : WOString {
-  value = application.extStrings.RujelBase_Base.newLesson;
+  value = application.strings.RujelBase_Base.newLesson;
   valueWhenEmpty = "New Lesson";
 }

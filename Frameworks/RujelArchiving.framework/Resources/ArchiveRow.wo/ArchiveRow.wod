@@ -1,0 +1,64 @@
+Row : WOGenericContainer {
+  elementName = "tr";
+  class = ^class;
+  style = ^style;
+}
+
+Presenter : WOComponentContent {	
+}
+
+Archives : WORepetition {
+	list = archives;
+	item = archItem;
+}
+
+ArchDate : WOString {
+  value = archItem.timestamp;
+  dateformat = application.prefs.ui.shortDateFormat;
+}
+
+ArchTime : WOString {
+  value = archItem.timestamp;
+  dateformat = "%H:%M:%S";
+}
+Author : WOString {
+  value = archItem.user;
+}
+
+Reason : WOString {
+  value = showReason;
+  escapeHTML = false;
+}
+
+IsList : WOConditional {
+  condition = hasList;
+}
+
+IsTitle : WOConditional {
+  condition = hasList;
+  negate = true;
+}
+
+DateTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.Date;
+  valueWhenEmpty = "Date";
+  escapeHTML = false;
+}
+
+TimeTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.Time;
+  valueWhenEmpty = "Time";
+  escapeHTML = false;
+}
+
+AuthorTitle : WOString {
+  value = application.strings.RujelArchiving_Archive.author;
+  valueWhenEmpty = "Author";
+  escapeHTML = false;
+}
+
+ReasonTitle : WOString {
+  value = application.strings.RujelArchiving_Archive.reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}

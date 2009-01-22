@@ -189,5 +189,54 @@
 		<key>sort</key>
 		<string>20</string>
 	</dict>
+	<key>diaryTabs</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<string>dayTasks</string>
+			<key>title</key>
+			<string>Задания на день</string>
+			<key>sort</key>
+			<string>10</string>
+			<key>component</key>
+			<string>WorksDiary</string>
+			<key>period</key>
+			<string>false</string>
+			<key>order</key>
+			<array>
+				<string>date</string>
+				<string>course</string>
+			</array>
+			<key>framework</key>
+			<string>RujelCriterial</string>
+			<key>cssLink</key>
+			<string>styles.css</string>
+			<key>labelTitle</key>
+			<string>Предмет</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>periodTasks</string>
+			<key>title</key>
+			<string>Задания за период</string>
+			<key>sort</key>
+			<string>20</string>
+			<key>component</key>
+			<string>WorksDiary</string>
+			<key>period</key>
+			<string>true</string>
+			<key>order</key>
+			<array>
+				<string>course</string>
+				<string>date</string>
+			</array>
+			<key>framework</key>
+			<string>RujelCriterial</string>
+			<key>cssLink</key>
+			<string>styles.css</string>
+			<key>labelTitle</key>
+			<string>Срок сдачи</string>
+		</dict>
+	</array>
 </dict>
 </plist>

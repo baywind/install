@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
 	<wo class="Tabs" wocomponentcontent="false">
 
@@ -9,22 +9,23 @@
 		<binding name="key1"/>
 		<binding name="key2"/>
 		<binding name="titleAttribute"/>
-		<binding name="vertical" defaults="Boolean"/>
+		<binding defaults="Boolean" name="vertical"/>
 		<binding name="hoverAttribute"/>
 		<binding name="hformatter"/>
 		<binding name="align"/>
-		<binding name="numeric" defaults="Boolean"/>
+		<binding defaults="Boolean" name="numeric"/>
 
-		<validation message="&apos;tablist&apos; is a required binding">
+		<validation message="'tablist' is a required binding">
 			<unbound name="tablist"/>
 		</validation>
 
-		<validation message="&apos;currTab&apos; must be bound to a settable value">
+		<validation message="'currTab' must be bound to a settable value">
 			<unsettable name="currTab"/>
 		</validation>
 
-		<validation message="&apos;currTab&apos; is a required binding">
+		<validation message="'currTab' is a required binding">
 			<unbound name="currTab"/>
 		</validation>
-	</wo>
+	<binding name="idAttribute"/>
+    </wo>
 </wodefinitions>

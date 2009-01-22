@@ -17,6 +17,11 @@
 <td class = "orange" align="center"><webobject name = "Mark"/></td>
 </tr>
 <webobject name = "CanManual">
+<webobject name = "ShowHistory"><tr id="prognosChangeReason" style = "display:none;">
+<td colspan = "2" style = "text-align:left;padding-left:2%;">
+<webobject name = "ReasonTitle"/>:
+<webobject name = "ChangeReason"/>
+</td></tr></webobject>
 	<tr>
 	<td align = "right"><webobject name = "KeepString"/> :</td>
 	<td align = "center"><webobject name = "CheckBoxFlag2"/></td>
@@ -63,10 +68,16 @@
 	</webobject>
 	</webobject>
 </webobject>
-<tr><td align="center" colspan="2"><webobject name="CanChange"><webobject name="Save"></webobject></webobject>
+<tr><td align="center" colspan="2" style = "padding:1ex;">
+	<webobject name="CanChange"><webobject name="Save"></webobject></webobject>
     <webobject name="CanDelete"><webobject name="DeleteButton"></webobject></webobject>
     <webobject name = "CanCancel"><webobject name="CancelButton"></webobject></webobject>
 </td></tr>
-</table>
+<webobject name = "ShowHistory">
+<td colspan = "2"><table width = "100%">
+	<webobject name = "ArchiveTitle"><th><webobject name = "PrognosTitle"/></th></webobject>
+	<webobject name = "ArchiveList"><webobject name = "ArchiveContainer">
+	<webobject name = "MarkInArchive"/> <webobject name = "BonusString"/></webobject></webobject>	
+</td></table>
 </webobject>
 </div>

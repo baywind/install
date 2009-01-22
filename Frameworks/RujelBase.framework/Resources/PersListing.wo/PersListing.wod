@@ -34,12 +34,12 @@ Conditional1: WOConditional {
 
 CreateLink: WOHyperlink {
 	action = create;
-	string = application.strings.uiElements.Create;
+	string = application.strings.Reusables_Strings.uiElements.Create;
 }
 
 Hyperlink3: WOHyperlink {
 	action = undo;
-	string = application.strings.uiElements.Cancel;
+	string = application.strings.Reusables_Strings.uiElements.Cancel;
 }
 
 Repetition1: WORepetition {
@@ -133,7 +133,7 @@ PopUpButton : WOPopUpButton {
   displayString = displayString;
   selection = selection;
   onchange = onChange;
-  noSelectionString = application.strings.uiElements.Search;
+  noSelectionString = application.strings.Reusables_Strings.uiElements.Search;
 }
 
 HasList : WOConditional {

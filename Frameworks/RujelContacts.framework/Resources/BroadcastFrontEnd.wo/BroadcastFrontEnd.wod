@@ -4,7 +4,7 @@ PersonSelector1: PersonSelector {
 }
 
 String1: WOString {
-	value = application.extStrings.RujelContacts_Contacts.broadcastInitiated;
+	value = application.strings.RujelContacts_Contacts.broadcastInitiated;
 }
 
 String2: WOString {

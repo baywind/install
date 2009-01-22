@@ -21,8 +21,9 @@ LeftTabImage: WOImage {
 	border = "0";
 	filename = "leftTab.gif";
 	framework = "JavaWOExtensions";
-	name = "Left Tab";
+	name = "LeftTab";
 	style = "height:2ex;vertical-align:top;";
+	alt = "";
 }
 
 Repetition1: WORepetition {
@@ -36,7 +37,8 @@ RightTabImage: WOImage {
 	filename = "rightTab.gif";
 	framework = "JavaWOExtensions";
 	style = "height:2ex;vertical-align:top;";
-	name = "Right Tab";
+	name = "RightTab";
+	alt = "";
 }
 
 TabContainer: OnClickContainer {
@@ -46,6 +48,7 @@ TabContainer: OnClickContainer {
 	onclick = onClick;
 	title = hover;
 	style = "white-space:nowrap;";
+	id = tabID;
 }
 
 Table: WOGenericContainer {
@@ -54,6 +57,8 @@ Table: WOGenericContainer {
 	cellpadding = 0;
 	cellspacing = 0;
 	elementName = "table";
+	class = ^class;
+	style = ^style;
 }
 
 Vertical: WOConditional {

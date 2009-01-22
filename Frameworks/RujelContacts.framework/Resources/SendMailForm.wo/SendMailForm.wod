@@ -13,17 +13,17 @@ MessageText : WOText {
 }
 
 Title : WOString {
-  value = application.extStrings.RujelContacts_Contacts.SendMailForm.title;
+  value = application.strings.RujelContacts_Contacts.SendMailForm.title;
   valueWhenEmpty = "Send Mail";
 }
 
 To : WOString {
-  value = application.extStrings.RujelContacts_Contacts.SendMailForm.to;
+  value = application.strings.RujelContacts_Contacts.SendMailForm.to;
   valueWhenEmpty = "To";
 }
 
 Subject : WOString {
-  value = application.extStrings.RujelContacts_Contacts.SendMailForm.subject;
+  value = application.strings.RujelContacts_Contacts.SendMailForm.subject;
   valueWhenEmpty = "Subject";
 }
 
@@ -43,7 +43,7 @@ ToggleList : WOSubmitButton {
 
 SendMail : WOSubmitButton {
   action = send;
-  value = application.extStrings.RujelContacts_Contacts.SendMailForm.send;
+  value = application.strings.RujelContacts_Contacts.SendMailForm.send;
 }
 
 StudentsList : WORepetition {
@@ -81,12 +81,12 @@ LName : WOString {
 }
 
 PersonTitle : WOString {
-  value = application.strings.properties.Person.this;
+  value = application.strings.RujelInterfaces_Names.Person.this;
   valueWhenEmpty = "Person";
 }
 
 AdresTitle : WOString {
-  value = application.extStrings.RujelContacts_Contacts.properties.EMailUtiliser.contect;
+  value = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.contect;
   valueWhenEmpty = "Address";
 }
 
@@ -103,7 +103,7 @@ IfAttach : WOCheckBox {
 }
 
 Attach : WOString {
-  value = application.extStrings.RujelContacts_Contacts.SendMailForm.attach;
+  value = application.strings.RujelContacts_Contacts.SendMailForm.attach;
   valueWhenEmpty = "Attach";
 }
 
@@ -113,7 +113,7 @@ Attachment : WOString {
 }
 
 SinceTitle : WOString {
-	value = application.strings.dataTypes.since;
+	value = application.strings.Reusables_Strings.dataTypes.since;
 	valueWhenEmpty = "since";
 }
 
@@ -126,7 +126,7 @@ SinceField : WOTextField {
 }
 
 ToTitile : WOString {
-	value = application.strings.dataTypes.to;
+	value = application.strings.Reusables_Strings.dataTypes.to;
 	valueWhenEmpty = "to";
 }
 
@@ -142,7 +142,7 @@ PeriodsPopUp: WOPopUpButton {
 	displayString = perItem.title;
 	item = perItem;
 	list = periods;
-	noSelectionString = application.strings.dataTypes.period;
+	noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
 	selection = period;
 	name = "periods";
 }

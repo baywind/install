@@ -1,0 +1,89 @@
+SectionTitle : WOString {
+  value = formatSection;
+  escapeHTML = false;
+}
+
+Sections : WORepetition {
+	list = sections;
+	item = section;
+	index = index;
+}
+
+Table : WOGenericContainer {
+  elementName = "table";
+  id = sectionID;
+  border = 0;
+  width = "100%";
+}
+
+ListRepetition : WORepetition {
+  list = list;
+  item = item;
+}
+
+ItemRow : WOGenericContainer {
+	elementName = "tr";
+	class = item.styleClass;
+	title = item.workType;
+}
+
+Label : WOString {
+  value = itemLabel;
+  escapeHTML = false;
+}
+
+WorkText : WOString {
+  value = item.theme;
+}
+
+HasLink : WOConditional {
+  condition = item.homeTask;
+}
+
+LinkImage : WOImage {
+	framework = "RujelBase";
+	filename = "link.png";
+	align = "right";
+	title = item.taskUrl;
+	onclick = "window.open(this.title);";
+	alt = item.taskUrl; 
+}
+
+RegularSection : WOConditional {
+  condition = section;
+}
+
+SplitSections : WOConditional {
+  condition = section;
+  negate = true;
+}
+
+RegularRow : WOConditional {
+  condition = item;
+}
+
+SplitRow : WOConditional {
+  condition = item;
+  negate = true;
+}
+
+Title : WOString {
+  value = title;
+}
+
+Announce : WOString {
+  value = announce;
+}
+
+LabelTitle : WOString {
+  value = ^tab.labelTitle;
+  escapeHTML = false;
+}
+
+ContentTitle : WOString {
+  value = application.strings.RujelCriterial_Strings.theme;
+}
+
+AnnounceTitle : WOString {
+  value = application.strings.RujelCriterial_Strings.shortAnnounce;
+}

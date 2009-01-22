@@ -1,0 +1,8 @@
+Exception : WOString {
+  value = throwable.class.name;
+}
+
+Details : WOString {
+  value = details;
+  escapeHTML = false;
+}

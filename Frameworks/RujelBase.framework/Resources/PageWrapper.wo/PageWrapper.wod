@@ -22,7 +22,7 @@ ComponentContent: WOComponentContent {
 }
 
 Exit: WOString {
-	value = application.strings.uiElements.Exit;
+	value = application.strings.Reusables_Strings.uiElements.Exit;
 	valueWhenEmpty = "Exit";
 }
 
@@ -68,7 +68,7 @@ PathTitle: WOString {
 }
 
 PleaseWait: WOString {
-	value = application.strings.messages.pleaseWait;
+	value = application.strings.Strings.messages.pleaseWait;
 	valueWhenEmpty = "Please Wait";
 }
 
@@ -88,7 +88,7 @@ Styles: WOString {
 }
 
 TerminatingMessage: WOString {
-	value = application.strings.messages.refusingSessions;
+	value = application.strings.Strings.messages.refusingSessions;
 	escapeHTML = false;
 }
 
@@ -108,7 +108,7 @@ Title: WOString {
 }
 
 UnsavedAlert: WOString {
-	value = application.strings.messages.unsavedChanges;
+	value = application.strings.Strings.messages.unsavedChanges;
 	valueWhenEmpty = "Unsaved Changes will be lost";
 }
 
@@ -124,7 +124,7 @@ cross: WOImage {
 
 RGBColor : ResourceLink {
 	jsLink = "rgbcolor.js";
-	framework = "RujelBase";
+	framework = "Reusables";
 }
 
 JsAndCSS : ResourceLink {
@@ -140,7 +140,7 @@ OuterResources : ResourceLink {
 }
 
 Rujel : WOString {
-  value = application.strings.title;
+  value = application.strings.Strings.title;
   escapeHTML = false;
 }
 
@@ -150,4 +150,10 @@ HasTitle : WOConditional {
 
 HasSesion : WOConditional {
   condition = context.hasSession;
+}
+
+ReusableScripts : ResourceLink {
+  framework = "Reusables";
+  jsLink = "scripts.js";
+  cssLink = "style.css";
 }

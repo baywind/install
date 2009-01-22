@@ -76,5 +76,5 @@ ItogTitle: WOString {
 }
 
 CommentTitle: WOString {
-	value = application.extStrings.RujelEduResults_EduResults.properties.ItogMark.comment;
+	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.comment;
 }

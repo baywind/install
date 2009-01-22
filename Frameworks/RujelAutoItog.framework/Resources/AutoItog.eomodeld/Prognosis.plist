@@ -15,7 +15,12 @@
             prototypeName = decimal; 
             scale = 4; 
         }, 
-        {columnName = "EDU_COURSE"; name = eduCourseID; prototypeName = integer; }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_COURSE"; 
+            name = eduCourseID; 
+            prototypeName = integer; 
+        }, 
         {
             allowsNull = Y; 
             columnName = "FIRE_DATE"; 
@@ -25,7 +30,6 @@
         {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
         {columnName = MARK; name = mark; prototypeName = anagram; }, 
         {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }, 
-        {columnName = "PR_ID"; name = prID; prototypeName = "int_3"; }, 
         {
             allowsNull = N; 
             columnName = STUDENT; 
@@ -47,7 +51,7 @@
     externalName = PROGNOSIS; 
     fetchSpecificationDictionary = {}; 
     name = Prognosis; 
-    primaryKeyAttributes = (prID); 
+    primaryKeyAttributes = (eduCourseID, periodID, studentID); 
     relationships = (
         {
             deleteRule = EODeleteRuleCascade; 

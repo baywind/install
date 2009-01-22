@@ -2,7 +2,7 @@ IntegralContainer: OnClickContainer {
 	class = intClass;
 	elementName = "td";
 	style = "border-right:3px black double;";
-	title = application.extStrings.RujelCriterial_Strings.integral;
+	title = application.strings.RujelCriterial_Strings.integral;
 	invokeAction = selectIntegral;
 	onclick = session.checkRun;
 }
@@ -34,13 +34,13 @@ CritTitle: WOString {
 TextContainer: OnClickContainer {
 	class = textClass;
 	elementName = "td";
-	title = application.extStrings.RujelCriterial_Strings.comments;
+	title = application.strings.RujelCriterial_Strings.comments;
 	style = "border-left:3px black double;";
 	invokeAction = selectText;
 	onclick = session.checkRun;
 }
 
 TextTitle: WOString {
-	value = application.strings.dataTypes.text;
+	value = application.strings.Reusables_Strings.dataTypes.text;
 	valueWhenEmpty = "text";
 }

@@ -1,0 +1,2 @@
+Settings.className = net.rujel.reusables.PlistReader
+PlistReader.filePath = /Library/WebObjects/Configuration/rujel.plist
