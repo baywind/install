@@ -132,6 +132,16 @@ FrontPage : WOConditional {
   negate = true;
 }
 
+PhotoBy : WOString {
+  value = application.strings.Strings.photo;
+  escapeHTML = false;
+}
+
+Copyright : WOString {
+  value = application.strings.Strings.copy;
+  escapeHTML = false;
+}
+
 Image : WOImage {
 	filename = "Dairy.jpg";
 }

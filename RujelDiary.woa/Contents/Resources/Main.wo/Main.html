@@ -7,7 +7,22 @@
 		<webobject name = "RGBColor"/>
 		<webobject name = "Reusables"/>
 		<webobject name = "LocalLinks"/>
-		<webobject name = "TabLinks"/>		
+		<webobject name = "TabLinks"/>
+		
+	<style type = "text/css">
+		a.copy {
+			position:absolute;
+			bottom:10px;
+			left:450px;
+			color:#ffff00;
+			font-size:10pt;
+			text-decoration:none;
+		}
+		
+		a.copy:hover {
+			text-decoration:underline;
+		}
+	</style>	
 	</head>
 	
 	<webobject name = "Body">
@@ -40,6 +55,10 @@
 			showObj("groupList");
 		</script>
 		
+		<div style="text-align:left;position:absolute;bottom:10px;left:10px;font-size:10pt;color:#ff88ff;">
+		<webobject name = "PhotoBy"/></div>
+		<a class = "copy" href = "http://www.rujel.net/distribute/license" target = "_blank">
+		&copy; <webobject name = "Copyright"/></a>
 		</webobject>
 		<webobject name = "GroupSelected">
 		<div class = "backfield1">

@@ -46,7 +46,7 @@ LinkImage : WOImage {
 	align = "right";
 	title = item.taskUrl;
 	onclick = "window.open(this.title);";
-	alt = item.taskUrl; 
+	alt = "&gt;&gt;&gt;"; 
 }
 
 RegularSection : WOConditional {
