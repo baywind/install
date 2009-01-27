@@ -82,6 +82,7 @@ EditLink: WOHyperlink {
 files_edit: WOImage {
 	align = "right";
 	filename = "files_edit.png";
+	framework = "app";
 }
 
 RemoveFromList: WOHyperlink {

@@ -1,20 +1,88 @@
-.section {
-	margin:1ex 2pt 0px;
-	background-color:#ffcc33;
-	padding:3pt;
-	font-weight:bold;
-	text-align:left;
-}
-
-.label {
-	background-color:#ccff99;
-	width:10em;
-}
-
 input {
 	text-align: center;
 }
 
 .default {
 	color: #999999;
+}
+
+
+@media screen, projection, handheld, tv {
+  .section {
+	background-color:#ffcc33;
+	margin:1ex 2pt 0px;
+	padding:3pt;
+	font-weight:bold;
+	text-align:left;
+  }
+
+  .label {
+	background-color:#ccff99;
+	width:10em;
+  }
+  
+  .printLink {
+  	display: none;
+  }
+  
+  .screenLink {
+  	font-style: italic;
+  }
+  
+  input.hiddenSubmit {
+  	position:absolute;
+  	z-index:-1;
+  }
+}
+
+@media print {
+  .screenLink {
+  	display: none;
+  }
+  
+  .printLink {
+  	text-decoration: underline;
+  	color: #333333;
+  	font-family: sans-serif;
+  }
+
+  .section {
+  	border:black solid 1px;
+	margin:1ex 2pt 0px;
+	padding:3pt;
+	padding-left:5em;
+	font-size: larger;
+	text-align:left;
+  }
+ 
+  .label {
+  	width:10em;
+  }
+  
+  td.label {
+  	font-weight: bold;
+	border-style: none dotted dotted;
+  }
+  
+  td {
+  	border: #999999 1px;
+  	border-style: none none dotted;
+  }
+  
+  .selection {
+  	font-weight: bold;
+  	text-decoration: underline;
+  }
+  
+  .grey {
+  	color: #cccccc;
+  }
+  
+  .selectionBorder {
+  	border: black double 3px;
+  }
+  
+  input.hiddenSubmit {
+  	display:none;
+  }
 }

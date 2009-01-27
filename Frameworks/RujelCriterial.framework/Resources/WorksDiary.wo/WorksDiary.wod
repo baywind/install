@@ -87,3 +87,18 @@ ContentTitle : WOString {
 AnnounceTitle : WOString {
   value = application.strings.RujelCriterial_Strings.shortAnnounce;
 }
+
+LinkLabel : WOString {
+  value = application.strings.RujelCriterial_Strings.URL;
+  escapeHTML = false;
+}
+
+Hyperlink : WOHyperlink {
+	href = item.taskUrl;
+	target = "_blank";
+	class = "screenLink";
+}
+
+LinkAdress : WOString {
+  value = item.taskUrl;
+}
