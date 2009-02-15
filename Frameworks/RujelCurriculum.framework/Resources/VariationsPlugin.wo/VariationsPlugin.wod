@@ -1,0 +1,34 @@
+Table : OnClickContainer {
+	elementName = "table";
+	onclick = session.ajaxPopup;
+	invokeAction = popup;
+	class = styleClass;
+	style = "font-size:smaller;text-align:center;border:#ff6600 solid 2px;border-collapse:collapse;";
+	cellspacing = 0;
+	border = 1;
+	title = ^dict.title;
+}
+
+PlanTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.planCount;
+  valueWhenEmpty = "plan";
+  escapeHTML = false;
+}
+
+RealTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.realCount;
+  valueWhenEmpty = "plan";
+  escapeHTML = false;
+}
+
+PlanCount : WOString {
+  value = plan;
+  escapeHTML = false;
+  valueWhenEmpty = "?";
+}
+
+RealCount : WOString {
+  value = lessonsCount;
+  escapeHTML = false;
+  valueWhenEmpty = "?";
+}

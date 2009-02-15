@@ -1,0 +1,175 @@
+ReasonsRepetition : WORepetition {
+  list = reasonList;
+  item = rItem;
+}
+
+ReasonRow : WOGenericContainer {
+  elementName = "tr";
+  class = styleClass;
+  title = title;
+  onclick = "var r = this.getElementsByTagName('input')[0]; if(!r.checked)r.click();";
+}
+
+ReasonRB : WORadioButton {
+  name = "selectReason";
+  value = itemID;
+  selection = reasonID;
+  onclick = "if(checked){hideObj('reasonEdit');form.defaultDate.value=form.defaultDate.defaultValue;}";
+  disabled = ^readOnly;
+}
+
+ReasonText : WOString {
+  value = rItem.reason;
+}
+
+TextCell : WOGenericContainer {
+  elementName = "td";
+  colspan = colspan;
+}
+
+HasSpecs : WOConditional {
+  condition = colspan;
+  negate = true;
+}
+
+ExtsString : WOString {
+  value = rItem.extToString;
+}
+
+OtherRB : WORadioButton {
+  name = "selectReason";
+  selection = reasonID;
+  value = 0;
+  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.withTeacher.checked=false;form.withEduGroup.checked=false;}";
+  disabled = ^readOnly;
+}
+
+OtherTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.other;
+  valueWhenEmpty = "Other reason";
+}
+
+ReasonTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.Reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}
+
+ReasonTextField : WOText {
+  value = reasonText;
+  style = "width:96%";
+  rows = 2;
+  name = "reasonText";
+}
+
+HasTeacher : WOCheckBox {
+  checked = withTeacher;
+  name = "withTeacher";
+  onclick = "if(checked)form.withEduGroup.checked = false;";
+}
+
+WithTeacher : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withTeacher;
+}
+
+CourseTeacher : PersonDisplay {
+  person = course.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+}
+
+HasEduGroup : WOCheckBox {
+  checked = withEduGroup;
+  name = "withEduGroup";
+  onclick = "if(checked)form.withTeacher.checked = false;";
+}
+
+WithEduGroup : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withEduGroup;
+}
+
+CourseEduGroup : WOString {
+  value = course.eduGroup.name;
+}
+
+DefaultDate : WOTextField {
+  value = aDate;
+  name = "defaultDate";
+  style = "display:none;";
+}
+
+BeginDate : WOTextField {
+  value = begin;
+  size = 10;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+  name = "begin";
+}
+
+EndDate : WOTextField {
+  value = end;
+  size = 10;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+  name = "end";
+  onfocus = "if(value==null||value.length==0)value=form.begin.value;";
+}
+ActiveTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.isActive;
+}
+
+BeginTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.begin;
+  valueWhenEmpty = "since";
+}
+
+EndTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.end;
+  valueWhenEmpty = "since";
+}
+CanCreate : WOConditional {
+  condition = session.readAccess.create.Reason;
+}
+
+EditIcon : WOImage {
+	framework = "app";
+	filename = "files_edit.png";
+	onclick = "var f=get(this,'form');f.defaultDate.value='';f.reasonText.value=f.reasonText.defaultValue;f.begin.value=f.begin.defaultValue;f.end.value=f.end.defaultValue;f.withTeacher.checked=f.withTeacher.defaultChecked;f.withEduGroup.checked=f.withEduGroup.defaultChecked;showObj('reasonEdit');";
+	alt = "edit";
+	align = "left";
+	style = "cursor:pointer;";
+	title = application.strings.Reusables_Strings.uiElements.Edit;
+}
+
+CanEdit : WOConditional {
+  condition = canEditReason;
+}
+
+RelatedTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
+}
+
+ItemHasTeacher : WOConditional {
+  condition = rItem.teacher;
+}
+
+ItemHasEduGroup : WOConditional {
+  condition = rItem.eduGroup;
+}
+
+TeacherIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "teacher.png";
+  align = "right";
+  alt = "teacher";
+  title = teacherRelated;
+}
+
+GroupIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "group.png";
+  align = "right";
+  alt = "group";
+  title = groupRelated;
+}

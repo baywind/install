@@ -59,3 +59,7 @@ SubstitutorTitle : WOString {
 CommentTitle : WOString {
   value = application.strings.Reusables_Strings.dataTypes.comment;
 }
+
+SubsValue : WOString {
+  value = subsItem.factor;
+}

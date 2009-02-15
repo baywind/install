@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ReasonSelector.java" wocomponentcontent="false">
+
+        <binding name="date"/>
+        <validation message="'date' is a required binding.">
+            <unbound name="date"/>
+        </validation>
+        <binding name="course"/>
+        <validation message="'course' is a required binding.">
+            <unbound name="course"/>
+        </validation>
+        <binding name="reason"/>
+        <validation message="'reason' must be bound to a settable value">
+            <unsettable name="reason"/>
+        </validation>
+    <binding defaults="Boolean" name="readOnly"/>
+    <binding defaults="Boolean" name="hideExternal"/>
+    </wo>
+</wodefinitions>

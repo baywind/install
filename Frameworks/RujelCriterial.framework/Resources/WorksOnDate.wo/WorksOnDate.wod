@@ -20,7 +20,7 @@ Works : WORepetition {
 WorkName : WOString {
   value = workItem.theme;
 }
-InspectorCaller : WOGenericContainer {
+InspectorCaller : OnClickContainer {
   elementName = "td";
   align = "center";
   valign = "middle";
@@ -34,4 +34,14 @@ InspectorImage : WOImage {
 	framework = "RujelBase";
 	style = "cursor:pointer;";
 	width = 24;
+}
+
+NoWorks : WOConditional {
+  condition = workList.count;
+  negate = true;
+}
+
+WorksTitle : WOString {
+  value = application.strings.RujelCriterial_Strings.works;
+  valueWhenEmpty = "Works";
 }

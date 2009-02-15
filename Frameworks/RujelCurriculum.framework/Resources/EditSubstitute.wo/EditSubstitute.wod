@@ -1,5 +1,5 @@
 SubstituteTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Substitute;
+  value = application.strings.RujelCurriculum_Curriculum.Substitute.Substitute;
 }
 
 LessonDate : WOString {
@@ -24,11 +24,11 @@ SubstitutorSelect : PersListing {
 }
 
 JoinTitle : WOString {
-	value = application.strings.RujelCurriculum_Curriculum.Join;
+	value = application.strings.RujelCurriculum_Curriculum.Substitute.Factor;
 }
 
 CommentTitle : WOString {
-	value = application.strings.RujelCurriculum_Curriculum.Reason;
+	value = application.strings.RujelCurriculum_Curriculum.Reason.Reason;
 }
 
 Comment : WOText {
@@ -47,8 +47,11 @@ CantSelect : WOConditional {
   condition = cantSelect;
 }
 
-Teacher : WOString {
-  value = teacherName;
+Teacher : PersonDisplay {
+  person = teacher;
+  last = 2;
+  first = 2;
+  second = 2;
 }
 
 Form : WOForm {
@@ -81,7 +84,19 @@ ResetButton1: WOResetButton {
 	onclick = "closePopup();";
 }
 
-JoinCheckBox : WOCheckBox {
-	checked = join;
+FactorField : WOTextField {
+	value = factor;
+	numberformat = "0.##";
+	onkeypress = "return isNumberInput(event,true);";
+	size = 4;
+	style = "text-align:center;font-weight:bold";
 	disabled = cantEdit;
+}
+
+ReasonSelector : ReasonSelector {
+  course = lesson.course;
+  date = lesson.date;
+  reason = reason;
+  readOnly = cantEdit;
+  hideExternal = true;
 }

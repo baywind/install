@@ -6,10 +6,10 @@
         username = rujel; 
     }; 
     entities = (
-        {className = EOGenericRecord; name = Reason; }, 
-        {className = "net.rujel.curriculum.Substitute"; name = Substitute; }
+        {className = "net.rujel.curriculum.Reason"; name = Reason; }, 
+        {className = "net.rujel.curriculum.Substitute"; name = Substitute; }, 
+        {className = "net.rujel.curriculum.Variation"; name = Variation; }
     ); 
-    internalInfo = {"_deletedEntityNamesInObjectStore" = (Substitute); }; 
     userInfo = {
         "_EntityModeler" = {
             activeDatabaseConfigName = Default; 

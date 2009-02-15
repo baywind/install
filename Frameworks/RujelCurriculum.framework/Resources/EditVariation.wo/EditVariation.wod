@@ -1,0 +1,88 @@
+Form : WOForm {
+  onsubmit = "ajaxPost(this);return false;";
+  action = save;
+}
+
+VariationTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Variation.Variation;
+  valueWhenEmpty = "Variation";
+  escapeHTML = false;
+}
+
+DateTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.Date;
+	escapeHTML = false;
+	valueWhenEmpty = "Date";
+}
+
+DateField : WOTextField {
+  value = date;
+  dateformat = application.prefs.ui.dateFormat;
+  size = 10;
+  style = "text-align:center;";
+  onchange = "ajaxPost(this.form);";
+}
+
+TrueRadio : WORadioButton {
+	name = "negative";
+	selection = negative;
+	value = true;
+}
+
+FalseRadio : WORadioButton {
+	name = "negative";
+	selection = negative;
+	value = false;
+}
+
+ValueField : WOTextField {
+  value = abs;
+  numberformat = "#;#";
+  size = 3;
+  style = "text-align:center;font-size:larger;";
+}
+
+ReasonSelector : ReasonSelector {
+  course = course;
+  date = date;
+  readOnly = nullDate;
+  reason = reason;
+}
+
+CanDelete: WOConditional {
+	condition = canDelete;
+}
+
+Save: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Save;
+	elementName = "input";
+	type = "submit";
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.ajaxPopup;
+	elementName = "input";
+	type = "button";
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	invokeAction = done;
+	onclick = session.ajaxPopup;
+	elementName = "input";
+	type = "button";
+}
+
+MinusTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Variation.minus;
+  valueWhenEmpty = "Lost";
+  escapeHTML = false;
+}
+
+PlusTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Variation.plus;
+  valueWhenEmpty = "Added";
+  escapeHTML = false;
+}

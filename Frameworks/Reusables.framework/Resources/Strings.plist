@@ -32,6 +32,8 @@
 		<string>по</string>
 		<key>comment</key>
 		<string>Комментарий</string>
+		<key>total</key>
+		<string>Итого</string>
 	</dict>
 	<key>presets</key>
 	<dict>

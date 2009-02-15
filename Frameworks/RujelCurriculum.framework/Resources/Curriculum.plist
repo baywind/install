@@ -2,20 +2,64 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Substitute</key>
-	<string>Замена</string>
-	<key>Join</key>
-	<string>Совмещение</string>
-	<key>Reason</key>
-	<string>Причина</string>
-	<key>wrongTeacherMessage</key>
-	<string>В замене должен быть указан учитель отличный от ведущего курс.</string>
 	<key>subsReport</key>
 	<string>Замен: %d (загрузить сводку)</string>
 	<key>OrigTeacher</key>
 	<string>Замененный</string>
-	<key>Substitutor</key>
-	<string>Заменяющий</string>
+	<key>Substitute</key>
+	<dict>
+		<key>Substitute</key>
+		<string>Замена</string>
+		<key>Join</key>
+		<string>Совмещение</string>
+		<key>Factor</key>
+		<string>Коэффициент</string>
+		<key>Substitutor</key>
+		<string>Заменяющий</string>
+	</dict>
+	<key>Reason</key>
+	<dict>
+		<key>Reason</key>
+		<string>Причина</string>
+		<key>relatedTo</key>
+		<string>связано с </string>
+		<key>withTeacher</key>
+		<string>преподавателем</string>
+		<key>withEduGroup</key>
+		<string>классом</string>
+		<key>isActive</key>
+		<string>Актуально</string>
+		<key>begin</key>
+		<string>с</string>
+		<key>end</key>
+		<string>по</string>
+		<key>other</key>
+		<string>Другая причина</string>
+	</dict>
+	<key>Variation</key>
+	<dict>
+		<key>minus</key>
+		<string>Пропущено</string>
+		<key>plus</key>
+		<string>Добавлено</string>
+		<key>Variation</key>
+		<string>Поправка</string>
+		<key>external</key>
+		<string>внешние поправки калькуляции</string>
+		<key>value</key>
+		<string>Величина</string>
+	</dict>
+	<key>messages</key>
+	<dict>
+		<key>wrongTeacher</key>
+		<string>В замене должен быть указан учитель отличный от ведущего курс.</string>
+		<key>duplicateTeacher</key>
+		<string>Для этого урока уже описана замена/совмещение с выбранным учителем</string>
+		<key>wrongDates</key>
+		<string>Предлагаемый период актуальности причины не заключает в себе заданную дату.&lt;br/&gt;/nГраница периода была автоматически изменена.</string>
+		<key>wrongVariation</key>
+		<string>Неверное описание поправки</string>
+	</dict>
 	<key>titles</key>
 	<dict>
 		<key>OrigTeacher</key>
@@ -24,6 +68,25 @@
 		<string>Причина пропуска урока</string>
 		<key>Substitutor</key>
 		<string>ФИО учителя, заменившего урок</string>
+		<key>planCount</key>
+		<string>план</string>
+		<key>realCount</key>
+		<string>дано</string>
+		<key>variations</key>
+		<string>Поправки</string>
+		<key>editVarDate</key>
+		<string>Введите дату поправки</string>
 	</dict>
+	<key>plugins</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>Поправки к исполнению учебного плана</string>
+			<key>component</key>
+			<string>VariationsPlugin</string>
+			<key>sort</key>
+			<string>30</string>
+		</dict>
+	</array>
 </dict>
 </plist>

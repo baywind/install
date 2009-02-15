@@ -9,9 +9,23 @@
         }, 
         {
             allowsNull = Y; 
+            columnName = "EDU_GROUP"; 
+            name = eduGroupID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
             columnName = END; 
             name = end; 
             prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = EXTERNAL; 
+            name = external; 
+            prototypeName = boolean; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
@@ -27,11 +41,31 @@
             name = rID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = SCHOOL; 
+            name = school; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TEACHER; 
+            name = teacherID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = VERIFICATION; 
+            name = verification; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (begin, end, reason); 
-    className = EOGenericRecord; 
-    classProperties = (begin, end, reason, substitutes); 
+    attributesUsedForLocking = (begin, eduGroupID, end, external, reason, school, teacherID, verification); 
+    className = "net.rujel.curriculum.Reason"; 
+    classProperties = (begin, end, external, reason, school, substitutes, variations, verification); 
     externalName = REASON; 
     fetchSpecificationDictionary = {}; 
     name = Reason; 
@@ -44,6 +78,14 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = reasonID; sourceAttribute = rID; }); 
             name = substitutes; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = Variation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = reasonID; sourceAttribute = rID; }); 
+            name = variations; 
         }
     ); 
 }

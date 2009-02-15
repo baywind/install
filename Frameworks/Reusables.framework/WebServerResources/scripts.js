@@ -85,7 +85,7 @@ function showObj(obj) {
 }
 
 function hideObj(obj) {
-	return setDisplay(obj,'');
+	return setDisplay(obj,'none');
 }
 
 function toggleObj(obj) {

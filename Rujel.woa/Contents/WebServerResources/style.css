@@ -32,6 +32,10 @@
 	background-color:#ffcc66;
 }
 
+.warning {
+	background-color:#cc3333;
+}
+
 .message {
 	font-size:large;
 	color:#ff6600;

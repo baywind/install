@@ -7,8 +7,7 @@ BackUrl: WOResourceURL {
 	filename = "back.png";
 }
 
-Body: WOGenericContainer {
-	elementName = "body";
+Body: WOBody {
 	onunload = ^onUnload;
 	onload = onLoad;
 }

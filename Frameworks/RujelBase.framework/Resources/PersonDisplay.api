@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="PersonDisplay.java" wocomponentcontent="false">
+
+        <binding name="person"/>
+        <validation message="'person' is a required binding.">
+            <unbound name="person"/>
+        </validation>
+        <binding name="last"/>
+        <binding name="first"/>
+        <binding name="second"/>
+        <binding defaults="Boolean" name="startWithLast"/>
+        <binding defaults="Date Format Strings" name="birthdayFormat"/>
+    </wo>
+</wodefinitions>

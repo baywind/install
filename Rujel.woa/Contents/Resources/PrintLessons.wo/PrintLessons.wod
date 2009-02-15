@@ -50,6 +50,7 @@ Weight : WOString {
 Theme : WOString {
   value = lessonItem.theme;
 }
+
 HomeTask : WOString {
   value = lessonItem.homeTask;
 }
@@ -60,11 +61,7 @@ LessonsRepetition : WORepetition {
 }
 
 IfSubstitute : WOConditional {
-  condition = substitute;
-}
-
-Sub : WOString {
-  value = substitutor;
+  condition = hasSubstitute;
 }
 
 ClassName : WOString {
@@ -72,5 +69,6 @@ ClassName : WOString {
 }
 
 Substitute : WOString {
-  value = substitute.title;
+  value = substitute;
+  escapeHTML = false;
 }

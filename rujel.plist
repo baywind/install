@@ -346,6 +346,32 @@
 				<key>any</key>
 				<string>1</string>
 			</dict>
+			<key>Variation</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>zav_kaf</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>3</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
+			<key>Reason</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>zav_kaf</key>
+				<string>7</string>
+				<key>teacher</key>
+				<string>3</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
 			<key>SubsReport</key>
 			<dict>
 				<key>root</key>
@@ -600,6 +626,8 @@
 		<key>BaseNote</key>
 		<string>true</string>
 		<key>Prognosis</key>
+		<string>true</string>
+		<key>Reason</key>
 		<string>true</string>
 	</dict>
 	<key>schedule</key>

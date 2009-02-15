@@ -1,27 +1,21 @@
 <div class="backfield1" id="ajaxPopup">
 <table border="1">
-<tr><th colspan = "2">
-<webobject name = "SubstituteTitle"/>
-</th></tr>
-<tr><td>
-<webobject name = "LessonDate"/>
-</td><td>
-<webobject name = "LessonTheme"/>
+<tr><td style = "padding:3pt;">
+<strong><webobject name = "SubstituteTitle"/></strong>  <em>(<webobject name = "LessonDate"/>)</em>
 </td></tr>
-<tr><td>
-<webobject name = "SubstitutorTitle"/>
-</td><td valign = "middle"><webobject name = "CanSelect">
+<tr><td style = "padding:0px;">
+<table style = "width:100%;text-align:center;border-bottom:#666 1pt solid;"><tr>
+<td><webobject name = "SubstitutorTitle"/>:</td>
+<td><webobject name = "CanSelect">
 <webobject name = "SubstitutorSelect"/></webobject>
-<webobject name = "CantSelect"><webobject name = "Teacher"/></webobject>
-</td></tr>
-<tr><td colspan = "2" style = "padding:0px;">
+<webobject name = "CantSelect"><webobject name = "Teacher"/></webobject></td>
+</tr></table>
 <webobject name = "Form">
-<div style = "text-align:left;">
-<webobject name = "JoinCheckBox"/> <webobject name = "JoinTitle"/>
-</div><div>
-<webobject name = "CommentTitle"/> :
-<webobject name = "Comment"/>
-</div><div style = "margin:0.7ex;">
+<div style = "border-bottom:#666 double;"><table align = "center"><tr>
+<td align = "right"><webobject name = "JoinTitle"/>:</td><td style = "padding:3pt;" class = "orange"><webobject name = "FactorField"/></td>
+</tr></table></div><div>
+<webobject name = "ReasonSelector"/>
+</div><div style = "padding:3pt;border-top:#666 double;">
 <webobject name="CanChange"><webobject name="Save"></webobject></webobject> 
 <webobject name="CanDelete"><webobject name="DeleteButton"></webobject></webobject> 
 <webobject name="ResetButton1"></webobject>

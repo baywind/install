@@ -15,6 +15,7 @@ DateField : WOTextField {
   value = newDate;
   size = 10;
   style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
 }
 
 ThemeField : WOText {

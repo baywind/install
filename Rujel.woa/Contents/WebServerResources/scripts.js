@@ -424,22 +424,27 @@ function ajaxPost(ini) {
 	if(!tryLoad(false))
 		return false;
 	if(typeof ini == "String")
-		ini = document.getElementById(aForm);
+		ini = document.getElementById(ini);
 	var aForm = ini;
 	if(ini.form && ini.type == "submit")
 		aForm = ini.form;
 	else
 		ini = null;
-	var params = "";	
+	var params = "";
 	for(var i=0;i<aForm.elements.length;i++) {
 		var elt = aForm.elements[i];
 		if(elt == null || elt.name == null || elt.value == null)
 			continue;
-		if(ini != null && elt.type == "submit" && elt != ini)
+		if((elt.type == "radio" || elt.type == "checkbox") && !elt.checked)
+			continue;
+		if(elt.type == "submit" && elt != ini)
+			continue;
+		if(elt.type == "button")
 			continue;
 		if(params.length > 0)
 			params = params + '&';
 		params = params.concat(elt.name,'=',elt.value);
+		//alert(elt.name + ' = ' + elt.value);
 	}
 	xmlHttp = ajaxRequest();
     xmlHttp.onreadystatechange=function() {

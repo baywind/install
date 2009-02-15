@@ -2,14 +2,14 @@
 Поддерживает критериальное оценивание, принятое в школах Международного Бакалавриата
 
 В этом репозитории
-Приложение РУЖЕЛЬ и набор необходимых библиотек.
+Приложения РУЖЕЛЬ и РУЖЭЛЬ-Дневник и набор необходимых библиотек.
 Откомпилированные и готовые к установке
 
 Инструкции по установке смотрите по адресу:
 http://www.rujel.net/distribute/install
 
 
-RUJEL application and set of frameworks it uses.
+RUJEL and RujelDiary applications and set of frameworks it uses.
 
 RUJEL is a web-portal application for maintaining online markbook in schools.
 It supports criterial evaluation for International Baccalaureate schools.
@@ -17,5 +17,4 @@ It supports criterial evaluation for International Baccalaureate schools.
 RUJEL has russian user interface but it can be easily localised by rewriting *.plist files
 located in Resources folder of each framework
 
-Here is precompiled installation ready java-application and related frameworks
-
+Here is precompiled installation ready java-applications and related frameworks

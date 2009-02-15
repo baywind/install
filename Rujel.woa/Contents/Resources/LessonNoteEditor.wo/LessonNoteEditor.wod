@@ -67,7 +67,7 @@ LessonList1: WOSwitchComponent {
 
 LessonTabs1: Tabs {
 	currTab = currTab;
-	tablist = tablist;
+	tablist = item;
 	onClick = session.checkRun;
 	vertical = true;
 }
@@ -186,5 +186,19 @@ TeacherSN: WOString {
 
 TabsRepetition : WORepetition {
 	list = allTabs;
-	item = tablist;
+	item = item;
+}
+
+JournalPlugins : WORepetition {
+	list = session.modules.journalPlugins;
+	item = item;
+}
+
+PluginLabel : WOSwitchComponent {
+  WOComponentName = item.component;
+  dict = item;
+  course = course;
+  present = present;
+  currTab = currTab;
+  lesson = currLesson;
 }

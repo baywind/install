@@ -197,7 +197,7 @@ CanMove: WOString {
 }
 
 ShowExtentions : WOConditional {
-  condition = extentions;
+  condition = extentions.count;
 }
 
 LessonExtentions : WORepetition {

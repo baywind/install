@@ -1,19 +1,54 @@
 SubsTitle : WOString {
   value = substitute.title;
-  valueWhenEmpty = application.strings.RujelCurriculum_Curriculum.Substitute;
+  valueWhenEmpty = application.strings.RujelCurriculum_Curriculum.Substitute.Substitute;
 }
 
-Substitutor : WOString {
-  value = substitutor;
+Substitutor : PersonDisplay {
+  person = substitute.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
 }
 
 SubstituteTD : OnClickContainer {
+  elementName = "tr";
+  invokeAction = edit;
+  class = "gerade";
+  disabled = session.readAccess._edit.substitute;
+  onclick = session.ajaxPopup;
+  title = substitute.reason.title;
+  align = "left";
+}
+
+AddSubstitute : OnClickContainer {
   elementName = "td";
   invokeAction = edit;
-  class = cellClass;
-  disabled = cantEdit;
+  disabled = cantCreate;
   onclick = session.ajaxPopup;
-  colspan = "2";
-  style = "border-bottom:solid 1px lime;";
-  title = substitute.reason.reason;
+}
+
+SubsList : WORepetition {
+  list = subsList;
+  item = substitute;
+}
+
+ShowAny : WOConditional {
+  condition = show;
+}
+
+showEmptyRow : WOConditional {
+  condition = subsList.count;
+  negate = true;
+}
+
+InspectorImage : WOImage {
+	filename = "plus.png";
+	framework = "RujelBase";
+	style = "cursor:pointer;";
+	width = 24;
+}
+
+CanCreate : WOConditional {
+  condition = cantCreate;
+  negate = true;
 }

@@ -1,0 +1,23 @@
+PageWrapper1: PageWrapper {
+	hasChanges = false;
+	title = application.strings.Strings.Curriculum.title;
+	cssURL = regime.cssURL;
+	cssResource = regime.cssResource;
+	scriptURL = regime.scriptURL;
+	scriptResource = regime.scriptResource;
+	resourcesFramework = regime.framework;
+}
+
+RegimeTabs : Tabs {
+  currTab = regime;
+  tablist = availableRegimes;
+  idAttribute = "id";
+  titleAttribute = "title";
+  hoverAttribute = "hover";
+  onClick = session.checkRun;
+}
+
+RegimeComponent : WOSwitchComponent {
+  WOComponentName = regime.component;
+  dict = regime;
+}
