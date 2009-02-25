@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="PeriodSelector.java" wocomponentcontent="false">
+
+        <binding name="period"/>
+        <validation message="'period' must be bound to a settable value">
+            <unsettable name="period"/>
+        </validation>
+        <binding name="begin"/>
+        <validation message="'since' must be bound to a settable value">
+            <unsettable name="begin"/>
+        </validation>
+        <binding name="end"/>
+        <validation message="'to' must be bound to a settable value">
+            <unsettable name="end"/>
+        </validation>
+        <binding defaults="Actions" name="selectAction"/>
+    </wo>
+</wodefinitions>

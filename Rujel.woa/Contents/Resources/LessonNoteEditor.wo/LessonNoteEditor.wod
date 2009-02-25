@@ -172,17 +172,13 @@ PresentTabs: Tabs {
 	hoverAttribute = "hover";
 }
 
-TeacherFN: WOString {
-	value = course.teacher.person.firstName;
+TeacherName: PersonDisplay {
+	person = course.teacher;
+	first = 2;
+	last = 2;
+	second = 2;
 }
 
-TeacherLN: WOString {
-	value = course.teacher.person.lastName;
-}
-
-TeacherSN: WOString {
-	value = course.teacher.person.secondName;
-}
 
 TabsRepetition : WORepetition {
 	list = allTabs;
@@ -201,4 +197,18 @@ PluginLabel : WOSwitchComponent {
   present = present;
   currTab = currTab;
   lesson = currLesson;
+}
+
+GroupSpan : OnClickContainer {
+  elementName = "span";
+  onclick = session.checkRun;
+  invokeAction = chooseEduGroup;
+  title = application.strings.Strings.LessonNoteEditor.byEduGroup;
+}
+
+TeacherSpan : OnClickContainer {
+  elementName = "span";
+  onclick = session.checkRun;
+  invokeAction = chooseTeacher;
+  title = application.strings.Strings.LessonNoteEditor.byTeacher;
 }

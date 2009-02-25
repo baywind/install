@@ -67,15 +67,18 @@
 		return true;
 	}
 --></script> 
+<h2><webobject name="Title"/></h2>
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
-<tr><td align="center" colspan="3"><h2><webobject name="Title"></webobject></h2></td></tr>
-<tr><td valign="bottom" colspan="2"><webobject name="Tabs1"></webobject></td><td width="60%">
+<tr><td valign="bottom"><webobject name="Tabs1"></webobject></td><td width="60%">
 <table width="100%"><tr><th align="center" width="15%"><webobject name="EduGroupLabel"></webobject></th>
 <th align="center" width="55%"><webobject name="EduPlanLabel"></webobject>
 <span style="color:#aaaaaa;">[<webobject name = "CountTitle"/>]</span>
 </th>
 <th><webobject name="TeacherLabel"></webobject></th></tr></table></td></tr>
-<tr><td class="selection" colspan="3" height="3px"></td></tr><tr><td class="backfield2"><webobject name="ClassSelector"><webobject name="ClassListing1"></webobject></webobject><webobject name="TeacherSelector"><webobject name="TeacherSelector2"></webobject></webobject></td><td class="selection" width="2px"></td><td class="backfield1">
+<td class="backfield2 selectionBorder" style = "border-style:solid solid none none;"><webobject name="ClassSelector">
+<webobject name="ClassListing1"></webobject></webobject><webobject name="TeacherSelector">
+<webobject name="TeacherSelector2"></webobject></webobject></td>
+<td class="backfield1 selectionBorder" style = "border-style:solid none none;">
 <table width="100%"><col width="15%" /><col width="55%" /><col />
 <webobject name="Repetition1"><webobject name="UnSelected">
 <webobject name="IfEduPlan"><webobject name="GenericContainer"><td align="center"><webobject name="CycleGrade"></webobject></td>

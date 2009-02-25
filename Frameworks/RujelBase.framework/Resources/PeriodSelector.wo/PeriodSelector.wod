@@ -1,0 +1,50 @@
+Form1: WOForm {
+}
+
+PeriodTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.period;
+	valueWhenEmpty = "period";
+	escapeHTML = false;
+}
+
+PeriodTitle2: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.since;
+	valueWhenEmpty = "begin";
+	escapeHTML = false;
+}
+
+PeriodTitle3: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.to;
+	valueWhenEmpty = "end";
+	escapeHTML = false;
+}
+
+PeriodsPopUp: WOPopUpButton {
+	displayString = perItem.title;
+	item = perItem;
+	list = session.modules.periods;
+	noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
+	selection = period;
+	name = "periods";
+}
+
+SinceField: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = begin;
+	size = 10;
+	maxlength = 10;
+	name = "begin";
+}
+
+ToField: WOTextField {
+	dateformat = application.prefs.ui.dateFormat;
+	value = end;
+	size = 10;
+	maxlength = 10;
+	name = "end";
+}
+
+SubmitButton1: WOSubmitButton {
+	value = application.strings.Reusables_Strings.uiElements.Change;
+	action = ^selectAction;
+}

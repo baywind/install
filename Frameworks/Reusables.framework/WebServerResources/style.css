@@ -38,7 +38,7 @@ body {margin:2pt;}
 
 .selectionBorder {
 	border-color:#00ff00;
-	border-width: 2pt;
+	border-width: 2px;
 	border-style:solid;
 	margin:0;
 }

@@ -1,11 +1,10 @@
 <script language="JavaScript"><!--
-	var htTitle = "<webobject name="HomeTaskTitle"/>";
+	var htTitle = '<webobject name="HomeTaskTitle"/>';
 	function navigate(ifnav) {
 		var canEdit = <webobject name="CanMove"></webobject>;
 		if(canEdit) {
 			var nav = document.getElementById("control");
 			var num = document.getElementById("number");
-		
 			nav.style.display = (ifnav)?"":"none";
 			num.style.display = (ifnav)?"none":"";
 		}

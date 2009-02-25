@@ -670,35 +670,6 @@
 		<string>/cgi-bin/WebObjects/Rujel.woa</string>
 		<key>redirectTimeout</key>
 		<string>10</string>
-		<key>presenter</key>
-		<dict>
-			<key>lessonList</key>
-			<string>WorkList</string>
-			<key>note</key>
-			<string>MarksPresenter</string>
-			<key>report</key>
-			<string>StudentMarks</string>
-			<key>selector</key>
-			<string>CriterSelector</string>
-		</dict>
-		<key>regime</key>
-		<dict>
-			<key>Ведение журнала</key>
-			<string>SrcMark</string>
-			<key>Контакты</key>
-			<string>Contacts</string>
-			<key>Контроль успеваемости</key>
-			<string>Overview</string>
-			<key>Учебный План</key>
-			<string>GlobalPlan</string>
-		</dict>
-		<key>subRegime</key>
-		<dict>
-			<key>editCourseSubgroup</key>
-			<string>SubgroupEditor</string>
-			<key>openCourse</key>
-			<string>LessonNoteEditor</string>
-		</dict>
 	</dict>
 </dict>
 </plist>

@@ -5,6 +5,7 @@ Generic1: WOGenericContainer {
 	class = ^class;
 	spacing = ^spacing;
 	padding = ^padding;
+	style = ^style;
 }
 
 DynamicTableRow1: DynamicTableRow {

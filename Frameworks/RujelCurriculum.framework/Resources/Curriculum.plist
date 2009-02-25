@@ -56,7 +56,7 @@
 		<key>duplicateTeacher</key>
 		<string>Для этого урока уже описана замена/совмещение с выбранным учителем</string>
 		<key>wrongDates</key>
-		<string>Предлагаемый период актуальности причины не заключает в себе заданную дату.&lt;br/&gt;/nГраница периода была автоматически изменена.</string>
+		<string>Предлагаемый период актуальности причины не заключает в себе заданную дату.&lt;br/&gt;Граница периода была автоматически изменена.</string>
 		<key>wrongVariation</key>
 		<string>Неверное описание поправки</string>
 	</dict>
@@ -88,5 +88,16 @@
 			<string>30</string>
 		</dict>
 	</array>
+	<key>reasonsRegime</key>
+	<dict>
+		<key>title</key>
+		<string>Корректировки</string>
+		<key>component</key>
+		<string>Corrections</string>
+		<key>group</key>
+		<string>edu</string>
+		<key>sort</key>
+		<string>30</string>
+	</dict>
 </dict>
 </plist>

@@ -10,6 +10,7 @@ BackUrl: WOResourceURL {
 Body: WOBody {
 	onunload = ^onUnload;
 	onload = onLoad;
+	style = ^bodyStyle;
 }
 
 
@@ -75,15 +76,44 @@ ScriptLink: WOString {
 	value = ^scriptURL;
 }
 
-Span: OnClickContainer {
-	class = "button";
-	elementName = "span";
+LeftTriangle : WOImage {
+  framework = "RujelBase";
+  filename = "lTri.gif";
+  width = 10;
+  style = "vertical-align:middle;height:1.6em;";
+}
+
+RightTriangle : WOImage {
+  framework = "RujelBase";
+  filename = "rTri.gif";
+  width = 10;
+  style = "vertical-align:middle;height:1.6em;";
+}
+
+RegimeCaller : OnClickContainer {
+  elementName = "td";
+  invokeAction = chooseRegime;
+  onclick = session.ajaxPopup;
+  style = "padding-left:3pt;";
+}
+
+RegimesTitle : WOString {
+  value = application.strings.Strings.ChooseRegime.title;
+  valueWhenEmpty = "Choose regime";
+  escapeHTML = false;
+}
+
+PathSpan: OnClickContainer {
+	elementName = "td";
+	valign = "middle";
 	invokeAction = goTo;
 	onclick = session.checkRun;
+	style = "padding-left:3pt;";
 }
 
 Styles: WOString {
 	value = ^styles;
+	escapeHTML = false;
 }
 
 TerminatingMessage: WOString {

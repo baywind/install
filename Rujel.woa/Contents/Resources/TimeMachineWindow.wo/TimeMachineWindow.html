@@ -1,9 +1,21 @@
-<webobject name="Conditional1"><webobject name="GenericContainer1"><caption align="bottom" style="color:#cccccc;"><webobject name="String1"></webobject></caption><webobject name="Form1">
-<tr><td align="center">Сегодня:</td></tr>
-<tr><td align="center">
-<webobject name="TextField1"></webobject>
-</td></tr>
-<tr><td align="center">
-<webobject name="SubmitButton1"></webobject>
-</td></tr>
-</webobject></webobject></webobject>
+<webobject name="Conditional1"><webobject name="Form1">
+<webobject name = "InTable">
+	<webobject name="GenericContainer1"><caption align="bottom" style="color:#cccccc;">
+	<webobject name="String1"/></caption>
+	<tr><td align = "center"><webobject name = "SetToday">
+			<webobject name = "TodayString"/>:</webobject></td></tr>
+	<tr><td align="center">
+	<webobject name="TextField1"></webobject>
+	</td></tr>
+	<tr><td align="center">
+	<webobject name="SubmitButton1"></webobject>
+	</td></tr>
+	</webobject>
+	</webobject>
+	<webobject name = "NoTable"><div>
+	<webobject name = "SetToday"><webobject name = "TodayString"/>:</webobject>
+	<webobject name="TextField1"></webobject>
+	<webobject name="SubmitButton1"></webobject></div>
+	<div style="color:#666666;"><webobject name="String1"/></div>
+	</webobject>
+</webobject></webobject>

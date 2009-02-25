@@ -2,6 +2,10 @@
 	text-align:right;
 }
 
+body {
+	margin: 2px;
+}
+
 .popup {
 	text-align:center;
 	background-color:#ffff99;
@@ -94,21 +98,19 @@
 	background-color:#ff9999;
 }
 
-.button, .buttonDim {
-	display:inline-block;
-	margin:1pt 2pt 3pt;
-	border:2pt grey;
-	padding:2pt;
-}
-
-.button {
+.button, .pathButton {
+	margin:0px 2pt;
+	border:2px grey;
+	padding:3px;
+	vertical-align:middle;
 	background-color:#ffcc66;
 	border-style:outset;
 }
 
-.buttonDim {
-	background-color:#cc9933;
-	border-style:inset;
+.pathButton {
+	padding:0px;
+	border-left-style:none;
+	border-right-style:none;
 }
 
 .highlight {background-color:#ffff66;}

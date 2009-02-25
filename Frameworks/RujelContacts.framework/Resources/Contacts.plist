@@ -60,5 +60,16 @@
 	<string>во вложенном файле</string>
 	<key>title</key>
 	<string>Контактная информация</string>
+	<key>contactsRegime</key>
+	<dict>
+		<key>title</key>
+		<string>Контакты</string>
+		<key>component</key>
+		<string>Contacts</string>
+		<key>group</key>
+		<string>personal</string>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
 </dict>
 </plist>

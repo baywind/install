@@ -7,7 +7,7 @@
 	<key>login</key>
 	<dict>
 		<key>descript</key>
-		<string>Электронная система классных Журналов &lt;span style=&quot;white-space:nowrap;&quot;&gt;на Русском языке&lt;/span&gt;</string>
+		<string>&lt;span style=&quot;white-space:nowrap;&quot;&gt;Электронная система&lt;/span&gt; классных Журналов &lt;span style=&quot;white-space:nowrap;&quot;&gt;на Русском языке&lt;/span&gt;</string>
 		<key>username</key>
 		<string>Имя</string>
 		<key>password</key>
@@ -27,18 +27,48 @@
 	</dict>
 	<key>ChooseRegime</key>
 	<dict>
+		<key>SrcMark</key>
+		<string>Журналы</string>
+		<key>regimeGroups</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Учебная часть</string>
+				<key>sort</key>
+				<string>10</string>
+				<key>id</key>
+				<string>edu</string>
+				<key>regimes</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>Контроль успеваемости</string>
+						<key>component</key>
+						<string>Overview</string>
+						<key>hover</key>
+						<string>просмотр, распечатка и рассылка отметок</string>
+						<key>sort</key>
+						<string>10</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Разное</string>
+				<key>hover</key>
+				<string>Режимы, не вошедшие в другие группы</string>
+				<key>id</key>
+				<string>other</string>
+				<key>sort</key>
+				<string>90</string>
+			</dict>
+		</array>
 		<key>title</key>
 		<string>Выбор Режима</string>
-		<key>welcome</key>
-		<string>Вас приветствует РУЖЭЛЬ !</string>
-		<key>introduce</key>
-		<string>&lt;nobr&gt;Электронная система&lt;/nobr&gt; &lt;nobr&gt;классных журналов&lt;/nobr&gt; &lt;nobr&gt;на русском языке&lt;/nobr&gt;</string>
-		<key>selectRegime</key>
-		<string>Вам предлагается:</string>
-		<key>noAccess</key>
-		<string>&lt;p&gt;У Вас нет прав доступа ни к одному из модулей&lt;/p&gt;&lt;p&gt;Oбратитесь к администратору&lt;/p&gt;</string>
 		<key>notice</key>
-		<string>Не оставляйте открытый журнал без присмотра &lt;br /&gt;Таймер автоматического закрытия сессии выведен слева от кнопки &quot;Выход&quot;</string>
+		<string>Простой пароль &amp;mdash; подарок хакеру</string>
+		<key>today</key>
+		<string>Сегодня</string>
 	</dict>
 	<key>SrcMark</key>
 	<dict>
@@ -58,6 +88,10 @@
 		<string>Больше работ</string>
 		<key>normal</key>
 		<string>Ровно</string>
+		<key>byTeacher</key>
+		<string>Журналы этого учителя</string>
+		<key>byEduGroup</key>
+		<string>Журналы этого класса</string>
 	</dict>
 	<key>Overview</key>
 	<dict>

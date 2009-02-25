@@ -37,9 +37,6 @@ CourseComment: WOString {
 	value = courseItem.course.comment;
 }
 
-Form1: WOForm {
-}
-
 Form2: WOForm {
 	target = "_blank";
 	multipleSubmit = true;
@@ -104,28 +101,11 @@ PageWrapper1: PageWrapper {
 	resourcesFramework = present.framework;
 }
 
-PeriodTitle: WOString {
-	value = application.strings.Reusables_Strings.dataTypes.period;
-	valueWhenEmpty = "period";
-}
-
-PeriodTitle2: WOString {
-	value = application.strings.Reusables_Strings.dataTypes.since;
-	valueWhenEmpty = "since";
-}
-
-PeriodTitle3: WOString {
-	value = application.strings.Reusables_Strings.dataTypes.to;
-	valueWhenEmpty = "to";
-}
-
-PeriodsPopUp: WOPopUpButton {
-	displayString = perItem.title;
-	item = perItem;
-	list = periods;
-	noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
-	selection = period;
-	name = "periods";
+PeriodSelector: PeriodSelector {
+	begin = since;
+	end = to;
+	period = period;
+	selectAction = updateLessonLists;
 }
 
 PersonSelector1: PersonSelector {
@@ -182,14 +162,6 @@ ShowReporterSelector: WOConditional {
 Since: WOString {
 	dateformat = application.prefs.ui.dateFormat;
 	value = since;
-}
-
-SinceField: WOTextField {
-	dateformat = application.prefs.ui.dateFormat;
-	value = since;
-	size = 10;
-	maxlength = 10;
-	name = "begin";
 }
 
 StudentContainer: WOGenericContainer {
@@ -268,11 +240,6 @@ Subjects2: WORepetition {
 	list = currClass.list;
 }
 
-SubmitButton1: WOSubmitButton {
-	value = application.strings.Reusables_Strings.uiElements.Change;
-	action = updateLessonLists;
-}
-
 TeacherFirstName: WOString {
 	value = courseItem.course.teacher.firstName;
 }
@@ -294,14 +261,6 @@ Ticker1: Ticker {
 To: WOString {
 	dateformat = application.prefs.ui.dateFormat;
 	value = to;
-}
-
-ToField: WOTextField {
-	dateformat = application.prefs.ui.dateFormat;
-	value = to;
-	size = 10;
-	maxlength = 10;
-	name = "end";
 }
 
 ShowThemes : WOHyperlink {

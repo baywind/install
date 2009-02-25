@@ -4,16 +4,19 @@ Conditional1: WOConditional {
 
 Form1: WOForm {
 	onsubmit = "return tryLoad();";
+	action = ^action;
 }
 
 GenericContainer1: WOGenericContainer {
 	border = 1;
 	elementName = "table";
 	width = ^width;
+	style = ^style;
+	class = ^class;
 }
 
 String1: WOString {
-	value = session.eduYear;
+	value = eduYear;
 }
 
 SubmitButton1: WOGenericElement {
@@ -29,4 +32,27 @@ TextField1: WOTextField {
 	value = session.today;
 	disabled = session.readAccess._edit.timeMachine;
 	style = "text-align:center;";
+	name = "dateField";
+}
+
+TodayString : WOString {
+  value = application.strings.Strings.ChooseRegime.today;
+  valueWhenEmpty = "Today";
+  escapeHTML = false;
+}
+
+SetToday : OnClickContainer {
+  elementName = "span";
+  invokeAction = null;
+  onclick = onClick;
+  style = "font-weight:bold;";
+}
+
+InTable : WOConditional {
+  condition = ^inTable;
+}
+
+NoTable : WOConditional {
+  condition = ^inTable;
+  negate = true;
 }

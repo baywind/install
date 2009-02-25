@@ -90,7 +90,7 @@ RemoveFromList: WOHyperlink {
 	style = "z-index:4;";
 }
 
-cross: WOImage {
+Сross: WOImage {
 	align = "right";
 	filename = "cross.png";
 	framework = "RujelBase";

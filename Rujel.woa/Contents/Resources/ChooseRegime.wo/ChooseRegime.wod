@@ -1,57 +1,91 @@
-CanAccess: WOConditional {
-	condition = allowedRegimes.count;
-}
-CanNotAccess: WOConditional {
-	condition = allowedRegimes.count;
-	negate = true;
+TimeMachineWindow: TimeMachineWindow {
+	inTable = false;
+	action = changeDate;
 }
 
-GenericContainer1: OnClickContainer {
-	elementName = "tr";
-	invokeAction = choose;
-	onclick = session.tryLoad;
-	class="orange";
-}
-
-Repetition1: WORepetition {
-	item = regime;
-	list = allowedRegimes;
-}
-
-String1: WOString {
-	value = regime;
-}
-
-Notice: WOString {
-	escapeHTML = false;
-	value = application.strings.Strings.ChooseRegime.notice;
-}
-
-TimeMachineWindow1: TimeMachineWindow {
-}
-
-Wrapper: PageWrapper {
-	styles = "td, th {text-align:center;}";
-	title = title;
-}
-
-Welcome : WOString {
-  value = application.strings.Strings.ChooseRegime.welcome;
-  escapeHTML = false;
-  valueWhenEmpty = "Welcome to RUJEL !";
-}
-
-Introduce : WOString {
-  value = application.strings.Strings.ChooseRegime.introduce;
+RegimesTitle : WOString {
+  value = application.strings.Strings.ChooseRegime.title;
+  valueWhenEmpty = "Choose regime";
   escapeHTML = false;
 }
 
-SelectRegime : WOString {
-  value = application.strings.Strings.ChooseRegime.selectRegime;
+JournalesTitle : WOString {
+  value = application.strings.Strings.ChooseRegime.SrcMark;
+  valueWhenEmpty = "Journales";
   escapeHTML = false;
 }
 
-NoAccess : WOString {
-  value = application.strings.Strings.ChooseRegime.noAccess;
+JournalesRegime : WOString {
+  value = application.strings.Strings.SrcMark.title;
+  valueWhenEmpty = "Journales";
   escapeHTML = false;
+}
+
+GroupsRepetition : WORepetition {
+  list = regimeGroups;
+  item = grpItem;
+}
+
+GroupTitleCell : WOGenericContainer {
+  elementName = "th";
+  align = "right";
+  valign = "top";
+  title = grpItem.hover;
+  style = "padding:4pt 2pt;";
+}
+
+JournalesCell : OnClickContainer {
+  elementName = "div";
+  invokeAction = chooseJournal;
+  class = "orange";
+  style = "margin:3pt;padding:2pt;";
+}
+
+GroupTitle : WOString {
+  value = grpItem.title;
+}
+
+Regimes : WORepetition {
+  list = grpItem.regimes;
+  item = regItem;
+}
+
+RegimeCell : OnClickContainer {
+  elementName = "div";
+  invokeAction = choose;
+  onclick = onClick;
+  class = "orange";
+  style = "margin:3pt;padding:2pt 4pt;";
+  title = regItem.hover;
+}
+
+Regime : WOString {
+  value = regItem.title;
+  escapeHTML = false;
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	type = "button";
+	elementName = "input";
+	onclick = "closePopup();";
+}
+
+ShowJournales : WOConditional {
+  condition = hideJournales;
+  negate = true;
+}
+
+AllowTimeMachine : WOConditional {
+  condition = application.prefs.ui.allowTimeMachine;
+ }
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 16;
+  width = 16;
+  onclick = "closePopup();";
+  style = "cursor:pointer;";
 }

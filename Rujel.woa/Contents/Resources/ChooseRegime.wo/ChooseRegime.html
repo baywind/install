@@ -1,17 +1,23 @@
-<webobject name="Wrapper"><webobject name="TimeMachineWindow1"></webobject>
-
-<h1><webobject name = "Welcome"/></h1>
-<h2 align="center"><webobject name = "Introduce"/></h2>
-<webobject name="CanAccess">
-<table cellspacing="4" align="center" class = "backfield1" style = "padding:2ex;">
-<tr><th><webobject name = "SelectRegime"/></th></tr>
-<webobject name="Repetition1"><webobject name="GenericContainer1"><td style = "padding:2pt 4pt;">
-<webobject name="String1"></webobject>
-</td></webobject></webobject></table>
-</webobject>
-<webobject name="CanNotAccess"><div style="text-align:center;margin-top:20pt;">
-<webobject name = "NoAccess"/>
-</div></webobject>
-<div style="position:absolute;bottom:2em;width:99%;text-align:center;">
-<webobject name="Notice"></webobject></div>
-</webobject>
+<div class="backfield1" id="ajaxPopup">
+<table border = "0" cellpadding = "0" style = "border:solid 1pt grey;">
+<thead>
+<tr><th style = "height:1.4em;font-size:larger;" colspan = "2"><webobject name = "Cross"/>
+	<webobject name = "RegimesTitle"></webobject></th></tr>
+</thead>
+<tfoot><tr><td colspan = "2" style = "border-bottom:solid 1pt grey;height:1.4ex;"></td></tr>
+	<webobject name = "AllowTimeMachine"><tr class = "backfield2">
+		<td colspan = "2" style = "padding-top:6pt;"><webobject name = "TimeMachineWindow"></webobject></td>
+</tr></webobject>
+</tfoot>
+<tbody><webobject name = "ShowJournales">
+	<tr style = "height:2.4em;"><th align = "right"><webobject name = "JournalesTitle"/>:</th>
+		<td valign = "middle" align = "center">
+	 		<webobject name = "JournalesCell"><webobject name = "JournalesRegime"/></webobject>
+		</td></tr></webobject>
+<webobject name = "GroupsRepetition">
+<tr><webobject name = "GroupTitleCell"><webobject name = "GroupTitle"/>:</webobject>
+	<td style = "text-align:center;padding:0px;"><webobject name = "Regimes">
+	<webobject name = "RegimeCell"><webobject name = "Regime"/></webobject></webobject></td>
+	</tr></webobject>
+</tbody></table>
+</div>
