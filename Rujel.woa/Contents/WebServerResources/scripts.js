@@ -459,6 +459,7 @@ function ajaxPost(ini) {
 }
 
 function positionPopup(popup,pos) {
+	//alert(pos);
 	var w, h, pheight, pwidth, x = 0, y = 0, p , abs;
 	pheight = popup.offsetHeight;
 	pwidth = popup.offsetWidth;
@@ -492,10 +493,10 @@ function positionPopup(popup,pos) {
 	popup.style.position = 'absolute';
 	//alert('start ' + pos);
 	if(pos.clientX) {
-		//alert('event');
 		x += pos.clientX;
 		y += pos.clientY;
-	} else if (pos.offsetLeft) {
+		//alert("event: x=" + x + "; y=" + y);
+	} else if (pos.nodeName) {
 		//alert('pos : ' + pos);
 		if(pos.style.display == 'none')
 			pos = pos.parentNode;
@@ -520,7 +521,7 @@ function positionPopup(popup,pos) {
 					h = pos.offsetHeight;
 				}
 			}
-		//alert('X=' + x + '\nY=' + y);
+		//alert("Element: x=" + x + "; y=" + y);
 	} else {
 		//alert('center');
 		x = w / 2;
