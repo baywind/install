@@ -20,7 +20,6 @@ Button: WOGenericElement {
 VarRow : OnClickContainer {
 	elementName = "tr";
 	class = item.reason.styleClass;
-	title = item.reason.extToString;
 	onclick = session.ajaxPopup;
 	disabled = session.readAccess._edit.item;
 	invokeAction = editVariation;
@@ -46,6 +45,29 @@ VarValue : WOString {
   value = item.value;
   numberformat = "+ #;0;- #";
   escapeHTML = false;
+}
+ItemHasTeacher : WOConditional {
+  condition = item.reason.namedFlags.forTeacher;
+}
+
+ItemHasEduGroup : WOConditional {
+  condition = item.reason.namedFlags.forEduGroup;
+}
+
+TeacherIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "teacher.png";
+  align = "right";
+  alt = "teacher";
+  title = item.reason.extToString;
+}
+
+GroupIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "group.png";
+  align = "right";
+  alt = "group";
+  title = item.reason.extToString;
 }
 
 ReasonText : WOString {

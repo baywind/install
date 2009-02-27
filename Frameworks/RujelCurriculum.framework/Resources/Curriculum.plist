@@ -22,13 +22,15 @@
 		<key>Reason</key>
 		<string>Причина</string>
 		<key>relatedTo</key>
-		<string>связано с </string>
+		<string>Актуально для</string>
 		<key>withTeacher</key>
-		<string>преподавателем</string>
+		<string>преподавателя</string>
 		<key>withEduGroup</key>
-		<string>классом</string>
+		<string>класса</string>
+		<key>wholeSchool</key>
+		<string>всей школы</string>
 		<key>isActive</key>
-		<string>Актуально</string>
+		<string>Период</string>
 		<key>begin</key>
 		<string>с</string>
 		<key>end</key>

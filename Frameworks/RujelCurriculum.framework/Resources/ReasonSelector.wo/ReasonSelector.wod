@@ -40,7 +40,7 @@ OtherRB : WORadioButton {
   name = "selectReason";
   selection = reasonID;
   value = 0;
-  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.withTeacher.checked=false;form.withEduGroup.checked=false;}";
+  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.relation[0].checked=true;}";
   disabled = ^readOnly;
 }
 
@@ -62,14 +62,15 @@ ReasonTextField : WOText {
   name = "reasonText";
 }
 
-HasTeacher : WOCheckBox {
-  checked = withTeacher;
-  name = "withTeacher";
-  onclick = "if(checked)form.withEduGroup.checked = false;";
+HasTeacher : WORadioButton {
+  value = 1;
+  selection = relation;
+  name = "relation";
 }
 
 WithTeacher : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Reason.withTeacher;
+  escapeHTML = false;
 }
 
 CourseTeacher : PersonDisplay {
@@ -79,18 +80,30 @@ CourseTeacher : PersonDisplay {
   second = 1;
 }
 
-HasEduGroup : WOCheckBox {
-  checked = withEduGroup;
-  name = "withEduGroup";
-  onclick = "if(checked)form.withTeacher.checked = false;";
+HasEduGroup : WORadioButton {
+  value = 2;
+  selection = relation;
+  name = "relation";
 }
 
 WithEduGroup : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Reason.withEduGroup;
+  escapeHTML = false;
 }
 
 CourseEduGroup : WOString {
   value = course.eduGroup.name;
+}
+
+ForWholeSchool : WORadioButton {
+  value = 0;
+  selection = relation;
+  name = "relation";
+}
+
+WithWholeSchool : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
+  escapeHTML = false;
 }
 
 DefaultDate : WOTextField {
@@ -135,7 +148,7 @@ CanCreate : WOConditional {
 EditIcon : WOImage {
 	framework = "app";
 	filename = "files_edit.png";
-	onclick = "var f=get(this,'form');f.defaultDate.value='';f.reasonText.value=f.reasonText.defaultValue;f.begin.value=f.begin.defaultValue;f.end.value=f.end.defaultValue;f.withTeacher.checked=f.withTeacher.defaultChecked;f.withEduGroup.checked=f.withEduGroup.defaultChecked;showObj('reasonEdit');";
+	onclick = "var f=get(this,'form');f.reset();f.defaultDate.value='';showObj('reasonEdit');";
 	alt = "edit";
 	align = "left";
 	style = "cursor:pointer;";
@@ -151,11 +164,11 @@ RelatedTitle : WOString {
 }
 
 ItemHasTeacher : WOConditional {
-  condition = rItem.teacher;
+  condition = rItem.namedFlags.forTeacher;
 }
 
 ItemHasEduGroup : WOConditional {
-  condition = rItem.eduGroup;
+  condition = rItem.namedFlags.forEduGroup;
 }
 
 TeacherIcon : WOImage {

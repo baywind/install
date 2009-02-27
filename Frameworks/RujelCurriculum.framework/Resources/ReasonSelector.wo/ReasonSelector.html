@@ -6,13 +6,7 @@
 	<tfoot class = "backfield2" style = "display:none;" id = "reasonEdit">
 	<tr>
 	<td colspan = "2" style = "padding:3pt;"><webobject name = "ReasonTextField"/><webobject name = "DefaultDate"/></td></tr>
-	<tr><td colspan = "2"><webobject name = "ActiveTitle"/> 
-	<span style = "white-space:nowrap;"><webobject name = "BeginTitle"/>:
-		<webobject name = "BeginDate"/></span>
-	<span style = "white-space:nowrap;"><webobject name = "EndTitle"/>:
-		<webobject name = "EndDate"/></span>
-	</td></tr>
-	<tr><td align = "left" colspan = "2"><webobject name = "RelatedTitle"/>:</td>
+	<tr><td align = "center" colspan = "2"><webobject name = "RelatedTitle"/>:</td>
 	<tr><td><webobject name = "HasTeacher"/></td>
 		<td align = "left"  onclick = "get(this,'tr').getElementsByTagName('input')[0].click();">
 			<webobject name = "TeacherIcon"/><webobject name = "WithTeacher"/>:
@@ -21,8 +15,16 @@
 		<td align = "left"  onclick = "get(this,'tr').getElementsByTagName('input')[0].click();">
 			<webobject name = "GroupIcon"/><webobject name = "WithEduGroup"/>: 
 		<em><webobject name = "CourseEduGroup"/></em></td></tr>
-	</tfoot>
-	
+	<tr><td><webobject name = "ForWholeSchool"/></td>
+		<td align = "left"  onclick = "get(this,'tr').getElementsByTagName('input')[0].click();">
+			<webobject name = "WithWholeSchool"/></td></tr>
+<tr><td colspan = "2">
+	<span style = "white-space:nowrap;"><webobject name = "BeginTitle"/>:
+		<webobject name = "BeginDate"/></span>
+	<span style = "white-space:nowrap;"><webobject name = "EndTitle"/>:
+		<webobject name = "EndDate"/></span>
+	</td></tr>
+	</tfoot>	
 	<tbody><webobject name = "ReasonsRepetition"><webobject name = "ReasonRow">
 		<td><webobject name = "ReasonRB"/></td>
 		<td style = "cursor:default;"><webobject name = "CanEdit"><webobject name = "EditIcon"/>
