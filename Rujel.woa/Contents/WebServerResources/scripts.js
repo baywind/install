@@ -256,7 +256,7 @@ function myPrompt(message,cont,pos,extParent) {
 	prmt.appendChild(elt);
 	if(pos == null)
 		pos = returnField;
-	positionPopup(prmt,pos);
+	positionPopup(prmt,getPosition(pos));
 	elt.focus();
 	elt.value = cont;
 	if(extParent != null) {
@@ -383,13 +383,13 @@ function ajaxRequest() {
 	return xmlHttp;
 }
 
-function onReadyStateChange(aevent) {
+function onReadyStateChange(pos) {
 	container = document.getElementById('ajaxMask');
 	container.style.display='block';
 	container.innerHTML = xmlHttp.responseText;
 	cancelLoading();
-	if(aevent != null) {
-		positionPopup(container.firstChild,aevent);
+	if(pos != null) {
+		positionPopup(container.firstChild,pos);
 	}
 }
 
@@ -469,6 +469,7 @@ function ajaxPost(ini) {
 
 function getPosition(pos) {
 	var r = new Object();
+	r.isCalculated = true;
 	if(pos.clientX) {
 		r.x = pos.clientX;
 		r.y = pos.clientY;
@@ -480,6 +481,8 @@ function getPosition(pos) {
 		r.x = pos.offsetLeft + (pos.offsetWidth/2);
 		r.y = pos.offsetTop + (pos.offsetHeight/2);
 		//alert("curr: x=" + x + "; y=" + y);
+		r.w = document.documentElement.offsetWidth;
+		r.h = document.documentElement.offsetHeight;
 		while(pos.offsetParent) {
 			//alert("curr: x=" + x + "; y=" + y);
 			pos = pos.offsetParent;
@@ -499,12 +502,14 @@ function getPosition(pos) {
 				if(pos.offsetHeight > h)
 					h = pos.offsetHeight;
 			}*/
+ 			r.h = Math.max(r.h,pos.offsetHeight);
+			r.w = Math.max(r.w,pos.offsetWidth);
 		}
-		//alert("Element: x=" + x + "; y=" + y);
+		//alert("Element: x=" + r.x + "; y=" + r.y + "\nWindow: h=" + r.h + "; w=" + r.w);
 	} else {
 		//alert('center');
-		r.x = w / 2;
-		r.y = h / 2;
+		r.x = document.documentElement.offsetWidth / 2;
+		r.y = document.documentElement.offsetHeight / 2;
 	}
 	//alert("Position: x=" + r.x + "; y=" + r.y);
 	return r;
@@ -512,12 +517,17 @@ function getPosition(pos) {
 
 function positionPopup(popup,pos) {
 	//alert(pos);
+	if(popup == null)
+		return;
 	var w, h, pheight, pwidth, x = 0, y = 0, p , abs;
 	pheight = popup.offsetHeight;
 	pwidth = popup.offsetWidth;
-	w = document.documentElement.offsetWidth;
-	h = document.documentElement.offsetHeight;
+	//w = document.documentElement.offsetWidth;
+	//h = document.documentElement.offsetHeight;
 	//alert ('h= ' + h + '\nw= ' + w);
+
+	if(!pos.isCalculated)
+		pos = getPosition(pos);
 	p = popup;
 	if(p != null) {
 		abs = false;
@@ -529,16 +539,18 @@ function positionPopup(popup,pos) {
 		}
 		if(abs) {
 			//alert('abs: ' + p);
-			//alert("abs: x=" + x + "; y=" + y);
 			w = p.offsetWidth;
 			h = p.offsetHeight;
 			x -= p.offsetLeft;
 			y -= p.offsetTop;
-			while(p.offsetParent) {
+/* 			while(p.offsetParent) {
 				p = p.offsetParent;			
 				x -= p.offsetLeft;
 				y -= p.offsetTop;
-			}
+			} */
+		} else {
+			h = pos.h;
+			w = pos.w;
 		}
 		//alert('X=' + x + '\nY=' + y);
 	}
@@ -549,41 +561,40 @@ function positionPopup(popup,pos) {
 	//alert (pos.toString);
 	x += pos.x;
 	y += pos.y;
-	
-	//alert('X=' + x + '\nY=' + y + '\n\nh=' + h + '\nw=' + w);
-		
-	if(h == null) {
-		popup.style.top = Math.max(10,y - pheight) + 'px';
-	} else {
-		if((y + pheight/2 + 10) < h) {
-//			//alert('top: ' + Math.max(10,event.pageY - pheight/2));
-			popup.style.top = Math.max(10,y - pheight/2) + 'px';
-		} else {
-			popup.style.top = (h - pheight - 10) + 'px';
-			//alert('top: ' + popup.style.top);
-			//popup.style.bottom = '10px';
-			//alert('bottom: ' + popup.style.bottom);
-			//popup.style.top = null;
-			//alert('top: ' + popup.style.top);
-		}
-	}
-	//alert('top: ' + popup.style.top);
-	
 
-	if(w == null) {
-		popup.style.left = Math.max(10,x - pwidth) + 'px';
-	} else {
-		if((x + pwidth/2 + 10) < w) {
-			popup.style.left = Math.max(10,x - pwidth/2) + 'px';
-		} else {
-//			//alert('left: ' + popup.style.left);
-			popup.style.left = (w - pwidth - 10) + 'px';
-			//popup.stye.right = '10px';
-			//popup.style.left = null;
-			//alert('left: ' + popup.style.left);
-		}
+	//alert('X=' + x + '\nY=' + y + '\n\nh=' + h + '\nw=' + w);
+	popup.style.top = Math.max(10,y - pheight/2) + 'px';
+	popup.style.left = Math.max(10,x - pwidth/2) + 'px';	
+	fitWindow(popup,h,w);
+}
+
+function fitWindow(w,ph,pw) {
+	if (w == null)
+		w = document.getElementById('ajaxPopup');
+	else if(typeof w == "String")
+		w = document.getElementById(w);
+	
+	if(pw == null) {
+		var parent = (w.offsetParent)?w.offsetParent:document.documentElement;
+		pw = parent.offsetWidth;
+		ph = parent.offsetHeight;
+		//alert("calculated: ph = " + ph + "; pw = " + pw);
 	}
-	//alert('left: ' + popup.style.left);
+	var ww = w.offsetWidth;
+	var wh = w.offsetHeight;
+
+	//alert ("doc height: " + ph + "\nwin height: " + wh + "\nwin pos: " + w.offsetTop);
+	if(w.offsetTop + wh - ph > 10) {
+		//alert("was top: " + w.style.top);
+		w.style.top = (ph - wh - 10) + 'px';
+		//alert("top: " + w.style.top);
+	}
+	//alert ("doc width: " + pw + "\nwin width: " + ww + "\nwin pos: " + w.offsetLeft);
+	if(w.offsetLeft + ww - pw > 10) {
+		//alert("was left: " + w.style.left);
+		w.style.left = (pw - ww - 10) + 'px';
+		//alert("left: " + w.style.left);
+	}
 }
 
 function closePopup(aForm) {

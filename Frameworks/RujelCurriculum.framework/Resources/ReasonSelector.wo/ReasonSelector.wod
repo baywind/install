@@ -40,7 +40,7 @@ OtherRB : WORadioButton {
   name = "selectReason";
   selection = reasonID;
   value = 0;
-  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.relation[0].checked=true;}";
+  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.relation[0].checked=true;fitWindow();}";
   disabled = ^readOnly;
 }
 
@@ -148,7 +148,7 @@ CanCreate : WOConditional {
 EditIcon : WOImage {
 	framework = "app";
 	filename = "files_edit.png";
-	onclick = "var f=get(this,'form');f.reset();f.defaultDate.value='';showObj('reasonEdit');";
+	onclick = "var f=get(this,'form');f.reset();f.defaultDate.value='';showObj('reasonEdit');fitWindow();";
 	alt = "edit";
 	align = "left";
 	style = "cursor:pointer;";
