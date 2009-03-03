@@ -7,7 +7,7 @@
 
 #WOAutoOpenInBrowser=true
 #WOAutoOpenClientApplication=true
-#WOPort=55555
+WOPort=2000
 #WODebuggingEnabled=true
 #WODirectConnectEnabled=true
 #WOAllowRapidTurnaround=true
@@ -21,7 +21,8 @@ WOSessionShortTimeOut=300
 #PrefsReader.nodePath = /ru/edu/ms45
 
 Settings.className = net.rujel.reusables.PlistReader
-PlistReader.filePath = /Library/WebObjects/Configuration/rujel.plist
+PlistReader.filePath = LOCALROOT/Library/WebObjects/Configuration/rujel.plist
 
+# Every of these should be enabled for one instance only to avoid conflicts
 EMailBroadcast.disableWeekly = false
 AutoItog.disable = false

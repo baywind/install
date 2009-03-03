@@ -38,14 +38,14 @@ GoLeft: WOImageButton {
 	filename = "lft-OSarw.gif";
 	framework = "JavaWOExtensions";
 	action = moveLeft;
-	title = application.strings.Strings.LessonNoteEditor.left;
+	title = goLeftTitle;
 }
 
 GoRight: WOImageButton {
 	filename = "rt-OSarw.gif";
 	framework = "JavaWOExtensions";
 	action = moveRight;
-	title = application.strings.Strings.LessonNoteEditor.right;
+	title = goRightTitle;
 }
 
 LessonList1: WOSwitchComponent {
@@ -133,7 +133,7 @@ ShowSeparator: WOConditional {
 }
 
 ShowTablist: WOConditional {
-	condition = allTabs;
+	condition = showTabs;
 }
 
 Span: OnClickContainer {
@@ -211,4 +211,17 @@ TeacherSpan : OnClickContainer {
   onclick = session.checkRun;
   invokeAction = chooseTeacher;
   title = application.strings.Strings.LessonNoteEditor.byTeacher;
+}
+
+CanAddTab : WOConditional {
+  condition = canAddTab;
+}
+
+AddTabDiv : OnClickContainer {
+  elementName = "div";
+  invokeAction = splitTab;
+  onclick = session.checkRun;
+  style = "margin-top:1.5ex;padding:1pt;border-width:1px 1px 1px 0px;text-align:center;font-weight:bold;";
+  class = "grey selectionBorder";
+  title = application.strings.Strings.LessonNoteEditor.addTab;
 }

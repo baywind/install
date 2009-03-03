@@ -60,6 +60,10 @@
 	<string>во вложенном файле</string>
 	<key>title</key>
 	<string>Контактная информация</string>
+	<key>failedMailing</key>
+	<string>Не удалось отправить сообщение для </string>
+	<key>mailingError</key>
+	<string>Ошибка при рассылке почты</string>
 	<key>contactsRegime</key>
 	<dict>
 		<key>title</key>

@@ -281,4 +281,5 @@ SubsReport : WOHyperlink {
 
 CoursesCSS : ResourceLink {
   cssLink = "courses.css";
+  framework = "app";
 }

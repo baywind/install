@@ -83,15 +83,17 @@
 	<key>LessonNoteEditor</key>
 	<dict>
 		<key>right</key>
-		<string>Больше оценок</string>
+		<string>Только оценки</string>
 		<key>left</key>
-		<string>Больше работ</string>
+		<string>Только уроки</string>
 		<key>normal</key>
-		<string>Ровно</string>
+		<string>Стандартный вид</string>
 		<key>byTeacher</key>
 		<string>Журналы этого учителя</string>
 		<key>byEduGroup</key>
 		<string>Журналы этого класса</string>
+		<key>addTab</key>
+		<string>Установить закладку</string>
 	</dict>
 	<key>Overview</key>
 	<dict>

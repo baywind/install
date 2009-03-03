@@ -17,7 +17,7 @@ CancelButton: WOGenericElement {
 DeleteButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
-	onclick = session.tryLoad;
+	onclick = "form.mark.value='';form.mark.onchange();form.save.click();form.changeReason.focus();";
 	elementName = "input";
 	type = "button";
 }
@@ -53,6 +53,7 @@ ItogDefined: WOConditional {
 }
 
 ItogEditForm: WOForm {
+	onsubmit = "return (!save.disabled);";
 }
 
 MarkField: WOTextField {
@@ -62,6 +63,9 @@ MarkField: WOTextField {
 	style = "text-align:center;";
 	disabled = readOnly;
 	onkeypress = onkeypress;
+	onchange = onkeypress;
+	onblur = "form.changeReason.focus();";
+	name = "mark";
 }
 
 PopupTitle: WOString {

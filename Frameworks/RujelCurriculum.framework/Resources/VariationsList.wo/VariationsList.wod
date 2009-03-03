@@ -118,11 +118,11 @@ CanCreate : WOConditional {
 }
 
 HasMessage : WOConditional {
-  condition = message;
+  condition = session.message;
 }
 
 Message: WOString {
-  value = message;
+  value = session.message;
   escapeHTML = false;
 }
 
