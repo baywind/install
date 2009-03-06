@@ -69,7 +69,7 @@ CountAdrs : WOString {
 }
 
 SessionMessage : WOString {
-  value = session.message;
+  value = message;
 }
 
 FName : WOString {

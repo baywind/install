@@ -457,7 +457,7 @@
 		</dict>
 		<key>usersList</key>
 		<dict>
-			<key>gena</key>
+			<key>root</key>
 			<dict>
 				<key>fullName</key>
 				<string>Gennady Kushnir</string>
@@ -466,12 +466,10 @@
 				<key>groups</key>
 				<string>root;any</string>
 				<key>password</key>
-				<string>qqq</string>
+				<string>god</string>
 				<key>sn</key>
 				<string>Kushnir</string>
 			</dict>
-			<key>user</key>
-			<dict/>
 			<key>guest</key>
 			<dict>
 				<key>groups</key>
@@ -481,11 +479,15 @@
 			<dict>
 				<key>groups</key>
 				<string>any</string>
+				<key>password</key>
+				<string>123</string>
 			</dict>
 			<key>tutor</key>
 			<dict>
 				<key>groups</key>
 				<string>teacher;any</string>
+				<key>password</key>
+				<string>123</string>
 			</dict>
 			<key>zavuch</key>
 			<dict>
@@ -562,6 +564,8 @@
 		<string>1</string>
 		<key>maxGrade</key>
 		<string>11</string>
+		<key>disableAutoItog</key>
+		<string>false</string>
 		<key>autoItogLagDays</key>
 		<string>1</string>
 		<key>ignorePrognosesAfterDays</key>
@@ -593,11 +597,11 @@
 		<key>secure</key>
 		<string>true</string>
 		<key>smtpUser</key>
-		<string>genkush@rujel.net</string>
+		<string>rujel@rujel.net</string>
 		<key>smtpPassword</key>
 		<string></string>
 		<key>mailFrom</key>
-		<string>&quot;RUJEL&quot;&lt;genkush@rujel.net&gt;</string>
+		<string>&quot;RUJEL&quot;&lt;rujel@rujel.net&gt;</string>
 		<key>replyTo</key>
 		<string>ask@rujel.net</string>
 		<key>messageLag</key>
@@ -609,7 +613,7 @@
 		<key>writeToFile</key>
 		<string>true</string>
 		<key>writeFileDir</key>
-		<string>/Users/Shared/test</string>
+		<string>~/test</string>
 	</dict>
 	<key>markarchive</key>
 	<dict>
@@ -635,7 +639,7 @@
 		<key>DAILY</key>
 		<dict>
 			<key>time</key>
-			<string>13:43</string>
+			<string>03:43</string>
 		</dict>
 		<key>MONTHLY</key>
 		<dict/>

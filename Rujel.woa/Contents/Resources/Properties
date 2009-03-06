@@ -23,6 +23,6 @@ WOSessionShortTimeOut=300
 Settings.className = net.rujel.reusables.PlistReader
 PlistReader.filePath = LOCALROOT/Library/WebObjects/Configuration/rujel.plist
 
-# Every of these should be enabled for one instance only to avoid conflicts
-EMailBroadcast.disableWeekly = false
-AutoItog.disable = false
+# Each of these should be enabled for one instance only to avoid conflicts
+EMailBroadcast.disableWeekly = true
+AutoItog.disable = true
