@@ -384,6 +384,7 @@ function ajaxRequest() {
 }
 
 function onReadyStateChange(pos) {
+	timeout = startTimeout;
 	container = document.getElementById('ajaxMask');
 	container.style.display='block';
 	container.innerHTML = xmlHttp.responseText;
