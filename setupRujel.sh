@@ -81,7 +81,7 @@ if [ -e $f ]
 then
     if [ -e ${CONFIGFOLDER}/$f ]
     then
-        if [ $1="-c" ]
+        if [ $1 = "-c" ]
         then mv ${CONFIGFOLDER}/$f $BACKUP
         else echo $f" already exists"
         fi

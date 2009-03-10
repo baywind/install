@@ -57,8 +57,8 @@ ItogEditForm: WOForm {
 }
 
 MarkField: WOTextField {
-	maxlength = 10;
-	size = 5;
+	maxlength = 5;
+	size = 4;
 	value = mark;
 	style = "text-align:center;";
 	disabled = readOnly;

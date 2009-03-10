@@ -34,7 +34,8 @@ Mark : WOTextField {
   value = mark;
   disabled = addOn.usage.namedFlags._manual;
   maxlength = 5;
-  style = "text-align:center;width:5ex;";
+  size = 4;
+  style = "text-align:center;";
   onkeypress = onkeypress;
 }
 CanChange: WOConditional {
