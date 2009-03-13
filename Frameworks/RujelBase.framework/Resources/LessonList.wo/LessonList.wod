@@ -151,7 +151,6 @@ HomeTaskImage2: WOImage {
 	framework = "app";
 	title = lessonItem.homeTask;
 	style = "cursor:pointer;";
-	onclick = "returnField=document.getElementById('homeTask');myPrompt(htTitle,null,this);";
 	id = "taskImage";
 }
 
@@ -231,4 +230,10 @@ ShowAdd : WOSubmitButton {
   value = application.strings.Reusables_Strings.uiElements.Add;
   action = newLessonPopup;
   onclick = "ajaxPost(this);return false;";
+}
+
+TaskCell : WOGenericContainer {
+  elementName = "td";
+  onclick = showHomeTaskOnClick;
+  invokeAction = popupHomeTask;
 }
