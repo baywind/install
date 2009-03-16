@@ -65,6 +65,7 @@ MarksPresenter1: MarksPresenter {
 	student = ^student;
 	maxlen = 255;
 	align = "left";
+	presenterCache = parent.presenterCache;
 }
 
 Repetition2: WORepetition {

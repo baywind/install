@@ -1,23 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
 	<wo class="MarksPresenter" wocomponentcontent="false">
 
 		<binding name="selectAction"/>
-		<binding name="isSelected" defaults="Boolean"/>
+		<binding defaults="Boolean" name="isSelected"/>
 		<binding name="lesson"/>
 		<binding name="student"/>
 		<binding name="defaultStyle"/>
 		<binding name="cellID"/>
-		<binding name="readOnly" defaults="Boolean"/>
-		<binding name="denyCreation" defaults="Boolean"/>
-		<binding name="full" defaults="Boolean"/>
+		<binding defaults="Boolean" name="readOnly"/>
+		<binding defaults="Boolean" name="denyCreation"/>
+		<binding defaults="Boolean" name="full"/>
 
-		<validation message="&apos;lesson&apos; is a required binding">
+		<validation message="'lesson' is a required binding">
 			<unbound name="lesson"/>
 		</validation>
 
-		<validation message="&apos;student&apos; is a required binding">
+		<validation message="'student' is a required binding">
 			<unbound name="student"/>
 		</validation>
-	</wo>
+	<binding name="presenterCache"/>
+    </wo>
 </wodefinitions>

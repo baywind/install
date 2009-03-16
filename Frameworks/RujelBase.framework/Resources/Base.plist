@@ -22,6 +22,11 @@
 		<string>course</string>
 		<key>presenter</key>
 		<string>NotePresenter</string>
+		<key>prefetchPaths</key>
+		<array>
+			<string>notes</string>
+			<string>taskText</string>
+		</array>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

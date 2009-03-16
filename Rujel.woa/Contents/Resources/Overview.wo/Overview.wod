@@ -169,14 +169,6 @@ StudentContainer: WOGenericContainer {
 	elementName = "tr";
 }
 
-StudentFirstName: WOString {
-	value = currStudent.person.firstName;
-}
-
-StudentLastName: WOString {
-	value = currStudent.person.lastName;
-}
-
 StudentMarks : WOSwitchComponent {
 	since = since;
 	student = currStudent;
@@ -187,12 +179,12 @@ StudentMarks : WOSwitchComponent {
 	period = period;
 }
 
-StudentName: WOString {
-	value = studentItem.person.lastName;
-}
-
-StudentName2: WOString {
-	value = studentItem.person.firstName;
+StudentName: PersonDisplay {
+	person = studentItem.person;
+	last = 2;
+	first = 2;
+	second = 0;
+	startWithLast = true;
 }
 
 StudentNameContainer: OnClickContainer {
@@ -202,8 +194,12 @@ StudentNameContainer: OnClickContainer {
 	onclick = session.tryLoad;
 }
 
-StudentSecondName: WOString {
-	value = currStudent.person.secondName;
+CurrStudentName: PersonDisplay {
+	person = currStudent;
+	startWithLast = true;
+	last = 2;
+	first = 2;
+	second = 1;
 }
 
 StudentSelected: WOConditional {
@@ -240,16 +236,12 @@ Subjects2: WORepetition {
 	list = currClass.list;
 }
 
-TeacherFirstName: WOString {
-	value = courseItem.course.teacher.firstName;
-}
-
-TeacherLastName: WOString {
-	value = courseItem.course.teacher.lastName;
-}
-
-TeacherSecondName: WOString {
-	value = courseItem.course.teacher.secondName;
+TeacherName: PersonDisplay {
+	person = courseItem.course.teacher;
+	last = 2;
+	first = 2;
+	second = 2;
+	startWithLast = true;
 }
 
 Ticker1: Ticker {

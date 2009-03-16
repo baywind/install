@@ -35,7 +35,7 @@ ActiveAddOnComponent: WOSwitchComponent {
 	WOComponentName = addOnItem.activeComponent;
 	student = studentItem;
 	course = ^course;
-	single=^single;
+	single=single;
 	currAddOn = addOnItem;
 }
 
@@ -65,12 +65,12 @@ StudentTD: OnClickContainer {
 	colspan = 2;
 }
 
-StudentLastName: WOString {
-	value = studentItem.person.lastName;
-}
-
-StudentInitials: WOString {
-	value = studentItem.person.firstName;
+StudentName: PersonDisplay {
+	person = studentItem;
+	last = 2;
+	first = 2;
+	second = 0;
+	startWithLast = true;
 }
 
 NotePresenter1: WOSwitchComponent {
@@ -81,7 +81,8 @@ NotePresenter1: WOSwitchComponent {
 	readOnly = ^readOnly;
 	selectAction = selectLesson;
 	student = studentItem;
-	single=^single;
+	single=single;
+	presenterCache = presenterCache;
 }
 
 AllAddOnsRepetition: WORepetition {
@@ -112,4 +113,5 @@ NotePresenter2: WOSwitchComponent {
 	student = studentItem;
 	denyCreation = true;
 	single=^single;
+	presenterCache = presenterCache;
 }

@@ -116,12 +116,12 @@ Comment: WOString {
 	value = item.comment;
 }
 
-TeacherLN: WOString {
-	value = item.teacher.person.lastName;
-}
-
-TeacherInitials: WOString {
-	value = item.teacher.person.initials;
+TeacherLN: PersonDisplay {
+	person = item.teacher;
+	last = 2;
+	first = 1;
+	second = 1;
+	startWithLast = true;
 }
 
 EditLink: WOHyperlink {

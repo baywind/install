@@ -9,7 +9,7 @@
         <binding defaults="Actions" name="invokeAction"/>
         <binding name="onclick"/>
     <validation message="'action' is a required binding.">
-            <unbound name="invokeAction"/>
+            
         </validation>
     <binding defaults="Boolean" name="disabled"/>
         <binding name="class"/>
