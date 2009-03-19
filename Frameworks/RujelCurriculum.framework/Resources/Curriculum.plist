@@ -50,6 +50,8 @@
 		<string>внешние поправки калькуляции</string>
 		<key>value</key>
 		<string>Величина</string>
+		<key>isAdded</key>
+		<string>Доп</string>
 	</dict>
 	<key>messages</key>
 	<dict>

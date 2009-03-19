@@ -161,10 +161,12 @@ function eventKey(event) {
 		key = window.event.keyCode;
 		if(key == 0)
 			key = window.event.charCode
+		//alert("keyCode = " + event.keyCode + "\ncharCode = " + event.charCode);
 	} else if (event) {
 		key = event.keyCode;
+		//alert("keyCode = " + event.keyCode + "\ncharCode = " + event.charCode);
 		if(key == 0)
-			key = event.charCode
+			key = event.charCode;
 	} else {
 		//alert('none');
 		return 0;
@@ -173,6 +175,10 @@ function eventKey(event) {
 }
 
 function isNumberInput(event,dot) {
+	//alert("keyCode = " + event.keyCode + "\ncharCode = " + event.charCode);
+	if ((event.charCode == null || event.charCode == 0) 
+			&& event.keyCode >= 37 && event.keyCode <= 40)
+		return true;
 	var key = eventKey(event);
 	if(key == null || key < 32 || key == 127)  // spec symbols
 		return true;
@@ -180,7 +186,32 @@ function isNumberInput(event,dot) {
 		return true;
 	if(dot && key == 46) // dot
 		return true;
+	if(dot && ((key >= 42 && key <= 47) || key == 1073 || key == 1102)) {
+		if(event.srcElement)
+			insertAtCursor(event.srcElement, '.');
+		else if(event.target)
+			insertAtCursor(event.target, '.');
+	}
 	return false;
+}
+
+function insertAtCursor(myField, myValue) {
+  if (document.selection) {
+  //IE support
+    myField.focus();
+    sel = document.selection.createRange();
+    sel.text = myValue;
+  } else if (myField.selectionStart || myField.selectionStart == '0') {
+  //MOZILLA/NETSCAPE support
+    var startPos = myField.selectionStart;
+    var endPos = myField.selectionEnd;
+    myField.value = myField.value.substring(0, startPos)
+                  + myValue
+                  + myField.value.substring(endPos, myField.value.length);
+    myField.selectionEnd = startPos + myValue.length;
+  } else {
+    myField.value += myValue;
+  }
 }
 
 function extOnSpace(event,fld,maxLen,message,extParent) {

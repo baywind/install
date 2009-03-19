@@ -1,5 +1,5 @@
 Form : WOForm {
-  onsubmit = "ajaxPost(this);return false;";
+  onsubmit = onsubmit;
   action = save;
 }
 
@@ -18,21 +18,25 @@ DateTitle: WOString {
 DateField : WOTextField {
   value = date;
   dateformat = application.prefs.ui.dateFormat;
+  disabled = onlyChooseReason;
   size = 10;
   style = "text-align:center;";
   onchange = "ajaxPost(this.form);";
+  onkeypress = "return isNumberInput(event,true);";
 }
 
 TrueRadio : WORadioButton {
 	name = "negative";
 	selection = negative;
 	value = true;
+	disabled = onlyChooseReason;
 }
 
 FalseRadio : WORadioButton {
 	name = "negative";
 	selection = negative;
 	value = false;
+	disabled = onlyChooseReason;
 }
 
 ValueField : WOTextField {
@@ -40,6 +44,8 @@ ValueField : WOTextField {
   numberformat = "#;#";
   size = 3;
   style = "text-align:center;font-size:larger;";
+  disabled = onlyChooseReason;
+  onkeypress = "return isNumberInput(event,false);";
 }
 
 ReasonSelector : ReasonSelector {
@@ -62,7 +68,7 @@ Save: WOGenericElement {
 DeleteButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
-	onclick = session.ajaxPopup;
+	onclick = onDelete;
 	elementName = "input";
 	type = "button";
 }
@@ -70,7 +76,7 @@ DeleteButton: WOGenericElement {
 CancelButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	invokeAction = done;
-	onclick = session.ajaxPopup;
+	onclick = onCancel;
 	elementName = "input";
 	type = "button";
 }

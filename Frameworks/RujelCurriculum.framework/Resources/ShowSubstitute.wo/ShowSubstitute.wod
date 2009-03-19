@@ -52,3 +52,17 @@ CanCreate : WOConditional {
   condition = cantCreate;
   negate = true;
 }
+
+AdditionalTD : OnClickContainer {
+  elementName = "td";
+  style = isVarStyle;
+  invokeAction = addedLesson;
+  disabled = session.readAccess._create.Variation;
+  onclick = session.ajaxPopup;
+}
+
+IsAdded : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Variation.isAdded;
+  valueWhenEmpty = "added";
+  escapeHTML = false;
+}
