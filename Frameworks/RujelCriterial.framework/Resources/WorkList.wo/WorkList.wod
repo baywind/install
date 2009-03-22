@@ -203,8 +203,9 @@ SplitTab: WOImageButton {
 	align = "center";
 	valign = "middle";
 	style = "margin:3px 0;";
-	onmouseover = "this.style.border='1px blue solid';";
-	onmouseout = "this.style.border='none';";
+	onmouseover = "this.style.backgroundColor='blue';";
+	onmouseout = "this.style.backgroundColor='';";
+	title=^splitTitle;
 }
 
 Weight: WOString {

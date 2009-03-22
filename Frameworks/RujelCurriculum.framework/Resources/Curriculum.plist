@@ -92,12 +92,12 @@
 			<string>30</string>
 		</dict>
 	</array>
-	<key>reasonsRegime</key>
+	<key>curriculumRegime</key>
 	<dict>
 		<key>title</key>
 		<string>Корректировки</string>
 		<key>component</key>
-		<string>Corrections</string>
+		<string>Curriculum</string>
 		<key>group</key>
 		<string>edu</string>
 		<key>sort</key>

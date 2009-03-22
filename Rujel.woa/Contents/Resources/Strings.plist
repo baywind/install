@@ -94,6 +94,8 @@
 		<string>Журналы этого класса</string>
 		<key>addTab</key>
 		<string>Установить закладку</string>
+		<key>removeTab</key>
+		<string>Снять закладку</string>
 	</dict>
 	<key>Overview</key>
 	<dict>

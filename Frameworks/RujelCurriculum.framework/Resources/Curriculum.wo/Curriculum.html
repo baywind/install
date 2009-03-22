@@ -1,9 +1,35 @@
 <webobject name="PageWrapper1">
-<table width = "100%">
-	<tr><td width = "10%" class = "selectionBorder" style = "border-style:none none none solid">
-	<webobject name = "RegimeTabs"/>
-	</td><td class = "backfield1">
-	<webobject name = "RegimeComponent"/>
+<webobject name = "Params"><div><webobject name = "ParamSelector"></webobject>
+</div></webobject>
+
+<webobject name = "RegimeTabs"/>
+<table width = "100%" class = "selectionBorder" style = "border-style:solid none none;">
+	<tr><td width = "70%" class = "backfield2">
+	<table width = "100%" cellpadding = "1"><thead><tr>
+	<webobject name = "Columns"><webobject name = "ColHead">
+	<webobject name = "ColTitle"/></webobject></webobject>
+	</tr></thead>
+	<tbody>
+	<webobject name = "List"><webobject name = "ItemRow"><webobject name = "Columns">
+	<webobject name = "Cell"><webobject name = "Display"></webobject></webobject>
+	</webobject></webobject></webobject>
+	</tbody>
+	</table>
+	</td><td class = "backfield1 selectionBorder" align = "center" style = "border-style:none none none solid;">
+	<h3><webobject name = "ReasonTitle"/></h3>
+	<webobject name = "Form">
+	<table width = "100%">
+	<tr><td colspan = "2"><webobject name = "ReasonTextField"/></td></tr>
+	<tr><td><webobject name = "BeginTitle"/>:
+		<webobject name = "BeginDate"/></td>
+	<td><webobject name = "EndTitle"/>:
+		<webobject name = "EndDate"/></td></tr>
+	<tr><td colspan = "2" align = "center"><webobject name = "VerificationTitle"/>:<br/>
+		<webobject name = "Verification"/>
+	</td></tr>
+	</table>
+	<webobject name="CanChange"><webobject name="Save"/></webobject> 
+	</webobject>
 	</td></tr>
 </table>
 </webobject>

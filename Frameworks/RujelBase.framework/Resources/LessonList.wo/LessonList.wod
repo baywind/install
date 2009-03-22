@@ -115,6 +115,9 @@ SplitTab: WOImageButton {
 	align = "center";
 	valign = "middle";
 	style = "margin:3px 0;";
+	onmouseover = "this.style.backgroundColor='blue';";
+	onmouseout = "this.style.backgroundColor='';";
+	title=^splitTitle;
 }
 
 MoveDown: WOImageButton {

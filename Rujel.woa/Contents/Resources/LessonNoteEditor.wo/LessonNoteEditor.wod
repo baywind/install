@@ -62,6 +62,7 @@ LessonList1: WOSwitchComponent {
 	wide = hideLeft;
 	down = down;
 	splitTab = splitTab;
+	splitTitle = splitTitle;
 	up = up;
 }
 
@@ -223,5 +224,5 @@ AddTabDiv : OnClickContainer {
   onclick = session.checkRun;
   style = "margin-top:1.5ex;padding:1pt;border-width:1px 1px 1px 0px;text-align:center;font-weight:bold;";
   class = "grey selectionBorder";
-  title = application.strings.Strings.LessonNoteEditor.addTab;
+  title = splitTitle;
 }

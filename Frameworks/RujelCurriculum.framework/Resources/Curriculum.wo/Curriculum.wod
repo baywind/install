@@ -1,23 +1,128 @@
 PageWrapper1: PageWrapper {
 	hasChanges = false;
-	title = application.strings.Strings.Curriculum.title;
-	cssURL = regime.cssURL;
-	cssResource = regime.cssResource;
-	scriptURL = regime.scriptURL;
-	scriptResource = regime.scriptResource;
-	resourcesFramework = regime.framework;
+	title = plist.title;
+	hasChanges = ec.hasChanges;
+	styles = "td.pad{padding:3px;}";
 }
 
 RegimeTabs : Tabs {
-  currTab = regime;
-  tablist = availableRegimes;
-  idAttribute = "id";
+  currTab = currTab;
+  tablist = plist.tabs;
+  idAttribute = "entity";
   titleAttribute = "title";
   hoverAttribute = "hover";
   onClick = session.checkRun;
 }
 
-RegimeComponent : WOSwitchComponent {
-  WOComponentName = regime.component;
-  dict = regime;
+Params : WORepetition {
+  list = currTab.params;
+  item = itemDict;
+}
+
+ParamSelector : DisplayAny {
+  value = params;
+  dict = itemDict;
+}
+
+ColTitle : WOString {
+  value = itemDict.title;
+}
+
+Columns : WORepetition {
+  list = currTab.properties;
+  item = itemDict;
+}
+
+ColHead : WOGenericContainer {
+  elementName = "th";
+  title = valueOf.item.itemDict.hover;
+  style = valueOf.item.itemDict.titleStyle;
+}
+
+ItemRow : WOGenericContainer {
+  elementName = "tr";
+  class = rowClass;
+}
+
+List : WORepetition {
+  list = list;
+  item = itemRow;
+}
+
+Cell : OnClickContainer {
+  elementName = "td";
+  class = cellClass;
+  style = valueOf.item.itemDict.style;
+  onclick = onSelect;
+  invokeAction = select;
+}
+
+Display : DisplayAny {
+  value = item;
+  dict = itemDict;
+}
+
+Form : WOForm {
+}
+
+BeginTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.begin;
+  valueWhenEmpty = "since";
+}
+
+EndTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.end;
+  valueWhenEmpty = "since";
+}
+
+BeginDate : WOTextField {
+  value = currReason.begin;
+  dateformat = application.prefs.ui.dateFormat;
+  size = 10;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+  name = "begin";
+}
+
+EndDate : WOTextField {
+  value = currReason.end;
+  dateformat = application.prefs.ui.dateFormat;
+  size = 10;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+  name = "end";
+  onfocus = "if(value==null||value.length==0)value=form.begin.value;";
+}
+
+ReasonTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.Reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}
+
+ReasonTextField : WOText {
+  value = currReason.reason;
+  style = "width:96%";
+  rows = 2;
+  name = "reasonText";
+}
+
+CanChange : WOConditional {
+	condition = session.readAccess.edit.currReason;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+VerificationTitle : WOString {
+  value = plist.verification;
+  valueWhenEmpty = "Verification";
+  escapeHTML = false;
+}
+
+Verification : WOText {
+  value = currReason.verification;
+  style = "width:96%";
 }

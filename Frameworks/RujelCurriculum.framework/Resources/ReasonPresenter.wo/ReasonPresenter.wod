@@ -1,0 +1,27 @@
+ItemHasTeacher : WOConditional {
+  condition = ^reason.namedFlags.forTeacher;
+}
+
+ItemHasEduGroup : WOConditional {
+  condition = ^reason.namedFlags.forEduGroup;
+}
+
+TeacherIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "teacher.png";
+  align = "right";
+  alt = "teacher";
+  title = ^reason.extToString;
+}
+
+GroupIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "group.png";
+  align = "right";
+  alt = "group";
+  title = ^reason.extToString;
+}
+
+ReasonText : WOString {
+  value = ^reason.reason;
+}

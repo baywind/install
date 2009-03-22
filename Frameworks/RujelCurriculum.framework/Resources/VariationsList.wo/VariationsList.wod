@@ -38,7 +38,7 @@ VarDate : WOString {
 
 ValueCell : WOGenericContainer {
 	elementName = "td";
-	style = valueStyle;
+	style = item.valueStyle;
 }
 
 VarValue : WOString {
@@ -46,32 +46,9 @@ VarValue : WOString {
   numberformat = "+ #;0;- #";
   escapeHTML = false;
 }
-ItemHasTeacher : WOConditional {
-  condition = item.reason.namedFlags.forTeacher;
-}
 
-ItemHasEduGroup : WOConditional {
-  condition = item.reason.namedFlags.forEduGroup;
-}
-
-TeacherIcon : WOImage {
-  framework = "RujelCurriculum";
-  filename = "teacher.png";
-  align = "right";
-  alt = "teacher";
-  title = item.reason.extToString;
-}
-
-GroupIcon : WOImage {
-  framework = "RujelCurriculum";
-  filename = "group.png";
-  align = "right";
-  alt = "group";
-  title = item.reason.extToString;
-}
-
-ReasonText : WOString {
-  value = item.reason.reason;
+ReasonPresenter : ReasonPresenter {
+  reason = item.reason;
 }
 
 DateTitle: WOString {

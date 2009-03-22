@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ReasonPresenter.java" wocomponentcontent="false">
+
+        <binding name="reason"/>
+        <validation message="'reason' is a required binding.">
+            <unbound name="reason"/>
+        </validation>
+    </wo>
+</wodefinitions>

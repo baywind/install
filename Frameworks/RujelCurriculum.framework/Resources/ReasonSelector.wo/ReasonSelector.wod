@@ -18,8 +18,24 @@ ReasonRB : WORadioButton {
   disabled = ^readOnly;
 }
 
-ReasonText : WOString {
-  value = rItem.reason;
+TeacherIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "teacher.png";
+  align = "right";
+  alt = "teacher";
+  title = teacherRelated;
+}
+
+GroupIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "group.png";
+  align = "right";
+  alt = "group";
+  title = groupRelated;
+}
+
+ReasonPresenter : ReasonPresenter {
+  reason = rItem;
 }
 
 TextCell : WOGenericContainer {
@@ -161,28 +177,4 @@ CanEdit : WOConditional {
 
 RelatedTitle : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
-}
-
-ItemHasTeacher : WOConditional {
-  condition = rItem.namedFlags.forTeacher;
-}
-
-ItemHasEduGroup : WOConditional {
-  condition = rItem.namedFlags.forEduGroup;
-}
-
-TeacherIcon : WOImage {
-  framework = "RujelCurriculum";
-  filename = "teacher.png";
-  align = "right";
-  alt = "teacher";
-  title = teacherRelated;
-}
-
-GroupIcon : WOImage {
-  framework = "RujelCurriculum";
-  filename = "group.png";
-  align = "right";
-  alt = "group";
-  title = groupRelated;
 }
