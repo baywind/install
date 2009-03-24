@@ -1,6 +1,42 @@
 <webobject name="PageWrapper1">
-<webobject name = "Params"><div><webobject name = "ParamSelector"></webobject>
-</div></webobject>
+<script type="text/javascript" language="JavaScript">
+function highlight(point) {
+	var row = get(point,'tr');
+	var allRows = row.parentNode.childNodes;;
+	for(var i = 0; i < allRows.length ; i++ ) {
+		if(allRows[i].className != "highlight2")
+			continue;
+		var elt = allRows[i].lastChild;
+		if(elt.style && elt.style.display=="none") {
+			allRows[i].className = elt.className;
+			allRows[i].removeChild(elt);
+		} else {
+			allRows[i].className = row.className;
+		}
+	}
+	var elt = document.createElement('td');
+	elt.style.display="none";
+	elt.className=row.className;
+	row.className = "highlight2";
+	row.appendChild(elt);
+}
+
+function clickCell(cell,button) {
+	var i = cell.getElementsByTagName('input')[0];
+	if(button) {
+		var f = get(cell,'form');
+		if(i.disabled) {
+			ajaxPost(f.elements[button],cell);
+			return false;
+		}
+	}
+	 if(!i.checked)
+			i.checked = true;
+	return false;
+}
+</script>
+	<webobject name = "Params"><div style = "text-align:right;">
+	<webobject name = "ParamSelector"/></div></webobject>
 
 <webobject name = "RegimeTabs"/>
 <table width = "100%" class = "selectionBorder" style = "border-style:solid none none;">
@@ -16,19 +52,40 @@
 	</tbody>
 	</table>
 	</td><td class = "backfield1 selectionBorder" align = "center" style = "border-style:none none none solid;">
-	<h3><webobject name = "ReasonTitle"/></h3>
-	<webobject name = "Form">
-	<table width = "100%">
-	<tr><td colspan = "2"><webobject name = "ReasonTextField"/></td></tr>
-	<tr><td><webobject name = "BeginTitle"/>:
-		<webobject name = "BeginDate"/></td>
-	<td><webobject name = "EndTitle"/>:
-		<webobject name = "EndDate"/></td></tr>
-	<tr><td colspan = "2" align = "center"><webobject name = "VerificationTitle"/>:<br/>
-		<webobject name = "Verification"/>
-	</td></tr>
+	<h3><webobject name = "Create"/>
+	<webobject name = "ReasonTitle"/></h3>
+	<webobject name = "ReasonSelected">
+		<webobject name = "Form">
+		<table width = "100%">
+		<tr><td colspan = "2"><webobject name = "ReasonTextField"/></td></tr>
+		<tr><td><webobject name = "BeginTitle"/>:
+			<webobject name = "BeginDate"/></td>
+		<td><webobject name = "EndTitle"/>:
+			<webobject name = "EndDate"/></td></tr>
+		<tr><th colspan = "2"><webobject name = "RelatedTitle"/>:</th></tr>
+		<tr><td align = "left"  onclick = "clickCell(this,'selectTeacher');">
+			<webobject name = "HasTeacher"/> <webobject name = "WithTeacher"/></td>
+			<td><webobject name = "ReasonTeacher"/> <webobject name = "SelectTeacher"/></td></tr>
+		<tr><td align = "left"  onclick = "clickCell(this,'selectEduGroup');">
+			<webobject name = "HasEduGroup"/> <webobject name = "WithEduGroup"/></td>
+			<td><webobject name = "ReasonGroup"/> <webobject name = "SelectGroup"/></td></tr>
+		<tr><td align = "left"  onclick = "clickCell(this);">
+			<webobject name = "ForWholeSchool"/> <webobject name = "WithWholeSchool"/></td><td></td></tr>
+		<tr><td colspan = "2" align = "center"><webobject name = "VerificationTitle"/>:<br/>
+			<webobject name = "Verification"/>
+		</td></tr>
+		</table>
+		<webobject name="CanChange"><webobject name="Save"/></webobject> 
+		</webobject>
+	<table cellspacing = "8" cellpadding = "3" align = "center">
+	<tr><webobject name = "ShowSubs"><webobject name = "SubsTitle"/>
+			 : <webobject name = "SubsCount"/></webobject>
+		<webobject name = "ShowVars">
+			<webobject name = "VarsTitle"/>
+					 : <webobject name = "VarsCount"/>
+			</webobject>
+		</tr>
 	</table>
-	<webobject name="CanChange"><webobject name="Save"/></webobject> 
 	</webobject>
 	</td></tr>
 </table>

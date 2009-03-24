@@ -1,24 +1,48 @@
-{
-	showAll = "\U0414\U043e\U0431\U0430\U0432\U0438\U0442\U044c \U043f\U0440\U0435\U0434\U043c\U0435\U0442\U044b";
-	hideUnused = "\U0421\U043a\U0440\U044b\U0442\U044c \U043d\U0435\U0438\U0441\U043f\U043e\U043b\U044c\U0437\U0443\U0435\U043c\U044b\U0435";
-	cantDeleteArea = "\U041d\U0435\U043b\U044c\U0437\U044f \U0443\U0434\U0430\U043b\U044f\U0442\U044c \U043f\U0440\U0435\U0434\U043c\U0435\U0442\U043d\U0443\U044e \U043e\U0431\U043b\U0430\U0441\U0442\U044c, \U043f\U043e\U043a\U0430 \U0432 \U043d\U0435\U0439 \U0435\U0441\U0442\U044c \U043f\U0440\U0435\U0434\U043c\U0435\U0442\U044b";
-	properties = {
-		subject = "\U041f\U0440\U0435\U0434\U043c\U0435\U0442";
-		subjects = "\U041f\U0440\U0435\U0434\U043c\U0435\U0442\U044b";
-		fullName = "\U041f\U043e\U043b\U043d\U043e\U0435 \U043d\U0430\U0437\U0432\U0430\U043d\U0438\U0435";
-		area = "\U041f\U0440\U0435\U0434\U043c\U0435\U0442\U043d\U0430\U044f \U043e\U0431\U043b\U0430\U0441\U0442\U044c";
-		hours = "\U0447\U0430\U0441\U043e\U0432";
-		level = "\U0423\U0440\U043e\U0432\U0435\U043d\U044c";
-		normalGroup = "\U043d\U043e\U0440\U043c\U0430";
-		normalTitle = "\U043d\U043e\U0440\U043c\U0430\U043b\U044c\U043d\U043e\U0435 \U043a\U043e\U043b\U0438\U0447\U0435\U0441\U0442\U0432\U043e \U0443\U0447\U0430\U0449\U0438\U0445\U0441\U044f \U0432 \U043f\U043e\U0434\U0433\U0440\U0443\U043f\U043f\U0435";
-		subgroups = "\U0433\U0440\U0443\U043f\U043f";
-		subgrTitle = "\U043a\U043e\U043b\U0438\U0447\U0435\U0441\U0442\U0432\U043e \U043f\U043e\U0434\U0433\U0440\U0443\U043f\U043f \U0432 \U043a\U043b\U0430\U0441\U0441\U0435";
-	};
-	GlobalPlan = "\U0423\U0447\U0435\U0431\U043d\U044b\U0439 \U043f\U043b\U0430\U043d";
-	planRegime = {
-		title = "\U0423\U0447\U0435\U0431\U043d\U044b\U0439 \U041f\U043b\U0430\U043d";
-		component = GlobalPlan;
-		group = edu;
-		sort = 40;
-	};
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>showAll</key>
+	<string>Добавить предметы</string>
+	<key>hideUnused</key>
+	<string>Скрыть неиспользуемые</string>
+	<key>cantDeleteArea</key>
+	<string>Нельзя удалять предметную область, пока в ней есть предметы</string>
+	<key>properties</key>
+	<dict>
+		<key>subject</key>
+		<string>Предмет</string>
+		<key>subjects</key>
+		<string>Предметы</string>
+		<key>fullName</key>
+		<string>Полное название</string>
+		<key>area</key>
+		<string>Предметная область</string>
+		<key>hours</key>
+		<string>часов</string>
+		<key>level</key>
+		<string>Уровень</string>
+		<key>normalGroup</key>
+		<string>норма</string>
+		<key>normalTitle</key>
+		<string>нормальное количество учащихся в подгруппе</string>
+		<key>subgroups</key>
+		<string>групп</string>
+		<key>subgrTitle</key>
+		<string>количество подгрупп в классе</string>
+	</dict>
+	<key>GlobalPlan</key>
+	<string>Учебный план </string>
+	<key>planRegime</key>
+	<dict>
+		<key>title</key>
+		<string>Учебный План</string>
+		<key>component</key>
+		<string>GlobalPlan</string>
+		<key>group</key>
+		<string>edu</string>
+		<key>sort</key>
+		<string>40</string>
+	</dict>
+</dict>
+</plist>

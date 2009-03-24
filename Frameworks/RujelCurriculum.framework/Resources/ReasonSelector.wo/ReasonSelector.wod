@@ -177,4 +177,6 @@ CanEdit : WOConditional {
 
 RelatedTitle : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
+  valueWhenEmpty = "Related to";
+  escapeHTML = false;
 }

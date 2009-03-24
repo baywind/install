@@ -63,6 +63,7 @@ Display : DisplayAny {
 }
 
 Form : WOForm {
+  multipleSubmit = true;
 }
 
 BeginTitle : WOString {
@@ -125,4 +126,122 @@ VerificationTitle : WOString {
 Verification : WOText {
   value = currReason.verification;
   style = "width:96%";
+}
+
+SubsTitle : WOString {
+  value = tabsDict.Substitute.title;
+  valueWhenEmpty = "Substitutes";
+  escapeHTML = false;
+}
+
+VarsTitle : WOString {
+  value = tabsDict.Variation.title;
+  valueWhenEmpty = "Variations";
+  escapeHTML = false;
+}
+
+ReasonSelected : WOConditional {
+  condition = currReason;
+}
+
+RelatedTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
+  valueWhenEmpty = "Related to";
+  escapeHTML = false;
+}
+
+HasTeacher : WORadioButton {
+  value = 1;
+  selection = relation;
+  name = "relation";
+  disabled = noTeacher;
+}
+
+WithTeacher : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withTeacher;
+  escapeHTML = false;
+}
+
+HasEduGroup : WORadioButton {
+  value = 2;
+  selection = relation;
+  name = "relation";
+  disabled = noEduGroup;
+}
+
+WithEduGroup : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withEduGroup;
+  escapeHTML = false;
+}
+
+ReasonTeacher : PersonDisplay {
+  person = reasonTeacher;
+  last = 2;
+  first = 1;
+  second = 1;
+}
+
+ReasonGroup : WOString {
+  value = reasonGroup.name;
+}
+
+SelectTeacher : WOSubmitButton {
+	action = selectTeacher;
+	name = "selectTeacher";
+	value = plist.Select;
+	onclick="ajaxPost(this,event);return false;";
+}
+
+SelectGroup : WOSubmitButton {
+	action = selectEduGroup;
+	name = "selectEduGroup";
+	value = plist.Select;
+	onclick="ajaxPost(this,event);return false;";
+}
+
+ForWholeSchool : WORadioButton {
+  value = 0;
+  selection = relation;
+  name = "relation";
+}
+
+WithWholeSchool : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
+  escapeHTML = false;
+}
+
+SubsCount : WOString {
+  value = currReason.substitutes.count;
+  numberformat = "0";
+  valueWhenEmpty = "0";
+  escapeHTML = false;
+}
+VarsCount : WOString {
+  value = currReason.variations.count;
+  numberformat = "0";
+  valueWhenEmpty = "0";
+  escapeHTML = false;
+}
+
+ShowSubs : OnClickContainer {
+  elementName = "th";
+  class = "button";
+  invokeAction = showSubstitutes;
+  onclick = session.checkRun;
+}
+
+ShowVars : OnClickContainer {
+  elementName = "th";
+  class = "button";
+  invokeAction = showVariations;
+  onclick = session.checkRun;
+}
+
+Create : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  invokeAction = createReason;
+  value = plist.new;
+  onclick = session.checkRun;
+  style = "float:right;";
 }

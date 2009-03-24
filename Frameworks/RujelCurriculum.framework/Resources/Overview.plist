@@ -6,6 +6,58 @@
 	<string>Изменения в учебном процессе</string>
 	<key>verification</key>
 	<string>Обоснование</string>
+	<key>Select</key>
+	<string>Выбрать</string>
+	<key>new</key>
+	<string>Новая</string>
+	<key>selectTeacher</key>
+	<dict>
+		<key>title</key>
+		<string>Выберите учителя</string>
+		<key>style</key>
+		<string>min-width:20em</string>
+		<key>presenter</key>
+		<string>PersListing</string>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>invokeAction</key>
+		<true/>
+		<key>presenterBindings</key>
+		<dict>
+			<key>entity</key>
+			<string>Teacher</string>
+			<key>firstNameDisplay</key>
+			<integer>2</integer>
+			<key>secondNameDisplay</key>
+			<integer>2</integer>
+			<key>selection</key>
+			<string>.</string>
+			<key>useAjaxPost</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>selectEduGroup</key>
+	<dict>
+		<key>title</key>
+		<string>Выберите класс</string>
+		<key>style</key>
+		<string>min-width:8em</string>
+		<key>presenter</key>
+		<string>ClassListing</string>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>invokeAction</key>
+		<true/>
+		<key>presenterBindings</key>
+		<dict>
+			<key>width</key>
+			<string>100%</string>
+			<key>selection</key>
+			<string>.</string>
+			<key>onClick</key>
+			<string>$session.tryLoad</string>
+		</dict>
+	</dict>
 	<key>tabs</key>
 	<array>
 		<dict>
@@ -111,6 +163,8 @@
 			<string>Substitute</string>
 			<key>rowClass</key>
 			<string>.reason.styleClass</string>
+			<key>reasonKey</key>
+			<string>substitutes</string>
 			<key>params</key>
 			<array>
 				<dict>
@@ -266,6 +320,8 @@
 			<string>Variation</string>
 			<key>rowClass</key>
 			<string>.reason.styleClass</string>
+			<key>reasonKey</key>
+			<string>variations</string>
 			<key>params</key>
 			<array>
 				<dict>

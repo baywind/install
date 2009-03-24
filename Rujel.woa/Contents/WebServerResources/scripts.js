@@ -436,6 +436,7 @@ function ajaxPopupAction (action,aevent) {
 		}
 	}
 	var pos = null;
+	if(aevent != null) {
 	try {
 		pos = getPosition(aevent);
 	} catch (e) {
@@ -449,6 +450,7 @@ function ajaxPopupAction (action,aevent) {
 			}
 		}
 	}
+	}
 	xmlHttp = ajaxRequest();
     xmlHttp.onreadystatechange=function() {
  		//alert('(' + xmlHttp.readyState + ')' + aevent.type + ' : ' + aevent.clientX);
@@ -461,7 +463,7 @@ function ajaxPopupAction (action,aevent) {
 	return true;
 }
 
-function ajaxPost(ini) {
+function ajaxPost(ini,aevent) {
 	if(!tryLoad(false))
 		return false;
 	if(typeof ini == "String")
@@ -487,10 +489,26 @@ function ajaxPost(ini) {
 		params = params.concat(elt.name,'=',elt.value);
 		//alert(elt.name + ' = ' + elt.value);
 	}
+	var pos = null;
+	if(aevent != null) {
+	try {
+		pos = getPosition(aevent);
+	} catch (e) {
+		try {
+			pos = getPosition(window.event);
+		} catch (e) {
+			try {
+				pos = getPosition(window.event.srcElement);
+			} catch (e) {
+				pos = getPosition(null);
+			}
+		}
+	}
+	}
 	xmlHttp = ajaxRequest();
     xmlHttp.onreadystatechange=function() {
     	if(xmlHttp.readyState==4)
-    		onReadyStateChange();
+    		onReadyStateChange(pos);
 	}
 	xmlHttp.open("POST",aForm.action,true);
 	xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");

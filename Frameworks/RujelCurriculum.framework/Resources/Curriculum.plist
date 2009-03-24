@@ -37,6 +37,10 @@
 		<string>по</string>
 		<key>other</key>
 		<string>Другая причина</string>
+		<key>substitutes</key>
+		<string>Замены</string>
+		<key>variations</key>
+		<string>Поправки</string>
 	</dict>
 	<key>Variation</key>
 	<dict>
@@ -63,6 +67,14 @@
 		<string>Предлагаемый период актуальности причины не заключает в себе заданную дату.&lt;br/&gt;Граница периода была автоматически изменена.</string>
 		<key>wrongVariation</key>
 		<string>Неверное описание поправки</string>
+		<key>cantSetTeacher</key>
+		<string>Невозможно установить данного учителя, поскольку есть связанная Замена/Поправка для другого учителя</string>
+		<key>cantSetEduGroup</key>
+		<string>Невозможно установить данный класс, поскольку есть связанная Замена/Поправка для другого класса</string>
+		<key>cantSetDates</key>
+		<string>Некоторые из связанных замен/поправок не попадают в указанный период</string>
+		<key>invalidPeriod</key>
+		<string>Конечная дата не может быть меньше начальной</string>
 	</dict>
 	<key>titles</key>
 	<dict>

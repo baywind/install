@@ -1,0 +1,25 @@
+DisplayAny : DisplayAny {
+  value = value;
+  dict = dict;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 16;
+  width = 16;
+  onclick = "closePopup();";
+  style = "cursor:pointer;";
+}
+Title : WOString {
+  value = title;
+  escapeHTML = false;
+}
+
+WrapperDiv : WOGenericContainer {
+  elementName = "div";
+  class = "backfield1";
+  id = "ajaxPopup";
+  style = dict.style;
+}

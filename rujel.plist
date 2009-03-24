@@ -359,6 +359,13 @@
 				<key>any</key>
 				<string>1</string>
 			</dict>
+			<key>Curriculum</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+			</dict>
 			<key>Reason</key>
 			<dict>
 				<key>root</key>

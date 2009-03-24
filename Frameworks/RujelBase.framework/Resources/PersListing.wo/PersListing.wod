@@ -3,6 +3,7 @@ CanSearch: WOConditional {
 }
 
 Form1: WOForm {
+	action = search;
 	onsubmit = onSubmit;
 }
 
@@ -12,8 +13,9 @@ SearchField: WOTextField {
 	style = "width:80%;";
 }
 
-ImageButton1: WOImageButton {
-	action = search;
+ImageButton1: WOImage {
+	onclick = "f=get(this,'form');if(f.onsubmit()) f.submit();";
+	style = "cursor:pointer;";
 	filename = "arrow.png";
 	framework = "app";
 	height = 20;
@@ -85,9 +87,11 @@ files_edit: WOImage {
 	framework = "app";
 }
 
-RemoveFromList: WOHyperlink {
-	action = delete;
-	style = "z-index:4;";
+RemoveFromList: WOGenericContainer {
+	elementName = "span";
+	onclick = act;
+	invokeAction = delete;
+	style = "z-index:10;cursor:pointer;";
 }
 
 Сross: WOImage {
