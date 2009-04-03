@@ -100,6 +100,18 @@ var loading = false;
 			return false;
 		}
 	}
+	
+function confirmAction(action,event) {
+	if(event == null) {
+		event = window.event;
+	}
+	if(event.shiftKey)
+		return true;
+	if(action == null && event.srcElement.value)
+		action = event.srcElement.value;
+	var message = confirmAlert.replace('%s',action);
+	return confirm(message);
+}
 
 function checkRun(loc) {
 	if(!tryLoad(false))
@@ -124,14 +136,16 @@ function checkRun(loc) {
 
 function tryLoad(set) {
 	if(loading) {
-		o = document.getElementById('pleaseWait'); 
+		var o = document.getElementById('pleaseWait');
+		//alert(o.innerHTML);
 		if(o.style.display=='none') {
-			o.style.display=''; 
+			o.style.display='';
 		} else {
-			cn = o.className;
-			o.className = "selection";
-			setTimeout("o.className = '" + cn + "';",200);
+			//cn = o.className;
+			o.style.backgroundColor = "#00ff00";
+			setTimeout("document.getElementById('pleaseWait').style.backgroundColor = '';",200);
 		}
+		positionPopup(o,getPosition(null)); 
 		return false;
 	} else {
 		if(set != null)
@@ -415,9 +429,26 @@ function ajaxRequest() {
 }
 
 function onReadyStateChange(pos) {
+	//debug(pos);
 	timeout = startTimeout;
 	container = document.getElementById('ajaxMask');
+	container.style.height = pos.h + 'px';
+	container.style.width = pos.w + 'px';
 	container.style.display='block';
+	if(navigator.appName.search("Explorer") > 0) {
+		container.style.backgroundImage = 'none';
+		//container.style.backgroundColor = "#999999";
+		container.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+	}
+	/*
+	container = document.getElementById('popupContainer');
+	if(container == null) {
+		container = document.createElement('div');
+		container.setAttribute('id','popupContainer');
+		document.documentElement.appendChild(container);
+	} else {
+		container.style.display='block';
+	}*/
 	container.innerHTML = xmlHttp.responseText;
 	cancelLoading();
 	if(pos != null) {
@@ -440,17 +471,23 @@ function ajaxPopupAction (action,aevent) {
 	try {
 		pos = getPosition(aevent);
 	} catch (e) {
+		if(window.event) {
 		try {
 			pos = getPosition(window.event);
 		} catch (e) {
 			try {
 				pos = getPosition(window.event.srcElement);
 			} catch (e) {
-				pos = getPosition(null);
+				;
 			}
+		}
 		}
 	}
 	}
+	if(pos == null) {
+		pos = getPosition(null);
+	}
+
 	xmlHttp = ajaxRequest();
     xmlHttp.onreadystatechange=function() {
  		//alert('(' + xmlHttp.readyState + ')' + aevent.type + ' : ' + aevent.clientX);
@@ -466,12 +503,12 @@ function ajaxPopupAction (action,aevent) {
 function ajaxPost(ini,aevent) {
 	if(!tryLoad(false))
 		return false;
-	if(typeof ini == "String")
+	if(document.getElementById(ini))
 		ini = document.getElementById(ini);
 	var aForm = ini;
-	if(ini.form && ini.type == "submit")
+	if(ini.form)
 		aForm = ini.form;
-	else
+	if(ini.type != "submit")
 		ini = null;
 	var params = "";
 	for(var i=0;i<aForm.elements.length;i++) {
@@ -494,16 +531,21 @@ function ajaxPost(ini,aevent) {
 	try {
 		pos = getPosition(aevent);
 	} catch (e) {
+		if(window.event) {
 		try {
 			pos = getPosition(window.event);
 		} catch (e) {
 			try {
 				pos = getPosition(window.event.srcElement);
 			} catch (e) {
-				pos = getPosition(null);
+				;
 			}
 		}
+		}
 	}
+	}
+	if(pos == null) {
+		pos = getPosition(null);
 	}
 	xmlHttp = ajaxRequest();
     xmlHttp.onreadystatechange=function() {
@@ -517,22 +559,47 @@ function ajaxPost(ini,aevent) {
 	return false;
 }
 
+function getXscroll() {
+	if(window.pageXOffset >= 0)
+		return window.pageXOffset;
+	else if (document.documentElement.scrollLeft >= 0)
+		return document.documentElement.scrollLeft;
+	return 0;
+}
+
+function getYscroll() {
+	if(window.pageYOffset >= 0)
+		return window.pageYOffset;
+	else if (document.documentElement.scrollTop >= 0)
+		return document.documentElement.scrollTop;
+	return null;
+}
+
 function getPosition(pos) {
+	//debug(pos);
 	var r = new Object();
 	r.isCalculated = true;
-	if(pos.clientX) {
-		r.x = pos.clientX;
-		r.y = pos.clientY;
+	var doc = document.documentElement;
+	r.w = Math.max(doc.scrollWidth,doc.clientWidth - 5);
+	r.h = Math.max(doc.scrollHeight,doc.clientHeight - 5);
+	
+	if(pos != null && pos.clientX) { // event
+		r.clientX = pos.clientX;
+		r.clientY = pos.clientY;
+		r.x = pos.pageX;
+		r.y = pos.pageY;
+		if(! (r.x >= 0)) {
+			r.x = r.clientX + getXscroll();
+			r.y = r.clientY + getYscroll();
+		}
 		//alert("event: x=" + x + "; y=" + y);
-	} else if (pos.nodeName) {
+	} else if (pos != null && pos.nodeName) { // DOM element
 		//alert('pos : ' + pos);
 		if(pos.style.display == 'none')
 			pos = pos.parentNode;
 		r.x = pos.offsetLeft + (pos.offsetWidth/2);
 		r.y = pos.offsetTop + (pos.offsetHeight/2);
 		//alert("curr: x=" + x + "; y=" + y);
-		r.w = document.documentElement.offsetWidth;
-		r.h = document.documentElement.offsetHeight;
 		while(pos.offsetParent) {
 			//alert("curr: x=" + x + "; y=" + y);
 			pos = pos.offsetParent;
@@ -558,15 +625,22 @@ function getPosition(pos) {
 		//alert("Element: x=" + r.x + "; y=" + r.y + "\nWindow: h=" + r.h + "; w=" + r.w);
 	} else {
 		//alert('center');
-		r.x = document.documentElement.offsetWidth / 2;
-		r.y = document.documentElement.offsetHeight / 2;
+		if(window.innerWidth) {
+			r.x = window.innerWidth / 2;
+			r.y = window.innerHeight / 2;
+		} else if(document.documentElement.clientWidth) {
+			r.x = document.documentElement.clientWidth / 2;
+			r.y = document.documentElement.clientHeight / 2;
+		}
+		r.x += getXscroll();
+		r.y += getYscroll();
 	}
-	//alert("Position: x=" + r.x + "; y=" + r.y);
+	//debug(r);
 	return r;
 }
 
 function positionPopup(popup,pos) {
-	//alert(pos);
+	//debug(pos);
 	if(popup == null)
 		return;
 	var w, h, pheight, pwidth, x = 0, y = 0, p , abs;
@@ -615,35 +689,40 @@ function positionPopup(popup,pos) {
 	//alert('X=' + x + '\nY=' + y + '\n\nh=' + h + '\nw=' + w);
 	popup.style.top = Math.max(10,y - pheight/2) + 'px';
 	popup.style.left = Math.max(10,x - pwidth/2) + 'px';	
+	//debug(pos);
 	fitWindow(popup,h,w);
 }
 
 function fitWindow(w,ph,pw) {
 	if (w == null)
 		w = document.getElementById('ajaxPopup');
-	else if(typeof w == "String")
+	else if(document.getElementById(w))
 		w = document.getElementById(w);
 	
-	if(pw == null) {
-		var parent = (w.offsetParent)?w.offsetParent:document.documentElement;
-		pw = parent.offsetWidth;
-		ph = parent.offsetHeight;
-		//alert("calculated: ph = " + ph + "; pw = " + pw);
+	//alert("window = " + window.innerWidth + "\nclient = " + document.documentElement.clientWidth);
+	if(document.documentElement.clientWidth) {
+		pw = document.documentElement.clientWidth;
+		ph = document.documentElement.clientHeight;
+	} else if(window.innerWidth) {
+		pw = window.innerWidth;
+		ph = window.innerHeight;
 	}
+	
+	pw += getXscroll();
+	ph += getYscroll();
+	
 	var ww = w.offsetWidth;
 	var wh = w.offsetHeight;
 
-	//alert ("doc height: " + ph + "\nwin height: " + wh + "\nwin pos: " + w.offsetTop);
 	if(w.offsetTop + wh - ph > 10) {
-		//alert("was top: " + w.style.top);
-		w.style.top = (ph - wh - 10) + 'px';
-		//alert("top: " + w.style.top);
+		w.style.top = Math.max(getYscroll() + 10,(ph - wh - 10)) + 'px';
+	} else if (w.offsetTop < (getYscroll() + 10)) {
+		w.style.top = (getYscroll() + 10) + 'px';
 	}
-	//alert ("doc width: " + pw + "\nwin width: " + ww + "\nwin pos: " + w.offsetLeft);
 	if(w.offsetLeft + ww - pw > 10) {
-		//alert("was left: " + w.style.left);
-		w.style.left = (pw - ww - 10) + 'px';
-		//alert("left: " + w.style.left);
+		w.style.left = Math.max(getXscroll() + 10,(pw - ww - 10)) + 'px';
+	} else if(w.offsetLeft < (getXscroll() + 10)) {
+		w.style.left = (getXscroll() + 10) + 'px';
 	}
 }
 
@@ -657,4 +736,14 @@ function closePopup(aForm) {
 			changed = formHasChanges(document.forms[i]);
 		}
 	}
+//	container = document.getElementById('popupContainer');
+//	container.style.display='none';
 }
+
+	function debug(obj) {
+		var result = typeof obj;
+		for (var prop in obj) {
+			result = result + '\n' + prop + " = " + obj[prop];
+		}
+		alert(result);
+	}

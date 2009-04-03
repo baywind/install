@@ -1,31 +1,24 @@
 	
 	<script language="JavaScript"><!--
 	var all = <webobject name="All"></webobject>;
-	var aForm = <webobject name="FormIdentifier"></webobject>;
 	
 	function modifyRowClass(obj, trueClass, falseClass) {
-		row = obj.parentNode;
-		name = row.nodeName;
-		while(name != "TR" && name !="tr" && name != "Tr") {
-			row = row.parentNode;
-			name = row.nodeName;
-		}
-		if(aForm == null) {
-			aForm = <webobject name="FormIdentifier"></webobject>;
-		}
-		var counter = aForm.total;
+		row = get(obj,'tr');
+		var counter = document.getElementById("total");
+		var currCount = 1;
 		if(counter != null)
-			var currCount = counter.value;
+			currCount = counter.value;
 		if(obj.checked) {
-			row.className = trueClass;
+			if(trueClass)
+				row.className = trueClass;
 			currCount++;
 		} else {
-			row.className = falseClass
+			if(falseClass)
+				row.className = falseClass
 			currCount--;
 		}
 		if(counter != null)
 			counter.value = currCount;
-			
 		changeMass(null);
 		return true;
 	}
@@ -53,15 +46,12 @@
 	}
 
 	function setAll(value) {
-		if(aForm == null) {
-			aForm = <webobject name="FormIdentifier"></webobject>;
-		}
-		var ls = aForm.elements;
+		var ls = document.getElementsByName('cb');
 		var curr;
 		
 		for(var i = 0; i < ls.length; i++) {
 			curr = ls[i];
-			if(curr.id == "cb") {
+			//if(curr.id == "cb") {
 				var changed = false;
 				switch (value) {
 				case null:
@@ -88,14 +78,14 @@
 					} catch (e) {
 					}
 				}
-			}
+			//}
 		}
 		changeMass(value);
 	}
 
 	--></script>
 <webobject name="Block"><webobject name="GenericContainer1">
-	<tr><td align="center" colspan="2"><webobject name="SelectTitle"></webobject></td></tr>
+	<tr><td align="center" colspan="2"><webobject name="Selection"></webobject></td></tr>
 	<tr>
 <td onmouseover="dim(this);" onmouseout="unDim(this);" onclick="setAll(true)" class="male" align="center">
 		<webobject name="SelectAll"></webobject></td>
@@ -104,7 +94,7 @@
 <td colspan="2" onmouseover="dim(this);" onmouseout="unDim(this);" onclick="setAll('toggle')" class="gerade" align="center">
 <webobject name="SelectInvert"></webobject></td></tr></webobject>
 	</webobject>
-<webobject name="Inline"><b><webobject name="SelectAll"></webobject> : </b>
+<webobject name="Inline"><b><webobject name="Selection"></webobject> : </b>
 	<webobject name="CheckAll"></webobject>
 	<webobject name="ToggleSpan">&lt;-&gt;</webobject>
 	<webobject name="CheckAll2"></webobject></webobject>

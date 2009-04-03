@@ -27,8 +27,10 @@
 		<string>преподавателя</string>
 		<key>withEduGroup</key>
 		<string>класса</string>
-		<key>wholeSchool</key>
+		<key>withWholeSchool</key>
 		<string>всей школы</string>
+		<key>wholeSchool</key>
+		<string>Вся школа</string>
 		<key>isActive</key>
 		<string>Период</string>
 		<key>begin</key>

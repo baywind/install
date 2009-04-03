@@ -87,5 +87,5 @@ Cross : WOImage {
   height = 16;
   width = 16;
   onclick = "closePopup();";
-  style = "cursor:pointer;";
+  style = "cursor:pointer;position:absolute;right:12pt;top:12pt;";
 }

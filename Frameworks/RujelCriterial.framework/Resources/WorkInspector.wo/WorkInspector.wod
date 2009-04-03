@@ -1,6 +1,15 @@
 Form1 : WOForm {	
 }
 
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
 Title : WOString {
 	value = application.strings.RujelCriterial_Strings.Work;
 	escapeHTML = false;

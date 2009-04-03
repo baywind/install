@@ -187,11 +187,12 @@ SaveButton: WOSubmitButton {
 	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 
-DeleteButton: WOSubmitButton {
-	action = ^delete;
+DeleteButton: WOGenericElement {
+	elementName = "input";
+	type = "button";
+	invokeAction = ^delete;
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	onclick = session.confirmMessage;
-	disabled = session.readAccess._delete.currLesson;
 }
 
 CanMove: WOString {
@@ -239,4 +240,8 @@ TaskCell : WOGenericContainer {
   elementName = "td";
   onclick = showHomeTaskOnClick;
   invokeAction = popupHomeTask;
+}
+
+CanDelete : WOConditional {
+  condition = session.readAccess.delete.currLesson;
 }

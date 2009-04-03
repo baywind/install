@@ -1,9 +1,17 @@
 ItemHasTeacher : WOConditional {
-  condition = ^reason.namedFlags.forTeacher;
+  condition = reason.namedFlags.forTeacher;
 }
 
 ItemHasEduGroup : WOConditional {
-  condition = ^reason.namedFlags.forEduGroup;
+  condition = reason.namedFlags.forEduGroup;
+}
+
+ReasonIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = iconName;
+  align = "right";
+  alt = iconName;
+  title = iconTile;
 }
 
 TeacherIcon : WOImage {
@@ -11,7 +19,7 @@ TeacherIcon : WOImage {
   filename = "teacher.png";
   align = "right";
   alt = "teacher";
-  title = ^reason.extToString;
+  title = reason.extToString;
 }
 
 GroupIcon : WOImage {
@@ -19,9 +27,17 @@ GroupIcon : WOImage {
   filename = "group.png";
   align = "right";
   alt = "group";
-  title = ^reason.extToString;
+  title = reason.extToString;
+}
+
+SchoolIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "school.png";
+  align = "right";
+  alt = "school";
+  title = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
 }
 
 ReasonText : WOString {
-  value = ^reason.reason;
+  value = reason.reason;
 }

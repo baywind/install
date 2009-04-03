@@ -69,5 +69,20 @@
 	<string>Указанная дата не попадает в текущий диапазон. &lt;br/&gt; Перейдите на соответствующую закладку (справа) и попробуйте еще раз.</string>
 	<key>notInEduYear</key>
 	<string>Указанная дата не попадает в учебный год</string>
+	<key>Ticker</key>
+	<dict>
+		<key>selection</key>
+		<string>Выделение</string>
+		<key>All</key>
+		<string>Все</string>
+		<key>None</key>
+		<string>Ничего</string>
+		<key>selectAll</key>
+		<string>Выбрать все</string>
+		<key>selectNone</key>
+		<string>Снять все</string>
+		<key>Invert</key>
+		<string>Инвертировать</string>
+	</dict>
 </dict>
 </plist>

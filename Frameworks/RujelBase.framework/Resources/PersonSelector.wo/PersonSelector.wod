@@ -5,8 +5,8 @@ AddOnsRepetition: WORepetition {
 
 CheckBox1: WOCheckBox {
 	checked = checked;
-	id = "cb";
-	onclick = "changeMass(null);";
+	name = "cb";
+	onclick = "modifyRowClass(this);";
 }
 
 HasClass: WOConditional {

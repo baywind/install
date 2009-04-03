@@ -71,8 +71,9 @@ Grades: WORepetition {
 	list = gradeList;
 }
 
-Hyperlink1: WOHyperlink {
-	action = delete;
+Hyperlink1: WOGenericContainer {
+	elementName = "a";
+	invokeAction = delete;
 	onclick = session.confirmMessage;
 }
 

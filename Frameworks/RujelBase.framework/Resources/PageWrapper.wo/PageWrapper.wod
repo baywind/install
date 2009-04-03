@@ -4,7 +4,7 @@ AccessPath: WORepetition {
 }
 BackUrl: WOResourceURL {
 	framework = "app";
-	filename = "back.png";
+	filename = "back.gif";
 }
 
 Body: WOBody {
@@ -139,6 +139,13 @@ Title: WOString {
 UnsavedAlert: WOString {
 	value = application.strings.Strings.messages.unsavedChanges;
 	valueWhenEmpty = "Unsaved Changes will be lost";
+	escapeHTML = false;
+}
+
+ConfinmAlert : WOString {
+	value = application.strings.Strings.messages.areYouShure;
+	valueWhenEmpty = "Are you shure, you want %s?"; 
+	escapeHTML = false;
 }
 
 cross: WOImage {

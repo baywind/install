@@ -1,91 +1,109 @@
 <webobject name="PageWrapper1">
-<script type="text/javascript" language="JavaScript">
-function highlight(point) {
-	var row = get(point,'tr');
-	var allRows = row.parentNode.childNodes;;
-	for(var i = 0; i < allRows.length ; i++ ) {
-		if(allRows[i].className != "highlight2")
-			continue;
-		var elt = allRows[i].lastChild;
-		if(elt.style && elt.style.display=="none") {
-			allRows[i].className = elt.className;
-			allRows[i].removeChild(elt);
-		} else {
-			allRows[i].className = row.className;
-		}
-	}
-	var elt = document.createElement('td');
-	elt.style.display="none";
-	elt.className=row.className;
-	row.className = "highlight2";
-	row.appendChild(elt);
-}
-
-function clickCell(cell,button) {
-	var i = cell.getElementsByTagName('input')[0];
-	if(button) {
-		var f = get(cell,'form');
-		if(i.disabled) {
-			ajaxPost(f.elements[button],cell);
-			return false;
-		}
-	}
-	 if(!i.checked)
-			i.checked = true;
-	return false;
-}
-</script>
+<div style = "min-height:2em;">
 	<webobject name = "Params"><div style = "text-align:right;">
 	<webobject name = "ParamSelector"/></div></webobject>
-
-<webobject name = "RegimeTabs"/>
-<table width = "100%" class = "selectionBorder" style = "border-style:solid none none;">
+</div>
+<table width = "100%" cellspacing = "0">
+	<tr style = "height:2em;">
+		<td class = "selectionBorder" style = "border-style:none none solid; padding-bottom:0px;" valign = "bottom">
+		<webobject name = "RegimeTabs"/>
+		<webobject name = "ManipulateSelection">
+		<div style = "float:right;"><webobject name = "Ticker"/></div><br />
+		</webobject>
+		</td>
+		<td class = "selectionBorder" style = "border-style:none none solid;"></td>
+	</tr>
 	<tr><td width = "70%" class = "backfield2">
-	<table width = "100%" cellpadding = "1"><thead><tr>
-	<webobject name = "Columns"><webobject name = "ColHead">
-	<webobject name = "ColTitle"/></webobject></webobject>
-	</tr></thead>
-	<tbody>
-	<webobject name = "List"><webobject name = "ItemRow"><webobject name = "Columns">
-	<webobject name = "Cell"><webobject name = "Display"></webobject></webobject>
-	</webobject></webobject></webobject>
-	</tbody>
-	</table>
+	<webobject name = "TicksForm">
+		<table width = "100%" cellpadding = "1"><thead><tr>
+		<webobject name = "Columns"><webobject name = "ColHead">
+		<webobject name = "ColTitle"/></webobject></webobject><webobject name = "AllowSelection">
+		<td><webobject name = "TicksCount"/>
+		</td>
+		</webobject></tr></thead>
+		<tbody>
+		<webobject name = "List"><webobject name = "ItemRow"><webobject name = "Columns">
+		<webobject name = "Cell"><webobject name = "Display"></webobject></webobject>
+		</webobject><webobject name = "AllowSelection">
+		<td align = "center"><webobject name = "SelectBox"/></td>
+		</webobject></webobject></webobject>
+		</tbody>
+		</table>
+		</webobject>
+	
 	</td><td class = "backfield1 selectionBorder" align = "center" style = "border-style:none none none solid;">
-	<h3><webobject name = "Create"/>
-	<webobject name = "ReasonTitle"/></h3>
+	<h3 style = "margin:1ex;"><webobject name = "ReasonTitle"/></h3>
 	<webobject name = "ReasonSelected">
-		<webobject name = "Form">
+	<webobject name = "Form">
 		<table width = "100%">
+		<tr style = "font-style:italic;"><td align = "left">
+			<webobject name = "ShowSubs">
+			<webobject name = "SubsTitle"/> : <webobject name = "SubsCount"/></webobject>
+		</td><td align = "right"><webobject name = "ShowVars">
+			<webobject name = "VarsTitle"/> : <webobject name = "VarsCount"/></webobject>
+		</td></tr>
 		<tr><td colspan = "2"><webobject name = "ReasonTextField"/></td></tr>
 		<tr><td><webobject name = "BeginTitle"/>:
 			<webobject name = "BeginDate"/></td>
 		<td><webobject name = "EndTitle"/>:
 			<webobject name = "EndDate"/></td></tr>
-		<tr><th colspan = "2"><webobject name = "RelatedTitle"/>:</th></tr>
-		<tr><td align = "left"  onclick = "clickCell(this,'selectTeacher');">
-			<webobject name = "HasTeacher"/> <webobject name = "WithTeacher"/></td>
-			<td><webobject name = "ReasonTeacher"/> <webobject name = "SelectTeacher"/></td></tr>
-		<tr><td align = "left"  onclick = "clickCell(this,'selectEduGroup');">
-			<webobject name = "HasEduGroup"/> <webobject name = "WithEduGroup"/></td>
-			<td><webobject name = "ReasonGroup"/> <webobject name = "SelectGroup"/></td></tr>
-		<tr><td align = "left"  onclick = "clickCell(this);">
-			<webobject name = "ForWholeSchool"/> <webobject name = "WithWholeSchool"/></td><td></td></tr>
+		<webobject name = "NotExternal">
+			<tr><th colspan = "2"><webobject name = "RelatedTitle"/>:</th></tr>
+			<tr class = "gerade"><td align = "left"  onclick = "getElementsByTagName('input')[0].click();">
+				<webobject name = "HasTeacher"/> <webobject name = "WithTeacher"/></td>
+				<webobject name = "TeacherCell"><webobject name = "TeacherIcon"/>
+					<webobject name = "ReasonTeacher"/></webobject></tr>
+			<tr class = "gerade"><td align = "left"  onclick = "getElementsByTagName('input')[0].click();">
+				<webobject name = "HasEduGroup"/> <webobject name = "WithEduGroup"/></td>
+				<webobject name = "GroupCell"><webobject name = "GroupIcon"/>
+					<webobject name = "ReasonGroup"/></webobject></tr>
+			<tr class = "gerade"><td align = "left"  onclick = "getElementsByTagName('input')[0].click();">
+				<webobject name = "ForWholeSchool"/> <webobject name = "WithWholeSchool"/></td>
+				<td><webobject name = "SchoolIcon"/></td></tr>
+			</webobject>
+		
 		<tr><td colspan = "2" align = "center"><webobject name = "VerificationTitle"/>:<br/>
 			<webobject name = "Verification"/>
 		</td></tr>
 		</table>
 		<webobject name="CanChange"><webobject name="Save"/></webobject> 
+		<webobject name="CanDelete"><webobject name="DeleteButton"/></webobject>
+		<webobject name = "SelectTeacher"/><webobject name = "SelectGroup"/> 
 		</webobject>
-	<table cellspacing = "8" cellpadding = "3" align = "center">
-	<tr><webobject name = "ShowSubs"><webobject name = "SubsTitle"/>
-			 : <webobject name = "SubsCount"/></webobject>
-		<webobject name = "ShowVars">
-			<webobject name = "VarsTitle"/>
-					 : <webobject name = "VarsCount"/>
-			</webobject>
-		</tr>
-	</table>
+	</webobject>
+	<webobject name = "CanCreate"><webobject name = "Create"/></webobject>
+	<hr/>
+	<div id = "move">
+		<webobject name = "AllowSelection"><webobject name = "MoveTitle"/></webobject>
+		<webobject name = "ManipulateSelection"><webobject name = "MoveSelected"/></webobject></div>
+	<webobject name = "ToMove">
+	<webobject name = "MoveImage"/>
+	<webobject name = "SelectNextForm">
+		<table align = "center" style = "margin-top:1em;width:80%;">
+		<thead>
+			<tr><td colspan = "2" id = "reasonInfo" class = "selectionBorder" style = "height:3em;" valign = "middle"></td></tr>
+			<tr height = "3"></tr>
+		</thead>
+		<tfoot>
+			<tr class = "grey" onclick = "var r = this.getElementsByTagName('input')[0]; if(!r.checked)r.click();">
+				<td><webobject name = "NewNextRadio"/></td>
+				<td><webobject name = "NewReasonTitle"/></td>
+			</tr>
+			<tr><td colspan = "2" align = "center" valign = "middle" style = "padding:1ex;">
+				<webobject name = "SubmitMoveReasons"/> <webobject name = "CancelButton"/></td></tr>
+		</tfoot>
+		<tbody>
+			<webobject name = "ReasonSelectRepetition"><webobject name = "NewReasonRow"><td>
+				<webobject name = "SelectionRadio"/></td>
+				<td><webobject name = "NextReasonPresenter"/>
+					<div style = "display:none;">
+					<webobject name = "NextBegin"/> - <webobject name = "NextEnd"/><br/>
+					<webobject name = "NextExtString"/> 
+					( <webobject name = "NextSubs"/> : <webobject name = "NextVars"/> )</div></td>
+			</webobject></webobject>
+		</tbody>
+		</table>
+	</webobject>
 	</webobject>
 	</td></tr>
 </table>

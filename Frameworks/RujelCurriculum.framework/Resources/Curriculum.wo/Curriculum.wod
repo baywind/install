@@ -2,16 +2,20 @@ PageWrapper1: PageWrapper {
 	hasChanges = false;
 	title = plist.title;
 	hasChanges = ec.hasChanges;
-	styles = "td.pad{padding:3px;}";
+	onLoad = "scrollToObj('curr');";
+	resourcesFramework = "RujelCurriculum";
+	scriptResource = "scripts.js";
+	styles = "td.pad{padding:3px;} td.canPop{border:solid 2px #cccccc;}";
 }
 
 RegimeTabs : Tabs {
   currTab = currTab;
   tablist = plist.tabs;
-  idAttribute = "entity";
+  idAttribute = "title";
   titleAttribute = "title";
   hoverAttribute = "hover";
   onClick = session.checkRun;
+  align = "left";
 }
 
 Params : WORepetition {
@@ -42,6 +46,7 @@ ColHead : WOGenericContainer {
 ItemRow : WOGenericContainer {
   elementName = "tr";
   class = rowClass;
+  id = rowID;
 }
 
 List : WORepetition {
@@ -83,6 +88,7 @@ BeginDate : WOTextField {
   style = "text-align:center;";
   onkeypress = "return isNumberInput(event,true);";
   name = "begin";
+  disabled = tmpDict.reasonsToMoveIn;
 }
 
 EndDate : WOTextField {
@@ -93,6 +99,7 @@ EndDate : WOTextField {
   onkeypress = "return isNumberInput(event,true);";
   name = "end";
   onfocus = "if(value==null||value.length==0)value=form.begin.value;";
+  disabled = tmpDict.reasonsToMoveIn;
 }
 
 ReasonTitle : WOString {
@@ -103,9 +110,10 @@ ReasonTitle : WOString {
 
 ReasonTextField : WOText {
   value = currReason.reason;
-  style = "width:96%";
+  style = "width:98%";
   rows = 2;
   name = "reasonText";
+  disabled = tmpDict.reasonsToMoveIn;
 }
 
 CanChange : WOConditional {
@@ -115,8 +123,19 @@ CanChange : WOConditional {
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
+    disabled = tmpDict.reasonsToMoveIn;
+}
+CanDelete: WOConditional {
+	condition = canDelete;
 }
 
+DeleteButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.tryLoad;
+	elementName = "input";
+	type = "button";
+}
 VerificationTitle : WOString {
   value = plist.verification;
   valueWhenEmpty = "Verification";
@@ -126,16 +145,17 @@ VerificationTitle : WOString {
 Verification : WOText {
   value = currReason.verification;
   style = "width:96%";
+  disabled = tmpDict.reasonsToMoveIn;
 }
 
 SubsTitle : WOString {
-  value = tabsDict.Substitute.title;
+  value = tmpDict.substitutes.title;
   valueWhenEmpty = "Substitutes";
   escapeHTML = false;
 }
 
 VarsTitle : WOString {
-  value = tabsDict.Variation.title;
+  value = tmpDict.variations.title;
   valueWhenEmpty = "Variations";
   escapeHTML = false;
 }
@@ -179,34 +199,58 @@ ReasonTeacher : PersonDisplay {
   last = 2;
   first = 1;
   second = 1;
+  valueWhenEmpty = plist.Select;
 }
 
 ReasonGroup : WOString {
   value = reasonGroup.name;
+  valueWhenEmpty = plist.Select;
+ }
+ 
+TeacherIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "teacher.png";
+  align = "right";
+  alt = "teacher";
+}
+
+GroupIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "group.png";
+  align = "right";
+  alt = "group";
+}
+
+SchoolIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "school.png";
+  align = "right";
+  alt = "school";
 }
 
 SelectTeacher : WOSubmitButton {
 	action = selectTeacher;
 	name = "selectTeacher";
-	value = plist.Select;
-	onclick="ajaxPost(this,event);return false;";
+	id = "chooseTeacher";
+	style = "display:none;";
 }
 
 SelectGroup : WOSubmitButton {
 	action = selectEduGroup;
 	name = "selectEduGroup";
-	value = plist.Select;
-	onclick="ajaxPost(this,event);return false;";
+	id = "chooseGroup";
+	style = "display:none;";
 }
 
 ForWholeSchool : WORadioButton {
   value = 0;
   selection = relation;
   name = "relation";
+  disabled = tmpDict.reasonsToMoveIn;
 }
 
 WithWholeSchool : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
   escapeHTML = false;
 }
 
@@ -224,17 +268,19 @@ VarsCount : WOString {
 }
 
 ShowSubs : OnClickContainer {
-  elementName = "th";
-  class = "button";
+  elementName = "span";
   invokeAction = showSubstitutes;
   onclick = session.checkRun;
+  class = "grey";
+  style = "margin:0px 1em;padding:2px 4px;";
 }
 
 ShowVars : OnClickContainer {
-  elementName = "th";
-  class = "button";
+  elementName = "span";
   invokeAction = showVariations;
   onclick = session.checkRun;
+  class = "grey";
+  style = "margin:0px 1em;padding:2px 4px;";
 }
 
 Create : WOGenericElement {
@@ -243,5 +289,166 @@ Create : WOGenericElement {
   invokeAction = createReason;
   value = plist.new;
   onclick = session.checkRun;
-  style = "float:right;";
+}
+
+GroupCell : OnClickContainer {
+  elementName = "td";
+  onclick = "ajaxPost('chooseGroup',event);";
+  style = "font-style:italic;text-decoration:underline;";
+  title = plist.Select;
+  disabled = tmpDict.reasonsToMoveIn;
+  align = "left";
+}
+
+TeacherCell : OnClickContainer {
+  elementName = "td";
+  onclick = "ajaxPost('chooseTeacher',event);";
+  style = "font-style:italic;text-decoration:underline;";
+  title = plist.Select;
+  disabled = tmpDict.reasonsToMoveIn;
+  align = "left";
+}
+
+AllowSelection : WOConditional {
+  condition = tmpDict.allowSelection;
+}
+
+ManipulateSelection : WOConditional {
+  condition = manipulateSelection;
+}
+
+SelectBox : WOCheckBox {
+  checked = ticked;
+  disabled = tmpDict.reasonsToMoveIn;
+  name = "cb";
+  onclick = "tick(this);";
+}
+
+TicksForm : WOForm {
+  action = reasonsToMoveIn;
+  id = "ticks"; 
+}
+
+NotExternal : WOConditional {
+  condition = currReason.external;
+  negate = true;
+}
+
+ToMove : WOConditional {
+  condition = tmpDict.reasonsToMoveIn;
+}
+
+NewReasonRow : WOGenericContainer {
+  elementName = "tr";
+  class = rowClass;
+  onclick = "var r = this.getElementsByTagName('input')[0]; if(!r.checked)r.click();";
+}
+
+SelectionRadio : WORadioButton {
+  name = "nextReason";
+  selection = tmpDict.selectedReason;
+  value = tmpDict.index;
+  onclick = "showInfo(this);";
+}
+
+ReasonSelectRepetition : WORepetition {
+  list = tmpDict.reasonsToMoveIn;
+  item = itemRow;
+  index = tmpDict.index;
+}
+
+NextReasonPresenter : ReasonPresenter {
+  reason = itemRow;
+}
+
+NextExtString : WOString {
+  value = itemRow.extToString;
+  escapeHTML = false;
+}
+
+NewNextRadio : WORadioButton {
+  name = "nextReason";
+  selection = tmpDict.selectedReason;
+  value = -1;
+  onclick = "showInfo(this);";
+}
+
+NewReasonTitle : WOString {
+  value = plist.newReason;
+  valueWhenEmpty = "New Reason";
+  escapeHTML = false;
+}
+
+SubmitMoveReasons : WOSubmitButton {
+  action = moveToReason;
+  value = plist.chooseReason;
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	invokeAction = cancelMove;
+	onclick = session.tryLoad;
+	elementName = "input";
+	type = "button";
+}
+
+SelectNextForm : WOForm {
+}
+
+MoveSelected : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  value = plist.chooseReason;
+  onclick = "document.getElementById('ticks').submit();";
+}
+
+MoveTitle : WOString {
+  value = plist.move;
+  valueWhenEmpty = "Move";
+  escapeHTML = false;
+}
+
+TicksCount : WOTextField {
+  value = tmpDict.selectedObjects.count;
+  disabled = true;
+  size = 2;
+  style = "text-align:center;";
+  id = "total";
+}
+
+Ticker : Ticker {
+  align = "center";
+  inline = true;
+}
+
+NextBegin : WOString {
+  value = itemRow.begin;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+NextEnd : WOString {
+  value = itemRow.end;
+  valueWhenEmpty = "...";
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+NextSubs : WOString {
+  value = itemRow.substitutes.count;
+  numberformat = "0";
+}
+
+NextVars : WOString {
+  value = itemRow.variations.count;
+  numberformat = "0";
+}
+
+MoveImage : WOImage {
+  framework = "RujelCurriculum";
+  filename = "moveTo.gif";
+  align = "center";
+  alt = "move";
+}
+
+CanCreate : WOConditional {
+  condition = canCreate;
 }

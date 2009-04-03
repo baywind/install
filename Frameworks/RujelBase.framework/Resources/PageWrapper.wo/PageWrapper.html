@@ -16,13 +16,14 @@
 <webobject name="HasScript"><script type="text/javascript" language="JavaScript" src="<webobject name="ScriptLink"></webobject>"></script></webobject>
 <script type="text/javascript" language="JavaScript">
 	unsavedAlert = '<webobject name="UnsavedAlert"></webobject>';
+	confirmAlert = '<webobject name="ConfinmAlert" />';
 	hasChanges = <webobject name="HasChanges"></webobject>;
 	<webobject name = "HasSesion">startTimeout = <webobject name="Timeout"/>;
 	timeout = startTimeout;</webobject>
 </script>
    </head>
 <webobject name="Body">
- <div id="ajaxMask" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;background:url(<webobject name="BackUrl"></webobject>) repeat;text-align:center;vertical-align:middle;"></div>
+ <div id="ajaxMask" style="display:none;background:url(<webobject name="BackUrl"></webobject>) repeat;"></div>
  <div class="attention" id="pleaseWait" style="display:none;"><webobject name="PleaseWait"></webobject><webobject name="cross"></webobject></div>
 <webobject name="IsRefusingSessions"><div id="refusingSessions"><webobject name="TerminatingMessage"></webobject></div></webobject>
 <webobject name = "HasSesion">

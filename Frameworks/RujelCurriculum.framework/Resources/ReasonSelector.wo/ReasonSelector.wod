@@ -34,6 +34,14 @@ GroupIcon : WOImage {
   title = groupRelated;
 }
 
+SchoolIcon : WOImage {
+  framework = "RujelCurriculum";
+  filename = "school.png";
+  align = "right";
+  alt = "school";
+  title = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
+}
+
 ReasonPresenter : ReasonPresenter {
   reason = rItem;
 }
@@ -118,7 +126,7 @@ ForWholeSchool : WORadioButton {
 }
 
 WithWholeSchool : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
   escapeHTML = false;
 }
 

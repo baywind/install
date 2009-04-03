@@ -9,34 +9,38 @@ GenericContainer1: WOGenericContainer {
 	width = ^width;
 }
 
-SelectTitle: WOString {
-	value = application.strings.Reusables_Strings.uiElements.Select;
-	valueWhenEmpty = "Select";
-}
-
 SelectAll: WOString {
-	value = application.strings.Reusables_Strings.uiElements.All;
+	value = application.strings.RujelBase_Base.Ticker.All;
 	valueWhenEmpty = "All";
+	escapeHTML = false;
 }
 
 SelectNone: WOString {
-	value = application.strings.Reusables_Strings.uiElements.None;
+	value = application.strings.RujelBase_Base.Ticker.None;
 	valueWhenEmpty = "None";
+	escapeHTML = false;
 }
 
 SelectInvert: WOString {
-	value = application.strings.Reusables_Strings.uiElements.Invert;
+	value = application.strings.RujelBase_Base.Ticker.Invert;
 	valueWhenEmpty = "Invert";
+	escapeHTML = false;
 }
 
 Inline: WOConditional {
 	condition = ^inline;
 }
 
+Selection : WOString {
+	value = application.strings.RujelBase_Base.Ticker.selection;
+	valueWhenEmpty = "Selection";
+	escapeHTML = false;
+}
+
 CheckAll: WOGenericElement {
 	elementName = "input";
 	type="checkbox";
-	title = application.strings.Reusables_Strings.uiElements.Select;
+	title = application.strings.RujelBase_Base.Ticker.selectAll;
 	id="checkAll";
 	onclick="setAll(true);checked=defaultChecked;";
 	checked = true;
@@ -44,7 +48,7 @@ CheckAll: WOGenericElement {
 
 ToggleSpan: WOGenericContainer {
 	elementName = "span";
-	title = application.strings.Reusables_Strings.uiElements.Invert;
+	title = application.strings.RujelBase_Base.Ticker.Invert;
 	id="toggle";
 	onclick="setAll('toggle');return false;";
 	style="color:blue;cursor:pointer;";
@@ -53,7 +57,7 @@ ToggleSpan: WOGenericContainer {
 CheckAll2: WOGenericElement {
 	elementName = "input";
 	type="checkbox";
-	title = application.strings.Reusables_Strings.uiElements.None;
+	title = application.strings.RujelBase_Base.Ticker.selectNone;
 	id="uncheckAll";
 	onclick="setAll(false);checked=defaultChecked;";
 }

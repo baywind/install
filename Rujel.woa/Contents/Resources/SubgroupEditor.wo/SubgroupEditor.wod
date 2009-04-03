@@ -15,16 +15,12 @@ Comment: WOString {
 	valueWhenEmpty = " - ";
 }
 
-TeacherLN2: WOString {
-	value = course.teacher.person.lastName;
-}
-
-TeacherFN: WOString {
-	value = course.teacher.person.firstName;
-}
-
-TeacherSN: WOString {
-	value = course.teacher.person.secondName;
+TeacherName : PersonDisplay {
+	person = course.teacher;
+	last = 2;
+	first = 2;
+	second = 2;
+	startWithLast = true;
 }
 
 HeadTitle: WOString {
@@ -64,18 +60,18 @@ Index: WOString {
 	value = idx;
 }
 
-StudentLastName: WOString {
-	value = studentItem.person.lastName;
-}
-
-StudentInitials: WOString {
-	value = studentItem.person.firstName;
+StudentName: PersonDisplay {
+	person = studentItem;
+	last = 2;
+	first = 2;
+	second = 0;
+	startWithLast = true;
 }
 
 CheckBox1: WOCheckBox {
 	checked = isInSubgroup;
 	onclick = onClick;
-	id = "cb";
+	name = "cb";
 }
 
 SaveButton: WOSubmitButton {
@@ -90,7 +86,7 @@ ResetButton: WOResetButton {
 
 TextField1: WOTextField {
 	disabled = true;
-	name = "total";
+	id = "total";
 	size = 3;
 	value = total;
 }

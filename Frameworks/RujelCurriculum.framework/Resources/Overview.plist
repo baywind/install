@@ -9,7 +9,13 @@
 	<key>Select</key>
 	<string>Выбрать</string>
 	<key>new</key>
-	<string>Новая</string>
+	<string>Создать</string>
+	<key>newReason</key>
+	<string>Новая причина</string>
+	<key>chooseReason</key>
+	<string>Выбрать</string>
+	<key>move</key>
+	<string>Связать помеченное с другой причиной</string>
 	<key>selectTeacher</key>
 	<dict>
 		<key>title</key>
@@ -105,6 +111,8 @@
 			<array>
 				<string>teacher</string>
 				<string>eduGroup</string>
+				<string>substitutes</string>
+				<string>variations</string>
 			</array>
 			<key>properties</key>
 			<array>
@@ -352,7 +360,7 @@
 					<string>since</string>
 				</array>
 				<key>formatString</key>
-				<string>date &lt;= %@ AND date &gt;= %@</string>
+				<string>date &lt;= %@ AND date &gt;= %@ AND reason.flags != 1</string>
 			</dict>
 			<key>prefetch</key>
 			<array>
@@ -448,6 +456,64 @@
 						<key>reason</key>
 						<string>.</string>
 					</dict>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Каникулы</string>
+			<key>hover</key>
+			<string>список всех каникул за год</string>
+			<key>entity</key>
+			<string>Reason</string>
+			<key>rowClass</key>
+			<string>grey</string>
+			<key>external</key>
+			<true/>
+			<key>qualifier</key>
+			<dict>
+				<key>formatString</key>
+				<string>flags = 1</string>
+			</dict>
+			<key>prefetch</key>
+			<array>
+				<string>variations</string>
+			</array>
+			<key>properties</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>Начало</string>
+					<key>keyPath</key>
+					<string>begin</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>dateformat</key>
+						<string>dd.MM</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Конец</string>
+					<key>keyPath</key>
+					<string>end</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>dateformat</key>
+						<string>dd.MM</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Название</string>
+					<key>keyPath</key>
+					<string>reason</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Поправок</string>
+					<key>keyPath</key>
+					<string>variations.count</string>
 				</dict>
 			</array>
 		</dict>

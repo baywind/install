@@ -81,8 +81,10 @@ AnnounceTitle: WOString {
 }
 
 
-DeleteButton: WOSubmitButton {
-	action = ^delete;
+DeleteButton: WOGenericElement {
+	elementName = "input";
+	type = "button";
+	invokeAction = ^delete;
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	onclick = session.confirmMessage;
 }

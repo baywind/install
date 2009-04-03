@@ -11,5 +11,7 @@
         <binding name="second"/>
         <binding defaults="Boolean" name="startWithLast"/>
         <binding defaults="Date Format Strings" name="birthdayFormat"/>
+    <binding defaults="Boolean" name="nowrap"/>
+        <binding name="valueWhenEmpty"/>
     </wo>
 </wodefinitions>

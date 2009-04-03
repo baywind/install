@@ -8,7 +8,7 @@ AccesssSubjects: WOConditional {
 
 CheckBox1: WOCheckBox {
 	checked = studentSelected;
-	id = "cb";
+	name = "cb";
 	onclick = "changeMass(null);";
 }
 
@@ -246,7 +246,6 @@ TeacherName: PersonDisplay {
 
 Ticker1: Ticker {
 	align = "left";
-	form = "document.forms[1]";
 	inline = true;
 }
 
@@ -274,4 +273,12 @@ SubsReport : WOHyperlink {
 CoursesCSS : ResourceLink {
   cssLink = "courses.css";
   framework = "app";
+}
+
+TickCount : WOTextField {
+  value = selectedStudents.count;
+  disabled = true;
+  size = 2;
+  style = "text-align:center;";
+  id = "total";
 }

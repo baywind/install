@@ -129,3 +129,13 @@ DescriptionString : WOString {
 TitleRow : ArchiveRow {
 	class = "grey";
 }
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 16;
+  width = 16;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:14pt;top:14pt;";
+}
