@@ -452,3 +452,28 @@ MoveImage : WOImage {
 CanCreate : WOConditional {
   condition = canCreate;
 }
+
+PropsBegin : WOString {
+  value = tmpDict.reasonProps.begin;
+   dateformat = application.prefs.ui.dateFormat;
+}
+
+PropsEnd : WOString {
+  value = tmpDict.reasonProps.end;
+   dateformat = application.prefs.ui.dateFormat;
+}
+PropsEduGroup : WOString {
+  value = tmpDict.reasonProps.eduGroup.name;
+}
+
+PropsTeacher : PersonDisplay {
+  person = tmpDict.reasonProps.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+}
+
+RowExists : WOConditional {
+  condition = itemRow.editingContext;
+}

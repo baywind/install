@@ -162,6 +162,23 @@
 					<key>keyPath</key>
 					<string>extToString</string>
 				</dict>
+				<dict>
+					<key>title</key>
+					<string></string>
+					<key>titleStyle</key>
+					<string>width:20px</string>
+					<key>keyPath</key>
+					<string>namedFlags</string>
+					<key>presenter</key>
+					<string>ReasonPresenter</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>reason</key>
+						<string>$itemRow</string>
+						<key>hideText</key>
+						<true/>
+					</dict>
+				</dict>
 			</array>
 		</dict>
 		<dict>

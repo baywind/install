@@ -41,3 +41,8 @@ SchoolIcon : WOImage {
 ReasonText : WOString {
   value = reason.reason;
 }
+
+ShowText : WOConditional {
+  condition = ^hideText;
+  negate = true;
+}

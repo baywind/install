@@ -6,5 +6,6 @@
         <validation message="'reason' is a required binding.">
             <unbound name="reason"/>
         </validation>
+    <binding defaults="Boolean" name="hideText"/>
     </wo>
 </wodefinitions>

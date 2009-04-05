@@ -22,15 +22,15 @@
 		</td>
 		</webobject></tr></thead>
 		<tbody>
-		<webobject name = "List"><webobject name = "ItemRow"><webobject name = "Columns">
-		<webobject name = "Cell"><webobject name = "Display"></webobject></webobject>
-		</webobject><webobject name = "AllowSelection">
-		<td align = "center"><webobject name = "SelectBox"/></td>
-		</webobject></webobject></webobject>
+			<webobject name = "List"><webobject name = "RowExists">
+			<webobject name = "ItemRow"><webobject name = "Columns">
+			<webobject name = "Cell"><webobject name = "Display"></webobject></webobject>
+			</webobject><webobject name = "AllowSelection">
+			<td align = "center"><webobject name = "SelectBox"/></td>
+			</webobject></webobject></webobject></webobject>
 		</tbody>
 		</table>
-		</webobject>
-	
+		</webobject>	
 	</td><td class = "backfield1 selectionBorder" align = "center" style = "border-style:none none none solid;">
 	<h3 style = "margin:1ex;"><webobject name = "ReasonTitle"/></h3>
 	<webobject name = "ReasonSelected">
@@ -74,10 +74,11 @@
 	<webobject name = "CanCreate"><webobject name = "Create"/></webobject>
 	<hr/>
 	<div id = "move">
-		<webobject name = "AllowSelection"><webobject name = "MoveTitle"/></webobject>
+		<webobject name = "AllowSelection"><webobject name = "MoveTitle"/>
+			<webobject name = "MoveImage"/><br />
+		</webobject>
 		<webobject name = "ManipulateSelection"><webobject name = "MoveSelected"/></webobject></div>
 	<webobject name = "ToMove">
-	<webobject name = "MoveImage"/>
 	<webobject name = "SelectNextForm">
 		<table align = "center" style = "margin-top:1em;width:80%;">
 		<thead>
@@ -87,7 +88,9 @@
 		<tfoot>
 			<tr class = "grey" onclick = "var r = this.getElementsByTagName('input')[0]; if(!r.checked)r.click();">
 				<td><webobject name = "NewNextRadio"/></td>
-				<td><webobject name = "NewReasonTitle"/></td>
+				<td><webobject name = "NewReasonTitle"/><div style = "display:none;">
+					<i><webobject name = "PropsBegin"/> - <webobject name = "PropsEnd"/><br />
+					<webobject name = "PropsTeacher"/><webobject name = "PropsEduGroup"/></i></div></td>
 			</tr>
 			<tr><td colspan = "2" align = "center" valign = "middle" style = "padding:1ex;">
 				<webobject name = "SubmitMoveReasons"/> <webobject name = "CancelButton"/></td></tr>
