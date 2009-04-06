@@ -62,3 +62,7 @@ ReasonTitle : WOString {
   valueWhenEmpty = "Reason";
   escapeHTML = false;
 }
+ShowReason : WOConditional {
+  condition = ^hideReason;
+  negate = true;
+}

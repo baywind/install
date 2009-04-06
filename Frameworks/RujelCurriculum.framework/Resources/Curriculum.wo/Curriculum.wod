@@ -477,3 +477,21 @@ PropsTeacher : PersonDisplay {
 RowExists : WOConditional {
   condition = itemRow.editingContext;
 }
+
+IfArchive : WOConditional {
+  condition = ifArchive;
+}
+
+CallArchive : OnClickContainer {
+  elementName = "div";
+  invokeAction = archivePopup;
+  onclick = session.ajaxPopup;
+  style = "float:right;color:#666666;border:1px solid #cccccc;height:1em;min-width:1em;";
+  title = plist.archive;
+}
+
+ArchiveCount : WOString {
+  value = tmpDict.archivesCount;
+  numberformat = "0";
+  valueWhenEmpty = ".";
+}

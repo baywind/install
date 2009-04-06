@@ -1,0 +1,61 @@
+IsTitle : WOConditional {
+  condition = data;
+  negate = true;
+}
+
+ReasonTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.Reason;
+  valueWhenEmpty = "Reason";
+  escapeHTML = false;
+}
+
+BeginTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.begin;
+  valueWhenEmpty = "Begin";
+  escapeHTML = false;
+}
+
+EndTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.end;
+  valueWhenEmpty = "End";
+  escapeHTML = false;
+}
+
+RelationTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.relation;
+  valueWhenEmpty = "Relation";
+  escapeHTML = false;
+}
+
+VerificationTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.verification;
+  valueWhenEmpty = "Verification";
+  escapeHTML = false;
+}
+
+IsRow : WOConditional {
+  condition = data;
+}
+
+Reason : WOString {
+  value = data.reason;
+}
+
+Begin : WOString {
+  value = begin;
+  escapeHTML = false;
+}
+
+End : WOString {
+  value = end;
+  valueWhenEmpty = ". . .";
+  escapeHTML = false;
+}
+
+Relation : WOString {
+  value = relation;
+}
+
+Verification : WOString {
+  value = data.verification;
+}

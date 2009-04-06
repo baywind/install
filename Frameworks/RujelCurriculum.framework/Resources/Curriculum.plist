@@ -23,6 +23,8 @@
 		<string>Причина</string>
 		<key>relatedTo</key>
 		<string>Актуально для</string>
+		<key>relation</key>
+		<string>Привязка</string>
 		<key>withTeacher</key>
 		<string>преподавателя</string>
 		<key>withEduGroup</key>
@@ -43,6 +45,8 @@
 		<string>Замены</string>
 		<key>variations</key>
 		<string>Поправки</string>
+		<key>verification</key>
+		<string>Обоснование</string>
 	</dict>
 	<key>Variation</key>
 	<dict>

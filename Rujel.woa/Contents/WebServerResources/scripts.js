@@ -438,7 +438,7 @@ function onReadyStateChange(pos) {
 	if(navigator.appName.search("Explorer") > 0) {
 		container.style.backgroundImage = 'none';
 		//container.style.backgroundColor = "#999999";
-		container.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+		//container.style.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
 	}
 	/*
 	container = document.getElementById('popupContainer');

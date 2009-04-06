@@ -24,6 +24,7 @@ Archives : ArchiveRow {
 	class = "ungerade";
 	list = archives;
 	item = archItem;
+	hideReason = noEdit; 
 }
 
 ArchDate : WOString {
@@ -128,6 +129,7 @@ DescriptionString : WOString {
 
 TitleRow : ArchiveRow {
 	class = "grey";
+	hideReason = noEdit;
 }
 
 Cross : WOImage {

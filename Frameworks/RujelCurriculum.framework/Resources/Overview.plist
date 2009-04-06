@@ -16,6 +16,8 @@
 	<string>Выбрать</string>
 	<key>move</key>
 	<string>Связать помеченное с другой причиной</string>
+	<key>archive</key>
+	<string>История изменений</string>
 	<key>selectTeacher</key>
 	<dict>
 		<key>title</key>
