@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CoursesReport</key>
+	<dict>
+		<key>title</key>
+		<string>Отчеты по курсам</string>
+		<key>availableReports</key>
+		<string>Доступные отчеты</string>
+		<key>regime</key>
+		<dict>
+			<key>title</key>
+			<string>По курсам</string>
+			<key>component</key>
+			<string>CoursesReport</string>
+			<key>group</key>
+			<string>report</string>
+			<key>sort</key>
+			<string>20</string>
+		</dict>
+		<key>defaultDisplay</key>
+		<dict>
+			<key>subject</key>
+			<dict>
+				<key>title</key>
+				<string>Предмет</string>
+				<key>titlePath</key>
+				<string>subjectWithComment</string>
+				<key>escapeHTML</key>
+				<false/>
+				<key>onclick</key>
+				<string>$session.tryLoad</string>
+				<key>disabled</key>
+				<string>$session.readAccess._read.itemRow</string>
+				<key>nextPage</key>
+				<string>LessonNoteEditor</string>
+				<key>pageParams</key>
+				<dict>
+					<key>course</key>
+					<string>.</string>
+				</dict>
+			</dict>
+			<key>teacher</key>
+			<dict>
+				<key>title</key>
+				<string>Преподаватель</string>
+				<key>keyPath</key>
+				<string>teacher</string>
+				<key>presenter</key>
+				<string>PersonDisplay</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>person</key>
+					<string>.</string>
+					<key>last</key>
+					<string>2</string>
+					<key>first</key>
+					<string>1</string>
+					<key>second</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>eduGroup</key>
+			<dict>
+				<key>title</key>
+				<string>Класс</string>
+				<key>keyPath</key>
+				<string>eduGroup.name</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>regimeGroup</key>
+	<dict>
+		<key>title</key>
+		<string>Статистика</string>
+		<key>hover</key>
+		<string>Агрегирующие данные отчеты</string>
+		<key>id</key>
+		<string>report</string>
+		<key>sort</key>
+		<string>30</string>
+	</dict>
+</dict>
+</plist>

@@ -2,7 +2,7 @@ Table : OnClickContainer {
 	elementName = "table";
 	onclick = session.ajaxPopup;
 	invokeAction = popup;
-	class = styleClass;
+	class = planFact.styleClass;
 	style = "font-size:smaller;text-align:center;border:#ff6600 solid 2px;border-collapse:collapse;";
 	cellspacing = 0;
 	border = 1;
@@ -22,13 +22,15 @@ RealTitle : WOString {
 }
 
 PlanCount : WOString {
-  value = plan;
+  value = planFact.plan;
   escapeHTML = false;
+  numberformat = "0";
   valueWhenEmpty = "?";
 }
 
 RealCount : WOString {
-  value = lessonsCount;
+  value = planFact.fact;
   escapeHTML = false;
-  valueWhenEmpty = "?";
+  numberformat = "0";
+  valueWhenEmpty = "&oslash;";
 }

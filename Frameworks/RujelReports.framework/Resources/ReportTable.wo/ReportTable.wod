@@ -1,0 +1,91 @@
+Content : WOComponentContent {
+}
+
+ColTitle : WOString {
+  value = valueOf.item.itemDict.short;
+  valueWhenEmpty = valueOf.item.itemDict.title;
+  escapeHTML = false;
+}
+
+Columns : WORepetition {
+  list = ^properties;
+  item = itemDict;
+}
+
+ColHead : WOGenericContainer {
+  elementName = "th";
+  title = valueOf.item.itemDict.hover;
+  style = valueOf.item.itemDict.titleStyle;
+}
+
+SubHead : WOGenericContainer {
+  elementName = "th";
+  title = valueOf.item.subDict.title;
+  style = valueOf.item.subDict.titleStyle;
+}
+
+SubTitle : WOString {
+  value = valueOf.item.subDict.short;
+  valueWhenEmpty = valueOf.item.subDict.title;
+  escapeHTML = false;
+}
+
+List : WORepetition {
+  list = ^list;
+  item = itemRow;
+}
+
+RowExists : WOConditional {
+  condition = itemRow.editingContext;
+}
+
+ItemRow : WOGenericContainer {
+  elementName = "tr";
+  class = ^rowClass;
+  id = rowID;
+}
+
+Cell : OnClickContainer {
+  elementName = "td";
+  class = ^cellClass;
+  style = valueOf.item.itemDict.style;
+  onclick = onClick;
+  disabled = disabledClick;
+  invokeAction = select;
+}
+
+SubCell : OnClickContainer {
+  elementName = "td";
+  class = valueOf.item.subDict.class;
+  style = valueOf.item.subDict.style;
+  disabled = disabledClick;
+  onclick = onClick;
+  invokeAction = select;
+}
+
+Display : DisplayAny {
+  value = item;
+  dict = itemDict;
+}
+
+NoSubs : WOConditional {
+  condition = itemDict.subParams;
+  negate = true;
+}
+
+SubParams : WORepetition {
+  list = itemDict.subParams;
+  item = subDict;
+}
+
+SubDisplay : DisplayAny {
+  value = valueOf.item.subDict.value;
+  dict = subDict;
+}
+TableContainer : WOGenericContainer {
+  elementName = "table";
+  width = ^width;
+  cellpadding = ^cellpadding;
+  cellspacing = ^cellspacing;
+  align = ^align; 
+}

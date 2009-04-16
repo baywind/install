@@ -59,7 +59,7 @@
 		<key>external</key>
 		<string>внешние поправки калькуляции</string>
 		<key>value</key>
-		<string>Величина</string>
+		<string>Часы</string>
 		<key>isAdded</key>
 		<string>Доп</string>
 	</dict>

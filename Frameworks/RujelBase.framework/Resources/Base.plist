@@ -84,5 +84,7 @@
 		<key>Invert</key>
 		<string>Инвертировать</string>
 	</dict>
+	<key>allTeachers</key>
+	<string>Все учителя</string>
 </dict>
 </plist>

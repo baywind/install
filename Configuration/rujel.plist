@@ -6,6 +6,8 @@
 	<string>0</string>
 	<key>loggingProperties</key>
 	<string>LOCALROOT/Library/WebObjects/Configuration/logging.properties</string>
+	<key>reportsDir</key>
+	<string>LOCALROOT/Library/WebObjects/Configuration/RujelReports</string>
 	<key>auth</key>
 	<dict>
 		<key>loginPageName</key>
@@ -365,6 +367,8 @@
 				<string>1023</string>
 				<key>zavuch</key>
 				<string>15</string>
+				<key>zav_kaf</key>
+				<string>1</string>
 			</dict>
 			<key>Reason</key>
 			<dict>
@@ -387,6 +391,15 @@
 				<string>15</string>
 				<key>zav_kaf</key>
 				<string>15</string>
+			</dict>
+			<key>CoursesReport</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>zav_kaf</key>
+				<string>1</string>
 			</dict>
 			<key>login</key>
 			<dict>
@@ -467,15 +480,15 @@
 			<key>root</key>
 			<dict>
 				<key>fullName</key>
-				<string>Gennady Kushnir</string>
+				<string>Super User</string>
 				<key>givenName</key>
-				<string>Gena</string>
+				<string>Admin</string>
 				<key>groups</key>
 				<string>root;any</string>
 				<key>password</key>
 				<string>god</string>
 				<key>sn</key>
-				<string>Kushnir</string>
+				<string>Super</string>
 			</dict>
 			<key>guest</key>
 			<dict>
@@ -500,6 +513,13 @@
 			<dict>
 				<key>groups</key>
 				<string>zavuch;adm;any</string>
+				<key>password</key>
+				<string>123</string>
+			</dict>
+			<key>zav_kaf</key>
+			<dict>
+				<key>groups</key>
+				<string>teacher;any</string>
 				<key>password</key>
 				<string>123</string>
 			</dict>
@@ -563,6 +583,8 @@
 		<key>net.rujel.eduresults.ModuleInit</key>
 		<string>true</string>
 		<key>net.rujel.curriculum.CurriculumModule</key>
+		<string>true</string>
+		<key>net.rujel.reports.ReportsModule</key>
 		<string>true</string>
 	</dict>
 	<key>edu</key>

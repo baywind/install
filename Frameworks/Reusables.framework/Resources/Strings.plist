@@ -116,8 +116,6 @@
 	<dict>
 		<key>Add</key>
 		<string>Добавить</string>
-		<key>All</key>
-		<string>Все</string>
 		<key>Back</key>
 		<string>Назад</string>
 		<key>Cancel</key>
@@ -136,10 +134,6 @@
 		<string>Ошибка</string>
 		<key>Exit</key>
 		<string>Выход</string>
-		<key>Invert</key>
-		<string>Инвертировать</string>
-		<key>None</key>
-		<string>Ничего</string>
 		<key>Other</key>
 		<string>Другое</string>
 		<key>Reset</key>
@@ -148,8 +142,6 @@
 		<string>Сохранить</string>
 		<key>Search</key>
 		<string>Искать</string>
-		<key>Select</key>
-		<string>Отметить</string>
 		<key>Submit</key>
 		<string>Подтвердить</string>
 	</dict>

@@ -28,45 +28,6 @@ ParamSelector : DisplayAny {
   dict = itemDict;
 }
 
-ColTitle : WOString {
-  value = itemDict.title;
-}
-
-Columns : WORepetition {
-  list = currTab.properties;
-  item = itemDict;
-}
-
-ColHead : WOGenericContainer {
-  elementName = "th";
-  title = valueOf.item.itemDict.hover;
-  style = valueOf.item.itemDict.titleStyle;
-}
-
-ItemRow : WOGenericContainer {
-  elementName = "tr";
-  class = rowClass;
-  id = rowID;
-}
-
-List : WORepetition {
-  list = list;
-  item = itemRow;
-}
-
-Cell : OnClickContainer {
-  elementName = "td";
-  class = cellClass;
-  style = valueOf.item.itemDict.style;
-  onclick = onSelect;
-  invokeAction = select;
-}
-
-Display : DisplayAny {
-  value = item;
-  dict = itemDict;
-}
-
 Form : WOForm {
   multipleSubmit = true;
 }
@@ -474,10 +435,6 @@ PropsTeacher : PersonDisplay {
   startWithLast = true;
 }
 
-RowExists : WOConditional {
-  condition = itemRow.editingContext;
-}
-
 IfArchive : WOConditional {
   condition = ifArchive;
 }
@@ -494,4 +451,32 @@ ArchiveCount : WOString {
   value = tmpDict.archivesCount;
   numberformat = "0";
   valueWhenEmpty = ".";
+}
+
+ReportTable : ReportTable {
+  list = list;
+  properties = currTab.properties;
+  itemRow = itemRow;
+  itemDict = itemDict;
+  item = item;
+  selectAction = select;
+  onClick = onClick;
+  rowClass = rowClass;
+  cellClass = cellClass;
+  currObject = currObject;
+  width = "100%";
+  cellpadding = "1";
+}
+
+IsHead : WOConditional {
+  condition = itemRow;
+  negate = true;
+}
+
+IsRow : WOConditional {
+  condition = itemRow;
+}
+
+CanSubmit : WOConditional {
+  condition = session.readAccess.edit.Curriculum;
 }

@@ -20,6 +20,7 @@ LOCALROOT/Library/Frameworks/RujelCurriculum.framework/Resources/Java/rujelcurri
 LOCALROOT/Library/Frameworks/RujelEduPlan.framework/Resources/Java/rujeleduplan.jar
 LOCALROOT/Library/Frameworks/RujelEduResults.framework/Resources/Java/rujeleduresults.jar
 LOCALROOT/Library/Frameworks/RujelInterfaces.framework/Resources/Java/rujelinterfaces.jar
+LOCALROOT/Library/Frameworks/RujelReports.framework/Resources/Java/rujelreports.jar
 LOCALROOT/Library/Frameworks/RujelVseobuch.framework/Resources/Java/rujelvseobuch.jar
 WOROOT/Library/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar
 WOROOT/Library/Frameworks/JavaEOControl.framework/Resources/Java/javaeocontrol.jar

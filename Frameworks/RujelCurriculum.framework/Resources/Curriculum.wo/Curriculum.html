@@ -15,22 +15,10 @@
 	</tr>
 	<tr><td width = "70%" class = "backfield2">
 	<webobject name = "TicksForm">
-		<table width = "100%" cellpadding = "1"><thead><tr>
-		<webobject name = "Columns"><webobject name = "ColHead">
-		<webobject name = "ColTitle"/></webobject></webobject><webobject name = "AllowSelection">
-		<td><webobject name = "TicksCount"/>
-		</td>
-		</webobject></tr></thead>
-		<tbody>
-			<webobject name = "List"><webobject name = "RowExists">
-			<webobject name = "ItemRow"><webobject name = "Columns">
-			<webobject name = "Cell"><webobject name = "Display"></webobject></webobject>
-			</webobject><webobject name = "AllowSelection">
-			<td align = "center"><webobject name = "SelectBox"/></td>
-			</webobject></webobject></webobject></webobject>
-		</tbody>
-		</table>
-		</webobject>	
+	<webobject name = "ReportTable"><webobject name = "AllowSelection">
+		<td align = "center"><webobject name = "IsHead"><webobject name = "TicksCount"/>
+		</webobject><webobject name = "IsRow"><webobject name = "SelectBox"/></webobject>
+		</td></webobject></webobject></webobject>	
 	</td><td class = "backfield1 selectionBorder" align = "center" style = "border-style:none none none solid;">
 	<h3 style = "margin:1ex;"><webobject name = "ReasonTitle"/></h3>
 	<webobject name = "ReasonSelected">
@@ -59,12 +47,10 @@
 					<webobject name = "ReasonGroup"/></webobject></tr>
 			<tr class = "gerade"><td align = "left"  onclick = "getElementsByTagName('input')[0].click();">
 				<webobject name = "ForWholeSchool"/> <webobject name = "WithWholeSchool"/></td>
-				<td><webobject name = "SchoolIcon"/></td></tr>
-			</webobject>
-		
-		<tr><td colspan = "2" align = "center"><webobject name = "VerificationTitle"/>:<br/>
-			<webobject name = "Verification"/>
-		</td></tr>
+				<td><webobject name = "SchoolIcon"/></td></tr><webobject name = "CanSubmit">
+			<tr><td colspan = "2" align = "center"><webobject name = "VerificationTitle"/>:<br/>
+				<webobject name = "Verification"/>
+			</td></tr></webobject></webobject>
 		</table>
 		<webobject name="CanChange"><webobject name = "IfArchive"><webobject name = "CallArchive">
 		<webobject name = "ArchiveCount"/></webobject>

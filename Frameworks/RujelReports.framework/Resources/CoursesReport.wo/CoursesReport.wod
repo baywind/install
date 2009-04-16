@@ -1,0 +1,131 @@
+PageWrapper : PageWrapper {
+	title = title;
+}
+Title : WOString {
+  value = title;
+  escapeHTML = false;
+}
+
+Tabs : Tabs {
+	currTab = tabSelected;
+	tablist = tablist;
+	onClick = session.tryLoad;
+}
+ClassSelector : WOConditional {
+	condition = tabindex;
+	negate = true;
+}
+
+ClassListing1 : ClassListing {
+	selection = curSource;
+	width = "100%";
+	editingContext = ec;
+	onClick = session.tryLoad;
+}
+
+TeacherSelector : WOConditional {
+	condition = tabindex;
+	negate = false;
+}
+
+TeacherSelector2 : TeacherSelector {
+	editingContext = ec;
+	useAjaxPost = false;
+	selection = curSource;
+}
+ReportTable : ReportTable {
+  list = courses;
+  properties = display;
+  rowClass = "ungerade";
+  itemDict = subItem;
+  itemRow = item;
+}
+
+Form : WOForm {
+  class = "backfield2 selectionBorder";
+  style = "position:absolute;right:10px;top:5em;width:12em;";
+}
+
+ReportsRepetition : WORepetition {
+  list = reports;
+  item = item;
+}
+
+ItemCheckBox : WOCheckBox {
+  checked = item.active;
+  name = item.id;
+  onclick = "toggleReport(this.name,this.checked);";
+}
+
+ItemSorting : WOHiddenField {
+  value = item.sort;
+}
+
+ShortTitle : WOString {
+  value = item.short;
+  escapeHTML = false;
+}
+
+ShortSubTitle : WOString {
+  value = subItem.short;
+  escapeHTML = false;
+}
+
+ItemTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+HasShort : WOConditional {
+  condition = item.short;
+}
+
+SubHasShort : WOConditional {
+  condition = subItem.short;
+}
+SubmitButton : WOSubmitButton {
+  action = modifyList;
+  value = application.strings.Reusables_Strings.uiElements.Submit;
+}
+
+ReportCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = modifyList;
+  onclick = session.tryLoad;
+  align = "left";
+  style = "padding-left:4px;";
+}
+
+SubCheckBox : WOCheckBox {
+  checked = subItem.active;
+  name = item.id;
+  onclick = "toggleSub(this.name,this.checked);";
+}
+
+SubsRepetition : WORepetition {
+  list = item.subParams;
+  item = subItem;
+}
+
+SubTitle : WOString {
+  value = subItem.title;
+  escapeHTML = false;
+}
+
+SubsRow : WOGenericContainer {
+  elementName = "tr";
+  id = item.id;
+  style = subRowStyle;
+}
+
+AvailableTitle : WOString {
+  value = application.strings.RujelReports_Reports.CoursesReport.availableReports;
+  escapeHTML = false;
+}
+
+ReportsTable : WOGenericContainer {
+  elementName = "table";
+  id = "reportsAvailable";
+  width = "100%";
+  style = tableStyle;
+}

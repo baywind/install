@@ -1,0 +1,65 @@
+SearchForm : WOForm {
+  action = search;
+  onsubmit = onSubmit;
+}
+
+SearchField: WOTextField {
+	value = searchString;
+	id = "searchString";
+	style = "width:80%;";
+}
+SearchImage: WOImage {
+	onclick = "f=get(this,'form');if(f.onsubmit()) f.submit();";
+	style = "cursor:pointer;";
+	filename = "arrow.png";
+	framework = "app";
+	height = 20;
+}
+
+AllTitle : WOString {
+  value = application.strings.RujelBase_Base.allTeachers;
+  valueWhenEmpty = "All teachers";
+  escapeHTML = false;
+}
+
+ChooseSubject : OnClickContainer {
+  elementName = "div";
+  invokeAction = select;
+  onclick = act;
+  class = subjectClass;
+  style = "margin:2px;min-width:12em;";
+}
+
+Subject : WOString {
+  value = item;
+}
+
+SubjectsRepetition : WORepetition {
+  list = subjects;
+  item = item;
+}
+
+SelectTeacher : OnClickContainer {
+  elementName = "div";
+  invokeAction = select;
+  onclick = session.tryLoad;
+  class = teacherClass;
+  style = "margin:2px;white-space:nowrap;";
+}
+
+TeacherDisplay : PersonDisplay {
+  person = item;
+  last = 2;
+  first = 1;
+  second = 1;
+}
+
+List : WORepetition {
+  list = list;
+  item = item;
+}
+
+Message : WOString {
+  value = searchMessage;
+  escapeHTML = false;
+}

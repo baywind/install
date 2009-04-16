@@ -105,15 +105,8 @@ ClassName: WOString {
 }
 
 CourseSubject: WOString {
-	value = item.cycle.subject;
-}
-
-HasComment: WOConditional {
-	condition = item.comment;
-}
-
-Comment: WOString {
-	value = item.comment;
+	value = item.subjectWithComment;
+	escapeHTML = false;
 }
 
 TeacherLN: PersonDisplay {

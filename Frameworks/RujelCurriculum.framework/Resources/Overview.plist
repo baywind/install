@@ -25,7 +25,7 @@
 		<key>style</key>
 		<string>min-width:20em</string>
 		<key>presenter</key>
-		<string>PersListing</string>
+		<string>TeacherSelector</string>
 		<key>takeValuesFromRequest</key>
 		<true/>
 		<key>invokeAction</key>
@@ -166,7 +166,7 @@
 				</dict>
 				<dict>
 					<key>title</key>
-					<string></string>
+					<string>&apos;&amp;nbsp;</string>
 					<key>titleStyle</key>
 					<string>width:20px</string>
 					<key>keyPath</key>
@@ -260,7 +260,9 @@
 					<key>keyPath</key>
 					<string>lesson.course</string>
 					<key>titlePath</key>
-					<string>cycle.subject</string>
+					<string>subjectWithComment</string>
+					<key>escapeHTML</key>
+					<false/>
 				</dict>
 				<dict>
 					<key>title</key>
@@ -269,6 +271,8 @@
 					<string>Учитель, который ведет курс</string>
 					<key>keyPath</key>
 					<string>lesson.course.teacher</string>
+					<key>style</key>
+					<string>white-space:nowrap;</string>
 					<key>presenter</key>
 					<string>PersonDisplay</string>
 					<key>presenterBindings</key>
@@ -311,6 +315,8 @@
 					<string>Учитель, который реально проводил урок</string>
 					<key>keyPath</key>
 					<string>teacher</string>
+					<key>style</key>
+					<string>white-space:nowrap;</string>
 					<key>presenter</key>
 					<string>PersonDisplay</string>
 					<key>presenterBindings</key>
@@ -415,14 +421,18 @@
 					<string>Предмет</string>
 					<key>keyPath</key>
 					<string>course</string>
+					<key>escapeHTML</key>
+					<false/>
 					<key>titlePath</key>
-					<string>cycle.subject</string>
+					<string>subjectWithComment</string>
 				</dict>
 				<dict>
 					<key>title</key>
 					<string>Учитель</string>
 					<key>keyPath</key>
 					<string>course.teacher</string>
+					<key>style</key>
+					<string>white-space:nowrap;</string>
 					<key>presenter</key>
 					<string>PersonDisplay</string>
 					<key>presenterBindings</key>
@@ -441,7 +451,7 @@
 				</dict>
 				<dict>
 					<key>title</key>
-					<string>Величина</string>
+					<string>Часы</string>
 					<key>titlePath</key>
 					<string>value</string>
 					<key>style</key>

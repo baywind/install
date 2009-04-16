@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Замененные уроки</string>
+	<key>short</key>
+	<string>Зам</string>
+	<key>hover</key>
+	<string>Замененные уроки</string>
+	<key>id</key>
+	<string>substitutes</string>
+	<key>sort</key>
+	<string>35</string>
+	<key>active</key>
+	<true/>
+	<key>checkAccess</key>
+	<array>
+		<string>Substitute</string>
+	</array>
+	<key>value</key>
+	<dict>
+		<key>className</key>
+		<string>net.rujel.curriculum.Substitute</string>
+		<key>methodName</key>
+		<string>countSubstituted</string>
+		<key>paramClasses</key>
+		<array>
+			<string>com.webobjects.foundation.NSArray</string>
+		</array>
+		<key>paramValues</key>
+		<array>
+			<string>.lessons</string>
+		</array>
+		<key>cacheResult</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

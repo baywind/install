@@ -74,26 +74,50 @@ then
 fi
 
 # Configuration files
+
+if [ -d Configuration ] ; then
+cd Configuration
+
 CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
 
-for f in rujel.plist diaryConfig.plist logging.properties; do
+for f in * ; do
 if [ -e $f ]
 then
     if [ -e ${CONFIGFOLDER}/$f ]
     then
-        if [ $1 = "-c" ]
+        if [ -n $1 -a $1 = "-c" ]
         then mv ${CONFIGFOLDER}/$f $BACKUP
         else echo $f" already exists"
+## Here I will implement recursive reports update
+#            if [ -d $f ] ; then
+#            i=0
+#            mkdir -p $BACKUP/$f
+#                for r in $f/* ; do
+#                    if [ -d $r ]
+#                    then
+#                        recursive update
+#                    else
+#                    if [ -e ${CONFIGFOLDER}/$r ]
+#                    then mv ${CONFIGFOLDER}/$r ../$BACKUP/$f
+#                    fi
+#                    cp -r $r ${CONFIGFOLDER}/$f
+#                    chown -R _appserver:_appserveradm ${CONFIGFOLDER}/$r
+#                    i=$(($i+1))
+#                    fi
+#                done
+#                echo "Updated "$i" Reports"
+#            fi
         fi
     fi
     if [ ! -e ${CONFIGFOLDER}/$f ]
-    then cp $f ${CONFIGFOLDER}/$f
+    then cp -r $f ${CONFIGFOLDER}/$f
     fi
 else
     echo $f" not found"
 fi
 done
-
+cd ..
+fi
 echo ""
 
 rmdir -p  $BACKUP/Frameworks > /dev/null 2>&1
