@@ -76,6 +76,7 @@ fi
 # Configuration files
 
 if [ -d Configuration ] ; then
+mkdir -p $BACKUP/Configuration/
 cd Configuration
 
 CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
@@ -86,7 +87,7 @@ then
     if [ -e ${CONFIGFOLDER}/$f ]
     then
         if [ -n $1 -a $1 = "-c" ]
-        then mv ${CONFIGFOLDER}/$f $BACKUP
+        then mv ${CONFIGFOLDER}/$f ../$BACKUP/Configuration/
         else echo $f" already exists"
 ## Here I will implement recursive reports update
 #            if [ -d $f ] ; then
@@ -117,6 +118,7 @@ else
 fi
 done
 cd ..
+rmdir $BACKUP/Configuration > /dev/null 2>&1
 fi
 echo ""
 
