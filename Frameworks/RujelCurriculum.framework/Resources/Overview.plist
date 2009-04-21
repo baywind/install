@@ -18,6 +18,8 @@
 	<string>Связать помеченное с другой причиной</string>
 	<key>archive</key>
 	<string>История изменений</string>
+	<key>export</key>
+	<string>Файл</string>
 	<key>selectTeacher</key>
 	<dict>
 		<key>title</key>
@@ -169,6 +171,8 @@
 					<string>&apos;&amp;nbsp;</string>
 					<key>titleStyle</key>
 					<string>width:20px</string>
+					<key>skipExport</key>
+					<true/>
 					<key>keyPath</key>
 					<string>namedFlags</string>
 					<key>presenter</key>
@@ -343,6 +347,13 @@
 						<key>reason</key>
 						<string>.</string>
 					</dict>
+					<key>exportDict</key>
+					<dict>
+						<key>title</key>
+						<string>Причина</string>
+						<key>titlePath</key>
+						<string>reason</string>
+					</dict>
 				</dict>
 			</array>
 		</dict>
@@ -484,6 +495,13 @@
 					<dict>
 						<key>reason</key>
 						<string>.</string>
+					</dict>
+					<key>exportDict</key>
+					<dict>
+						<key>title</key>
+						<string>Причина</string>
+						<key>titlePath</key>
+						<string>reason</string>
 					</dict>
 				</dict>
 			</array>

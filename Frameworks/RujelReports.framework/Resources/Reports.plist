@@ -40,6 +40,24 @@
 					<key>course</key>
 					<string>.</string>
 				</dict>
+				<key>exportDict</key>
+				<dict>
+					<key>subParams</key>
+					<array>
+						<dict>
+							<key>title</key>
+							<string>Предмет</string>
+							<key>titlePath</key>
+							<string>cycle.subject</string>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>()</string>
+							<key>titlePath</key>
+							<string>comment</string>
+						</dict>
+					</array>
+				</dict>
 			</dict>
 			<key>teacher</key>
 			<dict>
@@ -81,5 +99,7 @@
 		<key>sort</key>
 		<string>30</string>
 	</dict>
+	<key>export</key>
+	<string>Файл</string>
 </dict>
 </plist>

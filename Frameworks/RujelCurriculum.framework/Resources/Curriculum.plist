@@ -84,12 +84,6 @@
 	</dict>
 	<key>titles</key>
 	<dict>
-		<key>OrigTeacher</key>
-		<string>ФИО учителя, пропустившего урок</string>
-		<key>Reason</key>
-		<string>Причина пропуска урока</string>
-		<key>Substitutor</key>
-		<string>ФИО учителя, заменившего урок</string>
 		<key>planCount</key>
 		<string>план</string>
 		<key>realCount</key>

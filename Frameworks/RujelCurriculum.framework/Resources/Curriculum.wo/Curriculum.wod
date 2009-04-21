@@ -480,3 +480,8 @@ IsRow : WOConditional {
 CanSubmit : WOConditional {
   condition = session.readAccess.edit.Curriculum;
 }
+
+ExportButton : WOHyperlink {
+  action = export;
+  string = application.strings.RujelReports_Reports.export;
+}

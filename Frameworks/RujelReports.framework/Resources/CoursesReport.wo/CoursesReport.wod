@@ -43,7 +43,7 @@ ReportTable : ReportTable {
 
 Form : WOForm {
   class = "backfield2 selectionBorder";
-  style = "position:absolute;right:10px;top:5em;width:12em;";
+  style = "position:absolute;right:5em;top:5em;width:12em;";
 }
 
 ReportsRepetition : WORepetition {
@@ -128,4 +128,9 @@ ReportsTable : WOGenericContainer {
   id = "reportsAvailable";
   width = "100%";
   style = tableStyle;
+}
+
+ExportButton : WOHyperlink {
+  action = export;
+  string = application.strings.RujelReports_Reports.export;
 }

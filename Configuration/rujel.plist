@@ -383,15 +383,6 @@
 				<key>any</key>
 				<string>1</string>
 			</dict>
-			<key>SubsReport</key>
-			<dict>
-				<key>root</key>
-				<string>1023</string>
-				<key>zavuch</key>
-				<string>15</string>
-				<key>zav_kaf</key>
-				<string>15</string>
-			</dict>
 			<key>CoursesReport</key>
 			<dict>
 				<key>root</key>

@@ -8,7 +8,7 @@ ColTitle : WOString {
 }
 
 Columns : WORepetition {
-  list = ^properties;
+  list = properties;
   item = itemDict;
 }
 
@@ -31,7 +31,7 @@ SubTitle : WOString {
 }
 
 List : WORepetition {
-  list = ^list;
+  list = list;
   item = itemRow;
 }
 

@@ -264,12 +264,6 @@ LessonsLink : WOString {
   valueWhenEmpty = "lessons";
 }
 
-SubsReport : WOHyperlink {
-  action = subsReport;
-  disabled = session.readAccess._read.SubsReport;
-  string = subTitle;
-}
-
 CoursesCSS : ResourceLink {
   cssLink = "courses.css";
   framework = "app";
