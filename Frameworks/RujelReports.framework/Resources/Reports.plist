@@ -88,6 +88,38 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>CustomReport</key>
+	<dict>
+		<key>title</key>
+		<string>Выборки</string>
+		<key>available</key>
+		<string>Доступные выборки</string>
+		<key>queryParameters</key>
+		<string>Параметры запроса</string>
+		<key>displayAttributes</key>
+		<string>Поля таблицы результатов</string>
+		<key>countTitle</key>
+		<string>Кол-во</string>
+		<key>resultsSetup</key>
+		<string>Настройка таблицы</string>
+		<key>newQuery</key>
+		<string>Новый запрос</string>
+		<key>nothingFound</key>
+		<string>По Вашему запросу ничего не найдено</string>
+		<key>perform</key>
+		<string>Искать</string>
+		<key>regime</key>
+		<dict>
+			<key>title</key>
+			<string>Выборки</string>
+			<key>component</key>
+			<string>CustomReport</string>
+			<key>group</key>
+			<string>report</string>
+			<key>sort</key>
+			<string>10</string>
+		</dict>
+	</dict>
 	<key>regimeGroup</key>
 	<dict>
 		<key>title</key>
@@ -101,5 +133,7 @@
 	</dict>
 	<key>export</key>
 	<string>Файл</string>
+	<key>choose</key>
+	<string>Выбрать</string>
 </dict>
 </plist>

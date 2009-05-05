@@ -1,0 +1,157 @@
+PageWrapper : PageWrapper {
+  title = application.strings.RujelReports_Reports.CustomReport.title;
+  resourcesFramework = "RujelBase";
+  scriptResource = "sorting.js";
+  styles = ".sorting {display:none;}";
+}
+Title : WOString {
+  value = title;
+  escapeHTML = false;
+}
+
+ReportsList : Tabs {
+  currTab = currReport;
+  tablist = reports;
+  idAttribute = "title";
+  titleAttribute = "title";
+  vertical = true;
+  hoverAttribute = "description";
+  onClick = session.tryLoad;
+}
+
+Parameters : WORepetition {
+  list = currReport.params;
+  item = item;
+}
+
+ParamTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+ParamContainer : OnClickContainer {
+  elementName = "th";
+  title = item.hover;
+  align = "right";
+  onclick = "toggleParam(this);";
+}
+
+Parameter : Parameter {
+  itemDict = item;
+  paramsDict = params;
+  editingContext = ec;
+}
+
+SearchForm : WOForm {
+  multipleSubmit = true;
+  onsubmit = "enumerate(this,'sorting',1);return true;";
+}
+
+Description : WOString {
+  value = currReport.description;
+  escapeHTML = false;
+}
+
+ReportTable : ReportTable {
+  list = list;
+  properties = display;
+  rowClass = "backfield2";
+  index = index;
+}
+
+SubmitButton : WOSubmitButton {
+  action = go;
+  value = application.strings.RujelReports_Reports.CustomReport.perform;
+}
+
+PropSelector : PropSelector {
+  active = display;
+  available = currReport.properties;
+}
+ReportSelected : WOConditional {
+  condition = currReport;
+}
+
+ShowParam : WOConditional {
+  condition = item.hidden;
+  negate = true;
+}
+
+ExportButton : WOHyperlink {
+  action = export;
+  string = application.strings.RujelReports_Reports.export;
+  style = "float:right;";
+}
+
+HasList : WOConditional {
+  condition = list.count;
+}
+
+NoList : WOConditional {
+  condition = list.count;
+  negate = true;
+}
+
+NewQuery : OnClickContainer {
+  elementName = "span";
+  class = "button";
+  style = "position:absolute;left:1em;top:4em;";
+  onclick = session.tryLoad;
+  invokeAction = newQuery;
+}
+
+NewTitle : WOString {
+  value = application.strings.RujelReports_Reports.CustomReport.newQuery;
+  valueWhenEmpty = "New Query";
+  escapeHTML = false;
+}
+
+Form : WOForm {
+  class = "backfield2 selectionBorder";
+  style = "position:absolute;right:5em;top:5em;width:14em;";
+  onsubmit = "enumerate(this,'sorting',1);return true;";
+}
+
+ResultsSetup : WOString {
+  value = application.strings.RujelReports_Reports.CustomReport.resultsSetup;
+  valueWhenEmpty = "Results Setup";
+  escapeHTML = false;
+}
+
+PropsDiv : WOGenericContainer {
+  elementName = "div";
+  style = "display:none;";
+  id = "reportsAvailable";
+}
+
+SortButton : WOSubmitButton {
+  action = setupDisplay;
+  value = application.strings.Reusables_Strings.uiElements.Submit;
+}
+
+AvailableTitle : WOString {
+  value = application.strings.RujelReports_Reports.CustomReport.displayAttributes;
+  escapeHTML = false;
+}
+
+QueryTitle : WOString {
+  value = application.strings.RujelReports_Reports.CustomReport.queryParameters;
+  escapeHTML = false;
+}
+
+ParamCell : WOGenericContainer {
+  elementName = "td";
+  valign = "middle";
+  align = "left";
+  style = paramCellStyle;
+}
+
+IsActive : WOCheckBox {
+  checked = item.active;
+  style = "display:none;";
+}
+
+ShowCount : WOString {
+  value = showCount;
+  escapeHTML = false;
+}

@@ -33,6 +33,7 @@ SubTitle : WOString {
 List : WORepetition {
   list = list;
   item = itemRow;
+  index = ^index;
 }
 
 RowExists : WOConditional {

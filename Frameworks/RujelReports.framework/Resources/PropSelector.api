@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="PropSelector.java" wocomponentcontent="false">
+
+        <binding name="available"/>
+        <validation message="'available' is a required binding.">
+            <unbound name="available"/>
+        </validation>
+        <binding name="active"/>
+        <validation message="'active' is a required binding.">
+            <unbound name="active"/>
+        </validation>
+        <binding defaults="Boolean" name="hide"/>
+        <binding name="forceActive"/>
+        <validation message="'active' must be bound to a settable value">
+            <unsettable name="active"/>
+        </validation>
+    <binding defaults="Boolean" name="initDefault"/>
+    <binding name="style"/>
+    </wo>
+</wodefinitions>

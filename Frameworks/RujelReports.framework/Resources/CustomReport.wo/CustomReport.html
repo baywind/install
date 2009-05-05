@@ -1,0 +1,62 @@
+<webobject name = "PageWrapper">
+<h1><webobject name = "Title"/></h1>
+<webobject name = "NoList">
+	<table width = "100%" cellpadding = "0" cellspacing = "0"><tr>
+	<td width = "20%" valign = "top">
+		<webobject name = "ReportsList"/>
+	</td><td class = "backfield1 selectionBorder" style = "border-style:solid none none solid;">
+		<webobject name = "SearchForm">
+		<table width = "100%"><thead><tr>
+			<th><webobject name = "QueryTitle"/></th>
+			<th><webobject name = "AvailableTitle"/></th>
+		</tr><tr>
+		<td colspan = "2" style = "font-style:italic;"><webobject name = "Description"/></td>
+		</tr></thead>
+		<webobject name = "ReportSelected"><tfoot>
+			<tr><td align = "center" style = "padding:1em;"><webobject name = "SubmitButton"/></td>
+			<td></td></tr>
+			</tfoot>
+			<tbody><tr><td>
+	<script language = "JavaScript">
+	function toggleParam(cell) {
+		var tick = cell.getElementsByTagName("input")[0];
+		tick.checked = !tick.checked;
+//		alert("tick = " + tick);
+		var nextCell = cell.nextSibling;
+		while(nextCell != null && nextCell.nodeName.toUpperCase() != "TD") {
+//			alert("nextCell = " + nextCell + "\n" + nextCell.nodeName);
+			nextCell = nextCell.nextSibling;
+		}
+		nextCell.style.visibility = (tick.checked)?"visible":"hidden";
+	}
+	</script>
+				<table align = "center">
+				<tbody><webobject name = "Parameters"><webobject name = "ShowParam">
+					<tr class = "gerade"><webobject name = "ParamContainer"><webobject name = "IsActive"/>
+						<webobject name = "ParamTitle"/>:</webobject>
+					<webobject name = "ParamCell"><webobject name = "Parameter"/></webobject></tr>
+				</webobject></webobject></tbody>
+				</table>
+			</td><td>
+					<webobject name = "PropSelector"/>
+			</td></tr></tbody></webobject></table>
+		</webobject>
+	</td></tr></table>
+</webobject>
+
+<webobject name = "HasList">
+	<webobject name = "Form">
+<div onclick = "toggleObj('reportsAvailable');" style = "font-size:larger;margin:3px;" onmouseover = "dim(this);" onmouseout = "unDim(this);">
+<webobject name = "ResultsSetup"/>:</div>
+<webobject name = "PropsDiv">
+	<webobject name = "PropSelector"/>
+	<div style = "padding:1ex;"><webobject name = "SortButton"/></div>
+	</webobject>
+</webobject>
+	<webobject name = "ExportButton"></webobject>
+	<webobject name = "NewQuery"><webobject name = "NewTitle"/></webobject>
+	<br clear = "all"/>
+	<div class = "backfield1">
+	<webobject name = "ReportTable"><webobject name = "ShowCount"/></webobject>
+	</div></webobject>
+</webobject>

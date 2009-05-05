@@ -1,0 +1,40 @@
+<script language="JavaScript">
+function toggleReport(id,val) {
+	var boxes = document.getElementsByName(id);
+	for (var i = 0; i < boxes.length; i++) {
+		boxes[i].checked = val;
+	}
+	setDisplay(id,(val)?'':'none');
+}
+function toggleSub(id,val) {
+	var boxes = document.getElementsByName(id);
+	if(val) {
+		boxes[0].checked = true;
+	} else if (boxes[0].checked) {
+		for (var i = 1; i < boxes.length; i++) {
+			if(boxes[i].checked)
+				return;
+		}
+		boxes[0].checked = false;
+	}
+}
+</script>
+<webobject name = "ReportsTable">
+		<webobject name = "ReportsRepetition"><table width = "100%" style = "margin-top:4px;"><thead>
+			<tr class = "grey"><td style = "width:1.2em;"><webobject name = "ItemCheckBox"/>
+			</td><webobject name = "ReportCell"><webobject name = "ItemTitle"/><webobject name = "HasShort">
+			(<b><webobject name = "ShortTitle"/></b>)</webobject>
+			</webobject>
+				<td width = "24"><webobject name = "MoveUp"/><webobject name = "MoveDown"/><webobject name = "ItemSorting"/></td>
+			</tr></thead>
+			<webobject name = "SubsContainer"><webobject name = "SubsRepetition">
+				<tr class = "grey"><td></td>
+				<td style = "width:1.2em;"><webobject name = "SubCheckBox"/></td>
+				<td align = "left"><webobject name = "SubTitle"/><webobject name = "SubHasShort">
+					(<b><webobject name = "ShortSubTitle"/></b>)</webobject></td>
+					<td><webobject name = "MoveSubUp"/><webobject name = "MoveSubDown"/><webobject name = "SubSorting"/>
+					</td></tr></webobject>
+				</webobject>
+		</table>
+		</webobject>
+</webobject>

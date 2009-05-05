@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="Parameter.java" wocomponentcontent="false">
+
+        <binding name="itemDict"/>
+        <validation message="'itemDict' is a required binding.">
+            <unbound name="itemDict"/>
+        </validation>
+        <binding name="paramsDict"/>
+        <validation message="'paramsDict' is a required binding.">
+            <unbound name="paramsDict"/>
+        </validation>
+        <binding name="attribute"/>
+    <binding name="editingContext"/>
+    </wo>
+</wodefinitions>

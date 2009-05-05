@@ -1,5 +1,8 @@
 PageWrapper : PageWrapper {
 	title = title;
+	resourcesFramework = "RujelBase";
+	scriptResource = "sorting.js";
+	styles = ".sorting {display:none;}";
 }
 Title : WOString {
   value = title;
@@ -43,79 +46,13 @@ ReportTable : ReportTable {
 
 Form : WOForm {
   class = "backfield2 selectionBorder";
-  style = "position:absolute;right:5em;top:5em;width:12em;";
+  style = "position:absolute;right:5em;top:5em;width:14em;";
+  onsubmit = "enumerate(this,'sorting',1);return true;";
 }
 
-ReportsRepetition : WORepetition {
-  list = reports;
-  item = item;
-}
-
-ItemCheckBox : WOCheckBox {
-  checked = item.active;
-  name = item.id;
-  onclick = "toggleReport(this.name,this.checked);";
-}
-
-ItemSorting : WOHiddenField {
-  value = item.sort;
-}
-
-ShortTitle : WOString {
-  value = item.short;
-  escapeHTML = false;
-}
-
-ShortSubTitle : WOString {
-  value = subItem.short;
-  escapeHTML = false;
-}
-
-ItemTitle : WOString {
-  value = item.title;
-  escapeHTML = false;
-}
-
-HasShort : WOConditional {
-  condition = item.short;
-}
-
-SubHasShort : WOConditional {
-  condition = subItem.short;
-}
 SubmitButton : WOSubmitButton {
   action = modifyList;
   value = application.strings.Reusables_Strings.uiElements.Submit;
-}
-
-ReportCell : OnClickContainer {
-  elementName = "td";
-  invokeAction = modifyList;
-  onclick = session.tryLoad;
-  align = "left";
-  style = "padding-left:4px;";
-}
-
-SubCheckBox : WOCheckBox {
-  checked = subItem.active;
-  name = item.id;
-  onclick = "toggleSub(this.name,this.checked);";
-}
-
-SubsRepetition : WORepetition {
-  list = item.subParams;
-  item = subItem;
-}
-
-SubTitle : WOString {
-  value = subItem.title;
-  escapeHTML = false;
-}
-
-SubsRow : WOGenericContainer {
-  elementName = "tr";
-  id = item.id;
-  style = subRowStyle;
 }
 
 AvailableTitle : WOString {
@@ -123,14 +60,52 @@ AvailableTitle : WOString {
   escapeHTML = false;
 }
 
-ReportsTable : WOGenericContainer {
-  elementName = "table";
-  id = "reportsAvailable";
-  width = "100%";
-  style = tableStyle;
-}
-
 ExportButton : WOHyperlink {
   action = export;
   string = application.strings.RujelReports_Reports.export;
+}
+
+MoveUp: WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(get(this,'table',0));";
+	style = "cursor:pointer;";
+}
+MoveDown: WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(get(this,'table',0));";
+	style = "cursor:pointer;";
+}
+
+MoveSubUp: WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(get(this,'tr',0));";
+	style = "cursor:pointer;";
+}
+MoveSubDown: WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(get(this,'tr',0));";
+	style = "cursor:pointer;";
+}
+
+PropSelector : PropSelector {
+  active = display;
+  available = reports;
+  forceActive = prepareDisplay;
+  initDefault = true;
+}
+
+PropsDiv : WOGenericContainer {
+  elementName = "div";
+  style = reportStyle;
+  id = "reportsAvailable";
 }
