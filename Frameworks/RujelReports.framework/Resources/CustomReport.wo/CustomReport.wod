@@ -155,3 +155,12 @@ ShowCount : WOString {
   value = showCount;
   escapeHTML = false;
 }
+
+HasComment : WOConditional {
+  condition = item.comment;
+}
+
+ParamComment : WOString {
+  value = item.comment;
+  escapeHTML = false;
+}

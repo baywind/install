@@ -72,8 +72,7 @@ ComposeName: WOString {
 }
 
 CanEdit: WOConditional {
-	condition = item.access._edit;
-	negate = true;
+	condition = canEdit;
 }
 
 EditLink: WOHyperlink {

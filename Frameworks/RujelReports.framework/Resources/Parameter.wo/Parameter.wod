@@ -46,11 +46,16 @@ PopupPresenter : DisplayAny {
 }
 
 IsRange : WOConditional {
-  condition = itemDict.range;
+  condition = itemDict.secondSelector;
 }
 
 Sign : WOString {
   value = sign;
+  escapeHTML = false;
+}
+
+Sign2 : WOString {
+  value = sign2;
   escapeHTML = false;
 }
 

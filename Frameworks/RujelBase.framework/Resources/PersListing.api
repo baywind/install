@@ -19,5 +19,6 @@
 	<binding defaults="Boolean" name="showPopup"/>
         <binding defaults="Boolean" name="useAjaxPost"/>
     <binding name="forcedList"/>
+    <binding defaults="Boolean" name="noEdit"/>
     </wo>
 </wodefinitions>

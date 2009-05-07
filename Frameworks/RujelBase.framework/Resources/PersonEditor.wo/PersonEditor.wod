@@ -29,7 +29,7 @@ cross: WOImage {
 }
 
 CanEdit: WOConditional {
-	condition = person.access._edit;
+	condition = session.readAccess._edit.person;
 	negate = true;
 }
 
@@ -39,7 +39,7 @@ SaveButton: WOSubmitButton {
 }
 
 CanDelete: WOConditional {
-	condition = person.access._delete;
+	condition = session.readAccess._delete.person;
 	negate = true;
 }
 

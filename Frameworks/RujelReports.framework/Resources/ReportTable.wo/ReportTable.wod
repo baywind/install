@@ -53,6 +53,7 @@ Cell : OnClickContainer {
   onclick = onClick;
   disabled = disabledClick;
   invokeAction = select;
+  title = valueOf.item.itemDict.itemHover;
 }
 
 SubCell : OnClickContainer {
@@ -62,6 +63,7 @@ SubCell : OnClickContainer {
   disabled = disabledClick;
   onclick = onClick;
   invokeAction = select;
+  title = valueOf.item.subDict.itemHover;
 }
 
 Display : DisplayAny {

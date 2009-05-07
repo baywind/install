@@ -18,7 +18,43 @@
 			<key>attribute</key>
 			<string>eduPeriod</string>
 			<key>select</key>
-			<string>$session.modules.periods</string>
+			<dict>
+				<key>className</key>
+				<string>net.rujel.eduresults.EduPeriod</string>
+				<key>methodName</key>
+				<string>periodsInYear</string>
+				<key>cacheResult</key>
+				<true/>
+				<key>paramClasses</key>
+				<array>
+					<string>java.lang.Number</string>
+					<string>com.webobjects.eocontrol.EOEditingContext</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>$session.eduYear</string>
+					<string>^editingContext</string>
+				</array>
+			</dict>
+			<key>defaultValue</key>
+			<dict>
+				<key>className</key>
+				<string>net.rujel.eduresults.EduPeriod</string>
+				<key>methodName</key>
+				<string>defaultCurrentPeriod</string>
+				<key>cacheResult</key>
+				<true/>
+				<key>paramClasses</key>
+				<array>
+					<string>com.webobjects.foundation.NSTimestamp</string>
+					<string>com.webobjects.eocontrol.EOEditingContext</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>$session.today</string>
+					<string>^editingContext</string>
+				</array>
+			</dict>
 			<key>displayString</key>
 			<string>.title</string>
 		</dict>
@@ -41,8 +77,12 @@
 			<string>0.####</string>
 			<key>fieldSize</key>
 			<integer>5</integer>
-			<key>range</key>
-			<true/>
+			<key>qualifierSelector</key>
+			<string>&gt;=</string>
+			<key>secondSelector</key>
+			<string>&lt;</string>
+			<key>comment</key>
+			<string>в долях от единицы</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -53,8 +93,12 @@
 			<string>0.####</string>
 			<key>fieldSize</key>
 			<integer>5</integer>
-			<key>range</key>
-			<true/>
+			<key>qualifierSelector</key>
+			<string>&gt;=</string>
+			<key>secondSelector</key>
+			<string>&lt;</string>
+			<key>comment</key>
+			<string>в долях от единицы</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -114,6 +158,93 @@
 				<string>eduYear = %@</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>title</key>
+			<string>Ученик</string>
+			<key>attribute</key>
+			<string>student</string>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>person</key>
+				<string>.</string>
+				<key>last</key>
+				<string>2</string>
+				<key>first</key>
+				<string>2</string>
+				<key>second</key>
+				<string>0</string>
+				<key>valueWhenEmpty</key>
+				<string>Выбрать</string>
+			</dict>
+			<key>popup</key>
+			<dict>
+				<key>title</key>
+				<string>Выберите ученика</string>
+				<key>style</key>
+				<string>min-width:20em</string>
+				<key>presenter</key>
+				<string>PersListing</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenterBindings</key>
+				<dict>
+					<key>entity</key>
+					<string>Student</string>
+					<key>firstNameDisplay</key>
+					<integer>2</integer>
+					<key>secondNameDisplay</key>
+					<integer>2</integer>
+					<key>selection</key>
+					<string>.</string>
+					<key>useAjaxPost</key>
+					<true/>
+					<key>noEdit</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>hidden</key>
+			<true/>
+			<key>title</key>
+			<string>Предметная область</string>
+			<key>attribute</key>
+			<string>cycle.subjectEO.area</string>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>displayString</key>
+			<string>.areaName</string>
+			<key>noSelectionString</key>
+			<string>-= выбрать =-</string>
+			<key>select</key>
+			<dict>
+				<key>className</key>
+				<string>com.webobjects.eoaccess.EOUtilities</string>
+				<key>methodName</key>
+				<string>objectsForEntityNamed</string>
+				<key>cacheResult</key>
+				<true/>
+				<key>paramClasses</key>
+				<array>
+					<string>com.webobjects.eocontrol.EOEditingContext</string>
+					<string>java.lang.String</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>^editingContext</string>
+					<string>SubjectArea</string>
+				</array>
+			</dict>
+			<key>in</key>
+			<dict>
+				<key>relationship</key>
+				<string>eduCourse</string>
+			</dict>
+		</dict>
 	</array>
 	<key>prefetch</key>
 	<array>
@@ -167,11 +298,9 @@
 			<key>title</key>
 			<string>Предмет</string>
 			<key>keyPath</key>
-			<string>eduCourse</string>
+			<string>eduCourse.cycle.subjectEO</string>
 			<key>titlePath</key>
-			<string>subjectWithComment</string>
-			<key>escapeHTML</key>
-			<false/>
+			<string>subject</string>
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>active</key>
@@ -243,6 +372,8 @@
 			<string>Успешность</string>
 			<key>keyPath</key>
 			<string>value</string>
+			<key>itemHover</key>
+			<string>.</string>
 			<key>value</key>
 			<dict>
 				<key>object</key>
@@ -273,6 +404,10 @@
 		<dict>
 			<key>title</key>
 			<string>Выполнено</string>
+			<key>hover</key>
+			<string>Процент выполненых работ (выставленых оценок)</string>
+			<key>itemHover</key>
+			<string>.</string>
 			<key>keyPath</key>
 			<string>complete</string>
 			<key>value</key>
@@ -301,6 +436,23 @@
 			<true/>
 			<key>sort</key>
 			<string>70</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Выставление</string>
+			<key>hover</key>
+			<string>дата выставления прогноза в итоговые</string>
+			<key>keyPath</key>
+			<string>fireDate</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>dateformat</key>
+				<string>$application.prefs.ui.dateFormat</string>
+			</dict>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>60</string>
 		</dict>
 	</array>
 </dict>
