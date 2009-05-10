@@ -133,6 +133,22 @@
 				</dict>
 			</dict>
 		</dict>
+		<dict>
+			<key>title</key>
+			<string>С изменениями</string>
+			<key>comment</key>
+			<string>после выставления изменялись оценки</string>
+			<key>qualifierFormat</key>
+			<string>flags &gt;= 16</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Флаги</string>
+			<key>comment</key>
+			<string>у оценки есть флаги</string>
+			<key>qualifierFormat</key>
+			<string>flags &gt; 0</string>
+		</dict>
 	</array>
 	<key>prefetch</key>
 	<array>

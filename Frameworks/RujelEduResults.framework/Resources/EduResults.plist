@@ -83,6 +83,10 @@
 				<string>остались задолженности</string>
 				<key>scheduled</key>
 				<string>выставлена автоматически</string>
+				<key>forced</key>
+				<string>не соответствует успешности</string>
+				<key>manual</key>
+				<string>выставлена вручную</string>
 				<key>this</key>
 				<string>Свойства</string>
 			</dict>
@@ -93,7 +97,7 @@
 			<key>this</key>
 			<string>Итоговая оценка</string>
 			<key>value</key>
-			<string>величина(%)</string>
+			<string>успешность(%)</string>
 		</dict>
 		<key>PeriodType</key>
 		<dict>
