@@ -7,6 +7,7 @@
     }; 
     entities = (
         {className = "net.rujel.curriculum.Reason"; name = Reason; }, 
+        {className = "net.rujel.curriculum.Reprimand"; name = Reprimand; }, 
         {className = "net.rujel.curriculum.Substitute"; name = Substitute; }, 
         {className = "net.rujel.curriculum.Variation"; name = Variation; }
     ); 

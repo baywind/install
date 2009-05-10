@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = AUTHOR; 
+            name = author; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = CONTENT; 
+            name = content; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = COURSE; 
+            name = courseID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = RAISED; 
+            name = raised; 
+            prototypeName = datetime; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = RELIEF; 
+            name = relief; 
+            prototypeName = datetime; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "R_ID"; 
+            name = rID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = STATUS; 
+            name = status; 
+            prototypeName = byte; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (author, content, courseID, raised, relief, status); 
+    className = "net.rujel.curriculum.Reprimand"; 
+    classProperties = (author, content, raised, relief, status); 
+    externalName = REPRIMAND; 
+    fetchSpecificationDictionary = {}; 
+    name = Reprimand; 
+    primaryKeyAttributes = (rID); 
+}

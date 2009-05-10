@@ -267,6 +267,24 @@
 					<string>subjectWithComment</string>
 					<key>escapeHTML</key>
 					<false/>
+					<key>exportDict</key>
+					<dict>
+						<key>subParams</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>Предмет</string>
+								<key>titlePath</key>
+								<string>cycle.subject</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>()</string>
+								<key>titlePath</key>
+								<string>comment</string>
+							</dict>
+						</array>
+					</dict>
 				</dict>
 				<dict>
 					<key>title</key>
@@ -436,6 +454,24 @@
 					<false/>
 					<key>titlePath</key>
 					<string>subjectWithComment</string>
+					<key>exportDict</key>
+					<dict>
+						<key>subParams</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>Предмет</string>
+								<key>titlePath</key>
+								<string>cycle.subject</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>()</string>
+								<key>titlePath</key>
+								<string>comment</string>
+							</dict>
+						</array>
+					</dict>
 				</dict>
 				<dict>
 					<key>title</key>

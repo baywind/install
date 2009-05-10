@@ -401,6 +401,15 @@
 				<key>zav_kaf</key>
 				<string>1</string>
 			</dict>
+			<key>Reprimand</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>zav_kaf</key>
+				<string>1</string>
+			</dict>
 			<key>login</key>
 			<dict>
 				<key>any</key>
@@ -597,6 +606,8 @@
 		<string>false</string>
 		<key>autoItogLagDays</key>
 		<string>1</string>
+		<key>disablePlanFactCheck</key>
+		<string>true</string>
 		<key>ignorePrognosesAfterDays</key>
 		<string>45</string>
 		<key>autogenerateEduPeriods</key>

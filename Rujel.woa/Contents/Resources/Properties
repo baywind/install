@@ -26,3 +26,4 @@ PlistReader.filePath = LOCALROOT/Library/WebObjects/Configuration/rujel.plist
 # Each of these should be enabled for one instance only to avoid conflicts
 EMailBroadcast.disableWeekly = true
 AutoItog.disable = true
+PlanFactCheck.disable = true
