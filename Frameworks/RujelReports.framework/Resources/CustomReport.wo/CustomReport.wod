@@ -3,6 +3,7 @@ PageWrapper : PageWrapper {
   resourcesFramework = "RujelBase";
   scriptResource = "sorting.js";
   styles = ".sorting {display:none;}";
+  onLoad = "scrollToObj('curr','highlight2');";
 }
 Title : WOString {
   value = title;
@@ -57,6 +58,7 @@ ReportTable : ReportTable {
   properties = display;
   rowClass = "backfield2";
   index = index;
+  currObject = params.currObject;
 }
 
 SubmitButton : WOSubmitButton {
@@ -67,6 +69,7 @@ SubmitButton : WOSubmitButton {
 PropSelector : PropSelector {
   active = display;
   available = currReport.properties;
+  noclick = true;
 }
 ReportSelected : WOConditional {
   condition = currReport;
@@ -80,7 +83,6 @@ ShowParam : WOConditional {
 ExportButton : WOHyperlink {
   action = export;
   string = application.strings.RujelReports_Reports.export;
-  style = "float:right;";
 }
 
 HasList : WOConditional {
@@ -162,5 +164,11 @@ HasComment : WOConditional {
 
 ParamComment : WOString {
   value = item.comment;
+  escapeHTML = false;
+}
+
+Count : WOString {
+  value = list.count;
+  numberformat = "0";
   escapeHTML = false;
 }

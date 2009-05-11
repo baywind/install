@@ -2,7 +2,7 @@ PageWrapper1: PageWrapper {
 	hasChanges = false;
 	title = plist.title;
 	hasChanges = ec.hasChanges;
-	onLoad = "scrollToObj('curr');";
+	onLoad = "onLoad();";
 	resourcesFramework = "RujelCurriculum";
 	scriptResource = "scripts.js";
 	styles = "td.pad{padding:3px;} td.canPop{border:solid 2px #cccccc;}";

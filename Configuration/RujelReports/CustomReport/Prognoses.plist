@@ -307,24 +307,33 @@
 			<true/>
 			<key>sort</key>
 			<string>30</string>
-			<key>exportDict</key>
+			<key>onclick</key>
+			<string>$session.tryLoad</string>
+			<key>disabled</key>
+			<string>$parent.countList</string>
+			<key>nextPage</key>
+			<string>LessonNoteEditor</string>
+			<key>pageParams</key>
 			<dict>
-				<key>subParams</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>Предмет</string>
-						<key>titlePath</key>
-						<string>cycle.subject</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>()</string>
-						<key>titlePath</key>
-						<string>comment</string>
-					</dict>
-				</array>
+				<key>course</key>
+				<string>$itemRow.eduCourse</string>
 			</dict>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Комментарий курса</string>
+			<key>short</key>
+			<string> . </string>
+			<key>keyPath</key>
+			<string>eduCourse</string>
+			<key>titlePath</key>
+			<string>comment</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>sort</key>
+			<string>32</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -366,6 +375,25 @@
 			<string>50</string>
 			<key>comparison</key>
 			<string>CompareCaseInsensitiveDescending</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>disabled</key>
+			<string>$session.readAccess._read.itemRow</string>
+			<key>nextPage</key>
+			<string>PrognosisPopup</string>
+			<key>pageParams</key>
+			<dict>
+				<key>prognosis</key>
+				<string>$itemRow</string>
+				<key>course</key>
+				<string>$itemRow.eduCourse</string>
+				<key>student</key>
+				<string>$itemRow.student</string>
+				<key>eduPeriod</key>
+				<string>$itemRow.eduPeriod</string>
+			</dict>
+			<key>popup</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>title</key>

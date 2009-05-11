@@ -60,23 +60,8 @@ function clickCell(cell,button) {
 	return false;
 }
 
-function scrollToObj(obj) {
-	if(document.getElementById(obj)) {
-		obj = document.getElementById(obj);
-	}
-	if(obj && obj.id) {
-		var height = window.innerHeight;
-		if( !height) {
-			height = document.documentElement.clientHeight;
-		}
-		var pos = getPosition(obj);
-		if(height < pos.y + obj.offsetHeight/2) {
-			window.scrollTo(0,pos.y - height/2);
-		}
-		pos = obj.className;
-		obj.className = "highlight2";
-		timer = setTimeout("blink('" + obj.id + "','" + pos + "',2)",300);
-	}
+function onLoad() {
+	scrollToObj('curr','highlight2');
 	obj = document.getElementsByName('nextReason');
 	if(obj && obj.length > 0) {
 		for (b = 0; b < obj.length; b++)
@@ -84,15 +69,7 @@ function scrollToObj(obj) {
 	}
 	toggleMove();	
 }
-var timer;
-function blink(objID,nextClass,count) {
-	clearTimeout(timer);
-	var obj = document.getElementById(objID);
-	var tmpClass = obj.className;
-	obj.className = nextClass;
-	if(count > 0)
-		timer = setTimeout("blink('" + objID + "','" + tmpClass + "'," + (count - 1) + ")",150);
-}
+
 
 		function showInfo(button) {
 			if(!button.checked)

@@ -175,6 +175,8 @@
 			<integer>20</integer>
 			<key>qualifierSelector</key>
 			<string>caseInsensitiveLike</string>
+			<key>defaultValue</key>
+			<string>PlanFactCheck Daemon</string>
 		</dict>
 	</array>
 	<key>prefetch</key>
@@ -273,24 +275,33 @@
 			<false/>
 			<key>sort</key>
 			<string>50</string>
-			<key>exportDict</key>
+			<key>onclick</key>
+			<string>$session.tryLoad</string>
+			<key>disabled</key>
+			<string>$parent.countList</string>
+			<key>nextPage</key>
+			<string>LessonNoteEditor</string>
+			<key>pageParams</key>
 			<dict>
-				<key>subParams</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>Предмет</string>
-						<key>titlePath</key>
-						<string>cycle.subject</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>()</string>
-						<key>titlePath</key>
-						<string>comment</string>
-					</dict>
-				</array>
+				<key>course</key>
+				<string>$itemRow.course</string>
 			</dict>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Комментарий курса</string>
+			<key>short</key>
+			<string> . </string>
+			<key>keyPath</key>
+			<string>course</string>
+			<key>titlePath</key>
+			<string>comment</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>sort</key>
+			<string>52</string>
 		</dict>
 		<dict>
 			<key>title</key>

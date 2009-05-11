@@ -249,12 +249,31 @@
 			<string>50</string>
 			<key>comparison</key>
 			<string>CompareCaseInsensitiveDescending</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>disabled</key>
+			<string>$session.readAccess._read.itemRow</string>
+			<key>nextPage</key>
+			<string>ItogPopup</string>
+			<key>pageParams</key>
+			<dict>
+				<key>itog</key>
+				<string>$itemRow</string>
+				<key>student</key>
+				<string>$itemRow.student</string>
+				<key>eduPeriod</key>
+				<string>$itemRow.eduPeriod</string>
+			</dict>
+			<key>popup</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Успешность</string>
 			<key>keyPath</key>
 			<string>value</string>
+			<key>itemHover</key>
+			<string>.</string>
 			<key>value</key>
 			<dict>
 				<key>object</key>
@@ -305,7 +324,7 @@
 				<key>flags</key>
 				<string>.</string>
 				<key>flagNames</key>
-				<string>$valueOf.item.itemDict.flagNames</string>
+				<string>$valueOf.qqq.itemDict.exportDict.flagNames</string>
 				<key>inRow</key>
 				<true/>
 			</dict>
@@ -313,6 +332,133 @@
 			<false/>
 			<key>sort</key>
 			<string>70</string>
+			<key>exportDict</key>
+			<dict>
+				<key>title</key>
+				<dict>
+					<key>object</key>
+					<string>$valueOf.qqq.itemDict.flagNames</string>
+					<key>methodName</key>
+					<string>componentsJoinedByString</string>
+					<key>paramClasses</key>
+					<array>
+						<string>java.lang.String</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string> ; </string>
+					</array>
+					<key>cacheResult</key>
+					<true/>
+				</dict>
+				<key>_presenterBindings</key>
+				<dict>
+					<key>value</key>
+					<string>$valueOf.itemRow.itemDict.binary</string>
+				</dict>
+				<key>flagNames</key>
+				<dict>
+					<key>className</key>
+					<string>net.rujel.eduresults.ItogMark</string>
+					<key>methodName</key>
+					<string>localisedFlagKeys</string>
+					<key>cacheResult</key>
+					<true/>
+				</dict>
+				<key>subParams</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>изменялась</string>
+						<key>value</key>
+						<string>.changed</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>не соответствует успешности</string>
+						<key>value</key>
+						<string>.forced</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>остались задолженности</string>
+						<key>value</key>
+						<string>.incomplete</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>выставлена вручную</string>
+						<key>value</key>
+						<string>.manual</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>изменения в составляющих</string>
+						<key>value</key>
+						<string>.constituents</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
 		</dict>
 	</array>
 </dict>

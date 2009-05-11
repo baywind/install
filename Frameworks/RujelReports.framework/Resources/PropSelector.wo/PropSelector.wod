@@ -62,6 +62,7 @@ SubmitButton : WOSubmitButton {
 
 ReportCell : OnClickContainer {
   elementName = "td";
+  disabled = ^noclick;
   invokeAction = selectOne;
   onclick = session.tryLoad;
   align = "left";

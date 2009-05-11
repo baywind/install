@@ -747,3 +747,34 @@ function closePopup(aForm) {
 		}
 		alert(result);
 	}
+
+function scrollToObj(obj,blinkClass) {
+	if(document.getElementById(obj)) {
+		obj = document.getElementById(obj);
+	}
+	if(obj && obj.id) {
+		var height = window.innerHeight;
+		if( !height) {
+			height = document.documentElement.clientHeight;
+		}
+		var pos = getPosition(obj);
+		if(height < pos.y + obj.offsetHeight/2) {
+			window.scrollTo(0,pos.y - height/2);
+		}
+		pos = obj.className;
+		if(blinkClass) {
+			obj.className = blinkClass;
+			blinkTimer = setTimeout("blink('" + obj.id + "','" + pos + "',2)",300);
+		}
+	}
+}
+
+var blinkTimer;
+function blink(objID,nextClass,count) {
+	clearTimeout(blinkTimer);
+	var obj = document.getElementById(objID);
+	var tmpClass = obj.className;
+	obj.className = nextClass;
+	if(count > 0)
+		blinkTimer = setTimeout("blink('" + objID + "','" + tmpClass + "'," + (count - 1) + ")",150);
+}

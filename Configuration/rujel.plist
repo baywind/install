@@ -608,6 +608,8 @@
 		<string>1</string>
 		<key>disablePlanFactCheck</key>
 		<string>true</string>
+		<key>planFactLagDays</key>
+		<string>0</string>
 		<key>ignorePrognosesAfterDays</key>
 		<string>45</string>
 		<key>autogenerateEduPeriods</key>
