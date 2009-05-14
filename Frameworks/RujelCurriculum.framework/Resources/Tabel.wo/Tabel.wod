@@ -1,0 +1,34 @@
+PageWrapper : PageWrapper {
+}
+
+Title : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Tabel.extTitle;
+}
+
+Form : WOForm {
+}
+
+SelectMonth : WOPopUpButton {
+  list = months;
+  item = item;
+  selection = currMonth;
+  displayString = item.name;
+  escapeHTML = false;
+  onchange = "this.form.submit();";
+}
+
+Month : WOString {
+  value = currMonth.name;
+  escapeHTML = false;
+}
+
+Year : WOString {
+  value = currMonth.year;
+  numberformat = "0";
+  escapeHTML = false;
+}
+
+ExportLink : WOHyperlink {
+  action = export;
+  string = application.strings.RujelReports_Reports.export;
+}

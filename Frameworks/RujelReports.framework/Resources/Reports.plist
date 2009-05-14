@@ -8,17 +8,6 @@
 		<string>Отчеты по курсам</string>
 		<key>availableReports</key>
 		<string>Доступные отчеты</string>
-		<key>regime</key>
-		<dict>
-			<key>title</key>
-			<string>По курсам</string>
-			<key>component</key>
-			<string>CoursesReport</string>
-			<key>group</key>
-			<string>report</string>
-			<key>sort</key>
-			<string>20</string>
-		</dict>
 		<key>defaultDisplay</key>
 		<dict>
 			<key>subject</key>
@@ -108,17 +97,6 @@
 		<string>По Вашему запросу ничего не найдено</string>
 		<key>perform</key>
 		<string>Искать</string>
-		<key>regime</key>
-		<dict>
-			<key>title</key>
-			<string>Выборки</string>
-			<key>component</key>
-			<string>CustomReport</string>
-			<key>group</key>
-			<string>report</string>
-			<key>sort</key>
-			<string>10</string>
-		</dict>
 	</dict>
 	<key>regimeGroup</key>
 	<dict>
@@ -131,6 +109,29 @@
 		<key>sort</key>
 		<string>30</string>
 	</dict>
+	<key>regimes</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>По курсам</string>
+			<key>component</key>
+			<string>CoursesReport</string>
+			<key>group</key>
+			<string>report</string>
+			<key>sort</key>
+			<string>20</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Выборки</string>
+			<key>component</key>
+			<string>CustomReport</string>
+			<key>group</key>
+			<string>report</string>
+			<key>sort</key>
+			<string>10</string>
+		</dict>
+	</array>
 	<key>export</key>
 	<string>Файл</string>
 	<key>choose</key>

@@ -63,6 +63,13 @@
 		<key>isAdded</key>
 		<string>Доп</string>
 	</dict>
+	<key>Tabel</key>
+	<dict>
+		<key>title</key>
+		<string>Табель преподавателей</string>
+		<key>extTitle</key>
+		<string>Табель учета рабочего времени преподавателей</string>
+	</dict>
 	<key>messages</key>
 	<dict>
 		<key>wrongTeacher</key>
@@ -104,16 +111,30 @@
 			<string>30</string>
 		</dict>
 	</array>
-	<key>curriculumRegime</key>
-	<dict>
-		<key>title</key>
-		<string>Корректировки</string>
-		<key>component</key>
-		<string>Curriculum</string>
-		<key>group</key>
-		<string>edu</string>
-		<key>sort</key>
-		<string>30</string>
-	</dict>
+	<key>regimes</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>Корректировки</string>
+			<key>component</key>
+			<string>Curriculum</string>
+			<key>group</key>
+			<string>edu</string>
+			<key>sort</key>
+			<string>30</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Табель преподавателя</string>
+			<key>hover</key>
+			<string>Табель учета рабочего времени преподавателей</string>
+			<key>component</key>
+			<string>Tabel</string>
+			<key>group</key>
+			<string>edu</string>
+			<key>sort</key>
+			<string>60</string>
+		</dict>
+	</array>
 </dict>
 </plist>
