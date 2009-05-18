@@ -498,7 +498,7 @@
 			<key>onclick</key>
 			<string>$session.ajaxPopup</string>
 			<key>disabled</key>
-			<string>$session.readAccess._read.itemRow</string>
+			<string>$parent.countList</string>
 			<key>sort</key>
 			<string>60</string>
 			<key>nextPage</key>

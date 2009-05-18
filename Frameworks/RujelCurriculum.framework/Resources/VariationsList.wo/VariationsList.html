@@ -1,8 +1,17 @@
 <div class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
 <webobject name = "Form"><table border = "1" style = "max-width:30em;">
-<tr><th style = "padding:4pt;"><webobject name = "Title"/></th></tr>
+<tr><td style = "padding:0px;">
+	<table cellspacing = "0" width = "100%">
+		<tr style = "font-size:smaller;"><td style = "white-space:nowrap;" class = "grey"><webobject name = "WDTitle"/></td>
+		<th rowspan = "2" valign = "middle" style = "padding:4pt;font-size:large;" width = "80%"><webobject name = "Title"/></th>
+		<webobject name = "DeviationCell"><webobject name = "DeviationTitle"/></webobject></tr>
+		<tr><td style = "white-space:nowrap;" class = "grey"><webobject name = "Weeks"/> (<webobject name = "Days"/>)</td>
+			<webobject name = "DeviationCell"><webobject name = "Deviation"/></webobject></tr>
+	</table>
+</td></tr>
 <tr><td align = "center"><table width = "100%">
-<thead><tr><th style = "width:10ex;"><webobject name = "DateTitle"/></th>
+<thead><tr><th style = "width:10ex;">
+	<webobject name = "DateTitle"/></th>
 	<th style = "width:9ex;"><webobject name = "ValueTitle"/></th>
 	<th><div style = "width:12em;"><webobject name = "ReasonTitle"/></div></th></tr>
 </thead>
@@ -11,7 +20,10 @@
 	<td align = "center" style = "white-space:nowrap;">
 	<span style = "color:#009933;margin-right:1.2ex;">+ <webobject name = "TotalPlus"/></span>
 	<span style = "color:#cc3333;margin-left:1.2ex;">- <webobject name = "TotalMinus"/></span></td>
-	<td align = "left" style = "padding-left:1ex;">= <webobject name = "TotalTotal"/></td></tr>
+	<td align = "left" style = "padding-left:1ex;">
+	<span style = "float:right;"><webobject name = "PlanTitle"/>: <webobject name = "PlanCount"/>
+	 / <webobject name = "RealTitle"/>: <webobject name = "RealCount"/></span>
+	= <webobject name = "TotalTotal"/></td></tr>
 <webobject name = "CanCreate">
 <tr class = "orange"><td align = "center"><webobject name = "DateField"/></td> 
 		<td align = "center"><webobject name = "ValueField"/></td>

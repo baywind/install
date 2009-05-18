@@ -120,23 +120,81 @@ TotalTitle : WOString {
 }
 
 TotalPlus : WOString {
-  value = totalPlus;
+  value = planFact.plus;
   valueWhenEmpty = "?";
   escapeHTML = false;
 }
 
 TotalMinus : WOString {
-  value = totalMinus;
+  value = planFact.minus;
   valueWhenEmpty = "?";
   escapeHTML = false;
 }
 
 TotalTotal : WOString {
-  value = totalNet;
+  value = planFact.netChange;
   valueWhenEmpty = "?";
   escapeHTML = false;
 }
 
 ShowSeparator : WOConditional {
   condition = showSeparator;
+}
+
+WDTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.weeksAndDays;
+  valueWhenEmpty = "Week (day)";
+  escapeHTML = false;
+}
+
+DeviationTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.deviation;
+  valueWhenEmpty = "Deviation";
+  escapeHTML = false;
+}
+
+Weeks : WOString {
+  value = planFact.weeks;
+  escapeHTML = false;
+}
+
+Days : WOString {
+  value = planFact.extraDays;
+  escapeHTML = false;
+}
+
+Deviation : WOString {
+  value = planFact.deviation;
+  escapeHTML = false;
+}
+
+DeviationCell : WOGenericContainer {
+  elementName = "td";
+  class = planFact.styleClass;
+}
+
+PlanTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.planCount;
+  valueWhenEmpty = "plan";
+  escapeHTML = false;
+}
+
+RealTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.realCount;
+  valueWhenEmpty = "plan";
+  escapeHTML = false;
+}
+
+PlanCount : WOString {
+  value = planFact.plan;
+  escapeHTML = false;
+  numberformat = "0";
+  valueWhenEmpty = "?";
+}
+
+RealCount : WOString {
+  value = planFact.fact;
+  escapeHTML = false;
+  numberformat = "0";
+  valueWhenEmpty = "&oslash;";
 }

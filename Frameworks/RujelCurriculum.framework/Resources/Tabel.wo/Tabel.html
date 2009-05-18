@@ -1,7 +1,51 @@
 <webobject name = "PageWrapper">
 <h1><webobject name = "Title"/></h1>
-<div style = "text-align:center;">
-<webobject name = "Form"><webobject name = "SelectMonth"/> <webobject name = "Year"/>
-<webobject name = "ExportLink"></webobject></webobject>
-</div>
+
+<table style = "table-layout:fixed;width:100%;">
+<thead><tr valign = "middle" style = "height:2em;">
+	<td style = "width:12em;" align = "center"><webobject name = "Form">
+	<webobject name = "SelectMonth"/> <webobject name = "Year"/></webobject></td>
+	<td><webobject name = "CanEdit"><webobject name = "SelectTeacher">
+	<webobject name = "TeacherTitle"/></webobject></webobject> 
+	<span style = "font-size:larger;margin-left:2em;"><webobject name = "TeacherName"/></span></td>
+	<webobject name = "HasDetails"><td align = "right" style = "width:3em;">
+		<webobject name = "ExportDetails"></webobject></td></webobject>
+</tr></thead>
+<webobject name = "CanCreate">
+	<tfoot><tr><td colspan = "3">
+		<webobject name = "WholeSchool"/>: <webobject name = "ExportLink"></webobject>
+	</td></tr></tfoot></webobject>
+<webobject name = "HasDetails">
+	<tbody class = "backfield1"><tr valign = "top">
+	<td><div style = "overflow:hidden;">
+		<table width = "100%">
+		<thead><tr><th colspan = "2"><webobject name = "DateTitle"/></th>
+		</tr></thead>
+		<tbody><webobject name = "Details">
+			<webobject name = "Row"><webobject name = "NoColspan">
+			<td style = "min-width:2em;white-space:nowrap;"><webobject name = "GroupName"/></td>
+			</webobject><webobject name = "HeaderCell">
+			<div style = "overflow:hidden;white-space:nowrap;">
+			<webobject name = "SubjectString"/></div>
+			</webobject></webobject></webobject>
+		</tbody></table></div>
+	</td><td><div style = "overflow:auto;overflow-x:scroll;">
+		<table class = "backfield1"><thead><tr><webobject name = "Days">
+			<th><div style = "width:2em;"><webobject name = "Value"/></div></th></webobject>
+		</tr></thead>
+		<tbody><webobject name = "Details">
+			<webobject name = "Row">
+			<webobject name = "Days"><td><webobject name = "Value"/></td></webobject>
+		</webobject></webobject>
+		</tbody></table></div>
+	</td><td><div style = "font-weight:bold;">
+		<table width = "100%"><thead><tr><th><webobject name = "SumTitle"/></th>
+		</tr></thead>
+		<tbody><webobject name = "Details">
+		<webobject name = "Row"><td><webobject name = "SumValue"/></td>
+		</webobject></webobject>
+		</tbody></table></div>
+</td></tr>
+</tbody></webobject>
+</table>
 </webobject>

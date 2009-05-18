@@ -59,6 +59,26 @@
 		<key>sort</key>
 		<string>12</string>
 	</dict>
+	<key>selectTeacher</key>
+	<dict>
+		<key>title</key>
+		<string>Выберите учителя</string>
+		<key>style</key>
+		<string>min-width:20em</string>
+		<key>presenter</key>
+		<string>TeacherSelector</string>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>invokeAction</key>
+		<true/>
+		<key>presenterBindings</key>
+		<dict>
+			<key>selection</key>
+			<string>.</string>
+			<key>useAjaxPost</key>
+			<true/>
+		</dict>
+	</dict>
 	<key>notMoreXwords</key>
 	<string>Можно использовать не более %d слов</string>
 	<key>newLesson</key>

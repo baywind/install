@@ -20,32 +20,6 @@
 	<string>История изменений</string>
 	<key>export</key>
 	<string>Файл</string>
-	<key>selectTeacher</key>
-	<dict>
-		<key>title</key>
-		<string>Выберите учителя</string>
-		<key>style</key>
-		<string>min-width:20em</string>
-		<key>presenter</key>
-		<string>TeacherSelector</string>
-		<key>takeValuesFromRequest</key>
-		<true/>
-		<key>invokeAction</key>
-		<true/>
-		<key>presenterBindings</key>
-		<dict>
-			<key>entity</key>
-			<string>Teacher</string>
-			<key>firstNameDisplay</key>
-			<integer>2</integer>
-			<key>secondNameDisplay</key>
-			<integer>2</integer>
-			<key>selection</key>
-			<string>.</string>
-			<key>useAjaxPost</key>
-			<true/>
-		</dict>
-	</dict>
 	<key>selectEduGroup</key>
 	<dict>
 		<key>title</key>

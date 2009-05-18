@@ -125,6 +125,8 @@
 			<string>Расхождение</string>
 			<key>titleStyle</key>
 			<string>width:1.6em;</string>
+			<key>style</key>
+			<string>white-space:nowrap;</string>
 			<key>short</key>
 			<string>?</string>
 			<key>value</key>
@@ -139,6 +141,8 @@
 			<dict>
 				<key>course</key>
 				<string>$itemRow</string>
+				<key>planFact</key>
+				<string>.</string>
 			</dict>
 			<key>popup</key>
 			<true/>
