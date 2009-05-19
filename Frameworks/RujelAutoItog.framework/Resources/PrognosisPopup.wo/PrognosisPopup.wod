@@ -229,3 +229,6 @@ ChangeReason : WOText {
   name = "changeReason";
   onkeypress = "form.save.disabled = (value == null || value.length < 2);";
 }
+Calculable : WOConditional {
+  condition = addOn.usage.calculator;
+}
