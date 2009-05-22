@@ -160,6 +160,52 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Класс</string>
+			<key>attribute</key>
+			<string>eduGroup</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>value</key>
+				<string>.name</string>
+				<key>valueWhenEmpty</key>
+				<string>Выбрать</string>
+			</dict>
+			<key>popup</key>
+			<dict>
+				<key>title</key>
+				<string>Выберите класс</string>
+				<key>style</key>
+				<string>min-width:8em</string>
+				<key>presenter</key>
+				<string>ClassListing</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenterBindings</key>
+				<dict>
+					<key>width</key>
+					<string>100%</string>
+					<key>selection</key>
+					<string>.</string>
+					<key>onClick</key>
+					<string>$session.tryLoad</string>
+				</dict>
+			</dict>
+			<key>in</key>
+			<dict>
+				<key>relationship</key>
+				<string>eduCourse</string>
+				<key>args</key>
+				<array>
+					<string>.eduPeriod.eduYear</string>
+				</array>
+				<key>qualifierFormat</key>
+				<string>eduYear = %@</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Ученик</string>
 			<key>attribute</key>
 			<string>student</string>
@@ -479,6 +525,8 @@
 			</dict>
 			<key>active</key>
 			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>60</string>
 		</dict>

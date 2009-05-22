@@ -86,6 +86,25 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Класс</string>
+			<key>attribute</key>
+			<string>grade</string>
+			<key>fieldSize</key>
+			<integer>3</integer>
+			<key>formatter</key>
+			<string>0</string>
+			<key>qualifierSelector</key>
+			<string>=</string>
+			<key>comment</key>
+			<string>без буквы</string>
+			<key>in</key>
+			<dict>
+				<key>relationship</key>
+				<string>cycle</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Ученик</string>
 			<key>attribute</key>
 			<string>student</string>
