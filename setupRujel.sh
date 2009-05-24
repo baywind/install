@@ -102,7 +102,7 @@ done
 
 if [ -d Configuration ] ; then
 mkdir -p $BACKUP/Configuration/
-BACKUP=`pwd`/$BACKUP/Configuration
+BACKUPFOLDER=`pwd`/$BACKUP/Configuration
 cd Configuration
 
 CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
@@ -113,7 +113,7 @@ then
     if [ -e ${CONFIGFOLDER}/$f ]
     then
         if [ "$1" = "-c" ]
-        then mv ${CONFIGFOLDER}/$f $BACKUP
+        then mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
         else echo $f" already exists"
         fi
     fi
@@ -121,10 +121,10 @@ then
     then cp -r $f ${CONFIGFOLDER}/$f
     fi
 elif [ -d $f ] ; then
-    mkdir -p $BACKUP/$f
+    mkdir -p $BACKUPFOLDER/$f
     cd $f
     echo "updating "$f
-    updateFolder ${CONFIGFOLDER}/$f $BACKUP/$f
+    updateFolder ${CONFIGFOLDER}/$f $BACKUPFOLDER/$f
     cd ..
 else
     echo $f" not found"
