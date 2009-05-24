@@ -75,44 +75,57 @@ fi
 
 # Configuration files
 
+updateFolder() {
+#params: targetDir, backupDir
+for f in * ; do
+    if [ -d $f -a -d $1/$f ] ; then
+        cd $f
+        if [ -d $2 ] ; then
+            mkdir -p $2/$f
+            updateFolder $1/$f $2/$f
+        else
+            updateFolder $1/$f
+        fi
+        cd ..
+    else
+        if [ -e $1/$f ] ; then
+            if [ -d $2 ] ; then
+                mv $1/$f $2
+            else
+                rm -r $1/$f
+            fi
+        fi
+        cp -r $f $1
+    fi
+done
+}
+
 if [ -d Configuration ] ; then
 mkdir -p $BACKUP/Configuration/
+BACKUP=`pwd`/$BACKUP/Configuration
 cd Configuration
 
 CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
 
 for f in * ; do
-if [ -e $f ]
+if [ -f $f ]
 then
     if [ -e ${CONFIGFOLDER}/$f ]
     then
-        if [ -n $1 -a $1 = "-c" ]
-        then mv ${CONFIGFOLDER}/$f ../$BACKUP/Configuration/
+        if [ "$1" = "-c" ]
+        then mv ${CONFIGFOLDER}/$f $BACKUP
         else echo $f" already exists"
-## Here I will implement recursive reports update
-#            if [ -d $f ] ; then
-#            i=0
-#            mkdir -p $BACKUP/$f
-#                for r in $f/* ; do
-#                    if [ -d $r ]
-#                    then
-#                        recursive update
-#                    else
-#                    if [ -e ${CONFIGFOLDER}/$r ]
-#                    then mv ${CONFIGFOLDER}/$r ../$BACKUP/$f
-#                    fi
-#                    cp -r $r ${CONFIGFOLDER}/$f
-#                    chown -R _appserver:_appserveradm ${CONFIGFOLDER}/$r
-#                    i=$(($i+1))
-#                    fi
-#                done
-#                echo "Updated "$i" Reports"
-#            fi
         fi
     fi
     if [ ! -e ${CONFIGFOLDER}/$f ]
     then cp -r $f ${CONFIGFOLDER}/$f
     fi
+elif [ -d $f ] ; then
+    mkdir -p $BACKUP/$f
+    cd $f
+    echo "updating "$f
+    updateFolder ${CONFIGFOLDER}/$f $BACKUP/$f
+    cd ..
 else
     echo $f" not found"
 fi

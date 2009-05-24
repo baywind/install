@@ -52,7 +52,8 @@ StudentRow: WOGenericContainer {
 }
 
 Index: WOString {
-	value = idx;
+	value = number;
+	escapeHTML = false;
 }
 
 StudentTD: OnClickContainer {
