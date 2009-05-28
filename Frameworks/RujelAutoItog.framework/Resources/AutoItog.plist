@@ -33,8 +33,8 @@
 	<string>По всем предметам</string>
 	<key>prognHead</key>
 	<string>Прог&lt;br/&gt;ноз</string>
-	<key>prognosis</key>
-	<string>Прогноз</string>
+	<key>prognoses</key>
+	<string>Прогнозы</string>
 	<key>properties</key>
 	<dict>
 		<key>CourseTimeout</key>

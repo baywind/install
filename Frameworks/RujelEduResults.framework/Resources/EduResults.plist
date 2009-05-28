@@ -130,5 +130,14 @@
 		<key>title</key>
 		<string>Итоговые</string>
 	</dict>
+	<key>marksPreset</key>
+	<array>
+		<string>5</string>
+		<string>4</string>
+		<string>3</string>
+		<string>2</string>
+		<string>н/а</string>
+		<string>осв</string>
+	</array>
 </dict>
 </plist>

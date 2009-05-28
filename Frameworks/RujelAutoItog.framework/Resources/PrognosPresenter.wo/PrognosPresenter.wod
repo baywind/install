@@ -12,7 +12,7 @@ PrognosTitleContainer: WOGenericContainer {
 }
 
 Header: WOString {
-	value = application.strings.RujelAutoItog_AutoItog.prognosis;
+	value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.this;
 	escapeHTML = false;
 }
 

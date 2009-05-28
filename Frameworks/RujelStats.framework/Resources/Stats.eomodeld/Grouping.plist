@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = DESCRIPTION; 
+            name = descID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "G_ID"; 
+            name = gID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = GID1; 
+            name = gid1; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = GID2; 
+            name = gid2; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = TOTAL; 
+            name = total; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (gid1, gid2, total); 
+    className = "net.rujel.stats.Grouping"; 
+    classProperties = (description, gid1, gid2, statEntries, total); 
+    externalName = GROUPING; 
+    fetchSpecificationDictionary = {}; 
+    name = Grouping; 
+    primaryKeyAttributes = (gID); 
+    relationships = (
+        {
+            destination = Description; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = dID; sourceAttribute = descID; }); 
+            name = description; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = StatEntry; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = grID; sourceAttribute = gID; }); 
+            name = statEntries; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

@@ -1,0 +1,27 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/Stats? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        username = rujel; 
+    }; 
+    entities = (
+        {className = "net.rujel.stats.Description"; name = Description; }, 
+        {className = "net.rujel.stats.Grouping"; name = Grouping; }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = StatEntry; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/Stats? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        username = rujel; 
+                    }; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

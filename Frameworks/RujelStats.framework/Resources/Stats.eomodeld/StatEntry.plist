@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "E_ID"; 
+            name = eID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = GROUPING; 
+            name = grID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "KEY_COUNT"; 
+            name = keyCount; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "STAT_KEY"; 
+            name = statKey; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (grID, keyCount, statKey); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (grouping, keyCount, statKey); 
+    externalName = ENTRY; 
+    fetchSpecificationDictionary = {}; 
+    name = StatEntry; 
+    primaryKeyAttributes = (eID); 
+    relationships = (
+        {
+            destination = Grouping; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = gID; sourceAttribute = grID; }); 
+            name = grouping; 
+        }
+    ); 
+}

@@ -2,8 +2,8 @@ Content : WOComponentContent {
 }
 
 ColTitle : WOString {
-  value = valueOf.item.itemDict.short;
-  valueWhenEmpty = valueOf.item.itemDict.title;
+  value = itemDict.short;
+  valueWhenEmpty = itemDict.title;
   escapeHTML = false;
 }
 
@@ -15,7 +15,7 @@ Columns : WORepetition {
 ColHead : WOGenericContainer {
   elementName = "th";
   title = valueOf.item.itemDict.hover;
-  style = valueOf.item.itemDict.titleStyle;
+  style = itemDict.titleStyle;
 }
 
 SubHead : WOGenericContainer {
@@ -25,8 +25,8 @@ SubHead : WOGenericContainer {
 }
 
 SubTitle : WOString {
-  value = valueOf.item.subDict.short;
-  valueWhenEmpty = valueOf.item.subDict.title;
+  value = subDict.short;
+  valueWhenEmpty = subDict.title;
   escapeHTML = false;
 }
 

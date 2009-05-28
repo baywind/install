@@ -137,12 +137,14 @@
 				<dict>
 					<key>title</key>
 					<string>Привязка</string>
+					<key>style</key>
+					<string>white-space:nowrap;</string>
 					<key>keyPath</key>
 					<string>extToString</string>
 				</dict>
 				<dict>
 					<key>title</key>
-					<string>&apos;&amp;nbsp;</string>
+					<string>&amp;nbsp;</string>
 					<key>titleStyle</key>
 					<string>width:20px</string>
 					<key>skipExport</key>

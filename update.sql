@@ -151,3 +151,44 @@ where P.EDU_COURSE = C.CR_ID AND C.CYCLE = I.EDU_CYCLE AND P.PERIOD = I.PERIOD A
 ALTER TABLE `EduResults`.`ITOG_MARK`
  MODIFY COLUMN `FLAGS` TINYINT(4) NOT NULL,
  MODIFY COLUMN `MARK` VARCHAR(5) NOT NULL;
+
+
+-- 2009-05-28
+
+CREATE DATABASE `Stats` default character set utf8;
+
+CREATE TABLE  `Stats`.`DESCRIPTION` (
+  `D_ID` smallint(6) NOT NULL,
+  `ENT_NAME` varchar(28) NOT NULL,
+  `DESCRIPTION` varchar(28),
+  `STAT_FIELD` varchar(28) NOT NULL,
+  `GROUPING1` varchar(28),
+  `GROUPING2` varchar(28),
+  `BORDER_SET` smallint(6),
+  PRIMARY KEY (`D_ID`)
+);
+
+CREATE TABLE  `Stats`.`GROUPING` (
+  `G_ID` int(11) NOT NULL,
+  `DESCRIPTION` smallint(6) NOT NULL,
+  `GID1` int(11),
+  `GID2` int(11),
+  `TOTAL` mediumint(9) NOT NULL,
+  PRIMARY KEY (`G_ID`)
+);
+
+CREATE TABLE  `Stats`.`ENTRY` (
+  `E_ID` int(11) NOT NULL,
+  `GROUPING` int(11) NOT NULL,
+  `STAT_KEY` varchar(28) NOT NULL,
+  `KEY_COUNT` mediumint(9) NOT NULL,
+  PRIMARY KEY (`E_ID`)
+);
+
+CREATE TABLE  `Stats`.`EO_PK_TABLE` (
+  `NAME` char(40) NOT NULL,
+  `PK` int(11),
+  PRIMARY KEY (`NAME`)
+);
+
+GRANT ALL PRIVILEGES ON `Stats`.* TO 'rujel'@'localhost';
