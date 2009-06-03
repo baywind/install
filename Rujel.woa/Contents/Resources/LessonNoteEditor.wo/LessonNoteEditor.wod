@@ -115,7 +115,7 @@ PageWrapper1: PageWrapper {
 	resourcesFramework = present.framework;
 }
 
-PathTitle: WOString {
+SubGroup: WOString {
 	value = application.strings.RujelInterfaces_Names.EduCourse.subgroup;
 	valueWhenEmpty = "SubGroup";
 }

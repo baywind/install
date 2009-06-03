@@ -43,7 +43,7 @@ for f in *.woa; do
     chown -R _appserver:_appserveradm $WOAPPSFOLDER/$f
     # make symlink to WebServerResources
     mkdir -p ${WEBFOLDER}/$f/Contents/
-    ln -sf ${WOAPPSFOLDER}/$f/Contents/WebServerResources ${WEBFOLDER}/$f/Contents/
+    ln -fns ${WOAPPSFOLDER}/$f/Contents/WebServerResources ${WEBFOLDER}/$f/Contents/WebServerResources
     i=$(($i+1))
 done
 echo "Installed "$i" WO Applications"
@@ -66,7 +66,7 @@ then
         chown -R root:_appserveradm $FRAMEWORKSFOLDER/$f
         # make symlink to WebServerResources
         mkdir -p ${WEBFOLDER}/Frameworks/$f
-        ln -sf  ${FRAMEWORKSFOLDER}/$f/WebServerResources ${WEBFOLDER}/Frameworks/$f/WebServerResources
+        ln -fns  ${FRAMEWORKSFOLDER}/$f/WebServerResources ${WEBFOLDER}/Frameworks/$f/WebServerResources
         i=$(($i+1))
     done
     cd ..

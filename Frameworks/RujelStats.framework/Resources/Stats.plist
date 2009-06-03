@@ -2,11 +2,116 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>title</key>
+	<string>Статистика</string>
 	<key>total</key>
 	<string>всего</string>
 	<key>others</key>
 	<string>другие</string>
 	<key>none</key>
 	<string>Без значения</string>
+	<key>omitKey</key>
+	<string>осв</string>
+	<key>formulas</key>
+	<dict>
+		<key>uspevaemost</key>
+		<dict>
+			<key>title</key>
+			<string>Успеваемость</string>
+			<key>short</key>
+			<string>усп</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>numberformat</key>
+				<string>0%</string>
+			</dict>
+		</dict>
+		<key>znaniy</key>
+		<dict>
+			<key>title</key>
+			<string>Качество знаний</string>
+			<key>short</key>
+			<string>зн</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>numberformat</key>
+				<string>0%</string>
+			</dict>
+		</dict>
+		<key>average</key>
+		<dict>
+			<key>title</key>
+			<string>Средняя отметка</string>
+			<key>short</key>
+			<string>ср</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>numberformat</key>
+				<string>#.##</string>
+			</dict>
+		</dict>
+		<key>sou</key>
+		<dict>
+			<key>title</key>
+			<string>Степень обученности учащихся (Симонов 1)</string>
+			<key>short</key>
+			<string>СОУ</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>numberformat</key>
+				<string>#.0</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>dashboard</key>
+	<dict>
+		<key>title</key>
+		<string>Статистика по выставленным отметкам</string>
+		<key>component</key>
+		<string>DisplayAny</string>
+		<key>invokeAction</key>
+		<string>true</string>
+		<key>nextPage</key>
+		<string>StatsPlugin</string>
+		<key>pageParams</key>
+		<dict>
+			<key>course</key>
+			<string>^course</string>
+		</dict>
+		<key>presenter</key>
+		<string>WOImage</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>framework</key>
+			<string>RujelStats</string>
+			<key>filename</key>
+			<string>pie32.png</string>
+			<key>style</key>
+			<string>border:double #3333cc;padding:2px;</string>
+			<key>class</key>
+			<string>ungerade</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>onmouseover</key>
+			<string>dim(this);</string>
+			<key>onmouseout</key>
+			<string>unDim(this);</string>
+			<key>title</key>
+			<string>Статистика</string>
+		</dict>
+		<key>_wrapper</key>
+		<string>OnClickContainer</string>
+		<key>_wrapperBindings</key>
+		<dict>
+			<key>elementName</key>
+			<string>span</string>
+			<key>class</key>
+			<string>ungerade</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+		</dict>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
 </dict>
 </plist>

@@ -89,3 +89,9 @@ Cross : WOImage {
   onclick = "closePopup();";
   style = "cursor:pointer;position:absolute;right:12pt;top:12pt;";
 }
+
+FlushRow: OnClickContainer {
+	elementName = "tr";
+	onclick = session.tryLoad;
+	invokeAction = flush;
+}

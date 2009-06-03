@@ -5,7 +5,7 @@
 	<key>title</key>
 	<string>Прогнозы</string>
 	<key>description</key>
-	<string>Выборка прогнозов итоговых оценок за период</string>
+	<string>Выборка прогнозов итоговых отметок за период</string>
 	<key>entity</key>
 	<string>Prognosis</string>
 	<key>params</key>
@@ -291,6 +291,14 @@
 				<string>eduCourse</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>title</key>
+			<string>Флаги</string>
+			<key>comment</key>
+			<string>у прогноза есть флаги</string>
+			<key>qualifierFormat</key>
+			<string>flags &gt; 0</string>
+		</dict>
 	</array>
 	<key>prefetch</key>
 	<array>
@@ -307,7 +315,7 @@
 			<key>titlePath</key>
 			<string>name</string>
 			<key>comparison</key>
-			<string>CompareAscending</string>
+			<string>CompareCaseInsensitiveAscending</string>
 			<key>active</key>
 			<true/>
 			<key>sort</key>
@@ -529,6 +537,129 @@
 			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>60</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Флаги</string>
+			<key>flagNames</key>
+			<dict>
+				<key>className</key>
+				<string>net.rujel.eduresults.ItogMark</string>
+				<key>methodName</key>
+				<string>localisedFlagKeys</string>
+				<key>cacheResult</key>
+				<true/>
+			</dict>
+			<key>keyPath</key>
+			<string>namedFlags</string>
+			<key>presenter</key>
+			<string>FlagsPresenter</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>disabled</key>
+				<true/>
+				<key>flags</key>
+				<string>.</string>
+				<key>flagNames</key>
+				<string>$valueOf.qqq.itemDict.exportDict.flagNames</string>
+				<key>inRow</key>
+				<true/>
+			</dict>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>70</string>
+			<key>exportDict</key>
+			<dict>
+				<key>title</key>
+				<dict>
+					<key>object</key>
+					<string>$valueOf.qqq.itemDict.flagNames</string>
+					<key>methodName</key>
+					<string>componentsJoinedByString</string>
+					<key>paramClasses</key>
+					<array>
+						<string>java.lang.String</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string> ; </string>
+					</array>
+					<key>cacheResult</key>
+					<true/>
+				</dict>
+				<key>_presenterBindings</key>
+				<dict>
+					<key>value</key>
+					<string>$valueOf.itemRow.itemDict.binary</string>
+				</dict>
+				<key>flagNames</key>
+				<dict>
+					<key>className</key>
+					<string>net.rujel.autoitog.Prognosis</string>
+					<key>methodName</key>
+					<string>localisedFlagKeys</string>
+					<key>cacheResult</key>
+					<true/>
+				</dict>
+				<key>subParams</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>не выставлять</string>
+						<key>value</key>
+						<string>.disable</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>зафиксировать</string>
+						<key>value</key>
+						<string>.keep</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>сохранять при изменениях</string>
+						<key>value</key>
+						<string>.keepBonus</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
 		</dict>
 	</array>
 </dict>

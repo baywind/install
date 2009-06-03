@@ -5,7 +5,7 @@
 	<key>title</key>
 	<string>Итоговые</string>
 	<key>description</key>
-	<string>Итоговые оценки</string>
+	<string>Итоговые отметки</string>
 	<key>entity</key>
 	<string>ItogMark</string>
 	<key>params</key>
@@ -156,7 +156,7 @@
 			<key>title</key>
 			<string>С изменениями</string>
 			<key>comment</key>
-			<string>после выставления изменялись оценки</string>
+			<string>после выставления изменялись составляющие оценки</string>
 			<key>qualifierFormat</key>
 			<string>flags &gt;= 16</string>
 		</dict>
@@ -164,7 +164,7 @@
 			<key>title</key>
 			<string>Флаги</string>
 			<key>comment</key>
-			<string>у оценки есть флаги</string>
+			<string>у отметки есть флаги</string>
 			<key>qualifierFormat</key>
 			<string>flags &gt; 0</string>
 		</dict>
@@ -257,7 +257,7 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Оценка</string>
+			<string>Отметка</string>
 			<key>keyPath</key>
 			<string>mark</string>
 			<key>style</key>

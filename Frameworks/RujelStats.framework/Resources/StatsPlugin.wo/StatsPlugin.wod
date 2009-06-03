@@ -1,0 +1,60 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 16;
+  width = 16;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:12pt;top:12pt;";
+}
+
+Title : WOString {
+  value = application.strings.RujelStats_Stats.title;
+  escapeHTML = false;
+}
+
+Value : WOString {
+  value = value;
+  escapeHTML = false;
+}
+
+Rows : WORepetition {
+  list = rows;
+  item = item;
+}
+
+Cells : WORepetition {
+  count = count;
+  index = index;
+}
+
+TitleCell : WOGenericContainer {
+  elementName = "th";
+  style = "height:1.4em;font-size:larger;";
+  colspan = cols;
+}
+
+Row : WOGenericContainer {
+  elementName = "tr";
+  class = item.styleClass;
+  style = item.style;
+}
+
+LastCell : WOString {
+  value = lastCell;
+  escapeHTML = false;
+}
+
+RowTitle : WOString {
+  value = item.title;
+}
+
+Total : WOString {
+  value = item.total;
+}
+
+TotalTitle : WOString {
+  value = application.strings.RujelStats_Stats.total;
+  escapeHTML = false;
+  valueWhenEmpty = "total";
+}
