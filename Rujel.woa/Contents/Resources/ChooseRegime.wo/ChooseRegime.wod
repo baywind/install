@@ -95,3 +95,6 @@ FlushRow: OnClickContainer {
 	onclick = session.tryLoad;
 	invokeAction = flush;
 }
+IsAdmin : WOConditional {
+  condition = session.readAccess.edit.login;
+}
