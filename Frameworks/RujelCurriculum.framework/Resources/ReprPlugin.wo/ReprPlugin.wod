@@ -1,0 +1,34 @@
+Table : OnClickContainer {
+  elementName = "table";
+  invokeAction = popup;
+  onclick = session.ajaxPopup;
+  class = agregate.styleClass;
+  style = "font-size:smaller;text-align:center;border:#996600 double 3px;border-collapse:collapse;";
+  title = ^dict.title;
+}
+
+Exclamation : WOImage {
+  framework = "JavaWOExtensions";
+  filename = "exclamation.gif";
+}
+
+OpenCount : WOString {
+  value = agregate.open;
+  escapeHTML = false;
+}
+
+ClosedCount : WOString {
+  value = agregate.closed;
+  escapeHTML = false;
+}
+AddTitle : WOString {
+	value = application.strings.Reusables_Strings.uiElements.Add;
+	valueWhenEmpty = "Add";
+	escapeHTML = false;
+}
+
+SaveTitle : WOString {
+	value = application.strings.Reusables_Strings.uiElements.Save;
+	valueWhenEmpty = "Add";
+	escapeHTML = false;
+}

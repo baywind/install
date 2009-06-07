@@ -27,5 +27,6 @@
         <binding name="cellClass"/>
         <binding name="currObject"/>
     <binding name="onClick"/>
+    <binding name="rowStyle"/>
     </wo>
 </wodefinitions>

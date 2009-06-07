@@ -1,0 +1,121 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 16;
+  width = 16;
+}
+
+Form : WOForm {
+  onsubmit = "ajaxPost(this,document.getElementById('ajaxPopup'));return false;";
+}
+
+Title : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.title;
+  escapeHTML = false;
+  valueWhenEmpty = "Reprimands";
+}
+
+List : WORepetition {
+  list = list;
+  item = item;
+}
+
+Row : WOGenericContainer {
+  elementName = "tr";
+  class = styleClass;
+}
+
+DateTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.raised;
+  escapeHTML = false;
+  valueWhenEmpty = "Date";
+}
+
+ReliefTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.relief;
+  escapeHTML = false;
+  valueWhenEmpty = "Relief";
+}
+
+ContentTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.content;
+  escapeHTML = false;
+  valueWhenEmpty = "Content";
+}
+
+AuthorTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.author;
+  escapeHTML = false;
+  valueWhenEmpty = "Author";
+}
+
+RaiseDate : WOString {
+  value = item.raised;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ RaiseTime : WOString {
+  value = item.raised;
+  dateformat = "HH:mm";
+}
+
+ReliefDate : WOString {
+  value = item.relief;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ ReliefTime : WOString {
+  value = item.relief;
+  dateformat = "HH:mm";
+}
+Content : WOString {
+  value = item.content;
+}
+
+Author : WOString {
+  value = item.author;
+}
+
+Text : WOText {
+  value = text;
+  rows = 2;
+  style = "width:90%;";
+  id = "reprimandText";
+}
+
+Num : WOTextField {
+  value = ident;
+  numberformat = "0";
+  id = "reprimandToEdit";
+  style = "display:none;";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Add;
+	id = "reprimandSubmit";
+}
+
+ReliefCell : OnClickContainer {
+  elementName = "td";
+  onclick = relievOnClick;
+  invokeAction = toggleRelief;
+  disabled = session.readAccess._delete.item;
+}
+
+ContentCell : WOGenericContainer {
+  elementName = "td";
+  onclick = editOnClick;
+}
+
+Close : WOGenericContainer {
+  elementName = "span";
+  onclick = closeOnClick;
+  invokeAction = closePopup;
+  style = "cursor:pointer;position:absolute;right:12pt;top:12pt;";
+}
+
+CanCreate : WOConditional {
+  condition = session.readAccess.create.Reprimand;
+}

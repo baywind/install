@@ -102,6 +102,7 @@ PropSelector : PropSelector {
   available = reports;
   forceActive = prepareDisplay;
   initDefault = true;
+  style = "max-height:30em;overflow:auto;";
 }
 
 PropsDiv : WOGenericContainer {

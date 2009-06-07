@@ -57,6 +57,7 @@ ReportTable : ReportTable {
   list = list;
   properties = display;
   rowClass = "backfield2";
+  rowStyle = "vertical-align:middle;";
   index = index;
   currObject = params.currObject;
 }

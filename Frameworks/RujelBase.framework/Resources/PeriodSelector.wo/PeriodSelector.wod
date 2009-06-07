@@ -29,7 +29,6 @@ PeriodsPopUp: WOPopUpButton {
 }
 
 SinceField: WOTextField {
-	dateformat = application.prefs.ui.dateFormat;
 	value = begin;
 	size = 10;
 	maxlength = 10;
@@ -37,7 +36,6 @@ SinceField: WOTextField {
 }
 
 ToField: WOTextField {
-	dateformat = application.prefs.ui.dateFormat;
 	value = end;
 	size = 10;
 	maxlength = 10;

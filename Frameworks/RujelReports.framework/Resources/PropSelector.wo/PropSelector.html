@@ -1,10 +1,15 @@
 <script language="JavaScript">
 function toggleReport(id,val) {
-	var boxes = document.getElementsByName(id);
-	for (var i = 0; i < boxes.length; i++) {
-		boxes[i].checked = val;
+	if(val)
+		setDisplay(id,'');
+	if (window.event && event.shiftKey) {
+		var boxes = document.getElementsByName(id);
+		for (var i = 0; i < boxes.length; i++) {
+			boxes[i].checked = val;
+		}
+	} else if (!val) {
+		setDisplay(id,'none');
 	}
-	setDisplay(id,(val)?'':'none');
 }
 function toggleSub(id,val) {
 	var boxes = document.getElementsByName(id);
@@ -28,12 +33,12 @@ function toggleSub(id,val) {
 				<td width = "24"><webobject name = "MoveUp"/><webobject name = "MoveDown"/><webobject name = "ItemSorting"/></td>
 			</tr></thead>
 			<webobject name = "SubsContainer"><webobject name = "SubsRepetition">
-				<tr class = "grey"><td></td>
+				<webobject name = "SubRow"><td></td>
 				<td style = "width:1.2em;"><webobject name = "SubCheckBox"/></td>
 				<td align = "left"><webobject name = "SubTitle"/><webobject name = "SubHasShort">
 					(<b><webobject name = "ShortSubTitle"/></b>)</webobject></td>
 					<td><webobject name = "MoveSubUp"/><webobject name = "MoveSubDown"/><webobject name = "SubSorting"/>
-					</td></tr></webobject>
+					</td></webobject></webobject>
 				</webobject>
 		</table>
 		</webobject>

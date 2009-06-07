@@ -107,6 +107,19 @@
 			<string>gerade</string>
 		</dict>
 	</dict>
+	<key>Reprimand</key>
+	<dict>
+		<key>title</key>
+		<string>Замечания</string>
+		<key>raised</key>
+		<string>Дата</string>
+		<key>relief</key>
+		<string>Снято</string>
+		<key>content</key>
+		<string>Замечание</string>
+		<key>author</key>
+		<string>Автор</string>
+	</dict>
 	<key>messages</key>
 	<dict>
 		<key>wrongTeacher</key>
@@ -141,17 +154,6 @@
 		<key>deviation</key>
 		<string>Расхождение</string>
 	</dict>
-	<key>plugins</key>
-	<array>
-		<dict>
-			<key>title</key>
-			<string>Поправки к исполнению учебного плана</string>
-			<key>component</key>
-			<string>VariationsPlugin</string>
-			<key>sort</key>
-			<string>30</string>
-		</dict>
-	</array>
 	<key>regimes</key>
 	<array>
 		<dict>
@@ -177,5 +179,68 @@
 			<string>60</string>
 		</dict>
 	</array>
+	<key>varsPlugin</key>
+	<dict>
+		<key>title</key>
+		<string>Поправки к исполнению учебного плана</string>
+		<key>component</key>
+		<string>VariationsPlugin</string>
+		<key>sort</key>
+		<string>50</string>
+	</dict>
+	<key>reprPlugin</key>
+	<dict>
+		<key>component</key>
+		<string>ReprPlugin</string>
+		<key>title</key>
+		<string>Замечания по ведению журнала</string>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
+	<key>_reprPlugin</key>
+	<dict>
+		<key>title</key>
+		<string>Замечания по ведению журнала</string>
+		<key>component</key>
+		<string>DisplayAny</string>
+		<key>invokeAction</key>
+		<string>true</string>
+		<key>nextPage</key>
+		<string>ReprimList</string>
+		<key>pageParams</key>
+		<dict>
+			<key>course</key>
+			<string>^course</string>
+		</dict>
+		<key>presenter</key>
+		<string>WOString</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>value</key>
+			<string>Замечания</string>
+		</dict>
+		<key>wrapper</key>
+		<string>OnClickContainer</string>
+		<key>wrapperBindings</key>
+		<dict>
+			<key>elementName</key>
+			<string>span</string>
+			<key>style</key>
+			<string>padding:4px;background-color:#99ff99;border:double #339933;</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>title</key>
+			<string>Замечания по ведению журнала</string>
+		</dict>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
+	<key>ReprimList</key>
+	<dict>
+		<key>relieve</key>
+		<string>закрыть замечание</string>
+		<key>unrelieve</key>
+		<string>активировать замечание</string>
+	</dict>
 </dict>
 </plist>

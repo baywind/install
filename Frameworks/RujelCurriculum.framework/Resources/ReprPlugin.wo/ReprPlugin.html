@@ -1,0 +1,26 @@
+<webobject name = "Table">
+<tr><td rowspan = "2"><webobject name = "Exclamation"/></td>
+	<td><span class = "gerade" style = "color:#cc0000;padding:0px 2px;">
+		<webobject name = "OpenCount"/></span></td></tr>
+<tr><td><span class = "gerade" style = "color:#00cc00;padding:0px 2px;">
+		<webobject name = "ClosedCount"/></span></td></tr>
+</webobject>
+<script type="text/javascript">
+function editReprimand(cell,ident) {
+	if(cell.className == "selection") {
+		cell.className = null;
+		returnField = null;
+		document.getElementById("reprimandText").value = null;
+		document.getElementById("reprimandToEdit").value = "";
+		document.getElementById("reprimandSubmit").value = "<webobject name = "AddTitle"/>";
+	} else {
+		if(returnField && returnField.className == "selection")
+			returnField.className = "";
+		returnField = cell;
+		document.getElementById("reprimandText").value = cell.innerHTML;
+		document.getElementById("reprimandToEdit").value = ident;
+		document.getElementById("reprimandSubmit").value = "<webobject name = "SaveTitle"/>";
+		cell.className = "selection"; 
+	}
+} 
+</script>

@@ -68,6 +68,7 @@ ReportCell : OnClickContainer {
   align = "left";
   style = "padding-left:4px;";
   colspan = "2";
+  title = item.hover;
 }
 
 SubCheckBox : WOCheckBox {
@@ -90,6 +91,12 @@ SubsContainer : WOGenericContainer {
   elementName = "tbody";
   id = item.id;
   style = subRowStyle;
+}
+
+SubRow : WOGenericContainer {
+  elementName = "tr";
+  title = subItem.hover;
+  class = "grey";
 }
 
 AvailableTitle : WOString {

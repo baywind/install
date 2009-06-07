@@ -5,7 +5,7 @@
 	<key>title</key>
 	<string>Замененные уроки</string>
 	<key>short</key>
-	<string>Зам</string>
+	<string>замен</string>
 	<key>hover</key>
 	<string>Замененные уроки</string>
 	<key>id</key>
@@ -13,7 +13,7 @@
 	<key>sort</key>
 	<string>35</string>
 	<key>active</key>
-	<true/>
+	<false/>
 	<key>checkAccess</key>
 	<array>
 		<string>Substitute</string>

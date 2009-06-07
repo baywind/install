@@ -14,14 +14,16 @@ Columns : WORepetition {
 
 ColHead : WOGenericContainer {
   elementName = "th";
-  title = valueOf.item.itemDict.hover;
-  style = itemDict.titleStyle;
+  title = hover;
+  style = style;
+  rowspan = rowspan;
+  colspan = itemDict.subParams.count;
 }
 
 SubHead : WOGenericContainer {
   elementName = "th";
-  title = valueOf.item.subDict.title;
-  style = valueOf.item.subDict.titleStyle;
+  title = hover;
+  style = style;
 }
 
 SubTitle : WOString {
@@ -44,12 +46,13 @@ ItemRow : WOGenericContainer {
   elementName = "tr";
   class = ^rowClass;
   id = rowID;
+  style = ^rowStyle;
 }
 
 Cell : OnClickContainer {
   elementName = "td";
   class = ^cellClass;
-  style = valueOf.item.itemDict.style;
+  style = style;
   onclick = onClick;
   disabled = disabledClick;
   invokeAction = select;
@@ -59,7 +62,7 @@ Cell : OnClickContainer {
 SubCell : OnClickContainer {
   elementName = "td";
   class = valueOf.item.subDict.class;
-  style = valueOf.item.subDict.style;
+  style = style;
   disabled = disabledClick;
   onclick = onClick;
   invokeAction = select;
@@ -79,6 +82,7 @@ NoSubs : WOConditional {
 SubParams : WORepetition {
   list = itemDict.subParams;
   item = subDict;
+  index = index;
 }
 
 SubDisplay : DisplayAny {
