@@ -35,7 +35,7 @@
     ); 
     attributesUsedForLocking = (id, idClass, idStudent, isArhive); 
     className = EOGenericRecord; 
-    classProperties = (isArhive, class, student); 
+    classProperties = (isArhive, student, eduClass); 
     externalName = teach; 
     fetchSpecificationDictionary = {}; 
     name = VOList; 
@@ -47,7 +47,7 @@
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = id; sourceAttribute = idClass; }); 
-            name = class; 
+            name = eduClass; 
         }, 
         {
             destination = VOStudent; 

@@ -391,6 +391,8 @@
 				<string>15</string>
 				<key>zav_kaf</key>
 				<string>1</string>
+				<key>tutor</key>
+				<string>1</string>
 			</dict>
 			<key>CustomReport</key>
 			<dict>
@@ -400,6 +402,8 @@
 				<string>15</string>
 				<key>zav_kaf</key>
 				<string>1</string>
+				<key>tutor</key>
+				<string>1</string>
 			</dict>
 			<key>Reprimand</key>
 			<dict>
@@ -407,7 +411,7 @@
 				<string>1023</string>
 				<key>zavuch</key>
 				<string>15</string>
-				<key>zav_kaf</key>
+				<key>teacher</key>
 				<string>1</string>
 			</dict>
 			<key>Tabel</key>
@@ -429,6 +433,13 @@
 				<string>15</string>
 				<key>zav_kaf</key>
 				<string>3</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+			<key>VOList</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
