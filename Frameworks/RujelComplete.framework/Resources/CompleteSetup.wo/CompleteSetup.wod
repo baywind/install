@@ -1,0 +1,15 @@
+Form : WOForm {
+	action = prepareStructure;
+}
+
+WriteCourses : WOCheckBox {
+	checked = courses;
+}
+
+WriteStudents : WOCheckBox {
+	checked = students;
+}
+
+WriteReports : WOCheckBox {
+	checked = writeReports;
+}

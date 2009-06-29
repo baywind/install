@@ -92,7 +92,7 @@ DispalayPopup: WOString {
 	value = dispalayPopup;
 }
 
-HTtitle: WOString {
+WeightTitle: WOString {
 	value = application.strings.RujelCriterial_Strings.weight;
 	valueWhenEmpty = "weight";
 }

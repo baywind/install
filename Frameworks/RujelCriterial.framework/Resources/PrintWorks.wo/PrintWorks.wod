@@ -1,0 +1,110 @@
+PrintCourse : PrintCourse {
+  course = course;
+  presentPeriod = period;
+  title = application.strings.RujelCriterial_Strings.works;
+}
+
+Title : WOString {
+  value = application.strings.RujelCriterial_Strings.works;
+}
+
+DeadLineTitle: WOString {
+	value = application.strings.RujelCriterial_Strings.shortDeadline;
+	valueWhenEmpty = application.strings.Reusables_Strings.dataTypes.date;
+	escapeHTML = false;
+}
+AnnounceTitle: WOString {
+	value = application.strings.RujelCriterial_Strings.shortAnnounce;
+	valueWhenEmpty = application.strings.Reusables_Strings.dataTypes.date;
+	escapeHTML = false;
+}
+
+ThemeTitle: WOString {
+	value = application.strings.RujelCriterial_Strings.theme;
+	valueWhenEmpty = "Theme";
+	escapeHTML = false;
+}
+
+WeightTitle: WOString {
+	value = application.strings.RujelCriterial_Strings.weight;
+	valueWhenEmpty = "weight";
+	escapeHTML = false;
+}
+
+TypeTitle: WOString {
+	value = application.strings.RujelCriterial_Strings.type;
+	valueWhenEmpty = "type";
+	escapeHTML = false;
+}
+
+CriterList: WORepetition {
+	list = criteria;
+	item = critItem;
+}
+
+CritTitle: WOString {
+	value = critItem.title;
+}
+
+WorksRepetition : WORepetition {
+  list = list;
+  item = work;
+}
+
+Announce: WOString {
+	value = work.announce;
+	dateformat = application.prefs.ui.shortDateFormat;
+}
+Date: WOString {
+	value = work.date;
+	dateformat = application.prefs.ui.shortDateFormat;
+}
+Theme: WOString {
+	value = work.theme;
+}
+Weight: WOString {
+	numberformat = "0.##";
+	value = work.weight;
+}
+Type: WOString {
+	value = work.workType;
+	escapeHTML = false;
+}
+CritMaximum: WOString {
+	value = critMax;
+}
+Cell: WOGenericContainer {
+  elementName = "td";
+  rowspan = rowspan;
+}
+
+HasHometask : WOConditional {
+  condition = work.homeTask;
+}
+
+TaskCell : WOGenericContainer {
+  elementName = "td";
+  colspan = colspan;
+  style = "font-family:sans-serif;";
+}
+
+HomeTask : WOString {
+  value = work.homeTask;
+}
+
+Rowspan : WOString {
+  value = rowspan;
+  escapeHTML = false;
+}
+
+URLTitle : WOString {
+  value = application.strings.RujelCriterial_Strings.URL;
+  valueWhenEmpty = "URL";
+  escapeHTML = false;
+}
+
+TypeCell : WOGenericContainer {
+  elementName = "td";
+  align = "center";
+  style = style;
+}

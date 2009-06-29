@@ -113,5 +113,16 @@
 		<key>sort</key>
 		<string>10</string>
 	</dict>
+	<key>courseComplete</key>
+	<dict>
+		<key>id</key>
+		<string>stats</string>
+		<key>title</key>
+		<string>статистика</string>
+		<key>component</key>
+		<string>PrintStats</string>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
 </dict>
 </plist>

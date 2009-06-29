@@ -1,0 +1,33 @@
+Title : WOString {
+  value = ^title;
+}
+
+Component : WOComponentContent {
+}
+
+EduYear : WOString {
+  value = eduYear;
+}
+
+EduPeriod : WOString {
+  value = ^presentPeriod;
+}
+
+ClassName : WOString {
+  value = ^course.eduGroup.name;
+}
+
+Subject : WOString {
+  value = ^course.cycle.subject;
+}
+
+Teacher : PersonDisplay {
+  person = ^course.teacher;
+  startWithLast = true;
+  first = 2;
+  second = 2;
+  last = 2;
+}
+IfPeriod : WOConditional {
+  condition = ^presentPeriod;
+}

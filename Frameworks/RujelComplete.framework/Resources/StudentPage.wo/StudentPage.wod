@@ -1,0 +1,34 @@
+StudentName : PersonDisplay {
+  person = student;
+  first = 2;
+  second = 2;
+  last = 2;
+}
+
+ClassName : WOString {
+  value = eduGroup.name;
+  valueWhenEmpty = student.recentMainEduGroup.name;
+}
+
+Reports : WORepetition {
+  list = reports;
+  item = item;
+}
+
+Hyperlink : WOGenericContainer {
+  elementName = "a";
+  href = href;
+  title = item.hover;
+  style = "margin-right:1em;";
+}
+
+ReportName : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+NewWindow : WOString {
+  value = application.strings.RujelComplete_Complete.newWindow;
+  escapeHTML = false;
+  valueWhenEmpty = "print";
+}

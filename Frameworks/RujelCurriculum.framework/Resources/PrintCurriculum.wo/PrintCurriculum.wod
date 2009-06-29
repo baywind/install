@@ -1,0 +1,204 @@
+Title : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.titles.printCurriculum;
+	escapeHTML = false;
+}
+
+PrintCourse : PrintCourse {
+  course = course;
+  presentPeriod = period;
+  title = application.strings.RujelCurriculum_Curriculum.titles.printCurriculum;
+}
+
+PlanTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.planCount;
+  escapeHTML = false;
+  valueWhenEmpty = "Plan";
+}
+
+Plan : WOString {
+  value = planFact.plan;
+  escapeHTML = false;
+}
+
+FactTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.realCount;
+  escapeHTML = false;
+  valueWhenEmpty = "Fact";
+}
+
+FactCount : WOString {
+  value = planFact.fact;
+  escapeHTML = false;
+}
+
+DevTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.titles.deviation;
+  escapeHTML = false;
+  valueWhenEmpty = "Deviation";
+}
+
+Deviation : WOString {
+  value = deviation;
+  escapeHTML = false;
+}
+
+DateTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.date;
+	escapeHTML = false;
+}
+
+ValueTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Variation.value;
+  valueWhenEmpty = "Value";
+  escapeHTML = false;
+}
+
+ReasonTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reason.Reason;
+	escapeHTML = false;
+	valueWhenEmpty = "Reason";
+}
+
+Variations : WORepetition {
+	list = variations;
+	item = item;
+}
+
+Date : WOString {
+  value = item.date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ValueCell : WOGenericContainer {
+	elementName = "td";
+	style = item.valueStyle;
+}
+
+VarValue : WOString {
+  value = item.value;
+  numberformat = "+ #;0;- #";
+  escapeHTML = false;
+}
+
+Reason : WOString {
+  value = item.reason.title;
+}
+
+ReasonCell : WOGenericContainer {
+  elementName = "td";
+  style = reasonStyle;
+}
+
+TeacherTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Substitute.Substitutor;
+	escapeHTML = false;
+	valueWhenEmpty = "Substitutor";
+}
+
+FactorTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Substitute.Factor;
+	escapeHTML = false;
+	valueWhenEmpty = "Factor";
+}
+
+Substitutes : WORepetition {
+	list = substitutes;
+	item = item;
+}
+
+DateCell : WOGenericContainer {
+  elementName = "td";
+  rowspan = item.rowspan;
+  style = "border-left-style:none;text-align:center;";
+}
+
+HasDate : WOConditional {
+  condition = item.date;
+}
+
+Teacher : WOString {
+  value = item.teacher;
+}
+
+Factor : WOString {
+  value = item.factor;
+}
+
+BeginTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reason.begin;
+	escapeHTML = false;
+	valueWhenEmpty = "Begin";
+}
+
+EndTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reason.end;
+	escapeHTML = false;
+	valueWhenEmpty = "End";
+}
+
+RelationTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reason.relation;
+	escapeHTML = false;
+	valueWhenEmpty = "Relation";
+}
+
+VerificationTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reason.verification;
+	escapeHTML = false;
+	valueWhenEmpty = "Verification";
+}
+
+Reasons : WORepetition {
+	list = reasons;
+	item = item;
+}
+
+Begin : WOString {
+  value = item.begin;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+End : WOString {
+  value = item.begin;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ReasonText: WOString {
+	value = item.reason;
+}
+
+Relation : WOString {
+  value = item.extToString;
+  escapeHTML = false;
+}
+
+Verification : WOString {
+  value = item.verification;
+}
+
+HasReasons : WOConditional {
+  condition = reasons.count;
+}
+
+HasSubstitutes : WOConditional {
+  condition = substitutes.count;
+}
+
+HasVariations : WOConditional {
+  condition = variations.count;
+}
+
+VariationsTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.titles.variations;
+	escapeHTML = false;
+}
+
+SubstitutesTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.titles.substitutes;
+	escapeHTML = false;
+}
+
+ReasonsTitle : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.titles.reasons;
+	escapeHTML = false;
+}

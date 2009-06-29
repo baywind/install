@@ -245,5 +245,16 @@
 			<string>Срок сдачи</string>
 		</dict>
 	</array>
+	<key>courseComplete</key>
+	<dict>
+		<key>id</key>
+		<string>works</string>
+		<key>title</key>
+		<string>работы</string>
+		<key>component</key>
+		<string>PrintWorks</string>
+		<key>sort</key>
+		<string>10</string>
+	</dict>
 </dict>
 </plist>

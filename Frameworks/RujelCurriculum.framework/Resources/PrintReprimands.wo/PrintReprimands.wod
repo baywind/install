@@ -1,0 +1,58 @@
+Title : WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reprimand.title;
+	escapeHTML = false;
+}
+
+PrintCourse : PrintCourse {
+  course = course;
+  presentPeriod = period;
+  title = application.strings.RujelCurriculum_Curriculum.Reprimand.title;
+}
+
+RaisedTitle: WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reprimand.raised;
+	escapeHTML = false;
+}
+
+ReliefTitle: WOString {
+	value = application.strings.RujelCurriculum_Curriculum.Reprimand.relief;
+	escapeHTML = false;
+}
+
+ValueTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.content;
+  escapeHTML = false;
+}
+
+AuthorTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reprimand.author;
+  escapeHTML = false;
+}
+
+List : WORepetition {
+	list = list;
+	item = item;
+}
+
+Date : WOString {
+  value = item.raised;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+Raised : WOString {
+  value = item.raised;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+Relief : WOString {
+  value = item.relief;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+Content : WOString {
+  value = item.content;
+}
+
+Author : WOString {
+  value = item.author;
+}

@@ -47,14 +47,35 @@ LastCell : WOString {
 
 RowTitle : WOString {
   value = item.title;
+  escapeHTML = false;
 }
 
 Total : WOString {
   value = item.total;
+  escapeHTML = false;
 }
 
 TotalTitle : WOString {
   value = application.strings.RujelStats_Stats.total;
   escapeHTML = false;
   valueWhenEmpty = "total";
+}
+
+IsPopup : WOConditional {
+  condition = notPopup;
+  negate = true;
+}
+
+Div : WOGenericContainer {
+  elementName = "div";
+  omitTags = notPopup;
+  class = "backfield1";
+  id = "ajaxPopup";
+}
+
+Table : WOGenericContainer {
+  elementName = "table";
+  border = "0";
+  style = "border:solid 1pt #999999;";
+  omitTags = notPopup;
 }

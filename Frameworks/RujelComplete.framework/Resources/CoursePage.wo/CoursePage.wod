@@ -1,0 +1,49 @@
+LessonsLink : WOString {
+  value = application.strings.RujelInterfaces_Names.EduCourse.lessons;
+  escapeHTML = false;
+  valueWhenEmpty = "lessons";
+}
+
+Subject : WOString {
+  value = course.subjectWithComment;
+  escapeHTML = false;
+}
+
+CourseSubject : WOString {
+  value = course.cycle.subject;
+}
+
+EduGroup : WOString {
+  value = course.eduGroup.name;
+}
+
+Teacher : PersonDisplay {
+  person = course.teacher;
+  startWithLast = true;
+  last = 2;
+  first = 2;
+  second = 2;
+}
+
+Reports : WORepetition {
+  list = reports;
+  item = item;
+}
+
+Hyperlink : WOGenericContainer {
+  elementName = "a";
+  href = href;
+  title = item.hover;
+  style = "margin-left:1em;";
+}
+
+ReportName : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+NewWindow : WOString {
+  value = application.strings.RujelComplete_Complete.newWindow;
+  escapeHTML = false;
+  valueWhenEmpty = "print";
+}

@@ -1,0 +1,44 @@
+
+Title : WOString {
+  value = application.strings.RujelComplete_Complete.CourseCatalog;
+  valueWhenEmpty = "CourseCatalog";
+  escapeHTML = false;
+}
+Courses : WORepetition {
+  list = allCourses;
+  item = item;
+}
+
+Head : WOString {
+  value = grHead;
+  escapeHTML = false;
+}
+
+CourseTitle : WOString {
+  value = present;
+  escapeHTML = false;
+}
+
+CourseLink : WOGenericContainer {
+  elementName = "a";
+  href = link;
+  onclick = "updateFrame(this.href);";
+}
+
+ByClass : WOString {
+  value = application.strings.RujelComplete_Complete.byClass;
+  valueWhenEmpty = "By Class";
+  escapeHTML = false;
+}
+
+BySubject : WOString {
+  value = application.strings.RujelComplete_Complete.bySubject;
+  valueWhenEmpty = "By Class";
+  escapeHTML = false;
+}
+
+ByTeacher : WOString {
+  value = application.strings.RujelComplete_Complete.byTeacher;
+  valueWhenEmpty = "By Class";
+  escapeHTML = false;
+}

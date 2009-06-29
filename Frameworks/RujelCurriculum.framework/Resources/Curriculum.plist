@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>subsReport</key>
-	<string>Замен: %d (загрузить сводку)</string>
 	<key>OrigTeacher</key>
 	<string>Замененный</string>
 	<key>Substitute</key>
@@ -14,6 +12,8 @@
 		<string>Совмещение</string>
 		<key>Factor</key>
 		<string>Коэффициент</string>
+		<key>factor</key>
+		<string>коэфф</string>
 		<key>Substitutor</key>
 		<string>Заменяющий</string>
 	</dict>
@@ -153,6 +153,12 @@
 		<string>Нед (дн)</string>
 		<key>deviation</key>
 		<string>Расхождение</string>
+		<key>substitutes</key>
+		<string>Замены (совмещения)</string>
+		<key>reasons</key>
+		<string>Причины и обоснования</string>
+		<key>printCurriculum</key>
+		<string>Выполнение учебного плана</string>
 	</dict>
 	<key>regimes</key>
 	<array>
@@ -242,5 +248,28 @@
 		<key>unrelieve</key>
 		<string>активировать замечание</string>
 	</dict>
+	<key>courseComplete</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<string>curriculum</string>
+			<key>title</key>
+			<string>выполнение</string>
+			<key>component</key>
+			<string>PrintCurriculum</string>
+			<key>sort</key>
+			<string>30</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>reprimands</string>
+			<key>title</key>
+			<string>замечания</string>
+			<key>component</key>
+			<string>PrintReprimands</string>
+			<key>sort</key>
+			<string>40</string>
+		</dict>
+	</array>
 </dict>
 </plist>

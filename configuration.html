@@ -1,5 +1,5 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
     <head>
  		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -59,6 +59,8 @@
 
 </li><li><strong>loggingProperties</strong> - указывает на расположение файла настройки лога. Если не указан, используются системные настройки лога Java.
 Данный файл форматируется в соответствии со спецификацией <a href="http://java.sun.com/j2se/1.5.0/docs/guide/logging/overview.html" target="_blank">Java logging</a>
+
+</li><li><strong>reportsDir</strong> - указывает расположение папки с файлами описания отчетов (Выборки/По курсам).
 </li></ul>
 
 <h3>auth</h3>
@@ -95,7 +97,7 @@
 </li><li>8 - удаление
 </li>
 <li type="none"><p>Для некоторых объектов определены специальные права доступа. Они описаны в таблице:</p>
-<table border="1">
+<table border="1" summary = "Special access">
 <tr>
 <th>Module</th>
 <th>1</th>
@@ -297,12 +299,15 @@
 <p>За что отвечают модули:</p>
 
 <ul><li><strong>net.rujel.base.BaseModule</strong> - уроки
+</li><li><strong>net.rujel.criterial.ModuleInit</strong> - критериальное оценивание (работы)
 </li><li><strong>net.rujel.eduplan.PlanCycle</strong> - учебный план
+</li><li><strong>net.rujel.eduresults.ModuleInit</strong> - итоговые оценки и периодичность
 </li><li><strong>net.rujel.autoitog.AutoItogModule</strong> - автоматический расчет и выставление итоговых (прогнозы)
 </li><li><strong>net.rujel.contacts.EMailBroadcast</strong> - почтовая рассылка
-</li><li><strong>net.rujel.criterial.ModuleInit</strong> - критериальное оценивание (работы)
-</li><li><strong>net.rujel.eduresults.ModuleInit</strong> - итоговые оценки и периодичность
-</li><li><strong>net.rujel.curriculum.CurriculumModule</strong> - учебный процесс (замены)
+</li><li><strong>net.rujel.reports.ReportsModule</strong> - подготовка отчетов по курсам и произвольных выборок по базе данных
+</li><li><strong>net.rujel.curriculum.CurriculumModule</strong> - учебный процесс: замены, дополнительные и пропущенные уроки, исполнение учебного плана, замечания к ведению журнала
+</li><li><strong>net.rujel.stats.StatsModule</strong> - рассчет и хранение статистики по результатам учебного процесса.
+</li><li><strong>net.rujel.complete.CompleteModule</strong> - закрытие учебного года: подготовка набора статических файлов HTML с информацией из журнала
 
 </li></ul>
 
@@ -332,6 +337,10 @@
 </li><li><strong>overwriteItogsScheduled</strong> - перезаписывать итоговую отметку в соответствии с прогнозом при автоматическом выставлении итоговых в конце учебного периода (по умолчанию - false: если итоговая уже была выставлена ранее, она не будет перезаписана)
 
 </li><li><strong>weightToMax</strong> - автоматически приравнивать веса критериев к максимумам по этим критериям (при критериальном оценивании работы)
+
+</li><li><strong>studentsCompleteDir</strong> - путь до папки, в которую должны складываться файлы по учащимся при свертке учебного года
+</li><li><strong>coursesCompleteDir</strong> - путь до папки, в которую должны складываться файлы по учебным курсам при свертке учебного года
+</li><li><strong>completeDir</strong> - путь до папки, в которую должны складываться все файлы при свертке учебного года (в случае если не указаны предыдущие два параметра)
 
 </li><li><span class="node">edu.presenters</span> - подраздел для настройки способа отображения интегральных оценок  (при критериальном оценивании работы)
 <ul>

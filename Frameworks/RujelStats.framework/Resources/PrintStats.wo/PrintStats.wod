@@ -1,0 +1,13 @@
+Title : WOString {
+	value = application.strings.RujelStats_Stats.title;
+	escapeHTML = false;
+}
+
+PrintCourse : PrintCourse {
+  course = course;
+  title = application.strings.RujelStats_Stats.title;
+}
+
+StatsPlugin : StatsPlugin {
+  course = course;
+}

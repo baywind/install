@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="PrintCourse.java" wocomponentcontent="false">
+
+        <binding name="title"/>
+        <binding name="course"/>
+        <validation message="'course' is a required binding.">
+            <unbound name="course"/>
+        </validation>
+        <binding name="presentPeriod"/>
+    </wo>
+</wodefinitions>

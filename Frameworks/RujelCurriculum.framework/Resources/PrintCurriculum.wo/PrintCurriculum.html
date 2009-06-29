@@ -1,0 +1,66 @@
+<webobject name = "PrintCourse">
+<h1><webobject name = "Title"/></h1>
+<table border = "0" width = "100%">
+<tr><td style = "border-style:none;font-size:large;font-weight:bold;" valign = "middle">
+<table border = "0" cellspacing = "0" cellpadding = "5" align = "center">
+<tr><td style = "border-style:none;text-align:left;"><webobject name = "PlanTitle"/></td>
+	<td style = "border-top-style:none;text-align:right;"><webobject name = "Plan"/></td></tr>
+<tr><td style = "border-left-style:none;text-align:left;"><webobject name = "FactTitle"/></td>
+	<td align = "right"><webobject name = "FactCount"/></td></tr>
+<tr><td style = "border-left-style:none;text-align:left;"><webobject name = "DevTitle"/></td>
+	<td align = "right"><webobject name = "Deviation"/></td></tr>
+</table>
+</td><td style = "border-style:none;"><webobject name = "HasVariations">
+	<h1 style = "font-size:large;"><webobject name = "VariationsTitle"/></h1>
+	<table border = "0" cellspacing = "0" cellpadding = "2" align = "center">
+	<thead><tr>
+		<th style = "width:5em;border-left-style:none;"><webobject name="DateTitle"/></th>
+		<th style = "width:9ex;"><webobject name = "ValueTitle"/></th>
+		<th><webobject name = "ReasonTitle"/></th>
+	</tr></thead>
+	<tbody><webobject name = "Variations"><tr>
+		<td style = "border-left-style:none;text-align:center;"><webobject name = "Date"/></td>
+		<webobject name = "ValueCell"><webobject name = "VarValue"/></webobject>
+		<webobject name = "ReasonCell"><webobject name = "Reason"/></webobject>
+	</tr></webobject></tbody>
+	</table></webobject>
+</td></tr><webobject name = "HasSubstitutes">
+	<tr><td colspan = "2" style = "border-style:none;">
+	<h1 style = "font-size:large;"><webobject name = "SubstitutesTitle"/></h1>
+	<table border = "0" cellspacing = "0" cellpadding = "2" align = "center">
+	<thead><tr>
+		<th style = "width:5em;border-left-style:none;"><webobject name="DateTitle"/></th>
+		<th><webobject name = "TeacherTitle"/></th>
+		<th><webobject name = "FactorTitle"/></th>
+		<th><webobject name = "ReasonTitle"/></th>
+	</tr></thead>
+	<tbody><webobject name = "Substitutes"><tr><webobject name = "HasDate">
+		<webobject name = "DateCell"><webobject name = "Date"/></webobject></webobject>
+		<td><webobject name = "Teacher"/></td>
+		<td align = "center"><webobject name = "Factor"/></td>
+		<webobject name = "ReasonCell"><webobject name = "Reason"/></webobject>
+	</tr></webobject></tbody>
+	</table>
+	</td></tr></webobject><webobject name = "HasReasons">
+	<tr><td colspan = "2" style = "border-style:none;">
+	<h1 style = "font-size:large;"><webobject name = "ReasonsTitle"/></h1>
+	<table border = "0" cellspacing = "0" cellpadding = "2" align = "center">
+	<thead><tr>
+		<th style = "width:5em;border-left-style:none;"><webobject name = "BeginTitle"/></th>
+		<th style = "width:5em;"><webobject name = "EndTitle"/></th>
+		<th><webobject name = "ReasonTitle"/></th>
+		<th><webobject name = "RelationTitle"/></th>
+		<th><webobject name = "VerificationTitle"/></th>
+	</tr></thead>
+	<tbody><webobject name = "Reasons"><tr>
+		<td style="border-left-style:none;text-align:center;"><webobject name = "Begin"/></td>
+		<td align = "center"><webobject name = "End"/></td>
+		<webobject name = "ReasonCell"><webobject name = "ReasonText"/></webobject>
+		<td style = "white-space:nowrap;"><webobject name = "Relation"/></td>
+		<td><webobject name = "Verification"/></td>
+	</tr></webobject></tbody>
+	</table>
+	</td></tr>
+	</webobject>
+
+</table></webobject>

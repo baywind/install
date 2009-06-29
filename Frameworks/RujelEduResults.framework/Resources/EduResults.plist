@@ -129,6 +129,8 @@
 		<string>5</string>
 		<key>title</key>
 		<string>Итоговые</string>
+		<key>id</key>
+		<string>eduResults</string>
 	</dict>
 	<key>marksPreset</key>
 	<array>

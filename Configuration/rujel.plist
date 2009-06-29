@@ -443,6 +443,11 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
+			<key>AdminPage</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+			</dict>
 			<key>login</key>
 			<dict>
 				<key>root</key>
@@ -616,19 +621,23 @@
 	<dict>
 		<key>net.rujel.base.BaseModule</key>
 		<string>true</string>
+		<key>net.rujel.criterial.ModuleInit</key>
+		<string>true</string>
 		<key>net.rujel.eduplan.PlanCycle</key>
+		<string>true</string>
+		<key>net.rujel.eduresults.ModuleInit</key>
 		<string>true</string>
 		<key>net.rujel.autoitog.AutoItogModule</key>
 		<string>true</string>
 		<key>net.rujel.contacts.EMailBroadcast</key>
 		<string>true</string>
-		<key>net.rujel.criterial.ModuleInit</key>
-		<string>true</string>
-		<key>net.rujel.eduresults.ModuleInit</key>
+		<key>net.rujel.reports.ReportsModule</key>
 		<string>true</string>
 		<key>net.rujel.curriculum.CurriculumModule</key>
 		<string>true</string>
-		<key>net.rujel.reports.ReportsModule</key>
+		<key>net.rujel.stats.StatsModule</key>
+		<string>true</string>
+		<key>net.rujel.complete.CompleteModule</key>
 		<string>true</string>
 	</dict>
 	<key>edu</key>
@@ -655,6 +664,12 @@
 		<string>7</string>
 		<key>overwriteItogsScheduled</key>
 		<string>false</string>
+		<key>studentsCompleteDir</key>
+		<string>~/test/complete/students</string>
+		<key>coursesCompleteDir</key>
+		<string>~/test/complete/courses</string>
+		<key>completeDir</key>
+		<string>~/test/complete</string>
 		<key>weightToMax</key>
 		<string>true</string>
 		<key>presenters</key>
