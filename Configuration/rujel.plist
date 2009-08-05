@@ -122,8 +122,6 @@
 				<string>1023</string>
 				<key>zavuch</key>
 				<string>15</string>
-				<key>adm</key>
-				<string>15</string>
 				<key>teacher</key>
 				<string>15</string>
 			</dict>
@@ -133,8 +131,6 @@
 				<string>1023</string>
 				<key>zavuch</key>
 				<string>127</string>
-				<key>adm</key>
-				<string>1</string>
 				<key>tutor</key>
 				<string>15</string>
 			</dict>
@@ -177,8 +173,6 @@
 				<string>31</string>
 				<key>any</key>
 				<string>3</string>
-				<key>adm</key>
-				<string>31</string>
 				<key>teacher</key>
 				<string>31</string>
 			</dict>
@@ -195,8 +189,6 @@
 				<string>31</string>
 				<key>zavuch</key>
 				<string>1</string>
-				<key>adm</key>
-				<string>1</string>
 				<key>teacher</key>
 				<string>15</string>
 			</dict>
@@ -205,8 +197,6 @@
 				<key>root</key>
 				<string>1023</string>
 				<key>zavuch</key>
-				<string>7</string>
-				<key>adm</key>
 				<string>7</string>
 				<key>teacher</key>
 				<string>3</string>
@@ -220,8 +210,6 @@
 				<key>zav_kaf</key>
 				<string>1</string>
 				<key>zavuch</key>
-				<string>1</string>
-				<key>adm</key>
 				<string>1</string>
 				<key>teacher</key>
 				<string>1</string>
@@ -267,8 +255,6 @@
 			<key>TeachersList</key>
 			<dict>
 				<key>root</key>
-				<string>0</string>
-				<key>adm</key>
 				<string>0</string>
 			</dict>
 			<key>Prognosis</key>
@@ -329,8 +315,6 @@
 				<key>zav_kaf</key>
 				<string>1</string>
 				<key>zavuch</key>
-				<string>1</string>
-				<key>adm</key>
 				<string>1</string>
 				<key>teacher</key>
 				<string>1</string>
@@ -513,6 +497,21 @@
 				<string>7</string>
 			</dict>
 		</dict>
+		<key>groupMapping</key>
+		<dict>
+			<key>root</key>
+			<string>root</string>
+			<key>zavuch</key>
+			<string>zavuch</string>
+			<key>zav_kaf</key>
+			<string>zav_kaf</string>
+			<key>tutor</key>
+			<string>tutor</string>
+			<key>teacher</key>
+			<string>teacher</string>
+			<key>any</key>
+			<string>any</string>
+		</dict>
 		<key>allowNone</key>
 		<string>false</string>
 		<key>guestUser</key>
@@ -613,7 +612,7 @@
 			<key>zavuch</key>
 			<dict>
 				<key>groups</key>
-				<string>zavuch;adm;any</string>
+				<string>zavuch;any</string>
 				<key>password</key>
 				<string>123</string>
 			</dict>
