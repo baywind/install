@@ -4,33 +4,82 @@
 <dict>
 	<key>schoolNumber</key>
 	<string>0</string>
+	<key>loggingProperties</key>
+	<string>LOCALROOT/Library/WebObjects/Configuration/diaryLog.properties</string>
 	<key>dbConnection</key>
 	<dict>
 		<key>VseobuchSimple</key>
 		<dict>
-			<key>_URL</key>
-			<string>jdbc:mysql://127.0.0.1/DemoSho?capitalizeTypeNames=true&amp;useUnicode=true&amp;characterEncoding=utf8</string>
-			<key>dbName</key>
+			<key>_dbName</key>
 			<string>DemoSho</string>
 		</dict>
-		<key>AccessStore</key>
+		<key>AutoItog</key>
 		<dict>
-			<key>skip</key>
-			<string>true</string>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
 		</dict>
-		<key>PrimitiveTeachers</key>
+		<key>BaseYearly</key>
 		<dict>
-			<key>skip</key>
-			<string>true</string>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>BaseStatic</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelStatic</string>
+		</dict>
+		<key>Criterial</key>
+		<dict>
+			<key>_untagged</key>
+			<string>Criterial</string>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>CriterialStatic</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelStatic</string>
+		</dict>
+		<key>Curriculum</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>EduPlanModel</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelStatic</string>
+		</dict>
+		<key>EduPlanYearly</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>EduResults</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelStatic</string>
+		</dict>
+		<key>MarkArchive</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>Stats</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
 		</dict>
 		<key>serverURL</key>
 		<string>jdbc:mysql://127.0.0.1</string>
 		<key>urlSuffix</key>
-		<string>?capitalizeTypeNames=true&amp;useUnicode=true&amp;characterEncoding=utf8</string>
+		<string>?capitalizeTypeNames=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull</string>
 		<key>username</key>
 		<string>rujel</string>
 		<key>password</key>
 		<string></string>
+		<key>yearTag</key>
+		<string>true</string>
 	</dict>
 	<key>interfaces</key>
 	<dict>
@@ -72,17 +121,6 @@
 		<string>11</string>
 		<key>newYearMonth</key>
 		<string>7</string>
-		<key>presenters</key>
-		<dict>
-			<key>workIntegral</key>
-			<string>%</string>
-			<key>integralColor</key>
-			<string>color</string>
-			<key>weightless</key>
-			<string>none#</string>
-			<key>weightlessColor</key>
-			<string>none</string>
-		</dict>
 	</dict>
 	<key>ui</key>
 	<dict>

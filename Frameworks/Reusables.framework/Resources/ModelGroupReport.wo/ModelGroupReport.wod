@@ -1,0 +1,90 @@
+Models : WORepetition {
+	list = models;
+	item = model;
+}
+
+ModelName : WOString {
+  value = model.name;
+}
+
+ModelURL : WOString {
+  value = modelUrl;
+}
+
+Entities : WORepetition {
+	list = model.entities;
+	item = entity;
+}
+
+EntityName : WOString {
+  value = entity.name;
+}
+
+TableName : WOString {
+  value = entity.externalName;
+}
+
+Attributes : WORepetition {
+	list = entity.attributes;
+	item = prop;
+}
+
+AttrName : WOString {
+  value = prop.name;
+}
+
+PrototypeName : WOString {
+  value = prop.prototypeName;
+}
+
+DbColumn : WOString {
+  value = prop.columnName;
+  valueWhenEmpty = prop.definition;
+}
+
+DbType : WOString {
+  value = prop.externalType;
+}
+
+Relationships : WORepetition {
+	list = entity.relationships;
+	item = prop;
+}
+
+Destination : WOString {
+  value = prop.definition;
+  valueWhenEmpty = prop.destinationEntity.name;
+}
+
+Joins : WORepetition {
+	list = prop.joins;
+	item = join;
+}
+
+Source : WOString {
+  value = join.sourceAttribute.name;
+}
+
+Target : WOString {
+  value = join.destinationAttribute.name;
+}
+
+Hyperlink : WOGenericContainer {
+ 	elementName = "a";
+	href = anchorHref;
+}
+
+Anchor : WOGenericContainer {
+  elementName = "a";
+  name = model.name;
+}
+
+Row: WOGenericContainer {
+	elementName = "tr";
+	style = style;
+}
+Span : WOGenericContainer {
+  elementName = "span";
+  class = "h2";
+  style = style;
+}

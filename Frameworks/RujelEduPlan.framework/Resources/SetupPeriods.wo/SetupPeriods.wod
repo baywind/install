@@ -1,0 +1,143 @@
+BasicTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.basicTitle;
+  escapeHTML = false;
+}
+
+PeriodSelector : EduPeriodSelector {
+  ec = ec;
+  currPeriod = currPeriod;
+  listName = listName;
+}
+
+HolidaysList : HolidaysList {
+  ec = ec;
+  listName = listName;
+}
+
+ListSettings : ListSettings {
+  ec = ec;
+  key = "EduPeriod";
+  currList = listName;
+  extraLists = extraLists;
+  access = session.readAccess.FLAGS.PeriodList;
+  currNum = weekDays;
+}
+
+NoDetails: WOConditional {
+  condition = details;
+  negate = true;
+}
+
+ShowDetails : WOConditional {
+  condition = details;
+}
+
+ShowDetailsContainer : OnClickContainer {
+  elementName = "tr";
+  invokeAction = showDetails;
+  onclick = session.checkRun;
+  class = "grey";
+}
+
+ShowDetailsTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.showDetails;
+  escapeHTML = false;
+}
+
+PeriodsList : WORepetition {
+  list = perList;
+  item = item;
+}
+
+PerName: WOString {
+  value = item.period.name;
+}
+
+Begin : WOString {
+  value = item.period.begin;
+  dateformat = application.prefs.ui.shortDateFormat;
+}
+
+End : WOString {
+  value = item.period.end;
+  dateformat = application.prefs.ui.shortDateFormat;
+}
+
+Weeks : WOString {
+  value = weeksDays;
+}
+
+TotalTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.total;
+  escapeHTML = false;
+}
+
+AddPeriod : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopup;
+  invokeAction = addPeriodToList;
+  class = "green";
+  style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  hide = session.readAccess._create.PeriodList;
+}
+
+PeriodCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = editPeriod;
+  onclick = session.ajaxPopup;
+  disabled = session.readAccess._edit.item.period;
+  parent = "tr";
+}
+
+DeleteCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = deletePeriod;
+  disabled = session.readAccess._delete.item;
+  onclick = session.tryLoad;
+  hide = session.readAccess._create.PeriodList;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+}
+PeriodsTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.choosePeriod.title;
+  escapeHTML = false;
+}
+
+WeeksTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
+  escapeHTML = false;
+}
+
+EmptyCell : WOGenericElement {
+  elementName = "td";
+  omitTags = session.readAccess._create.PeriodList;
+}
+
+WeekDaysForm : WOForm {
+  action = saveWeekDays;
+  style = "white-space:nowrap;";
+}
+
+WeekDaysField : WOTextField {
+  value = weekDays;
+  size = 2;
+  maxlength = 3;
+  numberformat = "0";
+  style = "text-align:center;";
+  disabled = session.readAccess._edit.SettingByCourse;
+  onkeypress = "return isNumberInput(event,false);";
+}
+
+WeekTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.week;
+  escapeHTML = false;
+}
+DaysTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.days;
+  escapeHTML = false;
+}

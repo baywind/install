@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "SETTING_KEY"; 
+            name = key; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NUM_VALUE"; 
+            name = numericValue; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "S_ID"; 
+            name = sID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = "TEXT_VALUE"; 
+            name = textValue; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (key, numericValue, textValue); 
+    className = "net.rujel.base.SettingsBase"; 
+    classProperties = (byCourse, key, numericValue, textValue); 
+    externalName = "SETTINGS_BASE"; 
+    fetchSpecificationDictionary = {}; 
+    name = SettingsBase; 
+    primaryKeyAttributes = (sID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SettingByCourse; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = settingsID; sourceAttribute = sID; }); 
+            name = byCourse; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

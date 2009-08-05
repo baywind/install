@@ -1,0 +1,130 @@
+IsBase : WOConditional {
+  condition = isBase;
+}
+
+NotBase : WOConditional {
+  condition = isBase;
+  negate = true;
+}
+
+HasCourse : WOConditional {
+  condition = bc.course;
+}
+
+NoCourse : WOConditional {
+  condition = bc.course;
+  negate = true;
+}
+
+CourseGroup : WOString {
+  value = bc.course.eduGroup.name;
+}
+
+CourseSubject : WOString {
+  value = bc.course.subjectWithComment;
+  escapeHTML = false;
+}
+
+CourseTeacher : PersonDisplay {
+  person = bc.course.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+}
+
+ShowString : WOConditional {
+  condition = ^showString;
+}
+
+StringValue : WOString {
+  value = bc.textValue;
+}
+
+ShowNum : WOConditional {
+  condition = ^showNum;
+}
+
+NumValue : WOString {
+  value = bc.numericValue;
+}
+
+GroupCell : WOGenericContainer {
+  elementName = "td";
+  class = groupStyle;
+  style = "border:double 3px #cccccc;";
+}
+
+Group : WOString {
+  value = bc.eduGroup.name;
+  valueWhenEmpty = bc.grade.toString;
+}
+
+SubjCell : WOGenericContainer {
+  elementName = "td";
+  class = subjectStyle;
+  style = "border:double 3px #cccccc;";
+}
+
+Subject : WOString {
+  value = bc.cycle.subject;
+  valueWhenEmpty = application.strings.RujelBase_Base.SettingsBase.unspecified;
+}
+
+TeacherCell : WOGenericContainer {
+  elementName = "td";
+  class = teacherStyle;
+  style = "border:double 3px #cccccc;";
+}
+
+Teacher : PersonDisplay {
+  person = bc.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+  valueWhenEmpty = application.strings.RujelBase_Base.SettingsBase.unspecified;
+}
+BaseString : WOString {
+  value = application.strings.RujelBase_Base.SettingsBase.default;
+  escapeHTML = false;
+}
+
+EditCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = edit;
+  hide = session.readAccess._edit.bc;
+  onclick = session.ajaxPopup;
+}
+
+CanEdit : WOConditional {
+  condition = ^editList;
+}
+
+EditImage : WOImage {
+  framework = "app";
+  filename = "files_edit.png";
+}
+
+DeleteCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = delete;
+  hide = session.readAccess._delete.bc;
+  onclick = session.tryLoad;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+}
+
+ComponentContent : WOComponentContent {
+}
+
+Row : WOGenericContainer {
+  elementName = "tr";
+  title = bc.eduYear;
+   class = "grey";
+}

@@ -33,6 +33,7 @@ TextField1: WOTextField {
 	disabled = session.readAccess._edit.timeMachine;
 	style = "text-align:center;";
 	name = "dateField";
+	onkeypress = "return isNumberInput(event,true);";
 }
 
 TodayString : WOString {

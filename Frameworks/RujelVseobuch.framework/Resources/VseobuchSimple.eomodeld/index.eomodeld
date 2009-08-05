@@ -2,7 +2,7 @@
     EOModelVersion = "2.1"; 
     adaptorName = JDBC; 
     connectionDictionary = {
-        URL = "jdbc:mysql://localhost/shobase4? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        URL = "jdbc:mysql://localhost/shobase4? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull"; 
         driver = ""; 
         jdbc2Info = {
             "ANSI92_CONFORMANCE" = ANSI92EntryLevel; 
@@ -340,7 +340,7 @@
                 Default = {
                     adaptorName = JDBC; 
                     connectionDictionary = {
-                        URL = "jdbc:mysql://localhost/shobase4? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        URL = "jdbc:mysql://localhost/shobase4? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull"; 
                         driver = ""; 
                         jdbc2Info = {
                             "ANSI92_CONFORMANCE" = ANSI92EntryLevel; 

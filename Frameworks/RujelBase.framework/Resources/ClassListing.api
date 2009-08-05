@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
 	<wo class="ClassListing" wocomponentcontent="false">
 
@@ -7,12 +7,13 @@
 		<binding name="width"/>
 		<binding name="editingContext"/>
 
-		<validation message="&apos;selection&apos; must be bound to a settable value">
+		<validation message="'selection' must be bound to a settable value">
 			<unsettable name="selection"/>
 		</validation>
 
-		<validation message="&apos;editingContext&apos; is a required binding">
+		<validation message="'editingContext' is a required binding">
 			<unbound name="editingContext"/>
 		</validation>
-	</wo>
+	<binding defaults="Boolean" name="showTitle"/>
+    </wo>
 </wodefinitions>

@@ -10,5 +10,7 @@
         <binding name="onclick"/>
 	    <binding defaults="Boolean" name="disabled"/>
         <binding name="class"/>
+    <binding name="parent"/>
+    <binding defaults="Boolean" name="hide"/>
     </wo>
 </wodefinitions>

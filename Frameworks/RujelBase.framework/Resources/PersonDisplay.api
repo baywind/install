@@ -13,5 +13,6 @@
         <binding defaults="Date Format Strings" name="birthdayFormat"/>
     <binding defaults="Boolean" name="nowrap"/>
         <binding name="valueWhenEmpty"/>
+    <binding name="emptyStyle"/>
     </wo>
 </wodefinitions>

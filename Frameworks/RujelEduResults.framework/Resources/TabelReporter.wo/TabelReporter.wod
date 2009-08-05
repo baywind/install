@@ -1,8 +1,3 @@
-CycleGroup: WORepetition {
-	item = perlist;
-	list = cyclesForPerlists.allKeys;
-}
-
 SubjectTitle: WOString {
 	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
 	valueWhenEmpty = "Subject";
@@ -10,7 +5,6 @@ SubjectTitle: WOString {
 }
 
 PeriodList: WORepetition {
-	index = perIdx;
 	item = perItem;
 	list = perlist;
 }
@@ -21,12 +15,12 @@ PeriodTitle: WOString {
 }
 
 CycleList: WORepetition {
-	item = item;
+	item = cycleItem;
 	list = cycles;
 }
 
 Subject: WOString {
-	value = item.subject;
+	value = cycleItem;
 }
 
 Mark: WOString {
@@ -40,7 +34,7 @@ Comments : WORepetition {
 }
 
 CommentText : WOString {
-  value = item.text;
+  value = commentText;
   escapeHTML = false;
 }
 
@@ -53,20 +47,7 @@ PeriodName : WOString {
 }
 
 CommentSubject : WOString {
-  value = commentSubj;
-  escapeHTML = false;
-}
-
-Li : WOGenericContainer {
-  elementName = "li";
-  style = liStyle;
-}
-
-Ol : WOGenericElement {
-  elementName = "ol";
-  type = "1";
-  start = num;
-  
+  value = item.subject;
 }
 
 Num : WOString {
@@ -76,4 +57,38 @@ Num : WOString {
 CommentsTitle : WOString {
   value = application.strings.RujelEduResults_EduResults.comments;
   valueWhenEmpty = "Comments";
+}
+
+HasComments : WOConditional {
+  condition = comments.count;
+}
+
+Years : WORepetition {
+  list = years;
+  item = item;
+}
+
+ShowYears : WOConditional {
+  condition = years.count;
+}
+
+YearCell : WOGenericContainer {
+  elementName = "th";
+  colspan = item.colspan;
+  style = "border-left:double 3px;";
+}
+
+YearTitle : WOString {
+  value = item.text;
+  escapeHTML = false;
+}
+
+MarkCell : WOGenericContainer {
+  elementName = "td";
+  style = cellStyle;
+}
+
+TitleCell : WOGenericContainer {
+  elementName = "th";
+  style = cellStyle;
 }

@@ -1,56 +1,91 @@
 {
-    attributes = (
-        {
-            allowsNull = N; 
-            columnName = COURSE; 
-            name = courseID; 
-            prototypeName = "int_3"; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = "V_DATE"; 
-            name = date; 
-            prototypeName = date; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = REASON; 
-            name = reasonID; 
-            prototypeName = "int_3"; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = VALUE; 
-            name = value; 
-            prototypeName = byte; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = "V_ID"; 
-            name = vID; 
-            prototypeName = integer; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }
-    ); 
-    attributesUsedForLocking = (courseID, date, value); 
-    className = "net.rujel.curriculum.Variation"; 
-    classProperties = (date, reason, value); 
-    externalName = VARIATION; 
-    fetchSpecificationDictionary = {}; 
-    name = Variation; 
-    primaryKeyAttributes = (vID); 
-    relationships = (
-        {
-            destination = Reason; 
-            isMandatory = Y; 
-            isToMany = N; 
-            joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = rID; sourceAttribute = reasonID; }); 
-            name = reason; 
-        }
-    ); 
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = COURSE;
+			name = courseID;
+			prototypeName = short;
+			userInfo = {
+				"_EntityModeler" = {
+					generateSource = NO;
+				};
+			};
+		},
+		{
+			allowsNull = N;
+			columnName = "V_DATE";
+			name = date;
+			prototypeName = date;
+			userInfo = {
+				"_EntityModeler" = {
+					generateSource = NO;
+				};
+			};
+		},
+		{
+			allowsNull = N;
+			columnName = REASON;
+			name = reasonID;
+			prototypeName = "int_3";
+			userInfo = {
+				"_EntityModeler" = {
+					generateSource = NO;
+				};
+			};
+		},
+		{
+			allowsNull = N;
+			columnName = VALUE;
+			name = value;
+			prototypeName = byte;
+			userInfo = {
+				"_EntityModeler" = {
+					generateSource = NO;
+				};
+			};
+		},
+		{
+			allowsNull = N;
+			columnName = "V_ID";
+			name = vID;
+			prototypeName = integer;
+			userInfo = {
+				"_EntityModeler" = {
+					generateSource = NO;
+				};
+			};
+		},
+	);
+	"attributesUsedForLocking" = (
+		courseID,
+		date,
+		value,
+	);
+	className = "net.rujel.curriculum.Variation";
+	classProperties = (
+		date,
+		reason,
+		value,
+	);
+	externalName = VARIATION;
+	"fetchSpecificationDictionary" = {};
+	name = Variation;
+	primaryKeyAttributes = (
+		vID,
+	);
+	relationships = (
+		{
+			destination = Reason;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = rID;
+					sourceAttribute = reasonID;
+				},
+			);
+			name = reason;
+		},
+	);
 }

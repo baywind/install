@@ -1,0 +1,30 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/Criterial?capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        username = rujel; 
+    }; 
+    entities = (
+        {className = EOGenericRecord; name = Border; }, 
+        {className = "net.rujel.criterial.BorderSet"; name = BorderSet; }, 
+        {className = "net.rujel.criterial.CriteriaSet"; name = CriteriaSet; }, 
+        {className = EOGenericRecord; name = Criterion; }, 
+        {className = "net.rujel.criterial.Indexer"; name = Indexer; }, 
+        {className = EOGenericRecord; name = IndexRow; } 
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/Criterial?capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        username = rujel; 
+                    }; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

@@ -80,11 +80,11 @@ Note2: WOString {
 NoteEdit: WOTextField {
 	value = noteForStudent;
 	disabled = noAccess;
-	size = len;
 	id = ^cellID;
 	onclick = "ext(this,this.size +1,null,'tr');";
 	onkeypress = "return extOnSpace(event,this,this.size -1,null,'tr');";
 	onchange = "checkChanges(this);";
+	style = "width:90%;";
 }
 
 NoteTitle: WOString {

@@ -74,6 +74,7 @@ HasSelector: WOConditional {
 CriterSelector1: WOSwitchComponent {
 	WOComponentName = present.selector;
 	cycle = currSubject.cycle;
+	allLessons = allLessons;
 }
 PresentTabs: Tabs {
 	currTab = present;
@@ -262,6 +263,7 @@ ShowThemes : WOHyperlink {
 LessonsLink : WOString {
   value = application.strings.RujelInterfaces_Names.EduCourse.lessons;
   valueWhenEmpty = "lessons";
+  escapeHTML = false;
 }
 
 CoursesCSS : ResourceLink {

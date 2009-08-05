@@ -1,0 +1,116 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Grades : WORepetition {
+  list = grades;
+  item = gradeItem;
+}
+
+GradeCell : OnClickContainer {
+  elementName = "td";
+  onclick = onclick;
+  invokeAction = selectGrade;
+  class = gradeClass;
+}
+
+Grade : WOString {
+  value = gradeItem;
+  numberformat = "0";
+}
+
+Groups : WORepetition {
+  list = groups;
+  item = groupItem;
+}
+
+GroupCell : OnClickContainer {
+  elementName = "div";
+  onclick = onclick;
+  invokeAction = selectGroup;
+  class = groupClass;
+}
+
+GroupName : WOString {
+  value = groupItem.name;
+}
+
+Cycles : WORepetition {
+  list = cycles;
+  item = cycleItem;
+}
+
+CycleRow : WOGenericContainer {
+  elementName = "tr";
+  class = cycleClass;
+}
+
+CycleCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = selectCycle;
+  onclick = onclick;
+}
+
+Subject : WOString {
+  value = cycleItem.subject;
+}
+
+Courses : WORepetition {
+  list = courses;
+  item = courseItem;
+}
+
+CourseCell : WOGenericContainer {
+  elementName = "div";
+  onmouseover = "dim(this);dim(get(this,'tr'));";
+  onmouseout = "unDim(this);unDim(get(this,'tr'));";
+  onclick = onclick;
+  invokeAction = selectCourse;
+  class = courseClass;
+}
+
+ByCoursePresenter : ByCoursePresenter {
+  value = byCourse;
+}
+
+CourseComment : WOString {
+  value = courseItem.comment;
+}
+
+CourseTeacher : PersonDisplay {
+  person = courseItem.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+}
+
+Form : WOForm {
+  style = "padding:1ex; min-width:8em;white-space:nowrap;";
+}
+
+SubmitButton : WOSubmitButton {
+  action = save;
+  value = application.strings.Reusables_Strings.uiElements.Done;
+  style = "font-size:larger;font-weight:bold;";
+}
+
+CurrYear : WOCheckBox {
+  value = session.eduYear;
+  selection = byCourse.eduYear;
+  disabled = forceEduYear;
+}
+
+Year : WOString {
+  value = session.eduYear;
+}
+
+HasSelection : WOConditional {
+  condition = byCourse.grade;
+}

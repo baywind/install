@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = COMMENT; 
+            name = comment; 
+            prototypeName = text; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = CONTAINER; 
+            name = containerID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = CYCLE; 
+            name = eduCycleID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = STUDENT; 
+            name = studentID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (comment); 
+    className = EOGenericRecord; 
+    classProperties = (comment, container); 
+    externalName = "ITOG_COMMENT"; 
+    fetchSpecificationDictionary = {}; 
+    name = ItogComment; 
+    primaryKeyAttributes = (containerID, eduCycleID, studentID); 
+    relationships = (
+        {
+            destination = ItogContainer; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = iID; sourceAttribute = containerID; }); 
+            name = container; 
+        }
+    ); 
+}

@@ -9,5 +9,7 @@
         <binding name="editingContext"/>
     <binding defaults="Actions" name="selectAction"/>
     <binding defaults="Boolean" name="useAjaxPost"/>
+    <binding defaults="Boolean" name="hideVacant"/>
+        <binding defaults="Boolean" name="allowDelete"/>
     </wo>
 </wodefinitions>

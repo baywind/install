@@ -134,13 +134,21 @@ Minutes : WOTextField {
   onkeypress = "return isNumberInput(event,false);";
 }
 
+CritCount : WOGenericElement {
+	elementName = "input";
+	type = "text";
+	name = "critCount";
+	value = critCount;
+	style = "display:none;";
+}
+
 CriteriaList : WORepetition {
-  list = criteria;
-  item = critItem;
+  count = critCount;
+  index = critIdx;
 }
 
 CriterTitle : WOString {
-  value = critItem.title;
+  value = critName;
   escapeHTML = false;
 }
 
@@ -149,12 +157,15 @@ CriterMax : WOString {
 	escapeHTML = false;
 }
 
-MaxField : WOTextField {
+MaxField : WOGenericElement {
+	elementName = "input";
+	type = "text";
+	name = maxName;
 	size = 2;
 	value = criterMax;
 	style = "text-align:center;";
- 	numberformat = "0";	
-	onkeypress = "return isNumberInput(event);";
+	onkeypress = onChange;
+	onchange = "blockCriters(event);";
 }
 
 CriterWeight : WOString {
@@ -162,11 +173,13 @@ CriterWeight : WOString {
 	escapeHTML = false;
 }
 
-WeightField : WOTextField {
+WeightField : WOGenericElement {
+	elementName = "input";
+	type = "text";
+	name = weightName;
 	size = 2;
 	value = criterWeight;
 	style = "text-align:center;";
-  	numberformat = "0";
 	onkeypress = "return isNumberInput(event);";
 }
 
@@ -179,4 +192,19 @@ Save: WOSubmitButton {
 ResetButton1: WOResetButton {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
+}
+
+CriterContainer : WOGenericContainer {
+  elementName = "th";
+  title = critItem.comment;
+}
+
+NoCriteria : WOString {
+  value = application.strings.RujelCriterial_Strings.noCriteria;
+  escapeHTML = false;
+}
+
+NoCritMax : WOString {
+  value = application.strings.RujelCriterial_Strings.Max;
+  escapeHTML = false;
 }

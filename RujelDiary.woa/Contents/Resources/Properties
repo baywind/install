@@ -1,4 +1,6 @@
 WOPort=2001
 
+ApplicationName=RujelDiary
+
 Settings.className = net.rujel.reusables.PlistReader
 PlistReader.filePath = LOCALROOT/Library/WebObjects/Configuration/diaryConfig.plist

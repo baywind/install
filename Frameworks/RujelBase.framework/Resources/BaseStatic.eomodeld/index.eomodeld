@@ -1,0 +1,29 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/BaseStatic? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        username = rujel; 
+    }; 
+    entities = (
+        {className = "net.rujel.base.BaseCourse"; name = BaseCourse; }, 
+        {className = "net.rujel.base.EntityIndex"; name = EntityIndex; }, 
+        {className = "net.rujel.base.PrimitiveEduCycle"; name = PrimitiveEduCycle; }, 
+        {className = EOGenericRecord; name = SettingByCourse; }, 
+        {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/BaseStatic? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        username = rujel; 
+                    }; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

@@ -17,8 +17,8 @@
         }, 
         {
             allowsNull = N; 
-            columnName = "EDU_COURSE"; 
-            name = eduCourseID; 
+            columnName = COURSE; 
+            name = courseID; 
             prototypeName = integer; 
         }, 
         {
@@ -28,8 +28,8 @@
             prototypeName = date; 
         }, 
         {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
+        {allowsNull = N; columnName = ITOG; name = itogID; prototypeName = short; }, 
         {columnName = MARK; name = mark; prototypeName = anagram; }, 
-        {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }, 
         {
             allowsNull = N; 
             columnName = STUDENT; 
@@ -47,12 +47,20 @@
     ); 
     attributesUsedForLocking = (value, complete, mark, fireDate, flags, bonusID); 
     className = "net.rujel.autoitog.Prognosis"; 
-    classProperties = (value, complete, mark, fireDate, eduPeriod, flags, bonus); 
+    classProperties = (value, complete, mark, fireDate, flags, bonus, autoItog); 
     externalName = PROGNOSIS; 
     fetchSpecificationDictionary = {}; 
     name = Prognosis; 
-    primaryKeyAttributes = (eduCourseID, periodID, studentID); 
+    primaryKeyAttributes = (courseID, itogID, studentID); 
     relationships = (
+        {
+            destination = AutoItog; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = aiID; sourceAttribute = itogID; }); 
+            name = autoItog; 
+        }, 
         {
             deleteRule = EODeleteRuleCascade; 
             destination = Bonus; 
@@ -61,14 +69,6 @@
             joins = ({destinationAttribute = bID; sourceAttribute = bonusID; }); 
             name = bonus; 
             ownsDestination = Y; 
-        }, 
-        {
-            destination = EduPeriod; 
-            isMandatory = Y; 
-            isToMany = N; 
-            joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
-            name = eduPeriod; 
         }
     ); 
 }

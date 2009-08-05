@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="ListSettings.java" wocomponentcontent="true">
+
+        <binding name="ec"/>
+        <validation message="'ec' is a required binding.">
+            <unbound name="ec"/>
+        </validation>
+        <binding name="key"/>
+        <binding name="extraLists"/>
+        <binding name="listKey"/>
+        <binding name="currList"/>
+        <validation message="'currList' must be bound to a settable value">
+            <unsettable name="currList"/>
+        </validation>
+    <binding name="base"/>
+    <binding name="renameList"/>
+        <validation message="'renameList' must be bound to a settable value">
+            <unsettable name="renameList"/>
+        </validation>
+    <binding name="access"/>
+    <binding name="currNum"/>
+        <validation message="'newBinding' must be bound to a settable value">
+            <unsettable name="currNum"/>
+        </validation>
+    </wo>
+</wodefinitions>

@@ -21,12 +21,6 @@ GenericContainer1: WOGenericContainer {
 	style = "border-left:none;text-align:left;";
 }
 
-GenericContainer3: WOGenericContainer {
-	class = workItem.kind;
-	elementName = "tr";
-	bgcolor = "#cccccc";
-}
-
 IsMax: WOConditional {
 	condition = isMax;
 }
@@ -86,6 +80,7 @@ ThemeContainer: WOGenericContainer {
 
 WorkTheme: WOString {
 	value = workItem.theme;
+	escapeHTML = false;
 }
 
 WorkAnnounce: WOString {
@@ -119,6 +114,7 @@ CriteriaTitle : WOString {
 
 Type : WOString {
   value = workItem.type;
+  escapeHTML = false;
 }
 
 IntegralTitle : WOString {

@@ -3,11 +3,12 @@ ComponentContent1: WOComponentContent {
 
 OnClickContainer: OnClickContainer {
 	bgcolor = color;
-	elementName = "tr";
+	elementName = elementName;
 	disabled = disabled;
 	class = style;
 	invokeAction = ^selectAction;
 	onclick = ^onClick;
+	title = ^hover;
 }
 
 Repetition1: WORepetition {

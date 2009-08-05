@@ -7,21 +7,16 @@
             prototypeName = integer; 
         }, 
         {columnName = "CT_ID"; name = ctID; prototypeName = "int_3"; }, 
-        {columnName = "DUE_DATE"; name = dueDate; prototypeName = date; }, 
-        {
-            allowsNull = Y; 
-            columnName = "EDU_CYCLE"; 
-            name = eduCycleID; 
-            prototypeName = "int_3"; 
-        }, 
+        {allowsNull = Y; columnName = CYCLE; name = cycleID; prototypeName = "int_3"; }, 
         {
             allowsNull = Y; 
             columnName = "EDU_GROUP"; 
             name = eduGroupID; 
             prototypeName = integer; 
         }, 
+        {columnName = "FIRE_DATE"; name = fireDate; prototypeName = date; }, 
         {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
-        {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }, 
+        {allowsNull = N; columnName = ITOG; name = itogID; prototypeName = short; }, 
         {columnName = REASON; name = reason; prototypeName = string; }, 
         {
             allowsNull = Y; 
@@ -30,21 +25,21 @@
             prototypeName = integer; 
         }
     ); 
-    attributesUsedForLocking = (teacherID, reason, dueDate, eduGroupID, eduCycleID, courseID, flags); 
+    attributesUsedForLocking = (teacherID, reason, eduGroupID, courseID, flags, cycleID, fireDate); 
     className = "net.rujel.autoitog.CourseTimeout"; 
-    classProperties = (dueDate, eduPeriod, flags, reason); 
+    classProperties = (fireDate, flags, itogContainer, reason); 
     externalName = "COURSE_TIMEOUT"; 
     fetchSpecificationDictionary = {}; 
     name = CourseTimeout; 
     primaryKeyAttributes = (ctID); 
     relationships = (
         {
-            destination = EduPeriod; 
+            destination = ItogContainer; 
             isMandatory = Y; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = perID; sourceAttribute = periodID; }); 
-            name = eduPeriod; 
+            joins = ({destinationAttribute = iID; sourceAttribute = itogID; }); 
+            name = itogContainer; 
         }
     ); 
 }

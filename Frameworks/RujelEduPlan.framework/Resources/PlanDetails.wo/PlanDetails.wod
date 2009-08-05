@@ -1,0 +1,237 @@
+ClassListing : ClassListing {
+	editingContext = ec;
+	selection = selection;
+	width = "100%";
+	showTitle = true;
+	cellpadding = "3";
+	 class = "backfield2";
+}
+SubjectsListing : DynamicTableRow {
+  elementName = "tr";
+  item = item;
+  list = subjects;
+  useStyles = true;
+  switchParam = item.area;
+  onClick = session.tryLoad;
+  selection = selection;
+  selectAction = select;
+  hover = item.fullName;
+}
+
+SubjectString : WOString {
+  value = item.subject;
+}
+
+CyclesRepetition : WORepetition {
+  list = cycles;
+  item = cycleItem;
+}
+
+Courses : WORepetition {
+  list = cycleItem.courses;
+  item = rowItem;
+  index = courseIndex;
+}
+
+CycleHeadCell : OnClickContainer {
+  elementName = "td";
+  rowspan = cycleItem.courses.count;
+  class = "grey";
+  onclick = session.checkRun;
+  invokeAction = selectSubject;
+  disabled = hideGroups;
+  title = cycleItem.cycle.subjectEO.fullName;
+}
+
+CourseRow : WOGenericContainer {
+  elementName = "tr";
+  class = rowItem.styleClass;
+}
+
+FirstCourse : WOConditional {
+  condition = courseIndex;
+  negate = true;
+}
+
+
+CycleTitle : WOString {
+  value = cycleItem.title;
+}
+
+EduGroup : WOString {
+  value = rowItem.eduGroup.name;
+}
+
+TeacherCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = selectTeacher;
+  onclick = session.ajaxPopup;
+  disabled = courseAccess._edit;
+  title = rowItem.course.comment;
+}
+
+Teacher : WOString {
+  value = teacherString;
+  escapeHTML = false;
+}
+
+ListsRepetition : WORepetition {
+  list = listNames;
+  item = listItem;
+}
+
+PeriodsRepetition : WORepetition {
+  list = listDict.periods;
+  item = periodItem;
+}
+
+PeriodCell : WOGenericContainer {
+  elementName = "td";
+  class = perCellClass;
+  style = "width:3em;";
+}
+
+ShowFields : WOConditional {
+  condition = showFields;
+}
+
+NoFields : WOConditional {
+  condition = showFields;
+  negate = true;
+}
+
+WeeklyHours : WOString {
+  value = weeklyHours;
+}
+
+TotalField : WOTextField {
+  value = totalHours;
+  numberformat = "0";
+  maxlength = 3;
+  disabled = session.readAccess._edit.PlanDetail;
+  style = "width:3ex;float:left;text-align:center;";
+  onchange = "checkChanges(this);";
+  onkeypress = "return isNumberInput(event,false);";
+}
+
+WeeklyField : WOTextField {
+  value = weeklyHours;
+  maxlength = 2;
+  disabled = session.readAccess._edit.PlanDetail;
+  style = "width:1.6ex;float:right;text-align:center;";
+  onchange = "checkChanges(this);";
+  onkeypress = "return isNumberInput(event,false);";
+}
+
+Form : WOForm {
+  action = save;
+}
+
+ShowSubjects : WOConditional {
+  condition = hideSubjects;
+  negate = true;
+}
+
+ShowEduGroup : WOConditional {
+  condition = hideGroups;
+  negate = true;
+}
+
+GroupCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = selectEduGroup;
+  onclick = session.checkRun;
+}
+
+EduGroupLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
+	valueWhenEmpty = "Class";
+	escapeHTML = false;
+}
+TeacherLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
+	valueWhenEmpty = "Teacher";
+	escapeHTML = false;
+}
+ListCell : WOGenericContainer {
+  elementName = "th";
+  colspan = listDict.periods.count;
+  style = "border:1px #999999;border-style: none solid;";
+}
+
+ListName : WOString {
+  value = listItem;
+}
+
+PeriodTitle : WOString {
+  value = periodItem.title;
+}
+
+PerWeeksDays : WOString {
+  value = perWeeksDays;
+  escapeHTML = false;
+}
+
+CycleHead : WOString {
+  value = application.strings.RujelInterfaces_Names.EduCourse.cycle;
+  valueWhenEmpty = "Cycle";
+  escapeHTML = false;
+}
+
+SubjectLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+	escapeHTML = false;
+}
+
+TotalCell : WOString {
+  value = totalCell;
+  escapeHTML = false;
+}
+
+TotalLabel: WOString {
+	value = application.strings.RujelEduPlan_EduPlan.properties.total;
+	valueWhenEmpty = "Total";
+	escapeHTML = false;
+}
+
+PlanLabel: WOString {
+	value = application.strings.RujelEduPlan_EduPlan.properties.plan;
+	valueWhenEmpty = "Plan";
+	escapeHTML = false;
+}
+
+PlanHours : WOString {
+  value = cycleItem.cycle.hours;
+  numberformat = "0";
+}
+
+CycleTailCell : WOGenericContainer {
+  elementName = "td";
+  rowspan = cycleItem.courses.count;
+  class = "grey";
+}
+
+ListTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.listName;
+  escapeHTML = false;
+}
+
+HoursTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.hours;
+  escapeHTML = false;
+}
+
+WeekDaysCell : WOGenericContainer {
+  elementName = "div";
+  style = "color:#666666;white-space:nowrap;min-width:3em;";
+  title = application.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
+}
+
+ShowHelp : OnClickContainer {
+  elementName = "div";
+  onclick = session.ajaxPopup;
+  invokeAction = help;
+  class = "button";
+  style = "padding:3px 8px;color:33cc33;";
+}

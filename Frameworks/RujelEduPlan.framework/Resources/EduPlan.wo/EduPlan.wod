@@ -1,0 +1,28 @@
+Wrapper : PageWrapper {
+	title = application.strings.RujelEduPlan_EduPlan.EduPlan;
+	resourcesFramework = currTab.resourcesFramework;
+	cssResource = currTab.cssResource;
+	hasChanges = ec.hasChanges;
+}
+
+Title : WOString {
+	value = currTab.pageTitle;
+	valueWhenEmpty = currTab.title;
+	escapeHTML = false;
+}
+
+Tabs : Tabs {
+  currTab = currTab;
+  tablist = tablist;
+  selectAction = revertEc;
+  onClick = session.checkRun;
+  titleAttribute = "title";
+  hoverAttribute = "hover";
+  vertical = false;
+}
+
+Component : WOSwitchComponent {
+  WOComponentName = currTab.component;
+  ec = ec;
+  dict = currTab;
+}

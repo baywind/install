@@ -1,0 +1,101 @@
+Tabs : Tabs {
+  currTab = currList;
+  tablist = lists;
+  vertical = true;
+}
+
+Usage : WORepetition {
+  list = usage;
+  item = item;
+}
+
+ByCoursePresenter : ByCoursePresenter {
+  value = item;
+  editList = byCourse;
+}
+
+ComponentContent : WOComponentContent {
+}
+
+AddByCourse : OnClickContainer {
+  elementName = "span";
+  onclick = session.ajaxPopup;
+  invokeAction = addByCourse;
+  class = "green";
+  style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  hide = session.readAccess._create.SettingByCourse;
+}
+
+AddListForm : WOForm {
+	action = createList;
+	style = "display:none;";
+	id = "createNewList";
+	class = "orange";
+}
+
+NewListName : WOTextField {
+  value = currList;
+  name = "listName";
+  style = "width:92%;";
+}
+
+AddList : OnClickContainer {
+  elementName = "span";
+  onclick = "showObj('createNewList').listName.value='';hideObj(this)";
+  class = "green";
+  style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+}
+
+ListTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.listName;
+  escapeHTML = false;
+}
+
+EduGroupLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
+	valueWhenEmpty = "Class";
+	escapeHTML = false;
+}
+
+EduPlanLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+	escapeHTML = false;
+}
+
+TeacherLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
+	valueWhenEmpty = "Teacher";
+	escapeHTML = false;
+}
+
+ByCourseList : WORepetition {
+  list = byCourse;
+  item = item;
+}
+
+BasePresenter : ByCoursePresenter {
+  value = base;
+  showString = true;
+}
+
+ByCoursePresenter2 : ByCoursePresenter {
+  value = item;
+}
+
+ListsOverviewTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.listsOverview;
+}
+
+CanCreate : WOConditional {
+  condition = ^access._create;
+  negate = true;
+}
+
+BcListName : WOString {
+  value = item.textValue;
+}
+
+BaseTextValue : WOString {
+  value = base.textValue;
+}

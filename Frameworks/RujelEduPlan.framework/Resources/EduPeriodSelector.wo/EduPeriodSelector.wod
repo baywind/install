@@ -1,0 +1,139 @@
+ShortTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.title;
+  escapeHTML = false;
+}
+
+FullTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.fullName;
+  escapeHTML = false;
+}
+
+BeginTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.begin;
+  escapeHTML = false;
+}
+
+EndTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.end;
+  escapeHTML = false;
+}
+
+WeeksTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
+  escapeHTML = false;
+}
+
+
+Row : OnClickContainer {
+  elementName = "tr";
+  onclick = session.checkRun;
+  invokeAction = select;
+  disabled = cantSelect;
+  class = "ungerade";
+}
+
+Periods : WORepetition {
+  list = list;
+  item = perItem;
+}
+
+NotCurrent : WOConditional {
+  condition = isCurrent;
+  negate = true;
+}
+
+Short : WOString {
+  value = perItem.title;
+}
+
+FullName : WOString {
+  value = perItem.fullName;
+}
+
+Begin : WOString {
+  value = perItem.begin;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+End : WOString {
+  value = perItem.end;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+Weeks : WOString {
+  value = weeksDays;
+}
+
+IsCurent : WOConditional {
+  condition = isCurrent;
+}
+
+ShortField : WOTextField {
+  value = title;
+  size = 6;
+  maxlength = 9;
+  name = "shortName";
+}
+
+NameField : WOTextField {
+  value = fullName;
+  size = 16;
+  maxlength = 28;
+  name = "fullName";
+  onfocus = "if(!value)value=form.shortName.value;";
+}
+
+BeginField : WOTextField {
+	value = begin;
+	dateformat = application.prefs.ui.dateFormat;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+	name = "begin";
+}
+
+EndField : WOTextField {
+	value = end;
+	dateformat = application.prefs.ui.dateFormat;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+	name = "end";
+	onfocus = "if(!value)value=form.begin.value;";
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+CanCreate: WOConditional {
+	condition = canCreate;
+}
+
+Form : WOForm {
+}
+
+CanDelete : WOConditional {
+  condition = "";
+}
+
+DeleteSpan : OnClickContainer {
+  elementName = "span";
+  invokeAction = delete;
+  onclick = confirmDelete;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+}
+
+TotalTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.total;
+  escapeHTML = false;
+}

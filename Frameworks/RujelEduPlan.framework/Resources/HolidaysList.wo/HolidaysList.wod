@@ -1,0 +1,170 @@
+Title : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.holidays;
+  escapeHTML = false;
+}
+
+NameTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.name;
+  escapeHTML = false;
+}
+
+BeginTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.begin;
+  escapeHTML = false;
+}
+
+EndTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.end;
+  escapeHTML = false;
+}
+
+ListTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.listName;
+  escapeHTML = false;
+}
+
+Repetition : WORepetition {
+  list = list;
+  item = item;
+}
+
+Exists : WOConditional {
+  condition = exists;
+}
+
+ExistingRow : OnClickContainer {
+  elementName = "tr";
+  class = rowClass;
+  disabled = session.readAccess._edit.Holiday;
+  invokeAction = select;
+  title = item.listName;
+}
+
+NameCell: OnClickContainer {
+	elementName = "td";
+	onclick = "toggleDisabled(this);";
+	disabled = item.name;
+}
+
+Name : WOString {
+  value = item.holidayType.name;
+}
+
+Begin : WOString {
+  value = item.begin;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+End : WOString {
+  value =item.end;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ListName : WOString {
+  value = item.listName;
+}
+
+Preset : WOConditional {
+  condition = exists;
+  negate = true;
+}
+
+BeginField : WOTextField {
+	value = item.begin;
+	dateformat = application.prefs.ui.dateFormat;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+	disabled = item.disabled;
+}
+
+EndField : WOTextField {
+	value = item.end;
+	dateformat = application.prefs.ui.dateFormat;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+	onfocus = "if(!value && defaultValue)value=defaultValue;";
+	disabled = item.disabled;
+}
+
+Disabled : WOCheckBox {
+	checked = item.disabled;
+	style = "display:none;";
+}
+
+PresetRow: WOGenericContainer {
+	elementName = "tr";
+	class = rowClass;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+Form : WOForm {
+}
+
+IsNotEO : WOConditional {
+  condition = item.editingContext;
+  negate = true;
+}
+
+BeginNewField : WOTextField {
+	value = newDict.begin;
+	dateformat = application.prefs.ui.dateFormat;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+	name = "beginH";
+}
+
+EndNewField : WOTextField {
+	value = newDict.end;
+	dateformat = application.prefs.ui.dateFormat;
+	size = 10;
+	maxlength = 10;
+	style = "text-align:center;";
+	onkeypress = "return isNumberInput(event,true);";
+	onfocus = "if(!value)value=form.beginH.value;";
+}
+
+NewNameField : WOTextField {
+  value = newDict.name;
+  style = "width:96%;";
+  maxlength = 28;
+}
+
+IsDefined : WOConditional {
+  condition = item.holidayType;
+}
+
+Undefined : WOConditional {
+  condition = item.holidayType;
+  negate = true;
+}
+
+NameField : WOTextField {
+  value = item.name;
+  style = "width:96%;";
+  maxlength = 28;
+}
+
+CanCreate : WOConditional {
+  condition = canCreate;
+}
+
+Days : WOString {
+  value = item.days;
+}
+
+DaysTitle : WOString {
+  value = totalDays;
+}
+
+ShowButtton : WOConditional {
+  condition = session.readAccess.create.Holiday;
+}

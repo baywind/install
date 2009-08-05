@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "IN_YEAR_COUNT"; 
+            name = inYearCount; 
+            prototypeName = byte; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueType = i; 
+        }, 
+        {
+            columnName = NAME; 
+            name = name; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = SORT; 
+            name = sort; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "T_ID"; 
+            name = tID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = TITLE; 
+            name = title; 
+            prototypeName = anagram; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (inYearCount, name, sort, title); 
+    className = "net.rujel.eduresults.ItogType"; 
+    classProperties = (inYearCount, name, sort, title); 
+    externalName = "ITOG_TYPE"; 
+    fetchSpecificationDictionary = {}; 
+    name = ItogType; 
+    primaryKeyAttributes = (tID); 
+}

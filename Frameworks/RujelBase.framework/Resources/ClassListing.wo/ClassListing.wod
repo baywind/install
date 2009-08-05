@@ -3,8 +3,8 @@ Generic1: WOGenericContainer {
 	width = ^width;
 	border = ^border;
 	class = ^class;
-	spacing = ^spacing;
-	padding = ^padding;
+	cellspacing = ^cellspacing;
+	cellpadding = ^cellpadding;
 	style = ^style;
 }
 
@@ -24,4 +24,17 @@ String1: WOString {
 
 String2: WOString {
 	value = currClass.title;
+}
+
+Component : WOComponentContent {
+}
+
+HasTitle : WOConditional {
+  condition = ^showTitle;
+}
+
+Title : WOString {
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
+	valueWhenEmpty = "Class";
+	escapeHTML = false;
 }

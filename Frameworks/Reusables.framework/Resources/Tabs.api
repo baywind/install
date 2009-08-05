@@ -27,5 +27,7 @@
 			<unbound name="currTab"/>
 		</validation>
 	<binding name="idAttribute"/>
+    <binding name="selectAction"/>
+    <binding name="pushValues"/>
     </wo>
 </wodefinitions>

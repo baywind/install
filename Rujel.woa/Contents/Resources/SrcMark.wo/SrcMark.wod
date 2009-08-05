@@ -19,11 +19,13 @@ Tabs1: Tabs {
 EduGroupLabel: WOString {
 	value = application.strings.RujelInterfaces_Names.EduGroup.this;
 	valueWhenEmpty = "Class";
+	escapeHTML = false;
 }
 
 EduPlanLabel: WOString {
 	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
 	valueWhenEmpty = "Subject";
+	escapeHTML = false;
 }
 
 CountTitle: WOString {
@@ -33,6 +35,7 @@ CountTitle: WOString {
 TeacherLabel: WOString {
 	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
 	valueWhenEmpty = "Teacher";
+	escapeHTML = false;
 }
 
 ClassSelector: WOConditional {
@@ -115,6 +118,8 @@ TeacherLN: PersonDisplay {
 	first = 1;
 	second = 1;
 	startWithLast = true;
+	valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+	emptyStyle = "font-style:italic;";
 }
 
 EditLink: WOHyperlink {

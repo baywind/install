@@ -1,85 +1,40 @@
 {
-	attributes = (
-		{
-			allowsNull = N;
-			columnName = "AREA_ID";
-			name = areaID;
-			prototypeName = short;
-		},
-		{
-			columnName = "FULL_NAME";
-			name = fullName;
-			prototypeName = string;
-		},
-		{
-			allowsNull = N;
-			columnName = "NORMAL_GROUP";
-			name = normalGroup;
-			prototypeName = byte;
-			valueType = i;
-		},
-		{
-			allowsNull = N;
-			columnName = NUM;
-			name = num;
-			prototypeName = short;
-		},
-		{
-			allowsNull = N;
-			columnName = "S_ID";
-			name = sID;
-			prototypeName = short;
-		},
-		{
-			allowsNull = N;
-			columnName = SUBGROUPS;
-			name = subgroups;
-			prototypeName = byte;
-			valueType = i;
-		},
-		{
-			allowsNull = N;
-			columnName = SUBJECT;
-			name = subject;
-			prototypeName = word;
-		},
-	);
-	"attributesUsedForLocking" = (
-		areaID,
-		fullName,
-		normalGroup,
-		num,
-		subgroups,
-		subject,
-	);
-	className = "net.rujel.eduplan.Subject";
-	classProperties = (
-		area,
-		fullName,
-		normalGroup,
-		num,
-		subgroups,
-		subject,
-	);
-	externalName = SUBJECT;
-	"fetchSpecificationDictionary" = {};
-	name = Subject;
-	primaryKeyAttributes = (
-		sID,
-	);
-	relationships = (
-		{
-			destination = SubjectArea;
-			isMandatory = Y;
-			isToMany = N;
-			joinSemantic = EOInnerJoin;
-			joins = (
-				{
-					destinationAttribute = cgID;
-					sourceAttribute = areaID;
-				},
-			);
-			name = area;
-		},
-	);
+    attributes = (
+        {allowsNull = N; columnName = AREA; name = areaID; prototypeName = short; }, 
+        {columnName = "FULL_NAME"; name = fullName; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = "NORMAL_GROUP"; 
+            name = normalGroup; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {allowsNull = N; columnName = NUM; name = num; prototypeName = short; }, 
+        {allowsNull = N; columnName = "S_ID"; name = sID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = SUBGROUPS; 
+            name = subgroups; 
+            prototypeName = byte; 
+            valueType = i; 
+        }, 
+        {allowsNull = N; columnName = SUBJECT; name = subject; prototypeName = word; }
+    ); 
+    attributesUsedForLocking = (areaID, fullName, normalGroup, num, subgroups, subject); 
+    className = "net.rujel.eduplan.Subject"; 
+    classProperties = (area, fullName, normalGroup, num, subgroups, subject); 
+    externalName = SUBJECT; 
+    fetchSpecificationDictionary = {}; 
+    name = Subject; 
+    primaryKeyAttributes = (sID); 
+    relationships = (
+        {
+            destination = SubjectArea; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = saID; sourceAttribute = areaID; }); 
+            name = area; 
+        }
+    ); 
 }

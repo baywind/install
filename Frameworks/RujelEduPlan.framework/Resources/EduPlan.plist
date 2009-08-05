@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>EduPlan</key>
+	<string>Учебный план </string>
 	<key>showAll</key>
 	<string>Добавить предметы</string>
 	<key>hideUnused</key>
@@ -14,6 +16,8 @@
 		<string>Предмет</string>
 		<key>subjects</key>
 		<string>Предметы</string>
+		<key>name</key>
+		<string>Название</string>
 		<key>fullName</key>
 		<string>Полное название</string>
 		<key>area</key>
@@ -30,19 +34,133 @@
 		<string>групп</string>
 		<key>subgrTitle</key>
 		<string>количество подгрупп в классе</string>
+		<key>holidays</key>
+		<string>Каникулы и праздники</string>
+		<key>listName</key>
+		<string>График</string>
+		<key>plan</key>
+		<string>План</string>
+		<key>total</key>
+		<string>Сумма</string>
 	</dict>
-	<key>GlobalPlan</key>
-	<string>Учебный план </string>
+	<key>EduPeriod</key>
+	<dict>
+		<key>this</key>
+		<string>Учебный период</string>
+		<key>eduYear</key>
+		<string>Учебный год</string>
+		<key>begin</key>
+		<string>Начало</string>
+		<key>end</key>
+		<string>Конец</string>
+		<key>title</key>
+		<string>Кратко</string>
+		<key>fullName</key>
+		<string>Полное название</string>
+		<key>weeksDays</key>
+		<string>циклов (дней)</string>
+	</dict>
+	<key>SetupPeriods</key>
+	<dict>
+		<key>title</key>
+		<string>Настройка периодов</string>
+		<key>basicTitle</key>
+		<string>&lt;h2&gt;Базовые учебные модули&lt;/h2&gt;&lt;div style=&quot;text-align:center&quot;&gt;(для большинства учебных групп)&lt;/div&gt;</string>
+		<key>defaultListName</key>
+		<string>Базовый</string>
+		<key>total</key>
+		<string>всего</string>
+		<key>showDetails</key>
+		<string>Показать подробности</string>
+		<key>listsOverview</key>
+		<string>Список учебных графиков</string>
+		<key>week</key>
+		<string>цикл</string>
+		<key>days</key>
+		<string>дней</string>
+		<key>choosePeriod</key>
+		<dict>
+			<key>title</key>
+			<string>Учебный модуль</string>
+			<key>presenter</key>
+			<string>EduPeriodSelector</string>
+			<key>takeValuesFromRequest</key>
+			<true/>
+			<key>invokeAction</key>
+			<true/>
+			<key>presenterBindings</key>
+			<dict>
+				<key>selectAction</key>
+				<string>$returnPage</string>
+				<key>selected</key>
+				<string>.</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>planTabs</key>
+	<array>
+		<dict>
+			<key>component</key>
+			<string>GlobalPlan</string>
+			<key>title</key>
+			<string>Общий план</string>
+			<key>pageTitle</key>
+			<string>Учебный план</string>
+			<key>resourcesFramework</key>
+			<string>RujelEduPlan</string>
+			<key>cssResource</key>
+			<string>EduPlan.css</string>
+			<key>sort</key>
+			<string>10</string>
+		</dict>
+		<dict>
+			<key>component</key>
+			<string>SetupPeriods</string>
+			<key>title</key>
+			<string>Учебные Периоды</string>
+			<key>sort</key>
+			<string>20</string>
+		</dict>
+		<dict>
+			<key>component</key>
+			<string>PlanDetails</string>
+			<key>title</key>
+			<string>Детализация плана</string>
+			<key>sort</key>
+			<string>30</string>
+		</dict>
+	</array>
 	<key>planRegime</key>
 	<dict>
 		<key>title</key>
 		<string>Учебный План</string>
 		<key>component</key>
-		<string>GlobalPlan</string>
+		<string>EduPlan</string>
 		<key>group</key>
 		<string>edu</string>
 		<key>sort</key>
 		<string>40</string>
+	</dict>
+	<key>messages</key>
+	<dict>
+		<key>emptyDate</key>
+		<string>Необходимо указывать и начало и конец периода</string>
+		<key>beginEndPeriod</key>
+		<string>Конец периода не может быть раньше начала</string>
+		<key>datesNotInYear</key>
+		<string>указанные даты начала и конца не попадают в текущий учебный год</string>
+		<key>invalidDateInMonth</key>
+		<string>Неверная дата для выбранного месяца</string>
+		<key>titleRequired</key>
+		<string>Необходимо указать краткое название периода</string>
+		<key>titleTooLong</key>
+		<string>Слишком длинное краткое название периода.&lt;br/&gt; Можно использовать не более двух слов длиной не более 4 букв каждое.</string>
+		<key>periodsIntersect</key>
+		<string>Периоды в списке пересекаются</string>
+		<key>confirmDelete</key>
+		<string> Вы уверены, что хотите удалить этот период? Он включен в %d списков: </string>
+		<key>confirmRemove</key>
+		<string>Вы уверены, что хотите убрать этот период из списка \&apos;%s\&apos;?</string>
 	</dict>
 </dict>
 </plist>

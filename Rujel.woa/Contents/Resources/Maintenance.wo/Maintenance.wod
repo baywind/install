@@ -1,0 +1,4 @@
+ModelReport : WOHyperlink {
+	action = modelReport;
+	target = "_blank";
+}

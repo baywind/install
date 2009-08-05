@@ -138,6 +138,8 @@
 		<string>Некоторые из связанных замен/поправок не попадают в указанный период</string>
 		<key>invalidPeriod</key>
 		<string>Конечная дата не может быть меньше начальной</string>
+		<key>courseHasVariations</key>
+		<string>В этом курсе описаны поправки</string>
 	</dict>
 	<key>titles</key>
 	<dict>

@@ -21,6 +21,8 @@ TeacherName : PersonDisplay {
 	first = 2;
 	second = 2;
 	startWithLast = true;
+	valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+	emptyStyle = "font-style:italic;";
 }
 
 HeadTitle: WOString {

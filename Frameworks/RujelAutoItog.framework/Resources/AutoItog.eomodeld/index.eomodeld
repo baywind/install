@@ -327,10 +327,11 @@
     }; 
     entities = (
         {className = "net.rujel.autoitog.CourseTimeout"; name = CourseTimeout; }, 
-        {className = "net.rujel.autoitog.PrognosUsage"; name = PrognosUsage; }, 
         {className = "net.rujel.autoitog.Prognosis"; name = Prognosis; }, 
         {className = "net.rujel.autoitog.StudentTimeout"; name = StudentTimeout; }, 
-        {className = "net.rujel.autoitog.Bonus"; name = Bonus; }
+        {className = "net.rujel.autoitog.Bonus"; name = Bonus; }, 
+        {className = "net.rujel.autoitog.AutoItog"; name = AutoItog; }, 
+        {className = EOGenericRecord; name = ItogRelated; }
     ); 
     userInfo = {
         "_EntityModeler" = {

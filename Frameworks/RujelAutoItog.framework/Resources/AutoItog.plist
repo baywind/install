@@ -135,6 +135,8 @@
 		<string>У Вас недостаточно прав доступа, чтобы снять добавку</string>
 		<key>markHasBonus</key>
 		<string>Оценка была повышена</string>
+		<key>bonus</key>
+		<string>Бонус</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

@@ -51,6 +51,10 @@
 	<string>Максимумы</string>
 	<key>criterWeight</key>
 	<string>Веса</string>
+	<key>noCriteria</key>
+	<string>Без критериев</string>
+	<key>Max</key>
+	<string>Максимум</string>
 	<key>comments</key>
 	<string>заметки</string>
 	<key>inspector</key>
@@ -73,6 +77,12 @@
 		<string>Максимум по критерию &apos;%s&apos; не может быть меньше нуля</string>
 		<key>unavailbleCriterion</key>
 		<string>Оценка по недоступному критерию</string>
+		<key>oddCriteria</key>
+		<string>В работе есть оценки по отсутствующим критериям:</string>
+		<key>noCriteriaWithCriteria</key>
+		<string>В работе должны быть либо критериальные оценки либо без критериев, но не одновременно.</string>
+		<key>courseHasWorks</key>
+		<string>В этом курсе описаны работы</string>
 	</dict>
 	<key>worksTab</key>
 	<dict>
@@ -96,10 +106,12 @@
 		<string>MarksPresenter</string>
 		<key>selector</key>
 		<string>CriterSelector</string>
-		<key>cssResource</key>
-		<string>styles.css</string>
 		<key>framework</key>
 		<string>RujelCriterial</string>
+		<key>cssResource</key>
+		<string>styles.css</string>
+		<key>scriptResource</key>
+		<string>criterial.js</string>
 		<key>prefetchPaths</key>
 		<array>
 			<string>marks</string>

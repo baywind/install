@@ -161,6 +161,7 @@ HasSelector: WOConditional {
 CriterSelector1: WOSwitchComponent {
 	WOComponentName = present.selector;
 	cycle = course.cycle;
+	course = course;
 }
 
 PresentTabs: Tabs {
@@ -178,6 +179,8 @@ TeacherName: PersonDisplay {
 	first = 2;
 	last = 2;
 	second = 2;
+	valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+	emptyStyle = "font-style:italic;";
 }
 
 

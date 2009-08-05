@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>ModelGroup Report</title>
+</head>
+<style>
+.h1 {
+	font-size: x-large;
+	font-weight: bold;
+	margin-left:2em;
+	margin-right:1em;
+}
+.h2 {
+	font-size: large;
+	font-weight: bold;
+	margin-left:2em;
+	margin-right:1em;
+}
+p {
+	margin-bottom: 2px;
+}
+</style>
+<body>
+<div style = "position:fixed;top:1px;right:1px;padding:5px;line-height:120%;background-color:#cccccc;">
+<webobject name = "Models">
+<webobject name = "Hyperlink"><webobject name = "ModelName"/></webobject><br/>
+</webobject></div>
+<webobject name = "Models"><div style = "border:1px solid #333333;margin-top:1em;padding:1px 1em 1ex;">
+	<div><span class="h1"><webobject name = "Anchor"><webobject name = "ModelName"/></webobject></span>
+		URL: <webobject name = "ModelURL"/></div>
+	<webobject name = "Entities">
+		<p><webobject name = "Span"><webobject name = "EntityName"/></webobject>
+			( <webobject name = "TableName"/> )</p>
+		<table border = "1">
+		<tr><th>Attributes</th><th>prototype</th><th>column</th><th>dbType</th></tr>
+		<webobject name = "Attributes"><webobject name = "Row">
+			<td><webobject name = "AttrName"/></td>
+			<td><webobject name = "PrototypeName"/></td>
+			<td><webobject name = "DbColumn"/></td>
+			<td><webobject name = "DbType"/></td>
+			</webobject></webobject>
+		<tr><th>Relationships</th><th>target</th><th colspan = "2">joins</th></tr>
+		<webobject name = "Relationships"><webobject name = "Row">
+			<td><webobject name = "AttrName"/></td>
+			<td><webobject name = "Destination"/></td>
+			<td colspan = "2"><webobject name = "Joins">
+			<webobject name = "Source"/>=<webobject name = "Target"/>; </webobject></td>
+		</webobject></webobject></table>
+	</webobject>
+</div></webobject>
+</body>
+</html>

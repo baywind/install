@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = COURSE; 
+            name = courseID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = ITOG; 
+            name = itogID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "REL_KEY"; 
+            name = relKey; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "R_ID"; 
+            name = rID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (courseID, itogID, relKey); 
+    className = EOGenericRecord; 
+    classProperties = (autoItog, relKey); 
+    externalName = "ITOG_RELATED"; 
+    fetchSpecificationDictionary = {}; 
+    name = ItogRelated; 
+    primaryKeyAttributes = (rID); 
+    relationships = (
+        {
+            destination = AutoItog; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = aiID; sourceAttribute = itogID; }); 
+            name = autoItog; 
+        }
+    ); 
+}

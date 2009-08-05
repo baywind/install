@@ -12,6 +12,7 @@ LOCALROOT\Library\Frameworks\Reusables.framework\Resources\Java\reusables.jar
 LOCALROOT\Library\Frameworks\RujelArchiving.framework\Resources\Java\rujelarchiving.jar
 LOCALROOT\Library\Frameworks\RujelAutoItog.framework\Resources\Java\rujelautoitog.jar
 LOCALROOT\Library\Frameworks\RujelBase.framework\Resources\Java\rujelbase.jar
+LOCALROOT\Library\Frameworks\RujelComplete.framework\Resources\Java\rujelcomplete.jar
 LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\activation.jar
 LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\mail.jar
 LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\rujelcontacts.jar

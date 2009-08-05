@@ -63,3 +63,8 @@ IfGroup : WOConditional {
 GroupName : WOString {
   value = eduGroup.name;
 }
+
+EduYear : WOString {
+  value = eduYear;
+  escapeHTML = false;
+}

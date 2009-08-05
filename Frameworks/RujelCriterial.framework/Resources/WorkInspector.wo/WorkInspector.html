@@ -1,5 +1,5 @@
 <div style="width:36em;" class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
-<webobject name="Form1"><table border="1" bordercolor = "#cccccc" cellspacing = "0" width="100%" align="center">
+<webobject name="Form1"><table border="1" width="100%" align="center" style = "border-collapse:collapse;border:2px solid #999999;">
 <tr>
 <td align = "center">№ <webobject name = "Number"/></td>
 <th align = "center"><webobject name = "LessonTitle"/></th>
@@ -24,16 +24,18 @@
 <nobr>
 <webobject name = "Hours"/> : <webobject name = "Minutes"/>
 </nobr></td></tr><tr>
-<td colspan = "2"></td>
-<td colspan = "2">
+<td colspan = "4">
+	<table align = "left" border = "1" cellspacing = "1">
+	<tr><th colspan = "2" style = "white-space:nowrap;"><webobject name = "NoCriteria"/></th>
+	</tr><tr><td align = "right"><webobject name = "NoCritMax"/>:</td>
+		<td><webobject name = "MaxField"/></td></tr>
+	</table>
 	<table align = "center" border = "1" cellspacing = "1">
 	<thead>
-	<tr><th onclick = "toggleObj('weights');"><webobject name = "CriterHead"/></th>
-		<webobject name = "CriteriaList">
-		<th><webobject name = "CriterTitle"/></th>
-		</webobject>
-	</tr></thead>
-	<tbody><tr>
+	<tr id = "titles"><th onclick = "toggleObj('weights');"><webobject name = "CritCount"/>
+		<webobject name = "CriterHead"/></th><webobject name = "CriteriaList">
+		<webobject name = "CriterContainer"><webobject name = "CriterTitle"/></webobject></webobject></tr></thead>
+	<tbody><tr id = "maxs">
 		<td><webobject name = "CriterMax"/></td>
 		<webobject name = "CriteriaList">
 		<td><webobject name = "MaxField"/></td>

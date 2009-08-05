@@ -1,31 +1,32 @@
-<div style = "float:left;margin-right:1em;">
-<webobject name="CycleGroup">
-<table style="margin-top:1.2em;border-color:#666666;border-collapse:collapse;" cellpadding="2" cellspacing="0" border="1">
+<table style="float:left;margin-right:1em;margin-top:1.2em;border-color:#666666;border-collapse:collapse;text-align:center;" cellpadding="2" cellspacing="0" border="1">
+<thead><webobject name = "ShowYears">
+<tr><td></td><webobject name = "Years">
+<webobject name = "YearCell"><webobject name = "YearTitle"/></webobject></webobject>
+</tr></webobject>
 <tr><th style="width:10em;"><webobject name="SubjectTitle"></webobject></th>
-<webobject name="PeriodList"><th style="width:2em;text-align:center;">
-<webobject name="PeriodTitle"></webobject>
-</th></webobject>
-</tr>
-<webobject name="CycleList"><tr>
-<td align="left" style = "height:2em;padding-left:1ex;"><webobject name="Subject"></webobject></td>
 <webobject name="PeriodList">
-<td align="center" style = "font-size:larger;">
-<webobject name="Mark"></webobject>
-</td></webobject>
-</tr>
-</webobject></table>
+<webobject name = "TitleCell"><webobject name="PeriodTitle"/></webobject>
+</webobject></tr></thead>
+<tbody style = "font-size:larger;"><webobject name="CycleList"><tr>
+<td align="left" style = "height:2em;padding-left:1ex;font-size:smaller;">
+	<webobject name="Subject"></webobject></td>
+<webobject name="PeriodList">
+<webobject name = "MarkCell"><webobject name="Mark"/></webobject>
 </webobject>
-</div>
-<table border = "0" style = "font-size:smaller;">
-<tr><td colspan = "3" align = "center" style = "font-size:larger;font-weight:bold;">
-<webobject name = "CommentsTitle"/>
-<webobject name = "Comments">
-<webobject name = "NextPeriod">
-<tr><td colspan = "3" style = "font-size:larger;text-decoration:underline;padding:0.6em 0em 0.3em;">
-<webobject name = "PeriodName"/></td></tr></webobject>
-<tr valign = "top"><td style = "padding-left:2em;padding-right:0.2em;"><webobject name = "Num"/></td>
-    <td style = "font-weight:bold;padding-right:1ex;"><webobject name = "CommentSubject"/></td>
-    <td><webobject name = "CommentText"/></td>
 </tr>
+</webobject></tbody></table>
+<webobject name = "HasComments">
+	<table border = "0" style = "font-size:smaller;">
+	<tr><td colspan = "3" align = "center" style = "font-size:larger;font-weight:bold;">
+	<webobject name = "CommentsTitle"/></td></tr>
+	<webobject name = "Comments">
+	<webobject name = "NextPeriod">
+	<tr><td colspan = "3" style = "font-size:larger;text-decoration:underline;padding:0.6em 0em 0.3em;">
+	<webobject name = "PeriodName"/></td></tr></webobject>
+	<tr valign = "top"><td style = "padding-left:2em;padding-right:0.2em;"><webobject name = "Num"/></td>
+	    <td style = "font-weight:bold;padding-right:1ex;"><webobject name = "CommentSubject"/></td>
+	    <td><webobject name = "CommentText"/></td>
+	</tr>
+	</webobject>
+	</table>
 </webobject>
-</table>

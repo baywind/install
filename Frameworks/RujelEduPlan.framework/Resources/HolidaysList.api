@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="HolidaysList.java" wocomponentcontent="false">
+
+        <binding name="ec"/>
+        <validation message="'ec' is a required binding.">
+            <unbound name="ec"/>
+        </validation>
+        <binding name="listName"/>
+        <binding defaults="Boolean" name="existing"/>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {columnName = "TL_ID"; name = pKey; prototypeName = "int_3"; }, 
+        {
+            allowsNull = N; 
+            columnName = "LIST_NAME"; 
+            name = listName; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "ITOG_TYPE"; 
+            name = typeID; 
+            prototypeName = short; 
+        }
+    ); 
+    attributesUsedForLocking = (listName, typeID); 
+    className = EOGenericRecord; 
+    classProperties = (itogType, listName); 
+    externalName = "ITOG_TYPE_LIST"; 
+    fetchSpecificationDictionary = {}; 
+    name = ItogTypeList; 
+    primaryKeyAttributes = (pKey); 
+    relationships = (
+        {
+            destination = ItogType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tID; sourceAttribute = typeID; }); 
+            name = itogType; 
+        }
+    ); 
+}

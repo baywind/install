@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = BEGIN; 
+            name = begin; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = END; 
+            name = end; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "H_ID"; 
+            name = hID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = "LIST_NAME"; 
+            name = listName; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = TYPE; 
+            name = typeID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (begin, end, listName, typeID); 
+    className = "net.rujel.eduplan.Holiday"; 
+    classProperties = (begin, end, holidayType, listName); 
+    externalName = HOLIDAY; 
+    fetchSpecificationDictionary = {}; 
+    name = Holiday; 
+    primaryKeyAttributes = (hID); 
+    relationships = (
+        {
+            destination = HolidayType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = htID; sourceAttribute = typeID; }); 
+            name = holidayType; 
+        }
+    ); 
+}

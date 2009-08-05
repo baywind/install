@@ -323,14 +323,14 @@
         }; 
         password = ""; 
         plugin = ""; 
-        username = root; 
+        username = rujel; 
     }; 
     entities = (
-        {className = "net.rujel.eduresults.EduPeriod"; name = EduPeriod; }, 
+        {className = EOGenericRecord; name = ItogComment; }, 
+        {className = "net.rujel.eduresults.ItogContainer"; name = ItogContainer; }, 
         {className = "net.rujel.eduresults.ItogMark"; name = ItogMark; }, 
-        {className = "net.rujel.eduresults.PeriodTemplate"; name = PeriodTemplate; }, 
-        {className = "net.rujel.eduresults.PeriodType"; name = PeriodType; }, 
-        {className = EOGenericRecord; name = PeriodTypeUsage; }
+        {className = "net.rujel.eduresults.ItogType"; name = ItogType; }, 
+        {className = EOGenericRecord; name = ItogTypeList; }
     ); 
     userInfo = {
         "_EntityModeler" = {
@@ -660,7 +660,7 @@
                         }; 
                         password = ""; 
                         plugin = ""; 
-                        username = root; 
+                        username = rujel; 
                     }; 
                 }; 
             }; 

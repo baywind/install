@@ -7,9 +7,9 @@
     }; 
     entities = (
         {className = "net.rujel.eduplan.PlanCycle"; name = PlanCycle; }, 
-        {className = EOGenericRecord; name = PlanDetail; }, 
         {className = "net.rujel.eduplan.Subject"; name = Subject; }, 
-        {className = EOGenericRecord; name = SubjectArea; }
+        {className = EOGenericRecord; name = SubjectArea; }, 
+        {className = "net.rujel.eduplan.HolidayType"; name = HolidayType; }
     ); 
     userInfo = {
         "_EntityModeler" = {

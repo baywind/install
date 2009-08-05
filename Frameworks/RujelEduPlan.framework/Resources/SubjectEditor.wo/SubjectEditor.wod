@@ -8,7 +8,7 @@ Cross : WOImage {
   align = "right";
   height = 10;
   width = 10;
-  onclick = "closePopup();";
+  onclick = "cancel();";
   style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
 }
 AreaTitle : WOString {

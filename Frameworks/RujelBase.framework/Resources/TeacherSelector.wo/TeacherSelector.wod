@@ -63,3 +63,38 @@ Message : WOString {
   value = searchMessage;
   escapeHTML = false;
 }
+
+ShowVacant : WOConditional {
+  condition = ^hideVacant;
+  negate = true;
+}
+
+SelectVacant : OnClickContainer {
+  elementName = "div";
+  invokeAction = selectVacant;
+  onclick = session.tryLoad;
+  class = teacherClass;
+  style = "margin:2px;";
+}
+
+VacantTitle : WOString {
+  value = application.strings.RujelBase_Base.vacant;
+  escapeHTML = false;
+}
+
+SelectNone : OnClickContainer {
+  elementName = "div";
+  invokeAction = selectDelete;
+  onclick = session.tryLoad;
+  class = "warning";
+  style = "margin:2px;";
+}
+
+DeleteTitle : WOString {
+  value = application.strings.Reusables_Strings.uiElements.Delete;
+  escapeHTML = false;
+}
+
+ShowDelete : WOConditional {
+  condition = ^allowDelete;
+}

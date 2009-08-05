@@ -37,7 +37,7 @@ MarkTitle: WOString {
 }
 
 EduPeriodTitle: WOString {
-	value = eduPeriod.title;
+	value = itogContainer.title;
 }
 
 FlagCheckBox: WOCheckBox {

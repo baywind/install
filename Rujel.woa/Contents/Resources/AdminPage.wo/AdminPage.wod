@@ -1,0 +1,29 @@
+PageWrapper : PageWrapper {
+  title = application.strings.Strings.AdminPage.title;
+}
+
+Title : WOString {
+  value = application.strings.Strings.AdminPage.title;
+  valueWhenEmpty = "Admin center";
+  escapeHTML = false;
+}
+
+ReportsList : Tabs {
+  currTab = currModule;
+  tablist = modules;
+  idAttribute = "title";
+  titleAttribute = "title";
+  vertical = true;
+  hoverAttribute = "description";
+  onClick = session.tryLoad;
+}
+
+ModuleComponent : WOSwitchComponent {
+  componentName = currModule.component;
+  WOComponentName = currModule.component;
+  dict = currModule;
+}
+
+ModuleIsSelected : WOConditional {
+  condition = currModule;
+}

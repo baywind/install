@@ -326,14 +326,7 @@
         username = rujel; 
     }; 
     entities = (
-        {className = EOGenericRecord; name = Border; }, 
-        {className = "net.rujel.criterial.BorderSet"; name = BorderSet; }, 
         {className = EOGenericRecord; name = CriterMask; }, 
-        {className = "net.rujel.criterial.CriteriaSet"; name = CriteriaSet; }, 
-        {className = EOGenericRecord; name = Criterion; }, 
-        {className = EOGenericRecord; name = CycleCritSet; }, 
-        {className = EOGenericRecord; name = IndexRow; }, 
-        {className = "net.rujel.criterial.Indexer"; name = Indexer; }, 
         {className = "net.rujel.criterial.Mark"; name = Mark; }, 
         {className = "net.rujel.criterial.Work"; name = Work; }, 
         {className = EOGenericRecord; name = WorkNote; }

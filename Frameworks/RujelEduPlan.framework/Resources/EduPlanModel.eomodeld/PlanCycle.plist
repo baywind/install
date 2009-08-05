@@ -36,7 +36,7 @@
     attributesUsedForLocking = (classID, grade, hours, level, school, subjID, subject, year); 
     className = "net.rujel.eduplan.PlanCycle"; 
     classProperties = (grade, hours, level, school, subject, subjectEO, year); 
-    externalName = CYCLE; 
+    externalName = "PLAN_CYCLE"; 
     fetchSpecificationDictionary = {}; 
     name = PlanCycle; 
     primaryKeyAttributes = (cID); 

@@ -29,6 +29,33 @@
 	<dict>
 		<key>SrcMark</key>
 		<string>Журналы</string>
+		<key>defaultRegimes</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Контроль успеваемости</string>
+				<key>component</key>
+				<string>Overview</string>
+				<key>hover</key>
+				<string>просмотр, распечатка и рассылка отметок</string>
+				<key>group</key>
+				<string>edu</string>
+				<key>sort</key>
+				<string>10</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Управление</string>
+				<key>component</key>
+				<string>AdminPage</string>
+				<key>hover</key>
+				<string>панель управления и настройки РУЖЭЛЬ</string>
+				<key>group</key>
+				<string>other</string>
+				<key>sort</key>
+				<string>90</string>
+			</dict>
+		</array>
 		<key>regimeGroups</key>
 		<array>
 			<dict>
@@ -38,19 +65,6 @@
 				<string>10</string>
 				<key>id</key>
 				<string>edu</string>
-				<key>regimes</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>Контроль успеваемости</string>
-						<key>component</key>
-						<string>Overview</string>
-						<key>hover</key>
-						<string>просмотр, распечатка и рассылка отметок</string>
-						<key>sort</key>
-						<string>10</string>
-					</dict>
-				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -111,6 +125,8 @@
 			<string>Текущие</string>
 			<key>winTitle</key>
 			<string>Текущая успеваемость</string>
+			<key>id</key>
+			<string>recentMarks</string>
 		</dict>
 		<key>showMarks</key>
 		<string>Показать оценки</string>
@@ -169,6 +185,8 @@
 		<string>РУЖЕЛЬ просит Вас закончить работу и нажать &quot;Выход&quot;. &lt;br/&gt;Ждем Вас сразу после завершения технических работ</string>
 		<key>unsavedChanges</key>
 		<string>Несохраненные изменения будут потеряны</string>
+		<key>unavailableYearlyDb</key>
+		<string>Для выбранного учебного года %1$s нет базы данных.</string>
 	</dict>
 	<key>ErrorPages</key>
 	<dict>
@@ -196,6 +214,18 @@
 		<string>Вы будете автоматически перенаправлены через</string>
 		<key>manualRedirect</key>
 		<string>Если перенаправление не происходит, нажмите здесь</string>
+	</dict>
+	<key>AdminPage</key>
+	<dict>
+		<key>maintenance</key>
+		<dict>
+			<key>title</key>
+			<string>Системные процедуры</string>
+			<key>component</key>
+			<string>Maintenance</string>
+		</dict>
+		<key>title</key>
+		<string>Центр управления</string>
 	</dict>
 </dict>
 </plist>

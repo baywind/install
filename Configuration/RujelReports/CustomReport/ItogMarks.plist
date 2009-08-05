@@ -16,13 +16,13 @@
 			<key>active</key>
 			<true/>
 			<key>attribute</key>
-			<string>eduPeriod</string>
+			<string>container</string>
 			<key>select</key>
 			<dict>
 				<key>className</key>
-				<string>net.rujel.eduresults.EduPeriod</string>
+				<string>net.rujel.eduresults.ItogContainer</string>
 				<key>methodName</key>
-				<string>periodsInYear</string>
+				<string>itogsInYear</string>
 				<key>cacheResult</key>
 				<true/>
 				<key>paramClasses</key>
@@ -33,25 +33,6 @@
 				<key>paramValues</key>
 				<array>
 					<string>$session.eduYear</string>
-					<string>^editingContext</string>
-				</array>
-			</dict>
-			<key>defaultValue</key>
-			<dict>
-				<key>className</key>
-				<string>net.rujel.eduresults.EduPeriod</string>
-				<key>methodName</key>
-				<string>defaultCurrentPeriod</string>
-				<key>cacheResult</key>
-				<true/>
-				<key>paramClasses</key>
-				<array>
-					<string>com.webobjects.foundation.NSTimestamp</string>
-					<string>com.webobjects.eocontrol.EOEditingContext</string>
-				</array>
-				<key>paramValues</key>
-				<array>
-					<string>$session.today</string>
 					<string>^editingContext</string>
 				</array>
 			</dict>
@@ -171,8 +152,7 @@
 	</array>
 	<key>prefetch</key>
 	<array>
-		<string>student</string>
-		<string>cycle</string>
+		<string>container</string>
 	</array>
 	<key>properties</key>
 	<array>
@@ -180,7 +160,7 @@
 			<key>title</key>
 			<string>Год</string>
 			<key>keyPath</key>
-			<string>eduPeriod.eduYear</string>
+			<string>container.eduYear</string>
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>active</key>
@@ -192,7 +172,7 @@
 			<key>title</key>
 			<string>Период</string>
 			<key>keyPath</key>
-			<string>eduPeriod</string>
+			<string>container</string>
 			<key>titlePath</key>
 			<string>title</string>
 			<key>comparison</key>
@@ -280,8 +260,8 @@
 				<string>$itemRow</string>
 				<key>student</key>
 				<string>$itemRow.student</string>
-				<key>eduPeriod</key>
-				<string>$itemRow.eduPeriod</string>
+				<key>itogContainer</key>
+				<string>$itemRow.container</string>
 			</dict>
 			<key>popup</key>
 			<true/>

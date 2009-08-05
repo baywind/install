@@ -1,0 +1,55 @@
+<script language = "JavaScript" type = "text/javascript">
+function toggleDisabled(cell) {
+	var tr = get(cell,'tr');
+	var fs = tr.getElementsByTagName('input');
+	var disabled = !(tr.className == 'grey dimtext');
+	unDim(cell);
+	if(disabled && (tr.className == 'selection'))
+		cell.style.color = 'green';
+	tr.className = (disabled)?'grey dimtext':'ungerade';
+	if(!disabled && (cell.style.color == 'green')) {
+		tr.className = 'selection';
+		cell.style.color = '';
+	}
+	dim(cell);
+	for(i=0;i<fs.length;i++) {
+		if(fs[i].type=='checkbox') {
+			fs[i].checked = disabled;
+		} else {
+			fs[i].disabled = disabled;
+		}
+	}
+}
+</script>
+<h3><webobject name = "Title"/></h3>
+<webobject name = "Form"><table cellpadding = "2" style = "text-align:center;"><thead>
+<tr><th style = "min-width:8em;"><webobject name = "NameTitle"/></th>
+	<th style = "width:5em;"><webobject name = "BeginTitle"/></th>
+	<th style = "width:5em;"><webobject name = "EndTitle"/></th>
+	<th></td>
+</tr></thead>
+<tbody><webobject name = "Repetition">
+<webobject name = "Exists"><webobject name = "ExistingRow">
+	<td><webobject name = "Name"/></td>
+	<td><webobject name = "Begin"/></td>
+	<td><webobject name = "End"/></td>
+	<td style = "color:#666666;"><webobject name = "Days"/></td>
+</webobject></webobject><webobject name = "Preset"><webobject name = "PresetRow">
+	<webobject name = "NameCell"><webobject name = "IsDefined">
+		<webobject name = "Name"/><webobject name = "Disabled"/></webobject>
+		<webobject name = "Undefined"><webobject name = "NameField"/>
+	</webobject></webobject>
+	<td><webobject name = "BeginField"/></td>
+	<td><webobject name = "EndField"/></td>
+	<td style = "color:#666666;"><webobject name = "Days"/></td>
+</webobject></webobject></webobject>
+</tbody><tfoot>
+<webobject name = "CanCreate">
+	<tr class = "grey"><td><webobject name = "NewNameField"/></td>
+		<td><webobject name = "BeginNewField"/></td>
+		<td><webobject name = "EndNewField"/></td>
+		<td style = "color:#666666;"><webobject name = "DaysTitle"/></td>
+	</tr></webobject><webobject name = "ShowButtton">
+<tr><td colspan = "4" align = "center"><webobject name = "Save"/></td></tr></webobject>
+</tfoot>
+</table></webobject>

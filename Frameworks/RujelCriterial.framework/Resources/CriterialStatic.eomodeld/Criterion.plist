@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {columnName = COMMENT; name = comment; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = CRITERION; 
+            name = criterion; 
+            prototypeName = byte; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "CRIT_SET"; 
+            name = critSet; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DFLT_MAX"; 
+            name = dfltMax; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DFLT_WEIGHT"; 
+            name = dfltWeight; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INDEX_ID"; 
+            name = indexID; 
+            prototypeName = short; 
+        }, 
+        {columnName = TITLE; name = title; prototypeName = anagram; }
+    ); 
+    attributesUsedForLocking = (title, comment, indexID, dfltMax, dfltWeight, criterion); 
+    className = EOGenericRecord; 
+    classProperties = (title, comment, criteriaSet, indexer, dfltMax, dfltWeight, criterion); 
+    externalName = CRITERION; 
+    fetchSpecificationDictionary = {}; 
+    name = Criterion; 
+    primaryKeyAttributes = (criterion, critSet); 
+    relationships = (
+        {
+            destination = CriteriaSet; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = setID; sourceAttribute = critSet; }); 
+            name = criteriaSet; 
+        }, 
+        {
+            destination = Indexer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = indID; sourceAttribute = indexID; }); 
+            name = indexer; 
+        }
+    ); 
+}
