@@ -12,8 +12,8 @@ LOCALROOT/Library/Frameworks/Reusables.framework/Resources/Java/reusables.jar
 LOCALROOT/Library/Frameworks/RujelBase.framework/Resources/Java/rujelbase.jar
 LOCALROOT/Library/Frameworks/RujelCriterial.framework/Resources/Java/rujelcriterial.jar
 LOCALROOT/Library/Frameworks/RujelEduPlan.framework/Resources/Java/rujeleduplan.jar
-LOCALROOT/Library/Frameworks/RujelEduResults.framework/Resources/Java/rujeleduresults.jar
 LOCALROOT/Library/Frameworks/RujelInterfaces.framework/Resources/Java/rujelinterfaces.jar
+LOCALROOT/Library/Frameworks/RujelVseLists.framework/Resources/Java/rujelvselists.jar
 LOCALROOT/Library/Frameworks/RujelVseobuch.framework/Resources/Java/rujelvseobuch.jar
 WOROOT/Library/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar
 WOROOT/Library/Frameworks/JavaEOControl.framework/Resources/Java/javaeocontrol.jar

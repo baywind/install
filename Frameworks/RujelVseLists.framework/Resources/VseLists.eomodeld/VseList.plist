@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ENTER_DT"; 
+            name = enter; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_GROUP"; 
+            name = groupID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LEAVE_DT"; 
+            name = leave; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "L_ID"; 
+            name = pKey; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = STUDENT; 
+            name = studentID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (enter, groupID, leave, studentID); 
+    className = EOGenericRecord; 
+    classProperties = (eduGroup, enter, leave, student); 
+    externalName = "VSE_LIST"; 
+    fetchSpecificationDictionary = {}; 
+    name = VseList; 
+    primaryKeyAttributes = (pKey); 
+    relationships = (
+        {
+            destination = VseEduGroup; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = grID; sourceAttribute = groupID; }); 
+            name = eduGroup; 
+        }, 
+        {
+            destination = VseStudent; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = studentID; }); 
+            name = student; 
+        }
+    ); 
+}

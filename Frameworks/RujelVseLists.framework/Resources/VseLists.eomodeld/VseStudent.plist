@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = PERSON; 
+            name = personID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "S_ID"; 
+            name = sID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (personID); 
+    className = "net.rujel.vselists.VseStudent"; 
+    classProperties = (lists, person); 
+    externalName = STUDENT; 
+    fetchSpecificationDictionary = {}; 
+    name = VseStudent; 
+    primaryKeyAttributes = (sID); 
+    relationships = (
+        {
+            destination = VseList; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = studentID; sourceAttribute = sID; }); 
+            name = lists; 
+        }, 
+        {
+            destination = VsePerson; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pID; sourceAttribute = personID; }); 
+            name = person; 
+        }
+    ); 
+}

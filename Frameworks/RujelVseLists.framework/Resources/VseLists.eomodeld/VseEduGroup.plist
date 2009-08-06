@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "FIRST_YEAR"; 
+            name = firstYear; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = FLAGS; 
+            name = flags; 
+            prototypeName = byte; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GR_ID"; 
+            name = grID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "LAST_YEAR"; 
+            name = lastYear; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "START_GRADE"; 
+            name = startGrade; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = TITLE; 
+            name = title; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (firstYear, flags, grID, lastYear, startGrade, title); 
+    className = "net.rujel.vselists.VseEduGroup"; 
+    classProperties = (firstYear, flags, lastYear, lists, startGrade, title); 
+    externalName = "EDU_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    name = VseEduGroup; 
+    primaryKeyAttributes = (grID); 
+    relationships = (
+        {
+            destination = VseList; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupID; sourceAttribute = grID; }); 
+            name = lists; 
+        }
+    ); 
+}

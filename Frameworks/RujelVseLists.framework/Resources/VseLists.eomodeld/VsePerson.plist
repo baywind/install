@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "BIRTH_DATE"; 
+            name = birthDate; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "FIRST_NAME"; 
+            name = firstName; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "LAST_NAME"; 
+            name = lastName; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "P_ID"; 
+            name = pID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            columnName = "SECOND_NAME"; 
+            name = secondName; 
+            prototypeName = word; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = SEX; 
+            name = sex; 
+            prototypeName = boolean; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (birthDate, firstName, lastName, secondName, sex); 
+    className = "net.rujel.vselists.VsePerson"; 
+    classProperties = (birthDate, firstName, lastName, person, secondName, sex); 
+    externalName = PERSON; 
+    fetchSpecificationDictionary = {}; 
+    name = VsePerson; 
+    primaryKeyAttributes = (pID); 
+    relationships = (
+        {
+            destination = VsePerson; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pID; sourceAttribute = pID; }); 
+            name = person; 
+        }
+    ); 
+}

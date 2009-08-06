@@ -24,7 +24,7 @@
 			<key>title</key>
 			<string>Недель</string>
 			<key>hover</key>
-			<string>Количество недель с начала года</string>
+			<string>Количество учебных циклов с начала года</string>
 			<key>short</key>
 			<string>Нед</string>
 			<key>titleStyle</key>
