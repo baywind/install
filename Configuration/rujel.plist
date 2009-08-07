@@ -286,13 +286,7 @@
 			<key>StudentTimeout</key>
 			<dict>
 				<key>root</key>
-				<string>1023</string>
-				<key>zavuch</key>
-				<string>15</string>
-				<key>teacher</key>
-				<string>1</string>
-				<key>tutor</key>
-				<string>3</string>
+				<string>0</string>
 			</dict>
 			<key>VOTeacher</key>
 			<dict>
@@ -615,11 +609,20 @@
 	<dict>
 		<key>VseobuchSimple</key>
 		<dict>
+			<key>skip</key>
+			<string>false</string>
 			<key>_dbName</key>
 			<string>DemoSho</string>
 		</dict>
+		<key>VseLists</key>
+		<dict>
+			<key>skip</key>
+			<string>true</string>
+		</dict>
 		<key>AutoItog</key>
 		<dict>
+			<key>skip</key>
+			<string>true</string>
 			<key>dbName</key>
 			<string>RujelYear%s</string>
 		</dict>
