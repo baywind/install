@@ -1,0 +1,57 @@
+Teachers : WORepetition {
+  list = teachers;
+  item = teacher;
+}
+
+DeloTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.delo;
+  escapeHTML = false;
+}
+
+Delo : WOTextField {
+  value = teacher.delo;
+  size = 16;
+  maxlength = 28;
+  disabled = ^dict.access._edit;
+}
+
+PositionTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.position;
+  escapeHTML = false;
+}
+
+Position : WOText {
+  value = teacher.position;
+  size = 16;
+  rows = 2;
+  maxlength = 28;
+  disabled = ^dict.access._edit;
+}
+
+EnterTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.enter;
+  escapeHTML = false;
+}
+
+Enter : WOTextField {
+  value = teacher.enter;
+  size = 10;
+  maxlength = 10;
+  dateformat = application.prefs.ui.dateFormat;
+  onkeypress = "return isNumberInput(event,true);";
+  disabled = ^dict.access._edit;
+}
+
+LeaveTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.leave;
+  escapeHTML = false;
+}
+
+Leave : WOTextField {
+  value = teacher.leave;
+  size = 10;
+  maxlength = 10;
+  dateformat = application.prefs.ui.dateFormat;
+  onkeypress = "return isNumberInput(event,true);";
+  disabled = ^dict.access._edit;
+}

@@ -1,0 +1,73 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Form : WOForm {
+  style = "border:1px solid #666666;";
+}
+
+Title : WOString {
+  value = title;
+}
+
+FirstTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.VseGroupInspector.firstYear;
+  escapeHTML = false;
+}
+
+FirstPopUp : WOPopUpButton {
+  list = beginYears;
+  item = item;
+  displayString = item.title;
+  selection = firstYear;
+  value = item.year;
+}
+
+YearTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.VseGroupInspector.eduYear;
+  escapeHTML = false;
+}
+
+AsTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.VseGroupInspector.as;
+  escapeHTML = false;
+}
+
+GradePopUp : WOPopUpButton {
+  list = grades;
+  selection = startGrade;
+}
+
+TitleField : WOTextField {
+  value = groupTitle;
+  size = 12;
+  maxlength = 28;
+}
+
+LastTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.VseGroupInspector.lastYear;
+  escapeHTML = false;
+}
+
+LastPopUp : WOPopUpButton {
+  list = endYears;
+  item = item;
+  displayString = item.title;
+  selection = lastYear;
+  value = item.year;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+ResetButton1: WOResetButton {
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	onclick = "closePopup();";
+}

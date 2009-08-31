@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
-	<wo class="PersonSelector" wocomponentcontent="false">
+	<wo class="PersonSelector" wocomponentcontent="true">
 
 		<binding name="list"/>
 		<binding name="selection"/>
@@ -10,15 +10,15 @@
 		<binding name="addOns"/>
 		<binding name="nameWidth"/>
 
-		<validation message="&apos;list&apos; is a required binding">
+		<validation message="'list' is a required binding">
 			<unbound name="list"/>
 		</validation>
 
-		<validation message="&apos;selection&apos; must be bound to a settable value">
+		<validation message="'selection' must be bound to a settable value">
 			<unsettable name="selection"/>
 		</validation>
 
-		<validation message="&apos;selectedItem&apos; must be bound to a settable value">
+		<validation message="'selectedItem' must be bound to a settable value">
 			<unsettable name="selectedItem"/>
 		</validation>
 	</wo>

@@ -39,7 +39,8 @@ SaveButton: WOSubmitButton {
 }
 
 CanDelete: WOConditional {
-	condition = session.readAccess._delete.person;
+	realcondition = session.readAccess._delete.person;
+	condition = true;
 	negate = true;
 }
 
@@ -108,7 +109,8 @@ BirthDateLabel: WOString {
 
 BirthDate: WOTextField {
 	value = person.birthDate;
-	dateformat = "%d.%m.%Y";
+	dateformat = application.prefs.ui.dateFormat;
+	onkeypress = "return isNumberInput(event,true);";
 	size = 10;
 	maxlength = 10;
 }

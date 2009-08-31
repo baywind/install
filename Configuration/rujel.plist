@@ -418,6 +418,61 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
+			<key>_VsePerson</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>zav_kaf</key>
+				<string>7</string>
+				<key>tutor</key>
+				<string>7</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+			<key>_VseTeacher</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>zav_kaf</key>
+				<string>7</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+			<key>_VseStudent</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>tutor</key>
+				<string>7</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+			<key>_VseList</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>tutor</key>
+				<string>7</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+			<key>_VseEduGroup</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
 			<key>AdminPage</key>
 			<dict>
 				<key>root</key>
@@ -726,6 +781,8 @@
 		<string>true</string>
 		<key>net.rujel.complete.CompleteModule</key>
 		<string>true</string>
+		<key>net.rujel.vselists.ListsEditor</key>
+		<string>false</string>
 	</dict>
 	<key>edu</key>
 	<dict>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Списки</string>
+	<key>delo</key>
+	<string>личное дело</string>
+	<key>position</key>
+	<string>должность</string>
+	<key>enter</key>
+	<string>пришел</string>
+	<key>leave</key>
+	<string>ушел</string>
+	<key>duplicateEntry</key>
+	<string>Этот ученик уже есть в этой группе</string>
+	<key>VseGroupInspector</key>
+	<dict>
+		<key>title</key>
+		<string>Класс</string>
+		<key>new</key>
+		<string>Новый</string>
+		<key>firstYear</key>
+		<string>сформирован в</string>
+		<key>lastYear</key>
+		<string>расформирован в</string>
+		<key>eduYear</key>
+		<string>учебном году</string>
+		<key>as</key>
+		<string>как</string>
+	</dict>
+	<key>editorTabs</key>
+	<array>
+		<string>Ученики</string>
+		<string>Учителя</string>
+	</array>
+	<key>listRegime</key>
+	<dict>
+		<key>title</key>
+		<string>Списки</string>
+		<key>hover</key>
+		<string>управление списками классов, учеников, учителей</string>
+		<key>component</key>
+		<string>ListsEditor</string>
+		<key>group</key>
+		<string>other</string>
+		<key>sort</key>
+		<string>20</string>
+	</dict>
+	<key>selectPerson</key>
+	<dict>
+		<key>title</key>
+		<string>Поиск / создание персоны</string>
+		<key>style</key>
+		<string>min-width:20em;max-width:30em;</string>
+		<key>presenter</key>
+		<string>PersListing</string>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>invokeAction</key>
+		<true/>
+		<key>presenterBindings</key>
+		<dict>
+			<key>entity</key>
+			<string>VsePerson</string>
+			<key>firstNameDisplay</key>
+			<integer>2</integer>
+			<key>secondNameDisplay</key>
+			<integer>2</integer>
+			<key>lastNameDisplay</key>
+			<integer>2</integer>
+			<key>selection</key>
+			<string>.</string>
+			<key>useAjaxPost</key>
+			<true/>
+			<key>noEdit</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>inspectors</key>
+	<dict>
+		<key>Person</key>
+		<dict>
+			<key>component</key>
+			<string>DisplayAny</string>
+			<key>entity</key>
+			<string>VsePerson</string>
+			<key>presenter</key>
+			<string>PersonEditor</string>
+			<key>title</key>
+			<string>ФИО</string>
+			<key>sort</key>
+			<string>10</string>
+			<key>takeValuesFromRequest</key>
+			<true/>
+			<key>invokeAction</key>
+			<true/>
+			<key>presenterBindings</key>
+			<dict>
+				<key>person</key>
+				<string>^person</string>
+				<key>saveAction</key>
+				<string>$returnPage</string>
+				<key>deleteAction</key>
+				<string>$returnPage</string>
+			</dict>
+		</dict>
+		<key>Student</key>
+		<dict>
+			<key>entity</key>
+			<string>VseStudent</string>
+			<key>component</key>
+			<string>StudentEditor</string>
+			<key>title</key>
+			<string>Ученик</string>
+			<key>showButtons</key>
+			<true/>
+			<key>sort</key>
+			<string>22</string>
+		</dict>
+		<key>Teacher</key>
+		<dict>
+			<key>entity</key>
+			<string>VseTeacher</string>
+			<key>component</key>
+			<string>TeacherEditor</string>
+			<key>title</key>
+			<string>Учитель</string>
+			<key>showButtons</key>
+			<true/>
+			<key>sort</key>
+			<string>21</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

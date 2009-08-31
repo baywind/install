@@ -93,8 +93,6 @@
 		<string>Настройка таблицы</string>
 		<key>newQuery</key>
 		<string>Новый запрос</string>
-		<key>nothingFound</key>
-		<string>По Вашему запросу ничего не найдено</string>
 		<key>perform</key>
 		<string>Искать</string>
 	</dict>

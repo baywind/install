@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
 	<wo class="PersonEditor" wocomponentcontent="false">
 
 		<binding name="saveAction"/>
-		<binding name="cancelAction"/>
+		
 		<binding name="deleteAction"/>
 		<binding name="editingContext"/>
 		<binding name="person"/>
 
-		<validation message="&apos;cancelAction&apos; is a required binding">
-			<unbound name="cancelAction"/>
-		</validation>
+		
 
-		<validation message="&apos;person&apos; is a required binding">
+		<validation message="'person' is a required binding">
 			<unbound name="person"/>
 		</validation>
 	</wo>

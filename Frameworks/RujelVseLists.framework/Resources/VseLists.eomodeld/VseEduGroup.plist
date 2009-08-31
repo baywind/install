@@ -2,6 +2,15 @@
     attributes = (
         {
             allowsNull = N; 
+            columnName = absStart; 
+            definition = "firstYear - startGrade"; 
+            isReadOnly = Y; 
+            name = absStart; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
             columnName = "FIRST_YEAR"; 
             name = firstYear; 
             prototypeName = short; 
@@ -42,9 +51,9 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (firstYear, flags, grID, lastYear, startGrade, title); 
+    attributesUsedForLocking = (absStart, firstYear, flags, grID, lastYear, startGrade, title); 
     className = "net.rujel.vselists.VseEduGroup"; 
-    classProperties = (firstYear, flags, lastYear, lists, startGrade, title); 
+    classProperties = (absStart, firstYear, flags, lastYear, lists, startGrade, title); 
     externalName = "EDU_GROUP"; 
     fetchSpecificationDictionary = {}; 
     name = VseEduGroup; 

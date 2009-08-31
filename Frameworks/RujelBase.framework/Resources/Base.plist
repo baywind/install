@@ -121,5 +121,29 @@
 		<key>unspecified</key>
 		<string>(все)</string>
 	</dict>
+	<key>newPerson</key>
+	<dict>
+		<key>title</key>
+		<string>Новая персона</string>
+		<key>presenter</key>
+		<string>PersonEditor</string>
+		<key>wrapper</key>
+		<string>WOForm</string>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>invokeAction</key>
+		<true/>
+		<key>onCancel</key>
+		<string>tryLoad</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>person</key>
+			<string>.</string>
+			<key>saveAction</key>
+			<string>$returnPage</string>
+			<key>deleteAction</key>
+			<string>$returnPage</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

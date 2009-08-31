@@ -34,11 +34,6 @@ Conditional1: WOConditional {
 	condition = canCreate;
 }
 
-CreateLink: WOHyperlink {
-	action = create;
-	string = application.strings.Reusables_Strings.uiElements.Create;
-}
-
 Hyperlink3: WOHyperlink {
 	action = undo;
 	string = application.strings.Reusables_Strings.uiElements.Cancel;
@@ -72,7 +67,7 @@ ComposeName: WOString {
 }
 
 CanEdit: WOConditional {
-	condition = canEdit;
+	condition = false;
 }
 
 EditLink: WOHyperlink {
@@ -150,4 +145,20 @@ NoList : WOGenericContainer {
   style = "display:none;";
   omitTags = listIsEmpty;
   id = "searchArea";
+}
+
+CanCreate : WOConditional {
+  condition = canCreate;
+}
+
+CreateLink : OnClickContainer {
+  elementName = "span";
+  invokeAction = create;
+  onclick = session.ajaxPopupNoPos;
+  class = "button";
+  style = "color:#003300;";
+}
+
+CreateTitle : WOString {
+  value = session.strings.Strings.messages.createNew;
 }

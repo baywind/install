@@ -44,3 +44,6 @@ SwitchComponent1: WOSwitchComponent {
 Ticks: WOConditional {
 	condition = ticks;
 }
+
+ComponentContent : WOComponentContent {
+}

@@ -77,7 +77,7 @@ AddPeriod : OnClickContainer {
   onclick = session.ajaxPopup;
   invokeAction = addPeriodToList;
   class = "green";
-  style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  style = "padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
   hide = session.readAccess._create.PeriodList;
 }
 

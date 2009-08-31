@@ -3,14 +3,19 @@ DisplayAny : DisplayAny {
   dict = dict;
 }
 
+
+CrossDiv : OnClickContainer {
+  elementName = "div";
+  invokeAction = cancel;
+  onclick = onCancel;
+  style = "position:absolute;right:14pt;top:14pt;";
+}
+
 Cross : WOImage {
   framework = "RujelBase";
   filename = "cross.png";
-  align = "right";
   height = 16;
   width = 16;
-  onclick = "closePopup();";
-  style = "cursor:pointer;position:absolute;right:14pt;top:14pt;";
 }
 Title : WOString {
   value = title;
