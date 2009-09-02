@@ -42,7 +42,7 @@ EditGroup : OnClickContainer {
   onclick = session.ajaxPopup;
   invokeAction = editGroup;
   disabled = session.readAccess._edit.group;
-  colspan = 4;
+  class = "orange";
 }
 
 GroupTitle : WOString {
@@ -106,6 +106,7 @@ NameCell : OnClickContainer {
   onclick = session.ajaxPopup;
   invokeAction = editPerson;
   align = "left";
+  title = plink.person.secondName;
 }
 
 AddPerson : OnClickContainer {
@@ -147,4 +148,23 @@ ShowClasses : WOConditional {
 
 HasGroup : WOConditional {
   condition = group;
+}
+
+ShowAllForm : WOForm {
+}
+
+ShowAllBox : WOCheckBox {
+  checked = showAll;
+  onchange = "form.submit();";
+}
+
+ShowAllTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.showAll;
+  escapeHTML = false;
+}
+
+ShowAllToggle : OnClickContainer {
+  elementName = "span";
+  onclick = session.checkRun;
+  invokeAction = toggleAll;
 }

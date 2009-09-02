@@ -82,19 +82,17 @@ files_edit: WOImage {
 }
 
 RemoveFromList: WOGenericContainer {
-	elementName = "span";
+	elementName = "td";
 	onclick = act;
 	invokeAction = delete;
 	style = "z-index:10;cursor:pointer;";
 }
 
 Сross: WOImage {
-	align = "right";
 	filename = "cross.png";
 	framework = "RujelBase";
 	height = 12;
 	width = 12;
-	valign = "middle";
 }
 
 OnEdit: WOConditional {
@@ -161,4 +159,9 @@ CreateLink : OnClickContainer {
 
 CreateTitle : WOString {
   value = session.strings.Strings.messages.createNew;
+}
+
+BirthDate : WOString {
+  value = item.birthDate;
+  dateformat = application.prefs.ui.dateFormat;
 }
