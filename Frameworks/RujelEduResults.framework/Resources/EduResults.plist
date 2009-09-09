@@ -6,6 +6,12 @@
 	<string>Все предметы</string>
 	<key>comments</key>
 	<string>Примечания</string>
+	<key>thisYear</key>
+	<string>В этом году</string>
+	<key>generateItogs</key>
+	<string>Заготовить итоговые</string>
+	<key>addItog</key>
+	<string>Добавить итог</string>
 	<key>itogAddOn</key>
 	<dict>
 		<key>activeComponent</key>
@@ -31,10 +37,6 @@
 		<dict>
 			<key>comment</key>
 			<string>комментарий</string>
-			<key>eduCycle</key>
-			<string>цикл</string>
-			<key>eduPeriod</key>
-			<string>период</string>
 			<key>flags</key>
 			<dict>
 				<key>calculated</key>
@@ -62,6 +64,17 @@
 			<string>Итоговая оценка</string>
 			<key>value</key>
 			<string>успешность(%)</string>
+		</dict>
+		<key>ItogType</key>
+		<dict>
+			<key>this</key>
+			<string>Тип оценки</string>
+			<key>name</key>
+			<string>Название</string>
+			<key>title</key>
+			<string>Кратко</string>
+			<key>inYearCount</key>
+			<string>в году</string>
 		</dict>
 	</dict>
 	<key>studentReporter</key>
@@ -106,5 +119,36 @@
 		<string>н/а</string>
 		<string>осв</string>
 	</array>
+	<key>planTab</key>
+	<dict>
+		<key>resourcesFramework</key>
+		<string>RujelBase</string>
+		<key>scriptResource</key>
+		<string>sorting.js</string>
+		<key>component</key>
+		<string>SetupItogs</string>
+		<key>title</key>
+		<string>Итоговое Оценивание</string>
+		<key>sort</key>
+		<string>60</string>
+	</dict>
+	<key>addType</key>
+	<dict>
+		<key>title</key>
+		<string>Новый тип итоговой оценки</string>
+		<key>presenter</key>
+		<string>ItogTypeEditor</string>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>invokeAction</key>
+		<true/>
+		<key>presenterBindings</key>
+		<dict>
+			<key>currType</key>
+			<string>.</string>
+			<key>actionResult</key>
+			<string>$returnPage</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="ItogTypeEditor" wocomponentcontent="false">    <binding name="ec"/>
+        <validation message="'ec' is a required binding.">
+            <unbound name="ec"/>
+        </validation>
+        <binding name="currType"/>
+        <validation message="'currType' is a required binding.">
+            <unbound name="currType"/>
+        </validation>
+        <binding name="maxSort"/>
+    </wo>
+</wodefinitions>

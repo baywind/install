@@ -165,6 +165,42 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
+			<key>ItogComment</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+			<key>ItogContainer</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
+			<key>ItogType</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
+			<key>ItogTypeList</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
 			<key>LessonNoteEditor</key>
 			<dict>
 				<key>root</key>

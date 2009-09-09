@@ -107,8 +107,14 @@ function confirmAction(action,event) {
 	}
 	if(event.shiftKey)
 		return true;
-	if(action == null && event.srcElement.value)
-		action = event.srcElement.value;
+	if(action == null) {
+	 	if(event.srcElement.value)
+			action = event.srcElement.value;
+		else if(event.srcElement.title)
+			action = event.srcElement.title;
+		else if(event.srcElement.alt)
+			action = event.srcElement.alt;
+	}
 	var message = confirmAlert.replace('%s',action);
 	return confirm(message);
 }

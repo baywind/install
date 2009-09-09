@@ -2,6 +2,7 @@ Wrapper : PageWrapper {
 	title = application.strings.RujelEduPlan_EduPlan.EduPlan;
 	resourcesFramework = currTab.resourcesFramework;
 	cssResource = currTab.cssResource;
+	scriptResource = currTab.scriptResource;
 	hasChanges = ec.hasChanges;
 }
 

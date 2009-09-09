@@ -86,7 +86,7 @@ PersonTitle : WOString {
 }
 
 AdresTitle : WOString {
-  value = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.contect;
+  value = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.contact;
   valueWhenEmpty = "Address";
 }
 

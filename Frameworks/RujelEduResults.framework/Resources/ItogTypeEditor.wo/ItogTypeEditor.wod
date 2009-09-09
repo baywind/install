@@ -1,0 +1,63 @@
+Form : WOForm {
+  class = ^class;
+}
+
+NameTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogType.name;
+  escapeHTML = false;
+}
+
+NameField : WOTextField {
+  value = itogName;
+  size = 20;
+  maxlength = 28;
+  disabled = cantEdit;
+}
+
+TitleTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogType.title;
+  escapeHTML = false;
+}
+
+TitleField : WOTextField {
+  value = itogTitle;
+  size = 5;
+  maxlength = 5;
+  style = "text-align:center;";
+  disabled = cantEdit;
+}
+
+CountTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogType.inYearCount;
+  escapeHTML = false;
+}
+
+CountField : WOTextField {
+  value = itogCount;
+  size = 3;
+  maxlength = 2;
+  numberformat = "0";
+  style = "text-align:center;";
+  disabled = cantEdit;
+}
+
+Save: WOSubmitButton {
+	action = saveType;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+CanDelete : WOConditional {
+  condition = canDelete;
+}
+
+Delete : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  value = application.strings.Reusables_Strings.uiElements.Delete;
+  onclick = session.confirmMessage;
+  invokeAction = delete;
+}
+
+CanEdit : WOConditional {
+  condition = cantEdit;
+  negate = true;
+}

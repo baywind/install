@@ -1,0 +1,166 @@
+ListSettings : ListSettings {
+  ec = ec;
+  key = "ItogMark";
+  currList = listName;
+  extraLists = extraLists;
+  access = session.readAccess.FLAGS.PeriodList;
+}
+
+AllTypes : WORepetition {
+  list = allTypes;
+  item = item;
+}
+
+Form : WOForm {
+}
+
+Active : WOCheckBox {
+  checked = active;
+  disabled = session.readAccess._edit.ItogTypeList;
+}
+
+TypesTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogType.this;
+  escapeHTML = false;
+}
+
+TypeName : WOString {
+  value = item.name;
+}
+
+TypeTitle : WOString {
+  value = item.title;
+}
+
+InYearCount : WOString {
+  value = item.inYearCount;
+  numberformat = "#;*;(#)";
+}
+
+AddType : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopup;
+  invokeAction = addType;
+  class = "green";
+  style = "padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  hide = session.readAccess._create.ItogType;
+}
+
+Save: WOSubmitButton {
+  action = saveList;
+  value = application.strings.Reusables_Strings.uiElements.Save;
+  onclick = "try{enumerate(get(this,'table',0),'numerate',1);}catch(e){alert(e);}";
+}
+
+HasSelection : WOConditional {
+  condition = currType;
+}
+
+ItogTypeEditor : ItogTypeEditor {
+  currType = currType;
+  ec = ec;
+  class = "grey";
+}
+
+SelectType : OnClickContainer {
+  elementName = "td";
+  onclick = session.checkRun;
+  invokeAction = selectType;
+}
+
+Itogs : WORepetition {
+  list = itogsList;
+  item = item;
+}
+
+ItogName : WOString {
+  value = item.name;
+}
+
+TypeRow : WOGenericContainer {
+  elementName = "tr";
+  class = styleClass;
+  id = typeId;
+}
+
+MoveUp: WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(get(this,'tr',0));";
+	style = "cursor:pointer;";
+}
+MoveDown: WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(get(this,'tr',0));";
+	style = "cursor:pointer;";
+}
+SortField : WOTextField {
+  value = item.sort;
+  style = "display:none;";
+  numberformat = "0";
+  class = "numerate";
+}
+
+CurrUp : WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(document.getElementById('currType'));";
+	style = "cursor:pointer;";
+}
+
+CurrDown : WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(document.getElementById('currType'));";
+	style = "cursor:pointer;";
+}
+
+ThisYearTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.thisYear;
+  escapeHTML = false;
+}
+
+Span : OnClickContainer {
+  elementName = "span";
+  class = "button";
+  onclick = session.checkRun;
+  invokeAction = prepareItog;
+}
+
+PrepareTitle : WOString {
+  value = prepareTitle;
+  escapeHTML = false;
+}
+
+CanPrepare : WOConditional {
+  condition = cantPrepare;
+  negate = true;
+}
+
+DeleteContainer : OnClickContainer {
+  elementName = "span";
+  invokeAction = deleteContainer;
+  hide = session.readAccess._delete.item;
+  style = "float:right;margin:3px;";
+  title = application.strings.Reusables_Strings.uiElements.Delete;
+  onclick = session.confirmMessage;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+  alt = application.strings.Reusables_Strings.uiElements.Delete;
+}
+
+CanSort : WOConditional {
+  condition = session.readAccess.edit.ItogTypeList;
+}
