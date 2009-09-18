@@ -1,19 +1,26 @@
 <div class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
-<table border="1">
-<tr><td style = "padding:3pt;">
-<strong><webobject name = "SubstituteTitle"/></strong>  <em>(<webobject name = "LessonDate"/>)</em>
-</td></tr>
+<table border="1" cellspacing = "0">
+<tr><td class = "selectionBorder" style = "border-style:none none solid;background-color:#ffffff;padding:1ex 1ex 0px;">
+<strong style = "float:right;margin-left:1ex;"><webobject name = "LessonDate"/></strong>
+<webobject name = "SubstituteTitle"/></td></tr>
 <tr><td style = "padding:0px;">
 <table style = "width:100%;text-align:center;border-bottom:#666 1pt solid;"><tr>
 <td><webobject name = "SubstitutorTitle"/>:</td>
 <td><webobject name = "CanSelect">
 <webobject name = "SubstitutorSelect"/></webobject>
-<webobject name = "CantSelect"><webobject name = "Teacher"/></webobject></td>
+<webobject name = "CantSelect"><webobject name = "Teacher"/></webobject></td><webobject name = "FactorCell">
+<webobject name = "Factor"/></webobject>
 </tr></table>
-<webobject name = "Form">
-<div style = "border-bottom:#666 double;"><table align = "center"><tr>
-<td align = "right"><webobject name = "JoinTitle"/>:</td><td style = "padding:3pt;" class = "orange"><webobject name = "FactorField"/></td>
-</tr></table></div><div>
+<webobject name = "Form"><webobject name = "IsJoin"><webobject name = "Message"/>
+<table width = "100%"><thead id = "fromLesson"><tr class = "highlight">
+	<webobject name = "Review"><webobject name = "FromLesson"/></webobject>
+	<td onclick = "hideObj('fromLesson');showObj('selectFromLesson');fitWindow();" onmouseover = "dim(get(this,'tr'));" onmouseout = "unDim(get(this,'tr'));">
+		<webobject name = "FromTheme"/></td></tr>
+</thead>
+<webobject name = "SelectFromLesson">
+<webobject name = "FromLessonList"><td><webobject name = "FromLesson"/></td>
+<td><webobject name = "FromTheme"/></td></webobject></webobject></table>
+</webobject><div style = "border-top:#666 double;">
 <webobject name = "ReasonSelector"/>
 </div><div style = "padding:3pt;border-top:#666 double;">
 <webobject name="CanChange"><webobject name="Save"></webobject></webobject> 

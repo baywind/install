@@ -8,12 +8,12 @@ Substitutor : PersonDisplay {
   last = 2;
   first = 1;
   second = 1;
+  nowrap = true;
 }
 
 SubstituteTD : OnClickContainer {
-  elementName = "tr";
+  elementName = "td";
   invokeAction = edit;
-  class = "gerade";
   disabled = session.readAccess._edit.substitute;
   onclick = session.ajaxPopup;
   title = substitute.reason.title;
@@ -37,8 +37,7 @@ ShowAny : WOConditional {
 }
 
 showEmptyRow : WOConditional {
-  condition = subsList.count;
-  negate = true;
+  condition = empty;
 }
 
 InspectorImage : WOImage {
@@ -65,4 +64,42 @@ IsAdded : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Variation.isAdded;
   valueWhenEmpty = "added";
   escapeHTML = false;
+}
+
+JoinContainer : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = addJoin;
+  disabled = cantCreate;
+  class = "highlight";
+}
+
+JoinTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.joint;
+  escapeHTML = false;
+}
+
+JoinsList : WORepetition {
+  list = joins;
+  item = substitute;
+}
+
+JoinDesc : WOString {
+  value = descJoin;
+  escapeHTML = false;
+}
+OpenJoint : OnClickContainer {
+  elementName = "td";
+  onclick = session.checkRun;
+  invokeAction = openJointLesson;
+  title = session.strings.RujelCurriculum_Curriculum.titles.openJoint;
+}
+
+CanAdd : WOConditional {
+  condition = canAdd;
+}
+
+CantAdd : WOConditional {
+  condition = canAdd;
+  negate = true;
 }

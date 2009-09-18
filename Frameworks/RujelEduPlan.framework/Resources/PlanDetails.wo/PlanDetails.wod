@@ -236,3 +236,16 @@ ShowHelp : OnClickContainer {
   class = "button";
   style = "padding:3px 8px;color:33cc33;";
 }
+
+CanEdit : WOConditional {
+  condition = session.readAccess.edit.PlanDetail;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+Cancel: WOResetButton {
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
+}

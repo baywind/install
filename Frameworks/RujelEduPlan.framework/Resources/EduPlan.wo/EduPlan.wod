@@ -26,4 +26,5 @@ Component : WOSwitchComponent {
   WOComponentName = currTab.component;
   ec = ec;
   dict = currTab;
+  shouldReset = shouldReset;
 }

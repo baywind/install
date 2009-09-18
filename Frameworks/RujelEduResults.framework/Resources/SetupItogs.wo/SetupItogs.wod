@@ -164,3 +164,21 @@ Cross : WOImage {
 CanSort : WOConditional {
   condition = session.readAccess.edit.ItogTypeList;
 }
+
+Extensions : WORepetition {
+  list = extensions;
+  item = extItem;
+}
+
+ExtComponent : WOSwitchComponent {
+  WOComponentName = extItem.component;
+  value = item;
+  listName = listName;
+  dict = extItem;
+}
+
+ExtTitle : WOSwitchComponent {
+  WOComponentName = extItem.component;
+  listName = listName;
+  dict = extItem;
+}

@@ -864,6 +864,8 @@
 		<string>7</string>
 		<key>overwriteItogsScheduled</key>
 		<string>false</string>
+		<key>joinFactor</key>
+		<string>0.5</string>
 	</dict>
 	<key>mail</key>
 	<dict>

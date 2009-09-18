@@ -12,6 +12,7 @@ PeriodSelector : EduPeriodSelector {
 HolidaysList : HolidaysList {
   ec = ec;
   listName = listName;
+  shouldReset = ^shouldReset;
 }
 
 ListSettings : ListSettings {

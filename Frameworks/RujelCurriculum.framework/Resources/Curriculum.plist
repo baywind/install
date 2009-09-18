@@ -140,6 +140,10 @@
 		<string>Конечная дата не может быть меньше начальной</string>
 		<key>courseHasVariations</key>
 		<string>В этом курсе описаны поправки</string>
+		<key>teacherRequired</key>
+		<string>Необходимо выбрать учителя</string>
+		<key>noLessonsForTeacher</key>
+		<string>У выбранного учителя не введено ни одного урока на эту дату</string>
 	</dict>
 	<key>titles</key>
 	<dict>
@@ -161,6 +165,14 @@
 		<string>Причины и обоснования</string>
 		<key>printCurriculum</key>
 		<string>Выполнение учебного плана</string>
+		<key>joint</key>
+		<string>совместно</string>
+		<key>generateLesson</key>
+		<string>создать новый урок</string>
+		<key>openJoint</key>
+		<string>перейти к совмещенному уроку</string>
+		<key>reviewOriginal</key>
+		<string>перейти к этому уроку</string>
 	</dict>
 	<key>regimes</key>
 	<array>

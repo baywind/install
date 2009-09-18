@@ -18,15 +18,19 @@
 	<td rowspan = "2" class = "backfield2">
 		<webobject name = "HasSelection"><webobject name = "ItogTypeEditor"/></webobject>
 		<table align = "center"><thead><tr>
-		<th><webobject name = "ThisYearTitle"/>:</th>
+		<th><webobject name = "ThisYearTitle"/>:</th><webobject name = "Extensions">
+		<th><webobject name = "ExtTitle"/></th></webobject>
 		</tr></thead>
 		<webobject name = "CanPrepare"><tfoot><tr>
 			<td style = "padding:10px;"><webobject name = "Span">
 				<webobject name = "PrepareTitle"/></webobject></td>
+				<webobject name = "Extensions"><td/></webobject>
 			</tr></tfoot></webobject>
 		<tbody><webobject name = "Itogs">
 		<tr class = "gerade"><td><webobject name = "DeleteContainer">
-			<webobject name = "Cross"/></webobject><webobject name = "ItogName"/></td></tr>
+			<webobject name = "Cross"/></webobject><webobject name = "ItogName"/></td>
+			<webobject name = "Extensions"><td><webobject name = "ExtComponent"/></td>
+			</webobject></tr>
 		</webobject></tbody>
 		</table>
 	</td></webobject>

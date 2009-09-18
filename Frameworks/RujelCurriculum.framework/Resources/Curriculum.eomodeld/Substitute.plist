@@ -15,6 +15,13 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
+            allowsNull = Y; 
+            columnName = "FROM_LESSON"; 
+            name = fromID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
             allowsNull = N; 
             columnName = LESSON; 
             name = lessonID; 
@@ -36,7 +43,7 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (date, factor, teacherID); 
+    attributesUsedForLocking = (date, factor, fromID, teacherID); 
     className = "net.rujel.curriculum.Substitute"; 
     classProperties = (date, factor, reason); 
     externalName = SUBSTITUTE; 

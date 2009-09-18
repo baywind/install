@@ -1,0 +1,120 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+EditJoinTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Join;
+  escapeHTML = "false";
+  valueWhenEmpty = "AutoItog";
+}
+
+
+CourseTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduCourse.this;
+  escapeHTML = false;
+}
+
+LessonTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduLesson.this;
+  escapeHTML = false;
+}
+
+Date : WOString {
+  value = lesson.date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+Courses : DynamicTableRow {
+  list = courses;
+  item = item;
+  useStyles = true;
+  switchParam = item.eduGroup;
+  selection = selCourse;
+  selectAction = selectCourse;
+  onClick = session.ajaxPopupNoPos;
+}
+
+CourseGroup : WOString {
+  value = item.eduGroup.name;
+}
+
+CourseTeacher : PersonDisplay {
+  person = item.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  valueWhenEmpty = "???";
+}
+
+CourseComment : WOString {
+  value = item.comment;
+}
+
+ReasonSelector : ReasonSelector {
+  course = selCourse;
+  date = lesson.date;
+  reason = reason;
+  readOnly = cantEdit;
+  hideExternal = true;
+}
+
+Lessons : Tabs {
+  currTab = selLesson;
+  tablist = lessons;
+  onClick = session.ajaxPopupNoPos;
+  vertical = true;
+  titleAttribute = "theme";
+}
+
+LessonChosen : WOConditional {
+  condition = selLesson;
+  negate = newLesson;
+}
+
+NewLessonBox : OnClickContainer {
+  elementName = "div";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = toggleNewLesson;
+  class = newLessonClass;
+}
+
+GenerateLesson : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.generateLesson;
+  escapeHTML = "false";
+}
+
+Form : WOForm {
+}
+
+CanChange: WOConditional {
+	condition = cantEdit;
+	negate = true;
+}
+
+CanDelete: WOConditional {
+	condition = canDelete;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.confirmMessage;
+	elementName = "input";
+	type = "button";
+}
+
+
+CourseSelected : WOConditional {
+  condition = selCourse;
+}

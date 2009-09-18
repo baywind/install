@@ -1,6 +1,6 @@
 PageWrapper1: PageWrapper {
 	hasChanges = false;
-	title = plist.title;
+	title = title;
 	hasChanges = ec.hasChanges;
 	onLoad = "onLoad();";
 	resourcesFramework = "RujelCurriculum";
