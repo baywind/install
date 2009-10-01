@@ -30,7 +30,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = STUDENT; 
+            columnName = STUDENT_ID; 
             name = studentID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 

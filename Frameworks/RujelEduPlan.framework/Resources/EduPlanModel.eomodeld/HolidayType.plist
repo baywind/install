@@ -41,7 +41,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = NAME; 
+            columnName = HOLIDAY_NAME; 
             name = name; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -50,7 +50,7 @@
     attributesUsedForLocking = (beginDay, beginMonth, endDay, endMonth, name); 
     className = "net.rujel.eduplan.HolidayType"; 
     classProperties = (beginDay, beginMonth, endDay, endMonth, holidays, name); 
-    externalName = "HOLIDAY_TYPE"; 
+    externalName = "PL_HOLIDAY_TYPE"; 
     fetchSpecificationDictionary = {}; 
     name = HolidayType; 
     primaryKeyAttributes = (htID); 

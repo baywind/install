@@ -46,6 +46,7 @@ WorkWeight: WOTextField {
 	value = work.weight;
 	style = "text-align:center;";
 	onkeypress = "return isNumberInput(event,true);";
+	disabled = work.namedFlags.fixWeight;
 }
 
 Number : WOString {
@@ -70,6 +71,8 @@ TypeTitle : WOString {
 
 TypePopUp : WOPopUpButton {
   list = types;
+  item = item;
+  displayString = item.typeName;
   selection = work.workType;
 }
 
@@ -165,6 +168,7 @@ MaxField : WOGenericElement {
 	value = criterMax;
 	style = "text-align:center;";
 	onkeypress = onChange;
+	onclick = onClick;
 	onchange = "blockCriters(event);";
 }
 

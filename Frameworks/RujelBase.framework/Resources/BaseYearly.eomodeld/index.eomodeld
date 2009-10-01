@@ -330,6 +330,7 @@
         {className = EOGenericRecord; name = BaseNote; }, 
         {className = "net.rujel.base.BaseTab"; name = BaseTab; }, 
         {className = EOGenericRecord; name = CourseAudience; }, 
+        {className = EOGenericRecord; name = TeacherChange; }, 
         {className = EOGenericRecord; name = TextStore; }
     ); 
     userInfo = {

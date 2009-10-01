@@ -2,13 +2,13 @@
     attributes = (
         {columnName = "B_ID"; name = bID; prototypeName = short; }, 
         {columnName = "B_SET"; name = bSet; prototypeName = short; }, 
-        {allowsNull = N; columnName = LEAST; name = least; prototypeName = decimal; }, 
-        {allowsNull = N; columnName = TITLE; name = title; prototypeName = word; }
+        {allowsNull = N; columnName = LEAST_VALUE; name = least; prototypeName = decimal; }, 
+        {allowsNull = N; columnName = B_TITLE; name = title; prototypeName = word; }
     ); 
     attributesUsedForLocking = (least, title); 
     className = EOGenericRecord; 
     classProperties = (least, title, borderSet); 
-    externalName = BORDER; 
+    externalName = CR_BORDER; 
     fetchSpecificationDictionary = {}; 
     name = Border; 
     primaryKeyAttributes = (bID); 

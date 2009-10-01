@@ -1,11 +1,11 @@
 {
     attributes = (
-        {allowsNull = N; columnName = COURSE; name = courseID; prototypeName = short; }, 
-        {allowsNull = N; columnName = HOURS; name = hours; prototypeName = short; }, 
-        {allowsNull = N; columnName = PERIOD; name = periodID; prototypeName = short; }, 
+        {allowsNull = N; columnName = EDU_COURSE; name = courseID; prototypeName = short; }, 
+        {allowsNull = N; columnName = TOTAL_HOURS; name = hours; prototypeName = short; }, 
+        {allowsNull = N; columnName = EDU_PERIOD; name = periodID; prototypeName = short; }, 
         {
             allowsNull = N; 
-            columnName = WEEKLY; 
+            columnName = WEEKLY_HOURS; 
             name = weekly; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -14,7 +14,7 @@
     attributesUsedForLocking = (hours, weekly); 
     className = EOGenericRecord; 
     classProperties = (eduPeriod, hours, weekly); 
-    externalName = "PLAN_DETAIL"; 
+    externalName = "PL_PLAN_DETAIL"; 
     fetchSpecificationDictionary = {}; 
     name = PlanDetail; 
     primaryKeyAttributes = (courseID, periodID); 

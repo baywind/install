@@ -2,7 +2,7 @@
 	attributes = (
 		{
 			allowsNull = N;
-			columnName = COURSE;
+			columnName = EDU_COURSE;
 			name = courseID;
 			prototypeName = short;
 			userInfo = {
@@ -13,7 +13,7 @@
 		},
 		{
 			allowsNull = N;
-			columnName = "V_DATE";
+			columnName = "VAR_DATE";
 			name = date;
 			prototypeName = date;
 			userInfo = {
@@ -24,7 +24,7 @@
 		},
 		{
 			allowsNull = N;
-			columnName = REASON;
+			columnName = REASON_ID;
 			name = reasonID;
 			prototypeName = "int_3";
 			userInfo = {
@@ -35,7 +35,7 @@
 		},
 		{
 			allowsNull = N;
-			columnName = VALUE;
+			columnName = VAR_VALUE;
 			name = value;
 			prototypeName = byte;
 			userInfo = {
@@ -67,7 +67,7 @@
 		reason,
 		value,
 	);
-	externalName = VARIATION;
+	externalName = CU_VARIATION;
 	"fetchSpecificationDictionary" = {};
 	name = Variation;
 	primaryKeyAttributes = (

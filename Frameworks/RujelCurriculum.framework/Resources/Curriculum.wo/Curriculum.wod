@@ -265,7 +265,7 @@ GroupCell : OnClickContainer {
 TeacherCell : OnClickContainer {
   elementName = "td";
   onclick = "ajaxPost('chooseTeacher',event);";
-  style = "font-style:italic;text-decoration:underline;";
+  style = "font-style:italic;text-decoration:underline;white-space:nowrap;";
   title = plist.Select;
   disabled = tmpDict.reasonsToMoveIn;
   align = "left";

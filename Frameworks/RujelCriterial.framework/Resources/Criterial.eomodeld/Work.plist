@@ -2,13 +2,20 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = ANNOUNCE; 
+            columnName = "ANNOUNCE_DATE"; 
             name = announce; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
-        {columnName = COURSE; name = courseID; prototypeName = short; }, 
-        {columnName = DEADLINE; name = date; prototypeName = date; }, 
+        {columnName = "EDU_COURSE"; name = courseID; prototypeName = short; }, 
+        {columnName = "DEADLINE_DATE"; name = date; prototypeName = date; }, 
+        {
+            allowsNull = N; 
+            columnName = "WORK_FLAGS"; 
+            name = flags; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
         {
             allowsNull = N; 
             columnName = "LOAD_TIME"; 
@@ -16,28 +23,32 @@
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
-        {columnName = NUMBER; name = number; prototypeName = short; }, 
+        {columnName = "NUMBER_ORDER"; name = number; prototypeName = short; }, 
         {
             allowsNull = Y; 
-            columnName = TASK; 
+            columnName = "TASK_LINK"; 
             name = taskID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
-        {columnName = THEME; name = theme; prototypeName = string; }, 
-        {columnName = TITLE; name = title; prototypeName = anagram; }, 
+        {columnName = "WORK_THEME"; name = theme; prototypeName = string; }, 
+        {columnName = "WORK_TITLE"; name = title; prototypeName = anagram; }, 
         {
             allowsNull = N; 
-            columnName = TYPE; 
-            name = type; 
-            prototypeName = byte; 
+            columnName = "WORK_TYPE"; 
+            name = typeID; 
+            prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-            valueType = i; 
         }, 
-        {allowsNull = N; columnName = WEIGHT; name = weight; prototypeName = decimal; }, 
+        {
+            allowsNull = N; 
+            columnName = "WORK_WEIGHT"; 
+            name = weight; 
+            prototypeName = decimal; 
+        }, 
         {columnName = "W_ID"; name = workID; prototypeName = "int_3"; }
     ); 
-    attributesUsedForLocking = (title, date, theme, number, weight, announce, type, load, taskID); 
+    attributesUsedForLocking = (title, date, theme, number, weight, announce, load, taskID, flags, typeID); 
     className = "net.rujel.criterial.Work"; 
     classProperties = (
         title, 
@@ -48,13 +59,14 @@
         number, 
         weight, 
         announce, 
-        type, 
         load, 
         notes, 
         taskID, 
-        taskText
+        taskText, 
+        flags, 
+        workType
     ); 
-    externalName = WORK; 
+    externalName = "CR_WORK"; 
     fetchSpecificationDictionary = {}; 
     name = Work; 
     primaryKeyAttributes = (workID); 
@@ -96,6 +108,14 @@
             joins = ({destinationAttribute = tID; sourceAttribute = taskID; }); 
             name = taskText; 
             ownsDestination = Y; 
+        }, 
+        {
+            destination = WorkType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = wtID; sourceAttribute = typeID; }); 
+            name = workType; 
         }
     ); 
 }

@@ -2,7 +2,7 @@
 	attributes = (
 		{
 			allowsNull = Y;
-			columnName = COURSE;
+			columnName = EDU_COURSE;
 			name = courseID;
 			prototypeName = short;
 			userInfo = {
@@ -13,7 +13,7 @@
 		},
 		{
 			allowsNull = Y;
-			columnName = CYCLE;
+			columnName = EDU_CYCLE;
 			name = cycleID;
 			prototypeName = "int_3";
 			userInfo = {
@@ -35,7 +35,7 @@
 		},
 		{
 			allowsNull = Y;
-			columnName = GRADE;
+			columnName = GRADE_NUM;
 			name = grade;
 			prototypeName = short;
 			userInfo = {
@@ -79,7 +79,7 @@
 		},
 		{
 			allowsNull = N;
-			columnName = SETTINGS;
+			columnName = SETTING_ID;
 			name = settingsID;
 			prototypeName = "int_3";
 			userInfo = {
@@ -90,7 +90,7 @@
 		},
 		{
 			allowsNull = Y;
-			columnName = TEACHER;
+			columnName = TEACHER_ID;
 			name = teacherID;
 			prototypeName = "int_3";
 			userInfo = {
@@ -129,7 +129,7 @@
 		settingsBase,
 		textValue,
 	);
-	externalName = "SETTING_BY_COURSE";
+	externalName = "BASE_BY_COURSE";
 	"fetchSpecificationDictionary" = {};
 	name = SettingByCourse;
 	primaryKeyAttributes = (

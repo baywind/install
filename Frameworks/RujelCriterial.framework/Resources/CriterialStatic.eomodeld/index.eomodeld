@@ -11,7 +11,8 @@
         {className = "net.rujel.criterial.CriteriaSet"; name = CriteriaSet; }, 
         {className = EOGenericRecord; name = Criterion; }, 
         {className = "net.rujel.criterial.Indexer"; name = Indexer; }, 
-        {className = EOGenericRecord; name = IndexRow; } 
+        {className = EOGenericRecord; name = IndexRow; }, 
+        {className = EOGenericRecord; name = WorkType; }
     ); 
     userInfo = {
         "_EntityModeler" = {

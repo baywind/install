@@ -8,7 +8,7 @@ WorkContainer : OnClickContainer {
   invokeAction = selectWork;
   onclick = session.checkRun;
   class = rowClass;
-  title = workItem.workType;
+  title = workItem.workType.typeName;
   style = rowStyle;
 }
 

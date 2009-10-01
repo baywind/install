@@ -260,8 +260,6 @@
 			<string>Предметная область</string>
 			<key>attribute</key>
 			<string>cycle.subjectEO.area</string>
-			<key>presenter</key>
-			<string>PersonDisplay</string>
 			<key>displayString</key>
 			<string>.areaName</string>
 			<key>noSelectionString</key>

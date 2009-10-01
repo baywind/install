@@ -2,12 +2,12 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = COURSE; 
+            columnName = EDU_COURSE; 
             name = courseID; 
             prototypeName = integer; 
         }, 
         {columnName = "CT_ID"; name = ctID; prototypeName = "int_3"; }, 
-        {allowsNull = Y; columnName = CYCLE; name = cycleID; prototypeName = "int_3"; }, 
+        {allowsNull = Y; columnName = EDU_CYCLE; name = cycleID; prototypeName = "int_3"; }, 
         {
             allowsNull = Y; 
             columnName = "EDU_GROUP"; 
@@ -15,12 +15,12 @@
             prototypeName = integer; 
         }, 
         {columnName = "FIRE_DATE"; name = fireDate; prototypeName = date; }, 
-        {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
-        {allowsNull = N; columnName = ITOG; name = itogID; prototypeName = short; }, 
-        {columnName = REASON; name = reason; prototypeName = string; }, 
+        {allowsNull = N; columnName = CTO_FLAGS; name = flags; prototypeName = byte; }, 
+        {allowsNull = N; columnName = ITOG_CONTAINER; name = itogID; prototypeName = short; }, 
+        {columnName = REASON_TEXT; name = reason; prototypeName = string; }, 
         {
             allowsNull = Y; 
-            columnName = TEACHER; 
+            columnName = TEACHER_ID; 
             name = teacherID; 
             prototypeName = integer; 
         }
@@ -28,7 +28,7 @@
     attributesUsedForLocking = (teacherID, reason, eduGroupID, courseID, flags, cycleID, fireDate); 
     className = "net.rujel.autoitog.CourseTimeout"; 
     classProperties = (fireDate, flags, itogContainer, reason); 
-    externalName = "COURSE_TIMEOUT"; 
+    externalName = "AI_COURSE_TIMEOUT"; 
     fetchSpecificationDictionary = {}; 
     name = CourseTimeout; 
     primaryKeyAttributes = (ctID); 

@@ -2,7 +2,7 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = BEGIN; 
+            columnName = DATE_BEGIN; 
             name = begin; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -16,21 +16,21 @@
         }, 
         {
             allowsNull = Y; 
-            columnName = END; 
+            columnName = DATE_END; 
             name = end; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = FLAGS; 
+            columnName = REASON_FLAGS; 
             name = flags; 
             prototypeName = byte; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = REASON; 
+            columnName = REASON_TEXT; 
             name = reason; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -44,20 +44,20 @@
         }, 
         {
             allowsNull = N; 
-            columnName = SCHOOL; 
+            columnName = SCHOOL_NUM; 
             name = school; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = Y; 
-            columnName = TEACHER; 
+            columnName = TEACHER_ID; 
             name = teacherID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = VERIFICATION; 
+            columnName = VERIFY_TEXT; 
             name = verification; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -66,7 +66,7 @@
     attributesUsedForLocking = (begin, eduGroupID, end, flags, reason, school, teacherID, verification); 
     className = "net.rujel.curriculum.Reason"; 
     classProperties = (begin, end, flags, reason, school, substitutes, variations, verification); 
-    externalName = REASON; 
+    externalName = CU_REASON; 
     fetchSpecificationDictionary = {}; 
     name = Reason; 
     primaryKeyAttributes = (rID); 

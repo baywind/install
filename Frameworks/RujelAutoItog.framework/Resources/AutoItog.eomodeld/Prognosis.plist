@@ -2,14 +2,14 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = BONUS; 
+            columnName = BONUS_ID; 
             name = bonusID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = COMPLETE; 
+            columnName = COMPLETE_RATE; 
             name = complete; 
             precision = 5; 
             prototypeName = decimal; 
@@ -17,7 +17,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = COURSE; 
+            columnName = EDU_COURSE; 
             name = courseID; 
             prototypeName = integer; 
         }, 
@@ -27,18 +27,18 @@
             name = fireDate; 
             prototypeName = date; 
         }, 
-        {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
-        {allowsNull = N; columnName = ITOG; name = itogID; prototypeName = short; }, 
-        {columnName = MARK; name = mark; prototypeName = anagram; }, 
+        {allowsNull = N; columnName = PR_FLAGS; name = flags; prototypeName = byte; }, 
+        {allowsNull = N; columnName = ITOG_CONTAINER; name = itogID; prototypeName = short; }, 
+        {columnName = PR_MARK; name = mark; prototypeName = anagram; }, 
         {
             allowsNull = N; 
-            columnName = STUDENT; 
+            columnName = STUDENT_ID; 
             name = studentID; 
             prototypeName = integer; 
         }, 
         {
             allowsNull = N; 
-            columnName = VALUE; 
+            columnName = SUCCESS_VALUE; 
             name = value; 
             precision = 5; 
             prototypeName = decimal; 
@@ -48,7 +48,7 @@
     attributesUsedForLocking = (value, complete, mark, fireDate, flags, bonusID); 
     className = "net.rujel.autoitog.Prognosis"; 
     classProperties = (value, complete, mark, fireDate, flags, bonus, autoItog); 
-    externalName = PROGNOSIS; 
+    externalName = AI_PROGNOSIS; 
     fetchSpecificationDictionary = {}; 
     name = Prognosis; 
     primaryKeyAttributes = (courseID, itogID, studentID); 

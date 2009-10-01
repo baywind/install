@@ -7,13 +7,13 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {columnName = "IND_ID"; name = indID; prototypeName = short; }, 
-        {columnName = TITLE; name = title; prototypeName = word; }, 
-        {allowsNull = N; columnName = TYPE; name = type; prototypeName = byte; }
+        {columnName = INDEX_NAME; name = title; prototypeName = word; }, 
+        {allowsNull = N; columnName = INDEX_TYPE; name = type; prototypeName = byte; }
     ); 
     attributesUsedForLocking = (type, title, defaultValue); 
     className = "net.rujel.criterial.Indexer"; 
     classProperties = (type, title, defaultValue, indexRows); 
-    externalName = INDEXER; 
+    externalName = CR_INDEXER; 
     fetchSpecificationDictionary = {}; 
     name = Indexer; 
     primaryKeyAttributes = (indID); 

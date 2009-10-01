@@ -32,7 +32,7 @@
     attributesUsedForLocking = (courseID, itogID, relKey); 
     className = EOGenericRecord; 
     classProperties = (autoItog, relKey); 
-    externalName = "ITOG_RELATED"; 
+    externalName = "AI_ITOG_RELATED"; 
     fetchSpecificationDictionary = {}; 
     name = ItogRelated; 
     primaryKeyAttributes = (rID); 

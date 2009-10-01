@@ -1,0 +1,52 @@
+CREATE DATABASE VseLists DEFAULT CHARACTER SET utf8;
+USE VseLists;
+
+CREATE TABLE VSE_EDU_GROUP (
+  GR_ID mediumint NOT NULL,
+  GROUP_TITLE varchar(28),
+  START_GRADE smallint NOT NULL,
+  FIRST_YEAR smallint NOT NULL,
+  LAST_YEAR smallint NOT NULL,
+  GR_FLAGS tinyint NOT NULL,
+  PRIMARY KEY (GR_ID)
+);
+
+CREATE TABLE VSE_LIST (
+  L_ID int NOT NULL,
+  EDU_GROUP mediumint NOT NULL,
+  STUDENT_ID mediumint NOT NULL,
+  ENTER_DT date,
+  LEAVE_DT date,
+  PRIMARY KEY (L_ID)
+);
+
+CREATE TABLE VSE_PERSON (
+  P_ID int NOT NULL,
+  LAST_NAME varchar(28) NOT NULL,
+  FIRST_NAME varchar(28) NOT NULL,
+  SECOND_NAME varchar(28),
+  SEX_FLAG bit NOT NULL,
+  BIRTH_DATE date,
+  PRIMARY KEY (P_ID)
+);
+
+CREATE TABLE VSE_STUDENT (
+  S_ID mediumint NOT NULL,
+  PERSON_ID int NOT NULL,
+  ENTER_DT date,
+  LEAVE_DT date,
+  LICHN_DELO varchar(28),
+  ABS_GRADE smallint NOT NULL,
+  PRIMARY KEY (S_ID)
+);
+
+CREATE TABLE VSE_TEACHER (
+  T_ID mediumint NOT NULL,
+  PERSON_ID int NOT NULL,
+  ENTER_DT date,
+  LEAVE_DT date,
+  LICHN_DELO varchar(28),
+  JOB_POSITION varchar(255),
+  PRIMARY KEY (T_ID)
+);
+

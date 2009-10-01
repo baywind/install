@@ -1,11 +1,25 @@
 {
     attributes = (
-        {allowsNull = N; columnName = COURSE; name = "c_id"; prototypeName = short; }, 
-        {allowsNull = N; columnName = ENTITY; name = entID; prototypeName = short; }, 
-        {columnName = FIRST; name = firstLessonNumber; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_COURSE"; 
+            name = courseID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "LESSON_ENTITY"; 
+            name = entID; 
+            prototypeName = short; 
+        }, 
+        {
+            columnName = "FIRST_LESSON"; 
+            name = firstLessonNumber; 
+            prototypeName = short; 
+        }, 
         {columnName = "TAB_ID"; name = tabID; prototypeName = "int_3"; }
     ); 
-    attributesUsedForLocking = ("c_id", tabID, firstLessonNumber, entID); 
+    attributesUsedForLocking = (tabID, firstLessonNumber, entID); 
     className = "net.rujel.base.BaseTab"; 
     classProperties = (firstLessonNumber, course, forEntity); 
     externalName = "BASE_TAB"; 
@@ -19,7 +33,7 @@
             isMandatory = Y; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = courseID; sourceAttribute = "c_id"; }); 
+            joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
             name = course; 
         }, 
         {

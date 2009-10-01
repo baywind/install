@@ -36,7 +36,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = SEX; 
+            columnName = SEX_FLAG; 
             name = sex; 
             prototypeName = boolean; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -45,7 +45,7 @@
     attributesUsedForLocking = (birthDate, firstName, lastName, secondName, sex); 
     className = "net.rujel.vselists.VsePerson"; 
     classProperties = (birthDate, firstName, lastName, person, secondName, sex); 
-    externalName = PERSON; 
+    externalName = VSE_PERSON; 
     fetchSpecificationDictionary = {}; 
     name = VsePerson; 
     primaryKeyAttributes = (pID); 

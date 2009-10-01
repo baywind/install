@@ -9,7 +9,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = PERIOD; 
+            columnName = EDU_PERIOD; 
             name = periodID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -25,7 +25,7 @@
     attributesUsedForLocking = (listName, periodID); 
     className = EOGenericRecord; 
     classProperties = (listName, period); 
-    externalName = "PERIOD_LIST"; 
+    externalName = "PL_PERIOD_LIST"; 
     fetchSpecificationDictionary = {}; 
     name = PeriodList; 
     primaryKeyAttributes = (plID); 

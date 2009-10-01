@@ -1,0 +1,56 @@
+{
+    attributes = (
+        {
+            columnName = "COMMENT_TEXT"; 
+            name = comment; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_COURSE"; 
+            name = courseID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "UPTO_DATE"; 
+            name = date; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TC_ID"; 
+            name = tcID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEACHER_ID"; 
+            name = teacherID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (comment, courseID, date, teacherID); 
+    className = EOGenericRecord; 
+    classProperties = (comment, course, date); 
+    externalName = "BASE_TEACHER_CHANGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = TeacherChange; }; 
+    name = TeacherChange; 
+    primaryKeyAttributes = (tcID); 
+    relationships = (
+        {
+            destination = BaseCourse; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
+            name = course; 
+        }
+    ); 
+}

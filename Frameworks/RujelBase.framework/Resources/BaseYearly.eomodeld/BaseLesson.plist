@@ -1,6 +1,6 @@
 {
     attributes = (
-        {allowsNull = N; columnName = COURSE; name = courseID; prototypeName = short; }, 
+        {allowsNull = N; columnName = EDU_COURSE; name = courseID; prototypeName = short; }, 
         {columnName = "DATE_PERFORMED"; name = date; prototypeName = date; }, 
         {
             allowsNull = N; 
@@ -16,13 +16,13 @@
         }, 
         {
             allowsNull = Y; 
-            columnName = TASK; 
+            columnName = HOME_TASK; 
             name = taskID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
-        {columnName = THEME; name = theme; prototypeName = string; }, 
-        {columnName = TITLE; name = title; prototypeName = anagram; }
+        {columnName = LESSON_THEME; name = theme; prototypeName = string; }, 
+        {columnName = LESSON_TITLE; name = title; prototypeName = anagram; }
     ); 
     attributesUsedForLocking = (lessonID, courseID, number, date, theme, title, taskID); 
     className = "net.rujel.base.BaseLesson"; 

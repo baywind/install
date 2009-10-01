@@ -8,7 +8,7 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = DESCRIPTION; 
+            columnName = ST_DESCRIPTION; 
             name = description; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -28,13 +28,13 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = GROUPING1; 
+            columnName = GR_FIELD1; 
             name = grouping1; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = GROUPING2; 
+            columnName = GR_FIELD2; 
             name = grouping2; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -50,7 +50,7 @@
     attributesUsedForLocking = (bsID, description, entName, grouping1, grouping2, statField); 
     className = "net.rujel.stats.Description"; 
     classProperties = (borderSet, description, entName, grouping1, grouping2, statField); 
-    externalName = DESCRIPTION; 
+    externalName = ST_DESCRIPTION; 
     fetchSpecificationDictionary = {}; 
     internalInfo = {"_javaClientClassName" = Description; }; 
     name = Description; 

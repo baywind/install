@@ -2,18 +2,18 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = CRITERION; 
+            columnName = CRITER_NUM; 
             name = criterion; 
             prototypeName = short; 
         }, 
-        {columnName = MAX; name = max; prototypeName = short; }, 
-        {allowsNull = Y; columnName = WEIGHT; name = weight; prototypeName = short; }, 
-        {allowsNull = N; columnName = WORK; name = workID; prototypeName = "int_3"; }
+        {columnName = MARK_MAX; name = max; prototypeName = short; }, 
+        {allowsNull = Y; columnName = CRITER_WEIGHT; name = weight; prototypeName = short; }, 
+        {allowsNull = N; columnName = WORK_ID; name = workID; prototypeName = "int_3"; }
     ); 
     attributesUsedForLocking = (workID, max, weight, criterion); 
     className = EOGenericRecord; 
     classProperties = (work, max, weight, criterion); 
-    externalName = "CRITER_MASK"; 
+    externalName = "CR_MASK"; 
     fetchSpecificationDictionary = {}; 
     name = CriterMask; 
     primaryKeyAttributes = (criterion, workID); 

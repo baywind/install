@@ -2,7 +2,7 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = ENTITY; 
+            columnName = FROM_ENTITY; 
             name = fromEntity; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -25,7 +25,7 @@
     attributesUsedForLocking = (fromEntity, storedText); 
     className = EOGenericRecord; 
     classProperties = (entityIndex, storedText); 
-    externalName = "TEXT_STORE"; 
+    externalName = "BASE_TEXT_STORE"; 
     fetchSpecificationDictionary = {}; 
     internalInfo = {"_javaClientClassName" = TextStore; }; 
     name = TextStore; 

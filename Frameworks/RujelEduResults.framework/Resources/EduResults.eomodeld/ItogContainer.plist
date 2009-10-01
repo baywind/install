@@ -14,7 +14,7 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = NUM; 
+            columnName = ORDER_NUM; 
             name = num; 
             prototypeName = byte; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -22,7 +22,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = TYPE; 
+            columnName = ITOG_TYPE; 
             name = type; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -31,7 +31,7 @@
     attributesUsedForLocking = (eduYear, num, type); 
     className = "net.rujel.eduresults.ItogContainer"; 
     classProperties = (eduYear, itogType, num); 
-    externalName = ITOG; 
+    externalName = ITOG_CONTAINER; 
     fetchSpecificationDictionary = {}; 
     name = ItogContainer; 
     primaryKeyAttributes = (iID); 

@@ -9,14 +9,14 @@
             valueType = i; 
         }, 
         {
-            columnName = NAME; 
+            columnName = TYPE_NAME; 
             name = name; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = SORT; 
+            columnName = SORT_NUM; 
             name = sort; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -29,7 +29,7 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = TITLE; 
+            columnName = SHORT_TITLE; 
             name = title; 
             prototypeName = anagram; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 

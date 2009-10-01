@@ -45,11 +45,11 @@ CourseGroup : WOString {
 }
 
 CourseTeacher : PersonDisplay {
-  person = item.teacher;
+  person = itemTeacher;
   last = 2;
   first = 1;
   second = 1;
-  valueWhenEmpty = "???";
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
 }
 
 CourseComment : WOString {

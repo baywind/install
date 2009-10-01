@@ -23,8 +23,8 @@ ListRepetition : WORepetition {
 
 ItemRow : WOGenericContainer {
 	elementName = "tr";
-	class = item.styleClass;
-	title = item.workType;
+	bgcolor = item.color;
+	title = item.workType.typeName;
 }
 
 Label : WOString {

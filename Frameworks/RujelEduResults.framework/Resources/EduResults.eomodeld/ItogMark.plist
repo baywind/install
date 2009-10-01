@@ -1,11 +1,11 @@
 {
     attributes = (
-        {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
-        {columnName = CYCLE; name = eduCycleID; prototypeName = "int_3"; }, 
-        {allowsNull = N; columnName = MARK; name = mark; prototypeName = anagram; }, 
-        {columnName = STUDENT; name = studentID; prototypeName = integer; }, 
+        {allowsNull = N; columnName = ITOG_FLAGS; name = flags; prototypeName = byte; }, 
+        {columnName = EDU_CYCLE; name = eduCycleID; prototypeName = "int_3"; }, 
+        {allowsNull = N; columnName = MARK_TITLE; name = mark; prototypeName = anagram; }, 
+        {columnName = STUDENT_ID; name = studentID; prototypeName = integer; }, 
         {
-            columnName = VALUE; 
+            columnName = SUCCESS_VALUE; 
             name = value; 
             precision = 5; 
             prototypeName = decimal; 
@@ -13,7 +13,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = CONTAINER; 
+            columnName = ITOG_CONTAINER; 
             name = containerID; 
             prototypeName = short; 
         }

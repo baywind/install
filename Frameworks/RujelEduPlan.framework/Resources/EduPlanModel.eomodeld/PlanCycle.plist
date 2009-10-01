@@ -9,15 +9,15 @@
         }, 
         {
             allowsNull = N; 
-            columnName = GRADE; 
+            columnName = GRADE_NUM; 
             name = grade; 
             prototypeName = byte; 
             valueType = i; 
         }, 
-        {allowsNull = N; columnName = HOURS; name = hours; prototypeName = short; }, 
-        {allowsNull = N; columnName = LEVEL; name = level; prototypeName = short; }, 
-        {allowsNull = N; columnName = SCHOOL; name = school; prototypeName = short; }, 
-        {allowsNull = N; columnName = SUBJECT; name = subjID; prototypeName = short; }, 
+        {allowsNull = N; columnName = TOTAL_HOURS; name = hours; prototypeName = short; }, 
+        {allowsNull = N; columnName = LEVEL_EDU; name = level; prototypeName = short; }, 
+        {allowsNull = N; columnName = SCHOOL_NUM; name = school; prototypeName = short; }, 
+        {allowsNull = N; columnName = SUBJECT_ID; name = subjID; prototypeName = short; }, 
         {
             definition = "subjectEO.subject"; 
             isReadOnly = Y; 
@@ -26,7 +26,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = YEAR; 
+            columnName = EDU_YEAR; 
             name = year; 
             prototypeName = byte; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -36,7 +36,7 @@
     attributesUsedForLocking = (classID, grade, hours, level, school, subjID, subject, year); 
     className = "net.rujel.eduplan.PlanCycle"; 
     classProperties = (grade, hours, level, school, subject, subjectEO, year); 
-    externalName = "PLAN_CYCLE"; 
+    externalName = "PL_CYCLE"; 
     fetchSpecificationDictionary = {}; 
     name = PlanCycle; 
     primaryKeyAttributes = (cID); 

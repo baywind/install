@@ -11,7 +11,7 @@
             name = calculatorName; 
             prototypeName = string; 
         }, 
-        {allowsNull = N; columnName = FLAGS; name = flags; prototypeName = byte; }, 
+        {allowsNull = N; columnName = AI_FLAGS; name = flags; prototypeName = byte; }, 
         {allowsNull = N; columnName = "AI_ID"; name = aiID; prototypeName = short; }, 
         {
             allowsNull = N; 
@@ -44,7 +44,7 @@
     attributesUsedForLocking = (calculatorName, containerID, fireDate, fireTime, flags, listName); 
     className = "net.rujel.autoitog.AutoItog"; 
     classProperties = (borderSet, calculatorName, fireDate, fireTime, flags, itogContainer, listName); 
-    externalName = AUTOITOG; 
+    externalName = AI_AUTOITOG; 
     fetchSpecificationDictionary = {}; 
     name = AutoItog; 
     primaryKeyAttributes = (aiID); 

@@ -2,19 +2,19 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = CRITER; 
+            columnName = CRITER_NUM; 
             name = criterion; 
             prototypeName = short; 
         }, 
         {columnName = "DATE_SET"; name = dateSet; prototypeName = date; }, 
-        {columnName = STUDENT; name = studentID; prototypeName = integer; }, 
-        {allowsNull = Y; columnName = VALUE; name = value; prototypeName = short; }, 
-        {allowsNull = N; columnName = WORK; name = workID; prototypeName = "int_3"; }
+        {columnName = STUDENT_ID; name = studentID; prototypeName = integer; }, 
+        {allowsNull = Y; columnName = MARK_VALUE; name = value; prototypeName = short; }, 
+        {allowsNull = N; columnName = WORK_ID; name = workID; prototypeName = "int_3"; }
     ); 
     attributesUsedForLocking = (dateSet, value); 
     className = "net.rujel.criterial.Mark"; 
     classProperties = (dateSet, value, work, criterion); 
-    externalName = MARK; 
+    externalName = CR_MARK; 
     fetchSpecificationDictionary = {}; 
     name = Mark; 
     primaryKeyAttributes = (workID, studentID, criterion); 

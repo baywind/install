@@ -158,6 +158,7 @@ LessonRow: OnClickContainer {
 	invokeAction = selectLesson;
 	class = rowClass;
 	title = work.workType;
+	bgcolor = rowColor;
 }
 
 LessonTheme: WOString {

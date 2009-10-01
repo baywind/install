@@ -1,8 +1,8 @@
 {
     attributes = (
-        {columnName = LESSON; name = lessonID; prototypeName = integer; }, 
-        {columnName = NOTE; name = note; prototypeName = string; }, 
-        {columnName = STUDENT; name = studentID; prototypeName = integer; }
+        {columnName = LESSON_ID; name = lessonID; prototypeName = integer; }, 
+        {columnName = NOTE_TEXT; name = note; prototypeName = string; }, 
+        {columnName = STUDENT_ID; name = studentID; prototypeName = integer; }
     ); 
     attributesUsedForLocking = (lessonID, studentID, note); 
     className = EOGenericRecord; 

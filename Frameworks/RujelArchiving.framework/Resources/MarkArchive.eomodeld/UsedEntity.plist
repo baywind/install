@@ -1,10 +1,10 @@
 {
     attributes = (
         {columnName = "ENT_ID"; name = entID; prototypeName = short; }, 
-        {columnName = KEY1; name = key1; prototypeName = word; }, 
-        {columnName = KEY2; name = key2; prototypeName = word; }, 
-        {columnName = KEY3; name = key3; prototypeName = word; }, 
-        {columnName = TOARCHIVE; name = toArchive; prototypeName = word; }, 
+        {columnName = KEY1_NAME; name = key1; prototypeName = word; }, 
+        {columnName = KEY2_NAME; name = key2; prototypeName = word; }, 
+        {columnName = KEY3_NAME; name = key3; prototypeName = word; }, 
+        {columnName = TO_ARCHIVE; name = toArchive; prototypeName = word; }, 
         {
             allowsNull = N; 
             columnName = "ENTITY_NAME"; 
@@ -15,7 +15,7 @@
     attributesUsedForLocking = (key1, key2, key3, toArchive, usedEntity); 
     className = EOGenericRecord; 
     classProperties = (key1, key2, key3, toArchive, usedEntity); 
-    externalName = "USED_ENTITY"; 
+    externalName = "MA_USED_ENTITY"; 
     fetchSpecificationDictionary = {}; 
     name = UsedEntity; 
     primaryKeyAttributes = (entID); 

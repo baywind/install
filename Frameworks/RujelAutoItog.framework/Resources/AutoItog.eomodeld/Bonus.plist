@@ -9,20 +9,20 @@
         }, 
         {
             allowsNull = N; 
-            columnName = MARK; 
+            columnName = TARGET_MARK; 
             name = mark; 
             prototypeName = anagram; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = REASON; 
+            columnName = BONUS_REASON; 
             name = reason; 
             prototypeName = text; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = VALUE; 
+            columnName = ADD_VALUE; 
             name = value; 
             prototypeName = decimal; 
             scale = 4; 
@@ -32,7 +32,7 @@
     attributesUsedForLocking = (mark, reason, value); 
     className = "net.rujel.autoitog.Bonus"; 
     classProperties = (mark, prognoses, reason, value); 
-    externalName = BONUS; 
+    externalName = AI_BONUS; 
     fetchSpecificationDictionary = {}; 
     name = Bonus; 
     primaryKeyAttributes = (bID); 

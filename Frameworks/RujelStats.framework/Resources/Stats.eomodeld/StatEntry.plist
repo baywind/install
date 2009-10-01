@@ -9,7 +9,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = GROUPING; 
+            columnName = GROUPING_ID; 
             name = grID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -32,7 +32,7 @@
     attributesUsedForLocking = (grID, keyCount, statKey); 
     className = "com.webobjects.eocontrol.EOGenericRecord"; 
     classProperties = (grouping, keyCount, statKey); 
-    externalName = ENTRY; 
+    externalName = ST_ENTRY; 
     fetchSpecificationDictionary = {}; 
     name = StatEntry; 
     primaryKeyAttributes = (eID); 

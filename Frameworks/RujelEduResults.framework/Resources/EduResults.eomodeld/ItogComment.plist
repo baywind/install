@@ -2,28 +2,28 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = COMMENT; 
+            columnName = COMMENT_TEXT; 
             name = comment; 
             prototypeName = text; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = CONTAINER; 
+            columnName = ITOG_CONTAINER; 
             name = containerID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = CYCLE; 
+            columnName = EDU_CYCLE; 
             name = eduCycleID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = STUDENT; 
+            columnName = STUDENT_ID; 
             name = studentID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 

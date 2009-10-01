@@ -267,7 +267,24 @@
 					<string>Замененный</string>
 					<key>hover</key>
 					<string>Учитель, который ведет курс</string>
-					<key>keyPath</key>
+					<key>value</key>
+					<dict>
+						<key>object</key>
+						<string>.lesson.course</string>
+						<key>methodName</key>
+						<string>teacher</string>
+						<key>cacheResult</key>
+						<true/>
+						<key>paramClasses</key>
+						<array>
+							<string>com.webobjects.foundation.NSTimestamp</string>
+						</array>
+						<key>paramValues</key>
+						<array>
+							<string>.date</string>
+						</array>
+					</dict>
+					<key>_keyPath</key>
 					<string>lesson.course.teacher</string>
 					<key>style</key>
 					<string>white-space:nowrap;</string>

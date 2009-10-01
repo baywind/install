@@ -31,7 +31,7 @@
     attributesUsedForLocking = (key, numericValue, textValue); 
     className = "net.rujel.base.SettingsBase"; 
     classProperties = (byCourse, key, numericValue, textValue); 
-    externalName = "SETTINGS_BASE"; 
+    externalName = "BASE_SETTINGS"; 
     fetchSpecificationDictionary = {}; 
     name = SettingsBase; 
     primaryKeyAttributes = (sID); 

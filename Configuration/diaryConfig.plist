@@ -109,7 +109,7 @@
 		<key>net.rujel.criterial.ModuleInit</key>
 		<string>true</string>
 		<key>net.rujel.eduresults.ModuleInit</key>
-		<string>true</string>
+		<string>false</string>
 		<key>net.rujel.curriculum.CurriculumModule</key>
 		<string>false</string>
 	</dict>

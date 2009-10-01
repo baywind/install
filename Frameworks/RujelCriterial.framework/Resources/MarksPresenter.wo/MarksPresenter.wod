@@ -46,7 +46,6 @@ IntegralTD: OnClickContainer {
 	style = "width:2em;";
 	disabled = deactivateIntegral;
 	title = title;
-	class = tdStyle;
 }
 
 IntegralTitle: WOString {

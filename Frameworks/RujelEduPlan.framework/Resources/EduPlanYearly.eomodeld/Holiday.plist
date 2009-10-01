@@ -1,13 +1,13 @@
 {
     attributes = (
         {
-            columnName = BEGIN; 
+            columnName = DATE_BEGIN; 
             name = begin; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = END; 
+            columnName = DATE_END; 
             name = end; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -27,7 +27,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = TYPE; 
+            columnName = HD_TYPE; 
             name = typeID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -36,7 +36,7 @@
     attributesUsedForLocking = (begin, end, listName, typeID); 
     className = "net.rujel.eduplan.Holiday"; 
     classProperties = (begin, end, holidayType, listName); 
-    externalName = HOLIDAY; 
+    externalName = PL_HOLIDAY; 
     fetchSpecificationDictionary = {}; 
     name = Holiday; 
     primaryKeyAttributes = (hID); 

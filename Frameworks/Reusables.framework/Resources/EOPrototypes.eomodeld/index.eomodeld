@@ -1,6 +1,9 @@
 {
     EOModelVersion = "2.1"; 
     adaptorName = JDBC; 
-    entities = ({className = EOGenericRecord; name = EOJDBCPrototypes; },
-    			{className = EOGenericRecord; name = EOJDBCmysqlPrototypes; }); 
+    entities = (
+        {className = EOGenericRecord; name = EOJDBCPrototypes; }, 
+        {className = EOGenericRecord; name = Firebird; }, 
+        {className = EOGenericRecord; name = MySQL; }
+    ); 
 }

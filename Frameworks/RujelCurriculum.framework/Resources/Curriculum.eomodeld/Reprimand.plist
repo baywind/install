@@ -2,35 +2,35 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = AUTHOR; 
+            columnName = AUTHOR_NAME; 
             name = author; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = CONTENT; 
+            columnName = CONTENT_TEXT; 
             name = content; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = COURSE; 
+            columnName = EDU_COURSE; 
             name = courseID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = RAISED; 
+            columnName = DATE_RAISED; 
             name = raised; 
             prototypeName = datetime; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = Y; 
-            columnName = RELIEF; 
+            columnName = DATE_RELIEF; 
             name = relief; 
             prototypeName = datetime; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -44,7 +44,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = STATUS; 
+            columnName = STATUS_FLAG; 
             name = status; 
             prototypeName = byte; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -53,7 +53,7 @@
     attributesUsedForLocking = (author, content, courseID, raised, relief, status); 
     className = "net.rujel.curriculum.Reprimand"; 
     classProperties = (author, content, raised, relief, status); 
-    externalName = REPRIMAND; 
+    externalName = CU_REPRIMAND; 
     fetchSpecificationDictionary = {}; 
     name = Reprimand; 
     primaryKeyAttributes = (rID); 

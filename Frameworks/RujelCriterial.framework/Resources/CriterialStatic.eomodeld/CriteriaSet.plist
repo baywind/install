@@ -1,12 +1,12 @@
 {
     attributes = (
-        {columnName = COMMENT; name = comment; prototypeName = string; }, 
+        {columnName = COMMENT_TEXT; name = comment; prototypeName = string; }, 
         {columnName = "CS_ID"; name = setID; prototypeName = short; }
     ); 
     attributesUsedForLocking = (comment); 
     className = "net.rujel.criterial.CriteriaSet"; 
     classProperties = (comment, criteria); 
-    externalName = "CRIT_SET"; 
+    externalName = "CR_CRIT_SET"; 
     fetchSpecificationDictionary = {}; 
     name = CriteriaSet; 
     primaryKeyAttributes = (setID); 

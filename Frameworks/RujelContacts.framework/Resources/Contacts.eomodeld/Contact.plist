@@ -1,22 +1,22 @@
 {
     attributes = (
         {columnName = "CON_ID"; name = conID; prototypeName = integer; }, 
-        {columnName = CONTACT; name = contact; prototypeName = string; }, 
-        {columnName = FLAGS; name = flags; prototypeName = short; }, 
-        {columnName = KIND; name = kind; prototypeName = word; }, 
+        {columnName = CONTACT_STRING; name = contact; prototypeName = string; }, 
+        {columnName = CNT_FLAGS; name = flags; prototypeName = short; }, 
+        {columnName = KIND_DESRIPT; name = kind; prototypeName = word; }, 
         {
             allowsNull = N; 
             columnName = "PERS_ENTITY"; 
             name = perEntID; 
             prototypeName = short; 
         }, 
-        {columnName = PERSON; name = persID; prototypeName = integer; }, 
-        {allowsNull = N; columnName = TYPE; name = typeID; prototypeName = short; }
+        {columnName = PERSON_ID; name = persID; prototypeName = integer; }, 
+        {allowsNull = N; columnName = CNT_TYPE; name = typeID; prototypeName = short; }
     ); 
     attributesUsedForLocking = (persID, perEntID, contact, kind, typeID, flags); 
     className = "net.rujel.contacts.Contact"; 
     classProperties = (persID, contact, kind, type, personEntity, flags); 
-    externalName = CONTACT; 
+    externalName = CNT_CONTACT; 
     fetchSpecificationDictionary = {}; 
     name = Contact; 
     primaryKeyAttributes = (conID); 

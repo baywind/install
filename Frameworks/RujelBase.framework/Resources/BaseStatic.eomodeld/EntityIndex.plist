@@ -9,7 +9,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = "ENT_NAME"; 
+            columnName = "ENTITY_NAME"; 
             name = entName; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -24,7 +24,7 @@
     attributesUsedForLocking = (entName, sqlTable); 
     className = "net.rujel.base.EntityIndex"; 
     classProperties = (entName, sqlTable); 
-    externalName = "ENT_INDEX"; 
+    externalName = "BASE_ENTITYS"; 
     fetchSpecificationDictionary = {}; 
     name = EntityIndex; 
     primaryKeyAttributes = (eID); 

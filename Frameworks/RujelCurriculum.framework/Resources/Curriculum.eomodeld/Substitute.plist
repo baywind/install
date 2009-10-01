@@ -9,7 +9,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = FACTOR; 
+            columnName = SUBS_FACTOR; 
             name = factor; 
             prototypeName = decimal; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -23,21 +23,21 @@
         }, 
         {
             allowsNull = N; 
-            columnName = LESSON; 
+            columnName = LESSON_ID; 
             name = lessonID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = REASON; 
+            columnName = REASON_ID; 
             name = reasonID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = TEACHER; 
+            columnName = TEACHER_ID; 
             name = teacherID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -46,7 +46,7 @@
     attributesUsedForLocking = (date, factor, fromID, teacherID); 
     className = "net.rujel.curriculum.Substitute"; 
     classProperties = (date, factor, reason); 
-    externalName = SUBSTITUTE; 
+    externalName = CU_SUBSTITUTE; 
     fetchSpecificationDictionary = {}; 
     name = Substitute; 
     primaryKeyAttributes = (lessonID, teacherID); 

@@ -131,6 +131,15 @@
             name = word; 
             valueClassName = NSString; 
             width = 28; 
+        }, 
+        {
+            columnName = ""; 
+            externalType = CHAR; 
+            name = chars; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = "java.lang.String"; 
+            valueType = c; 
+            width = 4; 
         }
     ); 
     attributesUsedForLocking = (
@@ -149,7 +158,8 @@
         integer, 
         string, 
         text, 
-        timestamp
+        timestamp, 
+        chars
     ); 
     className = EOGenericRecord; 
     classProperties = (
@@ -168,7 +178,8 @@
         integer, 
         string, 
         text, 
-        timestamp
+        timestamp, 
+        chars
     ); 
     fetchSpecificationDictionary = {}; 
     name = EOJDBCPrototypes; 

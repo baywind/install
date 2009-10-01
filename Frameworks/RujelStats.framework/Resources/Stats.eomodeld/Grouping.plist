@@ -2,7 +2,7 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = DESCRIPTION; 
+            columnName = DESCRIPTION_ID; 
             name = descID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -16,21 +16,21 @@
         }, 
         {
             allowsNull = Y; 
-            columnName = GID1; 
+            columnName = GR_ID1; 
             name = gid1; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = Y; 
-            columnName = GID2; 
+            columnName = GR_ID2; 
             name = gid2; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = TOTAL; 
+            columnName = GR_TOTAL; 
             name = total; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -39,7 +39,7 @@
     attributesUsedForLocking = (gid1, gid2, total); 
     className = "net.rujel.stats.Grouping"; 
     classProperties = (description, gid1, gid2, statEntries, total); 
-    externalName = GROUPING; 
+    externalName = ST_GROUPING; 
     fetchSpecificationDictionary = {}; 
     name = Grouping; 
     primaryKeyAttributes = (gID); 

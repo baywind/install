@@ -7,8 +7,8 @@
             prototypeName = word; 
         }, 
         {columnName = "BS_ID"; name = bsID; prototypeName = short; }, 
-        {columnName = EXCLUDE; name = exclude; prototypeName = boolean; }, 
-        {allowsNull = N; columnName = TITLE; name = title; prototypeName = word; }, 
+        {columnName = EXCLUDE_MIN; name = exclude; prototypeName = boolean; }, 
+        {allowsNull = N; columnName = BSET_NAME; name = title; prototypeName = word; }, 
         {columnName = "USE_CLASS"; name = useClass; prototypeName = string; }, 
         {
             columnName = "FORMAT_STRING"; 
@@ -20,7 +20,7 @@
     attributesUsedForLocking = (title, exclude, useClass, zeroValue, formatString); 
     className = "net.rujel.criterial.BorderSet"; 
     classProperties = (title, borders, exclude, useClass, zeroValue, formatString); 
-    externalName = "BORDER_SET"; 
+    externalName = "CR_BORDER_SET"; 
     fetchSpecificationDictionary = {}; 
     name = BorderSet; 
     primaryKeyAttributes = (bsID); 

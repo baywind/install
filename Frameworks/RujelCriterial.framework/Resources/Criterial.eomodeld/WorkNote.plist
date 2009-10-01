@@ -2,19 +2,19 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = WORK; 
+            columnName = WORK_ID; 
             name = lessonID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = NOTE; 
+            columnName = NOTE_TEXT; 
             name = note; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = STUDENT; 
+            columnName = STUDENT_ID; 
             name = studentID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -23,7 +23,7 @@
     attributesUsedForLocking = (lessonID, note, studentID); 
     className = EOGenericRecord; 
     classProperties = (note, work); 
-    externalName = "WORK_NOTE"; 
+    externalName = "CR_NOTE"; 
     fetchSpecificationDictionary = {}; 
     name = WorkNote; 
     primaryKeyAttributes = (lessonID, studentID); 
