@@ -67,7 +67,7 @@ Weight: WOString {
 	value = work.weight;
 }
 Type: WOString {
-	value = work.workType;
+	value = work.workType.typeName;
 	escapeHTML = false;
 }
 CritMaximum: WOString {
