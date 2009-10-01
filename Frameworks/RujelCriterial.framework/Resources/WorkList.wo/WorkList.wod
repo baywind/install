@@ -157,7 +157,7 @@ LessonRow: OnClickContainer {
 	onclick = session.checkRun;
 	invokeAction = selectLesson;
 	class = rowClass;
-	title = work.workType;
+	title = work.workType.typeName;
 	bgcolor = rowColor;
 }
 
