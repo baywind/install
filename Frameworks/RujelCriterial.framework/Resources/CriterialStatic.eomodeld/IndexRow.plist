@@ -1,13 +1,13 @@
 {
     attributes = (
-        {columnName = ROW_IDX; name = idx; prototypeName = short; }, 
-        {columnName = INDEX_ID; name = indID; prototypeName = short; }, 
-        {columnName = IDX_VALUE; name = value; prototypeName = string; }
+        {columnName = "ROW_IDX"; name = idx; prototypeName = short; }, 
+        {columnName = "INDEX_ID"; name = indID; prototypeName = short; }, 
+        {columnName = "IDX_VALUE"; name = value; prototypeName = string; }
     ); 
     attributesUsedForLocking = (value); 
     className = EOGenericRecord; 
     classProperties = (value, indexer, idx); 
-    externalName = "CR_INDEX_ROW"; 
+    externalName = "BASE_INDEX_ROW"; 
     fetchSpecificationDictionary = {}; 
     name = IndexRow; 
     primaryKeyAttributes = (idx, indID); 
