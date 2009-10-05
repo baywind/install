@@ -1,0 +1,60 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Title : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.subsCreation;
+  escapeHTML = false;
+}
+
+SubstituteTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Substitute;
+  escapeHTML = false;
+}
+
+AddSubstituteTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.addSubstitute;
+  escapeHTML = false;
+}
+
+AddSubstitute : OnClickContainer {
+  elementName = "td";
+  class = "highlight2";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = addSubstitute;
+}
+
+JoinTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Join;
+  escapeHTML = false;
+}
+
+AddJoinSubTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.addJoinSub;
+  escapeHTML = false;
+}
+
+AddJoinSub : OnClickContainer {
+  elementName = "td";
+  class = "highlight2";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = addJoinSub;
+}
+
+AddJoinTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.addJoin;
+  escapeHTML = false;
+}
+
+AddJoin : OnClickContainer {
+  elementName = "td";
+  class = "highlight";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = addJoin;
+}

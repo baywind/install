@@ -1,26 +1,27 @@
 <div class="backfield1" id="ajaxPopup">
 <webobject name = "Cross"/>
 <table border = "1"><thead>
-<tr><th colspan = "2" style = "border:none;padding:1ex;font-size:larger;">
+<tr><th style = "border:none;padding:1ex;font-size:larger;">
 	<webobject name = "EditJoinTitle"/></th></tr>
-<tr><th><webobject name = "CourseTitle"/></th>
-	<th><webobject name = "LessonTitle"/> <webobject name = "Date"/></th></tr>
 </thead><tbody>
 <tr><td valign = "top">
-<table cellpadding = "2" class = "selectionBorder" style = "border-style:none solid none none;">
+<table cellpadding = "2" width = "100%">
 		<tbody><webobject name = "Courses">
 			<td style = "white-space:nowrap;"><webobject name = "CourseGroup"/></td>
 			<td style = "white-space:nowrap;"><webobject name = "CourseTeacher"/></td>
 			<td style = "font-style:italic;"><webobject name = "CourseComment"/></td>
 		</webobject></tbody></table>
-	</td>
-	<td valign = "top"><webobject name = "CourseSelected"><webobject name = "Lessons"/>
-		<webobject name = "NewLessonBox"><webobject name = "GenerateLesson"/></webobject>
-		</webobject></td></tr><webobject name = "LessonChosen">
-	<tr><td colspan = "2"><webobject name="Form">
+	</td></tr><webobject name="CourseSelected">
+	<webobject name = "HasLessons"><tr><td>
+	<div style = "font-weight:bold;"><webobject name = "ChooseLesson"/>:</div>
+	<webobject name = "Lessons"/>
+	<webobject name = "NewLessonBox"><webobject name = "GenerateLesson"/></webobject>
+	</td></tr></webobject>
+	<webobject name="LessonChosen">
+	<tr><td><webobject name="Form">
 	<div><webobject name = "ReasonSelector"/></div>
 	<div style = "padding:3pt;border-top:#666 double;">
-	<webobject name="CanChange"><webobject name="Save"/></webobject> 
+	<webobject name="Save"/>
 	</div></webobject>
 </td></tr></webobject>
 </tbody></table>

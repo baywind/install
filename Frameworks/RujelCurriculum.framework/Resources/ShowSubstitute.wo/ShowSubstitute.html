@@ -1,8 +1,6 @@
 <webobject name = "ShowAny">
-	<webobject name = "CanAdd">
 		<webobject name = "AddSubstitute"><webobject name = "CanCreate">
 		<webobject name="InspectorImage"/></webobject></webobject>
-	</webobject><webobject name = "CantAdd"><td/></webobject>
 	<td class = "backfield2">
 	<table width = "100%" border = "0">	
 			<webobject name = "SubsList"><tr class = "gerade">
@@ -10,15 +8,13 @@
 				<webobject name = "Substitutor"/></webobject>
 			</tr></webobject>
 			<webobject name = "showEmptyRow"><tr class = "grey">
-				<webobject name = "AddSubstitute"><em><webobject name = "SubsTitle"/>
-					</em></webobject>
-				<webobject name = "JoinContainer"><webobject name = "JoinTitle"/></webobject>
+				<webobject name = "AddSubstitute"><webobject name = "SubsTitle"/></webobject>
 			</tr></webobject>
 			<webobject name = "JoinsList"><tr class = "highlight">
-			<webobject name = "SubstituteTD"><em><webobject name = "JoinTitle"/></em> :
+			<td><em><webobject name = "JoinTitle"/></em> :
 				<webobject name = "JoinDesc"/></td>
 				<webobject name = "OpenJoint">&gt;&gt;</webobject>
-			</webobject></webobject>
+			</tr></webobject>
 		</table>
 	</td>
 	<webobject name = "AdditionalTD"><webobject name = "IsAdded"/></webobject>

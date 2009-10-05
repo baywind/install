@@ -8,12 +8,9 @@ Cross : WOImage {
   style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
 }
 
-SubstituteTitle : Tabs {
-  tablist = tabs;
-  numeric = true;
-  currTab = idx;
-  onClick = session.ajaxPopupNoPos;
-  align = "left";
+SubstituteTitle : WOString {
+	value = session.strings.RujelCurriculum_Curriculum.titles.subsCreation;
+	escapeHTML = false;
 }
 
 LessonDate : WOString {
@@ -54,6 +51,7 @@ Teacher : PersonDisplay {
 }
 
 Form : WOForm {
+  onsubmit = checkSave;
 }
 
 CanChange: WOConditional {
@@ -100,8 +98,10 @@ ReasonSelector : ReasonSelector {
   hideExternal = true;
 }
 
-IsJoin : WOConditional {
-  condition = idx;
+IsJoin : WOGenericContainer {
+  elementName = "div";
+  id = "joinBind";
+  style = joinBindStyle;
 }
 
 SelectFromLesson : WOGenericContainer {
@@ -155,3 +155,28 @@ FactorCell : WOGenericContainer {
   align = "right";
   title = session.strings.RujelCurriculum_Curriculum.Substitute.Factor;
 }
+
+SubsButton : WORadioButton {
+  name = "selectType";
+  value = 0;
+  selection = idx;
+  onchange = "if(checked)hideObj('joinBind');else showObj('joinBind');fitWindow();";
+}
+
+SubstituteType : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Substitute;
+  escapeHTML = false;
+}
+
+JoinButton : WORadioButton {
+  name = "selectType";
+  value = 1;
+  selection = idx;
+  onchange = "if(checked)showObj('joinBind');else hideObj('joinBind');fitWindow();";
+}
+
+JoinType : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Join;
+  escapeHTML = false;
+}
+

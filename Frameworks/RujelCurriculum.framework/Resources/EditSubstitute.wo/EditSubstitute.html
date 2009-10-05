@@ -1,8 +1,8 @@
 <div class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
 <table border="1" cellspacing = "0">
-<tr><td class = "selectionBorder" style = "border-style:none none solid;background-color:#ffffff;padding:1ex 1ex 0px;">
-<strong style = "float:right;margin-left:1ex;"><webobject name = "LessonDate"/></strong>
-<webobject name = "SubstituteTitle"/></td></tr>
+<tr><th style = "padding:1ex;">
+<em style = "float:right;margin-left:1ex;font-weight:normal;"><webobject name = "LessonDate"/></em>
+<webobject name = "SubstituteTitle"/></th></tr>
 <tr><td style = "padding:0px;">
 <table style = "width:100%;text-align:center;border-bottom:#666 1pt solid;"><tr>
 <td><webobject name = "SubstitutorTitle"/>:</td>
@@ -11,7 +11,11 @@
 <webobject name = "CantSelect"><webobject name = "Teacher"/></webobject></td><webobject name = "FactorCell">
 <webobject name = "Factor"/></webobject>
 </tr></table>
-<webobject name = "Form"><webobject name = "IsJoin"><webobject name = "Message"/>
+<webobject name = "Form">
+<div style = "text-align:left;padding-left:5em;">
+	<webobject name = "SubsButton"/> <webobject name = "SubstituteType"/><br/>
+	<webobject name = "JoinButton"/> <webobject name = "JoinType"/></div>
+<webobject name = "IsJoin"><webobject name = "Message"/>
 <table width = "100%"><thead id = "fromLesson"><tr class = "highlight">
 	<webobject name = "Review"><webobject name = "FromLesson"/></webobject>
 	<td onclick = "hideObj('fromLesson');showObj('selectFromLesson');fitWindow();" onmouseover = "dim(get(this,'tr'));" onmouseout = "unDim(get(this,'tr'));">

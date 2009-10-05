@@ -9,7 +9,7 @@ Cross : WOImage {
 }
 
 EditJoinTitle : WOString {
-  value = session.strings.RujelCurriculum_Curriculum.Substitute.Join;
+  value = session.strings.RujelCurriculum_Curriculum.titles.addJoin;
   escapeHTML = "false";
   valueWhenEmpty = "AutoItog";
 }
@@ -34,8 +34,8 @@ Courses : DynamicTableRow {
   list = courses;
   item = item;
   useStyles = true;
-  switchParam = item.eduGroup;
   selection = selCourse;
+  switchParam = item.eduGroup;
   selectAction = selectCourse;
   onClick = session.ajaxPopupNoPos;
 }
@@ -60,16 +60,16 @@ ReasonSelector : ReasonSelector {
   course = selCourse;
   date = lesson.date;
   reason = reason;
-  readOnly = cantEdit;
   hideExternal = true;
 }
 
 Lessons : Tabs {
   currTab = selLesson;
   tablist = lessons;
+  titleAttribute = "desc";
+  idAttribute = "lesson";
   onClick = session.ajaxPopupNoPos;
   vertical = true;
-  titleAttribute = "theme";
 }
 
 LessonChosen : WOConditional {
@@ -85,7 +85,7 @@ NewLessonBox : OnClickContainer {
 }
 
 GenerateLesson : WOString {
-  value = session.strings.RujelCurriculum_Curriculum.titles.generateLesson;
+  value = session.strings.RujelCurriculum_Curriculum.titles.separateJoin;
   escapeHTML = "false";
 }
 
@@ -117,4 +117,13 @@ DeleteButton: WOGenericElement {
 
 CourseSelected : WOConditional {
   condition = selCourse;
+}
+
+HasLessons : WOConditional {
+  condition = lessons;
+}
+
+ChooseLesson : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.parallelJoin;
+  escapeHTML = "false";
 }

@@ -144,6 +144,8 @@
 		<string>Необходимо выбрать учителя</string>
 		<key>noLessonsForTeacher</key>
 		<string>У выбранного учителя не введено ни одного урока на эту дату</string>
+		<key>joinRequiresLesson</key>
+		<string>Для описания совмещения необходимо указать совместный урок</string>
 	</dict>
 	<key>titles</key>
 	<dict>
@@ -166,13 +168,23 @@
 		<key>printCurriculum</key>
 		<string>Выполнение учебного плана</string>
 		<key>joint</key>
-		<string>совместно</string>
-		<key>generateLesson</key>
-		<string>создать новый урок</string>
+		<string>присоединен</string>
 		<key>openJoint</key>
 		<string>перейти к совмещенному уроку</string>
 		<key>reviewOriginal</key>
 		<string>перейти к этому уроку</string>
+		<key>subsCreation</key>
+		<string>Создание замены / совмещения</string>
+		<key>addSubstitute</key>
+		<string>Указать заменяющего преподавателя</string>
+		<key>addJoin</key>
+		<string>Указать присоединенную группу</string>
+		<key>selectTeacher</key>
+		<string>Укажите преподавателя</string>
+		<key>parallelJoin</key>
+		<string>Совмещение одновременно с</string>
+		<key>separateJoin</key>
+		<string>Другой урок</string>
 	</dict>
 	<key>regimes</key>
 	<array>

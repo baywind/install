@@ -71,7 +71,6 @@ JoinContainer : OnClickContainer {
   onclick = session.ajaxPopupNoPos;
   invokeAction = addJoin;
   disabled = cantCreate;
-  class = "highlight";
 }
 
 JoinTitle : WOString {
