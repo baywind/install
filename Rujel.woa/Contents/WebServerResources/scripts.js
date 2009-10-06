@@ -108,12 +108,13 @@ function confirmAction(action,event) {
 	if(event.shiftKey)
 		return true;
 	if(action == null) {
-	 	if(event.srcElement.value)
-			action = event.srcElement.value;
-		else if(event.srcElement.title)
-			action = event.srcElement.title;
-		else if(event.srcElement.alt)
-			action = event.srcElement.alt;
+		var elt = (event.target)?event.target:event.srcElement;
+	 	if(elt.value)
+			action = elt.value;
+		else if(elt.title)
+			action = elt.title;
+		else if(elt.alt)
+			action = elt.alt;
 	}
 	var message = confirmAlert.replace('%s',action);
 	return confirm(message);
