@@ -50,20 +50,20 @@
 			<key>this</key>
 			<string>Отсрочка для Курса</string>
 		</dict>
-		<key>PrognosUsage</key>
+		<key>AutoItog</key>
 		<dict>
-			<key>calculatorName</key>
-			<string>Вычислитель</string>
+			<key>this</key>
+			<string>Автовыставление</string>
 			<key>flags</key>
 			<dict>
-				<key>active</key>
-				<string>активен</string>
-				<key>manual</key>
-				<string>ручное выставление</string>
 				<key>noTimeouts</key>
-				<string>нет отсрочек</string>
-				<key>priority</key>
-				<string>приоритет</string>
+				<string>запретить отсрочки</string>
+				<key>manual</key>
+				<string>разрешить ввод вручную</string>
+				<key>inactive</key>
+				<string>деактивировать</string>
+				<key>hideInReport</key>
+				<string>не показывать в распечатке</string>
 			</dict>
 		</dict>
 		<key>Prognosis</key>
@@ -137,6 +137,12 @@
 		<string>Оценка была повышена</string>
 		<key>bonus</key>
 		<string>Бонус</string>
+		<key>formulaTitle</key>
+		<string>Вычислять по формуле</string>
+		<key>bsetTitle</key>
+		<string>Преобразовать проценты</string>
+		<key>noBSet</key>
+		<string>оставить %</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>
@@ -168,6 +174,36 @@
 		<string>PrognosReport</string>
 		<key>sort</key>
 		<string>05</string>
+	</dict>
+	<key>none</key>
+	<string>нет</string>
+	<key>manual</key>
+	<string>вручную</string>
+	<key>calculators</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>по интегральным</string>
+			<key>description</key>
+			<string>усреднение интегральных оценок по работам</string>
+			<key>className</key>
+			<string>net.rujel.autoitog.IntegralCalculator</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>по критериям</string>
+			<key>description</key>
+			<string>бакалавриатская схема рассчета: усреднение по критериям и вывод общего</string>
+			<key>className</key>
+			<string>net.rujel.autoitog.BachalaureatCalculator</string>
+		</dict>
+	</array>
+	<key>itogExtension</key>
+	<dict>
+		<key>component</key>
+		<string>AutoItogPresenter</string>
+		<key>sort</key>
+		<string>20</string>
 	</dict>
 </dict>
 </plist>

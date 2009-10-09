@@ -88,3 +88,18 @@ Span : WOGenericContainer {
   class = "h2";
   style = style;
 }
+
+Nullable : WOCheckBox {
+  checked = prop.allowsNull;
+  disabled = true;
+}
+
+Scale : WOString {
+  value = scale;
+}
+
+Optional : WOCheckBox {
+  disabled = true;
+  value = false;
+  selection = prop.isMandatory;
+}

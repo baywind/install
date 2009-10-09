@@ -1,0 +1,147 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+AutoItogTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.this;
+  escapeHTML = "false";
+  valueWhenEmpty = "AutoItog";
+}
+
+ItogName : WOString {
+  value = itog.name;
+}
+
+DateTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Date;
+  escapeHTML = false;
+}
+
+DateField : WOTextField {
+  value = fireDate;
+  size = 10;
+  maxLength = 10;
+  disabled = cantChange;
+}
+
+TimeTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Time;
+  escapeHTML = false;
+}
+
+TimeField : WOTextField {
+  value = fireTime;
+  size = 5;
+  maxLength = 5;
+  disabled = cantChange;
+}
+
+FormulaTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.ui.formulaTitle;
+  escapeHTML = false;
+}
+
+BSetTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.ui.bsetTitle;
+  escapeHTML = false;
+}
+
+FormulaPopUp : WOPopUpButton {
+  list = calculators;
+  selection = calc;
+  item = item;
+  displayString = item.title;
+  noSelectionString = session.strings.RujelAutoItog_AutoItog.manual;
+  disabled = cantChange;
+  onchange = "if(selectedIndex==0){form.bset.selectedIndex=0;form.bset.disabled=true;form.manualBox.checked=true;form.manualBox.disabled=true;}else{form.bset.disabled=false;form.manualBox.disabled=false;}";
+}
+
+BSetPopUp : WOPopUpButton {
+  list = bsets;
+  item = item;
+  displayString = item.title;
+  selection = borderSet;
+  noSelectionString = session.strings.RujelAutoItog_AutoItog.ui.noBSet;
+  disabled = disableManual;
+  name = "bset";
+}
+
+ManualBox : WOCheckBox {
+  checked = namedFlags.manual;
+  disabled = disableManual;
+  name = "manualBox";
+}
+
+ManualTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.manual;
+  escapeHTML = false;
+}
+
+NoTimeoutBox : WOCheckBox {
+  checked = namedFlags.noTimeouts;
+  disabled = cantChange;
+}
+
+NoTimeoutTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.noTimeouts;
+  escapeHTML = false;
+}
+
+HideBox : WOCheckBox {
+  checked = namedFlags.hideInReport;
+  disabled = cantChange;
+}
+
+HideTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.hideInReport;
+  escapeHTML = false;
+}
+
+DeactivateBox : WOCheckBox {
+  checked = namedFlags.inactive;
+  disabled = cantChange;
+}
+
+DeactivateTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.inactive;
+  escapeHTML = false;
+}
+
+CanChange: WOConditional {
+	condition = cantChange;
+	negate = true;
+}
+
+CanDelete: WOConditional {
+	condition = session.readAccess.delete.autoItog;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+	name = "save";
+}
+
+CancelButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	type = "button";
+	elementName = "input";
+	onclick = "closePopup();";
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.confirmMessage;
+	elementName = "input";
+	type = "button";
+}
+
+Form : WOForm {
+}

@@ -9,6 +9,7 @@ PrognosTitleContainer: WOGenericContainer {
 	onclick = session.checkRun;
 	style = "width:2em;border-style:none double;border-width:0px 3px;text-align:center;";
 	class = styleClass;
+	title = currAddOn.periodItem.itogContainer.name;
 }
 
 Header: WOString {
@@ -48,7 +49,7 @@ PrognosisPresentValue: WOString {
 }
 
 PeriodTitle : WOString {
-  value = currAddOn.periodItem.title;
+  value = currAddOn.periodItem.itogContainer.title;
 }
 
 PeriodsRepetition : WORepetition {

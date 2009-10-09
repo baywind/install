@@ -35,18 +35,22 @@ p {
 		<p><webobject name = "Span"><webobject name = "EntityName"/></webobject>
 			( <webobject name = "TableName"/> )</p>
 		<table border = "1">
-		<tr><th>Attributes</th><th>prototype</th><th>column</th><th>dbType</th></tr>
+		<tr><th>Attributes</th><th>prototype</th><th>null</th>
+			<th>column</th><th>dbType</th><th>scale</th></tr>
 		<webobject name = "Attributes"><webobject name = "Row">
 			<td><webobject name = "AttrName"/></td>
 			<td><webobject name = "PrototypeName"/></td>
+			<td align = "center"><webobject name = "Nullable"/></td>
 			<td><webobject name = "DbColumn"/></td>
 			<td><webobject name = "DbType"/></td>
+			<td align = "center"><webobject name = "Scale"/></td>
 			</webobject></webobject>
-		<tr><th>Relationships</th><th>target</th><th colspan = "2">joins</th></tr>
+		<tr><th>Relationships</th><th>target</th><th>opt</th><th colspan = "3">joins</th></tr>
 		<webobject name = "Relationships"><webobject name = "Row">
 			<td><webobject name = "AttrName"/></td>
 			<td><webobject name = "Destination"/></td>
-			<td colspan = "2"><webobject name = "Joins">
+			<td align = "center"><webobject name = "Optional"/></td>
+			<td colspan = "3"><webobject name = "Joins">
 			<webobject name = "Source"/>=<webobject name = "Target"/>; </webobject></td>
 		</webobject></webobject></table>
 	</webobject>

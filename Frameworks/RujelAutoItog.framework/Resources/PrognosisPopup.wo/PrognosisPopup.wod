@@ -12,7 +12,7 @@ Cross : WOImage {
 }
 
 Heading : WOString {
-  value = eduPeriod.name;
+  value = eduPeriod.itogContainer.name;
 }
 
 CompleteProperty : WOString {
@@ -43,7 +43,7 @@ MarkProperty : WOString {
 
 Mark : WOTextField {
   value = mark;
-  disabled = addOn.usage.namedFlags._manual;
+  disabled = eduPeriod.namedFlags._manual;
   maxlength = 5;
   size = 4;
   style = "text-align:center;";
@@ -130,7 +130,7 @@ Student : PersonDisplay {
 }
 
 CanManual : WOConditional {
-  condition = addOn.usage.namedFlags.manual;
+  condition = eduPeriod.namedFlags.manual;
 }
 
 BonusPercent : WOString {
@@ -230,5 +230,6 @@ ChangeReason : WOText {
   onkeypress = "form.save.disabled = (value == null || value.length < 2);";
 }
 Calculable : WOConditional {
-  condition = addOn.usage.calculator;
+  condition = eduPeriod.noCalculator;
+  negate = true;
 }

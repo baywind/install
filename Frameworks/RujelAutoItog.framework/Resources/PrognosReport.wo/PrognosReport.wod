@@ -1,14 +1,15 @@
 PrognTitle : WOString {
-  value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.this;
+  value = prognosTitle;
+  escapeHTML = false;
 }
 
 Mark : WOString {
-  value = ^value.mark;
+  value = item.mark;
   valueWhenEmpty = "...";
 }
 
 IfTimeout : WOConditional {
-  condition = ^value.timeout;
+  condition = item.timeout;
 }
 
 TimeoutTitle : WOString {
@@ -16,13 +17,19 @@ TimeoutTitle : WOString {
 }
 
 Reason : WOString {
-  value = ^value.reason;
+  value = item.reason;
 }
 
 Timeout : WOString {
-  value = ^value.timeout;
+  value = item.timeout;
 }
 
 Period : WOString {
-  value = ^value.period;
+  value = item.period;
+}
+
+PrognosesList : WORepetition {
+  list = ^value;
+  item = item;
+  index = idx;
 }

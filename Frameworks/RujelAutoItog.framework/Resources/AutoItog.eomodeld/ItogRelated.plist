@@ -2,14 +2,14 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = COURSE; 
+            columnName = EDU_COURSE; 
             name = courseID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = ITOG; 
+            columnName = ITOG_CONTAINER; 
             name = itogID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
