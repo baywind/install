@@ -6,8 +6,6 @@
 	<string>0</string>
 	<key>loggingProperties</key>
 	<string>LOCALROOT/Library/WebObjects/Configuration/logging.properties</string>
-	<key>reportsDir</key>
-	<string>LOCALROOT/Library/WebObjects/Configuration/RujelReports</string>
 	<key>auth</key>
 	<dict>
 		<key>loginPageName</key>
@@ -324,17 +322,6 @@
 				<key>root</key>
 				<string>0</string>
 			</dict>
-			<key>VOTeacher</key>
-			<dict>
-				<key>root</key>
-				<string>1017</string>
-				<key>zav_kaf</key>
-				<string>1</string>
-				<key>zavuch</key>
-				<string>1</string>
-				<key>teacher</key>
-				<string>1</string>
-			</dict>
 			<key>Work</key>
 			<dict>
 				<key>root</key>
@@ -449,14 +436,17 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
+			<key>VOTeacher</key>
+			<dict>
+				<key>root</key>
+				<string>0</string>
+			</dict>
 			<key>VOList</key>
 			<dict>
 				<key>root</key>
-				<string>1023</string>
-				<key>teacher</key>
-				<string>1</string>
+				<string>0</string>
 			</dict>
-			<key>_ListsEditor</key>
+			<key>ListsEditor</key>
 			<dict>
 				<key>root</key>
 				<string>1023</string>
@@ -469,7 +459,7 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
-			<key>_VsePerson</key>
+			<key>VsePerson</key>
 			<dict>
 				<key>root</key>
 				<string>1023</string>
@@ -482,7 +472,7 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
-			<key>_VseTeacher</key>
+			<key>VseTeacher</key>
 			<dict>
 				<key>root</key>
 				<string>1023</string>
@@ -493,7 +483,7 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
-			<key>_VseStudent</key>
+			<key>VseStudent</key>
 			<dict>
 				<key>root</key>
 				<string>1023</string>
@@ -507,11 +497,6 @@
 			<key>VseList</key>
 			<dict>
 				<key>root</key>
-				<string>0</string>
-			</dict>
-			<key>_VseList</key>
-			<dict>
-				<key>root</key>
 				<string>1023</string>
 				<key>zavuch</key>
 				<string>15</string>
@@ -520,7 +505,7 @@
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
-			<key>_VseEduGroup</key>
+			<key>VseEduGroup</key>
 			<dict>
 				<key>root</key>
 				<string>1023</string>
@@ -625,47 +610,8 @@
 		<string>success</string>
 		<key>refuseAction</key>
 		<string>refuse</string>
-		<key>_refuseUrl</key>
-		<string>http://localhost/</string>
 		<key>useHTTPS</key>
 		<string>false</string>
-		<key>_customURL</key>
-		<dict>
-			<key>insecure</key>
-			<dict>
-				<key>192.168.0.*</key>
-				<string>http://192.168.0.1</string>
-				<key>default</key>
-				<string>http://demo.rujel.net</string>
-			</dict>
-			<key>secure</key>
-			<dict>
-				<key>192.168.0.*</key>
-				<string>https://192.168.0.1</string>
-				<key>default</key>
-				<string>https://demo.rujel.net</string>
-			</dict>
-		</dict>
-		<key>ldap</key>
-		<dict>
-			<key>providerUrl</key>
-			<string>ldaps://192.168.0.2:636</string>
-			<key>authentication</key>
-			<string>simple</string>
-			<key>groupAttribute</key>
-			<string>securityEquals</string>
-			<key>useSSL</key>
-			<string>true</string>
-			<key>ssl</key>
-			<dict>
-				<key>protocol</key>
-				<string>TLS</string>
-				<key>trustAny</key>
-				<string>true</string>
-				<key>customKeytstore</key>
-				<string>/Library/WebObjects/Configuration/custcerts</string>
-			</dict>
-		</dict>
 		<key>usersList</key>
 		<dict>
 			<key>root</key>
@@ -721,19 +667,15 @@
 		<key>VseobuchSimple</key>
 		<dict>
 			<key>skip</key>
-			<string>false</string>
-			<key>_dbName</key>
-			<string>DemoSho</string>
+			<string>true</string>
 		</dict>
 		<key>VseLists</key>
 		<dict>
 			<key>skip</key>
-			<string>true</string>
+			<string>false</string>
 		</dict>
 		<key>AutoItog</key>
 		<dict>
-			<key>skip</key>
-			<string>true</string>
 			<key>dbName</key>
 			<string>RujelYear%s</string>
 		</dict>
@@ -749,8 +691,6 @@
 		</dict>
 		<key>Criterial</key>
 		<dict>
-			<key>_untagged</key>
-			<string>Criterial</string>
 			<key>dbName</key>
 			<string>RujelYear%s</string>
 		</dict>
@@ -822,7 +762,7 @@
 		<key>net.rujel.eduplan.PlanCycle</key>
 		<string>true</string>
 		<key>net.rujel.autoitog.AutoItogModule</key>
-		<string>false</string>
+		<string>true</string>
 		<key>net.rujel.contacts.EMailBroadcast</key>
 		<string>true</string>
 		<key>net.rujel.criterial.ModuleInit</key>
@@ -838,7 +778,7 @@
 		<key>net.rujel.complete.CompleteModule</key>
 		<string>true</string>
 		<key>net.rujel.vselists.ListsEditor</key>
-		<string>false</string>
+		<string>true</string>
 	</dict>
 	<key>edu</key>
 	<dict>
@@ -846,28 +786,12 @@
 		<string>1</string>
 		<key>maxGrade</key>
 		<string>11</string>
-		<key>disableAutoItog</key>
-		<string>true</string>
-		<key>disablePlanFactCheck</key>
-		<string>true</string>
-		<key>planFactLagDays</key>
-		<string>1</string>
-		<key>_ignorePrognosesAfterDays</key>
-		<string>45</string>
-		<key>_ignoreUnverifiedReasons</key>
-		<string>true</string>
 		<key>completeDir</key>
 		<string>~/test/complete</string>
 		<key>studentsCompleteDir</key>
 		<string>~/test/complete/students</string>
 		<key>coursesCompleteDir</key>
 		<string>~/test/complete/courses</string>
-		<key>newYearMonth</key>
-		<string>7</string>
-		<key>overwriteItogsScheduled</key>
-		<string>false</string>
-		<key>joinFactor</key>
-		<string>0.5</string>
 	</dict>
 	<key>mail</key>
 	<dict>
@@ -881,29 +805,9 @@
 		<string></string>
 		<key>mailFrom</key>
 		<string>&quot;RUJEL&quot;&lt; rujel@rujel.net&gt;</string>
-		<key>replyTo</key>
-		<string>ask@rujel.net</string>
-		<key>messageLag</key>
-		<string>5000</string>
-		<key>messageFilePath</key>
-		<string>/Library/WebObjects/Configuration/message.txt</string>
-		<key>dontSend</key>
-		<string>true</string>
-		<key>writeToFile</key>
-		<string>true</string>
-		<key>writeFileDir</key>
-		<string>~/test</string>
-		<key>broadcastWeekday</key>
-		<string>6</string>
-		<key>broadcastTime</key>
-		<string>5:30</string>
 	</dict>
 	<key>markarchive</key>
 	<dict>
-		<key>itemThreshold</key>
-		<string>5</string>
-		<key>sessionThreshold</key>
-		<string>15</string>
 		<key>forceArchives</key>
 		<string>true</string>
 		<key>Mark</key>
@@ -925,14 +829,8 @@
 		<string>dd.MM.yyyy</string>
 		<key>shortDateFormat</key>
 		<string>dd.MM</string>
-		<key>_defaultDate</key>
-		<string>16.04.2009</string>
 		<key>keyValueCacheSize</key>
 		<string>2</string>
-		<key>_logoutScreen</key>
-		<string>/cgi-bin/WebObjects/Rujel.woa</string>
-		<key>redirectTimeout</key>
-		<string>10</string>
 	</dict>
 </dict>
 </plist>

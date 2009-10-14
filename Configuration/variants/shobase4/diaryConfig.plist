@@ -13,10 +13,15 @@
 			<key>_dbName</key>
 			<string>DemoSho</string>
 		</dict>
+		<key>VseLists</key>
+		<dict>
+			<key>skip</key>
+			<string>true</string>
+		</dict>
 		<key>AutoItog</key>
 		<dict>
-			<key>dbName</key>
-			<string>RujelYear%s</string>
+			<key>skip</key>
+			<string>true</string>
 		</dict>
 		<key>BaseYearly</key>
 		<dict>
@@ -30,8 +35,6 @@
 		</dict>
 		<key>Criterial</key>
 		<dict>
-			<key>_untagged</key>
-			<string>Criterial</string>
 			<key>dbName</key>
 			<string>RujelYear%s</string>
 		</dict>
@@ -42,8 +45,8 @@
 		</dict>
 		<key>Curriculum</key>
 		<dict>
-			<key>dbName</key>
-			<string>RujelYear%s</string>
+			<key>skip</key>
+			<string>true</string>
 		</dict>
 		<key>EduPlanModel</key>
 		<dict>
@@ -57,18 +60,18 @@
 		</dict>
 		<key>EduResults</key>
 		<dict>
-			<key>dbName</key>
-			<string>RujelStatic</string>
+			<key>skip</key>
+			<string>true</string>
 		</dict>
 		<key>MarkArchive</key>
 		<dict>
-			<key>dbName</key>
-			<string>RujelYear%s</string>
+			<key>skip</key>
+			<string>true</string>
 		</dict>
 		<key>Stats</key>
 		<dict>
-			<key>dbName</key>
-			<string>RujelYear%s</string>
+			<key>skip</key>
+			<string>true</string>
 		</dict>
 		<key>serverURL</key>
 		<string>jdbc:mysql://127.0.0.1</string>
@@ -102,16 +105,8 @@
 		<string>true</string>
 		<key>net.rujel.eduplan.PlanCycle</key>
 		<string>true</string>
-		<key>net.rujel.autoitog.AutoItogModule</key>
-		<string>false</string>
-		<key>net.rujel.contacts.EMailBroadcast</key>
-		<string>false</string>
 		<key>net.rujel.criterial.ModuleInit</key>
 		<string>true</string>
-		<key>net.rujel.eduresults.ModuleInit</key>
-		<string>false</string>
-		<key>net.rujel.curriculum.CurriculumModule</key>
-		<string>false</string>
 	</dict>
 	<key>edu</key>
 	<dict>
@@ -128,10 +123,6 @@
 		<string>dd.MM.yyyy</string>
 		<key>shortDateFormat</key>
 		<string>dd.MM</string>
-		<key>_defaultDate</key>
-		<string>25.05.2008</string>
-		<key>keyValueCacheSize</key>
-		<string>2</string>
 	</dict>
 </dict>
 </plist>

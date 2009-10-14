@@ -107,29 +107,72 @@ cd Configuration
 
 CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
 
-for f in * ; do
-if [ -f $f ]
-then
-    if [ -e ${CONFIGFOLDER}/$f ]
-    then
-        if [ "$1" = "-c" ]
-        then mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
-        else echo $f" already exists"
+## Configuration variants
+if [ -d variants ] ; then
+    cd variants
+    echo "Choose initial settings variant:"
+    echo ""
+    i=0;
+    for v in *; do
+    if [ -d $v ] ; then
+        i=$(($i+1))
+        echo "$i) $v"
+    fi
+    done
+    echo ""
+    echo "Enter variant number (default none):"
+    read num
+    if [ ! -z $num ] ; then
+    i=1;
+    for v in *; do
+    if [ -d $v ] ; then
+        if [ $num = $i ] ; then
+            echo "Installing $v"
+            num=0
+            cd $v
+            updateFolder ${CONFIGFOLDER} $BACKUPFOLDER
+            echo ""
+            echo "Dont forget to modify installed settings to match your system"
+            cd ..
+#        else
+#            echo "$num != $i"
         fi
+        i=$(($i+1))
     fi
-    if [ ! -e ${CONFIGFOLDER}/$f ]
-    then cp -r $f ${CONFIGFOLDER}/$f
+    done
+    cd ..
+    if [ $num != "0" ] ; then
+        echo "\"$num\" is illegal number. Settings installation skipped"
+    else
+        ## Common configuration
+        for f in * ; do
+        if [ -f $f ] ; then
+            if [ -e ${CONFIGFOLDER}/$f ] ; then
+                mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
+            fi
+            cp -r $f ${CONFIGFOLDER}/$f
+        fi
+        done
     fi
-elif [ -d $f ] ; then
+    else
+        echo "Settings installation skipped"
+        cd ..
+    fi
+else
+    echo "Settings variants not found"
+fi
+
+## RujelReports
+if [ -d RujelReports ] ; then
     mkdir -p $BACKUPFOLDER/$f
-    cd $f
-    echo "updating "$f
-    updateFolder ${CONFIGFOLDER}/$f $BACKUPFOLDER/$f
+    cd RujelReports
+    echo "updating RujelReports"
+    updateFolder ${CONFIGFOLDER}/RujelReports $BACKUPFOLDER/RujelReports
     cd ..
 else
-    echo $f" not found"
+    echo "RujelReports not found"
 fi
-done
+
 cd ..
 rmdir $BACKUP/Configuration > /dev/null 2>&1
 fi
