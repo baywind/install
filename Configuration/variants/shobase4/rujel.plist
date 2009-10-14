@@ -291,10 +291,23 @@
 				<key>root</key>
 				<string>0</string>
 			</dict>
+			<key>AutoItog</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
 			<key>Prognosis</key>
 			<dict>
 				<key>root</key>
-				<string>0</string>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>7</string>
 			</dict>
 			<key>Bonus</key>
 			<dict>
