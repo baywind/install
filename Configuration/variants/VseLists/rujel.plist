@@ -323,17 +323,33 @@
 			<key>Timeout</key>
 			<dict>
 				<key>root</key>
-				<string>0</string>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>1</string>
+				<key>tutor</key>
+				<string>3</string>
 			</dict>
 			<key>CourseTimeout</key>
 			<dict>
 				<key>root</key>
-				<string>0</string>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>1</string>
 			</dict>
 			<key>StudentTimeout</key>
 			<dict>
 				<key>root</key>
-				<string>0</string>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>15</string>
+				<key>teacher</key>
+				<string>1</string>
+				<key>tutor</key>
+				<string>3</string>
 			</dict>
 			<key>Work</key>
 			<dict>
@@ -759,14 +775,14 @@
 		<string>net.rujel.base.BaseCourse</string>
 		<key>EduCycle</key>
 		<string>net.rujel.eduplan.PlanCycle</string>
-		<key>EduGroup</key>
-		<string>net.rujel.vseobuch.VOClass</string>
 		<key>EduLesson</key>
 		<string>net.rujel.base.BaseLesson</string>
+		<key>EduGroup</key>
+		<string>net.rujel.vselists.VseEduGroup</string>
 		<key>Student</key>
-		<string>net.rujel.vseobuch.VOStudent</string>
+		<string>net.rujel.vselists.VseStudent</string>
 		<key>Teacher</key>
-		<string>net.rujel.vseobuch.VOTeacher</string>
+		<string>net.rujel.vselists.VseTeacher</string>
 	</dict>
 	<key>modules</key>
 	<dict>

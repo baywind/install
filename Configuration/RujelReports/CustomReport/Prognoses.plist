@@ -16,8 +16,8 @@
 			<key>active</key>
 			<true/>
 			<key>attribute</key>
-			<string>eduPeriod</string>
-			<key>select</key>
+			<string>itogContainer</string>
+			<key>selectOld</key>
 			<dict>
 				<key>className</key>
 				<string>net.rujel.eduresults.EduPeriod</string>
@@ -36,22 +36,22 @@
 					<string>^editingContext</string>
 				</array>
 			</dict>
-			<key>defaultValue</key>
+			<key>select</key>
 			<dict>
 				<key>className</key>
-				<string>net.rujel.eduresults.EduPeriod</string>
+				<string>net.rujel.eduresults.ItogContainer</string>
 				<key>methodName</key>
-				<string>defaultCurrentPeriod</string>
+				<string>itogsInYear</string>
 				<key>cacheResult</key>
 				<true/>
 				<key>paramClasses</key>
 				<array>
-					<string>com.webobjects.foundation.NSTimestamp</string>
+					<string>java.lang.Number</string>
 					<string>com.webobjects.eocontrol.EOEditingContext</string>
 				</array>
 				<key>paramValues</key>
 				<array>
-					<string>$session.today</string>
+					<string>$session.eduYear</string>
 					<string>^editingContext</string>
 				</array>
 			</dict>
@@ -149,10 +149,10 @@
 			<key>in</key>
 			<dict>
 				<key>relationship</key>
-				<string>eduCourse</string>
+				<string>course</string>
 				<key>args</key>
 				<array>
-					<string>.eduPeriod.eduYear</string>
+					<string>.itogContainer.eduYear</string>
 				</array>
 				<key>qualifierFormat</key>
 				<string>eduYear = %@</string>
@@ -195,10 +195,10 @@
 			<key>in</key>
 			<dict>
 				<key>relationship</key>
-				<string>eduCourse</string>
+				<string>course</string>
 				<key>args</key>
 				<array>
-					<string>.eduPeriod.eduYear</string>
+					<string>.itogContainer.eduYear</string>
 				</array>
 				<key>qualifierFormat</key>
 				<string>eduYear = %@</string>
@@ -286,7 +286,7 @@
 			<key>in</key>
 			<dict>
 				<key>relationship</key>
-				<string>eduCourse</string>
+				<string>course</string>
 			</dict>
 		</dict>
 		<dict>
@@ -300,8 +300,7 @@
 	</array>
 	<key>prefetch</key>
 	<array>
-		<string>student</string>
-		<string>eduCourse.cycle</string>
+		<string>bonus</string>
 	</array>
 	<key>properties</key>
 	<array>
@@ -309,7 +308,7 @@
 			<key>title</key>
 			<string>Класс</string>
 			<key>keyPath</key>
-			<string>eduCourse.eduGroup</string>
+			<string>course.eduGroup</string>
 			<key>titlePath</key>
 			<string>name</string>
 			<key>comparison</key>
@@ -350,7 +349,7 @@
 			<key>title</key>
 			<string>Предмет</string>
 			<key>keyPath</key>
-			<string>eduCourse.cycle.subjectEO</string>
+			<string>course.cycle.subjectEO</string>
 			<key>titlePath</key>
 			<string>subject</string>
 			<key>comparison</key>
@@ -377,7 +376,7 @@
 			<key>short</key>
 			<string> . </string>
 			<key>keyPath</key>
-			<string>eduCourse</string>
+			<string>course</string>
 			<key>titlePath</key>
 			<string>comment</string>
 			<key>active</key>
@@ -391,7 +390,7 @@
 			<key>title</key>
 			<string>Учитель</string>
 			<key>keyPath</key>
-			<string>eduCourse.teacher</string>
+			<string>course.teacher</string>
 			<key>style</key>
 			<string>white-space:nowrap;</string>
 			<key>presenter</key>
@@ -438,14 +437,48 @@
 				<key>prognosis</key>
 				<string>$itemRow</string>
 				<key>course</key>
-				<string>$itemRow.eduCourse</string>
+				<string>$itemRow.course</string>
 				<key>student</key>
 				<string>$itemRow.student</string>
 				<key>eduPeriod</key>
-				<string>$itemRow.eduPeriod</string>
+				<string>$itemRow.autoItog</string>
 			</dict>
 			<key>popup</key>
 			<true/>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Бонус</string>
+			<key>short</key>
+			<string>!</string>
+			<key>sort</key>
+			<string>52</string>
+			<key>active</key>
+			<true/>
+			<key>presenterBindings</key>
+			<dict>
+				<key>escapeHTML</key>
+				<string>false</string>
+			</dict>
+			<key>value</key>
+			<dict>
+				<key>className</key>
+				<string>net.rujel.autoitog.PrognosPresenter</string>
+				<key>methodName</key>
+				<string>bonusState</string>
+				<key>paramClasses</key>
+				<array>
+					<string>net.rujel.autoitog.Bonus</string>
+					<string>java.lang.Integer</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>.bonus</string>
+					<string>.flags</string>
+				</array>
+				<key>cacheResult</key>
+				<false/>
+			</dict>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -539,15 +572,6 @@
 		<dict>
 			<key>title</key>
 			<string>Флаги</string>
-			<key>flagNames</key>
-			<dict>
-				<key>className</key>
-				<string>net.rujel.eduresults.ItogMark</string>
-				<key>methodName</key>
-				<string>localisedFlagKeys</string>
-				<key>cacheResult</key>
-				<true/>
-			</dict>
 			<key>keyPath</key>
 			<string>namedFlags</string>
 			<key>presenter</key>
@@ -585,11 +609,6 @@
 					</array>
 					<key>cacheResult</key>
 					<true/>
-				</dict>
-				<key>_presenterBindings</key>
-				<dict>
-					<key>value</key>
-					<string>$valueOf.itemRow.itemDict.binary</string>
 				</dict>
 				<key>flagNames</key>
 				<dict>

@@ -86,6 +86,7 @@ FireDateProperty : WOString {
 FireDate : WOString {
 	value = prognosis.fireDate;
   	dateformat = application.prefs.ui.dateFormat;
+  	valueWhenEmpty = application.strings.RujelAutoItog_AutoItog.none;
 }
 
 PrognosExist : WOConditional {
@@ -232,4 +233,9 @@ ChangeReason : WOText {
 Calculable : WOConditional {
   condition = eduPeriod.noCalculator;
   negate = true;
+}
+
+FireTime : WOString {
+  value = eduPeriod.fireTime;
+  dateformat = "HH:mm";
 }
