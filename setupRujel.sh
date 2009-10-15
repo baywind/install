@@ -144,13 +144,14 @@ if [ -d variants ] ; then
     if [ $num != "0" ] ; then
         echo "\"$num\" is illegal number. Settings installation skipped"
     else
-        ## Common configuration
-        for f in * ; do
+        ## logging properties
+        PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
+        for f in *.properties ; do
         if [ -f $f ] ; then
             if [ -e ${CONFIGFOLDER}/$f ] ; then
                 mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
             fi
-            cp -r $f ${CONFIGFOLDER}/$f
+            sed "s/\\/Library/$PATTERN&/g" $f > ${CONFIGFOLDER}/$f
         fi
         done
     fi
