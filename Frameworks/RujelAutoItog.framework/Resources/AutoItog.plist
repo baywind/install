@@ -59,7 +59,7 @@
 				<key>noTimeouts</key>
 				<string>запретить отсрочки</string>
 				<key>manual</key>
-				<string>разрешить ввод вручную</string>
+				<string>разрешить изменять вручную</string>
 				<key>inactive</key>
 				<string>деактивировать</string>
 				<key>hideInReport</key>
@@ -137,6 +137,8 @@
 		<string>Оценка была повышена</string>
 		<key>bonus</key>
 		<string>Бонус</string>
+		<key>autoItogSetup</key>
+		<string>Настройка прогноза</string>
 		<key>formulaTitle</key>
 		<string>Вычислять по формуле</string>
 		<key>bsetTitle</key>

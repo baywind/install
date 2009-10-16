@@ -145,3 +145,7 @@ DeleteButton: WOGenericElement {
 
 Form : WOForm {
 }
+
+Exists : WOConditional {
+  condition = autoItog;
+}
