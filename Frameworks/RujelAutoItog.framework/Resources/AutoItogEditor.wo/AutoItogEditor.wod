@@ -9,7 +9,7 @@ Cross : WOImage {
 }
 
 AutoItogTitle : WOString {
-  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.this;
+  value = session.strings.RujelAutoItog_AutoItog.ui.autoItogSetup;
   escapeHTML = "false";
   valueWhenEmpty = "AutoItog";
 }
