@@ -9,9 +9,9 @@
 	<key>position</key>
 	<string>должность</string>
 	<key>enter</key>
-	<string>пришел</string>
+	<string>зачислен</string>
 	<key>leave</key>
-	<string>ушел</string>
+	<string>выбыл</string>
 	<key>duplicateEntry</key>
 	<string>Этот ученик уже есть в этой группе</string>
 	<key>showAll</key>
