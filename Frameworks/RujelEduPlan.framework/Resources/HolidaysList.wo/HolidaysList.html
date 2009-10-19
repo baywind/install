@@ -11,6 +11,7 @@ function toggleDisabled(cell) {
 		tr.className = 'selection';
 		cell.style.color = '';
 	}
+//	cell.className = (disabled)?'green':'';
 	dim(cell);
 	for(i=0;i<fs.length;i++) {
 		if(fs[i].type=='checkbox') {
@@ -19,6 +20,10 @@ function toggleDisabled(cell) {
 			fs[i].disabled = disabled;
 		}
 	}
+	var fs = cell.getElementsByTagName('img');
+	fs[0].style.display = (disabled)?'none':'';
+	var fs = cell.getElementsByTagName('strong');
+	fs[0].style.display = (disabled)?'':'none';	
 }
 </script>
 <h3><webobject name = "Title"/></h3>
@@ -28,22 +33,7 @@ function toggleDisabled(cell) {
 	<th style = "width:5em;"><webobject name = "EndTitle"/></th>
 	<th></td>
 </tr></thead>
-<tbody><webobject name = "Repetition">
-<webobject name = "Exists"><webobject name = "ExistingRow">
-	<td><webobject name = "Name"/></td>
-	<td><webobject name = "Begin"/></td>
-	<td><webobject name = "End"/></td>
-	<td style = "color:#666666;"><webobject name = "Days"/></td>
-</webobject></webobject><webobject name = "Preset"><webobject name = "PresetRow">
-	<webobject name = "NameCell"><webobject name = "IsDefined">
-		<webobject name = "Name"/><webobject name = "Disabled"/></webobject>
-		<webobject name = "Undefined"><webobject name = "NameField"/>
-	</webobject></webobject>
-	<td><webobject name = "BeginField"/></td>
-	<td><webobject name = "EndField"/></td>
-	<td style = "color:#666666;"><webobject name = "Days"/></td>
-</webobject></webobject></webobject>
-</tbody><tfoot>
+<tfoot>
 <webobject name = "CanCreate">
 	<tr class = "grey"><td><webobject name = "NewNameField"/></td>
 		<td><webobject name = "BeginNewField"/></td>
@@ -51,5 +41,21 @@ function toggleDisabled(cell) {
 		<td style = "color:#666666;"><webobject name = "DaysTitle"/></td>
 	</tr></webobject><webobject name = "ShowButtton">
 <tr><td colspan = "4" align = "center"><webobject name = "Save"/></td></tr></webobject>
-</tfoot>
+</tfoot><tbody><webobject name = "Repetition">
+<webobject name = "Exists"><webobject name = "ExistingRow">
+	<td><webobject name = "Name"/></td>
+	<td><webobject name = "Begin"/></td>
+	<td><webobject name = "End"/></td>
+	<td style = "color:#666666;"><webobject name = "Days"/></td>
+</webobject></webobject><webobject name = "Preset"><webobject name = "PresetRow">
+	<webobject name = "NameCell"><webobject name = "IsDefined">
+		<webobject name = "Name"/></webobject>
+		<webobject name = "Undefined"><webobject name = "NameField"/>
+	</webobject></webobject>
+	<td><webobject name = "BeginField"/></td>
+	<td><webobject name = "EndField"/></td>
+	<webobject name = "DeleteCell"><webobject name = "Disabled"/>
+		<webobject name = "Cross"/><webobject name = "Plus">+</webobject></webobject>
+</webobject></webobject></webobject>
+</tbody>
 </table></webobject>

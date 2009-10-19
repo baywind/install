@@ -36,13 +36,15 @@ ExistingRow : OnClickContainer {
   elementName = "tr";
   class = rowClass;
   disabled = session.readAccess._edit.Holiday;
+  onclick = session.tryLoad;
   invokeAction = select;
   title = item.listName;
 }
 
 NameCell: OnClickContainer {
 	elementName = "td";
-	onclick = "toggleDisabled(this);";
+	onclick = session.tryLoad;
+	invokeAction = select;
 	disabled = item.name;
 }
 
@@ -95,6 +97,21 @@ Disabled : WOCheckBox {
 	style = "display:none;";
 }
 
+DeleteCell : OnClickContainer {
+  elementName = "td";
+  disabled = session.readAccess._delete.Holiday;
+  onclick = "toggleDisabled(this);";
+  style = "font-size:larger;";
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+  style = crossStyle;
+}
+
 PresetRow: WOGenericContainer {
 	elementName = "tr";
 	class = rowClass;
@@ -139,12 +156,12 @@ NewNameField : WOTextField {
 }
 
 IsDefined : WOConditional {
-  condition = item.holidayType;
+  condition = item.name;
+  negate = true;
 }
 
 Undefined : WOConditional {
-  condition = item.holidayType;
-  negate = true;
+  condition = item.name;
 }
 
 NameField : WOTextField {
@@ -167,4 +184,9 @@ DaysTitle : WOString {
 
 ShowButtton : WOConditional {
   condition = session.readAccess.create.Holiday;
+}
+
+Plus : WOGenericContainer {
+  elementName = "strong";
+  style = plusStyle;
 }
