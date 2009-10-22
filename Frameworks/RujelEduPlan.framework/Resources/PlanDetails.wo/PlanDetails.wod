@@ -1,3 +1,20 @@
+TotalToggle : Tabs {
+  tablist = session.strings.RujelEduPlan_EduPlan.regimeTabs;
+  titleAttribute = "title";
+  hoverAttribute = "hover";
+  vertical = true;
+  numeric = true;
+  currTab = showTotal;
+}
+
+ShowHelp : OnClickContainer {
+  elementName = "div";
+  onclick = session.ajaxPopup;
+  invokeAction = help;
+  class = "button";
+  style = "float:right;padding:3px 8px;color:33cc33;";
+}
+
 ClassListing : ClassListing {
 	editingContext = ec;
 	selection = selection;
@@ -110,7 +127,7 @@ TotalField : WOTextField {
   numberformat = "0";
   maxlength = 3;
   disabled = session.readAccess._edit.PlanDetail;
-  style = "width:3ex;float:left;text-align:center;";
+  otherTagString = totalStyle;
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
 }
@@ -119,7 +136,7 @@ WeeklyField : WOTextField {
   value = weeklyHours;
   maxlength = 2;
   disabled = session.readAccess._edit.PlanDetail;
-  style = "width:1.6ex;float:right;text-align:center;";
+  otherTagString = weeklyStyle;
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
 }
@@ -185,9 +202,13 @@ SubjectLabel: WOString {
 	escapeHTML = false;
 }
 
-TotalCell : WOString {
-  value = totalCell;
-  escapeHTML = false;
+TotalCell : OnClickContainer {
+	elementName = "td";
+	class = rowItem.indication;
+	onclick = session.confirmMessage;
+	invokeAction = deleteDetails;
+	disabled = rowItem.noDetails;
+	title = session.strings.RujelEduPlan_EduPlan.removeDetails;
 }
 
 TotalLabel: WOString {
@@ -229,14 +250,6 @@ WeekDaysCell : WOGenericContainer {
   title = application.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
 }
 
-ShowHelp : OnClickContainer {
-  elementName = "div";
-  onclick = session.ajaxPopup;
-  invokeAction = help;
-  class = "button";
-  style = "padding:3px 8px;color:33cc33;";
-}
-
 CanEdit : WOConditional {
   condition = session.readAccess.edit.PlanDetail;
 }
@@ -248,4 +261,32 @@ Save: WOSubmitButton {
 
 Cancel: WOResetButton {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
+}
+ShowTotal : WOConditional {
+  condition = showTotal;
+}
+
+IfNoPeriods : WOConditional {
+  condition = periodsForList.periodsCounter.value;
+  negate = true;
+}
+
+NoPeriondMessage : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.messages.noPeriods;
+  escapeHTML = false;
+}
+
+HasSelection : WOConditional {
+  condition = selection;
+}
+
+CalculatedTotal : WOString {
+  value = rowItem.total;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 9;
+  width = 9;
 }

@@ -3,6 +3,15 @@ SorterScriptLink : ResourceLink {
 	framework = "RujelBase";
 }
 
+TotalToggle : Tabs {
+  tablist = session.strings.RujelEduPlan_EduPlan.regimeTabs;
+  titleAttribute = "title";
+  hoverAttribute = "hover";
+  vertical = true;
+  numeric = true;
+  currTab = showTotal;
+}
+
 AreaTitle : WOString {
   value = application.strings.RujelEduPlan_EduPlan.properties.area;
   valueWhenEmpty = "Area";
@@ -44,7 +53,6 @@ Subject : WOString {
 }
 
 Form : WOForm {
-  class = "backfield1";
 }
 
 SubjectsRepetition : WORepetition {
@@ -59,10 +67,11 @@ CyclesRepetition : WORepetition {
 
 CycleHours : WOTextField {
   value = planHours;
-  numberformat = "0";
-  style = "width:2em;";
+  size = 4;
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
+  otherTagString = fieldStyle;
+  onclick = "select();";
 }
 
 Save: WOSubmitButton {
@@ -167,4 +176,25 @@ GroupsField : WOTextField {
   style = "width:2em;";
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
+}
+
+InspectorImage : WOImage {
+	filename = "info.gif";
+	framework = "RujelBase";
+}
+
+OpenDetails : OnClickContainer {
+  elementName = "td";
+  hide = session.readAccess._read.PlanDetail;
+  onclick = session.checkRun;
+  invokeAction = details;
+  style = "border-left:3px double #666666;color:#666666;";
+  title = session.strings.RujelEduPlan_EduPlan.PlanDetails;
+}
+
+Colspan : WOGenericContainer {
+  elementName = "td";
+  colspan = colspan;
+  style = "padding:1ex";
+  align = "center";
 }

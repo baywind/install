@@ -13,12 +13,6 @@ input {
 	background-color: #ccc;
 }
 
-.unusedDim {
-	background-color: #aaa;
-	text-decoration:underline;
-	cursor:pointer;		
-}
-
 .areaNum {
 	display: none;
 }
@@ -33,7 +27,7 @@ input {
 }
 
 .groups {
-	border-collor: black; 
+	border-color: #666666; 
 	border-style: none double;
 	border-width: 3px;
 }

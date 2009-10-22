@@ -114,8 +114,8 @@ InspectorCaller : WOGenericContainer {
 }
 
 InspectorImage : WOImage {
-	filename = "ActionIconInspect.gif";
-	framework = "RujelCriterial";
+	filename = "info.gif";
+	framework = "RujelBase";
 	style = "cursor:pointer;";
 }
 

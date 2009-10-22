@@ -8,8 +8,10 @@
 	<string>Добавить предметы</string>
 	<key>hideUnused</key>
 	<string>Скрыть неиспользуемые</string>
-	<key>cantDeleteArea</key>
-	<string>Нельзя удалять предметную область, пока в ней есть предметы</string>
+	<key>PlanDetails</key>
+	<string>Детализация учебного плана</string>
+	<key>removeDetails</key>
+	<string>Удалить детализацию</string>
 	<key>properties</key>
 	<dict>
 		<key>subject</key>
@@ -103,8 +105,6 @@
 			<key>component</key>
 			<string>GlobalPlan</string>
 			<key>title</key>
-			<string>Общий план</string>
-			<key>pageTitle</key>
 			<string>Учебный план</string>
 			<key>resourcesFramework</key>
 			<string>RujelEduPlan</string>
@@ -121,13 +121,20 @@
 			<key>sort</key>
 			<string>20</string>
 		</dict>
+	</array>
+	<key>regimeTabs</key>
+	<array>
 		<dict>
-			<key>component</key>
-			<string>PlanDetails</string>
 			<key>title</key>
-			<string>Детализация плана</string>
-			<key>sort</key>
-			<string>30</string>
+			<string>недельный</string>
+			<key>hover</key>
+			<string>Показывать недельные часы</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>полный</string>
+			<key>hover</key>
+			<string>Показывать полное количество часов</string>
 		</dict>
 	</array>
 	<key>planRegime</key>
@@ -143,6 +150,8 @@
 	</dict>
 	<key>messages</key>
 	<dict>
+		<key>cantDeleteArea</key>
+		<string>Нельзя удалять предметную область, пока в ней есть предметы</string>
 		<key>emptyDate</key>
 		<string>Необходимо указывать и начало и конец периода</string>
 		<key>beginEndPeriod</key>
@@ -161,6 +170,8 @@
 		<string> Вы уверены, что хотите удалить этот период? Он включен в %d списков: </string>
 		<key>confirmRemove</key>
 		<string>Вы уверены, что хотите убрать этот период из списка \&apos;%s\&apos;?</string>
+		<key>noPeriods</key>
+		<string>Не описано ни одного учебного периода.&lt;br/&gt; Детализация невозможна.</string>
 	</dict>
 </dict>
 </plist>

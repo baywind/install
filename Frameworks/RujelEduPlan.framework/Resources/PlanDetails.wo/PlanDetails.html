@@ -1,4 +1,5 @@
-<div style = "position:absolute;right:0px;padding:4px;">
+<div style = "float:right;">
+	<webobject name = "TotalToggle"/>
 	<webobject name = "ShowHelp">?</webobject></div>
 <table class = "backfield1" cellspacing = "0" style = "padding: 0px 1em;"><tr valign = "top">
 	<webobject name = "ShowEduGroup"><td style = "min-width:5em;">
@@ -7,7 +8,8 @@
 	<thead><tr><th><webobject name="SubjectLabel"/></th></tr></thead>
 	<tbody><webobject name = "SubjectsListing"><td><webobject name = "SubjectString"/></td>
 	</webobject></tbody></table></td>
-	</webobject><td class = "selectionBorder" style = "border-style:none none none solid;">
+	</webobject><webobject name = "HasSelection"><td class = "selectionBorder" style = "border-style:none none none solid;">
+	<webobject name = "IfNoPeriods"><h2><webobject name = "NoPeriondMessage"/></h2></webobject>
 	<webobject name = "Form"><table cellpadding = "3">
 	<webobject name = "CanEdit"><caption align = "bottom" style = "padding:1ex;">
 		<webobject name="Save"/> <webobject name="Cancel"/>
@@ -27,9 +29,9 @@
 			<webobject name = "PerWeeksDays"/></webobject>
 		</th></webobject></webobject>
 		<th><div><webobject name = "TotalLabel"/></div><div style = "font-weight:normal;">
-			(<webobject name = "HoursTitle"/>)</div></th>
+			(<webobject name = "HoursTitle"/>)</div></th><webobject name = "ShowTotal">
 		<th><div><webobject name = "PlanLabel"/></div><div style = "font-weight:normal;">
-			(<webobject name = "HoursTitle"/>)</div></th></tr>
+			(<webobject name = "HoursTitle"/>)</div></th></webobject></tr>
 	</thead><tbody><webobject name = "CyclesRepetition"><webobject name = "Courses">
 	<webobject name = "CourseRow"><webobject name = "FirstCourse">
 		<webobject name = "CycleHeadCell"><webobject name = "CycleTitle"/></webobject>
@@ -38,11 +40,14 @@
 		<webobject name = "TeacherCell"><webobject name = "Teacher"/></webobject>
 		<webobject name = "ListsRepetition"><webobject name = "PeriodsRepetition">
 		<webobject name = "PeriodCell"><webobject name = "ShowFields">
-			<webobject name = "TotalField"/> <webobject name = "WeeklyField"/>
+			<webobject name = "ShowTotal"><webobject name = "TotalField"/> 
+			</webobject><webobject name = "WeeklyField"/>
 			</webobject><webobject name = "NoFields"><webobject name = "WeeklyHours"/>
 			</webobject></webobject></webobject></webobject>
-			<webobject name = "TotalCell"/><webobject name = "FirstCourse">
-		<webobject name = "CycleTailCell"><webobject name = "PlanHours"/></webobject>
+			<webobject name = "TotalCell"><webobject name = "CalculatedTotal"/></webobject>
+			<webobject name = "ShowTotal"><webobject name = "FirstCourse">
+			<webobject name = "CycleTailCell">
+		<webobject name = "PlanHours"/></webobject></webobject>
 		</webobject></webobject>
-	</webobject></webobject></tbody></table></webobject></td>
+	</webobject></webobject></tbody></table></webobject></td></webobject>
 </tr></table>

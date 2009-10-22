@@ -17,8 +17,10 @@ function cancel() {
   }
 }
 </script>
+<div style = "float:right;">
+<webobject name = "TotalToggle"/></div>
 <webobject name = "Form">
-	<table cellpadding = "2" align = "center">
+<table cellpadding = "2" align = "left" class = "backfield1" style = "padding:1ex 1em;">
 	<thead>
 		<tr valign = "middle">
 			<th style="padding: 2px 1ex;">
@@ -35,11 +37,15 @@ function cancel() {
 			<webobject name = "CyclesRepetition">
 				<th style="width:2em;"><webobject name = "GradeTitle"/></th>
 			</webobject>
+			<webobject name = "OpenDetails"><webobject name = "InspectorImage"/></webobject>
 		</tr>
 		</thead>
 		<tfoot><tr>
 			<webobject name = "TogleAllButton"><webobject name = "ToggleAll"/></webobject>
-		</tr></tfoot>
+		</tr><webobject name = "CanEdit">
+	<tr><webobject name = "Colspan">
+		<webobject name="Save"/> <webobject name="Cancel"/>
+	</webobject></tr></webobject></tfoot>
 		<tbody>
 	<webobject name = "SubjectsRepetition">
 		<webobject name = "ShowRow">
@@ -57,13 +63,11 @@ function cancel() {
 					</webobject>
 				</webobject>
 				</webobject>
+			<webobject name = "OpenDetails">&gt;</webobject>
 			</webobject>
 			</webobject>
 		
 	</webobject>
 	</tbody>
 	</table>
-<webobject name = "CanEdit">
-<p align = "center">
-<webobject name="Save"/> <webobject name="Cancel"/></p>
-</webobject></webobject>
+</webobject>
