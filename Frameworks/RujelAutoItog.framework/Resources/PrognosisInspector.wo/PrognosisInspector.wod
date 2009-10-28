@@ -1,0 +1,147 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Form : WOForm {
+}
+
+Title : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.Prognosis.this;
+  escapeHTML = "false";
+}
+
+ItogName : WOString {
+  value = autoItog.itogContainer.name;
+}
+
+DateTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Date;
+  escapeHTML = false;
+}
+
+DateField : WOString {
+  value = fireDate;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+TimeTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Time;
+  escapeHTML = false;
+}
+
+TimeField : WOString {
+  value = autoItog.fireTime;
+  dateformat = "HH:mm";
+}
+
+FormulaTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.ui.formulaTitle;
+  escapeHTML = false;
+}
+
+BSetTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.ui.bsetTitle;
+  escapeHTML = false;
+}
+
+FormulaPopUp : WOString {
+  value = calcDict.title;
+}
+
+BSetPopUp : WOString {
+  value = autoItog.borderSet.title;
+  valueWhenEmpty = session.strings.RujelAutoItog_AutoItog.ui.noBSet;
+}
+
+Manual : WOConditional {
+  condition = autoItog.namedFlags.manual;
+}
+
+ManualTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.manual;
+  escapeHTML = false;
+}
+
+NoTimeoutBox : WOConditional {
+  condition = autoItog.namedFlags.noTimeouts;
+}
+
+NoTimeoutTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.noTimeouts;
+  escapeHTML = false;
+}
+
+HideBox : WOConditional {
+  condition = autoItog.namedFlags.hideInReport;
+}
+
+HideTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.hideInReport;
+  escapeHTML = false;
+}
+
+DeactivateBox : WOCheckBox {
+  checked = autoItog.namedFlags.inactive;
+  disabled = true;
+}
+
+DeactivateTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.inactive;
+  escapeHTML = false;
+}
+
+FormulaCell : WOGenericContainer {
+  elementName = "td";
+  title = calcDict.description;
+}
+
+BSetCell : WOGenericContainer {
+  elementName = "td";
+  title = bSetDetials;
+}
+
+RelatedList : WORepetition {
+  list = collected;
+  item = item;
+}
+
+RelRow : WOGenericContainer {
+  elementName = "tr";
+  class = item.styleClass;
+  title = item.hover;
+}
+
+RelCheckBox : WOCheckBox {
+  checked = item.related;
+  disabled = session.readAccess._edit.Prognosis;
+}
+
+RelTitleCell : WOGenericContainer {
+  elementName = "td";
+  bgcolor = item.color;
+  style = item.style;
+}
+
+RelTitle : WOString {
+  value = item.title;
+}
+
+RelDescription : WOString {
+  value = item.description;
+}
+
+CanChange : WOConditional {
+  condition = session.readAccess.edit.Prognosis;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+	name = "save";
+}

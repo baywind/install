@@ -3,10 +3,10 @@ IsTitle: WOConditional {
 	negate = true;
 }
 
-PrognosTitleContainer: WOGenericContainer {
+PrognosTitleContainer: OnClickContainer {
 	elementName = "td";
-	invokeAction = currAddOn.calculate;
-	onclick = session.checkRun;
+	invokeAction = inspectPrognosis;
+	onclick = session.ajaxPopup;
 	style = "width:2em;border-style:none double;border-width:0px 3px;text-align:center;";
 	class = styleClass;
 	title = currAddOn.periodItem.itogContainer.name;
