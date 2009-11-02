@@ -133,3 +133,24 @@ ChangeReason : WOText {
   name = "changeReason";
   onkeypress = "form.save.disabled = (value == null || value.length < 2);";
 }
+
+ReadComment : WOConditional {
+  condition = session.readAccess.read.ItogComment;
+}
+
+CommentTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.comment;
+  escapeHTML = false;
+}
+
+OtherComments : WOString {
+  value = otherComments;
+  escapeHTML = false;
+}
+
+CommentText : WOText {
+  value = comments.manual;
+  disabled = session.readAccess._edit.ItogComment;
+  rows = 2;
+  style = "width:92%;";
+}

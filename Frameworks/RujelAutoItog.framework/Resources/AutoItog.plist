@@ -117,10 +117,10 @@
 		<string>всех курсов</string>
 		<key>generalTimeout</key>
 		<string>Отсрочка аттестации</string>
+		<key>negativeTimeout</key>
+		<string>Досрочная аттестация</string>
 		<key>timeoutFor</key>
 		<string>Отсрочка для</string>
-		<key>upTo</key>
-		<string>до</string>
 		<key>addedBonus</key>
 		<string>добавлено</string>
 		<key>requestBonus</key>
