@@ -42,7 +42,7 @@ EduPeriodTitle: WOString {
 
 FlagCheckBox: WOCheckBox {
 	checked = flagStatus;
-	disabled = true;
+	disabled = flagDisabled;
 }
 
 FlagList: WORepetition {

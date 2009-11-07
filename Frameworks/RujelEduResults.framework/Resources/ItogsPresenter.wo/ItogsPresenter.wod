@@ -29,3 +29,8 @@ PeriodsRepetition: WORepetition {
 	item = periodItem;
 	list = periods;
 }
+
+Star : WOString {
+  value = star;
+  escapeHTML = false;
+}

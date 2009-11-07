@@ -135,11 +135,19 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Помеченные</string>
+			<key>comment</key>
+			<string>был установлен флаг &quot;пометить&quot;</string>
+			<key>qualifierFormat</key>
+			<string>flags &gt;= 32</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>С изменениями</string>
 			<key>comment</key>
 			<string>после выставления изменялись составляющие оценки</string>
 			<key>qualifierFormat</key>
-			<string>flags &gt;= 16</string>
+			<string>(flags &gt;= 16 AND flags &lt; 32) OR flags &gt;= 48</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -302,6 +310,18 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Комментарий</string>
+			<key>keyPath</key>
+			<string>comment</string>
+			<key>style</key>
+			<string>text-align:left;font-style:italic;</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>70</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Флаги</string>
 			<key>flagNames</key>
 			<dict>
@@ -330,7 +350,7 @@
 			<key>active</key>
 			<false/>
 			<key>sort</key>
-			<string>70</string>
+			<string>80</string>
 			<key>exportDict</key>
 			<dict>
 				<key>title</key>
@@ -443,6 +463,24 @@
 						<string>изменения в составляющих</string>
 						<key>value</key>
 						<string>.constituents</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
+						<key>wrapper</key>
+						<string>WOConditional</string>
+						<key>wrapperBindings</key>
+						<dict>
+							<key>condition</key>
+							<string>.</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>помечен</string>
+						<key>value</key>
+						<string>.flagged</string>
 						<key>presenterBindings</key>
 						<dict>
 							<key>value</key>

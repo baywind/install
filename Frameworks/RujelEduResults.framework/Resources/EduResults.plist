@@ -39,22 +39,20 @@
 			<string>комментарий</string>
 			<key>flags</key>
 			<dict>
-				<key>calculated</key>
-				<string>вычислена</string>
-				<key>changed</key>
-				<string>изменялась</string>
-				<key>constituents</key>
-				<string>изменения в составляющих</string>
-				<key>incomplete</key>
-				<string>остались задолженности</string>
-				<key>scheduled</key>
-				<string>выставлена автоматически</string>
-				<key>forced</key>
-				<string>не соответствует успешности</string>
-				<key>manual</key>
-				<string>выставлена вручную</string>
 				<key>this</key>
 				<string>Свойства</string>
+				<key>changed</key>
+				<string>изменялась</string>
+				<key>forced</key>
+				<string>не соответствует успешности</string>
+				<key>incomplete</key>
+				<string>остались задолженности</string>
+				<key>manual</key>
+				<string>выставлена вручную</string>
+				<key>constituents</key>
+				<string>изменения в составляющих</string>
+				<key>flagged</key>
+				<string>пометить</string>
 			</dict>
 			<key>mark</key>
 			<string>оценка</string>
@@ -106,6 +104,8 @@
 			<string>6</string>
 			<key>title</key>
 			<string>Табель</string>
+			<key>winTitle</key>
+			<string>Сводный табель</string>
 			<key>id</key>
 			<string>eduResultsFull</string>
 		</dict>
