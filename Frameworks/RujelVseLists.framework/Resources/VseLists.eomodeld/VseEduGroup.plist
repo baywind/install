@@ -2,15 +2,6 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = absStart; 
-            definition = "firstYear - startGrade"; 
-            isReadOnly = Y; 
-            name = absStart; 
-            prototypeName = short; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
-            allowsNull = N; 
             columnName = "FIRST_YEAR"; 
             name = firstYear; 
             prototypeName = short; 
@@ -18,7 +9,7 @@
         }, 
         {
             allowsNull = N; 
-            columnName = GR_FLAGS; 
+            columnName = "GR_FLAGS"; 
             name = flags; 
             prototypeName = byte; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -45,15 +36,15 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = GROUP_TITLE; 
+            columnName = "GROUP_TITLE"; 
             name = title; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (absStart, firstYear, flags, grID, lastYear, startGrade, title); 
+    attributesUsedForLocking = (firstYear, flags, grID, lastYear, startGrade, title); 
     className = "net.rujel.vselists.VseEduGroup"; 
-    classProperties = (absStart, firstYear, flags, lastYear, lists, startGrade, title); 
+    classProperties = (firstYear, flags, lastYear, lists, startGrade, title); 
     externalName = "VSE_EDU_GROUP"; 
     fetchSpecificationDictionary = {}; 
     name = VseEduGroup; 
