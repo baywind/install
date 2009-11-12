@@ -119,7 +119,7 @@ RelRow : WOGenericContainer {
 
 RelCheckBox : WOCheckBox {
   checked = item.related;
-  disabled = session.readAccess._edit.Prognosis;
+  disabled = session.readAccess._edit.autoItog;
 }
 
 RelTitleCell : WOGenericContainer {
@@ -142,6 +142,6 @@ CanChange : WOConditional {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
+	value = application.strings.RujelAutoItog_AutoItog.ui.recalculate;
 	name = "save";
 }

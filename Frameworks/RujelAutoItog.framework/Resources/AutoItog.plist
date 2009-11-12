@@ -145,6 +145,8 @@
 		<string>Преобразовать проценты</string>
 		<key>noBSet</key>
 		<string>оставить %</string>
+		<key>recalculate</key>
+		<string>Пересчитать</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>
