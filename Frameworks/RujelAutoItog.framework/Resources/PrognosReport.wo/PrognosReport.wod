@@ -13,7 +13,7 @@ IfTimeout : WOConditional {
 }
 
 TimeoutTitle : WOString {
-  value = timeoutUpTo;
+  value = item.timeoutTitle;
 }
 
 Reason : WOString {
