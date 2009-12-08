@@ -158,7 +158,8 @@ BonusTextArea : WOText {
 }
 
 CanEditText : WOConditional {
-  condition = editBonusText;
+  condition = noEditBonusText;
+  negate = true;
 }
 
 CanReadBonus : WOConditional {
@@ -238,4 +239,10 @@ Calculable : WOConditional {
 FireTime : WOString {
   value = eduPeriod.fireTime;
   dateformat = "HH:mm";
+}
+
+EditBonusRow : OnClickContainer {
+  elementName = "tr";
+  onclick = "if(toggleObj('bonusTextArea'))toggleObj('bonusText');";
+  disabled = noEditBonusText;
 }

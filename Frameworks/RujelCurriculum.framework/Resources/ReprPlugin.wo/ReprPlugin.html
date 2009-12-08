@@ -17,10 +17,15 @@ function editReprimand(cell,ident) {
 		if(returnField && returnField.className == "selection")
 			returnField.className = "";
 		returnField = cell;
-		document.getElementById("reprimandText").value = cell.innerHTML;
+		var ta = document.getElementById("reprimandText"); 
+		if(cell.innerText)
+			ta.value = cell.innerText;
+		else
+			ta.innerHTML = cell.innerHTML;
+		ta.rows=Math.max(ta.value.split('\n').length,2);
 		document.getElementById("reprimandToEdit").value = ident;
 		document.getElementById("reprimandSubmit").value = "<webobject name = "SaveTitle"/>";
 		cell.className = "selection"; 
 	}
-} 
+}
 </script>

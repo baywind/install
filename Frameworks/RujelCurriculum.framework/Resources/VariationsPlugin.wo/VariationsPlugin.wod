@@ -34,3 +34,8 @@ RealCount : WOString {
   numberformat = "0";
   valueWhenEmpty = "&oslash;";
 }
+
+VarsTotal : WOString {
+  value = varsTotal;
+  escapeHTML = false;
+}

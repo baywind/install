@@ -486,3 +486,7 @@ ExportButton : WOHyperlink {
   action = export;
   string = application.strings.RujelReports_Reports.export;
 }
+
+ShowDetails : WOConditional {
+  condition = currReason.namedFlags._external;
+}

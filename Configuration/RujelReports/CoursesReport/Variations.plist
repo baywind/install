@@ -38,7 +38,7 @@
 		</dict>
 		<dict>
 			<key>active</key>
-			<true/>
+			<false/>
 			<key>id</key>
 			<string>days</string>
 			<key>title</key>

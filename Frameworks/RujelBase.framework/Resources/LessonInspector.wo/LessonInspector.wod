@@ -12,7 +12,7 @@ ThemeTitle: WOString {
 }
 
 DateField : WOTextField {
-  value = newDate;
+  value = newTitle;
   size = 10;
   style = "text-align:center;";
   onkeypress = "return isNumberInput(event,true);";

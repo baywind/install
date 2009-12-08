@@ -189,6 +189,12 @@
 		<string>Совмещение одновременно с</string>
 		<key>separateJoin</key>
 		<string>Другой урок</string>
+		<key>periodStart</key>
+		<string>Начало периода</string>
+		<key>periodEnd</key>
+		<string>Конец периода</string>
+		<key>suggest</key>
+		<string>Предлагаемые поправки</string>
 	</dict>
 	<key>regimes</key>
 	<array>

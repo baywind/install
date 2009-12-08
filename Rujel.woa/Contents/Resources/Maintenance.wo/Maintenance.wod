@@ -2,3 +2,21 @@ ModelReport : WOHyperlink {
 	action = modelReport;
 	target = "_blank";
 }
+
+Form : WOForm {
+	multipleSubmit = true;
+}
+
+DateField : WOTextField {
+  value = date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+PlanFactButton : WOSubmitButton {
+  action = planFactCheck;
+  value = "PlanFactCheck";
+}
+
+EmailBroadcast : WOHyperlink {
+  action = broadcastMail;
+}

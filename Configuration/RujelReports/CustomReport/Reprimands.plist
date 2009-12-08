@@ -294,7 +294,7 @@
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>active</key>
-			<false/>
+			<true/>
 			<key>sort</key>
 			<string>50</string>
 			<key>onclick</key>
@@ -329,7 +329,12 @@
 			<key>title</key>
 			<string>Текст замечания</string>
 			<key>keyPath</key>
-			<string>content</string>
+			<string>formattedContent</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>escapeHTML</key>
+				<false/>
+			</dict>
 			<key>active</key>
 			<true/>
 			<key>onclick</key>
@@ -345,6 +350,29 @@
 			<true/>
 			<key>sort</key>
 			<string>60</string>
+			<key>script</key>
+			<string>function editReprimand(cell,ident) {
+	if(cell.className == &quot;selection&quot;) {
+		cell.className = null;
+		returnField = null;
+		document.getElementById(&quot;reprimandText&quot;).value = null;
+		document.getElementById(&quot;reprimandToEdit&quot;).value = &quot;&quot;;
+		document.getElementById(&quot;reprimandSubmit&quot;).value = &quot;Добавить&quot;;
+	} else {
+		if(returnField &amp;&amp; returnField.className == &quot;selection&quot;)
+			returnField.className = &quot;&quot;;
+		returnField = cell;
+		var ta = document.getElementById(&quot;reprimandText&quot;); 
+		if(cell.innerText)
+			ta.value = cell.innerText;
+		else
+			ta.innerHTML = cell.innerHTML;
+		ta.rows=Math.max(ta.value.split(&apos;\n&apos;).length,2);
+		document.getElementById(&quot;reprimandToEdit&quot;).value = ident;
+		document.getElementById(&quot;reprimandSubmit&quot;).value = &quot;Сохранить&quot;;
+		cell.className = &quot;selection&quot;; 
+	}
+}</string>
 		</dict>
 		<dict>
 			<key>title</key>

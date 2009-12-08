@@ -409,7 +409,7 @@
 					<string>since</string>
 				</array>
 				<key>formatString</key>
-				<string>date &lt;= %@ AND date &gt;= %@</string>
+				<string>date &lt;= %@ AND date &gt;= %@ AND reason.flags != 1</string>
 			</dict>
 			<key>prefetch</key>
 			<array>

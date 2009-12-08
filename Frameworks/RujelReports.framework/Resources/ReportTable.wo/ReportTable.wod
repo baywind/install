@@ -96,3 +96,12 @@ TableContainer : WOGenericContainer {
   cellspacing = ^cellspacing;
   align = ^align; 
 }
+
+HasScript : WOConditional {
+  condition = itemDict.script;
+}
+
+Script : WOString {
+  value = itemDict.script;
+  escapeHTML = false;
+}

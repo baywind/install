@@ -198,3 +198,30 @@ RealCount : WOString {
   numberformat = "0";
   valueWhenEmpty = "&oslash;";
 }
+
+Suggestions : WORepetition {
+  list = planFact.suggest;
+  item = item;
+}
+
+ShowSuggestions : WOConditional {
+  condition = planFact.suggest;
+}
+
+SubmitSuggest : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = editVariation;
+  class = "orange";
+  style = "font-style:italic; border:1px solid #999999; padding-left:1em;";
+}
+
+SubmitString : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+  escapeHTML = false;
+}
+
+SuggestionsTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.suggest;
+  escapeHTML = false;
+}

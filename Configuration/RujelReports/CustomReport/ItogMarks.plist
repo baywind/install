@@ -204,6 +204,20 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Буква класса</string>
+			<key>short</key>
+			<string>Б</string>
+			<key>keyPath</key>
+			<string>assumeCourse.eduGroup.title</string>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>12</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Предмет</string>
 			<key>keyPath</key>
 			<string>cycle.subjectEO</string>

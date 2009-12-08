@@ -70,7 +70,8 @@ ReliefDate : WOString {
   dateformat = "HH:mm";
 }
 Content : WOString {
-  value = item.content;
+  value = item.formattedContent;
+  escapeHTML = false;
 }
 
 Author : WOString {

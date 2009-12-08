@@ -1,1 +1,0 @@
- -destination Sources -extension java -java -javaTemplate _MyEntity.java -model Resources/VseobuchSimple.eomodeld -packagedirs -subclassDestination Sources -subclassJavaTemplate MyEntity.java -templatedir ../../../templates -verbose -loadModelGroup

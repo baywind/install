@@ -107,44 +107,24 @@ cd Configuration
 
 CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
 
-## Configuration variants
-if [ -d variants ] ; then
-    cd variants
-    echo "Choose initial settings variant:"
-    echo ""
-    i=0;
-    for v in *; do
-    if [ -d $v ] ; then
-        i=$(($i+1))
-        echo "$i) $v"
-    fi
+## Settings
+
+if [ -e ${CONFIGFOLDER}/rujel.plist ] ; then
+    echo "Reset configuration? (yes/no):"
+    read ifReset
+    while [ -n "$ifReset" -a "$ifReset" != "yes"  -a "$ifReset" != "no" ] ; do
+        echo "Please type 'yes' or 'no' or nothing (for no)"
+        read ifReset
     done
-    echo ""
-    echo "Enter variant number (default none):"
-    read num
-    if [ ! -z $num ] ; then
-    i=1;
-    for v in *; do
-    if [ -d $v ] ; then
-        if [ $num = $i ] ; then
-            echo "Installing $v"
-            num=0
-            cd $v
-            updateFolder ${CONFIGFOLDER} $BACKUPFOLDER
-            echo ""
-            echo "Dont forget to modify installed settings to match your system"
-            cd ..
-#        else
-#            echo "$num != $i"
-        fi
-        i=$(($i+1))
-    fi
-    done
-    cd ..
-    if [ $num != "0" ] ; then
-        echo "\"$num\" is illegal number. Settings installation skipped"
-    else
-        ## logging properties
+else
+    ifReset="yes"
+fi
+
+if [ "$ifReset" = "yes" ] ; then
+    echo "Installing settings"
+    cd configs
+    updateFolder ${CONFIGFOLDER} $BACKUPFOLDER
+    cd ../logging
         PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
         for f in *.properties ; do
         if [ -f $f ] ; then
@@ -154,22 +134,24 @@ if [ -d variants ] ; then
             sed "s/\\/Library/$PATTERN&/g" $f > ${CONFIGFOLDER}/$f
         fi
         done
-    fi
-    else
-        echo "Settings installation skipped"
-        cd ..
-    fi
+    cd ..
+    echo "Don't forget to modify installed settings to match your system"
 else
-    echo "Settings variants not found"
+    echo "Settings installation skipped"
 fi
 
 ## RujelReports
 if [ -d RujelReports ] ; then
-    mkdir -p $BACKUPFOLDER/$f
-    cd RujelReports
-    echo "updating RujelReports"
-    updateFolder ${CONFIGFOLDER}/RujelReports $BACKUPFOLDER/RujelReports
-    cd ..
+    if [ -d ${CONFIGFOLDER}/RujelReports ] ; then
+        mkdir -p $BACKUPFOLDER/RujelReports
+        cd RujelReports
+        echo "updating RujelReports"
+        updateFolder ${CONFIGFOLDER}/RujelReports $BACKUPFOLDER/RujelReports
+        cd ..
+    else
+        cp -r RujelReports ${CONFIGFOLDER}/
+        echo "RujelReports installed"
+    fi
 else
     echo "RujelReports not found"
 fi
