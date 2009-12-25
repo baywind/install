@@ -1,0 +1,17 @@
+TextField : WOTextField {
+  value = ^value;
+  size = ^size;
+  maxlength = ^maxlength;
+  disabled = ^disabled;
+  style = codeStyle;
+  name = "aCode";
+}
+
+Button : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  value = session.strings.RujelVseLists_VseStrings.depersonalize;
+  omitTags = ^value;
+  onclick = "this.style.display = 'none';form.aCode.style.display = '';";
+  otherTagString = disabledString;
+}

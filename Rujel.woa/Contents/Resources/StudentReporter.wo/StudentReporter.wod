@@ -2,16 +2,11 @@ Hide: WOConditional {
 	condition = false;
 }
 
-StudentFirstName: WOString {
-	value = student.person.firstName;
-}
-
-StudentLastName: WOString {
-	value = student.person.lastName;
-}
-
-StudentSecondName: WOString {
-	value = student.person.secondName;
+StudentName: PersonDisplay {
+	person = student;
+	startWithLast = true;
+	last = 2;
+	first = 2;
 }
 
 Since: WOString {

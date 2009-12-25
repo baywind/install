@@ -181,7 +181,7 @@ StudentMarks : WOSwitchComponent {
 }
 
 StudentName: PersonDisplay {
-	person = studentItem.person;
+	person = studentItem;
 	last = 2;
 	first = 2;
 	second = 0;

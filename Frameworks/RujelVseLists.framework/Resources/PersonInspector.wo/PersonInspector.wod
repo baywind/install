@@ -30,6 +30,9 @@ Component : WOSwitchComponent {
   WOComponentName = currUsage.component;
   person = person;
   dict = currUsage;
+  code = code;
+  saveAction = save;
+  deleteAction = save;
 }
 
 Form : WOForm {
@@ -53,4 +56,13 @@ HasSelection : WOConditional {
 
 ShowButtons : WOConditional {
   condition = currUsage.showButtons;
+}
+
+NoCode : WOConditional {
+  condition = code;
+  negate = true;
+}
+
+Code : WOString {
+  value = code;
 }

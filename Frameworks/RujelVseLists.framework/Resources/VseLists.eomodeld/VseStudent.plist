@@ -8,7 +8,7 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = LICHN_DELO; 
+            columnName = "LICHN_DELO"; 
             name = delo; 
             prototypeName = word; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -28,8 +28,8 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            allowsNull = N; 
-            columnName = PERSON_ID; 
+            allowsNull = Y; 
+            columnName = "PERSON_ID"; 
             name = personID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -45,7 +45,7 @@
     attributesUsedForLocking = (absGrade, delo, enter, leave, personID); 
     className = "net.rujel.vselists.VseStudent"; 
     classProperties = (absGrade, delo, enter, leave, lists, person); 
-    externalName = VSE_STUDENT; 
+    externalName = "VSE_STUDENT"; 
     fetchSpecificationDictionary = {}; 
     name = VseStudent; 
     primaryKeyAttributes = (sID); 
@@ -59,7 +59,6 @@
         }, 
         {
             destination = VsePerson; 
-            isMandatory = Y; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = pID; sourceAttribute = personID; }); 

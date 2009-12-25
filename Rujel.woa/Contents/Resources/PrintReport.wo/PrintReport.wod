@@ -21,12 +21,11 @@ Since: WOString {
 	value = since;
 }
 
-StudentFirstName: WOString {
-	value = studentItem.person.firstName;
-}
-
-StudentLastName: WOString {
-	value = studentItem.person.lastName;
+StudentName: PersonDisplay {
+	person = studentItem;
+	startWithLast = true;
+	last = 2;
+	first = 2;
 }
 
 StudentMarks : WOSwitchComponent {

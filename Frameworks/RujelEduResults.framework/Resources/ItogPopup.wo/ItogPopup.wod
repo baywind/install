@@ -88,12 +88,11 @@ Save: WOSubmitButton {
 	name = "save";
 }
 
-StudentFirstName: WOString {
-	value = student.person.firstName;
-}
-
-StudentLastName: WOString {
-	value = student.person.lastName;
+StudentName: PersonDisplay {
+	value = student;
+	startWithLast = true;
+	last = 2;
+	first = 2;
 }
 
 ShowHistory : WOConditional {

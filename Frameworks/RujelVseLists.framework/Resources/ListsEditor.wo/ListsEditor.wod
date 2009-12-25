@@ -17,12 +17,6 @@ Modes: Tabs {
 	numeric = true;
 }
 
-ClassListing : ClassListing {
-  editingContext = ec;
-  selection = group;
-  width = "100%";
-}
-
 PersonSelector : WORepetition {
   list = list;
   item = item;
@@ -34,19 +28,19 @@ AddClass : OnClickContainer {
   invokeAction = createGroup;
   class = "green";
   style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;margin:4px;";
-  hide = session.readAccess._create.VseEduGroup;
+  hide = cantAddClass;
 }
 
 EditGroup : OnClickContainer {
   elementName = "th";
   onclick = session.ajaxPopup;
   invokeAction = editGroup;
-  disabled = session.readAccess._edit.group;
+  disabled = noGroupEdit;
   class = "orange";
 }
 
 GroupTitle : WOString {
-  value = group.name;
+  value = selection.name;
 }
 
 Name : PersonDisplay {
@@ -135,19 +129,9 @@ CanChange : WOConditional {
   condition = access.edit;
 }
 
-Categories : Tabs {
-  currTab = selection;
-  tablist = categories;
-  vertical = true;
-}
-
-ShowClasses : WOConditional {
-  condition = mode;
-  negate = true;
-}
-
-HasGroup : WOConditional {
-  condition = group;
+Categories : WORepetition {
+  list = categories;
+  item = item;
 }
 
 ShowAllForm : WOForm {
@@ -164,7 +148,43 @@ ShowAllTitle : WOString {
 }
 
 ShowAllToggle : OnClickContainer {
-  elementName = "span";
+  elementName = "td";
+  colspan = 2;
   onclick = session.checkRun;
   invokeAction = toggleAll;
+  style = "font-style:italic;";
+}
+
+CategoryRow : OnClickContainer {
+  elementName = "tr";
+  invokeAction = select;
+  onclick = session.tryLoad;
+  class = listClass;
+}
+
+IsGroup : WOConditional {
+  condition = item.firstYear;
+}
+
+GroupGrade : WOString {
+  value = item.grade;
+  numberformat = "0";
+}
+
+GroupCatTitle : WOString {
+  value = item.title;
+}
+
+IsDict : WOConditional {
+  condition = item.editingContext;
+  negate = true;
+}
+
+DictName : WOString {
+  value = item.name;
+}
+
+DictCount : WOString {
+  value = count;
+  numberformat = "0";
 }

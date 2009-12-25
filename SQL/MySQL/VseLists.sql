@@ -4,7 +4,7 @@ USE VseLists;
 CREATE TABLE VSE_EDU_GROUP (
   GR_ID mediumint NOT NULL,
   GROUP_TITLE varchar(28),
-  START_GRADE smallint NOT NULL,
+  ABS_GRADE smallint NOT NULL,
   FIRST_YEAR smallint NOT NULL,
   LAST_YEAR smallint NOT NULL,
   GR_FLAGS tinyint NOT NULL,

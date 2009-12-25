@@ -41,7 +41,7 @@ AsTitle : WOString {
 
 GradePopUp : WOPopUpButton {
   list = grades;
-  selection = startGrade;
+  selection = grade;
 }
 
 TitleField : WOTextField {

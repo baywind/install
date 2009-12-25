@@ -4,15 +4,20 @@
 <table align = "center">
 <tr><td colspan = "2"  class = "selectionBorder" style = "border-style:none none solid;padding:0px;">
 	<webobject name = "Modes"/></td>
-<tr valign = "top"><td  class = "backfield2" style = "min-width:5em;">
-		<webobject name = "Categories"/>
-		<webobject name = "ShowClasses"><webobject name = "ClassListing"/>
-		<webobject name = "AddClass">+</webobject></webobject></td>
+<tr valign = "top"><td  class = "backfield2" style = "min-width:5em;"><table width = "100%">
+		<webobject name = "Categories"><webobject name = "CategoryRow">
+		<webobject name = "IsGroup"><td align = "right"><webobject name = "GroupGrade"/></td>
+			<td align = "left"><webobject name = "GroupCatTitle"/></td></webobject>
+		<webobject name = "IsDict"><td align = "center"><webobject name = "DictName"/></td>
+			<td align = "right" style = "color:#666666;"><webobject name = "DictCount"/></td>
+		</webobject></webobject></webobject></table>
+		<webobject name = "AddClass">+</webobject></td>
 	<td class = "backfield1"><webobject name = "Form"><table>
 	<thead>
-		<webobject name = "HasGroup"><tr><webobject name = "EditGroup">
+		<tr><webobject name = "EditGroup">
 			<webobject name = "GroupTitle"/></webobject>
-			<td colspan = "2"/></tr></webobject>
+					<webobject name = "ShowAllToggle"><webobject name = "ShowAllBox"/>
+			<webobject name = "ShowAllTitle"/></webobject></tr>
 		<tr><th><webobject name = "LastNameTitle"/> <webobject name = "FirstNameTitle"/></th>
 			<th><webobject name = "EnterTitle"/></th>
 			<th><webobject name = "LeaveTitle"/></th></tr>
@@ -24,8 +29,6 @@
 	<webobject name = "AddPerson">+</webobject><webobject name = "CanChange">
 	<div style = "text-align:right;"><webobject name = "Save"/>
 		<webobject name = "ResetButton"/></div></webobject></webobject>
-		<webobject name = "ShowAllToggle"><webobject name = "ShowAllBox"/>
-			<webobject name = "ShowAllTitle"/></webobject>
 	</td></td>
 </table>
 </webobject>

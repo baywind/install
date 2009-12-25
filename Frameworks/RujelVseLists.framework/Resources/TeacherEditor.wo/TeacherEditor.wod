@@ -8,7 +8,7 @@ DeloTitle : WOString {
   escapeHTML = false;
 }
 
-Delo : WOTextField {
+Delo : CodeField {
   value = teacher.delo;
   size = 16;
   maxlength = 28;

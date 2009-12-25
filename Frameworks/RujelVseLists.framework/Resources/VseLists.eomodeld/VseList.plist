@@ -30,14 +30,14 @@
         }, 
         {
             allowsNull = N; 
-            columnName = STUDENT_ID; 
+            columnName = "STUDENT_ID"; 
             name = studentID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
     attributesUsedForLocking = (enter, groupID, leave, studentID); 
-    className = EOGenericRecord; 
+    className = "net.rujel.vselists.VseList"; 
     classProperties = (eduGroup, enter, leave, student); 
     externalName = "VSE_LIST"; 
     fetchSpecificationDictionary = {}; 
