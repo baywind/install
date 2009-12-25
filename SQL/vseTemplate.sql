@@ -41,14 +41,14 @@ INSERT INTO VSE_STUDENT (S_ID, PERSON_ID, LICHN_DELO, ABS_GRADE, ENTER_DT, LEAVE
 -- Таблица VSE_EDU_GROUP : список классов
 /* GR_ID - индентификатор класса */
 /* GROUP_TITLE - название (буква) класса */
-/* START_GRADE - номер потока на момент образования класса */
+/* ABS_GRADE - абсолютный номер потока. вычисляется как (учебный_год - цифра класса) */
 /* FIRST_YEAR - учебный год (осеннего семестра) образования класса */
 /* LAST_YEAR - учебный год (осеннего семестра) расформирования класса */
 /* GR_FLAGS - пока что не используется */
 
-INSERT INTO VSE_EDU_GROUP (GR_ID, GROUP_TITLE, START_GRADE, FIRST_YEAR, LAST_YEAR, GR_FLAGS) VALUES 
- (1,'а',5,2006,2012,0),
- (2,'б',5,2007,2013,0);
+INSERT INTO VSE_EDU_GROUP (GR_ID, GROUP_TITLE, ABS_GRADE, FIRST_YEAR, LAST_YEAR, GR_FLAGS) VALUES 
+ (1,'а',2001,2006,2012,0),
+ (2,'б',2002,2007,2013,0);
 
 -- Таблица VSE_LIST : списки классов
 /* L_ID - номер записи */
