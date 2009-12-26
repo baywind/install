@@ -438,6 +438,8 @@
 		<dict>
 			<key>title</key>
 			<string>Бонус</string>
+			<key>keyPath</key>
+			<string>bonus</string>
 			<key>short</key>
 			<string>!</string>
 			<key>sort</key>
@@ -446,10 +448,12 @@
 			<true/>
 			<key>presenterBindings</key>
 			<dict>
+				<key>value</key>
+				<string>$valueOf.item.itemDict.presentValue</string>
 				<key>escapeHTML</key>
 				<string>false</string>
 			</dict>
-			<key>value</key>
+			<key>presentValue</key>
 			<dict>
 				<key>className</key>
 				<string>net.rujel.autoitog.PrognosPresenter</string>
@@ -462,11 +466,40 @@
 				</array>
 				<key>paramValues</key>
 				<array>
-					<string>.bonus</string>
-					<string>.flags</string>
+					<string>.</string>
+					<string>$itemRow.flags</string>
 				</array>
 				<key>cacheResult</key>
 				<false/>
+			</dict>
+			<key>exportDict</key>
+			<dict>
+				<key>title</key>
+				<string>Бонус</string>
+				<key>keyPath</key>
+				<string>bonus.value</string>
+				<key>multiplied</key>
+				<dict>
+					<key>object</key>
+					<string>.value</string>
+					<key>methodName</key>
+					<string>movePointRight</string>
+					<key>paramClasses</key>
+					<array>
+						<string>int</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<integer>2</integer>
+					</array>
+				</dict>
+				<key>presenterBindings</key>
+				<dict>
+					<key>value</key>
+					<string>$valueOf.item.itemDict.multiplied</string>
+					<key>numberformat</key>
+					<string>&apos;0.##%</string>
+				</dict>
 			</dict>
 		</dict>
 		<dict>
