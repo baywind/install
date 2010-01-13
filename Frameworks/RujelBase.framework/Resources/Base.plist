@@ -145,5 +145,18 @@
 			<string>$returnPage</string>
 		</dict>
 	</dict>
+	<key>diaryTab</key>
+	<dict>
+		<key>id</key>
+		<string>lessonThemes</string>
+		<key>title</key>
+		<string>Уроки</string>
+		<key>sort</key>
+		<string>40</string>
+		<key>component</key>
+		<string>LessonsDiary</string>
+		<key>period</key>
+		<string>true</string>
+	</dict>
 </dict>
 </plist>

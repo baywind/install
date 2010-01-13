@@ -1,0 +1,105 @@
+SectionTitle : WOString {
+  value = formatSection;
+  escapeHTML = false;
+}
+
+Sections : WORepetition {
+	list = courses;
+	item = section;
+}
+
+Table : WOGenericContainer {
+  elementName = "table";
+  border = 0;
+  width = "100%";
+}
+
+ListRepetition : WORepetition {
+  list = list;
+  item = item;
+}
+
+ItemRow : WOGenericContainer {
+	elementName = "tr";
+	class = "ungerade";
+}
+
+Label : WOString {
+  value = itemLabel;
+  escapeHTML = false;
+}
+
+Theme : WOString {
+  value = item.theme;
+}
+
+HasLink : WOConditional {
+  condition = item.homeTask;
+}
+
+LinkImage : WOImage {
+	framework = "RujelBase";
+	filename = "link.png";
+	align = "right";
+	title = item.taskUrl;
+	onclick = "window.open(this.title);";
+	alt = "&gt;&gt;&gt;"; 
+}
+
+RegularSection : WOConditional {
+  condition = section;
+}
+
+SplitSections : WOConditional {
+  condition = section;
+  negate = true;
+}
+
+RegularRow : WOConditional {
+  condition = item;
+}
+
+SplitRow : WOConditional {
+  condition = item;
+  negate = true;
+}
+
+Title : WOString {
+  value = title;
+}
+
+HomeTask : WOString {
+  value = item.homeTask;
+}
+
+LabelTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.Date;
+  escapeHTML = false;
+}
+
+ContentTitle : WOString {
+  value = application.strings.RujelInterfaces_Names.EduLesson.theme;
+}
+
+HometaskTitle : WOString {
+  value = application.strings.RujelInterfaces_Names.EduLesson.homeTask;
+}
+
+LinkLabel : WOString {
+  value = application.strings.RujelCriterial_Strings.URL;
+  escapeHTML = false;
+}
+
+Hyperlink : WOHyperlink {
+	href = item.taskUrl;
+	target = "_blank";
+	class = "screenLink";
+}
+
+LinkAdress : WOString {
+  value = item.taskUrl;
+}
+
+HasLessons : WOConditional {
+  condition = list.count;
+}
