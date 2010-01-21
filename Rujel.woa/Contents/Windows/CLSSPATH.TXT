@@ -13,9 +13,9 @@ LOCALROOT\Library\Frameworks\RujelArchiving.framework\Resources\Java\rujelarchiv
 LOCALROOT\Library\Frameworks\RujelAutoItog.framework\Resources\Java\rujelautoitog.jar
 LOCALROOT\Library\Frameworks\RujelBase.framework\Resources\Java\rujelbase.jar
 LOCALROOT\Library\Frameworks\RujelComplete.framework\Resources\Java\rujelcomplete.jar
+LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\rujelcontacts.jar
 LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\activation.jar
 LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\mail.jar
-LOCALROOT\Library\Frameworks\RujelContacts.framework\Resources\Java\rujelcontacts.jar
 LOCALROOT\Library\Frameworks\RujelCriterial.framework\Resources\Java\rujelcriterial.jar
 LOCALROOT\Library\Frameworks\RujelCurriculum.framework\Resources\Java\rujelcurriculum.jar
 LOCALROOT\Library\Frameworks\RujelEduPlan.framework\Resources\Java\rujeleduplan.jar
@@ -25,11 +25,18 @@ LOCALROOT\Library\Frameworks\RujelReports.framework\Resources\Java\rujelreports.
 LOCALROOT\Library\Frameworks\RujelStats.framework\Resources\Java\rujelstats.jar
 LOCALROOT\Library\Frameworks\RujelVseLists.framework\Resources\Java\rujelvselists.jar
 LOCALROOT\Library\Frameworks\RujelVseobuch.framework\Resources\Java\rujelvseobuch.jar
-WOROOT\Library\Frameworks\JavaEOAccess.framework\Resources\Java\javaeoaccess.jar
-WOROOT\Library\Frameworks\JavaEOControl.framework\Resources\Java\javaeocontrol.jar
-WOROOT\Library\Frameworks\JavaFoundation.framework\Resources\Java\javafoundation.jar
-WOROOT\Library\Frameworks\JavaJDBCAdaptor.framework\Resources\Java\javajdbcadaptor.jar
-WOROOT\Library\Frameworks\JavaWebObjects.framework\Resources\Java\javawebobjects.jar
 WOROOT\Library\Frameworks\JavaWOExtensions.framework\Resources\Java\javawoextensions.jar
+WOROOT\Library\Frameworks\JavaWOExtensions.framework\WebServerResources\Java\JavaWOExtensions.jar
+WOROOT\Library\Frameworks\JavaEOAccess.framework\Resources\Java\javaeoaccess.jar
+WOROOT\Library\Frameworks\JavaEOAccess.framework\WebServerResources\Java\JavaEOAccess.jar
+WOROOT\Library\Frameworks\JavaEOControl.framework\Resources\Java\javaeocontrol.jar
+WOROOT\Library\Frameworks\JavaEOControl.framework\WebServerResources\Java\JavaEOControl.jar
+WOROOT\Library\Frameworks\JavaFoundation.framework\Resources\Java\javafoundation.jar
+WOROOT\Library\Frameworks\JavaFoundation.framework\WebServerResources\Java\JavaFoundation.jar
+WOROOT\Library\Frameworks\JavaJDBCAdaptor.framework\Resources\Java\javajdbcadaptor.jar
+WOROOT\Library\Frameworks\JavaJDBCAdaptor.framework\WebServerResources\Java\JavaJDBCAdaptor.jar
+WOROOT\Library\Frameworks\JavaWebObjects.framework\Resources\Java\javawebobjects.jar
+WOROOT\Library\Frameworks\JavaWebObjects.framework\WebServerResources\Java\JavaWebObjects.jar
 WOROOT\Library\Frameworks\JavaXML.framework\Resources\Java\javaxml.jar
+WOROOT\Library\Frameworks\JavaXML.framework\WebServerResources\Java\javaxml.jar
 

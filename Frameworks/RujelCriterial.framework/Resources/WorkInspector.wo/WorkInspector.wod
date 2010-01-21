@@ -17,7 +17,7 @@ Title : WOString {
 
 AnnounceDate : WOTextField {
 	dateformat = application.prefs.ui.dateFormat;
-	value = work.announce;
+	value = dict.announce;
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
@@ -26,7 +26,7 @@ AnnounceDate : WOTextField {
 
 Date: WOTextField {
 	dateformat = application.prefs.ui.dateFormat;
-	value = work.date;
+	value = dict.date;
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
@@ -43,14 +43,14 @@ WorkWeight: WOTextField {
 	maxlength = 5;
 	numberformat = "0.##";
 	size = 3;
-	value = work.weight;
+	value = dict.trimmedWeight;
 	style = "text-align:center;";
 	onkeypress = "return isNumberInput(event,true);";
 	disabled = work.namedFlags.fixWeight;
 }
 
 Number : WOString {
-  value = work.number;
+  value = dict.number;
   escapeHTML = false;
 }
 
@@ -73,7 +73,7 @@ TypePopUp : WOPopUpButton {
   list = types;
   item = item;
   displayString = item.typeName;
-  selection = work.workType;
+  selection = dict.workType;
 }
 
 AnnounceTitle : WOString {
@@ -92,7 +92,7 @@ NameTitle : WOString {
 }
 
 URLField : WOTextField {
-  value = work.homeTask;
+  value = dict.homeTask;
   id = "URLfield";
   style = "display:none;";
 }
@@ -106,7 +106,7 @@ URLpic : WOImage {
 }
 
 NameField : WOText {
-  value = work.theme;
+  value = dict.theme;
   rows = 3;
   style = "width:96%;";
 }
@@ -190,7 +190,7 @@ WeightField : WOGenericElement {
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
-    disabled = session.readAccess._edit.work;
+    disabled = session.readAccess._edit.Work;
 }
 
 ResetButton1: WOResetButton {

@@ -61,7 +61,7 @@
         }
     ); 
     attributesUsedForLocking = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName, useCount); 
-    className = EOGenericRecord; 
+    className = "net.rujel.criterial.WorkType"; 
     classProperties = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName, useCount); 
     externalName = "CR_WORK_TYPE"; 
     fetchSpecificationDictionary = {}; 

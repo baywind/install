@@ -64,7 +64,7 @@ Theme: WOString {
 }
 Weight: WOString {
 	numberformat = "0.##";
-	value = work.weight;
+	value = work.trimmedWeight;
 }
 Type: WOString {
 	value = work.workType.typeName;

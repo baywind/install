@@ -180,7 +180,7 @@
 			<key>qualifierSelector</key>
 			<string>caseInsensitiveLike</string>
 			<key>defaultValue</key>
-			<string>PlanFactCheck Daemon</string>
+			<string>AutoCheck??</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -205,44 +205,6 @@
 	</array>
 	<key>properties</key>
 	<array>
-		<dict>
-			<key>title</key>
-			<string>Дата</string>
-			<key>keyPath</key>
-			<string>raised</string>
-			<key>hover</key>
-			<string>Дата вынесения замечания</string>
-			<key>presenterBindings</key>
-			<dict>
-				<key>dateformat</key>
-				<string>dd.MM.yy  HH:mm</string>
-			</dict>
-			<key>active</key>
-			<true/>
-			<key>sort</key>
-			<string>10</string>
-			<key>comparison</key>
-			<string>CompareDescending</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Снято</string>
-			<key>hover</key>
-			<string>Дата снятия замечания</string>
-			<key>keyPath</key>
-			<string>relief</string>
-			<key>presenterBindings</key>
-			<dict>
-				<key>dateformat</key>
-				<string>dd.MM.yy  HH:mm</string>
-			</dict>
-			<key>active</key>
-			<true/>
-			<key>sort</key>
-			<string>10</string>
-			<key>comparison</key>
-			<string>CompareDescending</string>
-		</dict>
 		<dict>
 			<key>title</key>
 			<string>Учитель</string>
@@ -324,6 +286,44 @@
 			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>52</string>
+		</dict>
+		<dict>
+			<key>short</key>
+			<string>Дата</string>
+			<key>title</key>
+			<string>Дата вынесения замечания</string>
+			<key>keyPath</key>
+			<string>raised</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>dateformat</key>
+				<string>dd.MM.yy  HH:mm</string>
+			</dict>
+			<key>active</key>
+			<true/>
+			<key>sort</key>
+			<string>10</string>
+			<key>comparison</key>
+			<string>CompareDescending</string>
+		</dict>
+		<dict>
+			<key>short</key>
+			<string>Снято</string>
+			<key>title</key>
+			<string>Дата снятия замечания</string>
+			<key>keyPath</key>
+			<string>relief</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>dateformat</key>
+				<string>dd.MM.yy  HH:mm</string>
+			</dict>
+			<key>active</key>
+			<true/>
+			<key>sort</key>
+			<string>10</string>
+			<key>comparison</key>
+			<string>CompareDescending</string>
 		</dict>
 		<dict>
 			<key>title</key>

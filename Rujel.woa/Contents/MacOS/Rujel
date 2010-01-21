@@ -110,12 +110,12 @@ esac
 #
 if [ "${PLATFORM_TYPE}" = "Rhapsody" ]
 then
-    LOCALROOT=/Local
-    WOROOT=/System
+    LOCALROOT=${NEXT_ROOT}/Local
+    WOROOT=${NEXT_ROOT}/System
 elif [ "$PLATFORM_TYPE" = "Darwin" ]
 then
-    LOCALROOT=
-    WOROOT=/System
+    LOCALROOT=${NEXT_ROOT}
+    WOROOT=${NEXT_ROOT}/System
 else
     WOROOT=${NEXT_ROOT}
     LOCALROOT=${NEXT_ROOT}/Local
@@ -297,5 +297,5 @@ done
 #
 echo Launching ${SCRIPT_NAME}.woa ...
 
-echo ${JAVA_EXECUTABLE} ${JAVA_EXECUTABLE_ARGS} -classpath WOBootstrap.jar com.webobjects._bootstrap.WOBootstrap ${COMMAND_LINE_ARGS} 
-eval exec ${JAVA_EXECUTABLE} ${JAVA_EXECUTABLE_ARGS} -classpath WOBootstrap.jar com.webobjects._bootstrap.WOBootstrap ${COMMAND_LINE_ARGS} 
+echo ${JAVA_EXECUTABLE} ${JAVA_EXECUTABLE_ARGS} -classpath WOBootstrap.jar com.webobjects._bootstrap.WOBootstrap ${COMMAND_LINE_ARGS} -WOFrameworksBaseURL /WebObjects/Rujel.woa/Frameworks
+eval exec ${JAVA_EXECUTABLE} ${JAVA_EXECUTABLE_ARGS} -classpath WOBootstrap.jar com.webobjects._bootstrap.WOBootstrap ${COMMAND_LINE_ARGS} -WOFrameworksBaseURL /WebObjects/Rujel.woa/Frameworks

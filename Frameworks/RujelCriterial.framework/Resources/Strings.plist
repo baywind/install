@@ -108,8 +108,6 @@
 		<string>CriterSelector</string>
 		<key>framework</key>
 		<string>RujelCriterial</string>
-		<key>cssResource</key>
-		<string>styles.css</string>
 		<key>scriptResource</key>
 		<string>criterial.js</string>
 		<key>prefetchPaths</key>

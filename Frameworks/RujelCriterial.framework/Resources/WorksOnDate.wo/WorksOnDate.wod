@@ -1,5 +1,5 @@
 CSSLink: ResourceLink {
-	cssLink = "styles.css";
+	jsLink = "criterial.js";
 	framework = "RujelCriterial";
 }
 

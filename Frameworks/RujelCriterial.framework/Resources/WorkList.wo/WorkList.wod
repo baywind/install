@@ -1,8 +1,8 @@
 AddButton: WOSubmitButton {
 	value = application.strings.Reusables_Strings.uiElements.Add;
-	onclick = "changed=false;";
+	onclick = "changed=false;ajaxPost(this);";
 	disabled = access._create;
-	action = ^addLesson;
+	action = addWork;
 }
 
 AllowEdit: WOConditional {
@@ -213,7 +213,7 @@ SplitTab: WOImageButton {
 
 Weight: WOString {
 	numberformat = "0.##";
-	value = work.weight;
+	value = work.trimmedWeight;
 }
 StudentPresenter: WOSwitchComponent {
 	WOComponentName = studentPresenter;
