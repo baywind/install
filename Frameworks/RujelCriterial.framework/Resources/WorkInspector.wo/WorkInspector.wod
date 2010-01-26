@@ -1,4 +1,5 @@
-Form1 : WOForm {	
+Form1 : WOForm {
+  id = "workForm";
 }
 
 Cross : WOImage {
@@ -46,7 +47,8 @@ WorkWeight: WOTextField {
 	value = dict.trimmedWeight;
 	style = "text-align:center;";
 	onkeypress = "return isNumberInput(event,true);";
-	disabled = work.namedFlags.fixWeight;
+	disabled =dict.workType.namedFlags.fixWeight;
+	name = "weight";
 }
 
 Number : WOString {
@@ -74,6 +76,7 @@ TypePopUp : WOPopUpButton {
   item = item;
   displayString = item.typeName;
   selection = dict.workType;
+  onchange = typeChange;
 }
 
 AnnounceTitle : WOString {
@@ -190,7 +193,7 @@ WeightField : WOGenericElement {
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
-    disabled = session.readAccess._edit.Work;
+    disabled = cantSave;
 }
 
 ResetButton1: WOResetButton {
@@ -210,5 +213,28 @@ NoCriteria : WOString {
 
 NoCritMax : WOString {
   value = application.strings.RujelCriterial_Strings.Max;
+  escapeHTML = false;
+}
+
+IsHometask : WOCheckBox {
+  checked = namedFlags.hometask;
+  disabled = dict.workType.namedFlags.fixHometask;
+  name = "isHometask";
+}
+
+HometaskTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduLesson.ht;
+  escapeHTML = false;
+  valueWhenEmpty = "H/W";
+}
+
+IsComulsory : WOCheckBox {
+  checked = namedFlags.compulsory;
+  disabled = dict.workType.namedFlags.fixCompulsory;
+  name = "isCompulsory";
+}
+
+CompulsoryTitle : WOString {
+  value = session.strings.RujelCriterial_Strings.compulsory;
   escapeHTML = false;
 }

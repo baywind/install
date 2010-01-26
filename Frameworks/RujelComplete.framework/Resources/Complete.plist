@@ -22,6 +22,8 @@
 		<string>Закрытие года</string>
 		<key>component</key>
 		<string>CompleteSetup</string>
+		<key>sort</key>
+		<string>80</string>
 	</dict>
 </dict>
 </plist>

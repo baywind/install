@@ -223,9 +223,13 @@
 			<string>Системные процедуры</string>
 			<key>component</key>
 			<string>Maintenance</string>
+			<key>sort</key>
+			<string>99</string>
 		</dict>
 		<key>title</key>
 		<string>Центр управления</string>
+		<key>color</key>
+		<string>Цвет</string>
 	</dict>
 </dict>
 </plist>

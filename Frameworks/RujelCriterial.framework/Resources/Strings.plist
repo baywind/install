@@ -6,17 +6,6 @@
 	<string>Работа</string>
 	<key>works</key>
 	<string>Работы</string>
-	<key>workTypes</key>
-	<dict>
-		<key>classwork</key>
-		<string>классная</string>
-		<key>homework</key>
-		<string>домашняя</string>
-		<key>project</key>
-		<string>проектная</string>
-		<key>optional</key>
-		<string>дополнительная</string>
-	</dict>
 	<key>Mark</key>
 	<string>Оценка</string>
 	<key>theme</key>
@@ -59,6 +48,32 @@
 	<string>заметки</string>
 	<key>inspector</key>
 	<string>Подробное описание</string>
+	<key>compulsory</key>
+	<string>обязательная</string>
+	<key>setup</key>
+	<dict>
+		<key>WorkType</key>
+		<dict>
+			<key>title</key>
+			<string>Типы работ</string>
+			<key>component</key>
+			<string>WorkTypeSetup</string>
+			<key>sort</key>
+			<string>20</string>
+			<key>workType</key>
+			<string>Тип работы</string>
+			<key>fix</key>
+			<string>зафиксировать</string>
+			<key>colors</key>
+			<string>Цвета</string>
+			<key>withWeight</key>
+			<string>вес&gt;0</string>
+			<key>noWeight</key>
+			<string>вес=0</string>
+			<key>compulsory</key>
+			<string>обязат.</string>
+		</dict>
+	</dict>
 	<key>messages</key>
 	<dict>
 		<key>critersRequired</key>

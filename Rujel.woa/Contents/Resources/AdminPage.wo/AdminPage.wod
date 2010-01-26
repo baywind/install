@@ -1,5 +1,8 @@
 PageWrapper : PageWrapper {
   title = application.strings.Strings.AdminPage.title;
+  resourcesFramework = currModule.framework;
+  cssResource = currModule.cssResource;
+  scriptResource = currModule.scriptResource;
 }
 
 Title : WOString {
@@ -15,13 +18,15 @@ ReportsList : Tabs {
   titleAttribute = "title";
   vertical = true;
   hoverAttribute = "description";
-  onClick = session.tryLoad;
+  onClick = session.checkRun;
+  selectAction = ec.revert;
 }
 
 ModuleComponent : WOSwitchComponent {
   componentName = currModule.component;
   WOComponentName = currModule.component;
   dict = currModule;
+  ec = ec;
 }
 
 ModuleIsSelected : WOConditional {

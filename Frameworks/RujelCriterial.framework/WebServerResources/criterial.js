@@ -92,3 +92,16 @@ function blockCriters(e) {
 		field.form.m0.value = '';
 	}
 }
+
+function setDefaults(flags,weight) {
+	var form = document.getElementById('workForm');
+	if(weight == null)
+		form.weight.value = form.weight.defaultValue;
+	else
+		form.weight.value = weight;
+	form.weight.disabled = (flags & 1);
+	form.isHometask.checked = (flags & 16);
+	form.isHometask.disabled = (flags & 4);
+	form.isCompulsory.checked = (flags & 8);
+	form.isCompulsory.disabled = (flags & 2);
+}

@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {
+            columnName = "DEFAULT_VALUE"; 
+            name = defaultValue; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {columnName = "IND_ID"; name = indID; prototypeName = short; }, 
+        {columnName = "INDEX_NAME"; name = title; prototypeName = word; }, 
+        {
+            allowsNull = N; 
+            columnName = "INDEX_TYPE"; 
+            name = type; 
+            prototypeName = short; 
+        }
+    ); 
+    attributesUsedForLocking = (type, title, defaultValue); 
+    className = "net.rujel.base.Indexer"; 
+    classProperties = (type, title, defaultValue, indexRows); 
+    externalName = "BASE_INDEXER"; 
+    fetchSpecificationDictionary = {}; 
+    name = Indexer; 
+    primaryKeyAttributes = (indID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = IndexRow; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = indID; sourceAttribute = indID; }); 
+            name = indexRows; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }
+    ); 
+}

@@ -8,6 +8,8 @@
     entities = (
         {className = "net.rujel.base.BaseCourse"; name = BaseCourse; }, 
         {className = "net.rujel.base.EntityIndex"; name = EntityIndex; }, 
+        {className = "net.rujel.base.Indexer"; name = Indexer; }, 
+        {className = EOGenericRecord; name = IndexRow; }, 
         {className = "net.rujel.base.PrimitiveEduCycle"; name = PrimitiveEduCycle; }, 
         {className = EOGenericRecord; name = SettingByCourse; }, 
         {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }

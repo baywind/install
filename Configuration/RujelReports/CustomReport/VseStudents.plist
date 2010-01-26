@@ -61,6 +61,18 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Имя</string>
+			<key>hover</key>
+			<string>Используйте * для поиска по шаблону</string>
+			<key>attribute</key>
+			<string>student.person.firstName</string>
+			<key>fieldSize</key>
+			<integer>20</integer>
+			<key>qualifierSelector</key>
+			<string>caseInsensitiveLike</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Дата рождения</string>
 			<key>attribute</key>
 			<string>student.person.birthDate</string>
@@ -110,11 +122,13 @@
 			<key>comment</key>
 			<string>искать только неисключенных</string>
 			<key>qualifierFormat</key>
-			<string>(enter = nil OR enter &lt;= %@) AND (leave = nil OR leave &gt;= %@)</string>
+			<string>(enter = nil OR enter &lt;= %@) AND (leave = nil OR leave &gt;= %@) AND (eduGroup.firstYear &lt;= %@) AND (eduGroup.lastYear &gt;= %@)</string>
 			<key>args</key>
 			<array>
 				<string>$session.today</string>
 				<string>$session.today</string>
+				<string>$session.eduYear</string>
+				<string>$session.eduYear</string>
 			</array>
 		</dict>
 	</array>

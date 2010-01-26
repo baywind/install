@@ -1,0 +1,204 @@
+Jscolor : ResourceLink {
+  framework = "app";
+  jsLink = "jscolor.js";
+}
+SorterScriptLink : ResourceLink {
+	jsLink = "sorting.js";
+	framework = "RujelBase";
+}
+
+NameTitle : WOString {
+  value = ^dict.workType;
+}
+
+ColorsTitle : WOString {
+  value = ^dict.colors;
+  valueWhenEmpty = "colors";
+  escapeHTML = false;
+}
+
+WeightTitle : WOString {
+  value = session.strings.RujelCriterial_Strings.weight;
+  escapeHTML = false;
+}
+
+CompulsoryTitle : WOString {
+  value = ^dict.compulsory;
+  escapeHTML = false;
+}
+
+HometaskTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduLesson.ht;
+  escapeHTML = false;
+  valueWhenEmpty = "H/W";
+}
+
+Lock : WOImage {
+  framework = "RujelCriterial";
+  filename = "lock.png";
+  title = ^dict.fix;
+}
+
+Types : WORepetition {
+  list = types;
+  item = typeItem;
+}
+
+Number : WOString {
+  value = typeItem.sort;
+  numberformat = "0";
+}
+
+
+
+NameField : WOTextField {
+  value = typeItem.typeName;
+}
+
+WeightField : WOTextField {
+  value = typeItem.dfltWeight;
+  size = 4;
+  maxlength = 4;
+  onkeypress = "return isNumberInput(this,true);";
+  disabled = cantEdit;
+}
+
+WithWeightTitile : WOString {
+  value = ^dict.withWeight;
+  escapeHTML = false;
+}
+
+NoWeightTitile : WOString {
+  value = ^dict.noWeight;
+  escapeHTML = false;
+}
+
+NoWeightField : WOTextField {
+  value = typeItem.noWeightHex;
+  class = "color";
+  size = 6;
+  maxlength = 6;
+  onchange = "get(this,'tr').style.backgroundColor = '#' + value";
+  disabled = cantEdit;
+}
+
+WithWeightField : WOTextField {
+  value = typeItem.weightHex;
+  class = "color";
+  size = 6;
+  maxlength = 6;
+  onchange = "get(this,'tr').style.backgroundColor = '#' + value";
+  disabled = cantEdit;
+}
+
+TypeRow : OnClickContainer {
+  elementName = "tr";
+  bgcolor = rowColor;
+  onclick = session.checkRun;
+  invokeAction = select;
+  disabled = cantClick;
+  id = rowID;
+}
+
+FixWeight : WOCheckBox {
+  checked = typeItem.namedFlags.fixWeight;
+  disabled = cantEdit;
+}
+
+IsCompulsory : WOCheckBox {
+  checked = typeItem.namedFlags.compulsory;
+  disabled = cantEdit;
+}
+
+FixCompulsory : WOCheckBox {
+  checked = typeItem.namedFlags.fixCompulsory;
+  disabled = cantEdit;
+}
+
+IsHometask : WOCheckBox {
+  checked = typeItem.namedFlags.hometask;
+  disabled = cantEdit;
+}
+
+FixHometask : WOCheckBox {
+  checked = typeItem.namedFlags.fixHometask;
+  disabled = cantEdit;
+}
+
+Unused : WOCheckBox {
+  checked = typeItem.namedFlags.unused;
+  disabled = cantEdit;
+}
+
+CanEdit : WOConditional {
+  condition = cantEdit;
+  negate = true;
+}
+
+CantEdit : WOConditional {
+  condition = cantEdit;
+}
+
+TypeName : WOString {
+  value = typeItem.typeName;
+}
+
+Save : WOSubmitButton {
+  action = saveOrCreate;
+  value = buttonTitle;
+  onclick = "enumerate(document.getElementById('typeList'),'typeNum',1);";
+}
+
+CanSave : WOConditional {
+  condition = showSaveButton;
+}
+
+NumField : WOTextField {
+  value = typeItem.sort;
+  style = "display:none;";
+  class = "typeNum";
+  numberformat = "0";
+}
+CurrUp : WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(document.getElementById('currType'));";
+	style = "cursor:pointer;";
+}
+
+CurrDown : WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(document.getElementById('currType'));";
+	style = "cursor:pointer;";
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  onclick = "closePopup();";
+  height = 16;
+  width = 16;
+}
+
+CanDelete : OnClickContainer {
+  elementName = "span";
+  hide = cantDelete;
+  invokeAction = delete;
+  onclick = session.checkRun;
+}
+
+Form : WOForm {
+}
+
+HasSelection : WOConditional {
+  condition = currType.sort;
+}
+
+NoSelection : WOConditional {
+  condition = currType.sort;
+  negate = true;
+}
