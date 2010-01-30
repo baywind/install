@@ -132,7 +132,5 @@
 	</array>
 	<key>export</key>
 	<string>Файл</string>
-	<key>choose</key>
-	<string>Выбрать</string>
 </dict>
 </plist>

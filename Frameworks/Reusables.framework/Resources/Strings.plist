@@ -144,6 +144,8 @@
 		<string>Искать</string>
 		<key>Submit</key>
 		<string>Подтвердить</string>
+		<key>Select</key>
+		<string>Выбрать</string>
 	</dict>
 </dict>
 </plist>

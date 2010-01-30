@@ -62,7 +62,7 @@ Sign2 : WOString {
 SubmitButton : WOSubmitButton {
   action = selectorPopup;
   onclick = "ajaxPost(this,event);return false;";
-  value = application.strings.RujelReports_Reports.choose;
+  value = application.strings.Reusables_Strings.uiElements.Select;
   style = "display:none";
 }
 

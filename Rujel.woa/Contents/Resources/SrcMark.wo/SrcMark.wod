@@ -1,19 +1,11 @@
 PageWrapper1: PageWrapper {
 	hasChanges = ec.hasChanges;
 	title = title;
-	cssResource = "courses.css";
-	resourcesFramework = "app";
 	onLoad = "focus();";
 }
 
 Title: WOString {
 	value = title;
-}
-
-Tabs1: Tabs {
-	currTab = tabSelected;
-	tablist = tablist;
-	onClick = session.tryLoad;
 }
 
 EduGroupLabel: WOString {
@@ -38,33 +30,13 @@ TeacherLabel: WOString {
 	escapeHTML = false;
 }
 
-ClassSelector: WOConditional {
-	condition = tabindex;
-	
-	negate = true;
-}
-
 ClassListing1: ClassListing {
 	selection = currClass;
 	width = "100%";
 	selectAction = selectClass;
 	editingContext = ec;
-	onClick = onClick;
-}
-
-TeacherSelector: WOConditional {
-	condition = tabindex;
-	negate = false;
-}
-
-TeacherSelector2: PersListing {
-	entity = "Teacher";
-	firstNameDisplay = 1;
-	secondNameDisplay = 1;
-	selectAction = selectTeacher;
-	selection = currTeacher;
-	onClick = onClick;
-	searchRequest = teacherName;
+	onClick = session.checkRun;
+	showTitle = true;
 }
 
 Repetition1: WORepetition {
@@ -87,7 +59,8 @@ GenericContainer: OnClickContainer {
 	class = rowStyle;
 	elementName = "tr";
 	invokeAction = select;
-	onclick = onClick;
+	onclick = session.checkRun;
+	disabled = disableSelect;
 }
 
 CycleGrade: WOString {
@@ -123,6 +96,7 @@ TeacherLN: PersonDisplay {
 }
 
 EditLink: WOHyperlink {
+	disabled = true;
 	action = selectCourse;
 	style = "z-index:4;";
 }
@@ -136,115 +110,63 @@ Selected: WOConditional {
 	condition = isSelected;
 }
 
-NewCourseFom: WOForm {
-}
-
-TeacherName: WOTextField {
+TeacherName: WOString {
 	value = teacherName;
-	id = "focus";
+	escapeHTML = false;
 }
 
 SubmitName: WOImageButton {
-	action = submitTeacher;
+	action = save;
 	filename = "button_ok.gif";
 	framework = "app";
+	align = "right";
 }
 
 Conditional1: WOConditional {
 	condition = canCreate;
 }
 
-AddLesson: OnClickContainer {
+AddCourse: OnClickContainer {
 	elementName = "tr";
 	invokeAction = addCourse;
 	onclick = session.checkRun;
 	class="orange";
+	hide = cantCreate;
 }
 
 Add: WOString {
 	value = application.strings.Reusables_Strings.uiElements.Add;
 	valueWhenEmpty = "Add";
+	escapeHTML = false;
 }
 
-LessonEntity2: WOString {
+CourseEntity: WOString {
 	value = application.strings.RujelInterfaces_Names.EduCourse.this;
+	valueWhenEmpty = "Lesson";
+	escapeHTML = false;
 }
 
-CourseSelected: WOConditional {
-	condition = aCourse;
+CreateNew: WOConditional {
+	condition = createNew;
 }
 
 Form1: WOForm {
 	multipleSubmit = true;
 	onSubmit = "return tryLoad();";
+	action = chooseTeacherForDict;
 }
 
-EduGroupPopUp: WOPopUpButton {
-	disabled = byClass;
-	displayString = item.name;
-	item = item;
-	list = classes;
-	noSelectionString = application.strings.RujelInterfaces_Names.EduGroup.this;
-	selection = aCourse.eduGroup;
-	onChange = "classChanged(this);";
-}
-
-CyclesSelector: WOConditional {
-	condition = gradeCycles;
-}
 
 GradeCyclesPopup: WOPopUpButton {
 	displayString = item.subject;
 	item = item;
-	list = gradeCycles;
-	noSelectionString = application.strings.Reusables_Strings.uiElements.Other;
-	selection = aCourse.cycle;
-	name = "cyclePopup";
-	onChange = "cycleChanged(this);";
-}
-
-TextField1: WOTextField {
-	name = "subjTitle";
-	value = subject;
-	disabled = access._createNewEduPlanCourses;
-	onChange = "checkChanges(this);";
-}
-
-TeacherPopUp: WOPopUpButton {
-	displayString = itemToString;
-	item = item;
-	list = teachers;
-	selection = aCourse.teacher;
-	onChange = "checkChanges(this);";
+	list = popupCycles;
+	selection = dict.cycle;
 }
 
 Save: WOSubmitButton {
-	action = saveCourse;
+	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
-}
-
-CancelButton: WOSubmitButton {
-	action = undoCreation;
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
-}
-
-CanEditSubgroup: WOConditional {
-	condition = access.editSubgroups;
-}
-
-Delete2: WOSubmitButton {
-	action = editSubgroup;
-	value = application.strings.RujelInterfaces_Names.EduCourse.subgroup;
-	target = "_balnc";
-}
-
-CanDelete: WOConditional {
-	condition = aCourse.access.delete;
-}
-
-Delete: WOSubmitButton {
-	action = delete;
-	value = application.strings.Reusables_Strings.uiElements.Delete;
 }
 
 CanEditCourse : WOConditional {
@@ -253,4 +175,55 @@ CanEditCourse : WOConditional {
 
 LessonsCount : WOString {
   value = item.lessons.count;
+}
+
+GroupsTitle : WOString {
+  value = session.strings.Strings.SrcMark.eduGroups;
+  escapeHTML = false;
+}
+
+EduGroup : WOString {
+  value = dict.eduGroup.name;
+}
+SelectTeacher : OnClickContainer {
+  elementName = "em";
+  invokeAction = chooseTeacherForDict;
+  onclick = "ajaxPost(get(this,'form'),event);";
+}
+
+CommentField : WOTextField {
+  value = dict.comment;
+  size = 6;
+  style = "text-align:center;";
+}
+
+ChooseCurrTeacher : OnClickContainer {
+  elementName = "td";
+  align = "right";
+  onclick = session.ajaxPopup;
+  invokeAction = chooseCurrentTeacher;
+  class = "orange";
+  width = "30%";
+  style = "font-weight:bold;font-style:italic;";
+}
+
+TeacherCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = selectTeacher;
+  onclick = session.checkRun;
+  class = teacherRowClass;
+}
+
+CurrTeacherName : PersonDisplay {
+  person = currTeacher;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+  startWithLast = true;
+  last = 2;
+  first = 1;
+  second = 1;
+}
+
+SelectorTitle : WOString {
+  value = session.strings.Strings.ChooseRegime.SrcMark;
+  escapeHTML = false;
 }

@@ -17,7 +17,7 @@ INSERT INTO VSE_PERSON (P_ID, LAST_NAME, FIRST_NAME, SECOND_NAME, SEX_FLAG, BIRT
 
 -- Таблица VSE_TEACHER : список учителей
 /* T_ID - индентификатор учителя */
-/* PERSON_ID - идентификатор персоны из таблицы PERSON */
+/* PERSON_ID - идентификатор персоны из таблицы VSE_PERSON */
 /* LICHN_DELO - номер личного дела */
 /* JOB_POSITION - наименование должности */
 /* ENTER_DT - дата поступления на работу в школу */
@@ -29,7 +29,7 @@ INSERT INTO VSE_TEACHER (T_ID, PERSON_ID, LICHN_DELO, JOB_POSITION, ENTER_DT, LE
 
 -- Таблица VSE_STUDENT : список учеников
 /* S_ID - индентификатор ученика */
-/* PERSON_ID - идентификатор персоны из таблицы PERSON */
+/* PERSON_ID - идентификатор персоны из таблицы VSE_PERSON */
 /* LICHN_DELO - номер личного дела */
 /* ABS_GRADE - абсолютный номер потока. вычисляется как (учебный_год - цифра класса) */
 /* ENTER_DT - дата поступления в школу */
@@ -52,8 +52,8 @@ INSERT INTO VSE_EDU_GROUP (GR_ID, GROUP_TITLE, ABS_GRADE, FIRST_YEAR, LAST_YEAR,
 
 -- Таблица VSE_LIST : списки классов
 /* L_ID - номер записи */
-/* EDU_GROUP - индентификатор класса из таблицы EDU_GROUP */
-/* STUDENT_ID - индентификатор ученика из таблицы STUDENT */
+/* EDU_GROUP - индентификатор класса из таблицы VSE_EDU_GROUP */
+/* STUDENT_ID - индентификатор ученика из таблицы VSE_STUDENT */
 /* ENTER_DT - дата вступления в класс (если был в классе сначала, можно оставить NULL) */
 /* LEAVE_DT - дата выхода из класса (если до конца существования класса - NULL) */
 
