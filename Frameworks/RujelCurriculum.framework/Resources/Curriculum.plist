@@ -176,11 +176,13 @@
 		<key>reviewOriginal</key>
 		<string>перейти к этому уроку</string>
 		<key>subsCreation</key>
-		<string>Создание замены / совмещения</string>
+		<string>Описание замены / совмещения</string>
 		<key>addSubstitute</key>
 		<string>Указать заменяющего преподавателя</string>
 		<key>addJoin</key>
 		<string>Указать присоединенную группу</string>
+		<key>addVariation</key>
+		<string>Указать курс, вместо которого проводится урок</string>
 		<key>chooseLesson</key>
 		<string>Укажите совместный урок:</string>
 		<key>selectTeacher</key>
@@ -195,6 +197,8 @@
 		<string>Конец периода</string>
 		<key>suggest</key>
 		<string>Предлагаемые поправки</string>
+		<key>varSubValue</key>
+		<string>Количество уроков</string>
 	</dict>
 	<key>regimes</key>
 	<array>

@@ -538,6 +538,16 @@
 				</dict>
 				<dict>
 					<key>title</key>
+					<string>Вместо</string>
+					<key>keyPath</key>
+					<string>getPaired.course</string>
+					<key>escapeHTML</key>
+					<false/>
+					<key>titlePath</key>
+					<string>subjectWithComment</string>
+				</dict>
+				<dict>
+					<key>title</key>
 					<string>Причина</string>
 					<key>keyPath</key>
 					<string>reason</string>

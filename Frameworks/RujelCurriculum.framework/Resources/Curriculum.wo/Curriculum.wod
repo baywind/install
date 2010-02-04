@@ -49,7 +49,7 @@ BeginDate : WOTextField {
   style = "text-align:center;";
   onkeypress = "return isNumberInput(event,true);";
   name = "begin";
-  disabled = tmpDict.reasonsToMoveIn;
+  disabled = cantEdit;
 }
 
 EndDate : WOTextField {
@@ -60,7 +60,7 @@ EndDate : WOTextField {
   onkeypress = "return isNumberInput(event,true);";
   name = "end";
   onfocus = "if(value==null||value.length==0)value=form.begin.value;";
-  disabled = tmpDict.reasonsToMoveIn;
+  disabled = cantEdit;
 }
 
 ReasonTitle : WOString {
@@ -74,7 +74,7 @@ ReasonTextField : WOText {
   style = "width:98%";
   rows = 2;
   name = "reasonText";
-  disabled = tmpDict.reasonsToMoveIn;
+  disabled = cantEdit;
 }
 
 CanChange : WOConditional {
@@ -135,7 +135,7 @@ HasTeacher : WORadioButton {
   value = 1;
   selection = relation;
   name = "relation";
-  disabled = noTeacher;
+  disabled = cantEdit;
 }
 
 WithTeacher : WOString {
@@ -208,7 +208,7 @@ ForWholeSchool : WORadioButton {
   value = 0;
   selection = relation;
   name = "relation";
-  disabled = tmpDict.reasonsToMoveIn;
+  disabled = cantEdit;
 }
 
 WithWholeSchool : WOString {
@@ -258,7 +258,7 @@ GroupCell : OnClickContainer {
   onclick = "ajaxPost('chooseGroup',event);";
   style = "font-style:italic;text-decoration:underline;";
   title = plist.Select;
-  disabled = tmpDict.reasonsToMoveIn;
+  disabled = cantEdit;
   align = "left";
 }
 
@@ -267,7 +267,7 @@ TeacherCell : OnClickContainer {
   onclick = "ajaxPost('chooseTeacher',event);";
   style = "font-style:italic;text-decoration:underline;white-space:nowrap;";
   title = plist.Select;
-  disabled = tmpDict.reasonsToMoveIn;
+  disabled = cantEdit;
   align = "left";
 }
 
@@ -321,6 +321,7 @@ ReasonSelectRepetition : WORepetition {
 
 NextReasonPresenter : ReasonPresenter {
   reason = itemRow;
+  refTeacher = tmpDict.reasonProps.teacher;
 }
 
 NextExtString : WOString {

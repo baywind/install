@@ -44,6 +44,8 @@ SchoolIcon : WOImage {
 
 ReasonPresenter : ReasonPresenter {
   reason = rItem;
+  refTeacher = course.teacher;
+  refEduGroup = course.eduGroup;
 }
 
 TextCell : WOGenericContainer {

@@ -59,6 +59,7 @@ VarValue : WOString {
 
 ReasonPresenter : ReasonPresenter {
   reason = item.reason;
+  refTeacher = course.teacher;
 }
 
 DateTitle: WOString {

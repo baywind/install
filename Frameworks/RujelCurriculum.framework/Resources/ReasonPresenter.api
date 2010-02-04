@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
         <wo class="ReasonPresenter.java" wocomponentcontent="false">
 
@@ -7,5 +7,6 @@
             <unbound name="reason"/>
         </validation>
     <binding defaults="Boolean" name="hideText"/>
+    <binding name="refTeacher"/>
     </wo>
 </wodefinitions>

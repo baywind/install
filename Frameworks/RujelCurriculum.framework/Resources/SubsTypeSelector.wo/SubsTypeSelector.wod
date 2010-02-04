@@ -58,3 +58,15 @@ AddJoin : OnClickContainer {
   onclick = session.ajaxPopupNoPos;
   invokeAction = addJoin;
 }
+
+AddVariarionTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.addVariation;
+  escapeHTML = false;
+}
+
+AddVariarion : OnClickContainer {
+  elementName = "td";
+  class = "green";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = addVariarion;
+}

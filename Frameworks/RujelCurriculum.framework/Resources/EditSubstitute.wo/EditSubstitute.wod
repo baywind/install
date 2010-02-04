@@ -139,6 +139,7 @@ Review : OnClickContainer {
   onclick = session.tryLoad;
   invokeAction = review;
   title = session.strings.RujelCurriculum_Curriculum.titles.reviewOriginal;
+  disabled = noSubstitute;
 }
 
 Factor : WOString {

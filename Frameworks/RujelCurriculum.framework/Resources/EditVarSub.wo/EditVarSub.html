@@ -1,0 +1,29 @@
+<div class="backfield1" id="ajaxPopup">
+<webobject name = "Cross"/>
+<table border = "1"><thead>
+<tr><th style = "border:none;padding:1ex;font-size:larger;">
+	<webobject name = "EditVarTitle"/></th></tr>
+</thead><tbody>
+<tr id = "coursesList"><td><div style = "width:100%;max-height:360px;overflow:auto;">
+	<table cellpadding = "2" width = "100%">
+		<webobject name="CourseSelected"><tfoot id = "curCourse" >
+			<tr class = "orange" onclick = "hideObj('curCourse');showObj('selectCourse');fitWindow();" onmouseover = "dim(get(this,'tr'));" onmouseout = "unDim(get(this,'tr'));">
+				<td style = "white-space:nowrap;"><webobject name = "FromCourseSubject"/></td>
+				<td style = "white-space:nowrap;"><webobject name = "FromCourseTeacher"/></td>
+			</tr>
+		</tfoot></webobject><webobject name = "CoursesList"><webobject name = "Courses">
+		<webobject name = "CourseRow">
+			<td style = "white-space:nowrap;"><webobject name = "CourseSubject"/></td>
+			<td style = "white-space:nowrap;"><webobject name = "CourseTeacher"/></td>
+		</webobject></webobject></webobject>
+	</table></div>
+	</td></tr><webobject name="CourseSelected">
+	<tr><td><webobject name="Form">
+	<div><webobject name = "ValueField"/> <webobject name = "ValueTitle"/></div>
+	<div><webobject name = "ReasonSelector"/></div>
+	<div style = "padding:3pt;border-top:#666 double;">
+	<webobject name="Save"/>
+	</div></webobject>
+</td></tr></webobject>
+</tbody></table>
+</div>

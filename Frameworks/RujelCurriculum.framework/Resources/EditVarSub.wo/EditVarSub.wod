@@ -1,0 +1,134 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+EditVarTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.addVariation;
+  escapeHTML = "false";
+  valueWhenEmpty = "AutoItog";
+}
+
+
+CourseTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduCourse.this;
+  escapeHTML = false;
+}
+
+LessonTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduLesson.this;
+  escapeHTML = false;
+}
+
+Date : WOString {
+  value = lesson.date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+Courses : WORepetition {
+  list = courses;
+  item = item;
+  useStyles = true;
+  selection = fromCourse;
+  switchParam = item.cycle;
+  selectAction = selectCourse;
+  onClick = session.ajaxPopupNoPos;
+}
+
+CourseRow : OnClickContainer {
+  elementName = "tr";
+  onclick = rowOnClick;
+  class = rowClass;
+  invokeAction = selectCourse;
+}
+
+CourseSubject : WOString {
+  value = item.subjectWithComment;
+  escapeHTML = false;
+}
+
+CourseTeacher : PersonDisplay {
+  person = item.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+}
+
+CourseComment : WOString {
+  value = item.comment;
+}
+
+ReasonSelector : ReasonSelector {
+  course = fromCourse;
+  date = date;
+  reason = reason;
+  hideExternal = true;
+}
+
+Form : WOForm {
+}
+
+CanChange: WOConditional {
+	condition = cantEdit;
+	negate = true;
+}
+
+CanDelete: WOConditional {
+	condition = canDelete;
+}
+
+Save: WOSubmitButton {
+	action = save;
+	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+DeleteButton: WOGenericElement {
+	value = application.strings.Reusables_Strings.uiElements.Delete;
+	invokeAction = delete;
+	onclick = session.confirmMessage;
+	elementName = "input";
+	type = "button";
+}
+
+
+CourseSelected : WOConditional {
+  condition = fromCourse;
+}
+
+FromCourseSubject : WOString {
+  value = fromCourse.subjectWithComment;
+  escapeHTML = false;
+}
+
+FromCourseTeacher : PersonDisplay {
+  person = fromCourse.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+}
+ValueField : WOTextField {
+  value = value;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event,false);";
+  size = 2;
+  maxlength = 2;
+  style = "text-align:center;";
+}
+
+ValueTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.titles.varSubValue;
+  escapeHTML = false;
+}
+
+CoursesList : WOGenericContainer {
+  elementName = "tbody";
+  id = "selectCourse";
+  style = listStyle;
+}
