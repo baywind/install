@@ -10,13 +10,13 @@ CREATE TABLE CNT_CONTACT (
   PERSON_ID int NOT NULL,
   CNT_TYPE smallint NOT NULL,
   PRIMARY KEY (CON_ID)
-);
+) ENGINE=InnoDB;
 
 CREATE TABLE CNT_TYPE (
   CT_ID smallint NOT NULL,
   TYPE_NAME varchar(28),
   UTILISER_CLASS varchar(255),
   PRIMARY KEY (CT_ID)
-);
+) ENGINE=InnoDB;
 INSERT INTO CNT_TYPE VALUES (1,'e-mail','net.rujel.contacts.EMailUtiliser');
 

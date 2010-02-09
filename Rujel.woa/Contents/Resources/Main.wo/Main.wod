@@ -34,10 +34,11 @@ Body : WOBody {
 }
 
 HelpImage : WOImage {
-  framework = "RujelBase";
-  filename = "help.png";
+  framework = "app";
+  filename = "EKJmono.gif";
   style="border:none;";
   height=24;
+  width=32;
   alt="Help";
 }
 
@@ -92,4 +93,8 @@ Guest : WOGenericElement {
   type = "submit";
   value = application.strings.Strings.login.Guest;
   onclick="guest();";
+}
+
+Version : WOString {
+  value = version;
 }

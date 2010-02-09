@@ -210,17 +210,13 @@ ChooseCurrTeacher : OnClickContainer {
 TeacherCell : OnClickContainer {
   elementName = "td";
   invokeAction = selectTeacher;
-  onclick = session.checkRun;
+  onclick = teacherOnClick;
   class = teacherRowClass;
 }
 
-CurrTeacherName : PersonDisplay {
-  person = currTeacher;
-  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
-  startWithLast = true;
-  last = 2;
-  first = 1;
-  second = 1;
+CurrTeacherName : WOString {
+  value = currTeacherName;
+  escapeHTML = false;
 }
 
 SelectorTitle : WOString {

@@ -7,7 +7,7 @@
 	<key>login</key>
 	<dict>
 		<key>descript</key>
-		<string>&lt;span style=&quot;white-space:nowrap;&quot;&gt;Электронная система&lt;/span&gt; классных Журналов &lt;span style=&quot;white-space:nowrap;&quot;&gt;на Русском языке&lt;/span&gt;</string>
+		<string>Электронный классный журнал</string>
 		<key>username</key>
 		<string>Имя</string>
 		<key>password</key>
