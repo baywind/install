@@ -622,7 +622,7 @@
 			<key>teacher</key>
 			<string>teacher</string>
 			<key>any</key>
-			<string>any</string>
+			<string>*</string>
 		</dict>
 		<key>allowNone</key>
 		<string>false</string>

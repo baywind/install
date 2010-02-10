@@ -209,11 +209,20 @@
 
 </li><li><strong>authentication</strong> - тип аутентикации LDAP (по умолчанию - "simple")
 
+</li><li><strong>baseDN</strong> - корневой элемент дерева LDAP (если не указан, пытается найти самостоятельно)
+
 </li><li><strong>proxyUserDn</strong> - имя пользователя LDAP, под которым РУЖЭЛЬ будет искать подключившегося пользователя (по умолчанию анонимно)
 
 </li><li><strong>proxyPassword</strong> - пароль пользователя LDAP для РУЖЭЛЬ (см. выше)
 
-</li><li><strong>groupAttribute</strong> - поле LDAP, содержащее список групп (по умолчанию - "securityEquals")
+</li><li><strong>uidAttribute</strong> - поле LDAP, по которому идентифицируется пользователь (по умолчанию - "uid", для eDirectory - "cn")
+
+</li><li><strong>presentAttribute</strong> - поле LDAP, в котором хранится полное имя пользователя (по умолчанию - "cn", для eDirectory - "fullName")
+	<div>можно перечислить через пробел несколько полей</div>
+
+</li><li><strong>groupAttribute</strong> - поле LDAP, содержащее список групп (для eDirectory - "securityEquals")
+
+</li><li><strong>memberAttribute</strong> - атрибут группы, в котором хранится имя ее члена (для posix-группы - "memberUid")
 
 </li><li><strong>useSSL</strong> - использовать ли SSL-шифрование при подключении к серверу (по умолчанию - false)
 

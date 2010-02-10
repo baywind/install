@@ -266,11 +266,6 @@ LessonsLink : WOString {
   escapeHTML = false;
 }
 
-CoursesCSS : ResourceLink {
-  cssLink = "courses.css";
-  framework = "app";
-}
-
 TickCount : WOTextField {
   value = selectedStudents.count;
   disabled = true;
