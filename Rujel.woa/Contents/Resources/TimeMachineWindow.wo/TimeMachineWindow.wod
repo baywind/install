@@ -1,7 +1,3 @@
-Conditional1: WOConditional {
-	condition = application.prefs.ui.allowTimeMachine;
-}
-
 Form1: WOForm {
 	onsubmit = "return tryLoad();";
 	action = ^action;

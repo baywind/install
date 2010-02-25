@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Введение</title>
+	<style type="text/css">
+		h1, h2 {
+		  text-align:center;
+		 }
+	</style>
+</head>    
+<body>
+<h1>Синтаксис настроек</h1>
+<p></p>
+<p>Настройки обычно размещаются в директории LOCALROOT/Library/WebObjects/Configuration в виде файлов с расширением <strong>.plist</strong>&nbsp;&mdash; XML-файлы в кодировке UTF-8 (//Apple//DTD PLIST 1.0). Это файл rujel.plist и файлы в папках <strong>modules</strong>, хранящие настройки различных модулей РУЖЭЛЬ.</p>
+<p>Эти файлы можно корректировать в любом редакторе для простых текстов. Для удобства можно использовать редакторы с подсветкой тегов или выделением ключевых значений. Добавить удобства могут различные редакторы XML. Также существуют специализированные редакторы plist, например, можно использовать бесплатные программы:
+</p> 
+<ul><li>в Mac OS X :
+<ul><li>Property List Editor из пакета XCode
+</li><li> <a href="http://www.nightproductions.net/prefsetter.html" target="_blank">Pref Setter</a> от независимых разработчиков
+</li><li>в интернете можно найти много других вариантов
+</li></ul>
+
+</li><li>для Windows мы смогли найти два решения:
+<ul>
+<li><a href="http://www.icopybot.com/blog/category/plist-editor-windows" target="_blank">от iCopyBot</a> (бывший iPodRobot)</li>
+<li><a href="http://cazisoft.com/2008/property-list-plist-editor-for-windows" target="_blank">от CaziSoft</a></li>
+</ul></li>
+</ul>
+<p>
+Настройки хранятся в иерархической структуре. Уровни иерархии размечаются при помощи &laquo;словарей&raquo; - тегов &lt;dict&gt;
+</p><p>
+Каждая настройка представляет собой пару &laquo;ключ-значение&raquo; в двух последовательных строках:</p>
+<ol>
+<li><strong>Имя ключа</strong> - заключено в теги &lt;key&gt;</li>
+<li><strong>Значение ключа</strong> - заключено в теги, обозначающие тип данных (обычно &lt;string&gt;, либо &lt;dict&gt;, если это подраздел) </li>
+<div style = "font-family:monospace;border:1px solid #999999;">
+&lt;key&gt;названиеРаздела&lt;/key&gt;<br/>
+&lt;dict&gt;
+<div style = "padding-left:2em;">
+&lt;key&gt;имяКлюча&lt;/key&gt;<br/>
+&lt;string&gt;значение ключа&lt;/string&gt;<br/>
+&lt;key&gt;другойКлюч&lt;/key&gt;<br/>
+&lt;string&gt;другое значение&lt;/string&gt;</div>
+&lt;/dict&gt;
+</ol>
+<p>
+В дальнейшем для обозначения имени ключа (<em>key</em>) с учетом его вложенности будем пользоваться обозначением &laquo;ключевого пути&raquo; (<em>keyPath</em>), используя точку. Например, путь <tt>auth.ldap.useSSL</tt> означает: ключ <tt>useSSL</tt> в словаре <tt>ldap</tt>, который вложен в словарь <tt>auth</tt>.
+<h2>Модули</h2>
+<p>Модульные настройки представляют собой такие же plist файлы, как о сновной rujel.plist, размещенные в папке <strong>modules</strong>. В них для удобства вынесены группы параметров, которые настраиваются независимо от других. Также некоторые из них отвечают за подключение программных модулей РУЖЭЛЬ. Для подключения и отключения модулей достаточно поместить или удалить из папки <strong>modules</strong> соответствующий файл.</p>
+<p>По структуре разделов эти файлы идентичны основному rujel.plist , но в корневом уровне модульных настроек могут быть параметры (vенять эти параметры не следует)</p>
+<ul><li><strong>moduleClass</strong> - имя класса Java, отвечающего за загрузку модуля
+</li><li><strong>sort</strong> - ответственный за порядок загрузки модулей.
+</li></ul>
+<p>Основные разделы настройки, которые встречаются в разных модулях:</p>
+<ul><li><strong>auth</strong> - авторизация пользователей и права доступа (auth.access)
+</li><li><strong>dbConnection</strong> - подключение к базе данных
+</li><li><strong>edu</strong> - настройки учебных параметров
+</li><li><strong>ui</strong> - параметры пользовательского интерфейса
+</li><li><strong>interfaces</strong> - какие классы Java используются для реализации каких интерфейсов. Этот раздел встречается в модулях, содержащих те самые классы
+</ul>
+<p>Некоторые модули могут требовать предварительной настройки, например: 
+<ul><li>адреса серверов, 
+</li><li>имена и пароли для доступа к базе данных,  
+</li><li>параметры подключения LDAP  
+</li><li>параметры отправки электронной почты.
+</ul></li>
+</p>
+<p>Модули загружаются поочередно в порядке возрастания значения sort. При совпадении описываемых параметров, значения в модулях, загружаемых позднее (sort больше), перезаписывают ранее установленные параметры. Все модули загружаются позднее rujel.plist.</p>
+</body>
+</html>

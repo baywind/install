@@ -43,7 +43,7 @@ CheckAll: WOGenericElement {
 	title = application.strings.RujelBase_Base.Ticker.selectAll;
 	id="checkAll";
 	onclick="setAll(true);checked=defaultChecked;";
-	checked = true;
+	checked = "checked";
 }
 
 ToggleSpan: WOGenericContainer {
@@ -70,4 +70,9 @@ FormIdentifier: WOString {
 All: WOString {
 	value = ^all;
 	valueWhenEmpty = "null";
+}
+
+JSLink : ResourceLink {
+  framework = "RujelBase";
+  jsLink = "ticker.js";
 }

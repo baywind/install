@@ -67,3 +67,30 @@ EduYear : WOString {
   value = eduYear;
   escapeHTML = false;
 }
+
+StudentDiv : WOGenericContainer {
+  elementName = "div";
+  class = "studentContainer";
+  style = stDivStyle;
+  id = context.componentActionURL;
+  invokeAction = loadStudent;
+}
+
+AllowAjax : WOConditional {
+  condition = allowAjax;
+}
+
+NoAjax : WOConditional {
+  condition = allowAjax;
+  negate = true;
+}
+
+Body : WOGenericContainer {
+  elementName = "body";
+  onload = onLoad;
+}
+
+JsLink : ResourceLink {
+  framework = "app";
+  jsLink = "scripts.js";
+}

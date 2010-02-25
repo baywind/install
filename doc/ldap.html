@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Настройка LDAP</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+<body>
+<h1>Настройка LDAP</h1>
+<p style = "font-size:large;">Файл <strong>LDAP_имя.plist</strong></p>
+<p>актуальный раздел: <span class="node">auth</span></p>
+<ul>
+<li><strong>loginHandlerClass</strong> - имя класса java, который используется для аутентикации пользователей: 
+<strong>net.rujel.auth.ldap.LdapAuthentication</strong>
+
+<li><span class="node toEdit">auth.groupMapping</span> - установка соответствия условного названия группы пользователей, ипользуемой для настройки прав, реальному названию группы в LDAP.
+<div>В качестве ключа записи используется условное имя группы (teacher, zavuch...), в качестве значения - имя группы в LDAP.</div>
+<div>Если <tt>groupMapping</tt> не заполнен, или в нем отсутствует условное имя группы, то конверсии не проиходит - заданное имя считается реальным.</div>
+</li>
+
+<li><span class="node">auth.ldap</span> - подраздел для настройки подключения LDAP (для net.rujel.auth.ldap.LdapAuthentication)
+<p>При использовании LDAP, аутентикация пользователя происходит по имени и паролю на сервере LDAP. Группы пользователя для выяснения прав доступа определяются LDAP-атрибутом securityEquals, если иного не указано в настройке groupAttribute. Пользователь считается членом всех групп-контейнеров LDAP по иерархии своего полного distinguished name(dn) и полных dn своих securityEquals.</p>
+<ul>
+<li><strong class="toEdit">providerUrl</strong> - URL-адрес сервера LDAP
+</li>
+<li><strong>authentication</strong> - тип аутентикации LDAP (по умолчанию - "simple")
+</li>
+<li><strong>baseDN</strong> - корневой элемент дерева LDAP (если не указан, пытается найти самостоятельно)
+</li>
+<li><strong>proxyUserDn</strong> - имя пользователя LDAP, под которым РУЖЭЛЬ будет искать подключившегося пользователя (по умолчанию анонимно)
+</li>
+<li><strong>proxyPassword</strong> - пароль пользователя LDAP для РУЖЭЛЬ (см. выше)
+</li>
+<li><strong>uidAttribute</strong> - поле LDAP, по которому идентифицируется пользователь (по умолчанию - "uid")
+</li>
+<li><strong>presentAttribute</strong> - поле LDAP, в котором хранится полное имя пользователя (по умолчанию - "cn")
+	<div>можно перечислить через пробел несколько полей, тогда просматриваются все они, пока не будет обнаружено непустое значение</div>
+</li>
+<li><strong>groupAttribute</strong> - поле LDAP, содержащее список групп
+</li>
+<li><strong>memberAttribute</strong> - атрибут группы, в котором хранится имя ее члена (для posix-группы - "memberUid")
+</li>
+<li><strong>fullMemberDN</strong> - если имя члена группы хранится в виде fullDN (по умолчанию - "false")
+</li>
+<li><strong>useSSL</strong> - использовать ли SSL-шифрование при подключении к серверу (по умолчанию - false)
+</li>
+<li><strong>socketFactory</strong> - имя класса SocketFactory (если отличается от стандартного LdapSocketFactory)
+</li>
+<li><span class="node">auth.ldap.ssl</span> - подраздел для настройки шифрования SSL <a href ="http://java.sun.com/j2se/1.4.2/docs/guide/security/jsse/JSSERefGuide.html" target="_blank"> (документация)</a>
+<ul>
+<li><strong>protocol</strong> - протокол шифрования: SSL, TLS (по умолчанию - "SSL")
+</li>
+<li><strong>trustAny</strong> - не проверять подлинность сертификата сервера LDAP. <div>Эта настройка полезна, когда сертификат Вашего сервера не подписан международной authority.</div>
+</li>
+<li><strong>customKeystore</strong> - местоположение файла с установленными сертификатами, если Вы все же хотите их проверять. Файл хранилища сертификатов в формате <strong>java.security.KeyStore</strong>
+</li>
+<li><strong>keystorePassphrase</strong> - пароль файла хранилища сертификатов
+
+</li></ul>
+</li></ul>
+</li>
+
+</ul>
+</body>
+</html>

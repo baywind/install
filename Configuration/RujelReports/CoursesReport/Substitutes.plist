@@ -14,10 +14,8 @@
 	<string>35</string>
 	<key>active</key>
 	<false/>
-	<key>checkAccess</key>
-	<array>
-		<string>Substitute</string>
-	</array>
+	<key>entity</key>
+	<string>Substitute</string>
 	<key>value</key>
 	<dict>
 		<key>className</key>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.complete.CompleteModule</string>
+	<key>edu</key>
+	<dict>
+		<key>studentsCompleteDir</key>
+		<string>/tmp/complete/students</string>
+		<key>coursesCompleteDir</key>
+		<string>/tmp/complete/courses</string>
+	</dict>
+</dict>
+</plist>

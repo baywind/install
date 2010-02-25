@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.base.BaseModule</string>
+	<key>sort</key>
+	<string>30</string>
+	<key>interfaces</key>
+	<dict>
+		<key>EduLesson</key>
+		<string>net.rujel.base.BaseLesson</string>
+	</dict>
+</dict>
+</plist>

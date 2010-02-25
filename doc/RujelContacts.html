@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>RujelContacts</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+</head>    
+<body>
+<h1>Контактные данные (рассылка e-mail)</h1>
+<p style = "font-size:large;">Файл <strong>RujelContacts.plist</strong></p>
+<p style = "color:#cc6666;">Описание в процессе доработки.</p>
+<ul>
+	<li>moduleClass</li>
+	<li>sort</li>
+	<li class = "node">dbConnection</li>
+	<ul></ul>
+	<li><span class = "node">mail</span> - Настройки почтовой рассылки</li>
+<ul>
+<li><strong class="toEdit">smtpServerURL</strong> - URL-адрес SMTP-сервера, через который будет отправляться почта
+</li>
+<li><strong>secure</strong> - нужно ли использовать шифрованную передачу данных (start TLS)
+</li>
+<li><strong class="toEdit">smtpUser</strong> - имя пользователя для авторизации на SMTP-сервере</li>
+<li><strong class="toEdit">smtpPassword</strong> - пароль пользователя
+</li>
+<li><strong class="toEdit">mailFrom</strong> - значение для заголовка письма "От"
+</li>
+<li><strong>replyTo</strong> - значение для заголовка письма "Ответить"
+</li>
+<li><strong>messageLag</strong> - задержка в миллисекундах между отправкой последовательных сообщений
+</li>
+<li><strong>messageFilePath</strong> - путь до файла с текстом тела письма при автоматической рассылке
+</li>
+<li><strong>dontSend</strong> - не отправлять письма (для тестового режима)
+</li>
+<li><strong>writeToFile</strong> - сохранять в файл письмо, которое должно быть отправлено (для отладки)
+</li>
+<li><strong>writeFileDir</strong> - путь до папки, в которую сохранять письма
+</li>
+<li><strong class="toEdit">broadcastWeekday</strong> - день недели, в который проводится автоматическая рассылка <br/>(в американском формате: 1 = воскресенье , 7 = суббота)</li>
+<li><strong>broadcastTime</strong> - время автоматической рассылки (по умолчанию 5:30)
+
+</li></ul>
+
+</body>
+</html>

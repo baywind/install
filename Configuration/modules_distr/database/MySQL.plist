@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>dbConnection</key>
+	<dict>
+		<key>serverURL</key>
+		<string>jdbc:mysql://127.0.0.1/</string>
+		<key>urlSuffix</key>
+		<string>?capitalizeTypeNames=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull</string>
+		<key>username</key>
+		<string>rujel</string>
+		<key>password</key>
+		<string></string>
+		<key>prototypes</key>
+		<string>MySQL</string>
+	</dict>
+</dict>
+</plist>

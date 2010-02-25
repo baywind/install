@@ -122,6 +122,8 @@
 			<string>Текущая успеваемость</string>
 			<key>id</key>
 			<string>recentMarks</string>
+			<key>allowAjax</key>
+			<true/>
 		</dict>
 		<key>showMarks</key>
 		<string>Показать оценки</string>

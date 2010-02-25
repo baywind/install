@@ -1,9 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
     <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="generator" content="WebObjects 5.3.1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="generator" content="WebObjects 5.3.1" />
         <title><webobject name="Title"></webobject></title>
 	<style type="text/css">
 	.student {
@@ -25,10 +24,45 @@
 		font-size:60%;
 	}
 	</style>
-    </head>
-    <body>
+<webobject name = "AllowAjax"><webobject name = "JsLink"/>
+<script type="text/javascript" language="JavaScript">
+
+function load(st) {
+	st.style.display = '';
+	scrollToObj(st);
+	var xmlHttp = ajaxRequest();
+    xmlHttp.onreadystatechange=function() {
+    	if(xmlHttp.readyState==4) {
+    		var nd = st.getElementsByTagName('p')[0].parentNode;
+    		nd.innerHTML = xmlHttp.responseText;
+    		nd = st.nextSibling;
+    		while(nd != null) {
+    			if(nd.className == 'studentContainer') {
+    				load(nd);
+    				break;
+    			}
+    			nd = nd.nextSibling;
+    		}
+    	}
+	}
+    xmlHttp.open("GET",st.id,true);
+    xmlHttp.send(null);
+}
+
+function onLoad(bd) {
+	var nds = document.getElementsByTagName('div');
+	for(var i = 0; i < nds.length; i++) {
+		if(nds[i].className == 'studentContainer') {
+			load(nds[i]);
+			break;
+		}
+	}
+}
+</script></webobject>
+</head>
+<webobject name = "Body">
 	<webobject name="AllStudents">
-	<div style="page-break-after:always;">
+	<webobject name = "StudentDiv">
 	<div style = "float:right;font-size:large;"><webobject name = "EduYear"/></div>
 	<h1><webobject name="Title"></webobject></h1>
     <div class="student"><webobject name = "StudentTitle"/> : 
@@ -37,16 +71,16 @@
     </div>
 <webobject name="Conditional1"><div class="dates"><webobject name="Since"></webobject>
         - <webobject name="To"></webobject></div></webobject>
-        
-<webobject name="StudentMarks"></webobject>
-<br clear = "all">
+        <webobject name = "AllowAjax"><div><p style = "text-align:center;background-color:#999999;">
+        Loading...</p></div></webobject><webobject name = "NoAjax">
+<webobject name="StudentMarks"></webobject></webobject>
+<br clear = "all" />
 <table border="0" width="100%" style="margin:2ex 0;">
 <tr><td align="left" width="50%">
 	<webobject name="Tutor"></webobject>
 </td><td align="left" width="50%">
 	<webobject name="Parent"></webobject>
 </td></tr></table>
-</div>
+</webobject></webobject>
 </webobject>
-</body>
 </html>

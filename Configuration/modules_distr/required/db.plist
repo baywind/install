@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>dbConnection</key>
+	<dict>
+		<key>BaseYearly</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>BaseStatic</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelStatic</string>
+		</dict>
+		<key>yearTag</key>
+		<string>true</string>
+	</dict>
+</dict>
+</plist>

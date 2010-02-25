@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>auth</key>
+	<dict>
+		<key>accessHandlerClass</key>
+		<string>net.rujel.auth.PrefsAccessHandler</string>
+		<key>access</key>
+		<dict>
+			<key>default</key>
+			<dict>
+				<key>root</key>
+				<string>1023</string>
+				<key>zavuch</key>
+				<string>127</string>
+				<key>zav_kaf</key>
+				<string>7</string>
+				<key>teacher</key>
+				<string>3</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

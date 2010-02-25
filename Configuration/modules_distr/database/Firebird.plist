@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>dbConnection</key>
+	<dict>
+		<key>serverURL</key>
+		<string>jdbc:firebirdsql://localhost/path/to/folder/holding/datatbases</string>
+		<key>urlSuffix</key>
+		<string>?lc_ctype=UNICODE_FSS</string>
+		<key>driver</key>
+		<string>org.firebirdsql.jdbc.FBDriver</string>
+		<key>username</key>
+		<string>sysdba</string>
+		<key>password</key>
+		<string>masterkey</string>
+		<key>prototypes</key>
+		<string>Firebird</string>
+	</dict>
+</dict>
+</plist>

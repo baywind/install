@@ -42,7 +42,7 @@ WeightTitle: WOString {
 
 WorkWeight: WOTextField {
 	maxlength = 5;
-	numberformat = "0.##";
+	numberformat = "0.####";
 	size = 3;
 	value = dict.trimmedWeight;
 	style = "text-align:center;";

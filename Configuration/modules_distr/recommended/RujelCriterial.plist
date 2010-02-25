@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.criterial.ModuleInit</string>
+	<key>sort</key>
+	<string>20</string>
+	<key>dbConnection</key>
+	<dict>
+		<key>Criterial</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelYear%s</string>
+		</dict>
+		<key>CriterialStatic</key>
+		<dict>
+			<key>dbName</key>
+			<string>RujelStatic</string>
+		</dict>
+	</dict>
+	<key>interfaces</key>
+	<dict>
+		<key>EduLesson</key>
+		<string>net.rujel.criterial.Work</string>
+	</dict>
+</dict>
+</plist>

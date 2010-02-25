@@ -1,12 +1,12 @@
 AddButton: WOSubmitButton {
 	value = application.strings.Reusables_Strings.uiElements.Add;
 	onclick = "changed=false;ajaxPost(this);";
-	disabled = access._create;
+	disabled = session.readAccess._create.Work;
 	action = addWork;
 }
 
 AllowEdit: WOConditional {
-	condition = access.edit;
+	condition = currLesson;
 }
 
 CanEdit: WOConditional {
@@ -17,13 +17,12 @@ CanMove: WOString {
 	value = canMove;
 }
 
-Conditional1: WOConditional {
-	condition = ^currLesson.access.delete;
+CanDelete: WOConditional {
+	condition = access.delete;
 }
 
-
-Conditional3: WOConditional {
-	condition = ^currLesson.access.edit;
+CanSave: WOConditional {
+	condition = access.edit;
 }
 
 CritHead: WOGenericContainer {
@@ -51,7 +50,7 @@ CurrAnnounceDateField: WOTextField {
 CurrLessonDateField: WOTextField {
 	size = lessonTitle.length;
 	value = lessonTitle;
-	disabled = lessonItem.access._edit;
+	disabled = session.readAccess._edit.lessonItem;
 	onChange = "checkChanges(this);";
 	onFocus = "if(!tryLoad(false)) blur();";
 	style = "text-align:center;";
@@ -64,7 +63,7 @@ CurrLessonThemeField: WOText {
 	style = "width:100%";
 	rows = 2;
 	value = ^currLesson.theme;
-	disabled = lessonItem.access._edit;
+	disabled = session.readAccess._edit.lessonItem;
 	onChange = "checkChanges(this);";
 	onFocus = "if(!tryLoad(false)) blur();";
 	id = themeFieldID;
@@ -272,4 +271,8 @@ LinkImage : WOImage {
 	align = "right";
 	title = lessonItem.taskUrl;
 	onclick = "window.open(this.title);";
+}
+
+CanAdd : WOConditional {
+  condition = access.create;
 }

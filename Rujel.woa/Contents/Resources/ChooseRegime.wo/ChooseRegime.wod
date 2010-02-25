@@ -77,8 +77,8 @@ ShowJournales : WOConditional {
 }
 
 AllowTimeMachine : WOConditional {
-  condition = application.prefs.ui.allowTimeMachine;
- }
+  condition = allowTimeMachine;
+}
 
 Cross : WOImage {
   framework = "RujelBase";
@@ -94,7 +94,5 @@ FlushRow: OnClickContainer {
 	elementName = "tr";
 	onclick = session.tryLoad;
 	invokeAction = flush;
-}
-IsAdmin : WOConditional {
-  condition = session.readAccess.edit.login;
+	hide = session.readAccess._edit.Maintenance;
 }

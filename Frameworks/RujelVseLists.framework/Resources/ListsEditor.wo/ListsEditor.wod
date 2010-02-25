@@ -188,3 +188,23 @@ DictCount : WOString {
   value = count;
   numberformat = "0";
 }
+
+UploadForm : WOForm {
+  target = "_blank";
+  enctype = "multipart/form-data";
+}
+
+FileUpload : WOFileUpload {
+  inputStream = uploadStream;
+  filePath = uploadDict.filePath;
+  mimeType = uploadDict.mimeType;
+}
+
+SubmitUpload : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+}
+
+SubmitButton : WOSubmitButton {
+  action = upload;
+}

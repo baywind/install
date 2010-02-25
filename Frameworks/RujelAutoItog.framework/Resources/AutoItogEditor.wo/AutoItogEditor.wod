@@ -59,7 +59,7 @@ FormulaPopUp : WOPopUpButton {
   displayString = item.title;
   noSelectionString = session.strings.RujelAutoItog_AutoItog.manual;
   disabled = cantChange;
-  onchange = "if(selectedIndex==0){form.bset.selectedIndex=0;form.bset.disabled=true;form.manualBox.checked=true;form.manualBox.disabled=true;}else{form.bset.disabled=false;form.manualBox.disabled=false;}";
+  onchange = "if(selectedIndex==0){form.bset.selectedIndex=0;form.bset.disabled=true;form.manualBox.checked=true;form.manualBox.disabled=true;}else{form.bset.disabled=false;form.manualBox.disabled=false;form.recalculate.checked=true;}";
 }
 
 BSetPopUp : WOPopUpButton {
@@ -70,6 +70,7 @@ BSetPopUp : WOPopUpButton {
   noSelectionString = session.strings.RujelAutoItog_AutoItog.ui.noBSet;
   disabled = disableManual;
   name = "bset";
+  onchange = "form.recalculate.checked=true;";
 }
 
 ManualBox : WOCheckBox {
@@ -148,4 +149,14 @@ Form : WOForm {
 
 Exists : WOConditional {
   condition = autoItog;
+}
+
+RecalculateBox : WOCheckBox {
+  checked = recalculate;
+  name = "recalculate";
+}
+
+RecalculateTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.ui.recalculate;
+  escapeHTML = false;
 }

@@ -48,13 +48,14 @@
     <td><webobject name="CritMaximum"></webobject></td></webobject></webobject></tr>
     </webobject></webobject></tbody>
 </table>
-<webobject name="AllowEdit"><p align="center">
-<webobject name = "IsNew">
+<p align="center">
+<webobject name="AllowEdit"><webobject name = "IsNew">
     <script language = "JavaScript">
     	loading = false;
     	ajaxPopupAction('<webobject name = "OpenIspector"/>',null);
     </script></webobject>
-    <webobject name="Conditional3"><webobject name="SaveButton"></webobject>&nbsp; &nbsp;</webobject>
-<webobject name="AddButton"></webobject><webobject name="Conditional1">&nbsp; &nbsp;
-<webobject name="DeleteButton"></webobject></webobject>
-</p></webobject>
+    <webobject name="CanSave"><webobject name="SaveButton"></webobject>&nbsp; &nbsp;</webobject>
+<webobject name="CanDelete">
+<webobject name="DeleteButton"/>&nbsp; &nbsp;</webobject></webobject><webobject name = "CanAdd">
+<webobject name="AddButton"/></webobject>
+</p>

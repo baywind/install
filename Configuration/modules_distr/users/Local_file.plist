@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>auth</key>
+	<dict>
+		<key>loginHandlerClass</key>
+		<string>net.rujel.auth.PrefsDrivenUser</string>
+		<key>guestUser</key>
+		<string>guest</string>
+		<key>guestPassword</key>
+		<string></string>
+		<key>groupMapping</key>
+		<dict>
+			<key>any</key>
+			<string>*</string>
+		</dict>
+		<key>usersList</key>
+		<dict>
+			<key>root</key>
+			<dict>
+				<key>fullName</key>
+				<string>Super User</string>
+				<key>givenName</key>
+				<string>Admin</string>
+				<key>password</key>
+				<string>god</string>
+				<key>sn</key>
+				<string>Super</string>
+			</dict>
+			<key>guest</key>
+			<dict/>
+			<key>teacher</key>
+			<dict>
+				<key>password</key>
+				<string>123</string>
+			</dict>
+			<key>tutor</key>
+			<dict>
+				<key>groups</key>
+				<string>teacher</string>
+				<key>password</key>
+				<string>123</string>
+			</dict>
+			<key>zavuch</key>
+			<dict>
+				<key>groups</key>
+				<string>teacher;tutor;zav_kaf</string>
+				<key>password</key>
+				<string>123</string>
+			</dict>
+			<key>zav_kaf</key>
+			<dict>
+				<key>groups</key>
+				<string>teacher</string>
+				<key>password</key>
+				<string>123</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

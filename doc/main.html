@@ -1,0 +1,35 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Описание файла настройки rujel.plist</title>
+        
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+        
+    </head>
+    
+<body>
+<h1>Общие настройки</h1>
+<p style = "font-size:large;">Файл <strong>rulel.plist</strong></p>
+<ul>
+<li><strong class="toEdit">schoolName</strong> - Название ОУ для отображения на странице ввода пароля</li>
+<li><strong>schoolNumber</strong> - числовой идентификатор ОУ.
+<div>Используется для размещения нескольких школ на одном сервере. Этот номер должен совпадать с номером SCHOOL_NUM в базе данных в таблицах RujelStatic.PL_CYCLE и RujelYear%s.CU_REASON</div>
+</li>
+<li><strong>loggingProperties</strong> - указывает на расположение файла настройки лога. Если не указан, используются системные настройки лога Java.
+Данный файл форматируется в соответствии со спецификацией <a href="http://java.sun.com/j2se/1.5.0/docs/guide/logging/overview.html" target="_blank">Java logging</a></li>
+<li><strong>diaryLogging</strong> - аналогично указывает на настройки лога дневника
+</li>
+<li><span class = "node">edu</span> - Настройки параметров учебного процесса</li>
+<div style = "font-style:italic;">Большинство настроек из этого раздела будут перенесены в таблицу базы данных RujelStatic.BASE_SETTINGS</div>
+<ul>
+<li><strong>minGrade, maxGrade</strong> - минимальный и максимальный номера потока, которые должны отображаться в учебном плане
+</li>
+<li><strong>newYearMonth, newYearDay</strong> - месяца и дата (в числовом виде), которые определяют границу учебного года (по умолчанию, 1 июля)
+</li>
+</ul>
+</ul>
+</body>
+</html>

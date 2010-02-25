@@ -40,6 +40,7 @@ CourseComment: WOString {
 Form2: WOForm {
 	target = "_blank";
 	multipleSubmit = true;
+	method = session.formMethod;
 }
 
 HasClass: WOConditional {
@@ -100,6 +101,7 @@ PageWrapper1: PageWrapper {
 	scriptURL = present.scriptURL;
 	scriptResource = present.scriptResource;
 	resourcesFramework = present.framework;
+	styles = ".student{font-size:large; font-weight:bold; padding-left:2em;}; .dates {padding-left:3em; font-style:italic; white-space:nowrap;};";
 }
 
 PeriodSelector: PeriodSelector {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.contacts.EMailBroadcast</string>
+	<key>mail</key>
+	<dict>
+		<key>smtpServerURL</key>
+		<string>smtp.example.com</string>
+		<key>smtpUser</key>
+		<string>username</string>
+		<key>smtpPassword</key>
+		<string></string>
+		<key>mailFrom</key>
+		<string>&quot;RUJEL&quot;&lt;mailer-daemon@example.com&gt;</string>
+		<key>messageLag</key>
+		<string>1000</string>
+		<key>messageFilePath</key>
+		<string>CONFIGDIR/message.txt</string>
+		<key>dontSend</key>
+		<string>false</string>
+		<key>broadcastWeekday</key>
+		<string>6</string>
+	</dict>
+	<key>dbConnection.Contacts</key>
+	<dict>
+		<key>skip</key>
+		<string>false</string>
+	</dict>
+</dict>
+</plist>

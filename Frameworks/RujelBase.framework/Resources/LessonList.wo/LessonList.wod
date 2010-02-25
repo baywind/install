@@ -174,10 +174,6 @@ CurrLessonHomeTaskField: WOText {
 	tabindex = 3;
 }
 
-AllowEdit: WOConditional {
-	condition = session.readAccess.edit.parent;
-}
-
 Conditional1: WOConditional {
 	condition = ^currLesson;
 }
@@ -185,6 +181,7 @@ Conditional1: WOConditional {
 SaveButton: WOSubmitButton {
 	action = ^save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
+	disabled = access._edit;
 }
 
 DeleteButton: WOGenericElement {
@@ -226,8 +223,7 @@ DateCell : WOGenericContainer {
 }
 
 CanCreate : WOConditional {
-  condition = ^access._createLesson;
-  negate = true;
+  condition = access.create;
 }
 
 ShowAdd : WOSubmitButton {
@@ -242,6 +238,10 @@ TaskCell : WOGenericContainer {
   invokeAction = popupHomeTask;
 }
 
+CanSave: WOConditional {
+	condition = access.edit;
+}
+
 CanDelete : WOConditional {
-  condition = session.readAccess.delete.currLesson;
+  condition = access.delete;
 }

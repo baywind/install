@@ -34,8 +34,6 @@
 		<string>расформирован в</string>
 		<key>eduYear</key>
 		<string>учебном году</string>
-		<key>as</key>
-		<string>текущий поток</string>
 	</dict>
 	<key>editorTabs</key>
 	<array>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Настройка пользователей</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+</head>    
+<body>
+<h1>Настройка пользователей</h1>
+<p style = "font-size:large;">Файл <strong>Local_file.plist</strong></p>
+<p>актуальный раздел: <span class="node">auth</span></p>
+<ul>
+<li><strong>loginHandlerClass</strong> - имя класса java, который используется для аутентикации пользователей: 
+<strong>net.rujel.auth.PrefsDrivenUser</strong>
+
+<li><span class="node">auth.usersList</span> - подраздел со списком пользователей (для net.rujel.auth.PrefsDrivenUser)
+<div>Каждый подраздел этого раздела носит имя пользователя (login). Основные параметры пользователя:</div>
+<ul>
+<li><strong>password</strong> - пароль (хранится в нешифрованном виде, поэтому лучше используйте LDAP)
+</li>
+<li><strong>groups</strong> - список групп пользователя (для определения прав доступа). 
+<ul><li>список разделяется точкой с запятой (;) </li>
+<li>вместо имени группы может быть имя другого пользователя, как эквивалент прав доступа
+</li></ul>
+</li></ul>
+</li>
+</ul>
+</body>
+</html>

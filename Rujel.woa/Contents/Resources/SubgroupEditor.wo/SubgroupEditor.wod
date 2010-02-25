@@ -74,6 +74,7 @@ CheckBox1: WOCheckBox {
 	checked = isInSubgroup;
 	onclick = onClick;
 	name = "cb";
+	disabled = access._edit;
 }
 
 SaveButton: WOSubmitButton {
@@ -100,4 +101,8 @@ CSSLink: WOResourceURL {
 
 JSLink: WOResourceURL {
 	filename = "scripts.js";
+}
+
+CanEdit : WOConditional {
+  condition = access.edit;
 }

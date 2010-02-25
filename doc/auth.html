@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Авторизация</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+</head>    
+<body>
+<h1>Настройки авторизации</h1>
+<p style = "font-size:large;">Файл <strong>auth.plist</strong></p>
+<p>актуальный раздел: <span class="node">auth</span></p>
+<ul>
+<li><strong>welcomeМessage</strong> - приветсвенное сообщение страницы авторизации
+<div style="font-style:italic;">этот раздел в заготовке превращен в ссылку на параметр <tt style="font-style:normal;">schoolName</tt> в файле rujel.plist</div>
+</li>
+<li><strong>loginPageName</strong> - имя страницы (компонента), на которой осуществляется ввод пароля.
+Не меняйте это значение (&quot;Main&quot;), если не уверены в своих действиях.
+</li>
+<li><strong>loginHandlerClass</strong> - имя класса java, который используется для аутентикации пользователей: 
+<ul><li><strong>net.rujel.auth.PrefsDrivenUser</strong> - хранит список пользователей и их пароли в этом же файле plist в разделе auth.usersList</li>
+<li><strong>net.rujel.auth.ldap.LdapAuthentication</strong> - использует LDAP для аутентикации пользователей
+</li></ul>
+<div>Этот параметр указывается в соответствующем модуле описания пользователей.<br/>
+(<em>если ничего не указано, аутентикация не производится: пользователь без ввода пароля сразу попадает в журнал с полными правами доступа; этот режим можно использовать только при тестировании</em>)</div></li>
+<li><strong>accessHandlerClass</strong> - имя класса java, который используется для определения прав доступа; пока единственный доступный вариант:
+<ul><li>
+<strong>net.rujel.auth.PrefsAccessHandler</strong> - описания прав хранятся в этом же файле plist в разделе auth.access
+</li></ul>
+</li>
+<li><strong>allowNone</strong> - разрешить ли подключение анонимного пользователя (без ввода логина)
+<div>Пока такая возможность не предусматривается, поэтому лучше оставить значение 'false' (по умолчанию 'false').</div>
+</li>
+<li><strong>guestUser / guestPassword</strong> - имя / пароль для пользователя &quot;Гость&quot;.
+<div>Если эти значения указаны, на странице аутентикации будет показана кнопка &quot;Гость&quot;: это позволит просматривать общедоступную информацию из журнала людям без своего логина (например, родителям).</div>
+</li>
+<li><strong><em>(*разные*)</em>Мessage</strong> - тексты сообщений, которые будут выводиться на странице аутентикации.
+</li>
+<li><strong>welcomeAction</strong> - действие, которое будет выполнено после успешной аутентикации пользователя (не меняйте значение &quot;success&quot;, если не уверены в своих действиях)
+</li>
+<li><strong>refuseAction</strong> - действие, которое будет выполнено в случае, если пользователю запрещен доступ в журнал (не меняйте значение &quot;refuse&quot;, если  не уверены в своих действиях; Вы можете отключить этот параметр в пользу следующего)
+</li>
+<li><strong>refuseUrl</strong> - URL-адрес, на который будет переадресован пользователь, если ему запрещен доступ в журнал
+</li>
+<li><strong>useHTTPS</strong> - переходить на использование HTTPS для шифрованной пересылки пароля. Включайте этот режим только если у Вас настроен HTTPS на web-сервере Apache
+</li>
+<li><span class="node">auth.customURL</span> - этот раздел для настройки переадресаций.
+<div>Полезен, если ваш сервер работает одновременно в нескольких сетях. Например, в локальной сети школы и в Интернет.</div>
+<p>В подразделах <strong>secure</strong> и <strong>insecure</strong>: </p>
+<ul><li>ключи - IP-адреса и  маски сетей, с которых подключаются к серверу клиенты, </li>
+<li>значения - URL-адреса сервера для клиентов из этих сетей.
+</li></ul>
+</li>
+</ul>
+
+</body>
+</html>

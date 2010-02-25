@@ -7,7 +7,6 @@
 APPROOT\Resources\Java\
 APPROOT\Resources\Java\rujeldiary.jar
 
-LOCALROOT\Library\Frameworks\Authentication.framework\Resources\Java\authentication.jar
 LOCALROOT\Library\Frameworks\Reusables.framework\Resources\Java\reusables.jar
 LOCALROOT\Library\Frameworks\RujelBase.framework\Resources\Java\rujelbase.jar
 LOCALROOT\Library\Frameworks\RujelCriterial.framework\Resources\Java\rujelcriterial.jar

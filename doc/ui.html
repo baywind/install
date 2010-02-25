@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Настройки интерфейса пользователя</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+</head>    
+<body>
+<h1>Настройки пользовательского интерфейса</h1>
+<p style = "font-size:large;">Файл <strong>ui.plist</strong></p>
+<p>актуальный раздел: <span class="node">ui</span></p>
+<ul>
+<li><strong>allowTimeMachine</strong> - показывать &quot;машину времени&quot; в окне выбора режима (для имитации работы в произвольный день).  По умолчанию: true
+</li>
+<li><strong>dateFormat / shortDateFormat</strong> - форматы даты / краткой даты, применяемые в интерфейсах РУЖЭЛЬ (описываются по принципам java.text.SimpleDateFormat)
+</li>
+<li><strong>defaultDate</strong> - дата, выставляемая автоматически в &quot;машине времени&quot; - применяется для демо режима (если не указано, выставляется текущая дата)
+</li>
+<li><strong>logoutScreen</strong> - URL-адрес, куда переадресуется клиент, при нажатии кнопки &quot;Выход&quot; (если не указано, возвращается на страницу ввода пароля)
+</li>
+<li><strong>redirectTimeout</strong> - время в секундах, по истечении которого пользователь автоматически переадресуется со страницы сообщения (например, сообщения об истекшем времени сессии). По умолчанию: 5сек.
+</li>
+<li><strong>localisationFolder</strong> - путь до папки с локализованными версиями plist файлов
+</li>
+<li><strong>keyValueCacheSize</strong> - настройка кеширования ключей: можно попытаться подобрать величину (целочисленную) для наилучшего быстродействия (если не указано, кеширование отключено)
+</li>
+</ul>
+</body>
+</html>

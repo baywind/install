@@ -105,7 +105,11 @@ mkdir -p $BACKUP/Configuration/
 BACKUPFOLDER=`pwd`/$BACKUP/Configuration
 cd Configuration
 
-CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
+CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration/rujel
+
+if [ ! -e ${CONFIGFOLDER} ] ; then
+    mkdir -p ${CONFIGFOLDER}
+fi
 
 ## Settings
 
@@ -122,9 +126,16 @@ fi
 
 if [ "$ifReset" = "yes" ] ; then
     echo "Installing settings"
-    cd configs
-    updateFolder ${CONFIGFOLDER} $BACKUPFOLDER
-    cd ../logging
+    if [ -e ${CONFIGFOLDER}/rujel.plist ] ; then
+        mv ${CONFIGFOLDER}/rujel.plist $BACKUPFOLDER/
+    fi
+    cp rujel.plist ${CONFIGFOLDER}/
+    if [ -e ${CONFIGFOLDER}/modules ] ; then
+        mv ${CONFIGFOLDER}/modules $BACKUPFOLDER/
+    fi
+    cp -r modules_distr/required ${CONFIGFOLDER}/modules
+    cp modules_distr/recommended/* ${CONFIGFOLDER}/modules/
+    cd logging
         PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
         for f in *.properties ; do
         if [ -f $f ] ; then

@@ -1,0 +1,15 @@
+       	li {margin-top:1ex;
+		}
+        
+		h1, h2 {
+		  text-align:center;
+		 }
+		 
+		 .node {
+		 	font-size: larger;
+		 	text-decoration: underline;
+		 }
+
+		.toEdit {
+			color:#cc0000;
+		}

@@ -87,9 +87,11 @@
 		<key>nullDate</key>
 		<string>Должны быть указаны обе даты - объявления и сдачи работы</string>
 		<key>markValueOverMax</key>
-		<string>Величина оценки по критерию &apos;%s&apos; больше предусмотренного максимума</string>
+		<string>Оценка по критерию &apos;%s&apos; превышает максимум</string>
+		<key>markValueLowerZero</key>
+		<string>Оценка по критерию &apos;%s&apos; меньше нуля</string>
 		<key>maxShouldBeOverZero</key>
-		<string>Максимум по критерию &apos;%s&apos; не может быть меньше нуля</string>
+		<string>Максимум по критерию &apos;%s&apos; должен быть больше нуля</string>
 		<key>unavailbleCriterion</key>
 		<string>Оценка по недоступному критерию</string>
 		<key>oddCriteria</key>
@@ -98,6 +100,10 @@
 		<string>В работе должны быть либо критериальные оценки либо без критериев, но не одновременно.</string>
 		<key>courseHasWorks</key>
 		<string>В этом курсе описаны работы</string>
+		<key>illegalWeight</key>
+		<string>вес работы должен быть в диапазоне от 0 до 99.99</string>
+		<key>illegalScale</key>
+		<string>вес работы должен иметь не более 2 знаков после запятой</string>
 	</dict>
 	<key>worksTab</key>
 	<dict>

@@ -88,6 +88,7 @@ RightTriangle : WOImage {
   filename = "rTri.gif";
   width = 10;
   style = "vertical-align:middle;height:1.6em;";
+  alt = "&gt;";
 }
 
 RegimeCaller : OnClickContainer {
@@ -151,11 +152,11 @@ ConfinmAlert : WOString {
 cross: WOImage {
 	filename = "cross.png";
 	height = 12;
-	binding1 = 0;
 	width = 12;
 	framework = "RujelBase";
 	onclick = "cancelLoading();";
 	style = "position:absolute;top:3px;right:3px;cursor:pointer;";
+	alt = "X";
 }
 
 RGBColor : ResourceLink {

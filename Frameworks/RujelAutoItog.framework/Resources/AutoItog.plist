@@ -147,6 +147,12 @@
 		<string>оставить %</string>
 		<key>recalculate</key>
 		<string>Пересчитать</string>
+		<key>updateStarted</key>
+		<string>Запущено обновление прогнозов</string>
+		<key>updateFinished</key>
+		<string>Обновление прогнозов завершено</string>
+		<key>updateError</key>
+		<string>Произошла ошибка при обновлении прогнозов</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

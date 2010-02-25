@@ -9,12 +9,8 @@ CommentForm: WOForm {
 	style = "display:none;";
 }
 
-Conditional3: WOConditional {
-	condition = access.editSubgroups;
-}
-
 Conditional4: WOConditional {
-	condition = access.edit;
+	condition = session.readAccess.edit.course;
 }
 
 CourseComment: WOTextField {
@@ -26,7 +22,7 @@ EditCommentLink: WOGenericContainer {
 	href = "#";
 	onclick = "document.commentForm.style.display = (document.commentForm.style.display == 'none')?'':'none';";
 	title = application.strings.RujelInterfaces_Names.EduCourse.comment;
-	omitTags = access._edit;
+	omitTags = session.readAccess._edit.course;
 }
 
 Form1: WOForm {
@@ -58,7 +54,6 @@ LessonList1: WOSwitchComponent {
 	save = save;
 	delete = delete;
 	addLesson = addLesson;
-	accessAssistant = lessonsAssistant;
 	wide = hideLeft;
 	down = down;
 	splitTab = splitTab;
@@ -142,6 +137,7 @@ Span: OnClickContainer {
 	elementName = "span";
 	invokeAction = editSubgroup;
 	onclick = session.checkRun;
+	hide = session.readAccess._read.CourseAudience;
 }
 
 SubjectName: WOString {

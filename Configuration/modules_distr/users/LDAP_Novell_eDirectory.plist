@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>auth</key>
+	<dict>
+		<key>loginHandlerClass</key>
+		<string>net.rujel.auth.ldap.LdapAuthentication</string>
+		<key>groupMapping</key>
+		<dict>
+			<key>root</key>
+			<string>cn=super,ou=RuJel,o=sch</string>
+			<key>zavuch</key>
+			<string>cn=zavuch,ou=edu,o=sch</string>
+			<key>zav_kaf</key>
+			<string>cn=zav_kaf,ou=adm,o=sch</string>
+			<key>tutor</key>
+			<string>ou=tutor,ou=edu,o=sch</string>
+			<key>teacher</key>
+			<string>ou=edu,o=sch</string>
+			<key>adm</key>
+			<string>ou=adm,o=sch</string>
+			<key>any</key>
+			<string>*</string>
+		</dict>
+		<key>guestUser</key>
+		<string>rujelGuest</string>
+		<key>guestPassword</key>
+		<string>guest</string>
+		<key>ldap</key>
+		<dict>
+			<key>providerUrl</key>
+			<string>ldaps://127.0.0.1:636</string>
+			<key>authentication</key>
+			<string>simple</string>
+			<key>useSSL</key>
+			<string>true</string>
+			<key>ssl</key>
+			<dict>
+				<key>protocol</key>
+				<string>TLS</string>
+				<key>trustAny</key>
+				<string>true</string>
+			</dict>
+			<key>baseDN</key>
+			<string>o=sch</string>
+			<key>uidAttribute</key>
+			<string>cn</string>
+			<key>groupAttribute</key>
+			<string>securityEquals</string>
+			<key>presentAttribute</key>
+			<string>fullName sn</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.autoitog.AutoItogModule</string>
+	<key>sort</key>
+	<string>60</string>
+	<key>dbConnection.AutoItog</key>
+	<dict>
+		<key>dbName</key>
+		<string>RujelYear%s</string>
+	</dict>
+	<key>edu</key>
+	<dict>
+		<key>ignorePrognosesAfterDays</key>
+		<string>90</string>
+	</dict>
+</dict>
+</plist>

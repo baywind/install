@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>auth</key>
+	<dict>
+		<key>loginHandlerClass</key>
+		<string>net.rujel.auth.ldap.LdapAuthentication</string>
+		<key>groupMapping</key>
+		<dict>
+			<key>root</key>
+			<string>cn=rujel_adm, ou=Group</string>
+			<key>zavuch</key>
+			<string>cn=zavuch, ou=Group</string>
+			<key>zav_kaf</key>
+			<string>cn=zav_kaf, ou=Group</string>
+			<key>tutor</key>
+			<string>cn= tutor, ou=Group</string>
+			<key>teacher</key>
+			<string>cn=teacher, ou=Group</string>
+			<key>any</key>
+			<string>*</string>
+		</dict>
+		<key>ldap</key>
+		<dict>
+			<key>providerUrl</key>
+			<string>ldap://localhost</string>
+			<key>useSSL</key>
+			<string>false</string>
+			<key>uidAttribute</key>
+			<string>uid</string>
+			<key>memberAttribute</key>
+			<string>memberUid</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

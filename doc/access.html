@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Права доступа</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+</head>    
+<body>
+<h1>Права доступа</h1>
+<p style = "font-size:large;">Файл <strong>access.plist</strong></p>
+<p style = "color:#cc6666;">Описание в процессе доработки.</p>
+<p>актуальный раздел: <span class="node">auth</span></p>
+<ul>
+<li><strong>accessHandlerClass</strong> - имя класса java, который используется для определения прав доступа; пока единственный доступный вариант:
+<ul><li>
+<strong>net.rujel.auth.PrefsAccessHandler</strong> - описания прав хранятся в этом же файле plist в разделе auth.access
+</li></ul>
+</li>
+<li><span class="node">auth.acces</span> - подраздел для настройки прав доступа (для <tt>net.rujel.auth.PrefsAccessHandler</tt>).
+<div>Каждый подраздел этого раздела носит имя объекта, для которого в нем описываются права доступа. Обычно это имена типов данных и страниц пользовательского интерфейса.
+Кроме этого есть несколько специальных объектов:</div>
+<ul><li><strong>login</strong> - права войти в систему</li>
+<li><strong>default</strong> - права для объектов, для которых доступ не определен явным образом
+</li></ul>
+<div>В каждом разделе: 
+<ul><li>ключ - имя пользователя или группы пользователей,</li>
+<li>значение - права доступа этой группы к данному объекту.
+</li></ul>
+</div>
+<div>Права доступа определяются двоичным представлением числа. Каждому разряду двоичного числа соответствует то или иное право. В большинстве случаев это:</div>
+<ul><li>1 - чтение, </li>
+<li>2 - создание, </li>
+<li>4 - редактирование (изменение существующего), </li>
+<li>8 - удаление
+</li>
+<li type="none"><p>Для некоторых объектов определены специальные права доступа. Они описаны в таблице:</p>
+<table border="1" summary = "Special access">
+<tr>
+<th>Module</th>
+<th>1</th>
+<th>2</th>
+<th>4</th>
+<th>8</th>
+<th>16</th>
+</tr>
+<tr>
+<th>login</th>
+<td>login</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>default</th>
+<td>read</td>
+<td>create</td>
+<td>edit</td>
+<td>delete</td>
+<td></td>
+</tr>
+<tr><td colspan="6"></td></tr>
+<tr>
+<th>LessonNoteEditor</th>
+<td>open</td>
+<td>rightSide</td>
+<td>leftSide</td>
+<td>byDate</td>
+<td>oneLesson</td>
+</tr>
+</table>
+В будущем планируется избавиться от нестандартных прав</li>
+</ul>
+<p>Права каждого конкретного пользователя определяются объединением прав всех групп, в которых он состоит.</p>
+<p>Изначально в файле права доступа настроены так же, как в Гимназии 45. Если Вас это устраивает, можно их не менять.</p>
+</li>
+</ul>
+</body>
+</html>

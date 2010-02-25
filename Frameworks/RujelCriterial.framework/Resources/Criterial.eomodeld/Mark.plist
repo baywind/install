@@ -1,31 +1,66 @@
 {
-    attributes = (
-        {
-            allowsNull = N; 
-            columnName = CRITER_NUM; 
-            name = criterion; 
-            prototypeName = short; 
-        }, 
-        {columnName = "DATE_SET"; name = dateSet; prototypeName = date; }, 
-        {columnName = STUDENT_ID; name = studentID; prototypeName = integer; }, 
-        {allowsNull = Y; columnName = MARK_VALUE; name = value; prototypeName = short; }, 
-        {allowsNull = N; columnName = WORK_ID; name = workID; prototypeName = "int_3"; }
-    ); 
-    attributesUsedForLocking = (dateSet, value); 
-    className = "net.rujel.criterial.Mark"; 
-    classProperties = (dateSet, value, work, criterion); 
-    externalName = CR_MARK; 
-    fetchSpecificationDictionary = {}; 
-    name = Mark; 
-    primaryKeyAttributes = (workID, studentID, criterion); 
-    relationships = (
-        {
-            destination = Work; 
-            isMandatory = Y; 
-            isToMany = N; 
-            joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = workID; sourceAttribute = workID; }); 
-            name = work; 
-        }
-    ); 
+	attributes = (
+		{
+			allowsNull = N;
+			columnName = "CRITER_NUM";
+			name = criterion;
+			prototypeName = short;
+		},
+		{
+			columnName = "DATE_SET";
+			name = dateSet;
+			prototypeName = date;
+		},
+		{
+			columnName = "STUDENT_ID";
+			name = studentID;
+			prototypeName = integer;
+		},
+		{
+			allowsNull = N;
+			columnName = "MARK_VALUE";
+			name = value;
+			prototypeName = short;
+		},
+		{
+			allowsNull = N;
+			columnName = "WORK_ID";
+			name = workID;
+			prototypeName = "int_3";
+		},
+	);
+	"attributesUsedForLocking" = (
+		dateSet,
+		value,
+	);
+	className = "net.rujel.criterial.Mark";
+	classProperties = (
+		dateSet,
+		value,
+		work,
+		criterion,
+	);
+	externalName = "CR_MARK";
+	"fetchSpecificationDictionary" = {};
+	name = Mark;
+	primaryKeyAttributes = (
+		workID,
+		studentID,
+		criterion,
+	);
+	relationships = (
+		{
+			destination = Work;
+			isMandatory = Y;
+			isToMany = N;
+			joinSemantic = EOInnerJoin;
+			joins = (
+				{
+					destinationAttribute = workID;
+					sourceAttribute = workID;
+				},
+			);
+			name = work;
+		},
+	);
 }

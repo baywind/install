@@ -1,7 +1,3 @@
-CanSearch: WOConditional {
-	condition = access.search;
-}
-
 Form1: WOForm {
 	action = search;
 	onsubmit = onSubmit;
@@ -28,10 +24,6 @@ Conditional2: WOConditional {
 SearchMessage: WOString {
 	value = searchMessage;
 	escapeHTML = false;
-}
-
-Conditional1: WOConditional {
-	condition = canCreate;
 }
 
 Hyperlink3: WOHyperlink {

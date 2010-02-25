@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>auth</key>
+	<dict>
+		<key>loginPageName</key>
+		<string>Main</string>
+		<key>allowNone</key>
+		<string>false</string>
+		<key>welcomeAction</key>
+		<string>success</string>
+		<key>refuseAction</key>
+		<string>refuse</string>
+		<key>welcomeMessage</key>
+		<dict>
+			<key>thisIsPlistLink</key>
+			<string>true</string>
+			<key>innerKeyPath</key>
+			<string>schoolName</string>
+		</dict>
+		<key>authErrorMessage</key>
+		<string>Произошла ошибка</string>
+		<key>authFailedMessage</key>
+		<string>Не удалось авторизоваться</string>
+		<key>badCredentialMessage</key>
+		<string>Неверный пароль</string>
+		<key>badIdentityMessage</key>
+		<string>Неизвестный пользователь</string>
+		<key>denyNoneMessage</key>
+		<string>Запрещено подключение без имени пользователя</string>
+	</dict>
+</dict>
+</plist>

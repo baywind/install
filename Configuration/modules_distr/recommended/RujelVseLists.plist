@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.vselists.ListsEditor</string>
+	<key>interfaces</key>
+	<dict>
+		<key>EduGroup</key>
+		<string>net.rujel.vselists.VseEduGroup</string>
+		<key>Student</key>
+		<string>net.rujel.vselists.VseStudent</string>
+		<key>Teacher</key>
+		<string>net.rujel.vselists.VseTeacher</string>
+	</dict>
+	<key>dbConnection</key>
+	<dict>
+		<key>VseLists</key>
+		<dict>
+			<key>skip</key>
+			<string>false</string>
+		</dict>
+		<key>VseobuchSimple</key>
+		<dict>
+			<key>skip</key>
+			<string>true</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

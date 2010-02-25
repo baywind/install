@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.markarchive.MarkArchive</string>
+	<key>markarchive</key>
+	<dict>
+		<key>itemThreshold</key>
+		<string>5</string>
+		<key>sessionThreshold</key>
+		<string>15</string>
+		<key>forceArchives</key>
+		<string>true</string>
+		<key>Mark</key>
+		<string>true</string>
+		<key>ItogMark</key>
+		<string>true</string>
+		<key>BaseNote</key>
+		<string>true</string>
+		<key>Prognosis</key>
+		<string>true</string>
+		<key>Reason</key>
+		<string>true</string>
+	</dict>
+	<key>dbConnection.MarkArchive</key>
+	<dict>
+		<key>dbName</key>
+		<string>RujelYear%s</string>
+	</dict>
+</dict>
+</plist>

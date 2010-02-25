@@ -3,7 +3,7 @@ ListSettings : ListSettings {
   key = "ItogMark";
   currList = listName;
   extraLists = extraLists;
-  access = session.readAccess.FLAGS.PeriodList;
+  access = session.readAccess.FLAGS.ItogContainer;
 }
 
 AllTypes : WORepetition {
