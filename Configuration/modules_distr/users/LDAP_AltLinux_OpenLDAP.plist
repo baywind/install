@@ -15,7 +15,7 @@
 			<key>zav_kaf</key>
 			<string>cn=zav_kaf, ou=Group</string>
 			<key>tutor</key>
-			<string>cn= tutor, ou=Group</string>
+			<string>cn=tutor, ou=Group</string>
 			<key>teacher</key>
 			<string>cn=teacher, ou=Group</string>
 			<key>any</key>

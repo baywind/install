@@ -76,6 +76,11 @@
 				<string>eduGroup.name</string>
 			</dict>
 		</dict>
+		<key>tabs</key>
+		<array>
+			<string>Классы</string>
+			<string>Учителя</string>
+		</array>
 	</dict>
 	<key>CustomReport</key>
 	<dict>

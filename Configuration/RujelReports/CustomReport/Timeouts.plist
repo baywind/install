@@ -109,7 +109,7 @@
 				<string>course</string>
 				<key>args</key>
 				<array>
-					<string>.eduPeriod.eduYear</string>
+					<string>.itogContainer.eduYear</string>
 				</array>
 				<key>qualifierFormat</key>
 				<string>eduYear = %@</string>
@@ -489,7 +489,7 @@
 				<key>timeout</key>
 				<string>$itemRow</string>
 				<key>eduPeriod</key>
-				<string>$itemRow.eduPeriod</string>
+				<string>$itemRow.itogContainer</string>
 			</dict>
 			<key>popup</key>
 			<true/>

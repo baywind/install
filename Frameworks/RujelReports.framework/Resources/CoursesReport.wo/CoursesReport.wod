@@ -10,8 +10,9 @@ Title : WOString {
 }
 
 Tabs : Tabs {
-	currTab = tabSelected;
-	tablist = tablist;
+	numeric = true;
+	currTab = tabindex;
+	tablist = session.strings.RujelReports_Reports.CoursesReport.tabs;
 	onClick = session.tryLoad;
 }
 ClassSelector : WOConditional {

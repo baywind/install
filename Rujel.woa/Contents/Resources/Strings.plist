@@ -173,7 +173,7 @@
 		<key>nothingFound</key>
 		<string>По вашему запросу ничего не найдено, попробуйте задействовать меньше параметров</string>
 		<key>nullProhibit</key>
-		<string>Поле &quot;%s&quot; не может быть пустым</string>
+		<string>Поле &quot;%s&quot; не должно быть пустым</string>
 		<key>parameterRequired</key>
 		<string>Необходимо указать &quot;%s&quot;</string>
 		<key>pleaseWait</key>

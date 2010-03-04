@@ -53,6 +53,7 @@ Number : WOString {
 
 NameField : WOTextField {
   value = typeItem.typeName;
+  style = "text-align:center;";
 }
 
 WeightField : WOTextField {
