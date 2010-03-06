@@ -1,5 +1,7 @@
 PageWrapper1: PageWrapper {
 	title = title;
+	hasChanges = course.editingContext.hasChanges;
+	onLoad = "scrollToObj('currGroup')";
 }
 
 OverGroupName2: WOString {
@@ -74,7 +76,7 @@ CheckBox1: WOCheckBox {
 	checked = isInSubgroup;
 	onclick = onClick;
 	name = "cb";
-	disabled = access._edit;
+	disabled = cantEdit;
 }
 
 SaveButton: WOSubmitButton {
@@ -104,5 +106,80 @@ JSLink: WOResourceURL {
 }
 
 CanEdit : WOConditional {
-  condition = access.edit;
+  condition = cantEdit;
+  negate = true;
+}
+
+MixedButton : OnClickContainer {
+  elementName = "span";
+  class = "button";
+  onclick = session.tryLoad;
+  hide = session.readAccess._delete.CourseAudience;
+  invokeAction = toggleMixed;
+}
+
+MixedTitle : WOString {
+  value = toggleTitle;
+  escapeHTML = false;
+}
+
+Groups : WORepetition {
+  list = groups;
+  item = groupItem;
+}
+
+GroupCell : OnClickContainer {
+  elementName = "th";
+  class = groupCellClass;
+  invokeAction = selectGroup;
+  onclick = session.tryLoad;
+  rowspan = rowspan;
+  style = "padding:4pt;";
+  disabled = otherGroup;
+  id = cellID;
+}
+
+GroupName : WOString {
+  value = groupItem.name;
+}
+
+BorderCell : WOGenericContainer {
+  elementName = "td";
+  class = borderClass;
+  height = "1";
+  colspan = "3";
+}
+
+HasRows : WOConditional {
+  condition = rowspan;
+}
+
+OtherGroup : WOConditional {
+  condition = otherGroup;
+}
+
+GroupTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduGroup.this;
+  escapeHTML = false;
+}
+
+IsMixed : WOConditional {
+  condition = groups;
+}
+
+ChooseGroup : OnClickContainer {
+  elementName = "td";
+  class = "orange";
+  invokeAction = chooseGroup;
+  onclick = session.ajaxPopup;
+  disabled = otherGroup;
+  align = "center";
+}
+
+CurrName : WOString {
+  value = currGroup.name;
+}
+
+ChooseTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Select;
 }

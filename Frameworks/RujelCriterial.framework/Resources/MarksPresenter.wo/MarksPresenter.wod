@@ -45,6 +45,7 @@ IntegralTD: OnClickContainer {
 	align = "center";
 	style = "width:2em;";
 	disabled = deactivateIntegral;
+	hide = hideIntegralCell;
 	title = title;
 }
 

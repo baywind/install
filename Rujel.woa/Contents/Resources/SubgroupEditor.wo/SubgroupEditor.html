@@ -1,22 +1,47 @@
 <webobject name="PageWrapper1">
-<table cellspacing="0" class="backfield1" border="0" cellpadding="2" style="font-size:large; margin-bottom:5pt;" width="100%">
-<tr><td align="center" width="15%"><webobject name="OverGroupName2"></webobject></td>
+<table cellspacing="0" border="0" cellpadding="3" width="100%">
+<tr class="backfield1" style="font-size:large; margin-bottom:5pt;">
+	<td align="center" width="15%"><webobject name="OverGroupName2"></webobject></td>
 	<td align="center" width="36%"><webobject name="SubjectName2"></webobject>
 		<i>(<webobject name="Comment"></webobject>)</i></td>
-	<td align="center"></td><td align="left"><webobject name="TeacherName"/></td>
-</tr></table>
+	<td align="center"><webobject name="TeacherName"/></td>
+</tr>
+<tr style = "height:7ex;"><td colspan = "2" align = "left">
+	<webobject name = "MixedButton"><webobject name = "MixedTitle"/></webobject>
+</td><td></td></tr>
+</table>
 <webobject name = "CanEdit"><webobject name="Ticker1"></webobject></webobject>
 <div style="padding:2ex 10%;"><h3><webobject name="HeadTitle"></webobject></h3>
 <webobject name="Form1">
-<table align="center" cellspacing="1" border="0" cellpadding="1">
-<tr class="grey"><th style="width:2em;">#</th>
-	<th align="left" width="90%" valign="middle"><webobject name="StudentTitle"></webobject></th>
-	<td align="center"><webobject name="SubgroupTitle"></webobject></td>
-</tr><webobject name="Repetition1">
+<table align="center" cellspacing="1" border="0" cellpadding="1" width = "90%">
+<tr class="grey"><webobject name = "IsMixed">
+	<th style="width:4em;"><webobject name = "GroupTitle"/></th></webobject>
+	<th style="width:2em;">#</th>
+	<th align="left" valign="middle"><webobject name="StudentTitle"></webobject></th>
+	<td align="center" style = "width:9ex;"><webobject name="SubgroupTitle"></webobject></td>
+</tr>
+<webobject name = "Groups"><tr>
+<webobject name = "GroupCell"><webobject name = "GroupName"/></webobject>
+<webobject name = "BorderCell"></webobject></tr>
+<webobject name = "HasRows"><webobject name="Repetition1">
 	<webobject name="StudentRow"><td align="center"><webobject name="Index"></webobject></td>
 	<td align="left" style = "white-space:nowrap;"><webobject name="StudentName"/></td>
 	<td align="center"><webobject name="CheckBox1"></webobject></td>
-</webobject></webobject><tr>
+</webobject></webobject>
+<tr><webobject name = "BorderCell"></webobject></tr></webobject>
+</webobject><webobject name = "OtherGroup">
+<tr>
+<webobject name = "GroupCell"><webobject name = "CurrName"/></webobject>
+<td class = "selection" height = "1" colspan = "3"/></tr>
+</webobject>
+<webobject name="Repetition1">
+	<webobject name="StudentRow"><td align="center"><webobject name="Index"></webobject></td>
+	<td align="left" style = "white-space:nowrap;"><webobject name="StudentName"/></td>
+	<td align="center"><webobject name="CheckBox1"></webobject></td></webobject>
+	</webobject>
+<webobject name = "OtherGroup"><tr><td class = "selection" height = "1" colspan = "3"/></tr></webobject>
+	<tr>
+<webobject name = "IsMixed"><webobject name = "ChooseGroup"><webobject name = "ChooseTitle"/></webobject></webobject>
 	<td align="center" colspan="2">
 	<webobject name = "CanEdit">
 		<webobject name="SaveButton"></webobject> &nbsp;&nbsp;

@@ -134,7 +134,6 @@ CriterList: WORepetition {
 }
 
 IsRecent: WOConditional {
-	value = lessonItem;
 	condition = canEdit;
 }
 
@@ -158,6 +157,7 @@ LessonRow: OnClickContainer {
 	class = rowClass;
 	title = work.workType.typeName;
 	bgcolor = rowColor;
+	hide = hideRow;
 }
 
 LessonTheme: WOString {
@@ -188,10 +188,6 @@ MoveUp: WOImageButton {
 	valign = "top";
 }
 
-Regular: WOConditional {
-	negate = true;
-	condition = canEdit;
-}
 
 SaveButton: WOSubmitButton {
 	action = ^save;

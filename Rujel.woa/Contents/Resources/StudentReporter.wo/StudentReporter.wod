@@ -56,3 +56,11 @@ Reporter : WOSwitchComponent {
   course = courseItem;
   period = period;
 }
+
+ShowGroup : WOConditional {
+  condition = showGroup;
+}
+
+GroupTitle : WOString {
+  value = courseItem.eduGroup.name;
+}
