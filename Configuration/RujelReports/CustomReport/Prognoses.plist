@@ -286,6 +286,14 @@
 			<key>qualifierFormat</key>
 			<string>flags &gt; 0</string>
 		</dict>
+		<dict>
+			<key>title</key>
+			<string>Не выставлен</string>
+			<key>comment</key>
+			<string>Еще не отработан автоматом</string>
+			<key>qualifierFormat</key>
+			<string>fireDate != nil</string>
+		</dict>
 	</array>
 	<key>prefetch</key>
 	<array>
@@ -570,7 +578,7 @@
 			<key>active</key>
 			<true/>
 			<key>sort</key>
-			<string>70</string>
+			<string>65</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -589,7 +597,95 @@
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>sort</key>
-			<string>60</string>
+			<string>70</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Выставленная итоговая отметка</string>
+			<key>short</key>
+			<string>Итог</string>
+			<key>keyPath</key>
+			<string>relatedItog</string>
+			<key>titlePath</key>
+			<string>mark</string>
+			<key>itemHover</key>
+			<dict>
+				<key>object</key>
+				<string>.value</string>
+				<key>methodName</key>
+				<string>movePointRight</string>
+				<key>paramClasses</key>
+				<array>
+					<string>int</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<integer>2</integer>
+				</array>
+			</dict>
+			<key>style</key>
+			<string>text-align:center;font-weight:bold;</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>80</string>
+			<key>comparison</key>
+			<string>CompareCaseInsensitiveDescending</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>disabled</key>
+			<string>$session.readAccess._read.item</string>
+			<key>nextPage</key>
+			<string>ItogPopup</string>
+			<key>pageParams</key>
+			<dict>
+				<key>itog</key>
+				<string>.</string>
+				<key>student</key>
+				<string>.student</string>
+				<key>itogContainer</key>
+				<string>.container</string>
+			</dict>
+			<key>popup</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Отсрочка</string>
+			<key>keyPath</key>
+			<string>getStudentTimeout</string>
+			<key>itemHover</key>
+			<string>.reason</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>value</key>
+				<string>.fireDate</string>
+				<key>dateformat</key>
+				<string>$application.prefs.ui.dateFormat</string>
+			</dict>
+			<key>active</key>
+			<false/>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>skipNull</key>
+			<true/>
+			<key>disabled</key>
+			<string>$session.readAccess._read.item</string>
+			<key>nextPage</key>
+			<string>TimeoutPopup</string>
+			<key>popup</key>
+			<true/>
+			<key>pageParams</key>
+			<dict>
+				<key>timeout</key>
+				<string>.</string>
+				<key>eduPeriod</key>
+				<string>.itogContainer</string>
+				<key>course</key>
+				<string>$itemRow.course</string>
+			</dict>
+			<key>sort</key>
+			<string>85</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -598,6 +694,8 @@
 			<string>namedFlags</string>
 			<key>presenter</key>
 			<string>FlagsPresenter</string>
+			<key>style</key>
+			<string>&apos;white-space:nowrap;</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>disabled</key>
@@ -612,7 +710,7 @@
 			<key>active</key>
 			<false/>
 			<key>sort</key>
-			<string>70</string>
+			<string>99</string>
 			<key>exportDict</key>
 			<dict>
 				<key>title</key>

@@ -1,0 +1,45 @@
+<div class="backfield1" id="ajaxPopup"><webobject name = "CloseButton">
+<webobject name = "Cross"/></webobject>
+<webobject name = "Form"><table border = "1" style = "border-collapse:collapse;"><thead>
+<tr><th style = "border:none;padding:1ex;font-size:larger;" colspan = "2">
+	<webobject name = "Title"/></th></tr>
+<tr><th align = "right"><webobject name = "CommentTitle"/>:</th>
+	<td style = "white-space:nowrap;">(<webobject name = "CommentField"/>)</td></tr>
+<tr><th align = "right"><webobject name = "TeacherLabel"/>:</th>
+	<webobject name = "CourseTeacherCell"><webobject name = "CourseTeacher"/></webobject></tr>
+</thead><webobject name = "CanEdit"><tfoot><webobject name = "CanCreate">
+<webobject name = "ShowChange">
+	<td colspan = "2"><webobject name = "ChangeTitle"/></td></webobject></webobject>
+<tr><td colspan = "2" style = "padding:1ex;"><webobject name = "Save"/>
+<webobject name = "CourseTeacherButton"/><webobject name = "CanCreate">
+<webobject name = "NextTeacherButton"/></webobject>
+<webobject name = "Delete"/>
+</td></tr>
+</tfoot></webobject><webobject name = "TBody"><tr><td colspan = "2">
+<div style = "font-style:italic;"><webobject name = "HistoryTitle"/></div>
+<table width = "100%">
+<tr><th><webobject name = "TeacherLabel"/></th>
+	<th rowspan = "2"><webobject name = "DateTitle"/></th>
+	<th rowspan = "2"><webobject name = "ReasonTitle"/></th>
+	<td style = "height:1.2ex;width:0px;"/></tr>
+<webobject name = "Changes"><tr>
+	<webobject name = "ChangeTeacherCell"><webobject name = "ChangedTeacher"/>
+		<webobject name = "ChangedTeacherButton"/></webobject>
+		<td class = "grey" style = "height:1.2ex;width:0px;"/></tr>
+<tr class = "backfield2"><td rowspan = "2"><webobject name = "ChangeDate"/></td>
+	<td rowspan = "2"><webobject name = "ChangeComment"/></td>
+	<td class = "grey" style = "height:1.2ex;width:0px;"/></tr>
+</webobject><tr>
+	<webobject name = "CourseTeacherCell"><webobject name = "CourseTeacher"/></webobject>
+		<td class = "grey" style = "height:1.2ex;width:0px;"/></tr>
+<webobject name = "CanCreate"><tr style = "display:none;" id = "nextDrow" class = "backfield2">
+	<td rowspan = "2"><webobject name = "NextDate"/></td>
+	<td rowspan = "2"><webobject name = "NextComment"/></td>
+	<td class = "grey" style = "height:1.2ex;width:0px;"/></tr>
+<tr style = "display:none;" id = "nextTrow">
+	<webobject name = "NextTeacherCell"><webobject name = "NextTitle"/></webobject>
+	<td class = "grey" style = "height:1.2ex;width:0px;"/></tr></webobject>
+<tr><td colspan = "3"/></tr>
+</table></td></tr>
+</webobject></table></webobject>
+</div>

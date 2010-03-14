@@ -14,18 +14,4 @@
         {className = EOGenericRecord; name = SettingByCourse; }, 
         {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }
     ); 
-    userInfo = {
-        "_EntityModeler" = {
-            activeDatabaseConfigName = Default; 
-            databaseConfigs = {
-                Default = {
-                    adaptorName = JDBC; 
-                    connectionDictionary = {
-                        URL = "jdbc:mysql://localhost/BaseStatic? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
-                        username = rujel; 
-                    }; 
-                }; 
-            }; 
-        }; 
-    }; 
 }

@@ -1,0 +1,195 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+}
+
+CloseButton : OnClickContainer {
+  elementName = "span";
+  invokeAction = cancel;
+  onclick = crossOnclick;
+  style = "position:absolute;right:2pt;top:2pt;";
+}
+
+Title : WOString {
+  value = title;
+  escapeHTML = false;
+}
+CommentField : WOTextField {
+  value = course.comment;
+  size = 15;
+  disabled = session.readAccess._edit.course;
+}
+
+Form : WOForm {
+  multipleSubmit = true;
+}
+
+TeacherLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
+	escapeHTML = false;
+}
+
+Changes : WORepetition {
+  list = changes;
+  item = changeItem;
+}
+
+ChangedTeacher : PersonDisplay {
+  person = changeItem.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+  valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
+}
+
+ChangeDate : WOTextField {
+  value = changeItem.date;
+  onkeypress = "return isNumberInput(event,true);";
+  style = "text-align:center;";
+  dateformat = application.prefs.ui.dateFormat;
+  size = 10;
+  maxlength = 10;
+  disabled = session.readAccess._edit.changeItem;
+}
+
+ChangeComment : WOTextField {
+  value = changeItem.comment;
+  disabled = session.readAccess._edit.changeItem;
+}
+
+CourseTeacher : PersonDisplay {
+  person = course.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+  valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
+}
+
+NextDate : WOTextField {
+  value = nextDate;
+  dateformat = application.prefs.ui.dateFormat;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+  size = 10;
+  maxlength = 10;
+}
+
+NextComment : WOTextField {
+  value = nextComment;
+  id = "nextComment";
+}
+
+ChangeTeacherCell : OnClickContainer {
+  elementName = "td";
+  rowspan = 2;
+  class = changeTeacherClass;
+  onclick = "ajaxPost(getElementsByTagName('input')[0]);";
+  style = "white-space:nowrap;";
+  disabled = session.readAccess._edit.changeItem;
+}
+
+CourseTeacherCell : OnClickContainer {
+  elementName = "td";
+  disabled = session.readAccess._edit.course;
+  rowspan = 2;
+  class = changeTeacherClass;
+  onclick = "ajaxPost('courseTeacher')";
+  style = "white-space:nowrap;";
+}
+
+NextTeacherCell : OnClickContainer {
+  elementName = "td";
+  rowspan = 2;
+  class = "orange";
+  onclick = "f=getElementById('nextComment');if(f.value==null || f.value.length==0){alert(title);f.focus();}else ajaxPost('nextTeacher');";
+  title = session.strings.RujelBase_Base.CourseInspector.reasonRequired;
+  style = "white-space:nowrap;font-style:italic;";
+}
+
+Save : WOSubmitButton {
+  value = application.strings.Reusables_Strings.uiElements.Save;
+  action = save;
+}
+
+CourseTeacherButton : WOSubmitButton {
+  action = chooseCourseTeacher;
+  style = "display:none;";
+  id = "courseTeacher";
+}
+
+NextTeacherButton : WOSubmitButton {
+  action = chooseNextTeacher;
+  style = "display:none;";
+  id = "nextTeacher";
+}
+
+ChangedTeacherButton : WOSubmitButton {
+  action = chooseChangeTeacher;
+  style = "display:none;";
+  disabled = session.readAccess._edit.changeItem;
+}
+
+TBody : WOGenericContainer {
+  elementName = "tbody";
+  id = "historyBody";
+  style = tbodyStyle;
+}
+
+CommentTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduCourse.comment;
+  escapeHTML = false;
+}
+
+NextTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Select;
+  escapeHTML = false;
+}
+
+ChangeTitle : WOString {
+  value = session.strings.RujelBase_Base.CourseInspector.change;
+  escapeHTML = false;
+}
+
+HistoryTitle : WOString {
+  value = session.strings.RujelBase_Base.CourseInspector.history;
+  escapeHTML = false;
+}
+
+DateTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Date;
+  escapeHTML = false;
+}
+
+ReasonTitle : WOString {
+  value = session.strings.RujelBase_Base.CourseInspector.reason;
+  escapeHTML = false;
+}
+ShowChange : OnClickContainer {
+  elementName = "tr";
+  onclick = "showObj('historyBody');showObj('nextDrow');showObj('nextTrow');hideObj(this);fitWindow();";
+  class = "orange";
+}
+
+CanCreate : WOConditional {
+  condition = session.readAccess.create.TeacherChange;
+}
+
+CanEdit : WOConditional {
+  condition = session.readAccess.edit.course;
+}
+
+Delete : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  value = application.strings.Reusables_Strings.uiElements.Delete;
+  invokeAction = delete;
+  onclick = session.tryLoad;
+  omitTags = session.readAccess._delete.course;
+}

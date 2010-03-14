@@ -95,15 +95,19 @@ TeacherLN: PersonDisplay {
 	emptyStyle = "font-style:italic;";
 }
 
-EditLink: WOHyperlink {
-	disabled = true;
-	action = selectCourse;
+EditLink: OnClickContainer {
+	elementName = "span";
+	hide = session.readAccess._edit.item;
+	invokeAction = inspectCourse;
 	style = "z-index:4;";
+	onclick = session.ajaxPopup;
 }
 
 files_edit: WOImage {
 	align = "right";
 	filename = "files_edit.png";
+	height = 16;
+	width = 16;
 }
 
 Selected: WOConditional {
@@ -167,10 +171,6 @@ GradeCyclesPopup: WOPopUpButton {
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
-}
-
-CanEditCourse : WOConditional {
-  condition = session.readAccess.edit.item;
 }
 
 LessonsCount : WOString {

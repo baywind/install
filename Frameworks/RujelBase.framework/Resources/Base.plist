@@ -158,5 +158,16 @@
 		<key>period</key>
 		<string>true</string>
 	</dict>
+	<key>CourseInspector</key>
+	<dict>
+		<key>history</key>
+		<string>История смен преподавателя</string>
+		<key>change</key>
+		<string>Сменить преподавателя</string>
+		<key>reason</key>
+		<string>Причина смены</string>
+		<key>reasonRequired</key>
+		<string>Пожалуйста, укажите причину смены преподавателя</string>
+	</dict>
 </dict>
 </plist>

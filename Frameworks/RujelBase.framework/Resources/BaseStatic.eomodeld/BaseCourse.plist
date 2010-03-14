@@ -68,6 +68,7 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = courseID; sourceAttribute = courseID; }); 
             name = teacherChanges; 
+            ownsDestination = Y; 
         }
     ); 
 }

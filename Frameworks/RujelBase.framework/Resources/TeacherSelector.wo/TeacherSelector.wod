@@ -42,7 +42,7 @@ SubjectsRepetition : WORepetition {
 SelectTeacher : OnClickContainer {
   elementName = "div";
   invokeAction = select;
-  onclick = session.tryLoad;
+  onclick = onSelect;
   class = teacherClass;
   style = "margin:2px;white-space:nowrap;";
 }
@@ -72,7 +72,7 @@ ShowVacant : WOConditional {
 SelectVacant : OnClickContainer {
   elementName = "div";
   invokeAction = selectVacant;
-  onclick = session.tryLoad;
+  onclick = onSelect;
   class = teacherClass;
   style = "margin:2px;";
 }
@@ -85,7 +85,7 @@ VacantTitle : WOString {
 SelectNone : OnClickContainer {
   elementName = "div";
   invokeAction = selectDelete;
-  onclick = session.tryLoad;
+  onclick = onSelect;
   class = "warning";
   style = "margin:2px;";
 }
