@@ -156,32 +156,23 @@
 	</dict>
 	<key>reportSettings</key>
 	<dict>
-		<key>title</key>
+		<key>id</key>
 		<string>autoitog</string>
-		<key>name</key>
+		<key>title</key>
 		<string>Прогноз</string>
-		<key>on</key>
+		<key>active</key>
 		<true/>
 		<key>options</key>
 		<array>
 			<dict>
-				<key>flag</key>
+				<key>id</key>
 				<string>timeout</string>
 				<key>title</key>
 				<string>отсрочки</string>
-				<key>on</key>
+				<key>active</key>
 				<true/>
 			</dict>
 		</array>
-		<key>sort</key>
-		<string>05</string>
-	</dict>
-	<key>prognosReport</key>
-	<dict>
-		<key>title</key>
-		<string>autoitog</string>
-		<key>component</key>
-		<string>PrognosReport</string>
 		<key>sort</key>
 		<string>05</string>
 	</dict>

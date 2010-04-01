@@ -30,32 +30,31 @@
 	</dict>
 	<key>reportSettings</key>
 	<dict>
-		<key>title</key>
+		<key>id</key>
 		<string>lessons</string>
-		<key>name</key>
+		<key>title</key>
 		<string>Уроки</string>
-		<key>on</key>
+		<key>active</key>
 		<true/>
 		<key>options</key>
 		<array>
 			<dict>
-				<key>flag</key>
+				<key>id</key>
 				<string>all</string>
 				<key>title</key>
 				<string>без оценок</string>
-				<key>on</key>
+				<key>active</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>short</string>
+				<key>title</key>
+				<string>кратко</string>
+				<key>active</key>
 				<false/>
 			</dict>
 		</array>
-		<key>sort</key>
-		<string>12</string>
-	</dict>
-	<key>lessonReport</key>
-	<dict>
-		<key>title</key>
-		<string>lessons</string>
-		<key>component</key>
-		<string>LessonReport</string>
 		<key>sort</key>
 		<string>12</string>
 	</dict>

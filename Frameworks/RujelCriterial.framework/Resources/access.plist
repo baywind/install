@@ -6,6 +6,8 @@
 	<dict>
 		<key>root</key>
 		<string>1023</string>
+		<key>zavuch</key>
+		<string>15</string>
 		<key>teacher</key>
 		<string>15</string>
 	</dict>

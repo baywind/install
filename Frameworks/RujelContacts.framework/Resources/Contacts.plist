@@ -44,6 +44,11 @@
 			<key>flags</key>
 			<array>
 				<string>Использовать для расылки</string>
+				<string>Архивировать</string>
+				<string></string>
+				<string></string>
+				<string></string>
+				<string>Отключен</string>
 			</array>
 			<key>name</key>
 			<string>Имя получателя</string>

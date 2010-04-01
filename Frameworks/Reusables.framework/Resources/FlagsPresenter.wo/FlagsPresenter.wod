@@ -18,3 +18,7 @@ flagBox: WOCheckBox {
 	title = item;
 	disabled = ^disabled;
 }
+
+HasName : WOConditional {
+  condition = item.length;
+}

@@ -101,7 +101,7 @@ PageWrapper1: PageWrapper {
 	scriptURL = present.scriptURL;
 	scriptResource = present.scriptResource;
 	resourcesFramework = present.framework;
-	styles = ".student{font-size:large; font-weight:bold; padding-left:2em;}; .dates {padding-left:3em; font-style:italic; white-space:nowrap;};";
+	styles = ".student{font-size:large; font-weight:bold; padding-left:2em;} .dates {padding-left:3em; font-style:italic; white-space:nowrap;} .sorting{display:none;};";
 }
 
 PeriodSelector: PeriodSelector {
@@ -129,14 +129,13 @@ Repetition2: WORepetition {
 	list = session.modules.overviewAction;
 }
 
-ReporterContainer: WOGenericContainer {
-	elementName = "span";
+ReporterContainer: OnClickContainer {
+	elementName = "td";
 	invokeAction = selectReporter;
 	onclick = session.tryLoad;
-	onmouseout = "style.textDecoration='none';";
-	onmouseover = "style.textDecoration='underline';";
 	style = reporterItemStyle;
 	title = reporterItem.hover;
+	disabled = reporterIsCurr;
 }
 
 ReportersList: WORepetition {
@@ -144,7 +143,7 @@ ReportersList: WORepetition {
 	list = reporterList;
 }
 
-ReportetTitle: WOString {
+ReporterTitle: WOString {
 	value = reporterItem.title;
 }
 
@@ -274,4 +273,27 @@ TickCount : WOTextField {
   size = 2;
   style = "text-align:center;";
   id = "total";
+}
+
+SortingScripts : ResourceLink {
+  framework = "RujelBase";
+  jsLink = "sorting.js";
+}
+
+EditReporter : OnClickContainer {
+  elementName = "span";
+  invokeAction = editReporter;
+  hide = hideReporterEdit;
+  onclick = session.ajaxPopupNoPos;
+}
+
+EditImage : WOImage {
+	filename = "files_edit.png";
+	height = 16;
+	width = 16;
+}
+
+NoReporters : WOConditional {
+  condition = showReporterSelector;
+  negate = true;
 }

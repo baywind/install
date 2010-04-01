@@ -1,0 +1,189 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Title : WOString {
+  value = session.strings.Strings.PrintReport.reportSettings;
+  escapeHTML = false;
+}
+
+ReportTable : ReportTable {
+  list = courses;
+  properties = display;
+  rowClass = "ungerade";
+  itemDict = subItem;
+  itemRow = item;
+}
+
+Form : WOForm {
+  style = "border: 1px solid #999999;";
+  onsubmit = "enumerate(this,'sorting',1);return true;";
+  multipleSubmit = true;
+}
+
+ReportsRepetition : WORepetition {
+  list = reports;
+  item = item;
+}
+
+ItemCheckBox : WOCheckBox {
+  checked = item.active;
+  name = item.id;
+  onclick = "setDisplay(this.name,(this.checked)?'':'none');";
+}
+
+ItemSorting : WOTextField {
+  value = item.sort;
+  numberformat = "0";
+  class = "sorting";
+}
+
+ItemTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+SubmitButton : WOSubmitButton {
+  action = submit;
+  value = application.strings.Reusables_Strings.uiElements.Submit;
+  style = "margin:1ex;";
+}
+
+ReportCell : WOGenericContainer {
+  elementName = "td";
+  align = "left";
+  style = "padding-left:4px;";
+  colspan = "2";
+  title = item.hover;
+}
+
+SubCheckBox : WOCheckBox {
+  checked = subItem.active;
+  name = item.id;
+}
+
+SubsRepetition : WORepetition {
+  list = item.options;
+  item = subItem;
+}
+
+SubTitle : WOString {
+  value = subItem.title;
+  escapeHTML = false;
+}
+
+SubsContainer : WOGenericContainer {
+  elementName = "tbody";
+  id = item.id;
+  style = subStyle;
+}
+
+SubRow : WOGenericContainer {
+  elementName = "tr";
+  title = subItem.hover;
+  class = "grey";
+}
+
+AvailableTitle : WOString {
+  value = application.strings.RujelReports_Reports.CoursesReport.availableReports;
+  escapeHTML = false;
+}
+
+MoveUp: WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(get(this,'table',0));";
+	style = "cursor:pointer;";
+}
+MoveDown: WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(get(this,'table',0));";
+	style = "cursor:pointer;";
+}
+
+ShowPresets : OnClickContainer {
+  elementName = "div";
+  onclick = "toggleObj('saveSection');fitWindow();";
+  style = "font-size:small;";
+}
+
+PresetsContainer : WOGenericContainer {
+  elementName = "td";
+  id = "reportPresets";
+  style = presetsStyle;
+  valign = "top";
+}
+
+Save : WOSubmitButton {
+  action = savePreset;
+  name = "savePreset";
+  value = application.strings.Reusables_Strings.uiElements.Save;
+  onclick = savePresetOnClick;
+}
+NameField : WOTextField {
+  name = "presetName";
+  value = presetName;
+  size = 15;
+  onkeypress = "b=form.savePreset;t=(value.length);if(t)b.disabled=false;if(eventKey(event)==13){if(t)ajaxPost(b);return false;}return true;";
+}
+
+DefaultContainer : OnClickContainer {
+  elementName = "div";
+  class = "gerade";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = usePreset;
+  style = "min-width:16ex;";
+}
+
+DefaultTitle : WOString {
+  value = session.strings.Strings.PrintReport.defaultSettings;
+  escapeHTML = false;
+}
+
+Presets : WORepetition {
+  list = presets;
+  item = item;
+}
+
+PresetContainer : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = usePreset;
+}
+
+PresetTitle : WOString {
+  value = item.title;
+}
+
+DeletePreset : OnClickContainer {
+  elementName = "td";
+  invokeAction = deletePreset;
+  onclick = deletePresetOnClick;
+  width = 16;
+  hide = session.readAccess._delete.ReporterSetup;
+}
+
+DelCross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+}
+CanCreate : WOConditional {
+  condition = session.readAccess.create.ReporterSetup;
+}
+
+SaveTitle : WOString {
+  value = session.strings.Strings.PrintReport.saveSettings;
+  escapeHTML = false;
+}

@@ -155,6 +155,8 @@
 			<string>recentMarks</string>
 			<key>allowAjax</key>
 			<true/>
+			<key>settingsName</key>
+			<string>reportSettingsForStudent</string>
 		</dict>
 		<key>showMarks</key>
 		<string>Показать оценки</string>
@@ -176,6 +178,12 @@
 		<string> оценки</string>
 		<key>tutor</key>
 		<string>Подпись классного руководителя:</string>
+		<key>reportSettings</key>
+		<string>Настройка распечатки</string>
+		<key>defaultSettings</key>
+		<string>Стандартная</string>
+		<key>saveSettings</key>
+		<string>сохранить настройки</string>
 	</dict>
 	<key>messages</key>
 	<dict>
