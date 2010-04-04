@@ -42,7 +42,9 @@
 				<key>id</key>
 				<string>all</string>
 				<key>title</key>
-				<string>без оценок</string>
+				<string>все</string>
+				<key>hover</key>
+				<string>показать все уроки за период (даже без отметок)</string>
 				<key>active</key>
 				<false/>
 			</dict>

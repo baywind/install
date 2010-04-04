@@ -83,6 +83,10 @@ WorkTheme: WOString {
 	escapeHTML = false;
 }
 
+WeightStr : WOString {
+	value = workItem.weightStr;
+}
+
 WorkAnnounce: WOString {
 	value = workItem.announce;
 }

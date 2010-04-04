@@ -187,3 +187,33 @@ SaveTitle : WOString {
   value = session.strings.Strings.PrintReport.saveSettings;
   escapeHTML = false;
 }
+
+SimpleCheckBox : WOConditional {
+  condition = subItem.options;
+  negate = true;
+}
+
+SubHasOptions : WOConditional {
+  condition = subItem.options;
+}
+
+SubOptions : WORepetition {
+  list = subItem.options;
+  item = optItem;
+}
+
+
+OptRadio : WORadioButton {
+  name = subItem.id;
+  value = optItem.value;
+  selection = subItem.active;
+}
+
+OptCell : WOGenericContainer {
+  elementName = "div";
+  title = optItem.hover;
+}
+
+OptName : WOString {
+  value = optItem.title;
+}

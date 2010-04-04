@@ -163,6 +163,9 @@ if [ -d RujelReports ] ; then
         cp -r RujelReports ${CONFIGFOLDER}/
         echo "RujelReports installed"
     fi
+    if [ -e ${CONFIGFOLDER}/RujelReports/CustomReport/Woks.plist ] ; then
+        mv ${CONFIGFOLDER}/RujelReports/CustomReport/Woks.plist $BACKUPFOLDER/RujelReports/CustomReport/
+    fi
 else
     echo "RujelReports not found"
 fi

@@ -19,11 +19,16 @@
 					<webobject name = "ItemSorting"/></td>
 			</tr></thead>
 			<webobject name = "SubsContainer"><webobject name = "SubsRepetition">
-				<webobject name = "SubRow"><td></td>
-				<td style = "width:1.2em;"><webobject name = "SubCheckBox"/></td>
-				<td align = "left" colspan = "2"><webobject name = "SubTitle"/></td>
-					</webobject></webobject>
-				</webobject>
+				<webobject name = "SubRow"><td/>
+				<webobject name = "SimpleCheckBox">
+					<td style = "width:1.2em;"><webobject name = "SubCheckBox"/></td>
+					<td align = "left" colspan = "2"><webobject name = "SubTitle"/></td>
+				</webobject><webobject name = "SubHasOptions"><td colspan = "3" align = "left">
+				<webobject name = "SubOptions">
+				<webobject name = "OptCell">
+					<webobject name = "OptRadio"/> <webobject name = "OptName"/>
+				</webobject></webobject></td>
+				</webobject></webobject></webobject></webobject>
 		</table></webobject>
 	<webobject name = "SubmitButton"/>
 	</div>
