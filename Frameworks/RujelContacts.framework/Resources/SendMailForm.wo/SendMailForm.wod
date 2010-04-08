@@ -94,7 +94,7 @@ SubjStart : WOString {
 }
 
 CanAttach : WOConditional {
-  condition = session.readAccess.edit;
+  condition = canAttach;
 }
 
 IfAttach : WOCheckBox {

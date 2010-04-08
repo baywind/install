@@ -239,7 +239,7 @@
 				<key>hover</key>
 				<string>какие работы показывать в распечатке</string>
 				<key>active</key>
-				<string>1</string>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>id</key>

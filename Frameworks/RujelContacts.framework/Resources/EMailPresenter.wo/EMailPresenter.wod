@@ -16,8 +16,8 @@ AddressString: WOString {
 }
 
 AddressTitle: WOString {
-	value = application.strings.RujelContacts_Contacts.properties.EMailUtiliser.address;
-	valueWhenEmpty = "Address";
+	value = session.strings.RujelContacts_Contacts.properties.EMailUtiliser.address;
+	escapeHTML = false;
 }
 
 CancelButton: WOSubmitButton {
@@ -117,4 +117,17 @@ RowContainer: OnClickContainer {
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+ComposeButton : OnClickContainer {
+  elementName = "span";
+  class = "button";
+  onclick = mailButton;
+  invokeAction = sendMail;
+  hide = ^selection;
+}
+
+ComposeTitle : WOString {
+  value = application.strings.RujelContacts_Contacts.SendMailForm.title;
+  valueWhenEmpty = "Send Mail";
 }

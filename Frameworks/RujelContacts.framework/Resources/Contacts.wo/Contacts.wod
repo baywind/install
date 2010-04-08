@@ -45,7 +45,7 @@ PersonSelector1: PersonSelector {
 	onClick = session.checkRun;
 }
 
-PesonSetected: WOConditional {
+PesonSelected: WOConditional {
 	condition = currPerson;
 }
 

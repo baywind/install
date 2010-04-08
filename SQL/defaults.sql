@@ -51,8 +51,8 @@ INSERT INTO CR_CRITERION (CRITER_NUM,CRIT_SET,CR_TITLE) VALUES
  /* типы работ */
 INSERT INTO CR_WORK_TYPE 
 (WT_ID,SORT_NUM,TYPE_NAME,DFLT_FLAGS,DFLT_WEIGHT,COLOR_NOWEIGHT,COLOR_WEIGHT,USE_COUNT) VALUES 
-(0,0,'классная',12,0.0,'#ffcc66','#ff9966',0),
-(1,1,'домашняя',28,0.0,'#ccffcc','#99ff66',0),
+(0,0,'классная',4,1.0,'#ffcc66','#ff9966',0),
+(1,1,'домашняя',20,1.0,'#ccffcc','#99ff66',0),
 (2,2,'проектная',8,1.0,'#ff99ff','#ff99ff',0),
 (3,3,'дополнительная',2,1.0,'#ccffff','#ccffff',0);
 

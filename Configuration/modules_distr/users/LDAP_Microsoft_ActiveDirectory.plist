@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>auth</key>
+	<dict>
+		<key>loginHandlerClass</key>
+		<string>net.rujel.auth.ldap.LdapAuthentication</string>
+		<key>groupMapping</key>
+		<dict>
+			<key>root</key>
+			<string>cn=sysadmin, ou=Users, ou=School</string>
+			<key>zavuch</key>
+			<string>cn=Учебная часть, ou=Users, ou=School</string>
+			<key>zav_kaf</key>
+			<string>cn=Завкафедры, ou=Users, ou=School</string>
+			<key>tutor</key>
+			<string>cn=Классные руководители, ou=Users, ou=School</string>
+			<key>teacher</key>
+			<string>cn=Учителя, ou=Users, ou=School</string>
+			<key>any</key>
+			<string>*</string>
+		</dict>
+		<key>ldap</key>
+		<dict>
+			<key>providerUrl</key>
+			<string>ldap://192.168.102.240</string>
+			<key>proxyUserDn</key>
+			<string>school\specuser</string>
+			<key>proxyPassword</key>
+			<string>123</string>
+			<key>useSSL</key>
+			<string>false</string>
+			<key>uidAttribute</key>
+			<string>sAMAccountName</string>
+			<key>groupAttribute</key>
+			<string>memberOf</string>
+			<key>presentAttribute</key>
+			<string>cn</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

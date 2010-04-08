@@ -4,6 +4,8 @@
 <dict>
 	<key>auth</key>
 	<dict>
+		<key>useHTTPS</key>
+		<string>false</string>
 		<key>loginPageName</key>
 		<string>Main</string>
 		<key>allowNone</key>

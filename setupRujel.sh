@@ -161,6 +161,8 @@ if [ -d RujelReports ] ; then
         cd ..
     else
         cp -r RujelReports ${CONFIGFOLDER}/
+        chown -R _appserver:_appserveradm ${CONFIGFOLDER}/RujelReports
+        chmod -R u+w RujelReports
         echo "RujelReports installed"
     fi
     if [ -e ${CONFIGFOLDER}/RujelReports/CustomReport/Woks.plist ] ; then
