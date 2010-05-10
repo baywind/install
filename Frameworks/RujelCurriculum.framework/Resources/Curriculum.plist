@@ -148,6 +148,8 @@
 		<string>У выбранного учителя не введено ни одного урока на эту дату</string>
 		<key>joinRequiresLesson</key>
 		<string>Для описания совмещения необходимо указать совместный урок</string>
+		<key>oldLesson</key>
+		<string>Вам запрещено редактирование старых уроков</string>
 	</dict>
 	<key>titles</key>
 	<dict>
