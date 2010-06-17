@@ -20,7 +20,7 @@ CanChange: WOConditional {
 }
 
 CanDelete: WOConditional {
-	condition = session.readAccess.delete.timeout;
+	condition = timeout;
 }
 
 CourseCheckBox: WOCheckBox {
@@ -35,6 +35,7 @@ CycleCheckBox: WOCheckBox {
 
 DeleteButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Delete;
+	omitTags = session.readAccess._delete.timeout;
 	invokeAction = delete;
 	onclick = session.tryLoad;
 	elementName = "input";

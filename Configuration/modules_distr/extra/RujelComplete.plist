@@ -11,5 +11,10 @@
 		<key>coursesCompleteDir</key>
 		<string>/tmp/complete/courses</string>
 	</dict>
+	<key>dbConnection.Complete</key>
+	<dict>
+		<key>dbName</key>
+		<string>RujelYear%s</string>
+	</dict>
 </dict>
 </plist>

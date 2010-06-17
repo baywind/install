@@ -43,14 +43,15 @@ MarkProperty : WOString {
 
 Mark : WOTextField {
   value = mark;
-  disabled = eduPeriod.namedFlags._manual;
+  disabled = cantChange;
   maxlength = 5;
   size = 4;
   style = "text-align:center;";
   onkeypress = onkeypress;
 }
 CanChange: WOConditional {
-	condition = canChange;
+	condition = cantChange;
+	negate = true;
 }
 
 CanDelete: WOConditional {
@@ -245,4 +246,12 @@ EditBonusRow : OnClickContainer {
   elementName = "tr";
   onclick = "if(toggleObj('bonusTextArea'))toggleObj('bonusText');";
   disabled = noEditBonusText;
+}
+
+MarkValue : WOString {
+  value = mark;
+}
+
+NotManual : WOConditional {
+  condition = eduPeriod.namedFlags._manual;
 }

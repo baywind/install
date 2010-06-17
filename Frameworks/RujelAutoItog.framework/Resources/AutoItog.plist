@@ -153,6 +153,8 @@
 		<string>Обновление прогнозов завершено</string>
 		<key>updateError</key>
 		<string>Произошла ошибка при обновлении прогнозов</string>
+		<key>ItogLock</key>
+		<string>Прогнозируемый итог</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

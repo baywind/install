@@ -4,12 +4,14 @@
 <dict>
 	<key>ItogMark</key>
 	<dict>
-		<key>root</key>
-		<string>1023</string>
-		<key>zavuch</key>
-		<string>15</string>
-		<key>teacher</key>
-		<string>1</string>
+		<key>modifiers</key>
+		<dict>
+			<key>prognosed</key>
+			<dict>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+		</dict>
 	</dict>
 	<key>AutoItog</key>
 	<dict>
@@ -22,6 +24,18 @@
 	</dict>
 	<key>Prognosis</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>zavuch</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>zavuch</key>
@@ -51,6 +65,18 @@
 	</dict>
 	<key>StudentTimeout</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>zavuch</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>zavuch</key>

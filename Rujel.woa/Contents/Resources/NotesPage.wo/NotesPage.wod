@@ -84,6 +84,7 @@ NotePresenter1: WOSwitchComponent {
 	student = studentItem;
 	single=single;
 	presenterCache = presenterCache;
+	access = access;
 }
 
 AllAddOnsRepetition: WORepetition {

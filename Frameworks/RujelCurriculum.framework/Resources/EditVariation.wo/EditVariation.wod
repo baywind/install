@@ -73,6 +73,7 @@ Save: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Save;
 	elementName = "input";
 	type = "submit";
+	omitTags = nullDate;
 }
 
 DeleteButton: WOGenericElement {

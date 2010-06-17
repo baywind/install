@@ -119,6 +119,8 @@
 		<string>10</string>
 		<key>entityName</key>
 		<string>Work</string>
+		<key>checkAccess</key>
+		<string>Mark</string>
 		<key>courseAttribute</key>
 		<string>course</string>
 		<key>single</key>
@@ -306,12 +308,20 @@
 	<dict>
 		<key>id</key>
 		<string>works</string>
+		<key>lockEntity</key>
+		<string>Work</string>
 		<key>title</key>
 		<string>работы</string>
 		<key>component</key>
 		<string>PrintWorks</string>
+		<key>manual</key>
+		<true/>
+		<key>precedes</key>
+		<array>
+			<string>student</string>
+		</array>
 		<key>sort</key>
-		<string>10</string>
+		<string>20</string>
 	</dict>
 </dict>
 </plist>

@@ -146,6 +146,8 @@
 		<string>Подтвердить</string>
 		<key>Select</key>
 		<string>Выбрать</string>
+		<key>OK</key>
+		<string>Ага</string>
 	</dict>
 </dict>
 </plist>

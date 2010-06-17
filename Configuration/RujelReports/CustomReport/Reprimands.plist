@@ -196,7 +196,7 @@
 			<key>formatter</key>
 			<false/>
 			<key>defaultValue</key>
-			<string>PlanFactCheck Daemon</string>
+			<string>AutoCheck??</string>
 		</dict>
 	</array>
 	<key>prefetch</key>

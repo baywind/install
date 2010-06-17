@@ -25,6 +25,7 @@ InspectorCaller : OnClickContainer {
   align = "center";
   valign = "middle";
   invokeAction = inspectorPopup;
+  disabled = disableButton;
   onclick = session.ajaxPopup;
   title = inspectorTitle;
 }
@@ -32,7 +33,6 @@ InspectorCaller : OnClickContainer {
 InspectorImage : WOImage {
 	filename = inspectorIcon;
 	framework = "RujelBase";
-	style = "cursor:pointer;";
 	width = 24;
 }
 

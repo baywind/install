@@ -121,8 +121,12 @@
 		<string>статистика</string>
 		<key>component</key>
 		<string>PrintStats</string>
+		<key>requires</key>
+		<array>
+			<string>student</string>
+		</array>
 		<key>sort</key>
-		<string>20</string>
+		<string>30</string>
 	</dict>
 </dict>
 </plist>

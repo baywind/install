@@ -10,4 +10,11 @@ Image1: WOImage {
 	filename = image;
 	framework = framework;
 	title = currAddOn.title;
+	height = currAddOn.height;
+	width = currAddOn.width;
+}
+
+ShowThis : WOConditional {
+  condition = currAddOn.hide;
+  negate = true;
 }

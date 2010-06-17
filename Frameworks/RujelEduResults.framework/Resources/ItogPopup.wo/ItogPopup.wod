@@ -14,7 +14,7 @@ CanChange: WOConditional {
 }
 
 CanDelete: WOConditional {
-	condition = addOn.access.delete;
+	condition = access.delete;
 }
 
 CancelButton: WOGenericElement {

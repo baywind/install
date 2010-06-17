@@ -26,6 +26,7 @@ StudentsList : WORepetition {
 
 StudentLink : WOGenericContainer {
   elementName = "a";
+  omitTags = studentNotReady;
   href = studentLink;
   onclick = "updateFrame(this.href);";
 }
@@ -43,4 +44,9 @@ GroupContainer : WOGenericContainer {
   onmouseover = "dim(this);";
   onmouseout = "unDim(this);";
   onclick = onclick;
+}
+
+Count : WOString {
+  value = ready;
+  escapeHTML = false;
 }

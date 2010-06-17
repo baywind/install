@@ -10,7 +10,7 @@ CommentForm: WOForm {
 }
 
 Conditional4: WOConditional {
-	condition = session.readAccess.edit.course;
+	condition = session.readAccess.edit.course.@comment;
 }
 
 CourseComment: WOTextField {
@@ -22,7 +22,7 @@ EditCommentLink: WOGenericContainer {
 	href = "#";
 	onclick = "document.commentForm.style.display = (document.commentForm.style.display == 'none')?'':'none';";
 	title = application.strings.RujelInterfaces_Names.EduCourse.comment;
-	omitTags = session.readAccess._edit.course;
+	omitTags = session.readAccess._edit.course.@comment;
 }
 
 Form1: WOForm {
@@ -101,7 +101,7 @@ OverGroupName: WOString {
 PageWrapper1: PageWrapper {
 	hasChanges = ec.hasChanges;
 	title = title;
-	onLoad="focus();";
+	onLoad="pagePreflight();focus();";
 	styles = "a {font-style:italic;text-decoration:none;color:blue;} a:hover{color:red;}";
 	cssURL = present.cssURL;
 	cssResource = present.cssResource;

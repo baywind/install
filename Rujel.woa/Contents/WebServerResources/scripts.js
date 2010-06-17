@@ -275,6 +275,7 @@ function ext(fld,maxLen,message,extParent) {
 }
 
 var returnField;
+
 function myPrompt(message,cont,pos,extParent) {
 	if(cont == null && returnField.value != null)
 		cont = returnField.value;
@@ -457,6 +458,13 @@ function onReadyStateChange(pos) {
 		container.style.display='block';
 	}*/
 	container.innerHTML = xmlHttp.responseText;
+	var ins = container.getElementsByTagName("input");
+	for(var i = 0; i < ins.length; i++) {
+		if(ins[i].type == "text") {
+			if(ins[i].disabled)
+				ins[i].style.backgroundColor='#cccccc';
+		}
+	}
 	cancelLoading();
 	if(pos != null) {
 		positionPopup(container.firstChild,pos);
@@ -473,37 +481,7 @@ function ajaxPopupAction (action,aevent) {
 			return false;
 		}
 	}
-	var pos = null;
-	if(aevent != null) {
-	try {
-		pos = getPosition(aevent);
-	} catch (e) {
-		if(window.event) {
-		try {
-			pos = getPosition(window.event);
-		} catch (e) {
-			try {
-				pos = getPosition(window.event.srcElement);
-			} catch (e) {
-				;
-			}
-		}
-		}
-	}
-	}
-	if(pos == null) {
-		pos = getPosition(null);
-	}
-
-	xmlHttp = ajaxRequest();
-    xmlHttp.onreadystatechange=function() {
- 		//alert('(' + xmlHttp.readyState + ')' + aevent.type + ' : ' + aevent.clientX);
-    	if(xmlHttp.readyState==4)
-    		onReadyStateChange(pos);
-	}
-    xmlHttp.open("GET",action,true);
-    xmlHttp.send(null);
-	loading = true;
+	getAjaxPopup(aevent, action);
 	return true;
 }
 
@@ -533,6 +511,11 @@ function ajaxPost(ini,aevent) {
 		params = params.concat(elt.name,'=',elt.value);
 		//alert(elt.name + ' = ' + elt.value);
 	}
+	getAjaxPopup(aevent, aForm.action, params);
+	return false;
+}
+
+function getAjaxPopup(aevent, action, post) {
 	var pos = null;
 	if(aevent != null) {
 	try {
@@ -559,11 +542,14 @@ function ajaxPost(ini,aevent) {
     	if(xmlHttp.readyState==4)
     		onReadyStateChange(pos);
 	}
-	xmlHttp.open("POST",aForm.action,true);
-	xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	xmlHttp.send(params);
+    if(post) {
+    	xmlHttp.open("POST",action,true);
+    	xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    } else {
+    	xmlHttp.open("GET",action,true);
+    }
+	xmlHttp.send(post);
 	loading = true;
-	return false;
 }
 
 function getXscroll() {
@@ -784,4 +770,16 @@ function blink(objID,nextClass,count) {
 	obj.className = nextClass;
 	if(count > 0)
 		blinkTimer = setTimeout("blink('" + objID + "','" + tmpClass + "'," + (count - 1) + ")",150);
+}
+
+function pagePreflight() {
+	var ins = document.getElementsByTagName("input");
+	for(var i = 0; i < ins.length; i++) {
+		if(ins[i].type == "text") {
+			if(ins[i].disabled)
+				ins[i].style.backgroundColor='#cccccc';
+			else if(ins[i].className = 'checkChanges')
+				ins[i].onchange = function() {checkChanges(this);};
+		}
+	}
 }

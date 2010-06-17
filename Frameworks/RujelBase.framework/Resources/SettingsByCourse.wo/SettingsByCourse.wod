@@ -1,0 +1,60 @@
+EduGroupLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
+	valueWhenEmpty = "Class";
+	escapeHTML = false;
+}
+
+EduPlanLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+	escapeHTML = false;
+}
+
+TeacherLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
+	valueWhenEmpty = "Teacher";
+	escapeHTML = false;
+}
+
+ByCourseList : WORepetition {
+  list = byCourse;
+  item = item;
+}
+
+ByCoursePresenter : ByCoursePresenter {
+  value = item;
+  readOnly = ^readOnly;
+  access = ^access;
+  pushByCourse = "^pushByCourse";
+}
+
+
+AddByCourse : OnClickContainer {
+  elementName = "span";
+  onclick = session.ajaxPopup;
+  invokeAction = addByCourse;
+  class = "green";
+  style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  title = session.strings.RujelBase_Base.SettingsBase.addByCourse;
+}
+
+Content : WOComponentContent {
+}
+
+ShowDetails : WOConditional {
+  condition = hideDetails;
+  negate = true;
+}
+
+HideDetais : WOConditional {
+  condition = hideDetails;
+}
+
+CanEdit : WOConditional {
+  condition = canEdit;
+}
+
+EditorHead : WOString {
+  value = editorHead;
+  escapeHTML = false;
+}

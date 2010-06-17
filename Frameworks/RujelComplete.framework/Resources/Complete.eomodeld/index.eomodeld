@@ -1,0 +1,6 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = "jdbc:mysql://localhost/Complete"; username = rujel; }; 
+    entities = ({className = "net.rujel.complete.Completion"; name = Completion; }); 
+}

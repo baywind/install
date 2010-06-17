@@ -46,6 +46,7 @@ Parameter : Parameter {
 SearchForm : WOForm {
   multipleSubmit = true;
   onsubmit = "enumerate(this,'sorting',1);return tryLoad();";
+  action = alert;
 }
 
 Description : WOString {

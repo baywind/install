@@ -76,7 +76,6 @@ ByCourseList : WORepetition {
 
 BasePresenter : ByCoursePresenter {
   value = base;
-  showString = true;
 }
 
 ByCoursePresenter2 : ByCoursePresenter {
@@ -93,9 +92,19 @@ CanCreate : WOConditional {
 }
 
 BcListName : WOString {
-  value = item.textValue;
+  value = listName;
+  escapeHTML = false;
 }
 
 BaseTextValue : WOString {
   value = base.textValue;
+}
+
+SettingsByCourse : SettingsByCourse {
+  item = item;
+  base = base;
+  defaultNumeric = currNum;
+  defaultText = currList;
+  ec = ec;
+  readOnly = true;
 }

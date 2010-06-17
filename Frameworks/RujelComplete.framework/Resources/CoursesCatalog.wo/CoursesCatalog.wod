@@ -23,6 +23,7 @@ CourseLink : WOGenericContainer {
   elementName = "a";
   href = link;
   onclick = "updateFrame(this.href);";
+  omitTags = disabled;
 }
 
 ByClass : WOString {

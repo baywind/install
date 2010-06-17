@@ -1,9 +1,3 @@
-LessonsLink : WOString {
-  value = application.strings.RujelInterfaces_Names.EduCourse.lessons;
-  escapeHTML = false;
-  valueWhenEmpty = "lessons";
-}
-
 Subject : WOString {
   value = course.subjectWithComment;
   escapeHTML = false;
@@ -30,15 +24,8 @@ Reports : WORepetition {
   item = item;
 }
 
-Hyperlink : WOGenericContainer {
-  elementName = "a";
-  href = href;
-  title = item.hover;
-  style = "margin-left:1em;";
-}
-
 ReportName : WOString {
-  value = item.title;
+  value = link;
   escapeHTML = false;
 }
 
@@ -46,4 +33,9 @@ NewWindow : WOString {
   value = application.strings.RujelComplete_Complete.newWindow;
   escapeHTML = false;
   valueWhenEmpty = "print";
+}
+
+Students : WOString {
+  value = students;
+  escapeHTML = false;
 }

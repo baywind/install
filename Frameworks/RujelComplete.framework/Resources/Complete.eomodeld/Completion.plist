@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "CPT_ASPECT"; 
+            name = aspect; 
+            prototypeName = word; 
+        }, 
+        {allowsNull = N; columnName = "C_ID"; name = cID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = Y; 
+            columnName = "CLOSE_DATE"; 
+            name = closeDate; 
+            prototypeName = datetime; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_COURSE"; 
+            name = courseID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "STUDENT_ID"; 
+            name = studentID; 
+            prototypeName = integer; 
+        }, 
+        {columnName = "WHO_CLOSED"; name = whoClosed; prototypeName = string; }
+    ); 
+    attributesUsedForLocking = (aspect, closeDate, courseID, studentID, whoClosed); 
+    className = "net.rujel.complete.Completion"; 
+    classProperties = (aspect, closeDate, whoClosed); 
+    externalName = "CPT_COMPLETION"; 
+    fetchSpecificationDictionary = {}; 
+    name = Completion; 
+    primaryKeyAttributes = (cID); 
+}

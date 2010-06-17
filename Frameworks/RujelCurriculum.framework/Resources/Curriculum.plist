@@ -295,22 +295,37 @@
 		<dict>
 			<key>id</key>
 			<string>curriculum</string>
+			<key>requires</key>
+			<array>
+				<string>lessons</string>
+			</array>
+			<key>lockEntity</key>
+			<array>
+				<string>Substitute</string>
+				<string>Variation</string>
+			</array>
 			<key>title</key>
 			<string>выполнение</string>
 			<key>component</key>
 			<string>PrintCurriculum</string>
 			<key>sort</key>
-			<string>30</string>
+			<string>40</string>
 		</dict>
 		<dict>
 			<key>id</key>
 			<string>reprimands</string>
 			<key>title</key>
 			<string>замечания</string>
+			<key>requires</key>
+			<array>
+				<string>curriculum</string>
+			</array>
+			<key>lockEntity</key>
+			<string>Reprimand</string>
 			<key>component</key>
 			<string>PrintReprimands</string>
 			<key>sort</key>
-			<string>40</string>
+			<string>70</string>
 		</dict>
 	</array>
 </dict>

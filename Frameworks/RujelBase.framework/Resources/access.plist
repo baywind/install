@@ -4,6 +4,20 @@
 <dict>
 	<key>BaseLesson</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>zavuch</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>teacher</key>
@@ -13,6 +27,18 @@
 	</dict>
 	<key>BaseNote</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>zavuch</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>teacher</key>

@@ -52,6 +52,7 @@ BSetTitle : WOString {
 
 FormulaPopUp : WOString {
   value = calcDict.title;
+  valueWhenEmpty = session.strings.RujelAutoItog_AutoItog.manual;
 }
 
 BSetPopUp : WOString {
@@ -61,6 +62,7 @@ BSetPopUp : WOString {
 
 Manual : WOConditional {
   condition = autoItog.namedFlags.manual;
+  negate = autoItog.noCalculator;
 }
 
 ManualTitle : WOString {
@@ -140,8 +142,12 @@ CanChange : WOConditional {
   condition = session.readAccess.edit.Prognosis;
 }
 
-Save: WOSubmitButton {
+Recalculate: WOSubmitButton {
 	action = save;
 	value = application.strings.RujelAutoItog_AutoItog.ui.recalculate;
 	name = "save";
+}
+IsCalculatable : WOConditional {
+  condition = autoItog.noCalculator;
+  negate = true;
 }

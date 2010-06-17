@@ -97,7 +97,7 @@ TeacherLN: PersonDisplay {
 
 EditLink: OnClickContainer {
 	elementName = "span";
-	hide = session.readAccess._edit.item;
+	hide = session.readAccess._edit.item.@comment;
 	invokeAction = inspectCourse;
 	style = "z-index:4;";
 	onclick = session.ajaxPopup;

@@ -70,6 +70,14 @@
 	</dict>
 	<key>BaseCourse</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>comment</key>
+			<dict>
+				<key>zav_kaf</key>
+				<string>15</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>zavuch</key>
@@ -89,6 +97,15 @@
 		<string>15</string>
 	</dict>
 	<key>PrimitiveEduCycle</key>
+	<dict>
+		<key>root</key>
+		<string>1023</string>
+		<key>zavuch</key>
+		<string>15</string>
+		<key>any</key>
+		<string>1</string>
+	</dict>
+	<key>SettingsBase</key>
 	<dict>
 		<key>root</key>
 		<string>1023</string>

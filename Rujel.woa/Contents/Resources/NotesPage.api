@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wodefinitions>
 	<wo class="NotesPage" wocomponentcontent="false">
 
@@ -11,16 +11,19 @@
 		<binding name="allAddOns"/>
 		<binding name="activeAddOns"/>
 
-		<validation message="&apos;lessonsList&apos; is a required binding">
+		<validation message="'lessonsList' is a required binding">
 			<unbound name="lessonsList"/>
 		</validation>
 
-		<validation message="&apos;studentsList&apos; is a required binding">
+		<validation message="'studentsList' is a required binding">
 			<unbound name="studentsList"/>
 		</validation>
 
-		<validation message="&apos;currLesson&apos; must be bound to a settable value">
+		<validation message="'currLesson' must be bound to a settable value">
 			<unsettable name="currLesson"/>
 		</validation>
-	</wo>
+	<validation message="'course' is a required binding.">
+            <unbound name="course"/>
+        </validation>
+    </wo>
 </wodefinitions>

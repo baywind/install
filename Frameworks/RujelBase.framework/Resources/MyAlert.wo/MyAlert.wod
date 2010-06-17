@@ -1,0 +1,52 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+CanCancel : WOConditional {
+  condition = cantCancel;
+  negate = true;
+}
+
+Message : WOString {
+  value = message;
+  escapeHTML = false;
+}
+
+Buttons : WORepetition {
+  list = actions;
+  item = item;
+}
+
+CancelButton : OnClickContainer {
+  elementName = "span";
+  hide = cantCancel;
+  onclick = "closePopup();";
+  class = "button";
+  style = "background-color:#cccccc;";
+  invokeAction = run;
+}
+
+CancelTitle : WOString {
+  value = cancelTitle;
+  escapeHTML = false;
+}
+
+ActionTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+Button : OnClickContainer {
+  elementName = "span";
+  class = "button";
+  style = item.style;
+  title = item.hover;
+  invokeAction = run;
+  onclick = onClick;
+}

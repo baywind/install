@@ -1,5 +1,10 @@
+Title : WOString {
+  value = session.strings.RujelComplete_Complete.adminModule.title;
+  escapeHTML = false;
+}
+
 Form : WOForm {
-	action = prepareStructure;
+ style = "margin:1em;float:left;max-width:60%;";
 }
 
 WriteCourses : WOCheckBox {
@@ -12,4 +17,96 @@ WriteStudents : WOCheckBox {
 
 WriteReports : WOCheckBox {
 	checked = writeReports;
+}
+StateTitle : WOString {
+  value = session.strings.RujelComplete_Complete.stateTitle;
+  escapeHTML = false;
+}
+
+CurrState : WOString {
+  value = stateCell;
+  escapeHTML = false;
+}
+
+StateToggle : OnClickContainer {
+  elementName = "td";
+  invokeAction = toggleActive;
+  onclick = session.tryLoad;
+  class = "button";
+  hide = noItem;
+}
+
+ToggleTitle : WOString {
+  value = toggleTitle;
+}
+
+
+SettingsByCourse : SettingsByCourse {
+  item = item;
+  base = base;
+  ec = ^ec;
+  hideEmptyDetails = false;
+  defaultNumeric = session.eduYear;
+  pushByCourse = "pushByCourse";
+}
+
+Hide : WOConditional {
+  condition = false;
+}
+
+StudentFiles : FileLister {
+  file = studentsFolder;
+  target = "_blank";
+}
+
+CourseFiles : FileLister {
+  file = coursesFolder;
+  target = "_blank";
+}
+
+StudentsTitle : WOString {
+  value = session.strings.RujelComplete_Complete.StudentCatalog;
+  escapeHTML = false;
+}
+
+CoursesTitle : WOString {
+  value = session.strings.RujelComplete_Complete.CourseCatalog;
+  escapeHTML = false;
+}
+
+IsTitle : WOConditional {
+  condition = item;
+  negate = true;
+}
+
+Stamp : WOImage {
+  framework = "RujelComplete";
+  filename = "stamp.gif";
+  height = 24;
+  width = 24;
+}
+IsRow : WOConditional {
+  condition = item;
+}
+
+ClosedTick : WOCheckBox {
+  checked = closed;
+  disabled = session.readAccess._edit.CompleteSetup;
+}
+
+
+Submit : WOSubmitButton {
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+  action = submit;
+  disabled = session.readAccess._edit.CompleteSetup;
+}
+
+ResultsTitle : WOString {
+  value = session.strings.RujelComplete_Complete.results;
+  escapeHTML = false;
+}
+
+Instruction : WOString {
+  value = session.strings.RujelComplete_Complete.messages.instruction;
+  escapeHTML = false;
 }

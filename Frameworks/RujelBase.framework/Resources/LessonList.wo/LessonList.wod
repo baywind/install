@@ -129,7 +129,7 @@ MoveDown: WOImageButton {
 CurrLessonDateField: WOTextField {
 	size = lessonTitle.length;
 	value = lessonTitle;
-	disabled = session.readAccess._edit.lessonItem;
+	disabled = access._edit;
 	onChange = "checkChanges(this);";
 	onFocus = "if(!tryLoad(false)) blur();";
 	style = "text-align:center;";
@@ -142,7 +142,7 @@ CurrLessonThemeField: WOText {
 	style = "width:100%";
 	rows = 2;
 	value = ^currLesson.theme;
-	disabled = session.readAccess._edit.lessonItem;
+	disabled = access._edit;
 	onChange = "checkChanges(this);";
 	onFocus = "if(!tryLoad(false)) blur();";
 	id = themeFieldID;
@@ -168,7 +168,7 @@ CurrLessonHomeTaskField: WOText {
 	style = "width:100%;";
 	rows = 2;
 	value = ^currLesson.homeTask;
-	disabled = session.readAccess._edit.lessonItem;
+	disabled = access._edit;
 	onChange = "checkChanges(this);";
 	onFocus = "if(!tryLoad(false)) blur();";
 	tabindex = 3;

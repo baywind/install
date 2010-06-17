@@ -18,6 +18,8 @@
 		<string>05</string>
 		<key>entityName</key>
 		<string>BaseLesson</string>
+		<key>checkAccess</key>
+		<string>BaseNote</string>
 		<key>courseAttribute</key>
 		<string>course</string>
 		<key>presenter</key>
@@ -121,6 +123,8 @@
 		<string>Для всех курсов</string>
 		<key>unspecified</key>
 		<string>(все)</string>
+		<key>addByCourse</key>
+		<string>уточнить для отдельных курсов</string>
 	</dict>
 	<key>newPerson</key>
 	<dict>
@@ -169,6 +173,21 @@
 		<string>Причина смены</string>
 		<key>reasonRequired</key>
 		<string>Пожалуйста, укажите причину смены преподавателя</string>
+	</dict>
+	<key>courseComplete</key>
+	<dict>
+		<key>id</key>
+		<string>lessons</string>
+		<key>title</key>
+		<string>уроки</string>
+		<key>component</key>
+		<string>PrintLessons</string>
+		<key>lockEntity</key>
+		<string>BaseLesson</string>
+		<key>manual</key>
+		<true/>
+		<key>sort</key>
+		<string>10</string>
 	</dict>
 </dict>
 </plist>

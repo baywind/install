@@ -33,10 +33,6 @@ CourseTeacher : PersonDisplay {
   startWithLast = true;
 }
 
-ShowString : WOConditional {
-  condition = ^showString;
-}
-
 StringValue : WOString {
   value = bc.textValue;
 }
@@ -93,12 +89,13 @@ BaseString : WOString {
 EditCell : OnClickContainer {
   elementName = "td";
   invokeAction = edit;
-  hide = session.readAccess._edit.bc;
+  hide = access._edit;
   onclick = session.ajaxPopup;
 }
 
 CanEdit : WOConditional {
-  condition = ^editList;
+  condition = ^readOnly;
+  negate = true;
 }
 
 EditImage : WOImage {
@@ -109,7 +106,7 @@ EditImage : WOImage {
 DeleteCell : OnClickContainer {
   elementName = "td";
   invokeAction = delete;
-  hide = session.readAccess._delete.bc;
+  hide = access._delete;
   onclick = session.tryLoad;
 }
 
@@ -127,4 +124,9 @@ Row : WOGenericContainer {
   elementName = "tr";
   title = bc.eduYear;
    class = "grey";
+}
+
+EditorHead : WOString {
+  value = editorHead;
+  escapeHTML = false;
 }

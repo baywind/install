@@ -162,6 +162,7 @@ SubsButton : WORadioButton {
   value = 0;
   selection = idx;
   onchange = "if(checked)hideObj('joinBind');else showObj('joinBind');fitWindow();";
+  disabled = cantEdit;
 }
 
 SubstituteType : WOString {
@@ -174,6 +175,7 @@ JoinButton : WORadioButton {
   value = 1;
   selection = idx;
   onchange = "if(checked)showObj('joinBind');else hideObj('joinBind');fitWindow();";
+  disabled = cantEdit;
 }
 
 JoinType : WOString {

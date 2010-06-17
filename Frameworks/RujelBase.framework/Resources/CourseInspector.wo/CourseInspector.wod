@@ -20,7 +20,7 @@ Title : WOString {
 CommentField : WOTextField {
   value = course.comment;
   size = 15;
-  disabled = session.readAccess._edit.course;
+  disabled = session.readAccess._edit.course.@comment;
 }
 
 Form : WOForm {
@@ -182,7 +182,7 @@ CanCreate : WOConditional {
 }
 
 CanEdit : WOConditional {
-  condition = session.readAccess.edit.course;
+  condition = session.readAccess.edit.course.@comment;
 }
 
 Delete : WOGenericElement {

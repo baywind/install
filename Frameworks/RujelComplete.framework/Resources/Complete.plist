@@ -16,6 +16,49 @@
 	<string>по предметам</string>
 	<key>byTeacher</key>
 	<string>по учителям</string>
+	<key>stateTitle</key>
+	<string>режим закрытия</string>
+	<key>active</key>
+	<string>активен</string>
+	<key>inactive</key>
+	<string>не активен</string>
+	<key>activate</key>
+	<string>активировать</string>
+	<key>deactivate</key>
+	<string>отменить закрытие</string>
+	<key>requires</key>
+	<string>Требуется</string>
+	<key>closeTitle</key>
+	<string>Закрыть</string>
+	<key>release</key>
+	<string>Раскрыть</string>
+	<key>byCourse</key>
+	<string>Выборочно</string>
+	<key>results</key>
+	<string>Результаты</string>
+	<key>messages</key>
+	<dict>
+		<key>closingTitle</key>
+		<string>В курсе завершены:</string>
+		<key>closingCourse</key>
+		<string>установка галки запрещает дальнейшее редактирование</string>
+		<key>noneSelected</key>
+		<string>Вы не выбрали ни одного учащегося для закрытия. Поставьте одну или несколько &quot;галок&quot; прежде чем нажимать на &quot;печать&quot;</string>
+		<key>closing1</key>
+		<string>Вы собираетесь закрыть результаты следующих учащихся:</string>
+		<key>closing2</key>
+		<string>после закрытия редактирование всех их отметок будет запрещено.</string>
+		<key>closingAll</key>
+		<string>Вы собираетесь закрыть результаты всех учащихся. &lt;br/&gt;После закрытия редактирование всех их отметок будет запрещено.</string>
+		<key>release</key>
+		<string>Снять закрытие с учащегося</string>
+		<key>preceding</key>
+		<string>Перед закрытием учащихся необходимо закрыть</string>
+		<key>locked</key>
+		<string>закрыто</string>
+		<key>instruction</key>
+		<string>установленная галка означает доступность режима закрытия для соответствующих курсов</string>
+	</dict>
 	<key>adminModule</key>
 	<dict>
 		<key>title</key>
@@ -24,6 +67,76 @@
 		<string>CompleteSetup</string>
 		<key>sort</key>
 		<string>80</string>
+	</dict>
+	<key>dashboard</key>
+	<dict>
+		<key>title</key>
+		<string>Закрытие учебного года</string>
+		<key>component</key>
+		<string>DisplayAny</string>
+		<key>invokeAction</key>
+		<string>true</string>
+		<key>nextPage</key>
+		<string>CompletePopup</string>
+		<key>pageParams</key>
+		<dict>
+			<key>course</key>
+			<string>^course</string>
+			<key>returnPage</key>
+			<string>$context.page</string>
+		</dict>
+		<key>presenter</key>
+		<string>WOImage</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>framework</key>
+			<string>RujelComplete</string>
+			<key>filename</key>
+			<string>stamp.gif</string>
+			<key>style</key>
+			<string>border:double #9966cc;padding:2px;</string>
+			<key>class</key>
+			<string>backfield2</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
+			<key>onmouseover</key>
+			<string>dim(this);</string>
+			<key>onmouseout</key>
+			<string>unDim(this);</string>
+			<key>title</key>
+			<string>Закрытие учебного года</string>
+			<key>height</key>
+			<string>38</string>
+			<key>width</key>
+			<string>38</string>
+		</dict>
+		<key>sort</key>
+		<string>90</string>
+	</dict>
+	<key>addOn</key>
+	<dict>
+		<key>activeComponent</key>
+		<string>CompletePresenter</string>
+		<key>component</key>
+		<string>GenericAddOn</string>
+		<key>defaultOn</key>
+		<false/>
+		<key>framework</key>
+		<string>RujelComplete</string>
+		<key>id</key>
+		<string>complete</string>
+		<key>imageOff</key>
+		<string>stamp.gif</string>
+		<key>imageOn</key>
+		<string>stamp_gr.gif</string>
+		<key>height</key>
+		<string>24</string>
+		<key>width</key>
+		<string>24</string>
+		<key>title</key>
+		<string>Закрытие года</string>
+		<key>sort</key>
+		<string>90</string>
 	</dict>
 </dict>
 </plist>

@@ -56,68 +56,6 @@
 			<string>$session.today</string>
 		</dict>
 		<dict>
-			<key>hidden</key>
-			<true/>
-			<key>title</key>
-			<string>Учитель</string>
-			<key>attribute</key>
-			<string>teacher</string>
-			<key>presenter</key>
-			<string>PersonDisplay</string>
-			<key>presenterBindings</key>
-			<dict>
-				<key>person</key>
-				<string>.</string>
-				<key>last</key>
-				<string>2</string>
-				<key>first</key>
-				<string>1</string>
-				<key>second</key>
-				<string>1</string>
-				<key>valueWhenEmpty</key>
-				<string>Выбрать</string>
-			</dict>
-			<key>popup</key>
-			<dict>
-				<key>title</key>
-				<string>Выберите учителя</string>
-				<key>style</key>
-				<string>min-width:20em</string>
-				<key>presenter</key>
-				<string>TeacherSelector</string>
-				<key>takeValuesFromRequest</key>
-				<true/>
-				<key>invokeAction</key>
-				<true/>
-				<key>presenterBindings</key>
-				<dict>
-					<key>entity</key>
-					<string>Teacher</string>
-					<key>firstNameDisplay</key>
-					<integer>2</integer>
-					<key>secondNameDisplay</key>
-					<integer>2</integer>
-					<key>selection</key>
-					<string>.</string>
-					<key>useAjaxPost</key>
-					<true/>
-				</dict>
-			</dict>
-			<key>in</key>
-			<dict>
-				<key>relationship</key>
-				<string>course</string>
-				<key>args</key>
-				<array>
-					<string>.itogContainer.eduYear</string>
-				</array>
-				<key>qualifierFormat</key>
-				<string>eduYear = %@</string>
-			</dict>
-			<key>hide</key>
-			<string></string>
-		</dict>
-		<dict>
 			<key>title</key>
 			<string>Ученик</string>
 			<key>attribute</key>

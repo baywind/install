@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
         <wo class="ByCoursePresenter.java" wocomponentcontent="true">
 
@@ -9,5 +9,7 @@
         
         
     <binding name="editList"/>
+    <binding defaults="Boolean" name="readOnly"/>
+    <binding name="pushByCourse"/>
     </wo>
 </wodefinitions>

@@ -1,0 +1,24 @@
+Title : WOString {
+  value = file.name;
+}
+
+FileList : WORepetition {
+  list = files;
+  item = item;
+}
+
+FileName : WOString {
+  value = item.name;
+}
+
+Link : WOGenericContainer {
+  elementName = "a";
+  href = href;
+  omitTags = disableLink;
+  invokeAction = open;
+  target = target;
+}
+
+IsStandalone : WOConditional {
+  condition = standalone;
+}
