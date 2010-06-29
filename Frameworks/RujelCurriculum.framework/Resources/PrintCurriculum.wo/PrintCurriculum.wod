@@ -159,7 +159,7 @@ Begin : WOString {
 }
 
 End : WOString {
-  value = item.begin;
+  value = item.end;
   dateformat = application.prefs.ui.dateFormat;
 }
 

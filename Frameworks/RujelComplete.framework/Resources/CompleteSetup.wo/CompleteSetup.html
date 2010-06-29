@@ -1,23 +1,25 @@
+<webobject name = "Progress"/>
 <h1><webobject name = "Title"/></h1>
 <webobject name = "Form">
 <webobject name = "SettingsByCourse"><td><webobject name = "IsTitle"><webobject name = "Stamp"/>
 </webobject><webobject name = "IsRow"><webobject name = "ClosedTick"/></webobject></td></webobject>
 <webobject name = "Submit"/>
 <br/><webobject name = "Instruction"/></webobject>
-<table align = "right" border = "1" style = "margin:1em;"><tr>
+<webobject name = "ForcedForm"><table cellpadding = "4">
+<tr><th colspan = "2"><webobject name = "Forced"/></th></tr>
+<tr><td><webobject name = "WriteCourses"/></td>
+	<td><webobject name = "CoursesTitle"/></td></tr>
+<tr><td><webobject name = "WriteStudents"/></td>
+	<td><webobject name = "StudentsTitle"/></td></tr>
+<tr><td colspan = "2"><webobject name = "SubmitForced"/>
+</table></webobject>
+<hr style = "clear:both;"/>
+<table align = "center" border = "1" style = "margin:1em;" cellpadding = "4"><tr>
 	<th colspan = "2" style = "padding:4pt;font-size:large;">
-		<webobject name = "ResultsTitle"/>:</th></tr>
+		<webobject name = "ResultsTitle"/>:</th></tr><webobject name = "SeparateStudents">
 <tr><th><webobject name = "StudentsTitle"/></th>
-	<th><webobject name = "CoursesTitle"/></th>
-<tr><td align = "left"><webobject name = "StudentFiles"/></td>
+	<th><webobject name = "CoursesTitle"/></th></tr></webobject>
+<tr valign = "top"><webobject name = "SeparateStudents">
+	<td align = "left"><webobject name = "StudentFiles"/></td></webobject>
 	<td align = "left"><webobject name = "CourseFiles"/></td>
 </tr></table>
-
-<webobject name = "Hide">
-<webobject name = "Form">
-<webobject name = "WriteCourses"/> Write Courses<br/> 
-<webobject name = "WriteStudents"/> Write Students<br/>
-<br/> 
-<webobject name = "WriteReports"/> Write Reports <br/> 
-<input type = "submit"/></webobject>
-</webobject>

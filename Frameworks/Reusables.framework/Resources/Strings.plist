@@ -116,6 +116,8 @@
 	<dict>
 		<key>Add</key>
 		<string>Добавить</string>
+		<key>Archive</key>
+		<string>Архивировать</string>
 		<key>Back</key>
 		<string>Назад</string>
 		<key>Cancel</key>

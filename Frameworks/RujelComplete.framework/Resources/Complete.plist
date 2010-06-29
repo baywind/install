@@ -18,14 +18,6 @@
 	<string>по учителям</string>
 	<key>stateTitle</key>
 	<string>режим закрытия</string>
-	<key>active</key>
-	<string>активен</string>
-	<key>inactive</key>
-	<string>не активен</string>
-	<key>activate</key>
-	<string>активировать</string>
-	<key>deactivate</key>
-	<string>отменить закрытие</string>
 	<key>requires</key>
 	<string>Требуется</string>
 	<key>closeTitle</key>
@@ -36,6 +28,12 @@
 	<string>Выборочно</string>
 	<key>results</key>
 	<string>Результаты</string>
+	<key>forced</key>
+	<string>Принудительное закрытие</string>
+	<key>running</key>
+	<string>Выполняется</string>
+	<key>progress</key>
+	<string>Состояние</string>
 	<key>messages</key>
 	<dict>
 		<key>closingTitle</key>

@@ -113,6 +113,8 @@
 	<string>Все учителя</string>
 	<key>vacant</key>
 	<string>Вакансия</string>
+	<key>before</key>
+	<string>до</string>
 	<key>SettingsBase</key>
 	<dict>
 		<key>duplicateByCourse</key>

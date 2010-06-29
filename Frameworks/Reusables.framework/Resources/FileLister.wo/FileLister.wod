@@ -16,9 +16,46 @@ Link : WOGenericContainer {
   href = href;
   omitTags = disableLink;
   invokeAction = open;
-  target = target;
+  target = ^target;
 }
 
 IsStandalone : WOConditional {
   condition = standalone;
+}
+
+ActionTitle : WOString {
+  value = actionTitle;
+  escapeHTML = false;
+}
+
+Act : OnClickContainer {
+  elementName = "td";
+  align = "right";
+  invokeAction = perform;
+  disabled = access._edit;
+  title = actionHover;
+}
+
+Standalone : WOConditional {
+  condition = standalone;
+}
+
+Delete : OnClickContainer {
+  elementName = "td";
+  hide = access._delete;
+  onclick = onDelClick;
+  invokeAction = delete;
+  title = session.strings.Reusables_Strings.uiElements.Delete;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 12;
+  width = 12;
+  alt = "delete";
+}
+Dir : WOConditional {
+  condition = item.isDirectory;
 }

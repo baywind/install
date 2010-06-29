@@ -20,7 +20,22 @@
 <table width = "100%" style = "font-size:large;"><tr>
 	<td align = "left" width = "20%"><webobject name = "EduGroup"/></td>
 	<td align = "left"><webobject name = "Subject"/></td>
-	<td align = "right"><webobject name = "Teacher"/></td>
+	<td align = "right"><webobject name = "NoChanges">
+	<webobject name = "Teacher"/></webobject><webobject name = "HasChanges">
+	<table><tr><td colspan = "2"/><td colspan = "2" rowspan = "2"/></tr>
+		<webobject name = "Changes"><tr>
+		<td rowspan = "2" align = "right"><webobject name = "ChangedTeacher"/></td>
+			<td style = "height:1.1ex;width:1px;background-color:#cccccc;"/></tr>
+		<tr style = "font-size:normal;font-weight:normal;">
+		<td style = "height:1.1ex;width:1px;background-color:#cccccc;"/>
+		<td rowspan = "2"><webobject name = "ChangeDate"/></td>
+	<td rowspan = "2"><webobject name = "ChangeComment"/></td></tr></webobject>
+	<tr><td rowspan = "2" align = "right"><webobject name = "Teacher"/></td>
+	<td style = "height:1.1ex;width:1px;background-color:#cccccc;"/></tr>
+	<tr><td style = "height:1.1ex;width:1px;background-color:#cccccc;"/><td colspan = "2"/></tr>
+	</table>
+	</webobject>
+</td>
 </tr></table>
 <p><a href = "#" target="print" onclick="href=window.parent.frames['content'].location" style = "float:right;margin-right:0px;">
 	<webobject name = "NewWindow"/></a><webobject name = "Reports">

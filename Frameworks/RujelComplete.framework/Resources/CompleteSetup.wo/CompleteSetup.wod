@@ -4,7 +4,7 @@ Title : WOString {
 }
 
 Form : WOForm {
- style = "margin:1em;float:left;max-width:60%;";
+  style = "margin:1em;float:left;max-width:60%;";
 }
 
 WriteCourses : WOCheckBox {
@@ -15,9 +15,10 @@ WriteStudents : WOCheckBox {
 	checked = students;
 }
 
-WriteReports : WOCheckBox {
-	checked = writeReports;
+ForcedForm : WOForm {
+	style = "margin:1em;float:right;";
 }
+
 StateTitle : WOString {
   value = session.strings.RujelComplete_Complete.stateTitle;
   escapeHTML = false;
@@ -48,20 +49,23 @@ SettingsByCourse : SettingsByCourse {
   hideEmptyDetails = false;
   defaultNumeric = session.eduYear;
   pushByCourse = "pushByCourse";
+  access = session.readAccess.FLAGS.CompleteSetup;
 }
 
 Hide : WOConditional {
-  condition = false;
+  condition = true;
 }
 
 StudentFiles : FileLister {
   file = studentsFolder;
   target = "_blank";
+  access = session.readAccess.FLAGS.CompleteSetup;
 }
 
 CourseFiles : FileLister {
   file = coursesFolder;
   target = "_blank";
+  access = session.readAccess.FLAGS.CompleteSetup;
 }
 
 StudentsTitle : WOString {
@@ -109,4 +113,24 @@ ResultsTitle : WOString {
 Instruction : WOString {
   value = session.strings.RujelComplete_Complete.messages.instruction;
   escapeHTML = false;
+}
+
+SeparateStudents : WOConditional {
+  condition = studentsFolder;
+}
+
+Progress : WOString {
+  value = showProgress;
+  escapeHTML = false;
+}
+
+Forced : WOString {
+  value = session.strings.RujelComplete_Complete.forced;
+  escapeHTML = false;
+}
+
+SubmitForced : WOSubmitButton {
+  action = force;
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+  disabled = session.readAccess._edit.CompleteSetup;
 }

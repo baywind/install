@@ -4,5 +4,8 @@
         <binding name="filePath"/>
     <binding defaults="Boolean" name="justNavigate"/>
     <binding name="target"/>
+    
+        
+    <binding name="access"/>
     </wo>
 </wodefinitions>

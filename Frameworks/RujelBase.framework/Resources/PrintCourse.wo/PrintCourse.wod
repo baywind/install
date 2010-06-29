@@ -27,7 +27,46 @@ Teacher : PersonDisplay {
   first = 2;
   second = 2;
   last = 2;
+  valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
 }
+
 IfPeriod : WOConditional {
   condition = ^presentPeriod;
+}
+
+NoChanges : WOConditional {
+  condition = changes;
+  negate = true;
+}
+
+HasChanges : WOConditional {
+  condition = changes;
+}
+Changes : WORepetition {
+  list = changes;
+  item = item;
+}
+
+ChangedTeacher : PersonDisplay {
+  person = item.teacher;
+  last = 2;
+  first = 2;
+  second = 2;
+  startWithLast = true;
+  valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
+}
+
+ChangeDate : WOString {
+  value = item.date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ChangeComment : WOString {
+  value = item.comment;
+}
+Before : WOString {
+  value = session.strings.RujelBase_Base.before;
+  escapeHTML = false;
 }

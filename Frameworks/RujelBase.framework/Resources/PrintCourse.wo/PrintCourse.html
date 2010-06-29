@@ -26,26 +26,36 @@ th {
 	border-width:1px;
 	border-style:none none solid solid;
 }
+.noborder td {
+	border-style:none;
+}
 </style>
 </head>
 <body>
-<table border = "0" align = "left" style = "font-size:large;font-weight:bold;"><tr>
-<td style = "border:none;">
+<table border = "0" align = "left" style = "font-size:large;font-weight:bold;" class = "noborder">
+<tr valign = "middle">
+<td style = "width:5em;" align = "left">
 <webobject name = "EduYear"/>
 </td><webobject name = "IfPeriod">
 	<td style = "border:none;padding-left:2em;">
 	<webobject name = "EduPeriod"/>
 	</td></webobject>
 </tr></table>
-<table border = "0" align = "right" style = "font-size:large;font-weight:bold;"><tr>
-<td style = "border:none;">
-<webobject name = "ClassName"/>
-</td><td style = "border:none;padding-left:2em;">
-<webobject name = "Subject"/>
-</td><td style = "border:none;padding-left:2em;">
-<webobject name = "Teacher"/>
+<table border = "0" align = "right" style = "font-size:large;font-weight:bold;" class = "noborder">
+<tr><td style = "white-space:nowrap;">
+	<webobject name = "ClassName"/>
+</td><td style = "padding-left:2em;">
+	<webobject name = "Subject"/>
+</td><td style = "padding-left:2em;">
+	<webobject name = "Teacher"/>
 </td></tr></table>
-<br clear = "all"/>
+<webobject name = "HasChanges">
+<table align = "right" class = "noborder" style = "margin-left:1em;clear:right;">
+	<webobject name = "Changes">
+		<td align = "right"><webobject name = "Before"/> <webobject name = "ChangeDate"/> :</td>
+		<td align = "left"><webobject name = "ChangedTeacher"/></td>
+		<td align = "left">- <webobject name = "ChangeComment"/></td></tr></webobject>
+</table></webobject><br clear = "all"/>
 <webobject name = "Component"/>
 </body>
 </html>

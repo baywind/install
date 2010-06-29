@@ -36,6 +36,7 @@ AddByCourse : OnClickContainer {
   class = "green";
   style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
   title = session.strings.RujelBase_Base.SettingsBase.addByCourse;
+  hide = ^access._create;
 }
 
 Content : WOComponentContent {
