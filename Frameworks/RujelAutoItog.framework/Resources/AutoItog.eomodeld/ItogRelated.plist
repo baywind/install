@@ -2,14 +2,14 @@
     attributes = (
         {
             allowsNull = N; 
-            columnName = EDU_COURSE; 
+            columnName = "EDU_COURSE"; 
             name = courseID; 
             prototypeName = integer; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = ITOG_CONTAINER; 
+            columnName = "ITOG_CONTAINER"; 
             name = itogID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -31,19 +31,19 @@
     ); 
     attributesUsedForLocking = (courseID, itogID, relKey); 
     className = EOGenericRecord; 
-    classProperties = (autoItog, relKey); 
+    classProperties = (itogContainer, relKey); 
     externalName = "AI_ITOG_RELATED"; 
     fetchSpecificationDictionary = {}; 
     name = ItogRelated; 
     primaryKeyAttributes = (rID); 
     relationships = (
         {
-            destination = AutoItog; 
+            destination = ItogContainer; 
             isMandatory = Y; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
-            joins = ({destinationAttribute = aiID; sourceAttribute = itogID; }); 
-            name = autoItog; 
+            joins = ({destinationAttribute = iID; sourceAttribute = itogID; }); 
+            name = itogContainer; 
         }
     ); 
 }
