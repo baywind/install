@@ -194,3 +194,7 @@ ReusableScripts : ResourceLink {
   jsLink = "scripts.js";
   cssLink = "style.css";
 }
+
+EduYear : WOString {
+  value = eduYear;
+}
