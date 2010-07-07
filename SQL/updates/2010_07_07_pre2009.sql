@@ -1,6 +1,6 @@
 -- 2010-07-01
 
-USE RujelYear2008;  
+USE RujelYear2008;
 
 -- исправление привязки прогнозов
 UPDATE AI_ITOG_RELATED r, AI_AUTOITOG i
@@ -26,6 +26,8 @@ CREATE TABLE ATT_DAY (
   ATTEND_STATE tinyint NOT NULL,
   SKIPPED_LESSONS smallint NOT NULL,
   VISITED_LESSONS smallint NOT NULL,
+  TIME_IN time; 	-- пришел в школу
+  TIME_OUT time;	-- ушел из школы
   REASON_ID mediumint,
   PRIMARY KEY (D_ID)
 ) ENGINE=InnoDB;
@@ -36,8 +38,10 @@ CREATE TABLE ATT_REASON (
   R_ID mediumint NOT NULL,
   REASON_TEXT varchar(255) NOT NULL,
   REASON_TYPE smallint NOT NULL,
-  VERIFY_TEXT varchar(255),
-  EVENT_RANK smallint,
+  LESSONS_COUNT tinyint NOT NULL,
+  EVENT_STATUS tinyint NOT NULL DEFAULT 0,
+  BEGIN_DATE date NOT NULL,
+  END_DATE date NOT NULL,
   PRIMARY KEY (R_ID)
 ) ENGINE=InnoDB;
 
@@ -48,7 +52,7 @@ CREATE TABLE ATT_LIST (
   PRIMARY KEY (REASON_ID,STUDENT_ID)
 ) ENGINE=InnoDB;
 
-USE RujelYear2007;  
+USE RujelYear2007;
 
 -- исправление привязки прогнозов
 UPDATE AI_ITOG_RELATED r, AI_AUTOITOG i
@@ -74,6 +78,8 @@ CREATE TABLE ATT_DAY (
   ATTEND_STATE tinyint NOT NULL,
   SKIPPED_LESSONS smallint NOT NULL,
   VISITED_LESSONS smallint NOT NULL,
+  TIME_IN time; 	-- пришел в школу
+  TIME_OUT time;	-- ушел из школы
   REASON_ID mediumint,
   PRIMARY KEY (D_ID)
 ) ENGINE=InnoDB;
@@ -84,8 +90,10 @@ CREATE TABLE ATT_REASON (
   R_ID mediumint NOT NULL,
   REASON_TEXT varchar(255) NOT NULL,
   REASON_TYPE smallint NOT NULL,
-  VERIFY_TEXT varchar(255),
-  EVENT_RANK smallint,
+  LESSONS_COUNT tinyint NOT NULL,
+  EVENT_STATUS tinyint NOT NULL DEFAULT 0,
+  BEGIN_DATE date NOT NULL,
+  END_DATE date NOT NULL,
   PRIMARY KEY (R_ID)
 ) ENGINE=InnoDB;
 
