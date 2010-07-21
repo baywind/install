@@ -1,17 +1,31 @@
 {
     attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "COMMENT_ID"; 
+            name = commentID; 
+            prototypeName = integer; 
+        }, 
         {columnName = "ROW_IDX"; name = idx; prototypeName = short; }, 
         {columnName = "INDEX_ID"; name = indID; prototypeName = short; }, 
         {columnName = "IDX_VALUE"; name = value; prototypeName = string; }
     ); 
-    attributesUsedForLocking = (value); 
-    className = EOGenericRecord; 
-    classProperties = (value, indexer, idx); 
+    attributesUsedForLocking = (commentID, value); 
+    className = "net.rujel.base.IndexRow"; 
+    classProperties = (value, indexer, idx, commentEO); 
     externalName = "BASE_INDEX_ROW"; 
     fetchSpecificationDictionary = {}; 
     name = IndexRow; 
     primaryKeyAttributes = (idx, indID); 
     relationships = (
+        {
+            destination = StaticTextStore; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tID; sourceAttribute = commentID; }); 
+            name = commentEO; 
+            ownsDestination = Y; 
+        }, 
         {
             destination = Indexer; 
             isMandatory = Y; 

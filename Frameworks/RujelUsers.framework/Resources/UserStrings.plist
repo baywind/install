@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>external</key>
+	<string>идентификатор</string>
+	<key>groups</key>
+	<string>группы</string>
+	<key>groupName</key>
+	<string>Имя группы</string>
+	<key>messages</key>
+	<dict>
+		<key>noMatch</key>
+		<string>Введенные пароли не совпадают</string>
+		<key>enterPassword</key>
+		<string>Пожалуйста введите пароль</string>
+	</dict>
+	<key>adminModule</key>
+	<dict>
+		<key>title</key>
+		<string>Пользователи</string>
+		<key>component</key>
+		<string>ManageUsers</string>
+		<key>sort</key>
+		<string>90</string>
+	</dict>
+</dict>
+</plist>

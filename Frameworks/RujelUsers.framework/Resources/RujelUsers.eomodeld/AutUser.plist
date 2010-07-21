@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            columnName = "CREDENTIAL_STRING"; 
+            name = credential; 
+            prototypeName = string; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_ENTITY"; 
+            name = entityID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERSON_ID"; 
+            externalType = INT; 
+            name = personID; 
+            prototypeName = integer; 
+        }, 
+        {allowsNull = N; columnName = "U_ID"; name = uID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_NAME"; 
+            name = userName; 
+            prototypeName = word; 
+            valueType = S; 
+        }
+    ); 
+    attributesUsedForLocking = (credential, entityID, personID, uID, userName); 
+    className = "net.rujel.user.AutUser"; 
+    classProperties = (credential, groups, personEntity, personID, userName, userProperties); 
+    externalName = "AUT_USER"; 
+    fetchSpecificationDictionary = {}; 
+    name = AutUser; 
+    primaryKeyAttributes = (uID); 
+    relationships = (
+        {definition = "members.group"; name = groups; }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AutMember; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userID; sourceAttribute = uID; }); 
+            name = members; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = EntityIndex; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eID; sourceAttribute = entityID; }); 
+            name = personEntity; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = UserProperties; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = userID; sourceAttribute = uID; }); 
+            name = userProperties; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = "P_ID"; name = pID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = N; 
+            columnName = "PROP_KEY"; 
+            name = propKey; 
+            prototypeName = word; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "PROP_VALUE"; 
+            name = propValue; 
+            prototypeName = string; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userID; 
+            prototypeName = "int_3"; 
+        }
+    ); 
+    attributesUsedForLocking = (pID, propKey, propValue, userID); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (propKey, propValue, user, userID); 
+    externalName = "AUT_USER_PROPERTIES"; 
+    fetchSpecificationDictionary = {}; 
+    name = UserProperties; 
+    primaryKeyAttributes = (pID); 
+    relationships = (
+        {
+            destination = AutUser; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = uID; sourceAttribute = userID; }); 
+            name = user; 
+        }
+    ); 
+}

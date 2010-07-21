@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "FROM_ENTITY"; 
+            name = fromEntity; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "STORED_TEXT"; 
+            name = storedText; 
+            prototypeName = text; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "T_ID"; 
+            name = tID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (fromEntity, storedText); 
+    className = EOGenericRecord; 
+    classProperties = (entityIndex, storedText); 
+    externalName = "BASE_ST_TEXT_STORE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = StaticTextStore; }; 
+    name = StaticTextStore; 
+    primaryKeyAttributes = (tID); 
+    relationships = (
+        {
+            destination = EntityIndex; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eID; sourceAttribute = fromEntity; }); 
+            name = entityIndex; 
+        }
+    ); 
+}

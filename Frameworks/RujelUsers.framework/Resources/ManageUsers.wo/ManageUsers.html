@@ -1,0 +1,57 @@
+<h2><webobject name = "Title"/></h2>
+<webobject name = "Form"><table width = "100%"><tr>
+<td><table>
+	<thead><tr><td style = "height:2em;"></td>
+		<td style = "white-space:nowrap;"><webobject name = "ShowBatch">
+			<input type = "submit" style = "display:none;" />
+			<webobject name = "PrevButton"/>
+			<webobject name = "BatchNum"/> / <webobject name = "BatchCount"/>
+			<webobject name = "NextButton"/>
+		</td></webobject>
+	</tr><tr>
+		<th><webobject name = "UsernameTitle"/></td>
+		<th><webobject name = "Add"/></td>
+	</tr></thead>
+	<tfoot><webobject name = "AddUser">
+		<td colspan = "2"><webobject name = "Add"/></td>
+	</webobject></tfoot>
+	<tbody><webobject name = "UsersList"><webobject name = "UserRow">
+		<td><webobject name = "UserName"/></td>
+		<td><webobject name = "UserPerson"/></td>
+	</webobject></webobject></tbody>
+</table></td>
+<td class = "backfield2"><webobject name = "SelectedUser">
+	<table>
+	<tr><th align = "right"><webobject name = "UsernameTitle"/>:</th>
+		<td><webobject name = "UserNameField"/></td></tr>
+	<tr><th align = "right"><webobject name = "TeacherTitle"/>:</th>
+		<webobject name = "SelectPerson"><webobject name = "PersonSelect"/></webobject></tr>
+	<tr><th align = "right"><webobject name = "Password"/>:</th>
+		<td><webobject name = "Password1"/><br/><webobject name = "Password2"/></td></tr>
+	<webobject name = "ParentAvailable"><webobject name = "AttachParent">
+		<th align = "right"><webobject name = "ExternalTitle"/>:</th>
+		<td><webobject name = "HasParent"><webobject name = "ParentIdentifier"/></webobject></td>
+	</webobject></webobject>
+	<tr><td colspan = "2"><webobject name = "Save"/>  <webobject name = "Delete"/></td>
+	</tr></table></webobject><webobject name = "SelectedGroup"><table>
+	<tr><th align = "right"><webobject name = "GroupNameTitle"/>:</th>
+		<td><webobject name = "GroupNameField"/></td></tr>
+	<webobject name = "ParentAvailable"><tr>
+		<th align = "right"><webobject name = "ExternalTitle"/>:</th>
+		<td><webobject name = "ExternalName"/></td></tr></webobject>
+	<tr><td colspan = "2"><webobject name = "Save"/>  <webobject name = "Delete"/></td>
+	</table></webobject>
+</td>
+<td><table width = "100%">
+<thead><tr><webobject name = "SelectedUser">
+		<th style = "width:2em;" class = "backfield2">?</th></webobject>
+		<th><webobject name = "GroupsTitle"/></th></tr>
+</thead><tfoot>
+	<webobject name = "AddGroup"><td><webobject name = "Add"/></td></webobject>
+</tfoot><tbody><webobject name = "GroupsList">
+	<webobject name = "GroupRow"><webobject name = "SelectedUser">
+		<td class = "backfield2"><webobject name = "IsInGroup"/></td></webobject>
+		<td><webobject name = "GroupName"/></td></webobject>
+</webobject></tbody>
+</table></td>
+</tr></table></webobject>

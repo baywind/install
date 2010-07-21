@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Настройка пользователей в таблице БД</title>
+	<link rel="stylesheet" type="text/css" href="styles.css"></head>    
+</head>    
+<body>
+<h1>Настройка пользователей в таблице БД</h1>
+<p style = "font-size:large;">Файл <strong>TableUsers.plist</strong></p>
+<ul>
+	<li><strong>moduleClass</strong> - net.rujel.user.UserModule</li>
+	<li><strong>sort</strong> - 50</li>
+	<li><span class = "node">dbConnection</span> - </li>
+	<ul></ul>
+<p>актуальный раздел: <span class="node">auth</span></p>
+<ul>
+<li><strong>loginHandlerClass</strong> - имя класса java, который используется для аутентикации пользователей: 
+<strong>net.rujel.user.TableLoginHandler</strong></li>
+
+<li><strong>parentLoginHandler</strong> - если таблица используется как прокладка, имя класса java, который используется для аутентикации пользователей в родительской системе.
+<div>Cюда копируется значение <strong>loginHandlerClass</strong> из другого описания пользователей. Если не заполнено, пароли сохраняются в той же таблице</div></li>
+
+<li><strong>passwordDigestAlgorithm</strong> - алгоритм шифрования пароля при сохранении в БД (по умолчанию - MD5)</li>
+
+<li><strong>autoAddUsers</strong> - добавлять в таблицу пользоватетей из родительской системы (по умолчанию - false)</li>
+
+<li><strong>readFromParent</strong> - использовать информацию о пользователе из родительской системы (по умолчанию - false)</li>
+
+</ul>
+</body>
+</html>

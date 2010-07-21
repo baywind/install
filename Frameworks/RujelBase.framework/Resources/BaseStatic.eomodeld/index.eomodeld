@@ -9,9 +9,28 @@
         {className = "net.rujel.base.BaseCourse"; name = BaseCourse; }, 
         {className = "net.rujel.base.EntityIndex"; name = EntityIndex; }, 
         {className = "net.rujel.base.Indexer"; name = Indexer; }, 
-        {className = EOGenericRecord; name = IndexRow; }, 
+        {className = "net.rujel.base.IndexRow"; name = IndexRow; }, 
         {className = "net.rujel.base.PrimitiveEduCycle"; name = PrimitiveEduCycle; }, 
         {className = EOGenericRecord; name = SettingByCourse; }, 
-        {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }
+        {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }, 
+        {className = EOGenericRecord; name = StaticTextStore; }
     ); 
+    internalInfo = {
+        "_deletedEntityNamesInObjectStore" = (StaticTextStore, StaticTextStorek, StaticTextStoreq); 
+    }; 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/BaseStatic? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        username = rujel; 
+                    }; 
+                    prototypeEntityName = EOJDBCPrototypes; 
+                }; 
+            }; 
+        }; 
+    }; 
 }

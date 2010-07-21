@@ -23,6 +23,7 @@ LOCALROOT\Library\Frameworks\RujelEduResults.framework\Resources\Java\rujeledure
 LOCALROOT\Library\Frameworks\RujelInterfaces.framework\Resources\Java\rujelinterfaces.jar
 LOCALROOT\Library\Frameworks\RujelReports.framework\Resources\Java\rujelreports.jar
 LOCALROOT\Library\Frameworks\RujelStats.framework\Resources\Java\rujelstats.jar
+LOCALROOT\Library\Frameworks\RujelUsers.framework\Resources\Java\rujelusers.jar
 LOCALROOT\Library\Frameworks\RujelVseLists.framework\Resources\Java\rujelvselists.jar
 LOCALROOT\Library\Frameworks\RujelVseobuch.framework\Resources\Java\rujelvseobuch.jar
 WOROOT\Library\Frameworks\JavaWOExtensions.framework\Resources\Java\javawoextensions.jar

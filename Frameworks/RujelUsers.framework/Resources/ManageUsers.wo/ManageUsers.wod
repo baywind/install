@@ -1,0 +1,229 @@
+UserName : WOString {
+  value = userItem.userName;
+}
+
+UsersList : WORepetition {
+  list = usersList.displayedObjects;
+  item = userItem;
+}
+
+UserPerson : PersonDisplay {
+  person = userItem.personLink;
+  last = 2;
+  first = 2;
+  second = 2;
+  startWithLast = true;
+  valueWhenEmpty = "-";
+}
+
+UserRow : OnClickContainer {
+  elementName = "tr";
+  onclick = session.checkRun;
+  invokeAction = selectUser;
+  disabled = session.readAccess._edit.userItem;
+  class = userClass;
+}
+
+UserNameField : WOTextField {
+  value = usersList.selectedObject.userName;
+}
+
+SelectPerson : OnClickContainer {
+  elementName = "td";
+  style = "font-style:italic;";
+  onclick = session.ajaxPopup;
+  invokeAction = chooseUserPerson;
+}
+
+Save : WOSubmitButton {
+  action = save;
+  value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+Form : WOForm {
+  multipleSubmit = true;
+}
+
+UserSearch : WOTextField {
+  value = usersList.queryMatch.userName;
+  disabled = usersList.selectedObject;
+}
+
+
+SearchUser : WOSubmitButton {
+  action = usersList.fetch;
+  value = application.strings.Reusables_Strings.uiElements.Search;
+  disabled = usersList.selectedObject;
+}
+
+SelectedUser : WOConditional {
+  condition = usersList.selectedObject;
+}
+
+HasParent : WOConditional {
+  condition = usersList.selectedObject.hasParent;
+}
+
+ExternalTitle : WOString {
+  value = session.strings.RujelUsers_UserStrings.external;
+  escapeHTML = false;
+}
+
+ParentIdentifier : WOTextField {
+  value = usersList.selectedObject.credential;
+}
+
+NoParent : WOConditional {
+    condition = usersList.selectedObject.hasParent;
+	negate = true;
+}
+
+Password1 : WOPasswordField {
+  value = passw1;
+  disabled = usersList.selectedObject.hasParent;
+}
+
+Password2 : WOPasswordField {
+  value = passw2;
+  disabled = usersList.selectedObject.hasParent;
+}
+
+AttachParent : OnClickContainer {
+  elementName = "tr";
+  align = "right";
+  invokeAction = attachParent;
+  disabled = usersList.selectedObject.hasParent;
+  onclick = session.checkRun;
+}
+
+AddUser : OnClickContainer {
+  elementName = "tr";
+  invokeAction = usersList.insert;
+  onclick = session.checkRun;
+  hide = session.readAccess._create.AutUser;
+  disabled = usersList.selectedObject;
+  class = "green";
+}
+
+PersonSelect : PersonDisplay {
+  person = usersList.selectedObject.personLink;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+  valueWhenEmpty = application.strings.Reusables_Strings.uiElements.Select;
+}
+
+ParentAvailable : WOConditional {
+  condition = parentHandler;
+}
+
+GroupsList : WORepetition {
+  list = groupsList.displayedObjects;
+  item = item;
+}
+
+GroupRow : OnClickContainer {
+  elementName = "tr";
+  disabled = session.readAccess._edit.UserGroup;
+  invokeAction = selectGroup;
+  onclick = session.checkRun;
+  class = groupClass;
+}
+
+IsInGroup : WOCheckBox {
+  checked = isInGroup;
+}
+
+GroupName : WOString {
+  value = item.groupName;
+}
+
+AddGroup : OnClickContainer {
+  elementName = "tr";
+  invokeAction = groupsList.insert;
+  onclick = session.checkRun;
+  hide = noAddGroup;
+  class = "green";
+}
+
+SelectedGroup : WOConditional {
+  condition = groupsList.selectedObject;
+}
+
+GroupNameField : WOTextField {
+  value = groupsList.selectedObject.groupName;
+}
+
+ExternalName : WOTextField {
+  value = groupsList.selectedObject.externalEquivalent;
+}
+
+Delete : WOSubmitButton {
+  action = delete;
+  onclick = session.confirmMessage;
+  value = application.strings.Reusables_Strings.uiElements.Delete;
+}
+
+PrevButton : WOImageButton {
+  framework = "JavaWOExtensions";
+  filename = "lft-OSarw.gif";
+  action = usersList.displayPreviousBatch;
+}
+
+NextButton : WOImageButton {
+  framework = "JavaWOExtensions";
+  filename = "rt-OSarw.gif";
+  action = usersList.displayNextBatch;
+}
+
+BatchNum : WOTextField {
+  value = usersList.currentBatchIndex;
+  numberformat = "0";
+  size = 3;
+  style = "text-align:center;";
+}
+
+BatchCount : WOString {
+  value = usersList.batchCount;
+}
+
+UsernameTitle : WOString {
+  value = session.strings.Strings.login.username;
+  escapeHTML = false;
+}
+
+Password : WOString {
+  value = session.strings.Strings.login.password;
+  escapeHTML = false;
+}
+
+Add : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Add;
+  escapeHTML = false;
+}
+
+GroupNameTitle : WOString {
+  value = session.strings.RujelUsers_UserStrings.groupName;
+  escapeHTML = false;
+}
+
+TeacherTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Teacher.this;
+  escapeHTML = false;
+}
+
+GroupsTitle : WOString {
+  value = session.strings.RujelUsers_UserStrings.groups;
+  escapeHTML = false;
+}
+
+ShowBatch : WOConditional {
+  condition = noBatch;
+  negate = true;
+}
+
+Title : WOString {
+  value = session.strings.RujelUsers_UserStrings.adminModule.title;
+  escapeHTML = false;
+}

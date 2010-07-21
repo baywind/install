@@ -1,0 +1,38 @@
+{
+    attributes = (
+        {
+            columnName = "EXTERNAL_EQUIVALENT"; 
+            name = externalEquivalent; 
+            prototypeName = string; 
+            valueType = S; 
+        }, 
+        {allowsNull = N; columnName = "G_ID"; name = gID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "GROUP_TITLE"; 
+            name = groupName; 
+            prototypeName = word; 
+            valueType = S; 
+        }
+    ); 
+    attributesUsedForLocking = (externalEquivalent, gID, groupName); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (externalEquivalent, groupName, users); 
+    externalName = "AUT_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    name = UserGroup; 
+    primaryKeyAttributes = (gID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AutMember; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupID; sourceAttribute = gID; }); 
+            name = members; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {definition = "members.user"; name = users; }
+    ); 
+}

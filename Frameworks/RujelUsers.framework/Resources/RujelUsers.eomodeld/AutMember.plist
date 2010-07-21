@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "GROUP_ID"; 
+            name = groupID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "USER_ID"; 
+            name = userID; 
+            precision = 7; 
+            prototypeName = "int_3"; 
+        }
+    ); 
+    attributesUsedForLocking = (groupID, userID); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (group, user); 
+    externalName = "AUT_MEMBER"; 
+    fetchSpecificationDictionary = {}; 
+    name = AutMember; 
+    primaryKeyAttributes = (groupID, userID); 
+    relationships = (
+        {
+            destination = UserGroup; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = gID; sourceAttribute = groupID; }); 
+            name = group; 
+        }, 
+        {
+            destination = AutUser; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = uID; sourceAttribute = userID; }); 
+            name = user; 
+        }
+    ); 
+}
