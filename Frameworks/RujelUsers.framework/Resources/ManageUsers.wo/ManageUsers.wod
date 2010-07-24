@@ -88,12 +88,9 @@ Password2 : WOPasswordField {
   disabled = usersList.selectedObject.hasParent;
 }
 
-AttachParent : OnClickContainer {
-  elementName = "tr";
-  align = "right";
-  invokeAction = attachParent;
-  disabled = usersList.selectedObject.hasParent;
-  onclick = session.checkRun;
+AttachParent : WOSubmitButton {
+  action = attachParent;
+  value = session.strings.Reusables_Strings.uiElements.Edit;
 }
 
 AddUser : OnClickContainer {
@@ -123,8 +120,8 @@ GroupsList : WORepetition {
   item = item;
 }
 
-GroupRow : OnClickContainer {
-  elementName = "tr";
+GroupCell : OnClickContainer {
+  elementName = "td";
   disabled = session.readAccess._edit.UserGroup;
   invokeAction = selectGroup;
   onclick = session.checkRun;
@@ -159,8 +156,10 @@ ExternalName : WOTextField {
   value = groupsList.selectedObject.externalEquivalent;
 }
 
-Delete : WOSubmitButton {
-  action = delete;
+Delete : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  invokeAction = delete;
   onclick = session.confirmMessage;
   value = application.strings.Reusables_Strings.uiElements.Delete;
 }
@@ -227,3 +226,4 @@ Title : WOString {
   value = session.strings.RujelUsers_UserStrings.adminModule.title;
   escapeHTML = false;
 }
+

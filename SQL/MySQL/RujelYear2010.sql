@@ -81,8 +81,8 @@ CREATE TABLE ATT_DAY (
   ATTEND_STATE tinyint NOT NULL,
   SKIPPED_LESSONS smallint NOT NULL,
   VISITED_LESSONS smallint NOT NULL,
-  TIME_IN time;
-  TIME_OUT time;
+  TIME_IN time,
+  TIME_OUT time,
   REASON_ID mediumint,
   PRIMARY KEY (D_ID)
 ) ENGINE=InnoDB;

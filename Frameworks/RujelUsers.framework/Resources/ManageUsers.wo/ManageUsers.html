@@ -28,10 +28,11 @@
 		<webobject name = "SelectPerson"><webobject name = "PersonSelect"/></webobject></tr>
 	<tr><th align = "right"><webobject name = "Password"/>:</th>
 		<td><webobject name = "Password1"/><br/><webobject name = "Password2"/></td></tr>
-	<webobject name = "ParentAvailable"><webobject name = "AttachParent">
+	<webobject name = "ParentAvailable"><tr>
 		<th align = "right"><webobject name = "ExternalTitle"/>:</th>
-		<td><webobject name = "HasParent"><webobject name = "ParentIdentifier"/></webobject></td>
-	</webobject></webobject>
+		<td><webobject name = "HasParent"><webobject name = "ParentIdentifier"/>
+		</webobject><webobject name = "NoParent"><webobject name = "AttachParent"/>
+	</webobject></td></tr></webobject>
 	<tr><td colspan = "2"><webobject name = "Save"/>  <webobject name = "Delete"/></td>
 	</tr></table></webobject><webobject name = "SelectedGroup"><table>
 	<tr><th align = "right"><webobject name = "GroupNameTitle"/>:</th>
@@ -49,9 +50,9 @@
 </thead><tfoot>
 	<webobject name = "AddGroup"><td><webobject name = "Add"/></td></webobject>
 </tfoot><tbody><webobject name = "GroupsList">
-	<webobject name = "GroupRow"><webobject name = "SelectedUser">
+	<tr><webobject name = "SelectedUser">
 		<td class = "backfield2"><webobject name = "IsInGroup"/></td></webobject>
-		<td><webobject name = "GroupName"/></td></webobject>
+		<webobject name = "GroupCell"><webobject name = "GroupName"/></webobject></tr>
 </webobject></tbody>
 </table></td>
 </tr></table></webobject>
