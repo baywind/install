@@ -15,7 +15,7 @@
 	<key>presets</key>
 	<string>userspresets</string>
 	<key>defaultpreset</key>
-	<string>AltLinux_OpenLDAP</string>
+	<string>OpenLDAP (AltLinux)</string>
 	<key>status</key>
 	<string>recommended</string>
 	<key>keys</key>

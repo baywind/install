@@ -18,6 +18,8 @@ WOROOT/Library/Frameworks/JavaJDBCAdaptor.framework/Resources/Java/javajdbcadapt
 WOROOT/Library/Frameworks/JavaJDBCAdaptor.framework/WebServerResources/Java/JavaJDBCAdaptor.jar
 WOROOT/Library/Frameworks/JavaWebObjects.framework/Resources/Java/javawebobjects.jar
 WOROOT/Library/Frameworks/JavaWebObjects.framework/WebServerResources/Java/JavaWebObjects.jar
+WOROOT/Library/Frameworks/JavaWOExtensions.framework/Resources/Java/JavaWOExtensions.jar
+WOROOT/Library/Frameworks/JavaWOExtensions.framework/WebServerResources/Java/JavaWOExtensions.jar
 WOROOT/Library/Frameworks/JavaXML.framework/Resources/Java/javaxml.jar
 WOROOT/Library/Frameworks/JavaXML.framework/WebServerResources/Java/javaxml.jar
 

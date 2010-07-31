@@ -54,6 +54,7 @@ plistEdit : PlistEdit {
 }
 
 PresetsForm : WOForm {
+	action = htmmCheck;
 }
 
 submit : WOSubmitButton {

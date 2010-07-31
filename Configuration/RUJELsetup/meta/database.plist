@@ -15,7 +15,7 @@
 	<key>presets</key>
 	<string>dbpresets</string>
 	<key>defaultpreset</key>
-	<string>MySQL</string>
+	<string>MySQL через сеть</string>
 	<key>status</key>
 	<string>required</string>
 	<key>keys</key>
