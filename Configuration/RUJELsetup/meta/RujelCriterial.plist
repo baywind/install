@@ -38,7 +38,7 @@
 			<key>key</key>
 			<string>sort</string>
 			<key>type</key>
-			<string>Integer</string>
+			<string>String</string>
 			<key>title</key>
 			<string>sort</string>
 			<key>description</key>
