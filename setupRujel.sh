@@ -105,50 +105,53 @@ mkdir -p $BACKUP/Configuration/
 BACKUPFOLDER=`pwd`/$BACKUP/Configuration
 cd Configuration
 
-CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration/rujel
-
+CONFIGFOLDER=${LOCALROOT}/Library/WebObjects/Configuration
 if [ ! -e ${CONFIGFOLDER} ] ; then
     mkdir -p ${CONFIGFOLDER}
 fi
 
-## Settings
+## SiteConfig
 
-if [ -e ${CONFIGFOLDER}/rujel.plist ] ; then
-    echo "Reset configuration? (yes/no):"
-    read ifReset
-    while [ -n "$ifReset" -a "$ifReset" != "yes"  -a "$ifReset" != "no" ] ; do
-        echo "Please type 'yes' or 'no' or nothing (for no)"
-        read ifReset
-    done
+if [ -e ${CONFIGFOLDER}/SiteConfig.xml ] ; then
+    if grep -iq "rujel" ${CONFIGFOLDER}/SiteConfig.xml ; then
+        echo
+    else
+        mv ${CONFIGFOLDER}/SiteConfig.xml $BACKUPFOLDER/
+        if [ -e /etc/init.d/webobjects ] ; then
+            /etc/init.d/webobjects stop
+        else
+            /etc/init.d/womonitor stop
+            /etc/init.d/wotaskd stop
+        fi
+        if [ $LOCALROOT != "/opt/apple/Local" ] ; then
+            PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
+            sed "s/\/opt\/apple\/Local/$PATTERN/g" SiteConfig.xml > ${CONFIGFOLDER}/SiteConfig.xml
+        else
+            cp SiteConfig.xml ${CONFIGFOLDER}/
+        fi
+        chown _appserver:_appserveradm ${CONFIGFOLDER}/SiteConfig.xml
+        if [ -e /etc/init.d/webobjects ] ; then
+            /etc/init.d/webobjects start
+        else
+            /etc/init.d/wotaskd start
+            /etc/init.d/womonitor start
+        fi
+    fi
 else
-    ifReset="yes"
+    cp SiteConfig.xml ${CONFIGFOLDER}/
 fi
 
-if [ "$ifReset" = "yes" ] ; then
-    echo "Installing settings"
-    if [ -e ${CONFIGFOLDER}/rujel.plist ] ; then
-        mv ${CONFIGFOLDER}/rujel.plist $BACKUPFOLDER/
-    fi
-    cp rujel.plist ${CONFIGFOLDER}/
-    if [ -e ${CONFIGFOLDER}/modules ] ; then
-        mv ${CONFIGFOLDER}/modules $BACKUPFOLDER/
-    fi
-    cp -r modules_distr/required ${CONFIGFOLDER}/modules
-    cp modules_distr/recommended/* ${CONFIGFOLDER}/modules/
-    cd logging
-        PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
-        for f in *.properties ; do
-        if [ -f $f ] ; then
-            if [ -e ${CONFIGFOLDER}/$f ] ; then
-                mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
-            fi
-            sed "s/\\/Library/$PATTERN&/g" $f > ${CONFIGFOLDER}/$f
-        fi
-        done
-    cd ..
-    echo "Don't forget to modify installed settings to match your system"
-else
-    echo "Settings installation skipped"
+## Setup
+
+if [ -e ${CONFIGFOLDER}/RUJELsetup ] ; then
+    mv ${CONFIGFOLDER}/RUJELsetup $BACKUPFOLDER/
+fi
+cp -r RUJELsetup ${CONFIGFOLDER}/
+
+CONFIGFOLDER=${CONFIGFOLDER}/rujel
+
+if [ ! -e ${CONFIGFOLDER} ] ; then
+    mkdir -p ${CONFIGFOLDER}
 fi
 
 ## RujelReports
@@ -170,6 +173,30 @@ if [ -d RujelReports ] ; then
     fi
 else
     echo "RujelReports not found"
+fi
+
+## Settings
+
+if [ ! -e ${CONFIGFOLDER}/rujel.plist ] ; then
+    echo "Installing settings"
+    if [ -e ${CONFIGFOLDER}/modules ] ; then
+        mv ${CONFIGFOLDER}/modules $BACKUPFOLDER/
+    fi
+    cp -r RUJELsetup/required ${CONFIGFOLDER}/modules
+#    cp RUJELsetup/recommended/* ${CONFIGFOLDER}/modules/
+    cd logging
+        PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
+        for f in *.properties ; do
+        if [ -f $f ] ; then
+            if [ -e ${CONFIGFOLDER}/$f ] ; then
+                mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
+            fi
+            sed "s/\\/Library/$PATTERN&/g" $f > ${CONFIGFOLDER}/$f
+        fi
+        done
+    cd ..
+    chown -R _appserver:_appserveradm ${CONFIGFOLDER}
+    echo "Please edit settings in URL http://server_url/Apps/WebObjects/PListWOEditor.woa"
 fi
 
 cd ..

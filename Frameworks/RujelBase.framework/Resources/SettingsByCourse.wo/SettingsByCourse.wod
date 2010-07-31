@@ -26,6 +26,7 @@ ByCoursePresenter : ByCoursePresenter {
   readOnly = ^readOnly;
   access = ^access;
   pushByCourse = "^pushByCourse";
+  editList = byCourse;
 }
 
 
@@ -57,5 +58,20 @@ CanEdit : WOConditional {
 
 EditorHead : WOString {
   value = editorHead;
+  escapeHTML = false;
+}
+
+SetBase : OnClickContainer {
+  elementName = "span";
+  hide = cantSetBase;
+  invokeAction = makeBase;
+  onclick = session.checkRun;
+  class = "orange";
+  style = "float:left;padding:0px 4px;border:double 3px #ccaa66;";
+}
+
+BaseTitle : WOString {
+  value = session.strings.RujelBase_Base.SettingsBase.setDefault;
+  valueWhenEmpty = "set base";
   escapeHTML = false;
 }

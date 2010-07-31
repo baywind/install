@@ -1,9 +1,9 @@
 {
     attributes = (
-        {columnName = COMMENT_TEXT; name = comment; prototypeName = string; }, 
+        {columnName = "COMMENT_TEXT"; name = comment; prototypeName = string; }, 
         {
             allowsNull = N; 
-            columnName = CRITER_NUM; 
+            columnName = "CRITER_NUM"; 
             name = criterion; 
             prototypeName = byte; 
         }, 
@@ -28,17 +28,23 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
+            allowsNull = N; 
+            columnName = "CRITER_FLAGS"; 
+            name = flags; 
+            prototypeName = short; 
+        }, 
+        {
             allowsNull = Y; 
             columnName = "INDEX_ID"; 
             name = indexID; 
             prototypeName = short; 
         }, 
-        {columnName = CR_TITLE; name = title; prototypeName = anagram; }
+        {columnName = "CR_TITLE"; name = title; prototypeName = anagram; }
     ); 
-    attributesUsedForLocking = (title, comment, indexID, dfltMax, dfltWeight, criterion); 
+    attributesUsedForLocking = (title, comment, indexID, dfltMax, dfltWeight, criterion, flags); 
     className = EOGenericRecord; 
-    classProperties = (title, comment, criteriaSet, indexer, dfltMax, dfltWeight, criterion); 
-    externalName = CR_CRITERION; 
+    classProperties = (title, comment, criteriaSet, indexer, dfltMax, dfltWeight, criterion, flags); 
+    externalName = "CR_CRITERION"; 
     fetchSpecificationDictionary = {}; 
     name = Criterion; 
     primaryKeyAttributes = (criterion, critSet); 

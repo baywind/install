@@ -4,16 +4,6 @@ Tabs : Tabs {
   vertical = true;
 }
 
-Usage : WORepetition {
-  list = usage;
-  item = item;
-}
-
-ByCoursePresenter : ByCoursePresenter {
-  value = item;
-  editList = byCourse;
-}
-
 ComponentContent : WOComponentContent {
 }
 
@@ -57,23 +47,6 @@ EduGroupLabel: WOString {
 	escapeHTML = false;
 }
 
-EduPlanLabel: WOString {
-	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
-	valueWhenEmpty = "Subject";
-	escapeHTML = false;
-}
-
-TeacherLabel: WOString {
-	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
-	valueWhenEmpty = "Teacher";
-	escapeHTML = false;
-}
-
-ByCourseList : WORepetition {
-  list = byCourse;
-  item = item;
-}
-
 BasePresenter : ByCoursePresenter {
   value = base;
 }
@@ -103,8 +76,18 @@ BaseTextValue : WOString {
 SettingsByCourse : SettingsByCourse {
   item = item;
   base = base;
-  defaultNumeric = currNum;
-  defaultText = currList;
+  numericValue = ^currNum;
+  textValue = currList;
   ec = ec;
   readOnly = true;
+}
+
+UsageSettings : SettingsByCourse {
+  item = item;
+  base = base;
+  numericValue = ^currNum;
+  textValue = currList;
+  ec = ec;
+  readOnly = false;
+  selector = "textValue";
 }

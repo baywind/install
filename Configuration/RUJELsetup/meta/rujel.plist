@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Общие Настройки</string>
+	<key>type</key>
+	<string>Dictionary</string>
+	<key>path</key>
+	<string>rujel.plist</string>
+	<key>sort</key>
+	<integer>0</integer>
+	<key>presets</key>
+	<string>required/rujel.plist</string>
+	<key>status</key>
+	<string>required</string>
+	<key>keys</key>
+	<array>
+		<dict>
+			<key>key</key>
+			<string>schoolName</string>
+			<key>type</key>
+			<string>String</string>
+			<key>title</key>
+			<string>школа</string>
+			<key>description</key>
+			<string>Название ОУ для отображения на странице ввода пароля</string>
+			<key>defaultValue</key>
+			<string>Школа № ???</string>
+			<key>required</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>schoolNumber</string>
+			<key>type</key>
+			<string>Integer</string>
+			<key>title</key>
+			<string>ID школы</string>
+			<key>description</key>
+			<string>числовой идентификатор ОУ: Используется для размещения нескольких школ на одном сервере. Этот номер должен совпадать с номером SCHOOL_NUM в базе данных в таблицах RujelStatic.PL_CYCLE и RujelYear%s.CU_REASON</string>
+			<key>defaultValue</key>
+			<integer>0</integer>
+			<key>advanced</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>loggingProperties</string>
+			<key>type</key>
+			<string>String</string>
+			<key>title</key>
+			<string>лог журнала</string>
+			<key>description</key>
+			<string>указывает на расположение файла настройки лога. Если не указан, используются системные настройки лога Java. Данный файл форматируется в соответствии со спецификацией Java logging</string>
+			<key>advanced</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>diaryLogging</string>
+			<key>type</key>
+			<string>String</string>
+			<key>title</key>
+			<string>лог дневника</string>
+			<key>description</key>
+			<string>указывает на расположение файла настройки лога дневника. Если не указан, используются системные настройки лога Java. Данный файл форматируется в соответствии со спецификацией Java logging</string>
+			<key>advanced</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>edu</string>
+			<key>type</key>
+			<string>Dictionary</string>
+			<key>title</key>
+			<string>учебные</string>
+			<key>description</key>
+			<string>Настройки параметров учебного процесса</string>
+			<key>keys</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>minGrade</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>минимальный поток</string>
+					<key>description</key>
+					<string>минимальный номер потока, для отображения в учебном плане</string>
+					<key>defaultValue</key>
+					<integer>1</integer>
+					<key>min</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>maxGrade</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>максимальный поток</string>
+					<key>description</key>
+					<string>максимальный номер потока, для отображения в учебном плане</string>
+					<key>defaultValue</key>
+					<integer>11</integer>
+					<key>min</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>newYearMonth</string>
+					<key>title</key>
+					<string>месяц смены года</string>
+					<key>description</key>
+					<string>месяц календарного года, в котором присходит смена учебного года</string>
+					<key>defaultValue</key>
+					<integer>6</integer>
+					<key>select</key>
+					<array>
+						<dict>
+							<key>title</key>
+							<string>Январь</string>
+							<key>value</key>
+							<integer>0</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Февраль</string>
+							<key>value</key>
+							<integer>1</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Март</string>
+							<key>value</key>
+							<integer>2</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Апрель</string>
+							<key>value</key>
+							<integer>3</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Май</string>
+							<key>value</key>
+							<integer>4</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Июнь</string>
+							<key>value</key>
+							<integer>5</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Июль</string>
+							<key>value</key>
+							<integer>6</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Август</string>
+							<key>value</key>
+							<integer>7</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Сентябрь</string>
+							<key>value</key>
+							<integer>8</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Октябрь</string>
+							<key>value</key>
+							<integer>9</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Ноябрь</string>
+							<key>value</key>
+							<integer>10</integer>
+						</dict>
+						<dict>
+							<key>title</key>
+							<string>Декабрь</string>
+							<key>value</key>
+							<integer>11</integer>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>newYearDay</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>дата смены года</string>
+					<key>description</key>
+					<string>день месяца, когда присходит смена учебного года</string>
+					<key>defaultValue</key>
+					<integer>1</integer>
+					<key>min</key>
+					<integer>1</integer>
+					<key>max</key>
+					<integer>31</integer>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

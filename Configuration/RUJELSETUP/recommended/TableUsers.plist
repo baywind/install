@@ -10,6 +10,11 @@
 	<dict>
 		<key>loginHandlerClass</key>
 		<string>net.rujel.user.TableLoginHandler</string>
+		<key>groupMapping</key>
+		<dict>
+			<key>any</key>
+			<string>*</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

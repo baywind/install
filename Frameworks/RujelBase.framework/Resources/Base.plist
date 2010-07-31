@@ -127,6 +127,8 @@
 		<string>(все)</string>
 		<key>addByCourse</key>
 		<string>уточнить для отдельных курсов</string>
+		<key>setDefault</key>
+		<string>установить &quot;для всех&quot;</string>
 	</dict>
 	<key>newPerson</key>
 	<dict>
@@ -190,6 +192,38 @@
 		<true/>
 		<key>sort</key>
 		<string>10</string>
+	</dict>
+	<key>Indexer</key>
+	<dict>
+		<key>indexer</key>
+		<string>Представление</string>
+		<key>title</key>
+		<string>Название</string>
+		<key>idx</key>
+		<string>зн.</string>
+		<key>value</key>
+		<string>предст.</string>
+		<key>default</key>
+		<string>по умолчанию</string>
+		<key>defaultHover</key>
+		<string>значение, которое будет показано при запросе неописанного номера</string>
+		<key>nonUniqueIndex</key>
+		<string>Обнаружены неуникальные величины. В одни представлении кадая величина должна быть уникальной</string>
+	</dict>
+	<key>presentation</key>
+	<dict>
+		<key>text</key>
+		<string>текст</string>
+		<key>color</key>
+		<string>цвет</string>
+		<key>image</key>
+		<string>изображение</string>
+		<key>media</key>
+		<string>медиа</string>
+		<key>html</key>
+		<string>код HTML</string>
+		<key>inner</key>
+		<string>внутреннее</string>
 	</dict>
 </dict>
 </plist>

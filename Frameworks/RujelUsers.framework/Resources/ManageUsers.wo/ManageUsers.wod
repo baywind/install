@@ -161,7 +161,7 @@ Delete : WOGenericElement {
   type = "button";
   invokeAction = delete;
   onclick = session.confirmMessage;
-  value = application.strings.Reusables_Strings.uiElements.Delete;
+  value = session.strings.Reusables_Strings.uiElements.Delete;
 }
 
 PrevButton : WOImageButton {

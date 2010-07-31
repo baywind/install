@@ -19,6 +19,7 @@
     primaryKeyAttributes = (idx, indID); 
     relationships = (
         {
+            deleteRule = EODeleteRuleCascade; 
             destination = StaticTextStore; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 

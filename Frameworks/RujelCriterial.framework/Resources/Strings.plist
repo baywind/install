@@ -73,6 +73,53 @@
 			<key>compulsory</key>
 			<string>обязат.</string>
 		</dict>
+		<key>CriteriaSet</key>
+		<dict>
+			<key>title</key>
+			<string>Критерии оценивания</string>
+			<key>component</key>
+			<string>SetupCriteria</string>
+			<key>sort</key>
+			<string>30</string>
+			<key>critSet</key>
+			<string>набор критериев</string>
+			<key>none</key>
+			<string>свободные критерии</string>
+			<key>name</key>
+			<string>имя</string>
+			<key>rename</key>
+			<string>править</string>
+			<key>delete</key>
+			<string>Удалить активный набор критериев</string>
+			<key>createPrompt</key>
+			<string>Название нового набора критериев</string>
+			<key>createIndexPrompt</key>
+			<string>Название нового представления</string>
+			<key>renamePrompt</key>
+			<string>Переименовать активный набор критериев</string>
+			<key>usage</key>
+			<string>использование наборов критериев</string>
+			<key>index</key>
+			<string>Внешнее представление</string>
+			<key>noIndex</key>
+			<string>как есть</string>
+			<key>flags</key>
+			<dict>
+				<key>fixMax</key>
+				<string>запретить изменять максимумы</string>
+				<key>fixWeight</key>
+				<string>запретить изменять веса критериев</string>
+				<key>fixList</key>
+				<string>всегда использовать все критерии</string>
+				<key>onlyCriter</key>
+				<string>запретить бескритериальные отметки</string>
+			</dict>
+			<key>tabs</key>
+			<array>
+				<string>Наборы критериев</string>
+				<string>Представления</string>
+			</array>
+		</dict>
 	</dict>
 	<key>messages</key>
 	<dict>
@@ -104,6 +151,14 @@
 		<string>вес работы должен быть в диапазоне от 0 до 99.99</string>
 		<key>illegalScale</key>
 		<string>вес работы должен иметь не более 2 знаков после запятой</string>
+		<key>criteriaRequired</key>
+		<string>нужно описать критерии, прежде чем заставлять их использовать</string>
+		<key>maxsRequired</key>
+		<string>нельзя зафиксировать максимумы, пока они не указаны во всех критериях</string>
+		<key>weightsRequired</key>
+		<string>нельзя зафиксировать веса, пока они не указаны во всех критериях</string>
+		<key>indexIsUsed</key>
+		<string>Это представление используется в критериях %d раз</string>
 	</dict>
 	<key>worksTab</key>
 	<dict>

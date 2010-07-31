@@ -1,0 +1,23 @@
+# JVM              == java
+# JVMOptions       == 
+# JDB              == jdb
+# JDBOptions       == 
+# ApplicationClass == net.rujel.setup.Application
+
+APPROOT/Resources/Java/
+APPROOT/Resources/Java/plistwoeditor.jar
+
+LOCALROOT/Library/Frameworks/Reusables.framework/Resources/Java/reusables.jar
+WOROOT/Library/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar
+WOROOT/Library/Frameworks/JavaEOAccess.framework/WebServerResources/Java/JavaEOAccess.jar
+WOROOT/Library/Frameworks/JavaEOControl.framework/Resources/Java/javaeocontrol.jar
+WOROOT/Library/Frameworks/JavaEOControl.framework/WebServerResources/Java/JavaEOControl.jar
+WOROOT/Library/Frameworks/JavaFoundation.framework/Resources/Java/javafoundation.jar
+WOROOT/Library/Frameworks/JavaFoundation.framework/WebServerResources/Java/JavaFoundation.jar
+WOROOT/Library/Frameworks/JavaJDBCAdaptor.framework/Resources/Java/javajdbcadaptor.jar
+WOROOT/Library/Frameworks/JavaJDBCAdaptor.framework/WebServerResources/Java/JavaJDBCAdaptor.jar
+WOROOT/Library/Frameworks/JavaWebObjects.framework/Resources/Java/javawebobjects.jar
+WOROOT/Library/Frameworks/JavaWebObjects.framework/WebServerResources/Java/JavaWebObjects.jar
+WOROOT/Library/Frameworks/JavaXML.framework/Resources/Java/javaxml.jar
+WOROOT/Library/Frameworks/JavaXML.framework/WebServerResources/Java/javaxml.jar
+

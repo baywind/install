@@ -1,0 +1,406 @@
+SetsTabs : Tabs {
+  currTab = currSet;
+  tablist = sets;
+  vertical = true;
+  titleAttribute = "setName";
+  hoverAttribute = "comment";
+}
+
+Title : WOString {
+  value = ^dict.title;
+}
+
+ByCourse : SettingsByCourse {
+  base = base;
+  item = item;
+  numericValue = currID;
+  textValue = nameOfCritSet;
+  selector = "numericValue";
+  ec = ec;
+  canSetBase = true;
+}
+
+ByCourseReview : SettingsByCourse {
+  base = base;
+  item = item;
+  ec = ec;
+  readOnly = true;
+}
+ItemName : WOString {
+  value = item.textValue;
+}
+
+Criteria : WORepetition {
+  item = item;
+  list = criteria;
+}
+
+CritTitle : WOString {
+  value = item.title;
+}
+
+CritMax : WOString {
+  value = item.dfltMax;
+}
+
+CritWeight : WOString {
+  value = item.dfltWeight;
+}
+
+CritComment : WOString {
+  value = item.comment;
+}
+
+CriterRow : OnClickContainer {
+  elementName = "tr";
+  hide = isSelected;
+  invokeAction = selectCriter;
+  onClick = session.checkRun;
+  class = "ungerade";
+}
+
+EditCriter : WOConditional {
+  condition = isSelected;
+}
+
+EditCritTitle : WOTextField {
+  value = item.title;
+  style = "width:3ex;text-align:center;";
+  maxlength = 5;
+  class = "checkChanges";
+}
+
+EditCritMax : WOTextField {
+  value = item.dfltMax;
+  style = "width:3ex;text-align:center;";
+  maxlength = 5;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event);";
+  class = "checkChanges";
+}
+
+EditCritWeight : WOTextField {
+  value = item.dfltWeight;
+  style = "width:3ex;text-align:center;";
+  maxlength = 5;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event);";
+  class = "checkChanges";
+}
+
+EditCritComment : WOText {
+  value = item.comment;
+  rows = 2;
+}
+CanCreateCrit : WOConditional {
+  condition = canAddCriter;
+}
+
+SaveCritRow : WOGenericContainer {
+  elementName = "tr";
+  style = styleCritSave;
+  id = "critSave";
+}
+
+SaveCriter : WOSubmitButton {
+  action = saveCriter;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+DeleteCriter : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  invokeAction = deleteCriter;
+  onclick = session.confirmMessage;
+  value = session.strings.Reusables_Strings.uiElements.Delete;
+}
+
+UnselectCriter : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  invokeAction = selectCriter;
+  onclick = session.checkRun;
+  value = session.strings.Reusables_Strings.uiElements.Cancel;
+}
+
+
+NewCritTitle : WOTextField {
+  value = critDict.title;
+  style = "width:3ex;text-align:center;";
+  maxlength = 5;
+  class = "checkChanges";
+}
+
+NewCritMax : WOTextField {
+  value = critDict.dfltMax;
+  style = "width:3ex;text-align:center;";
+  maxlength = 5;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event);";
+  class = "checkChanges";
+}
+
+NewCritWeight : WOTextField {
+  value = critDict.dfltWeight;
+  style = "width:3ex;text-align:center;";
+  maxlength = 5;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event);";
+  class = "checkChanges";
+}
+
+NewCritComment : WOText {
+  value = critDict.comment;
+  rows = 2;
+}
+AddCriterion : OnClickContainer {
+  elementName = "tr";
+  onclick = "showObj('newRow');document.getElementById('critSave').style.visibility='visible';hideObj(this);";
+  class = "orange";
+}
+
+CriteriaForm : WOForm {
+}
+
+CreatePrompt : WOString {
+  value = ^dict.createPrompt;
+  valueWhenEmpty = "new critset name";
+}
+RenamePrompt : WOString {
+  value = ^dict.renamePrompt;
+  valueWhenEmpty = "change critset name";
+}
+
+FormSet : WOForm {
+  action = saveName;
+  id = "nameForm";
+}
+
+SetName : WOTextField {
+  value = nameOfCritSet;
+  name = "csTitle";
+  style = "display:none;";
+}
+
+DeleteSet : OnClickContainer {
+  elementName = "span";
+  onclick = session.confirmMessage;
+  invokeAction = deleteCritSet;
+  class = "female";
+  style = "padding:0px 4px;font-weight:bold;border:double 3px #cc6666;color:#cc3333;";
+  title = ^dict.delete;
+  hide = session.readAccess._delete.CriteriaSet;
+}
+
+AddSet : OnClickContainer {
+  elementName = "span";
+  onclick = "create(get(this,'form'));";
+  class = "green";
+  hide = session.readAccess._create.CriteriaSet;
+  style = "padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  title = session.strings.Reusables_Strings.uiElements.Add;
+}
+
+RenameSet : OnClickContainer {
+  elementName = "span";
+  onclick = "rename(get(this,'form'));";
+  class = "grey";
+  style = "padding:0px 4px;font-weight:bold;border:double 3px #666666;color:#333333;";
+  title = ^dict.renamePrompt;
+  hide = session.readAccess._edit.CriteriaSet;
+}
+
+CriteriaAvailable : WOConditional {
+  condition = currSet.editingContext;
+}
+
+AddTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Add;
+  escapeHTML = false;
+}
+
+RenameTitle : WOString {
+  value = ^dict.rename;
+  valueWhenEmpty = "rename";
+}
+
+CritNameTitle : WOString {
+  value = ^dict.name;
+  valueWhenEmpty = "title";
+}
+
+CritWeightTitle : WOString {
+  value = session.strings.RujelCriterial_Strings.weight;
+  valueWhenEmpty = "weight";
+  escapeHTML = false;
+}
+
+CommentTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.comment;
+  valueWhenEmpty = "comment";
+  escapeHTML = false;
+}
+
+CritSet : WOString {
+  value = ^dict.critSet;
+  escapeHTML = false;
+}
+
+SetForm : WOForm {
+}
+
+SetComment : WOText {
+  value = currSet.comment;
+  rows = 2;
+  style = "width:98%;";
+  title = session.strings.Reusables_Strings.dataTypes.comment;
+}
+
+FixMax : WOCheckBox {
+  checked = currSet.namedFlags.fixMax;
+}
+
+FixMaxTitle : WOString {
+  value = ^dict.flags.fixMax;
+  escapeHTML = false;
+}
+
+FixWeight : WOCheckBox {
+  checked = currSet.namedFlags.fixWeight;
+}
+
+FixWeightTitle : WOString {
+  value = ^dict.flags.fixWeight;
+  escapeHTML = false;
+}
+
+FixList : WOCheckBox {
+  checked = currSet.namedFlags.fixList;
+}
+
+FixListTitle : WOString {
+  value = ^dict.flags.fixList;
+  escapeHTML = false;
+}
+
+OnlyCriter : WOCheckBox {
+  checked = currSet.namedFlags.onlyCriter;
+}
+
+OnlyCriterTitle : WOString {
+  value = ^dict.flags.onlyCriter;
+  escapeHTML = false;
+}
+
+Save : WOSubmitButton {
+  action = save;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+CurrName : WOString {
+  value = nameOfCritSet;
+}
+
+CanIndex : WOConditional {
+  condition = indices.count;
+}
+
+CritIndex : WOString {
+  value = item.indexer.title;
+}
+
+EditCritIndexer : WOPopUpButton {
+  list = indices;
+  noSelectionString = "--===--";
+  selection = item.indexer;
+  item = item2;
+  displayString = item2.title; 
+}
+
+NewCritIndexer : WOPopUpButton {
+  list = indices;
+  noSelectionString = "--===--";
+  selection = critDict.indexer;
+  item = item2;
+  displayString = item2.title; 
+}
+
+CritIndexTitle : WOString {
+  value = session.strings.RujelBase_Base.Indexer.indexer;
+}
+
+Tabs : Tabs {
+  currTab = tab;
+  tablist = ^dict.tabs;
+  numeric = true;
+  selectAction = changeTab;
+}
+
+Regime0 : WOConditional {
+  condition = tab;
+  negate = true;
+}
+
+Regime1 : WOConditional {
+  condition = tab;
+}
+
+Indices : WORepetition {
+  list = indices;
+  item = item2;
+}
+
+SelectIndex : OnClickContainer {
+  elementName = "td";
+  invokeAction = selectIndex;
+  onclick = session.checkRun;
+  class = indexCellClass;
+}
+
+IndexTitle : WOString {
+  value = item2.title;
+}
+
+AddIdx : OnClickContainer {
+  elementName = "span";
+  onclick = "createIndex();";
+  class = "green";
+  style = "float:right;padding:0px 4px;margin:1px 2px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
+  title = session.strings.Reusables_Strings.uiElements.Add;
+}
+
+DeleteIdx : OnClickContainer {
+  elementName = "span";
+  onclick = session.confirmMessage;
+  invokeAction = deleteIndex;
+  class = "female";
+  style = "float:right;margin:1px 2px;padding:0px 4px;font-weight:bold;border:double 3px #cc6666;color:#cc3333;";
+  title = session.strings.Reusables_Strings.uiElements.Delete;
+  hide = noIndexSelected;
+}
+
+RadioButton : WORadioButton {
+  checked = radio;
+  name = item.title;
+}
+
+CreateIndexPrompt : WOString {
+  value = ^dict.createIndexPrompt;
+  valueWhenEmpty = "new index name";
+}
+
+EditIndex : EditIndex {
+  indexer = criterion;
+  forceType = "criteria"; 
+}
+
+IndicesForm : WOForm {
+}
+
+IndexerEditTitle : WOString {
+  value = ^dict.index;
+}
+
+NoIndexTitle : WOString {
+  value = ^dict.noIndex;
+}

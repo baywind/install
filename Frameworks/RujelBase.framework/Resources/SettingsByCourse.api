@@ -15,11 +15,14 @@
         </validation>
     <binding defaults="Boolean" name="hideEmptyDetails"/>
     <binding defaults="Boolean" name="readOnly"/>
-    <binding name="defaultText"/>
-        <binding name="defaultNumeric"/>
+    <binding name="textValue"/>
+        <binding name="numericValue"/>
     <binding name="pushByCourse"/>
         <validation message="'changedByCourse' must be bound to a settable value">
             
         </validation>
+    <binding name="editList"/>
+    <binding name="selector"/>
+    <binding defaults="Boolean" name="canSetBase"/>
     </wo>
 </wodefinitions>

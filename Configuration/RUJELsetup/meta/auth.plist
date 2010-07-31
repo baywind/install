@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Настройки авторизации</string>
+	<key>type</key>
+	<key>description</key>
+	<string>Настройка процесса авторизации пользователя</string>
+	<string>Dictionary</string>
+	<key>path</key>
+	<string>modules/auth.plist</string>
+	<key>sort</key>
+	<integer>4</integer>
+	<key>presets</key>
+	<string>required/auth.plist</string>
+	<key>status</key>
+	<string>required</string>
+	<key>keys</key>
+	<array>
+		<dict>
+			<key>key</key>
+			<string>auth</string>
+			<key>type</key>
+			<string>Dictionary</string>
+			<key>title</key>
+			<string>auth</string>
+			<key>description</key>
+			<string></string>
+			<key>keys</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>welcomeMessage</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>welcomeMessage</string>
+					<key>description</key>
+					<string>Приветсвенное сообщение страницы авторизации. Если не менять предустановленное значение, используется название школы из общих настроек.</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>loginPageName</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>loginPageName</string>
+					<key>description</key>
+					<string>имя страницы (компонента), на которой осуществляется ввод пароля. Не меняйте это значение (&quot;Main&quot;), если не уверены в своих действиях.</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>accessHandlerClass</string>
+					<key>type</key>
+					<string>Dictionary</string>
+					<key>title</key>
+					<string>accessHandlerClass</string>
+					<key>description</key>
+					<string>имя класса java, который используется для определения прав доступа; пока единственный доступный вариант:</string>
+					<key>keys</key>
+					<array>
+						<dict>
+							<key>key</key>
+							<string>net.rujel.auth.PrefsAccessHandler</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>net.rujel.auth.PrefsAccessHandler</string>
+							<key>description</key>
+							<string>описания прав хранятся в файле plist (раздел auth.access)</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>allowNone</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>allowNone</string>
+					<key>description</key>
+					<string>разрешить ли подключение анонимного пользователя (без ввода логина)
+Пока такая возможность не предусматривается, поэтому лучше оставить значение &apos;false&apos;</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>guestUser</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>guestUser</string>
+					<key>description</key>
+					<string>имя для пользователя &quot;Гость&quot;. Если эти значения указаны, на странице аутентикации будет показана кнопка &quot;Гость&quot;: это позволит просматривать общедоступную информацию из журнала людям без своего логина (например, родителям).</string>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>guestPassword</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>guestPassword</string>
+					<key>description</key>
+					<string>пароль для пользователя &quot;Гость&quot;</string>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>authErrorMessage</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>authErrorMessage</string>
+					<key>description</key>
+					<string>Сообщение при ошибке авторизации.</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>authFailedMessage</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>authFailedMessage</string>
+					<key>description</key>
+					<string>Сообщение при неудачной авторизации</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>badCredentialMessage</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>badCredentialMessage</string>
+					<key>description</key>
+					<string>Сообщение при введении неверного пароля</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>badIdentityMessage</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>badIdentityMessage</string>
+					<key>description</key>
+					<string>Сообщение при введении не существующего пользователя.</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>denyNoneMessage</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>denyNoneMessage</string>
+					<key>description</key>
+					<string>Сообщение при пустом имени пользователя</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>welcomeAction</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>welcomeAction</string>
+					<key>description</key>
+					<string>действие, которое будет выполнено после успешной аутентикации пользователя (не меняйте значение &quot;success&quot;, если не уверены в своих действиях)</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>refuseAction</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>refuseAction</string>
+					<key>description</key>
+					<string>действие, которое будет выполнено в случае, если пользователю запрещен доступ в журнал (не меняйте значение &quot;refuse&quot;, если не уверены в своих действиях; Вы можете отключить этот параметр в пользу следующего)</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>refuseUrl</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>refuseUrl</string>
+					<key>description</key>
+					<string>URL-адрес, на который будет переадресован пользователь, если ему запрещен доступ в журнал</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>useHTTPS</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>useHTTPS</string>
+					<key>description</key>
+					<string>переходить на использование HTTPS для шифрованной пересылки пароля. Включайте этот режим только если у Вас настроен HTTPS на web-сервере Apache</string>
+					<key>defaultValue</key>
+					<true/>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>sessionSecure</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>sessionSecure</string>
+					<key>description</key>
+					<string>продолжать работу по шифрованному соединению после успешной авторизации, не возвращаться на нешифрованный HTTP</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

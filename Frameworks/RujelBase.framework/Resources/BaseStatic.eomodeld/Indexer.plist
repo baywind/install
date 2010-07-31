@@ -1,6 +1,13 @@
 {
     attributes = (
         {
+            allowsNull = Y; 
+            columnName = "COMMENT_ID"; 
+            name = commentID; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
             columnName = "DEFAULT_VALUE"; 
             name = defaultValue; 
             prototypeName = string; 
@@ -16,14 +23,23 @@
             prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (type, title, defaultValue, formatString); 
+    attributesUsedForLocking = (type, title, defaultValue, formatString, commentID); 
     className = "net.rujel.base.Indexer"; 
-    classProperties = (type, title, defaultValue, indexRows, formatString); 
+    classProperties = (type, title, defaultValue, indexRows, formatString, commentEO); 
     externalName = "BASE_INDEXER"; 
     fetchSpecificationDictionary = {}; 
     name = Indexer; 
     primaryKeyAttributes = (indID); 
     relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = StaticTextStore; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tID; sourceAttribute = commentID; }); 
+            name = commentEO; 
+            ownsDestination = Y; 
+        }, 
         {
             deleteRule = EODeleteRuleCascade; 
             destination = IndexRow; 

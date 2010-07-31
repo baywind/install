@@ -4,6 +4,8 @@
 <dict>
 	<key>sort</key>
 	<string>10</string>
+	<key>title</key>
+	<string>eDirectory (Novell)</string>
 	<key>auth</key>
 	<dict>
 		<key>loginHandlerClass</key>

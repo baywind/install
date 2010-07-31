@@ -4,22 +4,22 @@
 <dict>
 	<key>sort</key>
 	<string>10</string>
+	<key>title</key>
+	<string>OpenDirectory (Apple)</string>
 	<key>auth</key>
 	<dict>
-		<key>loginHandlerClass</key>
-		<string>net.rujel.auth.ldap.LdapAuthentication</string>
 		<key>groupMapping</key>
 		<dict>
 			<key>root</key>
-			<string>cn=rujel_adm, ou=Group</string>
+			<string>cn=admin, cn=groups</string>
 			<key>zavuch</key>
-			<string>cn=zavuch, ou=Group</string>
+			<string>cn=zavuch, cn=groups</string>
 			<key>zav_kaf</key>
-			<string>cn=zav_kaf, ou=Group</string>
-			<key>tutor</key>
-			<string>cn=tutor, ou=Group</string>
+			<string>cn=zav_kaf, cn=groups</string>
 			<key>teacher</key>
-			<string>cn=teacher, ou=Group</string>
+			<string>cn=teacher, cn=groups</string>
+			<key>tutor</key>
+			<string>cn=tutor, cn=groups</string>
 			<key>any</key>
 			<string>*</string>
 		</dict>
@@ -27,13 +27,15 @@
 		<dict>
 			<key>providerUrl</key>
 			<string>ldap://localhost</string>
-			<key>useSSL</key>
-			<string>false</string>
 			<key>uidAttribute</key>
 			<string>uid</string>
 			<key>memberAttribute</key>
 			<string>memberUid</string>
+			<key>useSSL</key>
+			<string>false</string>
 		</dict>
+		<key>loginHandlerClass</key>
+		<string>net.rujel.auth.ldap.LdapAuthentication</string>
 	</dict>
 </dict>
 </plist>

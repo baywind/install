@@ -9,10 +9,11 @@ SET NAMES utf8;
 /* EXCLUDE_MIN - использовать строгое > , а не >=; BSET_NAME - имя набора; */
 /* ZERO_VALUE - значение, которое используется при величинах меньше минимального граничного */
 /* FORMAT_STRING - строка, в которую включается граничное значение. По принципу java.util.Formatter */
-INSERT INTO CR_BORDER_SET (BS_ID, BSET_NAME, ZERO_VALUE, EXCLUDE_MIN) VALUES 
- (1,'~','&oslash;',0),
- (2,'/5','н/а',0),
- (3,'color','#ffffff',0);
+/* VALUE_TYPE - тип значения: 0-текст, 1-цвет, 2-изображение, 3-код HTML */
+INSERT INTO CR_BORDER_SET (BS_ID, BSET_NAME, ZERO_VALUE, EXCLUDE_MIN,VALUE_TYPE) VALUES 
+ (1,'~','&oslash;',0,0),
+ (2,'/5','н/а',0,0),
+ (3,'color','#ffffff',0,1);
  
 /* Граничные значения для наборов */
 /* B_ID - №п/п; B_SET - №набора; LEAST_VALUE - граничная величина; B_TITLE - возвращаемое значение */
@@ -27,26 +28,6 @@ INSERT INTO CR_BORDER (B_ID,B_SET,LEAST_VALUE,B_TITLE) VALUES
  (8,3,'0.01','#ff6666'),
  (9,3,'50.00','#ffff33'),
  (10,3,'70.00','#99ff66');
-
-/* Наборы критериев для оценивания */
-/* название; №п/п */
-INSERT INTO CR_CRIT_SET (CS_ID,COMMENT_TEXT) VALUES 
- (1,'Бакалавриат');
-
-/* Установка набора критериев по умолчанию для всех */
-insert into BASE_SETTINGS (S_ID,SETTING_KEY,NUM_VALUE) values (1,'CriteriaSet',1);
-
-/* Критерии оценивания */
-/* CRITER_NUM - №п/п, CRIT_SET - №набора; INDEX_ID - №индекса (не используется) */
-/* CR_TITLE - заголовок(имя) критерия; COMMENT_TEXT - описание критерия */
-/* DFLT_MAX - максимум по умолчанию; DFLT_WEIGHT - вес критерия по умолчанию */
-INSERT INTO CR_CRITERION (CRITER_NUM,CRIT_SET,CR_TITLE) VALUES 
- (1,1,'A'),
- (2,1,'B'),
- (3,1,'C'),
- (4,1,'D'),
- (5,1,'E'),
- (6,1,'F');
  
  /* типы работ */
 INSERT INTO CR_WORK_TYPE 

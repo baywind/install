@@ -1,0 +1,116 @@
+Rows : WORepetition {
+  list = indexer.sortedIndex;
+  item = rowItem;
+}
+
+RowIdx : WOString {
+  value = rowItem.idx;
+}
+
+Form : WOForm {
+}
+
+RowValue : WOTextField {
+  value = rowItem.value;
+  size = 10;
+}
+
+RowCommentText : WOString {
+  value = rowItem.comment;
+  valueWhenEmpty = "-=-";
+}
+
+DefaultValue : WOTextField {
+  value = indexer.defaultValue;
+  size = 10;
+}
+
+DefautCommentText : WOString {
+  value = session.strings.RujelBase_Base.Indexer.default;
+  escapeHTML = false;
+}
+
+IndexTitle : WOTextField {
+  value = indexer.title;
+  size = 20;
+  style = "width:90%;";
+}
+
+FormatString : WOTextField {
+  value = indexer.formatString;
+}
+
+DeleteCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = delete;
+  onclick = session.confirmMessage;
+  title = session.strings.Reusables_Strings.uiElements.Delete;
+  style = "color:#cc3333;width:3ex;";
+}
+
+NewIndex : WOTextField {
+  value = newIdx;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event);";
+  class = "checkChanges";
+  size = 2;
+  style = "text-align:center;width:80%;";
+}
+
+NewValue : WOTextField {
+  value = newValue;
+  size = 10;
+}
+
+Save : WOSubmitButton {
+  action = save;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+Reset : WOResetButton {
+  value = session.strings.Reusables_Strings.uiElements.Reset;
+  onclick = "hideObj('newIndexRow');showObj('addIndex');";
+}
+
+AddRowToggle : OnClickContainer {
+  elementName = "tr";
+  onclick = "showObj('newIndexRow');hideObj(this);";
+  class = "orange";
+  id = "addIndex";
+}
+
+AddTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Add;
+  escapeHTML = false;
+}
+TitleTitle : WOString {
+  value = session.strings.RujelBase_Base.Indexer.title;
+  escapeHTML = false;
+}
+
+ValueTitle : WOString {
+  value = session.strings.RujelBase_Base.Indexer.value;
+  escapeHTML = false;
+}
+
+CommentTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.comment;
+}
+
+IdxTitle : WOString {
+  value = session.strings.RujelBase_Base.Indexer.idx;
+  valueWhenEmpty = "№";
+  escapeHTML = false;
+}
+
+CommentField : WOText {
+  value = indexer.comment;
+  rows = 2;
+  cols = 20;
+}
+
+DefaultInfoCell : WOGenericContainer {
+  elementName = "td";
+  title = session.strings.RujelBase_Base.Indexer.defaultHover;
+  colspan = 2;
+}

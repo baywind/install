@@ -4,6 +4,8 @@
 <dict>
 	<key>sort</key>
 	<string>10</string>
+	<key>title</key>
+	<string>OpenLDAP (AltLinux)</string>
 	<key>auth</key>
 	<dict>
 		<key>loginHandlerClass</key>
@@ -11,34 +13,28 @@
 		<key>groupMapping</key>
 		<dict>
 			<key>root</key>
-			<string>cn=sysadmin, ou=Users, ou=School</string>
+			<string>cn=rujel_adm, ou=Group</string>
 			<key>zavuch</key>
-			<string>cn=Учебная часть, ou=Users, ou=School</string>
+			<string>cn=zavuch, ou=Group</string>
 			<key>zav_kaf</key>
-			<string>cn=Завкафедры, ou=Users, ou=School</string>
+			<string>cn=zav_kaf, ou=Group</string>
 			<key>tutor</key>
-			<string>cn=Классные руководители, ou=Users, ou=School</string>
+			<string>cn=tutor, ou=Group</string>
 			<key>teacher</key>
-			<string>cn=Учителя, ou=Users, ou=School</string>
+			<string>cn=teacher, ou=Group</string>
 			<key>any</key>
 			<string>*</string>
 		</dict>
 		<key>ldap</key>
 		<dict>
 			<key>providerUrl</key>
-			<string>ldap://192.168.102.240</string>
-			<key>proxyUserDn</key>
-			<string>school\specuser</string>
-			<key>proxyPassword</key>
-			<string>123</string>
+			<string>ldap://localhost</string>
 			<key>useSSL</key>
 			<string>false</string>
 			<key>uidAttribute</key>
-			<string>sAMAccountName</string>
-			<key>groupAttribute</key>
-			<string>memberOf</string>
-			<key>presentAttribute</key>
-			<string>cn</string>
+			<string>uid</string>
+			<key>memberAttribute</key>
+			<string>memberUid</string>
 		</dict>
 	</dict>
 </dict>

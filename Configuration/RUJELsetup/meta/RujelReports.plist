@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Сводная статистика</string>
+	<key>description</key>
+	<string>Интерфейсы статистической обработки информации. Поисковые выборки, сводки по курсам.</string>
+	<key>type</key>
+	<string>Dictionary</string>
+	<key>path</key>
+	<string>modules/RujelReports.plist</string>
+	<key>sort</key>
+	<integer>11</integer>
+	<key>presets</key>
+	<string>recommended/RujelReports.plist</string>
+	<key>advanced</key>
+	<true/>
+	<key>status</key>
+	<string>recommended</string>
+	<key>keys</key>
+	<array>
+		<dict>
+			<key>key</key>
+			<string>moduleClass</string>
+			<key>type</key>
+			<string>String</string>
+			<key>title</key>
+			<string>moduleClass</string>
+			<key>description</key>
+			<string>основной класс, инициирующий данный модуль</string>
+			<key>advanced</key>
+			<true/>
+			<key>final</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>reportsDir</string>
+			<key>type</key>
+			<string>String</string>
+			<key>title</key>
+			<string>reportsDir</string>
+			<key>description</key>
+			<string>указывает расположение папки с файлами описания отчетов (Выборки/По курсам).</string>
+			<key>advanced</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

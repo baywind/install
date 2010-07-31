@@ -1,0 +1,108 @@
+Array : WORepetition {
+	list = array;
+	item = item;
+}
+
+Title : WOString {
+  value = title;
+}
+
+Description : WOString {
+  value = description;
+}
+
+isDictionary : WOConditional {
+  condition = isDictionary;
+}
+
+isBoolean : WOConditional {
+  condition = isBoolean;
+}
+
+isNumber : WOConditional {
+  condition = isNumber;
+}
+
+isString : WOConditional {
+  condition = isString;
+}
+
+isSelect : WOConditional {
+  condition = isSelect;
+}
+
+nextStep : PlistEdit {
+	plist = nextplist;
+	array = nextarray;
+}
+
+boolean : WOCheckBox {
+	checked = boolValue;
+}
+
+number : WOTextField {
+  value = numValue;
+  size = 10;
+}
+
+string : WOTextField {
+  value = strValue;
+  size = 30;
+}
+
+select : WOPopUpButton {
+  list = select;
+  item = item2;
+  displayString = item2.title;
+  selection = selValue;
+}
+
+default : WOString {
+  value = defaultValue;
+}
+
+isRequired : WOConditional {
+  condition = isRequired;
+}
+
+min : WOString {
+  value = item.min;
+}
+
+max : WOString {
+  value = item.max;
+}
+
+isMin : WOConditional {
+  condition = item.min;
+}
+
+isMax : WOConditional {
+  condition = item.max;
+}
+
+isNotDictionary : WOConditional {
+  condition = isDictionary;
+  negate = true;
+}
+
+exeption : WOString {
+  value = item.exeption;
+}
+
+Advanced : WOConditional {
+  condition = isAdvanced;
+}
+
+isFinal : WOConditional {
+  condition = isFinal;
+}
+
+final : WOString {
+  value = finValue;
+}
+
+tr : WOGenericContainer {
+	elementName = "tr";
+	bgcolor = color;
+}

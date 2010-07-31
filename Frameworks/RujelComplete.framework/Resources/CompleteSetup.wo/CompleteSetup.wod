@@ -47,7 +47,7 @@ SettingsByCourse : SettingsByCourse {
   base = base;
   ec = ^ec;
   hideEmptyDetails = false;
-  defaultNumeric = session.eduYear;
+  numericValue = session.eduYear;
   pushByCourse = "pushByCourse";
   access = session.readAccess.FLAGS.CompleteSetup;
 }

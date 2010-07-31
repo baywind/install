@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+	<head>
+		<title>Настройка</title>
+	</head>
+	<body>
+
+<webobject name = "Meta">
+<table width = "100%"><webobject name = "tr">
+<th align = "center" style = "font-size:28px"><webobject name = "regime"/></th>
+</webobject></table>
+<br/>
+<webobject name = "Advanced"><webobject name = "advButton"></webobject></webobject>
+<webobject name = "isAdvanced">
+	<webobject name = "FilePath">
+	Расположение папки "rujel":<br/>
+		<webobject name = "polFilePath"/><input type = "Submit"/>
+	</webobject>
+	</webobject>
+
+
+	<h3><a name = "start">Выберите раздел настройки:</a></h3>
+	<table>
+	<webobject name = "MetaLists">
+	<tr>
+		<td>
+			<webobject name = "canOff"><webobject name = "turnOff">Выкл.</webobject></webobject>
+		</td>
+		
+		<webobject name = "td">
+			<webobject name = "onOffMessage"/>
+		</webobject>
+		
+		<td><webobject name = "go">
+			<webobject name = "val"/>
+		</webobject></td>
+		
+		<webobject name = "td">
+			<webobject name = "status"/>
+		</webobject>
+	</tr>
+	</webobject>
+	</table>
+</webobject>
+<webobject name = "NoMetaExeption">
+	<h3>Ошибка:</h3>
+	<p>Рабочие файлы не найдены. Путь указан не верно.</p>
+</webobject>
+
+<webobject name = "doplist">
+	<br/>
+	<br/>
+	<a name="startEdit" style = "color:ffa500;font-size:24pt;">
+		<webobject name = "ErrorMessage"/>
+	</a>
+	<webobject name = "havePresets">
+		<webobject name = "PresetsForm"><webobject name = "changepreset"/></webobject>
+	</webobject>
+	<h3><webobject name = "plTitle"/>
+	</h3>
+	<p><webobject name = "plDescription"/>
+	</p>
+	
+	<webobject name = "plistIsAdvanced">
+		<h3 style = "color:red;">Этот файл не требует изменений</h3>
+	</webobject>
+	
+	<webobject name = "plistEditForm">
+		<table style = "border-width: 1px; border-color: black; border-style: double;" width = "900">
+		<tr bgcolor = "A9A9A9"><th>Имя
+		</th><th>от
+		</th><th width = "23%">Заполняемое поле
+		</th><th>до
+		</th><th>Значение по умолчанию
+		</th></tr>
+		
+		<webobject name = "plistEdit"/>
+		
+		</table>
+		<webobject name = "submit"/>
+	</webobject>
+	<a href = "#start">UP</a>
+	<p>Поля помеченые знаком <b>*</b> обязательно должны быть заполнены.</p>
+</webobject>
+
+	</body>
+</html>

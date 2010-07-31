@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Подключение к СУБД</string>
+	<key>description</key>
+	<string>настройка JDBC подключения к базе данных</string>
+	<key>type</key>
+	<string>Dictionary</string>
+	<key>path</key>
+	<string>modules/database.plist</string>
+	<key>sort</key>
+	<integer>1</integer>
+	<key>presets</key>
+	<string>dbpresets</string>
+	<key>defaultpreset</key>
+	<string>MySQL</string>
+	<key>status</key>
+	<string>required</string>
+	<key>keys</key>
+	<array>
+		<dict>
+			<key>key</key>
+			<string>dbConnection</string>
+			<key>type</key>
+			<string>Dictionary</string>
+			<key>title</key>
+			<string>База Данных</string>
+			<key>description</key>
+			<string>Настройки подключения к СУБД</string>
+			<key>keys</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>serverURL</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>URL сервера БД</string>
+					<key>description</key>
+					<string>URL-адрес сервера БД в формате, соответствующем спецификации JDBC</string>
+					<key>advanced</key>
+					<true/>
+					<key>required</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>urlSuffix</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>суффикс URL</string>
+					<key>description</key>
+					<string>дополнительные параметры подключения JDBC, указываемые в конце URL-адреса базы данных.</string>
+					<key>advanced</key>
+					<true/>
+					<key>required</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>username</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>имя</string>
+					<key>description</key>
+					<string>имя пользователя, используемое для подключения к серверу БД</string>
+					<key>required</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>password</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>пароль</string>
+					<key>description</key>
+					<string>пароль этого пользователя для БД</string>
+					<key>required</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>driver</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>driver</string>
+					<key>description</key>
+					<string>мы его пока не использовали, но он предусмотрен</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>plugin</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>plugin</string>
+					<key>description</key>
+					<string>мы его пока не использовали, но он предусмотрен</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>prototypes</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>прототипы</string>
+					<key>description</key>
+					<string>Указание на прототипы (описание типов данных) для используемой СУБД</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

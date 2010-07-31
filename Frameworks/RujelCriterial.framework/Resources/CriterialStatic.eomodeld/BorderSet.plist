@@ -7,19 +7,30 @@
             prototypeName = word; 
         }, 
         {columnName = "BS_ID"; name = bsID; prototypeName = short; }, 
-        {columnName = EXCLUDE_MIN; name = exclude; prototypeName = boolean; }, 
-        {allowsNull = N; columnName = BSET_NAME; name = title; prototypeName = word; }, 
+        {columnName = "EXCLUDE_MIN"; name = exclude; prototypeName = boolean; }, 
+        {
+            allowsNull = N; 
+            columnName = "BSET_NAME"; 
+            name = title; 
+            prototypeName = word; 
+        }, 
         {columnName = "USE_CLASS"; name = useClass; prototypeName = string; }, 
         {
             columnName = "FORMAT_STRING"; 
             name = formatString; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "VALUE_TYPE"; 
+            name = valueType; 
+            prototypeName = byte; 
         }
     ); 
-    attributesUsedForLocking = (title, exclude, useClass, zeroValue, formatString); 
+    attributesUsedForLocking = (title, exclude, useClass, zeroValue, formatString, valueType); 
     className = "net.rujel.criterial.BorderSet"; 
-    classProperties = (title, borders, exclude, useClass, zeroValue, formatString); 
+    classProperties = (title, borders, exclude, useClass, zeroValue, formatString, valueType); 
     externalName = "CR_BORDER_SET"; 
     fetchSpecificationDictionary = {}; 
     name = BorderSet; 

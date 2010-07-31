@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="EditIndex.java" wocomponentcontent="false">
+
+        <binding name="indexer"/>
+        <validation message="'indexer' is a required binding.">
+            <unbound name="indexer"/>
+        </validation>
+    <binding name="forcetype"/>
+        <binding defaults="Boolean" name="subtypes"/>
+    </wo>
+</wodefinitions>

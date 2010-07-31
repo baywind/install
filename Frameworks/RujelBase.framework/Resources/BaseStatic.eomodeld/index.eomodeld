@@ -15,9 +15,6 @@
         {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }, 
         {className = EOGenericRecord; name = StaticTextStore; }
     ); 
-    internalInfo = {
-        "_deletedEntityNamesInObjectStore" = (StaticTextStore, StaticTextStorek, StaticTextStoreq); 
-    }; 
     userInfo = {
         "_EntityModeler" = {
             activeDatabaseConfigName = Default; 

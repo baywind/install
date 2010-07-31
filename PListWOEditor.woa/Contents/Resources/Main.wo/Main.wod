@@ -1,0 +1,125 @@
+MetaLists : WORepetition {
+list = metaPLists;
+item = item;
+}
+
+val : WOString {
+  value = getName;
+}
+
+go : WOHyperlink {
+	action = makePlist;
+	fragmentIdentifier = "startEdit";
+}
+
+Meta : WOConditional {
+  condition = metaPLists.count;
+}
+
+NoMetaExeption : WOConditional {
+  condition = metaPLists.count;
+  negate = true;
+}
+
+doplist : WOConditional {
+  condition = plist;
+}
+
+havePresets : WOConditional {
+  condition = presets.count;
+}
+
+changepreset : WOPopUpButton {
+  list = presets;
+  item = item;
+  displayString = getName;
+  selection = plist;
+  onchange = "form.submit();";
+}
+
+plTitle : WOString {
+  value = array.title;
+}
+
+plDescription : WOString {
+  value = array.description;
+}
+
+plistEditForm : WOForm {
+}
+
+plistEdit : PlistEdit {
+	plist = plist;
+	array = array.keys;
+}
+
+PresetsForm : WOForm {
+}
+
+submit : WOSubmitButton {
+	value = "Применить";
+	action = submit;
+}
+
+ErrorMessage : WOString {
+  value = session.message;
+}
+
+Advanced : WOHyperlink {
+	style = "position:absolute; right:5px; font-size:16px;";
+	action = change;
+}
+
+advButton : WOString {
+ 	value = advButton;
+}
+
+regime : WOString {
+  value = regime;
+  
+}
+
+tr : WOGenericContainer {
+	elementName = "tr";
+	bgcolor = color;
+}
+
+FilePath : WOForm {
+}
+
+polFilePath : WOTextField {
+  value = session.folder;
+  size = 70;
+}
+
+isAdvanced : WOConditional {
+  condition = isAdvanced;
+}
+
+plistIsAdvanced : WOConditional {
+  condition = plistIsAdvanced;
+}
+
+onOffMessage : WOString {
+  value = onOff;
+}
+
+td : WOGenericContainer {
+	elementName = "td";
+	align = "right";
+	style = textColor;
+}
+
+status : WOString {
+  value = status;
+}
+
+turnOff : WOHyperlink {
+	action = Off;
+	style = "color:000000; background-color:ffcc66;";
+}
+
+canOff : WOConditional {
+  condition = canOff;
+  bgcolor = "FFE4C4";
+}
