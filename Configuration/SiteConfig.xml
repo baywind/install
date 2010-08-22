@@ -34,7 +34,9 @@
 			<adaptorThreadsMax type="NSNumber">256</adaptorThreadsMax>
 			<startingPort type="NSNumber">2010</startingPort>
 			<cachingEnabled type="NSString">YES</cachingEnabled>
-			<additionalArgs type="NSString">-WODirectConnectEnabled NO</additionalArgs>
+			<additionalArgs type="NSString">-WODirectConnectEnabled NO
+-PASSWORD 123
+-ALLOWED_IPS .</additionalArgs>
 			<adaptor type="NSString">WODefaultAdaptor</adaptor>
 			<projectSearchPath type="NSString">()</projectSearchPath>
 			<autoRecover type="NSString">NO</autoRecover>
@@ -127,7 +129,9 @@
 		<element type="NSDictionary">
 			<port type="NSNumber">2010</port>
 			<cachingEnabled type="NSString">YES</cachingEnabled>
-			<additionalArgs type="NSString">-ShowDebug true</additionalArgs>
+			<additionalArgs type="NSString">-WODirectConnectEnabled NO
+-PASSWORD 123
+-ALLOWED_IPS .</additionalArgs>
 			<path type="NSString">/opt/apple/Local/Library/WebObjects/Applications/PListWOEditor.woa/PListWOEditor</path>
 			<outputPath type="NSString">/opt/apple/Local/Library/WebObjects/Logs/PListWOEditor-1</outputPath>
 			<schedulingHourlyStartTime type="NSNumber">3</schedulingHourlyStartTime>
