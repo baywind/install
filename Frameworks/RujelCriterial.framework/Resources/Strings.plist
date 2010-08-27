@@ -159,6 +159,8 @@
 		<string>нельзя зафиксировать веса, пока они не указаны во всех критериях</string>
 		<key>indexIsUsed</key>
 		<string>Это представление используется в критериях %d раз</string>
+		<key>illegalMark</key>
+		<string>Не предусмотренная отметка по критерию %s</string>
 	</dict>
 	<key>worksTab</key>
 	<dict>

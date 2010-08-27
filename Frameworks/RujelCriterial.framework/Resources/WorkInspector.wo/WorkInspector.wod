@@ -165,10 +165,11 @@ CriterMax : WOString {
 
 MaxField : WOGenericElement {
 	elementName = "input";
-	type = "text";
+	type = inputType;
 	name = maxName;
 	size = 2;
 	value = criterMax;
+	checked = checked;
 	style = "text-align:center;";
 	onkeypress = onChange;
 	onclick = onClick;
@@ -188,6 +189,7 @@ WeightField : WOGenericElement {
 	value = criterWeight;
 	style = "text-align:center;";
 	onkeypress = "return isNumberInput(event);";
+	disabled  = critSet.namedFlags.fixWeight;
 }
 
 Save: WOSubmitButton {

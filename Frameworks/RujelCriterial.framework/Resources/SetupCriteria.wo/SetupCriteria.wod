@@ -112,6 +112,7 @@ DeleteCriter : WOGenericElement {
   type = "button";
   invokeAction = deleteCriter;
   onclick = session.confirmMessage;
+  omitTags = cantDeleteCriter;
   value = session.strings.Reusables_Strings.uiElements.Delete;
 }
 
