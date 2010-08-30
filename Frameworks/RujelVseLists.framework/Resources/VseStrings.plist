@@ -144,5 +144,14 @@
 			<string>delo</string>
 		</dict>
 	</dict>
+	<key>actions</key>
+	<dict>
+		<key>transfer</key>
+		<string>Перевести в</string>
+		<key>employ</key>
+		<string>Зачислить в</string>
+		<key>fire</key>
+		<string>Исключить</string>
+	</dict>
 </dict>
 </plist>

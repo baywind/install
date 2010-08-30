@@ -12,6 +12,8 @@
 	<string>Заготовить итоговые</string>
 	<key>addItog</key>
 	<string>Добавить итог</string>
+	<key>relatedItogsFound</key>
+	<string>найдены связанные итоговые оценки</string>
 	<key>itogAddOn</key>
 	<dict>
 		<key>activeComponent</key>

@@ -18,17 +18,30 @@
 			<webobject name = "GroupTitle"/></webobject>
 					<webobject name = "ShowAllToggle"><webobject name = "ShowAllBox"/>
 			<webobject name = "ShowAllTitle"/></webobject></tr>
-		<tr><th><webobject name = "LastNameTitle"/> <webobject name = "FirstNameTitle"/></th>
+		<tr><webobject name = "ShowTicks"><td style = "width:2em;"></td></webobject>
+			<th><webobject name = "LastNameTitle"/> <webobject name = "FirstNameTitle"/></th>
 			<th><webobject name = "EnterTitle"/></th>
 			<th><webobject name = "LeaveTitle"/></th></tr>
-	</thead><tbody><webobject name = "PersonSelector"><webobject name = "Row">
+	</thead><webobject name = "CanChange"><tfoot>
+		<tr><webobject name = "ShowTicks"><td></td></webobject>
+			<td colspan = "3" align = "right">
+				<webobject name = "AddPerson">+</webobject>
+				<webobject name = "CanChange"><webobject name = "Save"/>
+		<webobject name = "ResetButton"/></webobject></td>
+		<webobject name = "ShowTicks"><tr><td colspan = "4" align = "left"><webobject name = "Ticker"/></td></tr>
+		<tr><td><webobject name = "TickCount"/></td>
+		<td colspan = "3"><webobject name = "ActionPopup"/>
+			<webobject name = "DateTitle"/>:
+			<webobject name = "DateField"/> 
+			<webobject name = "SubmitAction"/></td></tr></webobject>
+	</tfoot></webobject>
+	<tbody><webobject name = "PersonSelector"><webobject name = "Row">
+		<webobject name = "ShowTicks"><td><webobject name = "Tick"/></td></webobject>
 		<webobject name = "NameCell"><webobject name = "Name"/></webobject>
 		<td><webobject name = "Enter"/></td>
 		<td><webobject name = "Leave"/></td>
 	</webobject></webobject></tbody></table>
-	<webobject name = "AddPerson">+</webobject><webobject name = "CanChange">
-	<div style = "text-align:right;"><webobject name = "Save"/>
-		<webobject name = "ResetButton"/></div></webobject></webobject>
+	</webobject>
 	</td>
 </table>
 </webobject>

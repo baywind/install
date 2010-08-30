@@ -12,18 +12,4 @@
         {className = "net.rujel.vselists.VseStudent"; name = VseStudent; }, 
         {className = "net.rujel.vselists.VseTeacher"; name = VseTeacher; }
     ); 
-    userInfo = {
-        "_EntityModeler" = {
-            activeDatabaseConfigName = Default; 
-            databaseConfigs = {
-                Default = {
-                    adaptorName = JDBC; 
-                    connectionDictionary = {
-                        URL = "jdbc:mysql://localhost/VseLists?capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull"; 
-                        username = rujel; 
-                    }; 
-                }; 
-            }; 
-        }; 
-    }; 
 }

@@ -51,11 +51,13 @@
     primaryKeyAttributes = (grID); 
     relationships = (
         {
+            deleteRule = EODeleteRuleDeny; 
             destination = VseList; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = groupID; sourceAttribute = grID; }); 
             name = lists; 
+            ownsDestination = Y; 
         }
     ); 
 }

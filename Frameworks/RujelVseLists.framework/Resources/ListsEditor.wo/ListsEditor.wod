@@ -113,15 +113,16 @@ AddPerson : OnClickContainer {
 }
 
 Form : WOForm {
+  multipleSubmit = true;
 }
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
+	value = session.strings.Reusables_Strings.uiElements.Save;
 }
 
 ResetButton: WOResetButton {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	value = session.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
 }
 
@@ -207,4 +208,52 @@ SubmitUpload : WOGenericElement {
 
 SubmitButton : WOSubmitButton {
   action = upload;
+}
+
+Ticker: Ticker {
+	align = "left";
+	inline = true;
+}
+
+Tick : WOCheckBox {
+  checked = tick;
+  name = "cb";
+  onclick = "modifyRowClass(this);";
+}
+
+TickCount : WOTextField {
+  value = ticks.count;
+  disabled = true;
+  size = 2;
+  style = "text-align:center;";
+  id = "total";
+}
+DateField : WOTextField {
+  value = date;
+  dateformat = application.prefs.ui.dateFormat;
+  onkeypress = "return isNumberInput(event,true);";
+  style = "text-align:center;";
+  size = 10;
+  maxlength = 10;
+}
+
+DateTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.since;
+  escapeHTML = false;
+}
+
+ActionPopup : WOPopUpButton {
+  list = targets;
+  item = item;
+  displayString = actionTitle;
+  selection = target;
+  noSelectionString = session.strings.RujelVseLists_VseStrings.actions.fire;
+}
+
+SubmitAction: WOSubmitButton {
+	action = act;
+	value = session.strings.Reusables_Strings.uiElements.Submit;
+}
+ShowTicks : WOConditional {
+  condition = showTicks;
 }

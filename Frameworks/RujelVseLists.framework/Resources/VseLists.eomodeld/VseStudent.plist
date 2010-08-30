@@ -51,11 +51,13 @@
     primaryKeyAttributes = (sID); 
     relationships = (
         {
+            deleteRule = EODeleteRuleCascade; 
             destination = VseList; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = studentID; sourceAttribute = sID; }); 
             name = lists; 
+            ownsDestination = Y; 
         }, 
         {
             destination = VsePerson; 
