@@ -115,8 +115,9 @@ Selected: WOConditional {
 }
 
 TeacherName: WOString {
-	value = teacherName;
-	escapeHTML = false;
+  value = teacherName;
+  escapeHTML = false;
+  valueWhenEmpty = session.strings.Reusables_Strings.uiElements.Select;
 }
 
 SubmitName: WOImageButton {
@@ -189,6 +190,7 @@ SelectTeacher : OnClickContainer {
   elementName = "em";
   invokeAction = chooseTeacherForDict;
   onclick = "ajaxPost(get(this,'form'),event);";
+  title = fullname;
 }
 
 CommentField : WOTextField {
@@ -212,14 +214,20 @@ TeacherCell : OnClickContainer {
   invokeAction = selectTeacher;
   onclick = teacherOnClick;
   class = teacherRowClass;
+  title = currFullname;
 }
 
 CurrTeacherName : WOString {
   value = currTeacherName;
   escapeHTML = false;
+  valueWhenEmpty = session.strings.Reusables_Strings.uiElements.Select;
 }
 
 SelectorTitle : WOString {
   value = session.strings.Strings.ChooseRegime.SrcMark;
   escapeHTML = false;
+}
+
+TeacherIsSelected : WOConditional {
+  condition = teacherName;
 }

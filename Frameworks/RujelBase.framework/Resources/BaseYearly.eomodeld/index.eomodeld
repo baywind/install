@@ -326,10 +326,15 @@
         username = rujel; 
     }; 
     entities = (
+        {className = "net.rujel.base.BaseCourse"; name = BaseCourse; }, 
         {className = "net.rujel.base.BaseLesson"; name = BaseLesson; }, 
         {className = EOGenericRecord; name = BaseNote; }, 
         {className = "net.rujel.base.BaseTab"; name = BaseTab; }, 
         {className = EOGenericRecord; name = CourseAudience; }, 
+        {className = "net.rujel.base.Indexer"; name = Indexer; }, 
+        {className = "net.rujel.base.IndexRow"; name = IndexRow; }, 
+        {className = EOGenericRecord; name = SettingByCourse; }, 
+        {className = "net.rujel.base.SettingsBase"; name = SettingsBase; }, 
         {className = EOGenericRecord; name = TeacherChange; }, 
         {className = EOGenericRecord; name = TextStore; }
     ); 
@@ -663,6 +668,7 @@
                         plugin = ""; 
                         username = rujel; 
                     }; 
+                    prototypeEntityName = EOJDBCPrototypes; 
                 }; 
             }; 
         }; 

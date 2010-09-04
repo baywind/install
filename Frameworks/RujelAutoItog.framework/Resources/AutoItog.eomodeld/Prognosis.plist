@@ -19,7 +19,7 @@
             allowsNull = N; 
             columnName = "EDU_COURSE"; 
             name = courseID; 
-            prototypeName = integer; 
+            prototypeName = short; 
         }, 
         {
             allowsNull = Y; 

@@ -224,7 +224,7 @@ PlanLabel: WOString {
 }
 
 PlanHours : WOString {
-  value = cycleItem.cycle.hours;
+  value = totalHours;
   numberformat = "0";
 }
 

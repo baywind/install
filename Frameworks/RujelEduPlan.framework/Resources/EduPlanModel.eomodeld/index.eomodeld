@@ -11,18 +11,4 @@
         {className = EOGenericRecord; name = SubjectArea; }, 
         {className = "net.rujel.eduplan.HolidayType"; name = HolidayType; }
     ); 
-    userInfo = {
-        "_EntityModeler" = {
-            activeDatabaseConfigName = Default; 
-            databaseConfigs = {
-                Default = {
-                    adaptorName = JDBC; 
-                    connectionDictionary = {
-                        URL = "jdbc:mysql://localhost/EduPlan? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
-                        username = rujel; 
-                    }; 
-                }; 
-            }; 
-        }; 
-    }; 
 }

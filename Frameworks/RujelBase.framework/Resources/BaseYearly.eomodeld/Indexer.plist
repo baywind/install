@@ -33,7 +33,7 @@
     relationships = (
         {
             deleteRule = EODeleteRuleCascade; 
-            destination = StaticTextStore; 
+            destination = TextStore; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = tID; sourceAttribute = commentID; }); 

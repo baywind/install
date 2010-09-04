@@ -4,7 +4,7 @@
             allowsNull = N; 
             columnName = "EDU_COURSE"; 
             name = courseID; 
-            prototypeName = integer; 
+            prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {

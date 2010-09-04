@@ -2,12 +2,6 @@
     attributes = (
         {allowsNull = N; columnName = "C_ID"; name = cID; prototypeName = short; }, 
         {
-            allowsNull = Y; 
-            columnName = "SPEC_CLASS"; 
-            name = classID; 
-            prototypeName = integer; 
-        }, 
-        {
             allowsNull = N; 
             columnName = "GRADE_NUM"; 
             name = grade; 
@@ -37,37 +31,23 @@
             isReadOnly = Y; 
             name = subject; 
             prototypeName = word; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = "EDU_YEAR"; 
-            name = year; 
-            prototypeName = byte; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-            valueType = i; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = "TOTAL_HOURS"; 
-            name = totalHours; 
-            prototypeName = short; 
-        }, 
-        {
-            allowsNull = N; 
-            columnName = "WEEKLY_HOURS"; 
-            name = weeklyHours; 
-            prototypeName = short; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (classID, grade, level, school, subjID, subject, year, totalHours, weeklyHours); 
+    attributesUsedForLocking = (grade, level, school, subjID, subject); 
     className = "net.rujel.eduplan.PlanCycle"; 
-    classProperties = (grade, level, school, subject, subjectEO, totalHours, weeklyHours, year); 
+    classProperties = (grade, level, planHours, school, subject, subjectEO); 
     externalName = "PL_CYCLE"; 
     fetchSpecificationDictionary = {}; 
     name = PlanCycle; 
     primaryKeyAttributes = (cID); 
     relationships = (
+        {
+            destination = PlanHours; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cycleID; sourceAttribute = cID; }); 
+            name = planHours; 
+        }, 
         {
             destination = Subject; 
             isMandatory = Y; 

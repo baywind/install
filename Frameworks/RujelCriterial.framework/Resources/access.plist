@@ -12,16 +12,20 @@
 				<string>1</string>
 				<key>zavuch</key>
 				<string>1</string>
+				<key>zav_kaf</key>
+				<string>1</string>
 				<key>teacher</key>
 				<string>1</string>
 			</dict>
 		</dict>
 		<key>root</key>
 		<string>1023</string>
-		<key>zavuch</key>
-		<string>15</string>
 		<key>teacher</key>
 		<string>15</string>
+		<key>zavuch</key>
+		<string>1</string>
+		<key>zav_kaf</key>
+		<string>1</string>
 	</dict>
 	<key>Work</key>
 	<dict>
@@ -30,8 +34,6 @@
 			<key>completionClosed</key>
 			<dict>
 				<key>root</key>
-				<string>1</string>
-				<key>zavuch</key>
 				<string>1</string>
 				<key>teacher</key>
 				<string>1</string>

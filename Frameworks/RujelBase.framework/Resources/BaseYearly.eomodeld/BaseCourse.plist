@@ -1,7 +1,12 @@
 {
     attributes = (
         {columnName = "COMMENT_TEXT"; name = comment; prototypeName = string; }, 
-        {columnName = "CR_ID"; name = courseID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "CR_ID"; 
+            name = courseID; 
+            prototypeName = short; 
+        }, 
         {
             allowsNull = N; 
             columnName = "EDU_CYCLE"; 

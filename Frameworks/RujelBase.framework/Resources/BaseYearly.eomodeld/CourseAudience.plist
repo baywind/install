@@ -1,7 +1,12 @@
 {
     attributes = (
-        {columnName = EDU_COURSE; name = courseID; prototypeName = short; }, 
-        {columnName = STUDENT_ID; name = studentID; prototypeName = integer; }
+        {
+            allowsNull = N; 
+            columnName = "EDU_COURSE"; 
+            name = courseID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "STUDENT_ID"; name = studentID; prototypeName = integer; }
     ); 
     className = EOGenericRecord; 
     classProperties = (course); 

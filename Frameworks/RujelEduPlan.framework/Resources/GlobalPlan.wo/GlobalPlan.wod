@@ -28,7 +28,7 @@ GradeTitle : WOString {
 
 SubjectRow : WOGenericContainer {
   elementName = "tr";
-  class = rowClass;
+  class = subjectItem.styleClass;
 }
 
 CycleCell : WOGenericContainer {
@@ -63,6 +63,7 @@ SubjectsRepetition : WORepetition {
 CyclesRepetition : WORepetition {
 	list = grades;
 	item = gradeItem;
+	index = index;
 }
 
 CycleHours : WOTextField {
@@ -116,7 +117,6 @@ AddSuject : WOGenericContainer {
 
 SubjectCell : OnClickContainer {
   elementName = "td";
-  class = rowClass;
   onclick = session.ajaxPopup;
   invokeAction = editSubject;
   disabled = session.readAccess._edit.subjectItem;

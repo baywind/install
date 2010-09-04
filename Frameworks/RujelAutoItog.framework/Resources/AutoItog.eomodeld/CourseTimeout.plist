@@ -2,12 +2,17 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = EDU_COURSE; 
+            columnName = "EDU_COURSE"; 
             name = courseID; 
-            prototypeName = integer; 
+            prototypeName = short; 
         }, 
         {columnName = "CT_ID"; name = ctID; prototypeName = "int_3"; }, 
-        {allowsNull = Y; columnName = EDU_CYCLE; name = cycleID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_CYCLE"; 
+            name = cycleID; 
+            prototypeName = short; 
+        }, 
         {
             allowsNull = Y; 
             columnName = "EDU_GROUP"; 
@@ -15,14 +20,24 @@
             prototypeName = integer; 
         }, 
         {columnName = "FIRE_DATE"; name = fireDate; prototypeName = date; }, 
-        {allowsNull = N; columnName = CTO_FLAGS; name = flags; prototypeName = byte; }, 
-        {allowsNull = N; columnName = ITOG_CONTAINER; name = itogID; prototypeName = short; }, 
-        {columnName = REASON_TEXT; name = reason; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = "CTO_FLAGS"; 
+            name = flags; 
+            prototypeName = byte; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "ITOG_CONTAINER"; 
+            name = itogID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "REASON_TEXT"; name = reason; prototypeName = string; }, 
         {
             allowsNull = Y; 
-            columnName = TEACHER_ID; 
+            columnName = "TEACHER_ID"; 
             name = teacherID; 
-            prototypeName = integer; 
+            prototypeName = "int_3"; 
         }
     ); 
     attributesUsedForLocking = (teacherID, reason, eduGroupID, courseID, flags, cycleID, fireDate); 

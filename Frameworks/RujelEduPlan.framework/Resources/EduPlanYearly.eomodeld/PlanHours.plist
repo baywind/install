@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "SPEC_CLASS"; 
+            name = classID; 
+            prototypeName = integer; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "CYCLE_ID"; 
+            name = cycleID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "PH_ID"; 
+            name = phID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TOTAL_HOURS"; 
+            name = totalHours; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "WEEKLY_HOURS"; 
+            name = weeklyHours; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (classID, cycleID, totalHours, weeklyHours); 
+    className = EOGenericRecord; 
+    classProperties = (planCycle, totalHours, weeklyHours); 
+    externalName = "PL_HOURS"; 
+    fetchSpecificationDictionary = {}; 
+    name = PlanHours; 
+    primaryKeyAttributes = (phID); 
+    relationships = (
+        {
+            destination = PlanCycle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cID; sourceAttribute = cycleID; }); 
+            name = planCycle; 
+        }
+    ); 
+}

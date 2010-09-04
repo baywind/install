@@ -47,22 +47,15 @@
         }, 
         {
             allowsNull = N; 
-            columnName = "USE_COUNT"; 
-            name = useCount; 
-            prototypeName = integer; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
-            allowsNull = N; 
             columnName = "WT_ID"; 
             name = wtID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName, useCount); 
+    attributesUsedForLocking = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName); 
     className = "net.rujel.criterial.WorkType"; 
-    classProperties = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName, useCount); 
+    classProperties = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName); 
     externalName = "CR_WORK_TYPE"; 
     fetchSpecificationDictionary = {}; 
     name = WorkType; 

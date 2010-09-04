@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>moduleClass</key>
-	<string>net.rujel.eduplan.PlanCycle</string>
+	<string>net.rujel.eduplan.EduPlan</string>
 	<key>sort</key>
 	<string>40</string>
 	<key>dbConnection</key>

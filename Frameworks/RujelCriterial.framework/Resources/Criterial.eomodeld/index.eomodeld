@@ -326,10 +326,15 @@
         username = rujel; 
     }; 
     entities = (
+        {className = EOGenericRecord; name = Border; }, 
+        {className = "net.rujel.criterial.BorderSet"; name = BorderSet; }, 
+        {className = "net.rujel.criterial.CriteriaSet"; name = CriteriaSet; }, 
+        {className = EOGenericRecord; name = Criterion; }, 
         {className = EOGenericRecord; name = CriterMask; }, 
         {className = "net.rujel.criterial.Mark"; name = Mark; }, 
         {className = "net.rujel.criterial.Work"; name = Work; }, 
-        {className = EOGenericRecord; name = WorkNote; }
+        {className = EOGenericRecord; name = WorkNote; }, 
+        {className = "net.rujel.criterial.WorkType"; name = WorkType; }
     ); 
     userInfo = {
         "_EntityModeler" = {
@@ -661,6 +666,7 @@
                         plugin = ""; 
                         username = rujel; 
                     }; 
+                    prototypeEntityName = EOJDBCPrototypes; 
                 }; 
             }; 
         }; 

@@ -9,20 +9,7 @@
         {className = "net.rujel.eduplan.EduPeriod"; name = EduPeriod; }, 
         {className = "net.rujel.eduplan.Holiday"; name = Holiday; }, 
         {className = EOGenericRecord; name = PeriodList; }, 
-        {className = EOGenericRecord; name = PlanDetail; }
+        {className = EOGenericRecord; name = PlanDetail; }, 
+        {className = EOGenericRecord; name = PlanHours; }
     ); 
-    userInfo = {
-        "_EntityModeler" = {
-            activeDatabaseConfigName = Default; 
-            databaseConfigs = {
-                Default = {
-                    adaptorName = JDBC; 
-                    connectionDictionary = {
-                        URL = "jdbc:mysql://localhost/EduPlanYearly? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
-                        username = rujel; 
-                    }; 
-                }; 
-            }; 
-        }; 
-    }; 
 }

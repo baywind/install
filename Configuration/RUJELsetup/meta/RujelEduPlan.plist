@@ -270,6 +270,35 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>key</key>
+			<string>edu</string>
+			<key>type</key>
+			<string>Dictionary</string>
+			<key>title</key>
+			<string>Учебные настройки</string>
+			<key>description</key>
+			<string></string>
+			<key>advanced</key>
+			<false/>
+			<key>keys</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>showTotal</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>Суммарные часы</string>
+					<key>description</key>
+					<string>Показывать на странице учебного плана суммарные часы (1) или недельные часы (0)</string>
+					<key>default</key>
+					<string>0</string>
+					<key>final</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
