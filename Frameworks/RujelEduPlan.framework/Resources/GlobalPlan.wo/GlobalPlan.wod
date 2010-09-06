@@ -119,9 +119,9 @@ SubjectCell : OnClickContainer {
   elementName = "td";
   onclick = session.ajaxPopup;
   invokeAction = editSubject;
-  disabled = session.readAccess._edit.subjectItem;
+  disabled = session.readAccess._edit.subjectItem.subjectEO;
   style = cellStyle;
-  title = subjectItem.fullName;
+  title = subjectItem.subjectEO.fullName;
 }
 AreaCell : OnClickContainer {
   elementName = "td";
@@ -170,7 +170,7 @@ GroupsCell : WOGenericContainer {
 }
 
 GroupsField : WOTextField {
-  value = subjectItem.subgroupsPresent;
+  value = subjectItem.subjectEO.subgroupsPresent;
   numberformat = "0";
   disabled = access._edit;
   style = "width:2em;";
