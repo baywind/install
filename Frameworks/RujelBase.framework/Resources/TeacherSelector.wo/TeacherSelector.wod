@@ -45,6 +45,7 @@ SelectTeacher : OnClickContainer {
   onclick = onSelect;
   class = teacherClass;
   style = "margin:2px;white-space:nowrap;";
+  title = fullname;
 }
 
 TeacherDisplay : PersonDisplay {

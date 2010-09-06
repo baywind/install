@@ -69,6 +69,7 @@ Repetition2: WORepetition {
 
 String2: WOString {
 	value = critItem;
+	escapeHTML = false;
 }
 
 ThemeContainer: WOGenericContainer {
