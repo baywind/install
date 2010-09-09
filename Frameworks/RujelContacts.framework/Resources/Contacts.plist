@@ -44,7 +44,7 @@
 			<key>flags</key>
 			<array>
 				<string>Использовать для расылки</string>
-				<string>Архивировать</string>
+				<string>Сжимать (zip)</string>
 				<string></string>
 				<string></string>
 				<string></string>

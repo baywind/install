@@ -11,7 +11,7 @@
 	<key>path</key>
 	<string>modules/LDAP.plist</string>
 	<key>sort</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>presets</key>
 	<string>userspresets</string>
 	<key>defaultpreset</key>
@@ -66,7 +66,7 @@
 							<key>description</key>
 							<string>Администратор системы. Полный доступ ко всем режимам.</string>
 							<key>required</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -78,7 +78,7 @@
 							<key>description</key>
 							<string>Завуч. Доступ к настройкам параметров учебного процесса.</string>
 							<key>required</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -90,7 +90,7 @@
 							<key>description</key>
 							<string>Заведующий кафедрой. Доступ к статистике и предметным параметрам.</string>
 							<key>required</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -102,7 +102,7 @@
 							<key>description</key>
 							<string>Классный руководитель. Доступ к работе со списками классов и контактными данными.</string>
 							<key>required</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -114,7 +114,7 @@
 							<key>description</key>
 							<string>Учитель. Работа с классным журналом.</string>
 							<key>required</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -189,7 +189,7 @@
 							<key>defaultValue</key>
 							<string>анонимно</string>
 							<key>advanced</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -201,7 +201,7 @@
 							<key>description</key>
 							<string>пароль пользователя LDAP для РУЖЭЛЬ (см. выше)</string>
 							<key>advanced</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>
@@ -282,7 +282,7 @@
 							<key>defaultValue</key>
 							<false/>
 							<key>advanced</key>
-							<true/>
+							<false/>
 						</dict>
 						<dict>
 							<key>key</key>

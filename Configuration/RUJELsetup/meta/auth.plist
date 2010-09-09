@@ -4,9 +4,9 @@
 <dict>
 	<key>title</key>
 	<string>Настройки авторизации</string>
-	<key>type</key>
 	<key>description</key>
 	<string>Настройка процесса авторизации пользователя</string>
+	<key>type</key>
 	<string>Dictionary</string>
 	<key>path</key>
 	<string>modules/auth.plist</string>
@@ -14,6 +14,8 @@
 	<integer>4</integer>
 	<key>presets</key>
 	<string>required/auth.plist</string>
+	<key>advanced</key>
+	<true/>
 	<key>status</key>
 	<string>required</string>
 	<key>keys</key>
@@ -37,7 +39,7 @@
 					<key>title</key>
 					<string>welcomeMessage</string>
 					<key>description</key>
-					<string>Приветсвенное сообщение страницы авторизации. Если не менять предустановленное значение, используется название школы из общих настроек.</string>
+					<string>Приветственное сообщение страницы авторизации. Если не менять предустановленное значение, используется название школы из общих настроек.</string>
 					<key>advanced</key>
 					<true/>
 				</dict>
@@ -57,24 +59,26 @@
 					<key>key</key>
 					<string>accessHandlerClass</string>
 					<key>type</key>
-					<string>Dictionary</string>
+					<string>String</string>
 					<key>title</key>
 					<string>accessHandlerClass</string>
 					<key>description</key>
-					<string>имя класса java, который используется для определения прав доступа; пока единственный доступный вариант:</string>
-					<key>keys</key>
+					<string>имя класса java, который используется для определения прав доступа</string>
+					<key>defaultValue</key>
+					<string>net.rujel.auth.PrefsAccessHandler</string>
+					<key>select</key>
 					<array>
 						<dict>
-							<key>key</key>
+							<key>value</key>
 							<string>net.rujel.auth.PrefsAccessHandler</string>
-							<key>type</key>
-							<string>String</string>
 							<key>title</key>
-							<string>net.rujel.auth.PrefsAccessHandler</string>
-							<key>description</key>
 							<string>описания прав хранятся в файле plist (раздел auth.access)</string>
 						</dict>
 					</array>
+					<key>advanced</key>
+					<true/>
+					<key>final</key>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -228,6 +232,8 @@
 					<string>sessionSecure</string>
 					<key>description</key>
 					<string>продолжать работу по шифрованному соединению после успешной авторизации, не возвращаться на нешифрованный HTTP</string>
+					<key>defaultValue</key>
+					<false/>
 					<key>advanced</key>
 					<true/>
 				</dict>

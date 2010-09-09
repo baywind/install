@@ -101,6 +101,8 @@
 					<string>Алгоритм шифрования пароля при сохранении в БД.</string>
 					<key>defaultValue</key>
 					<string>MD5</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -110,7 +112,7 @@
 					<key>title</key>
 					<string>autoAddUsers</string>
 					<key>description</key>
-					<string>Добавлять в таблицу пользоватетей LDAP.</string>
+					<string>Автоматически добавлять в таблицу пользователей LDAP</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>
@@ -122,7 +124,7 @@
 					<key>title</key>
 					<string>readFromParent</string>
 					<key>description</key>
-					<string>Использовать информацию о пользователе из LDAP.</string>
+					<string>Использовать информацию о пользователе из LDAP</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>
@@ -134,7 +136,7 @@
 					<key>title</key>
 					<string>tryUnmappedGroups</string>
 					<key>description</key>
-					<string>проверять принадлежность пользователя группе до перевода названия группы</string>
+					<string>проверять принадлежность пользователя группе по данным база до проверки в LDAP</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>
@@ -142,7 +144,7 @@
 		</dict>
 		<dict>
 			<key>key</key>
-			<string>dbConnection</string>
+			<string>dbConnection.RujelUsers</string>
 			<key>type</key>
 			<string>Dictionary</string>
 			<key>title</key>
@@ -160,6 +162,8 @@
 					<string>String</string>
 					<key>title</key>
 					<string>dbName</string>
+					<key>defaultValue</key>
+					<string>RujelUsers</string>
 					<key>description</key>
 					<string>имя базы данных, если используется отличное от указанного в модели. имя базы данных, если используется отличное от указанного в модели</string>
 				</dict>

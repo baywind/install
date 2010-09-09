@@ -4,18 +4,20 @@
 <dict>
 	<key>title</key>
 	<string>Настройки пользовательского интерфейса</string>
-	<key>type</key>
 	<key>description</key>
 	<string>Формат даты, локализация.</string>
+	<key>type</key>
 	<string>Dictionary</string>
 	<key>path</key>
 	<string>modules/ui.plist</string>
 	<key>sort</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>presets</key>
 	<string>required/ui.plist</string>
 	<key>status</key>
 	<string>required</string>
+	<key>advanced</key>
+	<true/>
 	<key>keys</key>
 	<array>
 		<dict>
@@ -39,6 +41,8 @@
 					<key>description</key>
 					<string>Показывать &quot;машину времени&quot; в окне выбора режима (для имитации работы в произвольный день).</string>
 					<key>defaultValue</key>
+					<true/>
+					<key>advanced</key>
 					<true/>
 				</dict>
 				<dict>
@@ -177,7 +181,7 @@
 					<key>type</key>
 					<string>String</string>
 					<key>title</key>
-					<string>defaultDate</string>
+					<string>Дата по умолчанию</string>
 					<key>description</key>
 					<string>Дата, выставляемая автоматически в &quot;машине времени&quot; - применяется для демо режима (если не указано, выставляется текущая дата)</string>
 				</dict>
@@ -202,6 +206,8 @@
 					<string>redirectTimeout</string>
 					<key>description</key>
 					<string>Время в секундах, по истечении которого пользователь автоматически переадресуется со страницы сообщения (например, сообщения об истекшем времени сессии).</string>
+					<key>advanced</key>
+					<true/>
 					<key>defaultValue</key>
 					<integer>5</integer>
 				</dict>
@@ -226,6 +232,8 @@
 					<string>keyValueCacheSize</string>
 					<key>description</key>
 					<string>Настройка кеширования ключей: можно попытаться подобрать величину (целочисленную) для наилучшего быстродействия (если не указано, кеширование отключено)</string>
+					<key>defaultValue</key>
+					<integer>0</integer>
 					<key>advanced</key>
 					<true/>
 				</dict>

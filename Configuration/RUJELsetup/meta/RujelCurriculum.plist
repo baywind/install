@@ -16,6 +16,8 @@
 	<string>zavuch/RujelCurriculum.plist</string>
 	<key>status</key>
 	<string>zavuch</string>
+	<key>advanced</key>
+	<true/>
 	<key>keys</key>
 	<array>
 		<dict>
@@ -64,6 +66,8 @@
 					<string>disablePlanFactCheck</string>
 					<key>description</key>
 					<string>отключить автоматическую проверку заполнения журнала</string>
+					<key>defaultValue</key>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -74,6 +78,8 @@
 					<string>planFactLagDays</string>
 					<key>description</key>
 					<string>задержка (в сутках) автоматической проверки заполнения журнала относительно нулевого дня недели</string>
+					<key>defaultValue</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>key</key>

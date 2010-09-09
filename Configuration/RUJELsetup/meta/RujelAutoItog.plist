@@ -16,6 +16,8 @@
 	<string>zavuch/RujelAutoItog.plist</string>
 	<key>status</key>
 	<string>zavuch</string>
+	<key>advanced</key>
+	<true/>
 	<key>keys</key>
 	<array>
 		<dict>
@@ -64,6 +66,8 @@
 					<string>disableAutoItog</string>
 					<key>description</key>
 					<string>отключить автоматическое выставление итоговых</string>
+					<key>defaultValue</key>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -85,6 +89,8 @@
 					<string>overwriteItogsScheduled</string>
 					<key>description</key>
 					<string>перезаписывать итоговую отметку в соответствии с прогнозом при автоматическом выставлении итоговых в конце учебного периода</string>
+					<key>defaultValue</key>
+					<false/>
 				</dict>
 			</array>
 		</dict>

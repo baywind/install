@@ -77,6 +77,8 @@
 							<string>String</string>
 							<key>title</key>
 							<string>dbName</string>
+							<key>defaultValue</key>
+							<string>VseLists</string>
 							<key>description</key>
 							<string>имя базы данных, если используется отличное от указанного в модели. имя базы данных, если используется отличное от указанного в модели</string>
 						</dict>

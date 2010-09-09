@@ -119,6 +119,45 @@
 					<key>advanced</key>
 					<true/>
 				</dict>
+				<dict>
+					<key>key</key>
+					<string>dbMapping</string>
+					<key>type</key>
+					<string>Dictionary</string>
+					<key>title</key>
+					<string>имена БД</string>
+					<key>description</key>
+					<string>Если используются имена БД отличные от предлагаемых</string>
+					<key>advanced</key>
+					<true/>
+					<key>keys</key>
+					<array>
+						<dict>
+							<key>key</key>
+							<string>RujelStatic</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>Многолетняя БД</string>
+							<key>description</key>
+							<string>База данных с итоговыми отметками и другой информацией длительного хранения</string>
+							<key>defaultValue</key>
+							<string>RujelStatic</string>
+						</dict>
+						<dict>
+							<key>key</key>
+							<string>RujelYear%s</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>Ежегодная БД</string>
+							<key>description</key>
+							<string>База данных с информацией, актуальной для текущего учебного года</string>
+							<key>defaultValue</key>
+							<string>RujelYear%s</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 	</array>

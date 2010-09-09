@@ -292,8 +292,8 @@
 					<string>Суммарные часы</string>
 					<key>description</key>
 					<string>Показывать на странице учебного плана суммарные часы (1) или недельные часы (0)</string>
-					<key>default</key>
-					<string>0</string>
+					<key>defaultValue</key>
+					<integer>0</integer>
 					<key>final</key>
 					<false/>
 				</dict>

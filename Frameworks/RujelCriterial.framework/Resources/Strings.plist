@@ -163,6 +163,8 @@
 		<string>Не предусмотренная отметка по критерию %s</string>
 		<key>relatedMarksFound</key>
 		<string>найдены связанные оценки за работы</string>
+		<key>checkWorks</key>
+		<string>Вы изменили дату урока. Пожалуйста, проверьте правильность дат на закладке &quot;работы&quot;.</string>
 	</dict>
 	<key>worksTab</key>
 	<dict>
