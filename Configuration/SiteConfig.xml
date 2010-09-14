@@ -41,7 +41,7 @@
 			<projectSearchPath type="NSString">()</projectSearchPath>
 			<autoRecover type="NSString">NO</autoRecover>
 			<autoOpenInBrowser type="NSString">NO</autoOpenInBrowser>
-			<name type="NSString">HelloWorld</name>
+			<name type="NSString">PListWOEditor</name>
 			<unixPath type="NSString">/opt/apple/Local/Library/WebObjects/Applications/PListWOEditor.woa/PListWOEditor</unixPath>
 			<adaptorThreadsMin type="NSNumber">16</adaptorThreadsMin>
 			<notificationEmailEnabled type="NSString">NO</notificationEmailEnabled>
