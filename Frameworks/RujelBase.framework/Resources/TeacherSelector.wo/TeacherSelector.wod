@@ -65,13 +65,9 @@ Message : WOString {
   escapeHTML = false;
 }
 
-ShowVacant : WOConditional {
-  condition = ^hideVacant;
-  negate = true;
-}
-
 SelectVacant : OnClickContainer {
   elementName = "div";
+  hide = ^hideVacant;
   invokeAction = selectVacant;
   onclick = onSelect;
   class = teacherClass;

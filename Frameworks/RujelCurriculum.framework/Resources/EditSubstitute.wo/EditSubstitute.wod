@@ -26,19 +26,6 @@ SubstitutorTitle : WOString {
   value = application.strings.RujelInterfaces_Names.Teacher.this;
 }
 
-SubstitutorSelect : PersListing {
-	entity = "Teacher";
-	useAjaxPost = true;
-	showPopup = true;
-	forcedList = forcedList;
-	selection = teacher;
-}
-
-CanSelect : WOConditional {
-  condition = cantSelect;
-  negate = true;
-}
-
 CantSelect : WOConditional {
   condition = cantSelect;
 }
@@ -48,6 +35,8 @@ Teacher : PersonDisplay {
   last = 2;
   first = 2;
   second = 2;
+  valueWhenEmpty = session.strings.Reusables_Strings.uiElements.Select;
+  emptyStyle = "font-style:italic;";
 }
 
 Form : WOForm {
@@ -183,3 +172,12 @@ JoinType : WOString {
   escapeHTML = false;
 }
 
+
+SelectTeacher : OnClickContainer {
+  elementName = "td";
+  disabled = cantSelect;
+  class = "orange";
+  style = "font-size:larger;";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = selectTeacher;
+}
