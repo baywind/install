@@ -13,7 +13,7 @@
 		<key>username</key>
 		<string>rujel</string>
 		<key>password</key>
-		<string></string>
+		<string>RUJELpassword</string>
 		<key>prototypes</key>
 		<string>MySQL</string>
 	</dict>

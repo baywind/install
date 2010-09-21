@@ -181,3 +181,7 @@ SelectTeacher : OnClickContainer {
   onclick = session.ajaxPopupNoPos;
   invokeAction = selectTeacher;
 }
+
+HasFrom : WOConditional {
+  condition = fromLesson;
+}
