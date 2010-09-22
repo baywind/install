@@ -14,6 +14,8 @@
 	<integer>5</integer>
 	<key>presets</key>
 	<string>recommended/RujelArchiving.plist</string>
+	<key>advanced</key>
+	<true/>
 	<key>status</key>
 	<string>recommended</string>
 	<key>keys</key>
@@ -53,6 +55,8 @@
 			<string>markarchive</string>
 			<key>description</key>
 			<string></string>
+			<key>advanced</key>
+			<true/>
 			<key>keys</key>
 			<array>
 				<dict>
@@ -84,6 +88,8 @@
 					<string>forceArchives</string>
 					<key>description</key>
 					<string>Запретить изменение значения без вызова истории исправлений и указания причины исправления.</string>
+					<key>defaultValue</key>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>

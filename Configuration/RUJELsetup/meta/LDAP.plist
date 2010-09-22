@@ -47,91 +47,6 @@
 				</dict>
 				<dict>
 					<key>key</key>
-					<string>groupMapping</string>
-					<key>type</key>
-					<string>Dictionary</string>
-					<key>title</key>
-					<string>groupMapping</string>
-					<key>description</key>
-					<string>Связь групп LDAP с группами доступа РУЖЭЛЬ</string>
-					<key>keys</key>
-					<array>
-						<dict>
-							<key>key</key>
-							<string>root</string>
-							<key>type</key>
-							<string>String</string>
-							<key>title</key>
-							<string>root</string>
-							<key>description</key>
-							<string>Администратор системы. Полный доступ ко всем режимам.</string>
-							<key>required</key>
-							<false/>
-						</dict>
-						<dict>
-							<key>key</key>
-							<string>zavuch</string>
-							<key>type</key>
-							<string>String</string>
-							<key>title</key>
-							<string>zavuch</string>
-							<key>description</key>
-							<string>Завуч. Доступ к настройкам параметров учебного процесса.</string>
-							<key>required</key>
-							<false/>
-						</dict>
-						<dict>
-							<key>key</key>
-							<string>zav_kaf</string>
-							<key>type</key>
-							<string>String</string>
-							<key>title</key>
-							<string>zav_kaf</string>
-							<key>description</key>
-							<string>Заведующий кафедрой. Доступ к статистике и предметным параметрам.</string>
-							<key>required</key>
-							<false/>
-						</dict>
-						<dict>
-							<key>key</key>
-							<string>tutor</string>
-							<key>type</key>
-							<string>String</string>
-							<key>title</key>
-							<string>tutor</string>
-							<key>description</key>
-							<string>Классный руководитель. Доступ к работе со списками классов и контактными данными.</string>
-							<key>required</key>
-							<false/>
-						</dict>
-						<dict>
-							<key>key</key>
-							<string>teacher</string>
-							<key>type</key>
-							<string>String</string>
-							<key>title</key>
-							<string>teacher</string>
-							<key>description</key>
-							<string>Учитель. Работа с классным журналом.</string>
-							<key>required</key>
-							<false/>
-						</dict>
-						<dict>
-							<key>key</key>
-							<string>any</string>
-							<key>type</key>
-							<string>String</string>
-							<key>title</key>
-							<string>any</string>
-							<key>description</key>
-							<string>Все. Права чтения общедоступной информации.</string>
-							<key>required</key>
-							<true/>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>key</key>
 					<string>ldap</string>
 					<key>type</key>
 					<string>Dictionary</string>
@@ -355,6 +270,91 @@
 									<string>пароль файла хранилища сертификатов</string>
 								</dict>
 							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>groupMapping</string>
+					<key>type</key>
+					<string>Dictionary</string>
+					<key>title</key>
+					<string>groupMapping</string>
+					<key>description</key>
+					<string>Связь групп LDAP с группами доступа РУЖЭЛЬ</string>
+					<key>keys</key>
+					<array>
+						<dict>
+							<key>key</key>
+							<string>root</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>root</string>
+							<key>description</key>
+							<string>Администратор системы. Полный доступ ко всем режимам.</string>
+							<key>required</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>key</key>
+							<string>zavuch</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>zavuch</string>
+							<key>description</key>
+							<string>Завуч. Доступ к настройкам параметров учебного процесса.</string>
+							<key>required</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>key</key>
+							<string>zav_kaf</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>zav_kaf</string>
+							<key>description</key>
+							<string>Заведующий кафедрой. Доступ к статистике и предметным параметрам.</string>
+							<key>required</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>key</key>
+							<string>tutor</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>tutor</string>
+							<key>description</key>
+							<string>Классный руководитель. Доступ к работе со списками классов и контактными данными.</string>
+							<key>required</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>key</key>
+							<string>teacher</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>teacher</string>
+							<key>description</key>
+							<string>Учитель. Работа с классным журналом.</string>
+							<key>required</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>key</key>
+							<string>any</string>
+							<key>type</key>
+							<string>String</string>
+							<key>title</key>
+							<string>any</string>
+							<key>description</key>
+							<string>Все. Права чтения общедоступной информации.</string>
+							<key>required</key>
+							<true/>
 						</dict>
 					</array>
 				</dict>

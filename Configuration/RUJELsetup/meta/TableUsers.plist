@@ -14,6 +14,8 @@
 	<integer>4</integer>
 	<key>presets</key>
 	<string>recommended/TableUsers.plist</string>
+	<key>advanced</key>
+	<true/>
 	<key>status</key>
 	<string>recommended</string>
 	<key>keys</key>

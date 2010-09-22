@@ -1,4 +1,4 @@
--- 2010-09-04 -- MySQL only!
+SET NAMES utf8;
 
 CREATE DATABASE RujelYear2011;
 USE RujelYear2011;

@@ -1,3 +1,4 @@
+SET NAMES utf8;
 GRANT ALL PRIVILEGES ON `RujelYear%`.* TO 'rujel'@'localhost' IDENTIFIED BY 'RUJELpassword';
 
 CREATE DATABASE RujelYear2010 DEFAULT CHARACTER SET utf8;

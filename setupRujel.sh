@@ -42,8 +42,10 @@ for f in *.woa; do
     cp -r $f $WOAPPSFOLDER
     chown -R _appserver:_appserveradm $WOAPPSFOLDER/$f
     # make symlink to WebServerResources
-    mkdir -p ${WEBFOLDER}/$f/Contents/
-    ln -fns ${WOAPPSFOLDER}/$f/Contents/WebServerResources ${WEBFOLDER}/$f/Contents/WebServerResources
+    if [ -d $f/Contents/WebServerResources ] ; then
+        mkdir -p ${WEBFOLDER}/$f/Contents/
+        ln -fns ${WOAPPSFOLDER}/$f/Contents/WebServerResources ${WEBFOLDER}/$f/Contents/WebServerResources
+    fi
     i=$(($i+1))
 done
 echo "Installed "$i" WO Applications"
@@ -65,8 +67,10 @@ then
         cp -r $f $FRAMEWORKSFOLDER
         chown -R root:_appserveradm $FRAMEWORKSFOLDER/$f
         # make symlink to WebServerResources
-        mkdir -p ${WEBFOLDER}/Frameworks/$f
-        ln -fns  ${FRAMEWORKSFOLDER}/$f/WebServerResources ${WEBFOLDER}/Frameworks/$f/WebServerResources
+        if [ -d $f/WebServerResources ] ; then
+            mkdir -p ${WEBFOLDER}/Frameworks/$f
+            ln -fns  ${FRAMEWORKSFOLDER}/$f/WebServerResources ${WEBFOLDER}/Frameworks/$f/WebServerResources
+        fi
         i=$(($i+1))
     done
     cd ..
