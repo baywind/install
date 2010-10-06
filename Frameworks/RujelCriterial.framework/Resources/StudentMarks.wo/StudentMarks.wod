@@ -40,7 +40,7 @@ Repetition1: WORepetition {
 	list = courseItem.criteria;
 }
 
-String1: WOString {
+Title: WOString {
 	value = workItem.title;
 }
 
@@ -124,4 +124,14 @@ Type : WOString {
 
 IntegralTitle : WOString {
   value = courseItem.integral;
+}
+
+IsBcMax : WOConditional {
+  condition = workItem.title;
+}
+
+BcMaxCell : WOGenericContainer {
+  elementName = "td";
+  colspan = courseItem.criteria.count;
+  align = "center";
 }

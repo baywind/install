@@ -208,6 +208,42 @@
 					<key>max</key>
 					<integer>31</integer>
 				</dict>
+				<dict>
+					<key>key</key>
+					<string>midnightHour</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>середина ночи</string>
+					<key>description</key>
+					<string>до какого часа ночи действия считать относящимися к предыдущему дню</string>
+					<key>defaultValue</key>
+					<integer>5</integer>
+					<key>min</key>
+					<integer>0</integer>
+					<key>max</key>
+					<integer>8</integer>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>eveningHour</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>вечерние часы</string>
+					<key>description</key>
+					<string>с какого часа можно считать рабочий день оконченным</string>
+					<key>defaultValue</key>
+					<integer>17</integer>
+					<key>min</key>
+					<integer>11</integer>
+					<key>max</key>
+					<integer>23</integer>
+					<key>advanced</key>
+					<true/>
+				</dict>
 			</array>
 		</dict>
 	</array>

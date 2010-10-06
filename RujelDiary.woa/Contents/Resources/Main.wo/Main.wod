@@ -155,3 +155,7 @@ ImageButton : WOImageButton {
 	filename = "TransparentPixel.gif";
 	directActionName = "";
 }
+
+SchoolName : WOString {
+  value = application.schoolName;
+}

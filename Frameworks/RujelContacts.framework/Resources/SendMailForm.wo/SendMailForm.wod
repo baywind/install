@@ -146,3 +146,14 @@ PeriodsPopUp: WOPopUpButton {
 	name = "periods";
 }
 
+
+CanEditList : WOConditional {
+  condition = session.readAccess.edit;
+}
+
+CanReadContact : WOConditional {
+  condition = session.readAccess.read.contItem;
+}
+CantReadContact : WOConditional {
+  condition = session.readAccess._read.contItem;
+}

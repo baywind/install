@@ -25,6 +25,7 @@ CriterTD: OnClickContainer {
 	title = markTitle;
 	align = "center";
 	style = "width:2em;";
+	colspan = colspan;
 }
 
 Criters: WORepetition {

@@ -30,9 +30,9 @@ Year : WOString {
   escapeHTML = false;
 }
 
-ExportLink : WOHyperlink {
+ExportLink : WOSubmitButton {
   action = export;
-  string = application.strings.RujelReports_Reports.export;
+  value = application.strings.RujelReports_Reports.export;
 }
 
 ExportDetails : WOHyperlink {
@@ -45,6 +45,7 @@ SelectTeacher : OnClickContainer {
   class = "button";
   invokeAction = selectTeacher;
   onclick = session.ajaxPopup;
+  hide = cantSelect;
 }
 
 TeacherName : PersonDisplay {
@@ -53,6 +54,7 @@ TeacherName : PersonDisplay {
   first = 2;
   second = 2;
   startWithLast = true;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
 }
 
 Row : WOGenericContainer {
@@ -70,11 +72,11 @@ Details : WORepetition {
 HeaderCell : OnClickContainer {
   elementName = "td";
   colspan = item.colspan;
-  title = item.course.cycle.subject;
+  title = item.hover;
   disabled  = item.colspan;
   onclick = session.tryLoad;
   invokeAction = openCourse;
-  style = "overflow:hidden;width:10em;";
+  align = "center";
 }
 
 SubjectString : WOString {
@@ -137,6 +139,43 @@ CanCreate : WOConditional {
   condition = session.readAccess.create.Tabel;
 }
 
-CanEdit : WOConditional {
-  condition = session.readAccess.edit.Tabel;
+Cell : WOGenericContainer {
+  elementName = "td";
+  title = cellHover;
+  class = cellClass;
+}
+
+TotalForm : WOForm {
+  style = "position:absolute;top:3em;right:1ex;padding:1ex;";
+}
+
+ShowDetailsTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Tabel.showDetails;
+  valueWhenEmpty = "show details";
+  escapeHTML = false;
+}
+
+ShowDetails : WOCheckBox {
+  checked = options.showDetails;
+}
+
+ShowLoad : WOCheckBox {
+  checked = options.showLoad;
+}
+
+ShowLoadTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Tabel.load;
+  valueWhenEmpty = "show details";
+  escapeHTML = false;
+}
+
+Hours : WOString {
+  value = item.hours;
+  escapeHTML = false;
+}
+
+HoursTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Tabel.loadShort;
+  valueWhenEmpty = "load";
+  escapeHTML = false;
 }

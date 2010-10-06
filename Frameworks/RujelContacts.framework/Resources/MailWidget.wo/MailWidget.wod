@@ -1,0 +1,16 @@
+Div : OnClickContainer {
+  elementName = "div";
+  onclick = onClick;
+  invokeAction = mail;
+  style = "border:double #cc33cc;padding:1px 3px;height:32px;width:32px;";
+  class = "highlight";
+  title = ^dict.title;
+}
+
+Image : WOImage {
+  framework = "RujelContacts";
+  filename = "yellow_mail.png";
+  alt = "@";
+  height = 32;
+  width = 32;
+}

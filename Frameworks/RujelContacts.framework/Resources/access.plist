@@ -19,6 +19,8 @@
 		<string>15</string>
 		<key>tutor</key>
 		<string>7</string>
+		<key>teacher</key>
+		<string>1</string>
 	</dict>
 	<key>BroadcastFrontEnd</key>
 	<dict>

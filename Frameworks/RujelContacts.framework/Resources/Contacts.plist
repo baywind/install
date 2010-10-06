@@ -84,5 +84,14 @@
 		<key>sort</key>
 		<string>20</string>
 	</dict>
+	<key>dashboard</key>
+	<dict>
+		<key>title</key>
+		<string>Написать сообщение учащимся</string>
+		<key>component</key>
+		<string>MailWidget</string>
+		<key>sort</key>
+		<string>09</string>
+	</dict>
 </dict>
 </plist>

@@ -1,41 +1,48 @@
 <webobject name = "PageWrapper">
+<webobject name = "CanCreate">
+<webobject name = "TotalForm">
+		<strong><webobject name = "WholeSchool"/>:</strong><br/>
+		<webobject name = "ShowDetails"/><webobject name = "ShowDetailsTitle"/><br/>
+		<webobject name = "ShowLoad"/><webobject name = "ShowLoadTitle"/>
+			 &nbsp; <webobject name = "ExportLink"></webobject>
+</webobject>
 <h1><webobject name = "Title"/></h1>
 
 <table style = "table-layout:fixed;width:100%;">
 <thead><tr valign = "middle" style = "height:2em;">
 	<td style = "width:12em;" align = "center"><webobject name = "Form">
 	<webobject name = "SelectMonth"/> <webobject name = "Year"/></webobject></td>
-	<td><webobject name = "CanEdit"><webobject name = "SelectTeacher">
-	<webobject name = "TeacherTitle"/></webobject></webobject> 
+	<td><webobject name = "SelectTeacher">
+	<webobject name = "TeacherTitle"/></webobject>
 	<span style = "font-size:larger;margin-left:2em;"><webobject name = "TeacherName"/></span></td>
 	<webobject name = "HasDetails"><td align = "right" style = "width:3em;">
 		<webobject name = "ExportDetails"></webobject></td></webobject>
 </tr></thead>
-<webobject name = "CanCreate">
-	<tfoot><tr><td colspan = "3">
-		<webobject name = "WholeSchool"/>: <webobject name = "ExportLink"></webobject>
-	</td></tr></tfoot></webobject>
 <webobject name = "HasDetails">
 	<tbody class = "backfield1"><tr valign = "top">
 	<td><div style = "overflow:hidden;">
 		<table width = "100%">
-		<thead><tr><th colspan = "2"><webobject name = "DateTitle"/></th>
+		<thead><tr><th colspan = "2" style = "max-width:12em;"><webobject name = "DateTitle"/></th>
 		</tr></thead>
 		<tbody><webobject name = "Details">
 			<webobject name = "Row"><webobject name = "NoColspan">
-			<td style = "min-width:2em;white-space:nowrap;"><webobject name = "GroupName"/></td>
+			<td style = "width:2em;white-space:nowrap;"><webobject name = "GroupName"/></td>
 			</webobject><webobject name = "HeaderCell">
-			<div style = "overflow:hidden;white-space:nowrap;">
+			<div style = "overflow:hidden;white-space:nowrap;max-width:10em;">
 			<webobject name = "SubjectString"/></div>
 			</webobject></webobject></webobject>
 		</tbody></table></div>
 	</td><td><div style = "overflow:auto;overflow-x:scroll;">
-		<table class = "backfield1"><thead><tr><webobject name = "Days">
+		<table class = "backfield1"><thead><tr>
+			<th  style = "border-right: 1px dotted #666666;"><div style = "width:2em;">
+				<webobject name = "HoursTitle"/></div></th><webobject name = "Days">
 			<th><div style = "width:2em;"><webobject name = "Value"/></div></th></webobject>
 		</tr></thead>
 		<tbody><webobject name = "Details">
-			<webobject name = "Row">
-			<webobject name = "Days"><td><webobject name = "Value"/></td></webobject>
+			<webobject name = "Row"><td style = "border-right: 1px dotted #666666">
+				<webobject name = "Hours"/></td>
+			<webobject name = "Days"><webobject name = "Cell">
+				<webobject name = "Value"/></webobject></webobject>
 		</webobject></webobject>
 		</tbody></table></div>
 	</td><td><div style = "font-weight:bold;">

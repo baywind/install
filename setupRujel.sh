@@ -35,8 +35,10 @@ mkdir -p $WOAPPSFOLDER
 i=0
 for f in *.woa; do
     # backup
-    if [ -d ${WOAPPSFOLDER}/$f ]
-    then mv ${WOAPPSFOLDER}/$f $BACKUP
+    if [ -d ${WOAPPSFOLDER}/$f ] ; then
+      mv ${WOAPPSFOLDER}/$f $BACKUP
+      echo "rm -rf ${WOAPPSFOLDER}/$f" >> $BACKUP/restore.tmp
+      echo "cp -r $f ${WOAPPSFOLDER}/" >> $BACKUP/restore.tmp
     fi
     # install app
     cp -r $f $WOAPPSFOLDER
@@ -60,8 +62,10 @@ then
     cd Frameworks
     for f in *.framework; do
         # backup
-        if [ -d ${FRAMEWORKSFOLDER}/$f ]
-        then mv ${FRAMEWORKSFOLDER}/$f ../$BACKUP/Frameworks/
+        if [ -d ${FRAMEWORKSFOLDER}/$f ] ; then
+          mv ${FRAMEWORKSFOLDER}/$f ../$BACKUP/Frameworks/
+          echo "rm -rf ${FRAMEWORKSFOLDER}/$f" >> $BACKUP/restore.tmp
+          echo "cp -r Frameworks/$f ${FRAMEWORKSFOLDER}/" >> ../$BACKUP/restore.tmp
         fi
         # install framework
         cp -r $f $FRAMEWORKSFOLDER
@@ -211,6 +215,12 @@ echo ""
 rmdir -p  $BACKUP/Frameworks > /dev/null 2>&1
 if [ -d $BACKUP ]
 then
+  if [ -e $BACKUP/restore.tmp ] ; then
+      echo "#!/bin/sh" > $BACKUP/restore.sh
+      cat $BACKUP/restore.tmp >> $BACKUP/restore.sh
+      rm -f $BACKUP/restore.tmp
+      chmod 755 $BACKUP/restore.sh
+  fi
     echo "Previous version backed up in folder: "$BACKUP
 fi
 

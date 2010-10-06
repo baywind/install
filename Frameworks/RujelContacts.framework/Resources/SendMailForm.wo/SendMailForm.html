@@ -26,8 +26,8 @@
 	<table width = "96%" align = "center" border = "1" cellpadding = "4" class = "backfield1">
 		<tr>
 		<th align = "right" style="width:6em;"><webobject name = "To"/></th>
-		<td align = "left"> ( <webobject name = "CountAdrs"/> ) <webobject name = "ToggleList"/>
-			<webobject name = "ShowList">
+		<td align = "left"> ( <webobject name = "CountAdrs"/> ) <webobject name = "CanEditList">
+			<webobject name = "ToggleList"/><webobject name = "ShowList">
 				<table border = "1" cellspacing = "0" bordercolor = "#999999">
 				<tr>
 				<th><webobject name = "PersonTitle"/></th><th><webobject name = "AdresTitle"/></th>
@@ -36,12 +36,14 @@
 					<tr>
 					<td><webobject name = "FullName"/></td>
 						<td><webobject name = "ContactsList">
-						<webobject name = "Tick"/> "<webobject name = "ContactName"/>" &lt;<webobject name = "ContactAdr"/>&gt;<br/>
+						<webobject name = "Tick"/> "<webobject name = "ContactName"/>"
+						&lt;<webobject name = "CanReadContact"><webobject name = "ContactAdr"/>
+						</webobject><webobject name = "CantReadContact">...</webobject>&gt;<br/>
 						</webobject></td>
 					</tr>
 				</webobject>
 				</table>
-			</webobject>
+			</webobject></webobject>
 		</td>
 		</tr>
 		<tr>

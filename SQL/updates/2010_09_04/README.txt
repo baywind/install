@@ -4,3 +4,7 @@
 тех учебных лет, которые у Вас есть.
 
 В последнюю очередь (!!!) - скрипт RujelStatic
+
+mysql -u root -p < RujelYear2009.sql
+mysql -u root -p < RujelYear2010.sql
+mysql -u root -p < RujelStatic.sql

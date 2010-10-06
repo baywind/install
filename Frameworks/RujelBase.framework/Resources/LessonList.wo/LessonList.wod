@@ -61,6 +61,7 @@ LessonRow: OnClickContainer {
 	class = rowClass;
 	title = lessonProperties.title;
 	style = lessonProperties.style;
+	disabled = disableRow;
 }
 StudentPresenter: WOSwitchComponent {
 	WOComponentName = studentPresenter;
@@ -130,8 +131,9 @@ CurrLessonDateField: WOTextField {
 	size = lessonTitle.length;
 	value = lessonTitle;
 	disabled = access._edit;
-	onChange = "checkChanges(this);";
-	onFocus = "if(!tryLoad(false)) blur();";
+	onchange = "checkChanges(this);";
+	onfocus = "if(!tryLoad(false)) blur();";
+	onkeypress = "isNumberInput(event,true)";
 	style = "text-align:center;";
 	id = dateFieldID;
 	tabindex = "1";
@@ -216,12 +218,23 @@ HasTask : WOConditional {
   condition = lessonItem.homeTask;
 }
 
-DateCell : WOGenericContainer {
+DateCell : OnClickContainer {
   elementName = "td";
   class = dateCellStyle;
   align="center";
+  parent = "tr";
+  onclick = session.checkRun;
+  invokeAction = selectLesson;
+  disabled = disableCell;
 }
 
+ThemeCell : OnClickContainer {
+  elementName = "td";
+  parent = "tr";
+  onclick = session.checkRun;
+  invokeAction = selectLesson;
+  disabled = disableCell;
+}
 CanCreate : WOConditional {
   condition = access.create;
 }
@@ -232,10 +245,11 @@ ShowAdd : WOSubmitButton {
   onclick = "ajaxPost(this);return false;";
 }
 
-TaskCell : WOGenericContainer {
+TaskCell : OnClickContainer {
   elementName = "td";
   onclick = showHomeTaskOnClick;
   invokeAction = popupHomeTask;
+  disabled = disableCell;
 }
 
 CanSave: WOConditional {

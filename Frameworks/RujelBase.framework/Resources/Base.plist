@@ -92,6 +92,10 @@
 	<string>Указанная дата не попадает в текущий диапазон. &lt;br/&gt; Перейдите на соответствующую закладку (справа) и попробуйте еще раз.</string>
 	<key>notInEduYear</key>
 	<string>Указанная дата не попадает в учебный год</string>
+	<key>futureLessonForbidden</key>
+	<string>Запись уроков вперед запрещена</string>
+	<key>limitedFutureLesson</key>
+	<string>Запись уроков вперед ограничена %d днями</string>
 	<key>courseHasLessons</key>
 	<string>В этом курсе описаны уроки</string>
 	<key>relatedNotesFound</key>

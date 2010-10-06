@@ -37,6 +37,7 @@ Ticker1: Ticker {
 }
 
 Form1: WOForm {
+  style = "width:80%;text-align:left;";
 }
 
 StudentTitle: WOString {
@@ -182,4 +183,10 @@ CurrName : WOString {
 
 ChooseTitle : WOString {
   value = session.strings.Reusables_Strings.uiElements.Select;
+}
+
+Export : WOHyperlink {
+  action = export;
+  string = session.strings.RujelReports_Reports.export;
+  style = "margin-left:1ex;";
 }

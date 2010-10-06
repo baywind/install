@@ -82,7 +82,7 @@
 			<adaptorThreadsMax type="NSNumber">256</adaptorThreadsMax>
 			<startingPort type="NSNumber">2040</startingPort>
 			<cachingEnabled type="NSString">YES</cachingEnabled>
-			<additionalArgs type="NSString">-WODirectConnectEnabled NOt</additionalArgs>
+			<additionalArgs type="NSString">-WODirectConnectEnabled NO</additionalArgs>
 			<adaptor type="NSString">WODefaultAdaptor</adaptor>
 			<projectSearchPath type="NSString">()</projectSearchPath>
 			<autoRecover type="NSString">NO</autoRecover>
