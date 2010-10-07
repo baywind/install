@@ -23,6 +23,8 @@
 			<true/>
 			<key>qualifierSelector</key>
 			<string>caseInsensitiveLike</string>
+			<key>comment</key>
+			<string>? - любой символ, * - любой набор символов</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -285,6 +287,16 @@
 			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>60</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Метка</string>
+			<key>keyPath</key>
+			<string>note</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>70</string>
 		</dict>
 	</array>
 </dict>

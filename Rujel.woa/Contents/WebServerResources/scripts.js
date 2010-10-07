@@ -288,7 +288,7 @@ function myPrompt(message,cont,pos,extParent) {
 	prmt.style.padding = '1em';
 	prmt.style.position = 'absolute';
 	prmt.style.zIndex = 10;*/
-	returnField.parentNode.appendChild(prmt);
+	document.documentElement.appendChild(prmt);
 	var elt;
 	if(message) {
 		elt = document.createElement('div');

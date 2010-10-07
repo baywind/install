@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Contact</key>
+	<dict>
+		<key>root</key>
+		<string>1023</string>
+		<key>zavuch</key>
+		<string>127</string>
+		<key>tutor</key>
+		<string>15</string>
+	</dict>
 	<key>Contacts</key>
 	<dict>
 		<key>root</key>

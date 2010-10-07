@@ -218,6 +218,33 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Преподаватель</string>
+			<key>keyPath</key>
+			<string>assumeCourse.teacher</string>
+			<key>style</key>
+			<string>white-space:nowrap;</string>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>person</key>
+				<string>.</string>
+				<key>last</key>
+				<string>2</string>
+				<key>first</key>
+				<string>1</string>
+				<key>second</key>
+				<string>1</string>
+			</dict>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>15</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Предмет</string>
 			<key>keyPath</key>
 			<string>cycle.subjectEO</string>

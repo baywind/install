@@ -633,6 +633,8 @@
 			<string>CompareCaseInsensitiveDescending</string>
 			<key>onclick</key>
 			<string>$session.ajaxPopup</string>
+			<key>skipNull</key>
+			<true/>
 			<key>disabled</key>
 			<string>$session.readAccess._read.item</string>
 			<key>nextPage</key>
