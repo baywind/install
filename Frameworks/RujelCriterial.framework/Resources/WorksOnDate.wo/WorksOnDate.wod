@@ -45,3 +45,15 @@ WorksTitle : WOString {
   value = application.strings.RujelCriterial_Strings.works;
   valueWhenEmpty = "Works";
 }
+
+HasLink : WOConditional {
+  condition = workItem.homeTask;
+}
+
+LinkImage : WOImage {
+	framework = "RujelBase";
+	filename = "link.png";
+	align = "right";
+	title = workItem.taskUrl;
+	onclick = "window.open(this.title);";
+}

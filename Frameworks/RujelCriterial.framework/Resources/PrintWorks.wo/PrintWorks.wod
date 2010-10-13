@@ -44,6 +44,7 @@ CriterList: WORepetition {
 
 CritTitle: WOString {
 	value = critItem.title;
+	escapeHTML = false;
 }
 
 WorksRepetition : WORepetition {
@@ -108,4 +109,14 @@ TypeCell : WOGenericContainer {
   elementName = "td";
   align = "center";
   style = style;
+}
+
+HasCriteria : WOConditional {
+  condition = work.noCriteria;
+  negate = true;
+}
+
+NoCritMax : WOString {
+  value = criterlessMax;
+  escapeHTML = false;
 }

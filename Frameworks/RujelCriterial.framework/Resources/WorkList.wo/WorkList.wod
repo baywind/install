@@ -124,6 +124,7 @@ IfFull: WOConditional {
 
 CritTitle: WOString {
 	value = critItem.title;
+	escapeHTML = false;
 }
 
 
@@ -271,4 +272,14 @@ LinkImage : WOImage {
 
 CanAdd : WOConditional {
   condition = access.create;
+}
+
+HasCriteria : WOConditional {
+  condition = work.noCriteria;
+  negate = true;
+}
+
+NoCritMax : WOString {
+  value = criterlessMax;
+  escapeHTML = false;
 }

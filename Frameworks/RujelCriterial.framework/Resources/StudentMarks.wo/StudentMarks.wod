@@ -135,3 +135,14 @@ BcMaxCell : WOGenericContainer {
   colspan = courseItem.criteria.count;
   align = "center";
 }
+
+HasLink : WOConditional {
+  condition = workItem.url;
+}
+
+WorkLink : WOHyperlink {
+  href = workItem.url;
+  target = "_blank";
+  style = "font-style:italic;";
+  string = application.strings.RujelCriterial_Strings.URL;
+}

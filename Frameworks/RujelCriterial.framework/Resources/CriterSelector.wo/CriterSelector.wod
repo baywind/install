@@ -29,6 +29,7 @@ CritContainer: OnClickContainer {
 
 CritTitle: WOString {
 	value = critItem.title;
+	escapeHTML = false;
 }
 
 TextContainer: OnClickContainer {

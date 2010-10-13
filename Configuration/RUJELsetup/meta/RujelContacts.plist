@@ -57,6 +57,18 @@
 			<array>
 				<dict>
 					<key>key</key>
+					<string>propertiesFile</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>propertiesFile</string>
+					<key>description</key>
+					<string>путь к файлу Properties дополнительной тонкой настройки почты. см. http://java.sun.com/products/javamail/javadocs/com/sun/mail/smtp/package-summary.html</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
 					<string>smtpServerURL</string>
 					<key>type</key>
 					<string>String</string>
@@ -69,13 +81,27 @@
 				</dict>
 				<dict>
 					<key>key</key>
+					<string>smtpPort</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>smtpPort</string>
+					<key>description</key>
+					<string>TCP порт, если отличается от стандартного</string>
+					<key>required</key>
+					<false/>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
 					<string>secure</string>
 					<key>type</key>
 					<string>Boolean</string>
 					<key>title</key>
 					<string>secure</string>
 					<key>description</key>
-					<string>нужно ли использовать шифрованную передачу данных (start TLS)</string>
+					<string>нужно ли использовать шифрованную передачу данных (SMTPS)</string>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -87,7 +113,7 @@
 					<key>description</key>
 					<string>имя пользователя для авторизации на SMTP-сервере</string>
 					<key>required</key>
-					<true/>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -99,7 +125,7 @@
 					<key>description</key>
 					<string>пароль пользователя</string>
 					<key>required</key>
-					<true/>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -109,7 +135,7 @@
 					<key>title</key>
 					<string>mailFrom</string>
 					<key>description</key>
-					<string>начение для заголовка письма &quot;От&quot;</string>
+					<string>значение для заголовка письма &quot;От&quot;</string>
 					<key>required</key>
 					<true/>
 				</dict>
@@ -125,13 +151,23 @@
 				</dict>
 				<dict>
 					<key>key</key>
-					<string>messageLag</string>
+					<string>cc</string>
 					<key>type</key>
-					<string>Integer</string>
+					<string>String</string>
 					<key>title</key>
-					<string>messageLag</string>
+					<string>cc</string>
 					<key>description</key>
-					<string>задержка в миллисекундах между отправкой последовательных сообщений</string>
+					<string>отправлять копии всех сообщений по адресу</string>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>bcc</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>bcc</string>
+					<key>description</key>
+					<string>отправлять скрытые копии всех сообщений по адресу</string>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -152,6 +188,8 @@
 					<string>dontSend</string>
 					<key>description</key>
 					<string>не отправлять письма (для тестового режима)</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -161,7 +199,9 @@
 					<key>title</key>
 					<string>writeToFile</string>
 					<key>description</key>
-					<string>охранять в файл письмо, которое должно быть отправлено (для отладки)</string>
+					<string>сохранять в файл письмо, которое должно быть отправлено (для отладки)</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -172,6 +212,22 @@
 					<string>writeFileDir</string>
 					<key>description</key>
 					<string>путь до папки, в которую сохранять письма</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>messageLag</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>messageLag</string>
+					<key>description</key>
+					<string>задержка в миллисекундах между отправкой последовательных сообщений</string>
+					<key>defaultValue</key>
+					<string>без задержки</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -182,6 +238,10 @@
 					<string>день недели, в который проводится автоматическая рассылка</string>
 					<key>select</key>
 					<array>
+						<dict>
+							<key>title</key>
+							<string>Не рассылать</string>
+						</dict>
 						<dict>
 							<key>title</key>
 							<string>Понедельник</string>
