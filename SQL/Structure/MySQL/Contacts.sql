@@ -20,3 +20,7 @@ CREATE TABLE CNT_TYPE (
 ) ENGINE=InnoDB;
 INSERT INTO CNT_TYPE VALUES (1,'e-mail','net.rujel.contacts.EMailUtiliser');
 
+CREATE TABLE  EO_PK_TABLE (
+  NAME char(40),
+  PK int
+) ENGINE=InnoDB;

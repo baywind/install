@@ -44,4 +44,5 @@ TextContainer: OnClickContainer {
 TextTitle: WOString {
 	value = application.strings.Reusables_Strings.dataTypes.text;
 	valueWhenEmpty = "text";
+	escapeHTML = false;
 }

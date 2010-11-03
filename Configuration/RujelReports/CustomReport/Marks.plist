@@ -3,36 +3,38 @@
 <plist version="1.0">
 <dict>
 	<key>title</key>
-	<string>Метки</string>
+	<string>Оценки</string>
 	<key>description</key>
-	<string>Подсчет установленных меток</string>
+	<string>Поиск оценок</string>
 	<key>entity</key>
-	<string>BaseNote</string>
+	<string>Mark</string>
 	<key>params</key>
 	<array>
 		<dict>
 			<key>title</key>
-			<string>Метка</string>
+			<string>Критерий</string>
 			<key>attribute</key>
-			<string>note</string>
+			<string>criterion</string>
 			<key>defaultValue</key>
-			<string>Н</string>
+			<integer>0</integer>
+			<key>formatter</key>
+			<string>0</string>
 			<key>fieldSize</key>
-			<integer>20</integer>
+			<integer>3</integer>
 			<key>active</key>
-			<true/>
+			<false/>
 			<key>qualifierSelector</key>
-			<string>caseInsensitiveLike</string>
+			<string>=</string>
 			<key>comment</key>
-			<string>? - любой символ, * - любой набор символов</string>
+			<string>№ критерия, 0 - бескритериальные</string>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Дата</string>
+			<string>Дата работы</string>
 			<key>active</key>
 			<true/>
 			<key>attribute</key>
-			<string>lesson.date</string>
+			<string>work.date</string>
 			<key>formatter</key>
 			<string>date</string>
 			<key>fieldSize</key>
@@ -69,57 +71,6 @@
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Ученик</string>
-			<key>attribute</key>
-			<string>student</string>
-			<key>active</key>
-			<true/>
-			<key>presenter</key>
-			<string>PersonDisplay</string>
-			<key>presenterBindings</key>
-			<dict>
-				<key>person</key>
-				<string>.</string>
-				<key>last</key>
-				<string>2</string>
-				<key>first</key>
-				<string>2</string>
-				<key>second</key>
-				<string>0</string>
-				<key>valueWhenEmpty</key>
-				<string>Выбрать</string>
-			</dict>
-			<key>popup</key>
-			<dict>
-				<key>title</key>
-				<string>Выберите ученика</string>
-				<key>style</key>
-				<string>min-width:20em</string>
-				<key>presenter</key>
-				<string>PersListing</string>
-				<key>takeValuesFromRequest</key>
-				<true/>
-				<key>invokeAction</key>
-				<true/>
-				<key>presenterBindings</key>
-				<dict>
-					<key>entity</key>
-					<string>Student</string>
-					<key>firstNameDisplay</key>
-					<integer>2</integer>
-					<key>secondNameDisplay</key>
-					<integer>2</integer>
-					<key>selection</key>
-					<string>.</string>
-					<key>useAjaxPost</key>
-					<true/>
-					<key>noEdit</key>
-					<true/>
-				</dict>
 			</dict>
 		</dict>
 		<dict>
@@ -171,48 +122,13 @@
 				</dict>
 			</dict>
 		</dict>
-	</array>
-	<key>prefetch</key>
-	<array>
-		<string>lesson</string>
-	</array>
-	<key>properties</key>
-	<array>
 		<dict>
 			<key>title</key>
-			<string>Класс</string>
-			<key>keyPath</key>
-			<string>lesson.course.eduGroup</string>
-			<key>titlePath</key>
-			<string>name</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
+			<string>Ученик</string>
+			<key>attribute</key>
+			<string>student</string>
 			<key>active</key>
-			<true/>
-			<key>sort</key>
-			<string>10</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Предмет</string>
-			<key>keyPath</key>
-			<string>lesson.course.cycle.subjectEO</string>
-			<key>titlePath</key>
-			<string>subject</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
-			<key>sort</key>
-			<string>20</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Учитель</string>
-			<key>keyPath</key>
-			<string>lesson.course.teacher</string>
-			<key>style</key>
-			<string>white-space:nowrap;</string>
+			<false/>
 			<key>presenter</key>
 			<string>PersonDisplay</string>
 			<key>presenterBindings</key>
@@ -222,16 +138,61 @@
 				<key>last</key>
 				<string>2</string>
 				<key>first</key>
-				<string>1</string>
+				<string>2</string>
 				<key>second</key>
-				<string>1</string>
+				<string>0</string>
+				<key>valueWhenEmpty</key>
+				<string>Выбрать</string>
 			</dict>
+			<key>popup</key>
+			<dict>
+				<key>title</key>
+				<string>Выберите ученика</string>
+				<key>style</key>
+				<string>min-width:20em</string>
+				<key>presenter</key>
+				<string>PersListing</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenterBindings</key>
+				<dict>
+					<key>entity</key>
+					<string>Student</string>
+					<key>firstNameDisplay</key>
+					<integer>2</integer>
+					<key>secondNameDisplay</key>
+					<integer>2</integer>
+					<key>selection</key>
+					<string>.</string>
+					<key>useAjaxPost</key>
+					<true/>
+					<key>noEdit</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>prefetch</key>
+	<array>
+		<string>work.course.cycle</string>
+	</array>
+	<key>properties</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>Класс</string>
+			<key>keyPath</key>
+			<string>work.course.eduGroup</string>
+			<key>titlePath</key>
+			<string>name</string>
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>active</key>
 			<false/>
 			<key>sort</key>
-			<string>30</string>
+			<string>05</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -258,13 +219,56 @@
 			<key>active</key>
 			<true/>
 			<key>sort</key>
+			<string>10</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Предмет</string>
+			<key>keyPath</key>
+			<string>work.course.cycle.subjectEO</string>
+			<key>titlePath</key>
+			<string>subject</string>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>active</key>
+			<true/>
+			<key>sort</key>
+			<string>20</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Учитель</string>
+			<key>keyPath</key>
+			<string>work.course.teacher</string>
+			<key>style</key>
+			<string>white-space:nowrap;</string>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>person</key>
+				<string>.</string>
+				<key>last</key>
+				<string>2</string>
+				<key>first</key>
+				<string>1</string>
+				<key>second</key>
+				<string>1</string>
+			</dict>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
 			<string>30</string>
 		</dict>
 		<dict>
 			<key>title</key>
 			<string>Дата</string>
+			<key>hover</key>
+			<string>проведения работы</string>
 			<key>keyPath</key>
-			<string>lesson.date</string>
+			<string>work.date</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>dateformat</key>
@@ -275,13 +279,38 @@
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>sort</key>
-			<string>60</string>
+			<string>40</string>
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Тема урока</string>
+			<string>Тема работы</string>
 			<key>keyPath</key>
-			<string>lesson.theme</string>
+			<string>work.theme</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>50</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Критерий</string>
+			<key>keyPath</key>
+			<string>criterion</string>
+			<key>value</key>
+			<dict>
+				<key>object</key>
+				<string>.work</string>
+				<key>methodName</key>
+				<string>criterName</string>
+				<key>paramClasses</key>
+				<array>
+					<string>java.lang.Integer</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>.criterion</string>
+				</array>
+			</dict>
 			<key>active</key>
 			<false/>
 			<key>comparison</key>
@@ -291,13 +320,36 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Метка</string>
+			<string>Оценка</string>
 			<key>keyPath</key>
-			<string>note</string>
+			<string>present</string>
+			<key>sortKey</key>
+			<string>value</string>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>active</key>
-			<false/>
+			<true/>
 			<key>sort</key>
 			<string>70</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Проставлено</string>
+			<key>hover</key>
+			<string>дата выставления оценки</string>
+			<key>keyPath</key>
+			<string>dateSet</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>dateformat</key>
+				<string>$application.prefs.ui.dateFormat</string>
+			</dict>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>sort</key>
+			<string>80</string>
 		</dict>
 	</array>
 </dict>

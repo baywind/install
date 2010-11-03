@@ -152,16 +152,17 @@
 			</dict>
 			<key>in</key>
 			<dict>
-				<key>entity</key>
-				<string>BaseCourse</string>
 				<key>relationship</key>
-				<string>lesson.course</string>
-				<key>args</key>
-				<array>
-					<string>$session.eduYear</string>
-				</array>
-				<key>qualifierFormat</key>
-				<string>eduYear = %@</string>
+				<string>student</string>
+				<key>list</key>
+				<dict>
+					<key>object</key>
+					<string>.eduGroup</string>
+					<key>methodName</key>
+					<string>list</string>
+					<key>cacheResult</key>
+					<false/>
+				</dict>
 			</dict>
 		</dict>
 	</array>

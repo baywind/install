@@ -42,6 +42,7 @@ Repetition1: WORepetition {
 
 Title: WOString {
 	value = workItem.title;
+	escapeHTML = false;
 }
 
 GenericContainer2: WOGenericContainer {
