@@ -11,7 +11,7 @@
 	<key>path</key>
 	<string>modules/RujelArchiving.plist</string>
 	<key>sort</key>
-	<integer>5</integer>
+	<integer>14</integer>
 	<key>presets</key>
 	<string>recommended/RujelArchiving.plist</string>
 	<key>advanced</key>

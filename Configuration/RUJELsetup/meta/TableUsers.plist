@@ -11,7 +11,7 @@
 	<key>path</key>
 	<string>modules/TableUsers.plist</string>
 	<key>sort</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>presets</key>
 	<string>recommended/TableUsers.plist</string>
 	<key>advanced</key>

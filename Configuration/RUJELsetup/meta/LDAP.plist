@@ -11,13 +11,13 @@
 	<key>path</key>
 	<string>modules/LDAP.plist</string>
 	<key>sort</key>
-	<integer>4</integer>
+	<integer>6</integer>
 	<key>presets</key>
 	<string>userspresets</string>
 	<key>defaultpreset</key>
 	<string>OpenLDAP (AltLinux)</string>
 	<key>status</key>
-	<string>recommended</string>
+	<string>optional</string>
 	<key>keys</key>
 	<array>
 		<dict>

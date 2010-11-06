@@ -11,7 +11,7 @@
 	<key>path</key>
 	<string>modules/RujelEduPlan.plist</string>
 	<key>sort</key>
-	<integer>8</integer>
+	<integer>11</integer>
 	<key>presets</key>
 	<string>recommended/RujelEduPlan.plist</string>
 	<key>advanced</key>

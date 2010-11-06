@@ -11,7 +11,7 @@
 	<key>path</key>
 	<string>modules/RujelCurriculum.plist</string>
 	<key>sort</key>
-	<integer>15</integer>
+	<integer>12</integer>
 	<key>presets</key>
 	<string>zavuch/RujelCurriculum.plist</string>
 	<key>status</key>

@@ -11,13 +11,13 @@
 	<key>path</key>
 	<string>modules/RujelStats.plist</string>
 	<key>sort</key>
-	<integer>11</integer>
+	<integer>15</integer>
 	<key>presets</key>
 	<string>recommended/RujelStats.plist</string>
 	<key>advanced</key>
 	<true/>
 	<key>status</key>
-	<string>recommended</string>
+	<string>extra</string>
 	<key>keys</key>
 	<array>
 		<dict>

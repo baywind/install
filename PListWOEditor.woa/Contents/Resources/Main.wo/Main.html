@@ -3,12 +3,12 @@
 	<head>
 		<title>Настройка</title>
 	</head>
-	<body>
+	<body onload = "window.location += '#startEdit';">
 
 <webobject name = "Meta">
-<table width = "100%"><webobject name = "tr">
+<a name = "start"><table width = "100%"><webobject name = "tr">
 <th align = "center" style = "font-size:28px"><webobject name = "regime"/></th>
-</webobject></table>
+</webobject></table></a>
 <br/>
 <webobject name = "Advanced"><webobject name = "advButton"></webobject></webobject>
 <webobject name = "isAdvanced">
@@ -19,17 +19,15 @@
 	</webobject>
 
 
-	<h3><a name = "start">Выберите раздел настройки:</a></h3>
+	<h3>Выберите раздел настройки:</h3>
+	<webobject name = "offOnForm">
 	<table>
 	<webobject name = "MetaLists">
-	<tr>
+	<webobject name = "tr2">
 		<td>
-			<webobject name = "canOff"><webobject name = "turnOff">Выкл.</webobject></webobject>
+			<webobject name = "turnOnOff"/>
 		</td>
 		
-		<webobject name = "td">
-			<webobject name = "onOffMessage"/>
-		</webobject>
 		
 		<td><webobject name = "go">
 			<webobject name = "val"/>
@@ -38,9 +36,11 @@
 		<webobject name = "td">
 			<webobject name = "status"/>
 		</webobject>
-	</tr>
+	</webobject>
 	</webobject>
 	</table>
+	<webobject name = "submitList"/>
+	</webobject>
 </webobject>
 <webobject name = "NoMetaExeption">
 	<h3>Ошибка:</h3>
@@ -56,6 +56,7 @@
 	<webobject name = "havePresets">
 		<webobject name = "PresetsForm"><webobject name = "changepreset"/></webobject>
 	</webobject>
+	<div style = "float:right;"><webobject name = "plPath"/></div>
 	<h3><webobject name = "plTitle"/>
 	</h3>
 	<p><webobject name = "plDescription"/>
@@ -77,9 +78,9 @@
 		<webobject name = "plistEdit"/>
 		
 		</table>
-		<webobject name = "submit"/>
+		<webobject name = "submit"/><webobject name = "canRestore"><webobject name = "restore">Восстановить</webobject></webobject>
 	</webobject>
-	<a href = "#start">UP</a>
+	<a href = "#start">Вверх</a>
 	<p>Поля помеченые знаком <b>*</b> обязательно должны быть заполнены.</p>
 </webobject>
 

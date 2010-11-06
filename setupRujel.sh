@@ -1,7 +1,11 @@
 #!/bin/sh
 
-if [ "`uname -s`" = "Darwin" ]
-then
+if [ "`uname -s`" = "Darwin" ] ; then
+  ONMAC=true
+else
+  ONMAC=false
+fi
+if $ONMAC ; then
     #Mac OS
     echo "I am on MacOS"
     WOROOT=/System
@@ -64,7 +68,7 @@ then
         # backup
         if [ -d ${FRAMEWORKSFOLDER}/$f ] ; then
           mv ${FRAMEWORKSFOLDER}/$f ../$BACKUP/Frameworks/
-          echo "rm -rf ${FRAMEWORKSFOLDER}/$f" >> $BACKUP/restore.tmp
+          echo "rm -rf ${FRAMEWORKSFOLDER}/$f" >> ../$BACKUP/restore.tmp
           echo "cp -r Frameworks/$f ${FRAMEWORKSFOLDER}/" >> ../$BACKUP/restore.tmp
         fi
         # install framework
@@ -121,32 +125,60 @@ fi
 ## SiteConfig
 
 if [ -e ${CONFIGFOLDER}/SiteConfig.xml ] ; then
-    if grep -iq "rujel" ${CONFIGFOLDER}/SiteConfig.xml ; then
-        echo
-    else
-        mv ${CONFIGFOLDER}/SiteConfig.xml $BACKUPFOLDER/
-        if [ -e /etc/init.d/webobjects ] ; then
-            /etc/init.d/webobjects stop
-        else
-            /etc/init.d/womonitor stop
-            /etc/init.d/wotaskd stop
-        fi
-        if [ $LOCALROOT != "/opt/apple/Local" ] ; then
-            PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
-            sed "s/\/opt\/apple\/Local/$PATTERN/g" SiteConfig.xml > ${CONFIGFOLDER}/SiteConfig.xml
-        else
-            cp SiteConfig.xml ${CONFIGFOLDER}/
-        fi
-        chown _appserver:_appserveradm ${CONFIGFOLDER}/SiteConfig.xml
-        if [ -e /etc/init.d/webobjects ] ; then
-            /etc/init.d/webobjects start
-        else
-            /etc/init.d/wotaskd start
-            /etc/init.d/womonitor start
-        fi
-    fi
+	if grep -iq "rujel" ${CONFIGFOLDER}/SiteConfig.xml ; then
+		echo
+	else
+		mv ${CONFIGFOLDER}/SiteConfig.xml $BACKUPFOLDER/
+		if $ONMAC ; then
+			WOTASKD=`find -f /System/Library/LaunchDaemons /Library/LaunchDaemons -iname *wotaskd*`
+			WOMONITOR=`find -f /System/Library/LaunchDaemons /Library/LaunchDaemons -iname *womonitor*`
+			if [ -n $WOMONITOR ] ; then
+				launchctl unload $WOMONITOR >> /dev/null 2>&1
+			fi
+			if [ -n $WOTASKD ] ; then
+				launchctl unload $WOTASKD >> /dev/null 2>&1
+			fi
+			cp SiteConfig.mac.xml ${CONFIGFOLDER}/SiteConfig.xml
+		else
+			if [ -e /etc/init.d/webobjects ] ; then
+				/etc/init.d/webobjects stop
+			else
+				/etc/init.d/womonitor stop
+				/etc/init.d/wotaskd stop
+			fi
+			if [ $LOCALROOT != "/opt/apple/Local" ] ; then
+				PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
+				sed "s/\/opt\/apple\/Local/$PATTERN/g" SiteConfig.xml > ${CONFIGFOLDER}/SiteConfig.xml
+			else
+				cp SiteConfig.xml ${CONFIGFOLDER}/
+			fi
+		fi
+		chown _appserver:_appserveradm ${CONFIGFOLDER}/SiteConfig.xml
+		chmod 644 ${CONFIGFOLDER}/SiteConfig.xml
+		if $ONMAC ; then
+			if [ -n $WOTASKD ] ; then
+				launchctl load $WOTASKD >> /dev/null 2>&1
+			fi
+			if [ -n $WOMONITOR ] ; then
+				launchctl load $WOMONITOR >> /dev/null 2>&1
+			fi
+		else
+			if [ -e /etc/init.d/webobjects ] ; then
+				/etc/init.d/webobjects start
+			else
+				/etc/init.d/wotaskd start
+				/etc/init.d/womonitor start
+			fi
+		fi
+	fi
 else
-    cp SiteConfig.xml ${CONFIGFOLDER}/
+	if $ONMAC ; then
+		cp SiteConfig.mac.xml ${CONFIGFOLDER}/SiteConfig.xml
+	else
+		cp SiteConfig.xml ${CONFIGFOLDER}/
+	fi
+	chown _appserver:_appserveradm ${CONFIGFOLDER}/SiteConfig.xml
+	chmod 644 ${CONFIGFOLDER}/SiteConfig.xml
 fi
 
 ## Setup
@@ -191,6 +223,7 @@ if [ ! -e ${CONFIGFOLDER}/rujel.plist ] ; then
         mv ${CONFIGFOLDER}/modules $BACKUPFOLDER/
     fi
     cp -r RUJELsetup/required ${CONFIGFOLDER}/modules
+    mv ${CONFIGFOLDER}/modules/rujel.plist ${CONFIGFOLDER}/
 #    cp RUJELsetup/recommended/* ${CONFIGFOLDER}/modules/
     cd logging
         PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`

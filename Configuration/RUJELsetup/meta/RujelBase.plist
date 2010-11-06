@@ -12,7 +12,7 @@
 	<key>path</key>
 	<string>modules/RujelBase.plist</string>
 	<key>sort</key>
-	<integer>6</integer>
+	<integer>7</integer>
 	<key>presets</key>
 	<string>recommended/RujelBase.plist</string>
 	<key>advanced</key>

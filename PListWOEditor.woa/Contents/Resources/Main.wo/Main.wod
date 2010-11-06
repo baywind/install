@@ -9,7 +9,6 @@ val : WOString {
 
 go : WOHyperlink {
 	action = makePlist;
-	fragmentIdentifier = "startEdit";
 }
 
 Meta : WOConditional {
@@ -23,10 +22,11 @@ NoMetaExeption : WOConditional {
 
 doplist : WOConditional {
   condition = plist;
+  fragmentIdentifier = "startEdit";
 }
 
 havePresets : WOConditional {
-  condition = presets.count;
+  condition = havePresets;
 }
 
 changepreset : WOPopUpButton {
@@ -40,6 +40,11 @@ changepreset : WOPopUpButton {
 plTitle : WOString {
   value = array.title;
 }
+
+plPath : WOString {
+  value = array.path;
+}
+
 
 plDescription : WOString {
   value = array.description;
@@ -58,7 +63,7 @@ PresetsForm : WOForm {
 }
 
 submit : WOSubmitButton {
-	value = "Применить";
+	value = "Сохранить";
 	action = submit;
 }
 
@@ -101,13 +106,14 @@ plistIsAdvanced : WOConditional {
   condition = plistIsAdvanced;
 }
 
-onOffMessage : WOString {
-  value = onOff;
-}
-
 td : WOGenericContainer {
 	elementName = "td";
 	align = "right";
+	style = textColor;
+}
+
+tr2 : WOGenericContainer {
+	elementName = "tr";
 	style = textColor;
 }
 
@@ -115,12 +121,23 @@ status : WOString {
   value = status;
 }
 
-turnOff : WOHyperlink {
-	action = Off;
-	style = "color:000000; background-color:ffcc66;";
+turnOnOff : WOCheckBox {
+	checked = on;
+	disabled = disabled;
 }
 
-canOff : WOConditional {
-  condition = canOff;
-  bgcolor = "FFE4C4";
+offOnForm : WOForm {
+}
+
+restore : WOHyperlink {
+	action = restore;
+}
+
+canRestore : WOConditional {
+  condition = restorable;
+}
+
+submitList : WOSubmitButton {
+	action = submitList;
+	value = "Применить";
 }
