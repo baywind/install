@@ -80,7 +80,7 @@ NameField : WOTextField {
   size = 16;
   maxlength = 28;
   name = "fullName";
-  onfocus = "if(!value)value=form.shortName.value;";
+  onfocus = "if(!value){value=form.shortName.value;select();}";
 }
 
 BeginField : WOTextField {

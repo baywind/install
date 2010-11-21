@@ -145,7 +145,7 @@ SubjectName: WOString {
 }
 
 SubmitComment: WOImageButton {
-	action = save;
+	action = saveComment;
 	filename = "button_ok.gif";
 	framework = "app";
 }

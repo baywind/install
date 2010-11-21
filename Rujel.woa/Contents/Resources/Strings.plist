@@ -260,7 +260,28 @@
 			<key>component</key>
 			<string>Maintenance</string>
 			<key>sort</key>
+			<string>98</string>
+		</dict>
+		<key>bugReport</key>
+		<dict>
+			<key>title</key>
+			<string>Отчет об ошибке</string>
+			<key>component</key>
+			<string>BugReport</string>
+			<key>getFile</key>
+			<string>Получить файл</string>
+			<key>attachFile</key>
+			<string>Приложить информацию о системе</string>
+			<key>sort</key>
 			<string>99</string>
+			<key>badAddress</key>
+			<string>электронный адрес службы поддержки некорректен. отправка невозможна.</string>
+			<key>failedEnvi</key>
+			<string>ошибка при формировании файла окружения</string>
+			<key>failedMail</key>
+			<string>не удалось отправить сообщение</string>
+			<key>messageSent</key>
+			<string>Сообщение отправлено</string>
 		</dict>
 		<key>title</key>
 		<string>Центр управления</string>

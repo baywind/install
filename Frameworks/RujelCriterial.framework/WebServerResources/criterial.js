@@ -85,7 +85,10 @@ function blockCriters(e) {
 		var maxs = document.getElementById('maxs').getElementsByTagName('input');
 		for (var i = 0; i < maxs.length; i++) {
 			if(field.value) {
-				maxs[i].value = '';
+				if(maxs[i].type == 'checkbox')
+					maxs[i].checked = false;
+				else
+					maxs[i].value = '';
 			}
 		}
 	} else {

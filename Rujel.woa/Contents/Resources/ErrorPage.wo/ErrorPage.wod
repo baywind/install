@@ -12,16 +12,12 @@ Message : WOString {
   escapeHTML = false;
 }
 
-Form : WOForm {
-  directActionName = "report";
-}
-
 Submit : WOGenericElement {
   elementName = "input";
-  type = "submit";
+  type = "button";
   value = application.strings.Reusables_Strings.uiElements.Submit;
+  onclick = onclick;
 }
-
 
 Recomendations : WOString {
   value = application.strings.Strings.ErrorPages.recomendations;
@@ -37,4 +33,8 @@ ShowDetails : WOString {
 Details : WOString {
   value = details;
   escapeHTML = false;
+}
+
+LogMessage : WOString {
+  value = message;
 }

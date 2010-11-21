@@ -56,6 +56,11 @@ for f in *.woa; do
 done
 echo "Installed "$i" WO Applications"
 
+if [ -e ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties ] ; then
+	echo >> ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties
+	echo "RujelRevision="`basename \`pwd\`` >> ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties
+fi
+
 if [ -d Frameworks ]
 then
     # Frameworks

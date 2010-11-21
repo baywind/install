@@ -1,15 +1,13 @@
 Form1 : WOForm {
   id = "workForm";
+  action = save;
 }
 
 Cross : WOImage {
   framework = "RujelBase";
   filename = "cross.png";
-  align = "right";
   height = 10;
   width = 10;
-  onclick = "closePopup();";
-  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
 }
 Title : WOString {
 	value = application.strings.RujelCriterial_Strings.Work;
@@ -193,15 +191,20 @@ WeightField : WOGenericElement {
 	disabled = disableWeight;
 }
 
-Save: WOSubmitButton {
-	action = save;
+Save: WOGenericElement {
+	elementName = "input";
+	type = "submit";
 	value = application.strings.Reusables_Strings.uiElements.Save;
-    disabled = cantSave;
+    omitTags = cantSave;
+    onclick = "return ajaxPost(form);";
 }
 
-ResetButton1: WOResetButton {
+ResetButton1: WOGenericElement {
+	elementName = "input";
+	type = "reset";
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
-	onclick = "closePopup();";
+	onclick = close;
+	invokeAction = returnPage;
 }
 
 CriterContainer : WOGenericContainer {
@@ -245,4 +248,20 @@ CompulsoryTitle : WOString {
 NoCritAllowed : WOConditional {
   condition = critSet.namedFlags.onlyCriter;
   negate = true;
+}
+
+HasMessage : WOConditional {
+  condition = session.message;
+}
+
+Message : WOString {
+	value = session.message;
+	escapeHTML = false;
+}
+
+CloseContainer : WOGenericContainer {
+  elementName = "div";
+  invokeAction = returnPage;
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+  onclick = close;
 }

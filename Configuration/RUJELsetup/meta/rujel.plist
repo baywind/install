@@ -32,6 +32,18 @@
 		</dict>
 		<dict>
 			<key>key</key>
+			<string>supportCode</string>
+			<key>type</key>
+			<string>String</string>
+			<key>title</key>
+			<string>Код поддержки</string>
+			<key>description</key>
+			<string>Код регистрации установленной копии РУЖЭЛЬ</string>
+			<key>required</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>key</key>
 			<string>schoolNumber</string>
 			<key>type</key>
 			<string>Integer</string>

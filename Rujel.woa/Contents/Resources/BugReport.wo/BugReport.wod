@@ -1,0 +1,64 @@
+Title : WOString {
+  value = ^dict.title;
+}
+
+GetFile : WOHyperlink {
+  action = enironment;
+}
+
+FileTitle : WOString {
+  value = ^dict.getFile;
+  valueWhenEmpty = "Get file";
+}
+
+CanSend : WOConditional {
+  condition = to;
+}
+
+ToTitle : WOString {
+  value = session.strings.RujelContacts_Contacts.SendMailForm.to;
+  valueWhenEmpty = "To";
+  escapeHTML = false;
+}
+
+ToAddress : WOString {
+  value = application.prefs.mail.supportAddress;
+}
+
+SubjectTitle : WOString {
+  value = session.strings.RujelContacts_Contacts.SendMailForm.subject;
+  valueWhenEmpty = "Subject";
+  escapeHTML = false;
+}
+
+SupportCode : WOString {
+  value = application.prefs.supportCode;
+  valueWhenEmpty = "unregistered";
+}
+
+SubjectField : WOTextField {
+  value = subject;
+  size = 28;
+}
+
+MessageText : WOText {
+  value = message;
+  rows = 5;
+  style = "width:96%;";
+}
+
+IfAttach : WOCheckBox {
+  checked = attach;
+}
+
+AttachTitle : WOString {
+  value = ^dict.attachFile;
+}
+
+Form : WOForm {
+}
+
+SendButton : WOSubmitButton {
+  action = sendMail;
+  value = session.strings.RujelContacts_Contacts.SendMailForm.send; 
+}

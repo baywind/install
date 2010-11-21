@@ -2,15 +2,13 @@
 <h1 style = "background-color:#fcc;color:#f33;"><webobject name = "Title"/></h1>
 <p align = "center" style = "background-color:#fff;"><webobject name = "Message"/></p>
 <div>
-<webobject name = "Form">
 <table align = "center" width = "60%" class = "backfield1" style = "padding:3em;" border = "0">
 <tr><td>
-<textarea name = "report" rows = "6" style = "width:96%;"></textarea>
+<textarea id = "errorInfo" name = "report" rows = "6" style = "width:96%;"></textarea>
 </td></tr><tr><td>
 <webobject name = "Submit"/>
 </td></tr>
 </table>
-</webobject>
 </div>
 <p align = "center" style = "background-color:#fff;"><webobject name = "Recomendations"/></p>
 <div style = "margin:3em;">
@@ -18,6 +16,7 @@
 onclick = "d=document.getElementById('details');disp=d.style.display;d.style.display=(disp=='none')?'':'none';">
 <webobject name = "ShowDetails"/></a>
 <div id = "details" style = "display:none;text-align:left;padding:1em;" class = "backfield2">
+<p><webobject name = "LogMessage"/></p>
 <webobject name = "Details"/>
 </div>
 </div>

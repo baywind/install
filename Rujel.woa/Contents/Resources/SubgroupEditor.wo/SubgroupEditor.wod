@@ -115,7 +115,7 @@ MixedButton : OnClickContainer {
   elementName = "span";
   class = "button";
   onclick = session.tryLoad;
-  hide = session.readAccess._delete.CourseAudience;
+  hide = cantToggle;
   invokeAction = toggleMixed;
 }
 

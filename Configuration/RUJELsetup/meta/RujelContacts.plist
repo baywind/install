@@ -181,6 +181,16 @@
 				</dict>
 				<dict>
 					<key>key</key>
+					<string>supportAddress</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>адрес поддержки</string>
+					<key>description</key>
+					<string>адрес электронной почты службы поддержки РУЖЭЛЬ</string>
+				</dict>
+				<dict>
+					<key>key</key>
 					<string>dontSend</string>
 					<key>type</key>
 					<string>Boolean</string>
