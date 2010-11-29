@@ -216,7 +216,7 @@
 		<key>parameterRequired</key>
 		<string>Необходимо указать &quot;%s&quot;</string>
 		<key>pleaseWait</key>
-		<string>Пожалуйста подождите</string>
+		<string>Пожалуйста, подождите</string>
 		<key>refusingSessions</key>
 		<string>РУЖЕЛЬ просит Вас закончить работу и &lt;u&gt;нажать &quot;Выход&quot;&lt;/u&gt;. &lt;br/&gt;Ждем Вас сразу после завершения технических работ</string>
 		<key>unsavedChanges</key>
