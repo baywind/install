@@ -147,7 +147,7 @@ CanPrepare : WOConditional {
 DeleteContainer : OnClickContainer {
   elementName = "span";
   invokeAction = deleteContainer;
-  hide = session.readAccess._delete.item;
+  hide = cantDeleteContainer;
   style = "float:right;margin:3px;";
   title = application.strings.Reusables_Strings.uiElements.Delete;
   onclick = session.confirmMessage;

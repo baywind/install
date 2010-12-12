@@ -122,7 +122,7 @@ Save: WOSubmitButton {
 ComposeButton : OnClickContainer {
   elementName = "span";
   class = "button";
-  onclick = mailButton;
+  onclick = session.ajaxPopupNoPos;
   invokeAction = sendMail;
   hide = ^selection;
 }

@@ -563,6 +563,14 @@ CREATE TABLE ITOG_TYPE (
   PRIMARY KEY (T_ID)
 ) ENGINE=InnoDB;
 
+INSERT INTO ITOG_TYPE (T_ID, SHORT_TITLE, TYPE_NAME, IN_YEAR_COUNT,  SORT_NUM) VALUES
+(1,'год','Учебный Год',1,4),
+(2,'сем','Полугодие',2,3),
+(3,'трм','Триместр',3,2),
+(4,'чтв','Четверть',4,1),
+(5,'экз','Экзамен',0,5),
+(6,'итог','Итоговая отметка',0,6);
+
 CREATE TABLE ITOG_TYPE_LIST (
   TL_ID mediumint NOT NULL,
   LIST_NAME varchar(28) NOT NULL,

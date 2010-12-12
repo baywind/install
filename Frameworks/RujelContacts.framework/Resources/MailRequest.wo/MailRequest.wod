@@ -1,0 +1,27 @@
+Title : WOString {
+  value = application.strings.RujelContacts_Contacts.MailRequest.title;
+  escapeHTML = false;
+}
+
+Form : WOForm {
+  actionClass = "RequestMail";
+  directActionName = code;
+  method = "get";
+  style = "margin:1ex;";
+}
+
+Text : WOString {
+  value = application.strings.RujelContacts_Contacts.MailRequest.enterMail;
+  escapeHTML = false;
+}
+
+Submit : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = application.strings.RujelContacts_Contacts.SendMailForm.send;
+}
+
+NoCode : WOConditional {
+  condition = code;
+  negate = true;
+}

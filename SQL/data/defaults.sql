@@ -3,6 +3,14 @@ SET NAMES utf8;
 /* В многолетнюю базу */
 USE RujelStatic;
 
+/* Типы итоговых */
+INSERT INTO ITOG_TYPE (T_ID, SHORT_TITLE, TYPE_NAME, IN_YEAR_COUNT,  SORT_NUM) VALUES
+(1,'год','Учебный Год',1,4),
+(2,'сем','Полугодие',2,3),
+(3,'трм','Триместр',3,2),
+(4,'чтв','Четверть',4,1),
+(5,'экз','Экзамен',0,5),
+(6,'итог','Итоговая отметка',0,6);
 
 /* Каникулы и праздники */
 INSERT INTO PL_HOLIDAY_TYPE (HT_ID, HOLIDAY_NAME, BEGIN_MONTH, BEGIN_DAY, END_MONTH, END_DAY) VALUES

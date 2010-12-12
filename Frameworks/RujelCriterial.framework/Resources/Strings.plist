@@ -119,6 +119,10 @@
 				<string>Наборы критериев</string>
 				<string>Представления</string>
 			</array>
+			<key>framework</key>
+			<string>RujelBase</string>
+			<key>scriptResource</key>
+			<string>sorting.js</string>
 		</dict>
 	</dict>
 	<key>messages</key>
@@ -270,9 +274,9 @@
 						<key>id</key>
 						<string>markable</string>
 						<key>title</key>
-						<string>возможны оценки</string>
+						<string>оцениваемые</string>
 						<key>hover</key>
-						<string>все работы, предусматривающие оценку</string>
+						<string>работы, предусматривающие оценку</string>
 						<key>value</key>
 						<integer>2</integer>
 					</dict>
@@ -280,9 +284,9 @@
 						<key>id</key>
 						<string>marked</string>
 						<key>title</key>
-						<string>выставлены оценки</string>
+						<string>с оценками</string>
 						<key>hover</key>
-						<string>все оценки, полученные учащимся</string>
+						<string>работы с выставленными оценками</string>
 						<key>value</key>
 						<integer>1</integer>
 					</dict>
@@ -290,7 +294,7 @@
 						<key>id</key>
 						<string>required</string>
 						<key>title</key>
-						<string>только важные</string>
+						<string>весомые</string>
 						<key>hover</key>
 						<string>работы, влияющие на итоговую</string>
 						<key>value</key>
@@ -306,9 +310,21 @@
 			</dict>
 			<dict>
 				<key>id</key>
+				<string>dateSet</string>
+				<key>title</key>
+				<string>оценки по дате выставления</string>
+				<key>hover</key>
+				<string>включать работы, оценки за которые были выставлены в искомый период</string>
+				<key>active</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>id</key>
 				<string>short</string>
 				<key>title</key>
 				<string>кратко</string>
+				<key>hover</key>
+				<string>показывать оценки в строчку, а не в таблице</string>
 				<key>active</key>
 				<false/>
 			</dict>
@@ -317,6 +333,8 @@
 				<string>hideMax</string>
 				<key>title</key>
 				<string>скрыть максимумы</string>
+				<key>hover</key>
+				<string>не показывать в индексе максимумы</string>
 				<key>active</key>
 				<false/>
 			</dict>

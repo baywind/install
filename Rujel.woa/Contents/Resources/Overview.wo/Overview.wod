@@ -40,7 +40,6 @@ CourseComment: WOString {
 Form2: WOForm {
 	target = "_blank";
 	multipleSubmit = true;
-	method = session.formMethod;
 }
 
 HasClass: WOConditional {
@@ -150,11 +149,13 @@ ReporterTitle: WOString {
 ShowMarks: WOSubmitButton {
 	action = printSelectedStudents;
 	value = application.strings.Strings.Overview.showMarks;
+	onclick = "return ajaxPost(this);";
 }
 
 ShowMarks2: WOSubmitButton {
 	action = overviewAction;
 	value = reporterItem.name;
+	onclick = "return ajaxPost(this);";
 }
 
 ShowReporterSelector: WOConditional {

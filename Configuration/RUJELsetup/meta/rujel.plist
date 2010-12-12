@@ -258,6 +258,47 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>key</key>
+			<string>ui</string>
+			<key>type</key>
+			<string>Dictionary</string>
+			<key>title</key>
+			<string>адрес</string>
+			<key>description</key>
+			<string>Настройка адреса доступа к журналу</string>
+			<key>keys</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>serverURL</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>serverURL</string>
+					<key>description</key>
+					<string>адрес серевера с РУЖЭЛЬ в интернете</string>
+					<key>defaultValue</key>
+					<string>автоопределение</string>
+					<key>advanced</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>urlPrefix</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>urlPrefix</string>
+					<key>description</key>
+					<string>префикс адреса активного экземпляра РУЖЭЛЬ относительно корня сервера.</string>
+					<key>defaultValue</key>
+					<string>/Apps/WebObjects/Rujel.woa</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

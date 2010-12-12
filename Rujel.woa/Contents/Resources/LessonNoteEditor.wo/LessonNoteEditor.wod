@@ -213,15 +213,17 @@ TeacherSpan : OnClickContainer {
   title = application.strings.Strings.LessonNoteEditor.byTeacher;
 }
 
-CanAddTab : WOConditional {
-  condition = canAddTab;
-}
-
 AddTabDiv : OnClickContainer {
   elementName = "div";
   invokeAction = splitTab;
+  hide = cantAddTab;
   onclick = session.checkRun;
   style = "margin-top:1.5ex;padding:1pt;border-width:1px 1px 1px 0px;text-align:center;font-weight:bold;";
   class = "grey selectionBorder";
   title = splitTitle;
+}
+
+SplitSign : WOString {
+  value = splitSign;
+  escapeHTML = false;
 }

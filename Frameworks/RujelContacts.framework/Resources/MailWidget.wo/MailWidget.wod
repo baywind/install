@@ -1,6 +1,6 @@
 Div : OnClickContainer {
   elementName = "div";
-  onclick = onClick;
+  onclick = session.ajaxPopupNoPos;
   invokeAction = mail;
   style = "border:double #cc33cc;padding:1px 3px;height:32px;width:32px;";
   class = "highlight";

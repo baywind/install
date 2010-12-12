@@ -440,8 +440,14 @@ function onReadyStateChange(pos) {
 	//debug(pos);
 	var text = xmlHttp.responseText;
 	if(text.charAt(0) == '/' || text.substring(0,4) == 'http') {
-		loading = true;
-		window.location = text;
+		var mass = text.split(/\s+/);
+		if(mass.length > 1) {
+			window.open(mass[0],mass[1]);
+			cancelLoading();
+		} else {
+			loading = true;
+			window.location = text;
+		}
 		return;
 	}
 	timeout = startTimeout;

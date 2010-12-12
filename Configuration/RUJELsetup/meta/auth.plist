@@ -101,7 +101,9 @@
 					<key>title</key>
 					<string>guestUser</string>
 					<key>description</key>
-					<string>имя для пользователя &quot;Гость&quot;. Если эти значения указаны, на странице аутентикации будет показана кнопка &quot;Гость&quot;: это позволит просматривать общедоступную информацию из журнала людям без своего логина (например, родителям).</string>
+					<string>имя для пользователя &quot;Гость&quot;, если такой пользователь специально описан</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -112,6 +114,22 @@
 					<string>guestPassword</string>
 					<key>description</key>
 					<string>пароль для пользователя &quot;Гость&quot;</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>noGuest</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>defaultValue</key>
+					<false/>
+					<key>title</key>
+					<string>запретить гостя</string>
+					<key>description</key>
+					<string>запретить гостевой доступ в журнал (без ввода имени и пароля)</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>

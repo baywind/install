@@ -245,6 +245,11 @@ if [ ! -e ${CONFIGFOLDER}/rujel.plist ] ; then
     echo "Please edit settings in URL http://server_url/Apps/WebObjects/PListWOEditor.woa"
 fi
 
+if [ ! -e ${CONFIGFOLDER}/message.txt ] ; then
+	cp message.txt ${CONFIGFOLDER}/
+	chown -R _appserver:_appserveradm ${CONFIGFOLDER}/message.txt
+fi
+
 cd ..
 rmdir $BACKUP/Configuration > /dev/null 2>&1
 fi

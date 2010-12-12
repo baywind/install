@@ -90,9 +90,10 @@ Enter : WOGenericElement {
 
 Guest : WOGenericElement {
   elementName = "input";
-  type = "submit";
+  type = "button";
   value = application.strings.Strings.login.Guest;
-  onclick="guest();";
+  onclick = guestOnClick;
+  omitTags = noGuest;
 }
 
 Version : WOString {

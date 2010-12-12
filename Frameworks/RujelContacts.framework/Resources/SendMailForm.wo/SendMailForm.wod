@@ -1,3 +1,13 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
 MailForm : WOForm {
   multipleSubmit = true;
 }
@@ -39,11 +49,13 @@ Tick : WOCheckBox {
 ToggleList : WOSubmitButton {
   action = toggleList;
   value = button;
+  onclick = "return ajaxPost(this);";
 }
 
 SendMail : WOSubmitButton {
   action = send;
   value = application.strings.RujelContacts_Contacts.SendMailForm.send;
+  onclick = "return ajaxPost(this);";
 }
 
 StudentsList : WORepetition {
@@ -68,7 +80,7 @@ CountAdrs : WOString {
   value = adrSet.count;
 }
 
-SessionMessage : WOString {
+Message : WOString {
   value = message;
 }
 
@@ -156,4 +168,7 @@ CanReadContact : WOConditional {
 }
 CantReadContact : WOConditional {
   condition = session.readAccess._read.contItem;
+}
+HasMessage : WOConditional {
+	condition = message;
 }

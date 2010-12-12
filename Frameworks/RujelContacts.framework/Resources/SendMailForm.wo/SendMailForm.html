@@ -1,29 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title><webobject name = "Title"/></title>
-	
-	<style type="text/css">
-.backfield1 {
-	background-color:#ffffcc;
-	vertical-align:top;
-	text-align:center;
-}
-.message {
-	font-size:large;
-	color:#ff6600;
-	text-align:center;
-}
-	
-	</style>
-</head>
-<body>
-<div class = "message" style = "margin:1em;"><webobject name = "SessionMessage"/></div>
+<div class="backfield1" id="ajaxPopup">
+<webobject name = "Cross"/>
+<h1><webobject name = "Title"/></h1>
 <webobject name = "MailForm">
-	<table width = "96%" align = "center" border = "1" cellpadding = "4" class = "backfield1">
+	<table align = "center" border = "1" cellpadding = "4" class = "backfield1">
 		<tr>
 		<th align = "right" style="width:6em;"><webobject name = "To"/></th>
 		<td align = "left"> ( <webobject name = "CountAdrs"/> ) <webobject name = "CanEditList">
@@ -72,8 +51,7 @@
 		<td colspan = "2" align = "center"><webobject name = "SendMail"/></td>
 		</tr>
 	</table>
-	</webobject>
-
-
-</body>
-</html>
+</webobject>
+</div><webobject name = "HasMessage">
+<div class = "message" style = "background-color:#ffffcc; border: double 3px #ff6600;position:fixed;top:2em;left:4em;padding:1ex;z-index:4;">
+<webobject name = "Message"/></div></webobject>

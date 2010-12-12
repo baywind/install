@@ -1,6 +1,8 @@
-AddButton: WOSubmitButton {
+AddButton: WOGenericElement {
+	elementName = "input";
+	type = "submit";
 	value = application.strings.Reusables_Strings.uiElements.Save;
-	action = save;
+    onclick = "return ajaxPost(form);";
 }
 
 DateTitle: WOString {
@@ -25,17 +27,27 @@ ThemeField : WOText {
 }
 
 Form : WOForm {
+  action = save;
 }
 
 UndoButton : WOGenericElement {
   elementName = "input";
   type = "button";
   value = application.strings.Reusables_Strings.uiElements.Cancel;
-  invokeAction = back;
+  invokeAction = returnPage;
   onclick = session.tryLoad;
 }
 
 PopupTitle : WOString {
   value = application.strings.RujelBase_Base.newLesson;
   valueWhenEmpty = "New Lesson";
+}
+
+HasMessage : WOConditional {
+  condition = session.message;
+}
+
+Message : WOString {
+	value = session.message;
+	escapeHTML = false;
 }

@@ -43,7 +43,7 @@
 			<string>электронная почта</string>
 			<key>flags</key>
 			<array>
-				<string>Использовать для расылки</string>
+				<string>Использовать для рассылки</string>
 				<string>Сжимать (zip)</string>
 				<string></string>
 				<string></string>
@@ -92,6 +92,27 @@
 		<string>MailWidget</string>
 		<key>sort</key>
 		<string>09</string>
+	</dict>
+	<key>MailRequest</key>
+	<dict>
+		<key>title</key>
+		<string>Запрос сообщения с оценками</string>
+		<key>studentCode</key>
+		<string>Код учащегося</string>
+		<key>enterMail</key>
+		<string>Пожалуйста укажите адрес электронной почты, на который следует отправить отметки</string>
+		<key>wrongCode</key>
+		<string>Неверный код учащегося</string>
+		<key>illegalMail</key>
+		<string>Указаный адрес не зарегистрирован для данного учащегося</string>
+		<key>initiated</key>
+		<string>Сообщение поставлено в очередь на отправку</string>
+		<key>preparationError</key>
+		<string>Извините, произошла ошибка при формировании сообщения</string>
+		<key>duplicate</key>
+		<string>Отметки по этому адресу сегодня уже отправлялись</string>
+		<key>denied</key>
+		<string>Отсылка по запросу отключена</string>
 	</dict>
 </dict>
 </plist>

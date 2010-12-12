@@ -55,6 +55,8 @@
 				<string>short</string>
 				<key>title</key>
 				<string>кратко</string>
+				<key>hover</key>
+				<string>показывать в строчку, без темы урока</string>
 				<key>active</key>
 				<false/>
 			</dict>
