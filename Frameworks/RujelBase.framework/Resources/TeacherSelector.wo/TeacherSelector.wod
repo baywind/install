@@ -3,12 +3,12 @@ SearchForm : WOForm {
   onsubmit = onSubmit;
 }
 
-SearchField: WOTextField {
+SearchField : WOTextField {
 	value = searchString;
 	id = "searchString";
 	style = "width:80%;";
 }
-SearchImage: WOImage {
+SearchImage : WOImage {
 	onclick = "f=get(this,'form');if(f.onsubmit()) f.submit();";
 	style = "cursor:pointer;";
 	filename = "arrow.png";

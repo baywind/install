@@ -18,11 +18,6 @@ EndTitle : WOString {
   escapeHTML = false;
 }
 
-ListTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.properties.listName;
-  escapeHTML = false;
-}
-
 Repetition : WORepetition {
   list = list;
   item = item;
@@ -60,10 +55,6 @@ Begin : WOString {
 End : WOString {
   value =item.end;
   dateformat = application.prefs.ui.dateFormat;
-}
-
-ListName : WOString {
-  value = item.listName;
 }
 
 Preset : WOConditional {
@@ -122,11 +113,6 @@ Save: WOSubmitButton {
 	value = application.strings.Reusables_Strings.uiElements.Save;
 }
 Form : WOForm {
-}
-
-IsNotEO : WOConditional {
-  condition = item.editingContext;
-  negate = true;
 }
 
 BeginNewField : WOTextField {

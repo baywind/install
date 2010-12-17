@@ -265,3 +265,12 @@ CloseContainer : WOGenericContainer {
   style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
   onclick = close;
 }
+
+CritersAvailable : WOConditional {
+  condition = critSet.noCriteria;
+  negate = true;
+}
+
+CritersDenied : WOConditional {
+  condition = critSet.noCriteria;
+}

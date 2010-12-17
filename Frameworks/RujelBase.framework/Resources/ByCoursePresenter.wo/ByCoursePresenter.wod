@@ -33,18 +33,6 @@ CourseTeacher : PersonDisplay {
   startWithLast = true;
 }
 
-StringValue : WOString {
-  value = bc.textValue;
-}
-
-ShowNum : WOConditional {
-  condition = ^showNum;
-}
-
-NumValue : WOString {
-  value = bc.numericValue;
-}
-
 GroupCell : WOGenericContainer {
   elementName = "td";
   class = groupStyle;

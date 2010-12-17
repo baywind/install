@@ -26,20 +26,10 @@ SearchMessage: WOString {
 	escapeHTML = false;
 }
 
-Hyperlink3: WOHyperlink {
-	action = undo;
-	string = application.strings.Reusables_Strings.uiElements.Cancel;
-}
-
 Repetition1: WORepetition {
 	item = item;
 	list = personList;
 	index = index;
-}
-
-NotOnEdit: WOConditional {
-	condition = onEdit;
-	negate = true;
 }
 
 StyledRow: OnClickContainer {
@@ -58,21 +48,6 @@ ComposeName: WOString {
 	value = itemName;
 }
 
-CanEdit: WOConditional {
-	condition = false;
-}
-
-EditLink: WOHyperlink {
-	action = edit;
-	style = "z-index:4;";
-}
-
-files_edit: WOImage {
-	align = "right";
-	filename = "files_edit.png";
-	framework = "app";
-}
-
 RemoveFromList: WOGenericContainer {
 	elementName = "td";
 	onclick = act;
@@ -85,21 +60,6 @@ RemoveFromList: WOGenericContainer {
 	framework = "RujelBase";
 	height = 12;
 	width = 12;
-}
-
-OnEdit: WOConditional {
-	condition = onEdit;
-}
-
-PersonEditor1: PersonEditor {
-	cancelAction = cancel;
-	deleteAction = delete;
-	person = item;
-	saveAction = select;
-}
-
-Select: WOHyperlink {
-	action = select;
 }
 
 NotPopup : WOConditional {

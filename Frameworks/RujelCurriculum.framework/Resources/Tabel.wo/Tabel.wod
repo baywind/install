@@ -19,11 +19,6 @@ SelectMonth : WOPopUpButton {
   onchange = "this.form.submit();";
 }
 
-Month : WOString {
-  value = currMonth.name;
-  escapeHTML = false;
-}
-
 Year : WOString {
   value = currMonth.year;
   numberformat = "0";

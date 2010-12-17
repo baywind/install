@@ -46,7 +46,9 @@ LinkImage : WOImage {
 	align = "right";
 	title = item.taskUrl;
 	onclick = "window.open(this.title);";
-	alt = "&gt;&gt;&gt;"; 
+	alt = "application.strings.RujelCriterial_Strings.URL"; 
+	class = "screenLink";
+	style = "cursor:pointer;margin:4px;";
 }
 
 RegularSection : WOConditional {
@@ -65,10 +67,6 @@ RegularRow : WOConditional {
 SplitRow : WOConditional {
   condition = item;
   negate = true;
-}
-
-Title : WOString {
-  value = title;
 }
 
 Announce : WOString {

@@ -135,9 +135,6 @@ Categories : WORepetition {
   item = item;
 }
 
-ShowAllForm : WOForm {
-}
-
 ShowAllBox : WOCheckBox {
   checked = showAll;
   onchange = "form.submit();";

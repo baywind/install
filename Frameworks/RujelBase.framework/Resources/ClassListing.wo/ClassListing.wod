@@ -26,9 +26,6 @@ String2: WOString {
 	value = currClass.title;
 }
 
-Component : WOComponentContent {
-}
-
 HasTitle : WOConditional {
   condition = ^showTitle;
 }

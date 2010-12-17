@@ -1,8 +1,3 @@
-Form2: WOForm {
-	multipleSubmit = true;
-	onSubmit = "return tryLoad(true);";
-}
-
 LastNameLabel: WOString {
 	value = application.strings.RujelInterfaces_Names.Person.lastName;
 	valueWhenEmpty = "Last Name";
@@ -12,20 +7,6 @@ LastName: WOTextField {
 	maxlength = 28;
 	size = 15;
 	value = person.lastName;
-}
-
-Hyperlink1: WOHyperlink {
-	action = ^cancelAction;
-	onclick = "return tryLoad(true);";
-}
-
-cross: WOImage {
-	align = "right";
-	filename = "cross.png";
-	framework = "RujelBase";
-	height = 12;
-	width = 12;
-	valign = "top";
 }
 
 CanEdit: WOConditional {

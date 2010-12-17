@@ -27,7 +27,7 @@
 <td colspan = "2"><webobject name = "LoadTitle"/>
 <nobr>
 <webobject name = "Hours"/> : <webobject name = "Minutes"/>
-</nobr></td></tr><tr>
+</nobr></td></tr><tr><webobject name = "CritersAvailable">
 <td colspan = "4">
 	<webobject name = "NoCritAllowed"><table align = "left" border = "1" cellspacing = "1">
 	<tr><th colspan = "2" style = "white-space:nowrap;"><webobject name = "NoCriteria"/></th>
@@ -51,7 +51,11 @@
 		</webobject>
 	</tr></tbody>
 	</table>
-</td></tr>
+</td></webobject><webobject name = "CritersDenied">
+	<td colspan = "2"></td>
+	<td colspan = "2" align = "right" style = "padding-right:1em;">
+	<strong><webobject name = "NoCritMax"/>:</strong> <webobject name = "MaxField"/></td>
+</webobject></tr>
 <tr><td colspan = "4" style = "padding:1ex;">
 	<webobject name="Save"/>  <webobject name="ResetButton1"/>
 </td></tr>

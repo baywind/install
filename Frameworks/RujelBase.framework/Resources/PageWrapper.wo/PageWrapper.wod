@@ -2,9 +2,10 @@ AccessPath: WORepetition {
 	item = pathItem;
 	list = session.pathStack;
 }
-BackUrl: WOResourceURL {
-	framework = "app";
-	filename = "back.gif";
+BackUrl: WOGenericContainer {
+  elementName = "div";
+  id = "ajaxMask";
+  style = maskStyle;
 }
 
 Body: WOBody {
@@ -14,8 +15,11 @@ Body: WOBody {
 }
 
 
-CSSurl: WOString {
-	value = ^cssURL;
+CSSurl: WOGenericElement {
+  elementName = "link";
+  href = ^cssURL;
+  rel = "stylesheet";
+  type = "text/css";
 }
 
 ComponentContent: WOComponentContent {
@@ -72,8 +76,11 @@ PleaseWait: WOString {
 	valueWhenEmpty = "Please Wait";
 }
 
-ScriptLink: WOString {
-	value = ^scriptURL;
+ScriptLink: WOGenericContainer {
+  elementName = "script";
+  type="text/javascript";
+  language="JavaScript";
+  src = ^scriptURL;
 }
 
 LeftTriangle : WOImage {

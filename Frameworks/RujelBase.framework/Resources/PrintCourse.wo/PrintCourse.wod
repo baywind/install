@@ -35,11 +35,6 @@ IfPeriod : WOConditional {
   condition = ^presentPeriod;
 }
 
-NoChanges : WOConditional {
-  condition = changes;
-  negate = true;
-}
-
 HasChanges : WOConditional {
   condition = changes;
 }

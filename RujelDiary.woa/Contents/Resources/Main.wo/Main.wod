@@ -3,15 +3,6 @@ Title : WOString {
   valueWhenEmpty = "RUJEL Diary";
 }
 
-Form : WOForm {
-	directActionName = "";
-	name = "request";
-	method = "get";
-	?grID = currGr;
-	?regime = currTab.id;
-	onsubmit = "removeDefault(this);";
-}
-
 RegimeField : WOHiddenField {
   name = "regime";
   value = currTab.id;
@@ -142,18 +133,9 @@ Copyright : WOString {
   escapeHTML = false;
 }
 
-Image : WOImage {
-	filename = "Dairy.jpg";
-}
 
 Body : WOBody {
 	filename = "Dairy.jpg";
-}
-
-ImageButton : WOImageButton {
-	framework = "JavaWOExtensions";
-	filename = "TransparentPixel.gif";
-	directActionName = "";
 }
 
 SchoolName : WOString {

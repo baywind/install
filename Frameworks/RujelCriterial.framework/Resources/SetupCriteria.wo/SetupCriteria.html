@@ -7,7 +7,7 @@ function create(aform) {
 	}
 }
 function rename(aform) {
-	var val = prompt("<webobject name = "RenamePrompt"/>",aform.csTitle.defaultValue);
+	var val = prompt('<webobject name = "RenamePrompt"/>',aform.csTitle.defaultValue);
 	if(val && val != aform.csTitle.defaultValue) {
 		aform.csTitle.value = val;
 		aform.submit();
@@ -46,7 +46,7 @@ function createIndex() {
 	<webobject name = "SetForm">
 	<table><thead>
 		<tr><th colspan = "2"><webobject name = "CurrName"/></th></tr>
-	</tfoot><tbody>
+	</thead><tbody>
 		<tr class = "gerade"><td><webobject name = "FixMax"/></td>
 		<td align = "left"><webobject name = "FixMaxTitle"/></td></tr>
 		<tr class = "gerade"><td><webobject name = "FixWeight"/></td>

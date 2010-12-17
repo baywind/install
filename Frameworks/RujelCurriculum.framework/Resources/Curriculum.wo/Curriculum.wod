@@ -1,5 +1,4 @@
 PageWrapper1: PageWrapper {
-	hasChanges = false;
 	title = title;
 	hasChanges = ec.hasChanges;
 	onLoad = "onLoad();";

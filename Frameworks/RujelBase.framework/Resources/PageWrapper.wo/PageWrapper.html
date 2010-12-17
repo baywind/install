@@ -9,11 +9,11 @@
         <webobject name = "RGBColor"/>
         <webobject name = "JsAndCSS"/>
         <webobject name = "OuterResources"/>
-<webobject name="HasCSS"><link href="<webobject name="CSSurl"></webobject>" rel="stylesheet" type="text/css" /></webobject>
-<webobject name="HasStyles"><style type="text/css">
+<webobject name="HasCSS"><webobject name="CSSurl"/>
+</webobject><webobject name="HasStyles"><style type="text/css">
   <webobject name="Styles"/>
-</style></webobject>
-<webobject name="HasScript"><script type="text/javascript" language="JavaScript" src="<webobject name="ScriptLink"></webobject>"></script></webobject>
+</style></webobject><webobject name="HasScript">
+<webobject name="ScriptLink"></webobject></webobject>
 <script type="text/javascript" language="JavaScript">
 	unsavedAlert = '<webobject name="UnsavedAlert"></webobject>';
 	confirmAlert = '<webobject name="ConfinmAlert" />';
@@ -23,7 +23,7 @@
 </script>
    </head>
 <webobject name="Body">
- <div id="ajaxMask" style="display:none;background:url(<webobject name="BackUrl"></webobject>) repeat;"></div>
+<webobject name="BackUrl"></webobject>
  <div class="attention" id="pleaseWait" style="display:none;"><webobject name="PleaseWait"></webobject><webobject name="cross"></webobject></div>
 <webobject name="IsRefusingSessions"><div id="refusingSessions"><webobject name="TerminatingMessage"></webobject></div></webobject>
 <webobject name = "HasSesion">

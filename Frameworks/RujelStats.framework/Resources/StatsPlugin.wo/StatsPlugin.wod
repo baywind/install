@@ -55,12 +55,6 @@ Total : WOString {
   escapeHTML = false;
 }
 
-TotalTitle : WOString {
-  value = application.strings.RujelStats_Stats.total;
-  escapeHTML = false;
-  valueWhenEmpty = "total";
-}
-
 IsPopup : WOConditional {
   condition = notPopup;
   negate = true;

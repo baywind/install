@@ -14,22 +14,6 @@ EditJoinTitle : WOString {
   valueWhenEmpty = "AutoItog";
 }
 
-
-CourseTitle : WOString {
-  value = session.strings.RujelInterfaces_Names.EduCourse.this;
-  escapeHTML = false;
-}
-
-LessonTitle : WOString {
-  value = session.strings.RujelInterfaces_Names.EduLesson.this;
-  escapeHTML = false;
-}
-
-Date : WOString {
-  value = lesson.date;
-  dateformat = application.prefs.ui.dateFormat;
-}
-
 Courses : DynamicTableRow {
   list = courses;
   item = item;
@@ -92,28 +76,10 @@ GenerateLesson : WOString {
 Form : WOForm {
 }
 
-CanChange: WOConditional {
-	condition = cantEdit;
-	negate = true;
-}
-
-CanDelete: WOConditional {
-	condition = canDelete;
-}
-
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
 }
-
-DeleteButton: WOGenericElement {
-	value = application.strings.Reusables_Strings.uiElements.Delete;
-	invokeAction = delete;
-	onclick = session.confirmMessage;
-	elementName = "input";
-	type = "button";
-}
-
 
 CourseSelected : WOConditional {
   condition = selCourse;

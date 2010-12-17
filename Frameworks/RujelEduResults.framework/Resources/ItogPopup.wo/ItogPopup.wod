@@ -89,7 +89,7 @@ Save: WOSubmitButton {
 }
 
 StudentName: PersonDisplay {
-	value = student;
+	person = student;
 	startWithLast = true;
 	last = 2;
 	first = 2;
