@@ -100,7 +100,7 @@
 		<key>studentCode</key>
 		<string>Код учащегося</string>
 		<key>enterMail</key>
-		<string>Пожалуйста укажите адрес электронной почты, на который следует отправить отметки</string>
+		<string>Пожалуйста, укажите адрес электронной почты, на который следует отправить отметки</string>
 		<key>wrongCode</key>
 		<string>Неверный код учащегося</string>
 		<key>illegalMail</key>
