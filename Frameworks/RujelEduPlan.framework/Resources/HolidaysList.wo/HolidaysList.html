@@ -16,14 +16,15 @@ function toggleDisabled(cell) {
 	for(i=0;i<fs.length;i++) {
 		if(fs[i].type=='checkbox') {
 			fs[i].checked = disabled;
+			checkChanges(fs[i]);
 		} else {
-			fs[i].disabled = disabled;
+			fs[i].style.backgroundColor = (disabled)?'#cccccc':'';
 		}
 	}
 	var fs = cell.getElementsByTagName('img');
 	fs[0].style.display = (disabled)?'none':'';
 	var fs = cell.getElementsByTagName('strong');
-	fs[0].style.display = (disabled)?'':'none';	
+	fs[0].style.display = (disabled)?'':'none';
 }
 </script>
 <h3><webobject name = "Title"/></h3>
@@ -35,9 +36,9 @@ function toggleDisabled(cell) {
 </tr></thead>
 <tfoot>
 <webobject name = "CanCreate">
-	<tr class = "grey"><td><webobject name = "NewNameField"/></td>
-		<td><webobject name = "BeginNewField"/></td>
-		<td><webobject name = "EndNewField"/></td>
+	<tr class = "grey"><td><webobject name = "NameField"/></td>
+		<td><webobject name = "BeginField"/></td>
+		<td><webobject name = "EndField"/></td>
 		<td style = "color:#666666;"><webobject name = "DaysTitle"/></td>
 	</tr></webobject><webobject name = "ShowButtton">
 <tr><td colspan = "4" align = "center"><webobject name = "Save"/></td></tr></webobject>
@@ -48,10 +49,7 @@ function toggleDisabled(cell) {
 	<td><webobject name = "End"/></td>
 	<td style = "color:#666666;"><webobject name = "Days"/></td>
 </webobject></webobject><webobject name = "Preset"><webobject name = "PresetRow">
-	<webobject name = "NameCell"><webobject name = "IsDefined">
-		<webobject name = "Name"/></webobject>
-		<webobject name = "Undefined"><webobject name = "NameField"/>
-	</webobject></webobject>
+	<td><webobject name = "NameField"/></td>
 	<td><webobject name = "BeginField"/></td>
 	<td><webobject name = "EndField"/></td>
 	<webobject name = "DeleteCell"><webobject name = "Disabled"/>

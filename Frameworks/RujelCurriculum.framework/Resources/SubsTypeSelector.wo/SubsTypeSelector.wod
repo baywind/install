@@ -13,11 +13,6 @@ Title : WOString {
   escapeHTML = false;
 }
 
-SubstituteTitle : WOString {
-  value = session.strings.RujelCurriculum_Curriculum.Substitute.Substitute;
-  escapeHTML = false;
-}
-
 AddSubstituteTitle : WOString {
   value = session.strings.RujelCurriculum_Curriculum.titles.addSubstitute;
   escapeHTML = false;
@@ -28,23 +23,6 @@ AddSubstitute : OnClickContainer {
   class = "highlight2";
   onclick = session.ajaxPopupNoPos;
   invokeAction = addSubstitute;
-}
-
-JoinTitle : WOString {
-  value = session.strings.RujelCurriculum_Curriculum.Substitute.Join;
-  escapeHTML = false;
-}
-
-AddJoinSubTitle : WOString {
-  value = session.strings.RujelCurriculum_Curriculum.titles.addJoinSub;
-  escapeHTML = false;
-}
-
-AddJoinSub : OnClickContainer {
-  elementName = "td";
-  class = "highlight2";
-  onclick = session.ajaxPopupNoPos;
-  invokeAction = addJoinSub;
 }
 
 AddJoinTitle : WOString {

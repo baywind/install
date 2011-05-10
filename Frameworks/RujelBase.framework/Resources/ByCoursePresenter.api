@@ -11,5 +11,9 @@
     <binding name="editList"/>
     <binding defaults="Boolean" name="readOnly"/>
     <binding name="pushByCourse"/>
+    <binding name="rowspan"/>
+        <validation message="'newBinding' must be bound to a settable value">
+            <unsettable name="rowspan"/>
+        </validation>
     </wo>
 </wodefinitions>

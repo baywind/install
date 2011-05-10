@@ -10,6 +10,8 @@
 		<string>Дата</string>
 		<key>Time</key>
 		<string>Время</string>
+		<key>Month</key>
+		<string>Месяц</string>
 		<key>int</key>
 		<string>целое</string>
 		<key>number</key>
@@ -148,6 +150,8 @@
 		<string>Подтвердить</string>
 		<key>Select</key>
 		<string>Выбрать</string>
+		<key>Show</key>
+		<string>Показать</string>
 		<key>OK</key>
 		<string>Ага</string>
 	</dict>

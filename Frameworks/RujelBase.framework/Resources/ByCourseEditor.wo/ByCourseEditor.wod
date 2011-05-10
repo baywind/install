@@ -8,103 +8,47 @@ Cross : WOImage {
   style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
 }
 
-Grades : WORepetition {
+Grades : DynamicTableRow {
   list = grades;
-  item = gradeItem;
-}
-
-GradeCell : OnClickContainer {
-  elementName = "td";
-  onclick = onclick;
-  invokeAction = selectGrade;
-  class = gradeClass;
+  item = item;
+  selectAction = pickGrade;
+  selection = tmpValues.currGrade;
+  class = "ungerade";
+  onClick = onclick;
 }
 
 Grade : WOString {
-  value = gradeItem;
+  value = item;
   numberformat = "0";
 }
 
-Groups : WORepetition {
-  list = groups;
-  item = groupItem;
-}
-
-GroupCell : OnClickContainer {
-  elementName = "div";
-  onclick = onclick;
-  invokeAction = selectGroup;
-  class = groupClass;
-}
-
-GroupName : WOString {
-  value = groupItem.name;
-}
-
 Cycles : WORepetition {
-  list = cycles;
-  item = cycleItem;
+  list = tmpValues.cycles;
+  item = item;
 }
 
-CycleRow : WOGenericContainer {
+CycleRow : OnClickContainer {
   elementName = "tr";
-  class = cycleClass;
-}
-
-CycleCell : OnClickContainer {
-  elementName = "td";
+  class = item.styleClass;
   invokeAction = selectCycle;
   onclick = onclick;
 }
 
+
 Subject : WOString {
-  value = cycleItem.subject;
+  value = item.subject;
 }
 
-Courses : WORepetition {
-  list = courses;
-  item = courseItem;
-}
-
-CourseCell : WOGenericContainer {
-  elementName = "div";
-  onmouseover = "dim(this);dim(get(this,'tr'));";
-  onmouseout = "unDim(this);unDim(get(this,'tr'));";
-  onclick = onclick;
-  invokeAction = selectCourse;
-  class = courseClass;
-}
-
-ByCoursePresenter : ByCoursePresenter {
-  value = byCourse;
-}
-
-CourseComment : WOString {
-  value = courseItem.comment;
-}
-
-CourseTeacher : PersonDisplay {
-  person = courseItem.teacher;
-  last = 2;
-  first = 1;
-  second = 1;
-  startWithLast = true;
-}
-
-Form : WOForm {
-  style = "padding:1ex; min-width:8em;white-space:nowrap;";
-}
-
-SubmitButton : WOSubmitButton {
+SaveButton : WOSubmitButton {
   action = save;
   value = application.strings.Reusables_Strings.uiElements.Done;
   style = "font-size:larger;font-weight:bold;";
+  onclick = "return ajaxPost(this);";
 }
 
 CurrYear : WOCheckBox {
   value = session.eduYear;
-  selection = byCourse.eduYear;
-  disabled = forceEduYear;
+  selection = tmpValues.eduYear;
 }
 
 Year : WOString {
@@ -112,5 +56,162 @@ Year : WOString {
 }
 
 HasSelection : WOConditional {
-  condition = byCourse.grade;
+  condition = currEditor;
+}
+
+IfGrade : WOConditional {
+  condition = currEditor.showGrade;
+}
+IfSubject : WOConditional {
+  condition = currEditor.showSubject;
+}
+IfCycle : WOConditional {
+  condition = currEditor.showCycle;
+}
+IfPresent : WOConditional {
+  condition = currEditor.editorPresent;
+}
+
+GradeSelector : WOPopUpButton {
+  list = grades;
+  name = "grade";
+  selection = params.grade;
+  noSelectionString = "-?-";
+  onchange = "form.grMin.selectedIndex=0;form.grMax.selectedIndex=0;";
+}
+
+
+SubjectRegex : WOTextField {
+  value = value;
+}
+
+EditorPresent : DisplayAny {
+  value = value;
+  dict = currEditor.editorPresent;
+}
+
+GradeForm : WOForm {
+  action = selectGrade;
+}
+
+GradeMin : WOPopUpButton {
+  list = grades;
+  name = "grMin";
+  selection = params.min_grade;
+  noSelectionString = "-?-";
+  onchange = "form.grade.selectedIndex=0;if(form.grMax.selectedIndex<selectedIndex)form.grMax.selectedIndex=0;";
+}
+GradeMax : WOPopUpButton {
+  list = grades;
+  name = "grMax";
+  selection = params.max_grade;
+  noSelectionString = "-?-";
+  onchange = "form.grade.selectedIndex=0;if(form.grMin.selectedIndex>selectedIndex)form.grMin.selectedIndex=0;";
+}
+
+CycleInfo : WOString {
+  value = item.extraInfo;
+}
+
+HasExtra : WOConditional {
+  condition = tmpValues.hasExtra;
+}
+
+RegexForm : WOForm {
+  action = doneEditing;
+}
+
+QueryParams : QueryParams {
+  list = editors;
+  params = params;
+  editor = currEditor;
+  ec = ec;
+}
+
+Form : WOForm {
+  multipleSubmit = true;
+}
+
+SelectorTitle : WOString {
+  value = session.strings.RujelBase_Base.SettingsBase.selectorTitle;
+  escapeHTML = false;
+}
+
+SingleGradeTitle : WOString {
+  value = currEditor.singleTitle;
+  escapeHTML = false;
+}
+
+GradeRangeTitle : WOString {
+  value = currEditor.rangeTitle;
+  escapeHTML = false;
+}
+
+SubmitButton : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  onclick  = "ajaxPost(form);";
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+  style = "margin:1em;";
+}
+
+NotAdvanced : WOConditional {
+  condition = advanced;
+  negate = true;
+}
+
+IsAdvanced : WOConditional {
+  condition = advanced;
+}
+
+FormatField : WOText {
+  value = tmpValues.format;
+  rows = 2;
+  cols = 40;
+}
+ArgumentsField : WOText {
+  value = tmpValues.arguments;
+  rows = 2;
+  cols = 40;
+}
+
+HasMessage : WOConditional {
+  condition = session.message;
+}
+
+Message : WOString {
+	value = session.message;
+	escapeHTML = false;
+}
+
+ExpertButton : WOSubmitButton {
+  action = toggleAdvanced;
+  value = session.strings.RujelBase_Base.SettingsBase.advancedMode;
+  onclick = "return ajaxPost(this);";
+  style = "font-size:small;";
+}
+SimpleButton : WOSubmitButton {
+  action = toggleAdvanced;
+  value = session.strings.RujelBase_Base.SettingsBase.simpleMode;
+  onclick = "return ajaxPost(this);";
+  style = "font-size:small;float:right;";
+}
+
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = tmpValues.section;
+  tablist = application.strings.sections.list;
+  titleAttribute = "value";
+  selectAction = sectionChanged;
+  vertical = true;
+  onClick = onclick;
+}
+
+HasSections : WOConditional {
+  condition = showSections;
+}
+
+CurrSection : WOString {
+  value = tmpValues.section.value;
 }

@@ -2,22 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>title</key>
-	<string>Замененные уроки</string>
-	<key>short</key>
-	<string>замен</string>
-	<key>hover</key>
-	<string>Замененные уроки</string>
-	<key>id</key>
-	<string>substitutes</string>
-	<key>sort</key>
-	<string>35</string>
 	<key>active</key>
 	<false/>
 	<key>entity</key>
 	<string>Substitute</string>
+	<key>hover</key>
+	<string>Замененные уроки</string>
+	<key>id</key>
+	<string>substitutes</string>
+	<key>presenterBindings</key>
+	<dict>
+		<key>numberformat</key>
+		<string>'0</string>
+	</dict>
+	<key>short</key>
+	<string>замен</string>
+	<key>sort</key>
+	<string>35</string>
+	<key>title</key>
+	<string>Замененные уроки</string>
 	<key>value</key>
 	<dict>
+		<key>cacheResult</key>
+		<true/>
 		<key>className</key>
 		<string>net.rujel.curriculum.Substitute</string>
 		<key>methodName</key>
@@ -30,8 +37,6 @@
 		<array>
 			<string>.lessons</string>
 		</array>
-		<key>cacheResult</key>
-		<true/>
 	</dict>
 </dict>
 </plist>

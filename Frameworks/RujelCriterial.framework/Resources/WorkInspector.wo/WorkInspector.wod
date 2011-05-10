@@ -20,7 +20,7 @@ AnnounceDate : WOTextField {
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
+	class = "date required";
 }
 
 Date: WOTextField {
@@ -29,7 +29,7 @@ Date: WOTextField {
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
+	class = "date required";
 }
 
 WeightTitle: WOString {
@@ -44,8 +44,8 @@ WorkWeight: WOTextField {
 	size = 3;
 	value = dict.trimmedWeight;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
-	disabled =dict.workType.namedFlags.fixWeight;
+	class = "decimal required";
+	disabled = dict.workType.namedFlags.fixWeight;
 	name = "weight";
 }
 
@@ -110,6 +110,7 @@ NameField : WOText {
   value = dict.theme;
   rows = 3;
   style = "width:96%;";
+  class = "required";
 }
 
 LoadTitle: WOString {
@@ -127,7 +128,7 @@ Hours : WOTextField {
   size = 2;
   style = "text-align:center;";
   numberformat = "0";
-  onkeypress = "return isNumberInput(event,false);";
+  class = "numeric";
 }
 
 Minutes : WOTextField {
@@ -135,7 +136,7 @@ Minutes : WOTextField {
   size = 2;
   style = "text-align:center;";
   numberformat = "0";
-  onkeypress = "return isNumberInput(event,false);";
+  class = "numeric";
 }
 
 CritCount : WOGenericElement {
@@ -187,8 +188,8 @@ WeightField : WOGenericElement {
 	size = 2;
 	value = criterWeight;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event);";
 	disabled = disableWeight;
+	class = "numeric";
 }
 
 Save: WOGenericElement {

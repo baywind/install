@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ENTER_DT"; 
+            name = enter; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_GROUP"; 
+            name = groupID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LEAVE_DT"; 
+            name = leave; 
+            prototypeName = date; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "T_ID"; 
+            name = pKey; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "TEACHER_ID"; 
+            name = teacherID; 
+            prototypeName = "int_3"; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (enter, groupID, leave, teacherID); 
+    className = "net.rujel.vselists.VseTutor"; 
+    classProperties = (eduGroup, enter, leave, teacher); 
+    externalName = "VSE_TUTOR"; 
+    fetchSpecificationDictionary = {}; 
+    name = VseTutor; 
+    primaryKeyAttributes = (pKey); 
+    relationships = (
+        {
+            destination = VseEduGroup; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = grID; sourceAttribute = groupID; }); 
+            name = eduGroup; 
+        }, 
+        {
+            destination = VseTeacher; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tID; sourceAttribute = teacherID; }); 
+            name = teacher; 
+        }
+    ); 
+}

@@ -1,7 +1,3 @@
-ActionURL1: WOActionURL {
-	pageName = "DumbUpload";
-}
-
 ActionURL2: WOActionURL {
 	action = gogogo;
 }

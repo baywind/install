@@ -15,13 +15,19 @@
 	<dict>
 		<key>root</key>
 		<string>1023</string>
-		<key>zavuch</key>
-		<string>15</string>
 		<key>any</key>
 		<string>1</string>
 	</dict>
 	<key>ManageUsers</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>root</key>
+			<dict>
+				<key>zavuch</key>
+				<string>1</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>zavuch</key>

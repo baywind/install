@@ -105,6 +105,10 @@
 		<string>Установить закладку</string>
 		<key>removeTab</key>
 		<string>Снять закладку</string>
+		<key>manTab</key>
+		<string>Выбор</string>
+		<key>manualTab</key>
+		<string>Задать параметры выборки вручную</string>
 	</dict>
 	<key>SubgroupEditor</key>
 	<dict>

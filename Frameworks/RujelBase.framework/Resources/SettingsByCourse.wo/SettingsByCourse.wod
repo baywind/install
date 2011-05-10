@@ -27,6 +27,8 @@ ByCoursePresenter : ByCoursePresenter {
   access = ^access;
   pushByCourse = "^pushByCourse";
   editList = byCourse;
+  rowspan = rowspan;
+  editors = editors;
 }
 
 
@@ -74,4 +76,101 @@ BaseTitle : WOString {
   value = session.strings.RujelBase_Base.SettingsBase.setDefault;
   valueWhenEmpty = "set base";
   escapeHTML = false;
+}
+
+CondCell : WOGenericContainer {
+  elementName = "td";
+  rowspan = rowspan;
+  omitTags = omitCell;
+  class = cellClass;
+}
+
+CanSort : WOConditional {
+  condition = canSort;
+}
+
+SortCell : WOGenericContainer {
+  elementName = "td";
+  rowspan = rowspan;
+}
+
+MoveUp: WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "center";
+	valign = "top";
+	onclick="up(get(this,'tr',0),get(this,'td',0).rowSpan);reorder();";
+	style = "cursor:pointer;";
+}
+MoveDown: WOImage {
+	align = "center";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(get(this,'tr',0),get(this,'td',0).rowSpan);reorder();";
+	style = "cursor:pointer;";
+}
+ItemSorting : WOTextField {
+  value = item.sort;
+  numberformat = "0";
+  class = "sorting";
+}
+BaseString : WOString {
+  value = application.strings.RujelBase_Base.SettingsBase.default;
+  escapeHTML = false;
+}
+SortForm : WOForm {
+  action = saveSort;
+}
+
+SaveSort : WOImage {
+  filename = "button_ok.gif";
+  framework = "app";
+  onclick = "enumerate(get(this,'table',0),'sorting',1);get(this,'form',0).submit();";
+  title = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+
+Title : WOString {
+  value = title;
+  escapeHTML = false;
+}
+
+ShowBase : WOConditional {
+  condition = ^selector;
+  negate = true;
+}
+
+TestSort : OnClickContainer {
+  elementName = "th";
+  width = "24";
+  rowspan = "2";
+  onclick = session.ajaxPopup;
+  invokeAction = testCourse;
+  id = "testSort";
+  style = "font-size:150%;";
+  title = session.strings.RujelBase_Base.SettingsBase.testSettings;
+  class = "button";
+}
+
+ShowCourse : WOConditional {
+  condition = item;
+}
+
+CourseClass : WOString {
+  value = selector.eduGroup.name;
+}
+
+CourseSubject : WOString {
+  value = selector.subjectWithComment;
+  escapeHTML = false;
+}
+
+CourseTeacher : PersonDisplay {
+  person = selector.teacher;
+  startWithLast = true;
+  last = 2;
+  first = 1;
+  second = 1;
+  emptyStyle = "font-style:italic;";
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
 }

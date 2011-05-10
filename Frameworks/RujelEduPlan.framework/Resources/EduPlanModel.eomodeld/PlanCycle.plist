@@ -10,12 +10,6 @@
         }, 
         {
             allowsNull = N; 
-            columnName = "LEVEL_EDU"; 
-            name = level; 
-            prototypeName = short; 
-        }, 
-        {
-            allowsNull = N; 
             columnName = "SCHOOL_NUM"; 
             name = school; 
             prototypeName = short; 
@@ -31,11 +25,17 @@
             isReadOnly = Y; 
             name = subject; 
             prototypeName = word; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_SECTION"; 
+            name = section; 
+            prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (grade, level, school, subjID, subject); 
+    attributesUsedForLocking = (grade, school, subjID, subject, section); 
     className = "net.rujel.eduplan.PlanCycle"; 
-    classProperties = (grade, level, planHours, school, subject, subjectEO); 
+    classProperties = (grade, planHours, school, section, subject, subjectEO); 
     externalName = "PL_CYCLE"; 
     fetchSpecificationDictionary = {}; 
     name = PlanCycle; 

@@ -255,3 +255,16 @@ MarkValue : WOString {
 NotManual : WOConditional {
   condition = eduPeriod.namedFlags._manual;
 }
+
+PerformPrognos : OnClickContainer {
+  elementName = "div";
+  id = "performPrognos";
+  class = "orange";
+  invokeAction = perform;
+  hide = cantPerform;
+  onclick = performOnClick;
+}
+PerformTitle : WOString {
+  value = application.strings.RujelAutoItog_AutoItog.ui.perform;
+  escapeHTML = false;
+}

@@ -63,6 +63,16 @@ LessonRow: OnClickContainer {
 	style = lessonProperties.style;
 	disabled = disableRow;
 }
+LessonNotePresenter: WOSwitchComponent {
+	WOComponentName = studentPresenter;
+	lesson = lessonItem;
+	isSelected = true;
+	readOnly = false;
+	student = ^student;
+	denyCreation = false;
+	single=true;
+	full=true;
+}
 StudentPresenter: WOSwitchComponent {
 	WOComponentName = studentPresenter;
 	lesson = lessonItem;
@@ -73,7 +83,6 @@ StudentPresenter: WOSwitchComponent {
 	single=true;
 	full=true;
 }
-
 LessonNumber: WOString {
 	numberformat = "0";
 	value = lessonItem.number;

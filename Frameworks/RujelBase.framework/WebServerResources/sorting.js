@@ -25,7 +25,7 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
-function up(obj) {
+function up(obj,span) {
 	var prev = obj.previousSibling;
 		if(prev == null)
 			return;
@@ -35,18 +35,31 @@ function up(obj) {
 			return;
 	}
 	var parent = obj.parentNode;
-	var lost = parent.removeChild(obj);
-	parent.insertBefore(lost,prev);
+	if(!span)
+		span = 1;
+	while(span > 0) {
+		var lost = parent.removeChild(obj);
+		parent.insertBefore(lost,prev);
+		obj = prev.nextSibling;
+		while(prev.nodeName.toLowerCase() != obj.nodeName.toLowerCase()) {
+			obj = obj.nextSibling;
+			if(obj == null)
+				return;
+		}
+		span--;
+	}
 }
 
-function down(obj) {
-	var next = obj.nextSibling;
-		if(next == null)
-			return;
-	while(next.nodeName.toLowerCase() != obj.nodeName.toLowerCase()) {
+function down(obj,span) {
+	if(!span)
+		span = 1;
+	var next = obj;
+	while(span > 0) {
 		next = next.nextSibling;
 		if(next == null)
 			return;
+		if(next.nodeName.toLowerCase() == obj.nodeName.toLowerCase())
+			span--;
 	}
 	var parent = obj.parentNode;
 	var lost = parent.removeChild(next);

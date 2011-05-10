@@ -1,12 +1,14 @@
+<webobject name = "Form"><input type = "submit"  style = "float:left;visibility:hidden;"/>
 <h2><webobject name = "Title"/></h2>
-<webobject name = "Form"><table width = "100%"><tr>
-<td><table>
-	<thead><webobject name = "ShowBatch"><tr><td style = "height:2em;"></td>
-		<td style = "white-space:nowrap;">
-			<input type = "submit" style = "display:none;" />
+<table width = "100%"><tr>
+<td valign = "top"><table>
+	<thead><webobject name = "ShowSelector"><tr>
+		<td style = "height:2em;"><webobject name = "UserSearch"/></td>
+		<td style = "white-space:nowrap;"><webobject name = "ShowBatch">
 			<webobject name = "PrevButton"/>
 			<webobject name = "BatchNum"/> / <webobject name = "BatchCount"/>
-			<webobject name = "NextButton"/>
+			<webobject name = "NextButton"/></webobject>
+			<webobject name = "ShowAll"><webobject name = "NoLimit"/></webobject>
 		</td>
 	</tr></webobject><tr>
 		<th><webobject name = "UsernameTitle"/></th>
@@ -20,7 +22,7 @@
 		<td><webobject name = "UserPerson"/></td>
 	</webobject></webobject></tbody>
 </table></td>
-<td class = "backfield2"><webobject name = "SelectedUser">
+<td class = "backfield2" width = "30%"><webobject name = "SelectedUser">
 	<table align = "center"><tfoot><tr><td colspan = "2">
 		<webobject name = "Save"/>  <webobject name = "Delete"/>
 	</td></tr></tfoot><tbody>
@@ -36,26 +38,50 @@
 		</webobject><webobject name = "NoParent"><webobject name = "AttachParent"/>
 	</webobject></td></tr></webobject></tbody></table>
 	</webobject><webobject name = "SelectedGroup">
-	<table align = "center"><tfoot><tr><td colspan = "2">
-		<webobject name = "Save"/>  <webobject name = "Delete"/>
-	</td></tr></tfoot><tbody>
+	<table>
 	<tr><th align = "right"><webobject name = "GroupNameTitle"/>:</th>
-		<td><webobject name = "GroupNameField"/></td></tr>
-	<webobject name = "ParentAvailable"><tr>
-		<th align = "right"><webobject name = "ExternalTitle"/>:</th>
-		<td><webobject name = "ExternalName"/></td></tr></webobject>
-	</tbody></table></webobject>
-</td>
-<td valign = "top"><table width = "100%">
-<thead><tr><webobject name = "SelectedUser">
-		<th style = "width:2em;" class = "backfield2">?</th></webobject>
-		<th><webobject name = "GroupsTitle"/></th></tr>
-</thead><tfoot>
+		<td align = "left"><webobject name = "GroupNameField"/></td></tr>
+	<tr><th align = "right"><webobject name = "SectionTitle"/>:</th>
+		<td align = "left"><webobject name = "Section"/></td></tr>
+	<webobject name = "ParentAvailable">
+	<tr><th align = "right"><webobject name = "ExternalTitle"/>:</th>
+		<td align = "left"><webobject name = "ExternalName"/></td></tr>
+	<tr><td colspan = "2" style = "padding:1ex;"><webobject name = "SaveGroup"/>
+		</td></tr></webobject>
+	</table>
+	</webobject>
+</td><td valign = "top">
+<script type = "text/javascript" language = "javascript">
+	function toggleGeneral(box) {
+		var found = get(box,'tr').getElementsByTagName('input');
+		for(var i = 1; i < found.length; i++) {
+			found[i].disabled = box.checked;
+			found[i].checked = box.checked || found[i].defaultChecked;
+		}
+	}
+</script>
+<table width = "100%">
+<thead><tr><th><webobject name = "GroupsTitle"/></th>
+	<th  style = "width:3ex;">...</th><webobject name = "Sections">
+	<webobject name = "SectionTH"><webobject name = "SectionNum"/></webobject></webobject>
+</tr></thead><webobject name = "NoUserSelected"><tfoot>
 	<webobject name = "AddGroup"><td><webobject name = "Add"/></td></webobject>
-</tfoot><tbody><webobject name = "GroupsList">
-	<tr><webobject name = "SelectedUser">
-		<td class = "backfield2"><webobject name = "IsInGroup"/></td></webobject>
-		<webobject name = "GroupCell"><webobject name = "GroupName"/></webobject></tr>
+	<tr id = "newGroup" style = "display:none;" class = "green"><td align = "left">
+	<webobject name = "NewGroupName"></webobject>
+	</td></tr>
+</tfoot></webobject><tbody><webobject name = "GroupsList">
+	<tr class = "backfield2"><td align = "left" style = "white-space:nowrap;">
+	<webobject name = "GroupName"/></td>
+	<webobject name = "GroupCell"><webobject name = "SelectedUser">
+		<webobject name = "IsInGeneralGroup"/></webobject></webobject>
+	<webobject name = "Sections"><webobject name = "GroupCell">
+		<webobject name = "SelectedUser"><webobject name = "IsInGroup"/>
+			</webobject></webobject></webobject></tr>
 </webobject></tbody>
-</table></td>
+</table>
+<table align = "right"><webobject name = "Sections">
+<tr><th><webobject name = "SectionNum"/> -</th>
+	<td align = "left"><webobject name = "SectionName"/></td></tr>
+</webobject></table>
+</td>
 </tr></table></webobject>

@@ -11,9 +11,9 @@
 	<key>edu</key>
 	<dict>
 		<key>minGrade</key>
-		<string>1</string>
+		<integer>1</integer>
 		<key>maxGrade</key>
-		<string>11</string>
+		<integer>11</integer>
 	</dict>
 </dict>
 </plist>

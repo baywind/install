@@ -17,13 +17,6 @@ CanDelete: WOConditional {
 	condition = access.delete;
 }
 
-CancelButton: WOGenericElement {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
-	type = "button";
-	elementName = "input";
-	onclick = "closePopup();";
-}
-
 DeleteButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;

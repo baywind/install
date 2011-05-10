@@ -1,26 +1,52 @@
 <div class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
-<table cellpadding = "0" cellspacing = "0" border = "1" style = "border-collapse:collapse;"><tr>
-	<td style = "min-width:6em;" valign = "top"><table width = "100%"><webobject name = "Grades">
-		<tr><webobject name = "GradeCell"><webobject name = "Grade"/></webobject>
-			<td><webobject name = "Groups"><webobject name = "GroupCell">
-				<webobject name = "GroupName"/></webobject></webobject></td>
-	</tr></webobject></table></td>
+<table cellpadding = "0" cellspacing = "0" border = "1" style = "border-collapse:collapse;">
+<tr><td colspan = "2" style = "padding:5px;font-size:large;font-weight:bold;">
+	<webobject name = "SelectorTitle"/></td></tr>
+<tr><td valign = "top"><webobject name = "Form">
+	<table width = "100%"><webobject name = "NotAdvanced">
+	<tr><td width = "180"></td><td align = "right"><webobject name = "ExpertButton"/></td></tr> 
+	<webobject name = "QueryParams"/></webobject>
+	<tr><td colspan = "2"><webobject name = "IsAdvanced">
+		<webobject name = "SimpleButton"/>
+		<div><strong>Format:</strong><br/>
+		<webobject name = "FormatField"/></div>
+		<div><strong>Arguments:</strong><br/>
+		<webobject name = "ArgumentsField"/></div>
+	</webobject>
+		<webobject name = "SaveButton"/>
+		<webobject name = "CurrYear"/> <webobject name = "Year"/></td></tr>
+	</table></webobject>
+</td><td valign = "top"><webobject name = "HasSelection">
+<webobject name = "HasSections">
+<div style = "text-align:left;padding:3px;margin-top:2px;"
+ onmouseover = "hideObj('SectionTitle',true);showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle',true)">
+<div id = "SectionTabs" style = "display:none;position:absolute;">
+<webobject name = "SectionTabs"/></div><span id = "SectionTitle" style = "padding:3px;border:1px solid #999999;" class = "green">
+	<webobject name = "CurrSection"/></span>
+</div></webobject>
+<webobject name = "IfGrade"><webobject name = "GradeForm">
+	<div style = "text-decoration:underline;"><webobject name = "SingleGradeTitle"/></div>
+	<div style = "margin-bottom:1em;">= <webobject name = "GradeSelector"/></div>
+	<div style = "text-decoration:underline;"><webobject name = "GradeRangeTitle"/></div>
+	<div><webobject name = "GradeMin"/> ... <webobject name = "GradeMax"/></div>
+		<webobject name = "SubmitButton"/>
+	</webobject>
+	</webobject><webobject name = "IfSubject"><webobject name = "RegexForm">
+		<webobject name = "SubjectRegex"/><br/>
+		<input type = "button" onclick  = "ajaxPost(form);" value = "OK"/></webobject>
+	</webobject><webobject name = "IfCycle"><table><tr>
+	<td style = "min-width:4em;" valign = "top"><table width = "100%"><webobject name = "Grades">
+		<td><webobject name = "Grade"/></td>
+	</webobject></table></td>
 	<td style = "min-width:16em;" valign = "top"><table width = "100%"><webobject name = "Cycles">
-	<webobject name = "CycleRow"><webobject name = "CycleCell"><webobject name = "Subject"/></webobject>
-		<td class = "grey"><webobject name = "Courses">
-			<webobject name = "CourseCell"><em><webobject name = "CourseComment"/></em>
-				<webobject name = "CourseTeacher"/></webobject>
-		</webobject></td>
+	<webobject name = "CycleRow"><td><webobject name = "Subject"/></td>
+			<webobject name = "HasExtra"><td><webobject name = "CycleInfo"/></td></webobject>
 		</webobject></webobject></table></td>
+</tr></table>
+	</webobject><webobject name = "IfPresent"><webobject name = "EditorPresent"></webobject>	
+	</webobject></webobject></td>
 </tr>
-<webobject name = "HasSelection">
-	<tr><td colspan = "2">
-	<table align = "left" width = "100%"><webobject name = "ByCoursePresenter">
-	<td class = "orange selectionBorder" style = "width:8em;"><webobject name = "Form"><webobject name = "SubmitButton"/>
-		<span style = "white-space:nowrap;"><webobject name = "CurrYear"/> <webobject name = "Year"/></span></webobject>
-	</td></webobject></table>
-	</td></tr>
-</webobject>
-
 </table>
 </div>
+<webobject name = "HasMessage"><div class = "messageAjax">
+<webobject name = "Message"/></div></webobject>

@@ -8,16 +8,13 @@ RowIdx : WOString {
 }
 
 Form : WOForm {
+  onsubmit = ^onsubmit;
 }
 
 RowValue : WOTextField {
   value = rowItem.value;
-  size = 10;
-}
-
-RowCommentText : WOString {
-  value = rowItem.comment;
-  valueWhenEmpty = "-=-";
+  size = ^valueSize;
+  disabled = ^access._edit;
 }
 
 DefaultValue : WOTextField {
@@ -43,9 +40,10 @@ FormatString : WOTextField {
 DeleteCell : OnClickContainer {
   elementName = "td";
   invokeAction = delete;
-  onclick = session.confirmMessage;
+  onclick = onclick;
   title = session.strings.Reusables_Strings.uiElements.Delete;
   style = "color:#cc3333;width:3ex;";
+  hide = ^access._delete;
 }
 
 NewIndex : WOTextField {
@@ -59,7 +57,7 @@ NewIndex : WOTextField {
 
 NewValue : WOTextField {
   value = newValue;
-  size = 10;
+  size = ^valueSize;
 }
 
 Save : WOSubmitButton {
@@ -77,6 +75,7 @@ AddRowToggle : OnClickContainer {
   onclick = "showObj('newIndexRow');hideObj(this);";
   class = "orange";
   id = "addIndex";
+  hide = ^access._create;
 }
 
 AddTitle : WOString {
@@ -89,16 +88,23 @@ TitleTitle : WOString {
 }
 
 ValueTitle : WOString {
-  value = session.strings.RujelBase_Base.Indexer.value;
+  value = ^valueTitle;
+  valueWhenEmpty = session.strings.RujelBase_Base.Indexer.value;
+  escapeHTML = false;
+}
+
+IdxCommentTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.comment;
   escapeHTML = false;
 }
 
 CommentTitle : WOString {
-  value = session.strings.Reusables_Strings.dataTypes.comment;
+  value = ^commentTitle;
+  escapeHTML = false;
 }
 
 IdxTitle : WOString {
-  value = session.strings.RujelBase_Base.Indexer.idx;
+  value = ^idxTitle;
   valueWhenEmpty = "№";
   escapeHTML = false;
 }
@@ -113,4 +119,16 @@ DefaultInfoCell : WOGenericContainer {
   elementName = "td";
   title = session.strings.RujelBase_Base.Indexer.defaultHover;
   colspan = 2;
+}
+
+IfDelete : WOGenericContainer {
+  elementName = "td";
+  omitTags = ^access._delete;
+}
+
+ComponentContent : WOComponentContent {
+}
+
+ShowHeader : WOConditional {
+  condition = ^showHeader;
 }

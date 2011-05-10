@@ -1,4 +1,5 @@
-<webobject name = "PageWrapper">
+<webobject name = "PageWrapper"><webobject name = "HasSections">
+<div style = "float:left;"><webobject name = "SectionTabs"/></div></webobject>
 <h1><webobject name = "Title"/></h1>
 
 <table align = "center">
@@ -14,14 +15,20 @@
 		<webobject name = "AddClass">+</webobject></td>
 	<td class = "backfield1"><webobject name = "Form"><table>
 	<thead>
-		<tr><webobject name = "EditGroup">
+		<tr><webobject name = "ShowTicks"><td></td></webobject><webobject name = "EditGroup">
 			<webobject name = "GroupTitle"/></webobject>
-					<webobject name = "ShowAllToggle"><webobject name = "ShowAllBox"/>
-			<webobject name = "ShowAllTitle"/></webobject></tr>
-		<tr><webobject name = "ShowTicks"><td style = "width:2em;"></td></webobject>
-			<th><webobject name = "LastNameTitle"/> <webobject name = "FirstNameTitle"/></th>
-			<th><webobject name = "EnterTitle"/></th>
-			<th><webobject name = "LeaveTitle"/></th></tr>
+					<webobject name = "ShowAllToggle">
+			<webobject name = "ShowAllTitle"/></webobject></tr><webobject name = "IsEduGroup">
+		<tr><webobject name = "ShowTicks"><td></td></webobject>
+			<webobject name = "ChooseTutor"><webobject name = "TutorTitle"/></webobject>
+			<td><webobject name = "SinceTitle"/></td>
+			<td><webobject name = "ToTitle"/></td>
+		</tr><webobject name = "Tutors"><webobject name = "Row">
+		<webobject name = "ShowTicks"><td class = "backfield1"></td></webobject>
+		<webobject name = "TutorCell"><webobject name = "TutorName"/></webobject>
+		<td><webobject name = "Enter"/></td>
+		<td><webobject name = "Leave"/></td>
+	</webobject></webobject></webobject>
 	</thead><webobject name = "CanChange"><tfoot>
 		<tr><webobject name = "ShowTicks"><td></td></webobject>
 			<td colspan = "3" align = "right">
@@ -32,11 +39,15 @@
 			<td colspan = "4" align = "left"><webobject name = "Ticker"/></td></tr>
 		<tr><td><webobject name = "TickCount"/></td>
 		<td colspan = "3"><webobject name = "ActionPopup"/>
-			<webobject name = "DateTitle"/>:
+			<webobject name = "SinceTitle"/>:
 			<webobject name = "DateField"/> 
 			<webobject name = "SubmitAction"/></td></tr></webobject>
 	</tfoot></webobject>
-	<tbody><webobject name = "PersonSelector"><webobject name = "Row">
+	<tbody><tr><webobject name = "ShowTicks"><td style = "width:2em;"></td></webobject>
+			<th><webobject name = "LastNameTitle"/> <webobject name = "FirstNameTitle"/></th>
+			<th><webobject name = "EnterTitle"/></th>
+			<th><webobject name = "LeaveTitle"/></th></tr>
+		<webobject name = "PersonSelector"><webobject name = "Row">
 		<webobject name = "ShowTicks"><td><webobject name = "Tick"/></td></webobject>
 		<webobject name = "NameCell"><webobject name = "Name"/></webobject>
 		<td><webobject name = "Enter"/></td>

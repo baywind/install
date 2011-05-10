@@ -16,9 +16,66 @@ function cancel() {
   	closePopup();
   }
 }
+<webobject name = "ShowAll">
+var selectedCell = null;
+function selectCell(cell) {
+	if(cell == selectedCell) {
+		selectedCell.style.borderStyle = 'none';
+		selectedCell = null;
+		return;
+	}
+	if(selectedCell && selectedCell.parentNode != cell.parentNode) {
+		selectedCell.style.borderStyle = 'none';
+		selectedCell = null;
+	}
+	if(!selectedCell) {
+		selectedCell = cell;
+		cell.className = "selectionBorder";
+		cell.style.borderWidth = '1px';
+		cell.style.borderStyle = 'solid';
+		return;
+	}
+	var field1 = selectedCell.getElementsByTagName('input')[0];
+	var field2 = cell.getElementsByTagName('input')[0];
+	var tmp = field1.value;
+	field1.value = field2.value;
+	field2.value = tmp;
+	selectedCell.style.borderStyle = 'none';
+	cell.className = (field2.value == field2.defaultValue)?'':'highlight2';
+	selectedCell.className = (field1.value == field1.defaultValue)?'':'highlight2';
+	tmp = selectedCell.nextSibling;
+	selectedCell = selectedCell.parentNode.removeChild(selectedCell);
+	cell.parentNode.insertBefore(selectedCell,cell);
+	cell = cell.parentNode.removeChild(cell);
+	if(tmp)
+		selectedCell.parentNode.insertBefore(cell,tmp);
+	else
+		selectedCell.parentNode.appendChild(cell);
+	selectedCell = null;
+}
+
+function cDim(cell) {
+	if(selectedCell && selectedCell.parentNode != cell.parentNode)
+		return;
+	dim(cell);
+}
+function cUnDim(cell) {
+	if(selectedCell && selectedCell.parentNode != cell.parentNode)
+		return;
+	unDim(cell);
+}
+</webobject>
 </script>
 <div style = "float:right;">
-<webobject name = "TotalToggle"/></div>
+<webobject name = "TotalToggle"/>
+<div style = "margin-top:1em;border:1px solid #999999;"><webobject name = "SetupSections">
+<webobject name = "SectionsTitle"/></webobject>
+<webobject name = "Sections"><webobject name = "SectionContainer">
+<webobject name = "SectionNum"/>: <webobject name = "SectionTitle"/>
+</webobject></webobject>
+<webobject name = "SectionContainer"><webobject name = "AllTitle"/></webobject>
+</div>
+</div>
 <webobject name = "Form">
 <table cellpadding = "2" align = "left" class = "backfield1" style = "padding:1ex 1em;">
 	<thead>
@@ -32,17 +89,22 @@ function cancel() {
 			<webobject name = "CanAddSubject"><webobject name = "AddSuject">
 			<webobject name = "PlusImage"/></webobject></webobject>
 			<webobject name = "SubjectName"/>
-			</th>
+			</th><webobject name = "HasSection">
 			<webobject name = "GroupsCell"><webobject name = "GroupsTitle"/></webobject>
-			<webobject name = "CyclesRepetition">
-				<th style="width:2em;"><webobject name = "GradeTitle"/></th>
+			</webobject><webobject name = "CyclesRepetition">
+				<th style="width:2em;"><webobject name = "GradeTitle"/><webobject name = "ShowAll">
+				<table cellpadding = "2" cellspacing = "0" border = "1" width = "100%"
+					 style = "font-size:75%;border-collapse:collapse;border:solid 1px #cccccc;">
+					<tr><webobject name = "Sections">
+					<td><webobject name = "SectionNum"/></td>
+					</webobject></tr></table></webobject></th>
 			</webobject>
 			<webobject name = "OpenDetails"><webobject name = "InspectorImage"/></webobject>
 		</tr>
 		</thead>
 		<tfoot><tr>
 			<webobject name = "TogleAllButton"><webobject name = "ToggleAll"/></webobject>
-		</tr><webobject name = "CanEdit">
+		</tr><webobject name = "CanSave">
 	<tr><webobject name = "Colspan">
 		<webobject name="Save"/> <webobject name="Cancel"/>
 	</webobject></tr></webobject></tfoot>
@@ -52,7 +114,9 @@ function cancel() {
 			<webobject name = "SubjectRow">
 				<webobject name = "AreaCell"><webobject name = "Area"/></webobject>
 				<webobject name = "SubjectCell"><webobject name = "Subject"/></webobject>
-				<webobject name = "GroupsCell2"><webobject name = "GroupsField"/></webobject>
+				<webobject name = "HasSection">
+					<webobject name = "GroupsCell2"><webobject name = "GroupsField"/>
+					</webobject></webobject>
 				<webobject name = "CyclesRepetition">
 					<webobject name = "CycleCell">
 					<webobject name = "CanEdit">
@@ -60,7 +124,12 @@ function cancel() {
 					</webobject>
 					<webobject name = "CntEdit">
 					<webobject name = "ReadHours"/>
-					</webobject>
+					</webobject><webobject name = "ShowAll">
+					<table cellpadding = "2" cellspacing = "0" width = "100%"><tr> 
+					<webobject name = "Sections">
+	<td onmouseover = "cDim(this);" onmouseout = "cUnDim(this);" onclick = "selectCell(this);">
+					<webobject name = "ReadHours"/><webobject name = "CycleLevel"/></td>
+					</webobject></tr></table></webobject>
 				</webobject>
 				</webobject>
 			<webobject name = "OpenDetails">&gt;</webobject>

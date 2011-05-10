@@ -28,10 +28,6 @@ Subject : WOString {
   value = courseItem.cycle.subject;
 }
 
-HasComment : WOConditional {
-  condition = courseItem.comment;
-}
-
 CourseComment : WOString {
   value = courseItem.comment;
 }

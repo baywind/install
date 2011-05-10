@@ -62,6 +62,7 @@
             externalType = TIMESTAMP; 
             internalInfo = {"_nameInObjectStore" = DATE; }; 
             name = timestamp; 
+            serverTimeZone = "Europe/Moscow"; 
             valueClassName = NSCalendarDate; 
             valueType = T; 
         }, 

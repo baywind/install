@@ -5,7 +5,8 @@ OnClickContainer: OnClickContainer {
 	bgcolor = color;
 	elementName = elementName;
 	disabled = disabled;
-	class = style;
+	class = styleClass;
+	style = ^style;
 	invokeAction = ^selectAction;
 	onclick = ^onClick;
 	title = ^hover;

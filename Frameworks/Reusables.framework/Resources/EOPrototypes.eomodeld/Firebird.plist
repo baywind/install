@@ -122,6 +122,7 @@
             columnName = timestamp; 
             externalType = TIMESTAMP; 
             name = timestamp; 
+            serverTimeZone = "Europe/Moscow"; 
             valueClassName = NSCalendarDate; 
             valueType = T; 
         }, 

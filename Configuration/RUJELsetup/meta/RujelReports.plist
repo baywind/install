@@ -46,6 +46,33 @@
 			<key>advanced</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>key</key>
+			<string>ui</string>
+			<key>type</key>
+			<string>Dictionary</string>
+			<key>title</key>
+			<string>отображене</string>
+			<key>description</key>
+			<string>Настройка отображения результатов</string>
+			<key>keys</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>limitReportRows</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>ограничение строк</string>
+					<key>description</key>
+					<string>Максимально допустимое количество строк в результате выборки. Ограничение для защиты от переполнения памяти.</string>
+					<key>defaultValue</key>
+					<string>0 (не ограничено)</string>
+					<key>advanced</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

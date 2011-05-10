@@ -9,10 +9,6 @@ CheckBox1: WOCheckBox {
 	onclick = "modifyRowClass(this);";
 }
 
-HasClass: WOConditional {
-	condition = currClass;
-}
-
 RowContainer: WOGenericContainer {
 	class = rowStyle;
 	elementName = "tr";

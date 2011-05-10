@@ -18,7 +18,7 @@
             allowsNull = N; 
             columnName = "S_ID"; 
             name = sID; 
-            prototypeName = "int_3"; 
+            prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
@@ -30,7 +30,7 @@
     ); 
     attributesUsedForLocking = (key, numericValue, textValue); 
     className = "net.rujel.base.SettingsBase"; 
-    classProperties = (byCourse, key, numericValue, textValue); 
+    classProperties = (key, numericValue, qualifiedSettings, textValue); 
     externalName = "BASE_SETTINGS"; 
     fetchSpecificationDictionary = {}; 
     name = SettingsBase; 
@@ -38,12 +38,11 @@
     relationships = (
         {
             deleteRule = EODeleteRuleCascade; 
-            destination = SettingByCourse; 
+            destination = QualifiedSetting; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = settingsID; sourceAttribute = sID; }); 
-            name = byCourse; 
-            ownsDestination = Y; 
+            name = qualifiedSettings; 
         }
     ); 
 }

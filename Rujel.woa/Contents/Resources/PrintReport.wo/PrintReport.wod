@@ -12,10 +12,6 @@ Parent: WOString {
 	value = application.strings.Strings.PrintReport.parent;
 }
 
-PeriodTitle: WOString {
-	value = period.title;
-}
-
 Since: WOString {
 	dateformat = application.prefs.ui.dateFormat;
 	value = since;

@@ -14,8 +14,6 @@ LOCALROOT/Library/Frameworks/RujelAutoItog.framework/Resources/Java/rujelautoito
 LOCALROOT/Library/Frameworks/RujelBase.framework/Resources/Java/rujelbase.jar
 LOCALROOT/Library/Frameworks/RujelComplete.framework/Resources/Java/rujelcomplete.jar
 LOCALROOT/Library/Frameworks/RujelContacts.framework/Resources/Java/rujelcontacts.jar
-LOCALROOT/Library/Frameworks/RujelContacts.framework/Resources/Java/activation.jar
-LOCALROOT/Library/Frameworks/RujelContacts.framework/Resources/Java/mail.jar
 LOCALROOT/Library/Frameworks/RujelCriterial.framework/Resources/Java/rujelcriterial.jar
 LOCALROOT/Library/Frameworks/RujelCurriculum.framework/Resources/Java/rujelcurriculum.jar
 LOCALROOT/Library/Frameworks/RujelEduPlan.framework/Resources/Java/rujeleduplan.jar
@@ -26,6 +24,10 @@ LOCALROOT/Library/Frameworks/RujelStats.framework/Resources/Java/rujelstats.jar
 LOCALROOT/Library/Frameworks/RujelUsers.framework/Resources/Java/rujelusers.jar
 LOCALROOT/Library/Frameworks/RujelVseLists.framework/Resources/Java/rujelvselists.jar
 LOCALROOT/Library/Frameworks/RujelVseobuch.framework/Resources/Java/rujelvseobuch.jar
+LOCALROOT/Library/Frameworks/RujelEmail.framework/Resources/Java/rujelemail.jar
+LOCALROOT/Library/Frameworks/RujelEmail.framework/Resources/Java/activation.jar
+LOCALROOT/Library/Frameworks/RujelEmail.framework/Resources/Java/mail.jar
+WOROOT/Library/Frameworks/JavaWOExtensions.framework/Resources/Java/JavaWOExtensions.jar
 WOROOT/Library/Frameworks/JavaWOExtensions.framework/Resources/Java/javawoextensions.jar
 WOROOT/Library/Frameworks/JavaWOExtensions.framework/WebServerResources/Java/JavaWOExtensions.jar
 WOROOT/Library/Frameworks/JavaEOAccess.framework/Resources/Java/javaeoaccess.jar

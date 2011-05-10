@@ -77,6 +77,17 @@
 				<key>zav_kaf</key>
 				<string>15</string>
 			</dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>zavuch</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
 		</dict>
 		<key>root</key>
 		<string>1023</string>
@@ -87,8 +98,45 @@
 		<key>any</key>
 		<string>1</string>
 	</dict>
+	<key>BaseTab</key>
+	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+				<key>any</key>
+				<string>1</string>
+			</dict>
+		</dict>
+		<key>root</key>
+		<string>1023</string>
+		<key>zavuch</key>
+		<string>15</string>
+		<key>zav_kaf</key>
+		<string>15</string>
+		<key>teacher</key>
+		<string>15</string>
+		<key>any</key>
+		<string>1</string>
+	</dict>
 	<key>CourseAudience</key>
 	<dict>
+		<key>modifiers</key>
+		<dict>
+			<key>completionClosed</key>
+			<dict>
+				<key>root</key>
+				<string>1</string>
+				<key>zavuch</key>
+				<string>1</string>
+				<key>teacher</key>
+				<string>1</string>
+			</dict>
+		</dict>
 		<key>root</key>
 		<string>1023</string>
 		<key>zavuch</key>
@@ -114,7 +162,7 @@
 		<key>any</key>
 		<string>1</string>
 	</dict>
-	<key>SettingByCourse</key>
+	<key>QualifiedSetting</key>
 	<dict>
 		<key>root</key>
 		<string>1023</string>

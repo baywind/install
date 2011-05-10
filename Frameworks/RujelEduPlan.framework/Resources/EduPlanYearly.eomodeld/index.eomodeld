@@ -12,4 +12,10 @@
         {className = EOGenericRecord; name = PlanDetail; }, 
         {className = EOGenericRecord; name = PlanHours; }
     ); 
+    userInfo = {
+        schemaVersion = {
+        	number = 1;
+        	title = "0.9";
+        };
+    }; 
 }

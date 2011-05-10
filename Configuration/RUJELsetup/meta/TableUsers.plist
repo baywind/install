@@ -130,18 +130,6 @@
 					<key>defaultValue</key>
 					<false/>
 				</dict>
-				<dict>
-					<key>key</key>
-					<string>tryUnmappedGroups</string>
-					<key>type</key>
-					<string>Boolean</string>
-					<key>title</key>
-					<string>tryUnmappedGroups</string>
-					<key>description</key>
-					<string>проверять принадлежность пользователя группе по данным база до проверки в LDAP</string>
-					<key>defaultValue</key>
-					<false/>
-				</dict>
 			</array>
 		</dict>
 		<dict>

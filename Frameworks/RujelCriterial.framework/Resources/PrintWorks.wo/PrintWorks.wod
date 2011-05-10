@@ -75,10 +75,6 @@ CritMaximum: WOString {
 	value = critMax;
 	escapeHTML = false;
 }
-Cell: WOGenericContainer {
-  elementName = "td";
-  rowspan = rowspan;
-}
 
 HasHometask : WOConditional {
   condition = work.homeTask;

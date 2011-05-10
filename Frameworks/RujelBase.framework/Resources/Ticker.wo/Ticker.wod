@@ -62,11 +62,6 @@ CheckAll2: WOGenericElement {
 	onclick="setAll(false);checked=defaultChecked;";
 }
 
-FormIdentifier: WOString {
-	value = ^form;
-	valueWhenEmpty = "document.forms[0]";
-}
-
 All: WOString {
 	value = ^all;
 	valueWhenEmpty = "null";

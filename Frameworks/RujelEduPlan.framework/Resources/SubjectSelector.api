@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="SubjectSelector.java" wocomponentcontent="false">
+
+        <binding name="currDict"/>
+        <validation message="'currDict' must be bound to a settable value">
+            <unsettable name="currDict"/>
+        </validation>
+        <binding name="selection"/>
+        <validation message="'selection' must be bound to a settable value">
+            <unsettable name="selection"/>
+        </validation>
+        <binding name="ec"/>
+        <validation message="'ec' is a required binding.">
+            <unbound name="ec"/>
+        </validation>
+    <binding name="onclick"/>
+    <binding defaults="Actions" name="selectAction"/>
+    <binding defaults="Boolean" name="existingOnly"/>
+    </wo>
+</wodefinitions>

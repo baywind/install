@@ -64,13 +64,6 @@ Regime : WOString {
   escapeHTML = false;
 }
 
-CancelButton: WOGenericElement {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
-	type = "button";
-	elementName = "input";
-	onclick = "closePopup();";
-}
-
 ShowJournales : WOConditional {
   condition = hideJournales;
   negate = true;

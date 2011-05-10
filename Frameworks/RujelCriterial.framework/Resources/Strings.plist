@@ -50,6 +50,13 @@
 	<string>Подробное описание</string>
 	<key>compulsory</key>
 	<string>обязательная</string>
+	<key>titles</key>
+	<dict>
+		<key>idx</key>
+		<string>зн.</string>
+		<key>value</key>
+		<string>предст.</string>
+	</dict>
 	<key>setup</key>
 	<dict>
 		<key>WorkType</key>
@@ -205,6 +212,115 @@
 			<string>criterMask</string>
 			<string>taskText</string>
 		</array>
+		<key>params</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Дата</string>
+				<key>active</key>
+				<false/>
+				<key>attribute</key>
+				<string>date</string>
+				<key>formatter</key>
+				<string>date</string>
+				<key>fieldSize</key>
+				<integer>10</integer>
+				<key>qualifierSelector</key>
+				<string>&gt;=</string>
+				<key>secondSelector</key>
+				<string>&lt;=</string>
+				<key>defaultMax</key>
+				<string>$session.today</string>
+				<key>defaultMin</key>
+				<dict>
+					<key>object</key>
+					<string>$session.today</string>
+					<key>methodName</key>
+					<string>timestampByAddingGregorianUnits</string>
+					<key>cacheResult</key>
+					<true/>
+					<key>paramClasses</key>
+					<array>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<integer>0</integer>
+						<integer>-1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+					</array>
+				</dict>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Тип</string>
+				<key>active</key>
+				<false/>
+				<key>attribute</key>
+				<string>workType</string>
+				<key>select</key>
+				<dict>
+					<key>className</key>
+					<string>com.webobjects.eoaccess.EOUtilities</string>
+					<key>methodName</key>
+					<string>objectsForEntityNamed</string>
+					<key>cacheResult</key>
+					<true/>
+					<key>paramClasses</key>
+					<array>
+						<string>com.webobjects.eocontrol.EOEditingContext</string>
+						<string>java.lang.String</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string>^editingContext</string>
+						<string>&apos;WorkType</string>
+					</array>
+				</dict>
+				<key>displayString</key>
+				<string>.typeName</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Вес</string>
+				<key>attribute</key>
+				<string>weight</string>
+				<key>formatter</key>
+				<string>0.##</string>
+				<key>fieldSize</key>
+				<integer>3</integer>
+				<key>qualifierSelector</key>
+				<string>&gt;=</string>
+				<key>secondSelector</key>
+				<string>&lt;</string>
+				<key>defaultMin</key>
+				<string>0.1</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Обязательная</string>
+				<key>qualifierFormat</key>
+				<string>((flags &gt;= 8 AND flags &lt; 16) OR flags &gt;= 24) AND weight &gt; 0</string>
+				<key>comment</key>
+				<string>нельзя пропустить</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Не домашняя</string>
+				<key>qualifierFormat</key>
+				<string>flags &lt; 16</string>
+				<key>comment</key>
+				<string>все, кроме д/з</string>
+			</dict>
+		</array>
 	</dict>
 	<key>tabs</key>
 	<array>
@@ -307,6 +423,37 @@
 				<string>какие работы показывать в распечатке</string>
 				<key>active</key>
 				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>workType</string>
+				<key>title</key>
+				<string>Тип</string>
+				<key>options</key>
+				<dict>
+					<key>className</key>
+					<string>com.webobjects.eoaccess.EOUtilities</string>
+					<key>methodName</key>
+					<string>objectsForEntityNamed</string>
+					<key>cacheResult</key>
+					<true/>
+					<key>paramClasses</key>
+					<array>
+						<string>com.webobjects.eocontrol.EOEditingContext</string>
+						<string>java.lang.String</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string>$returnPage.ec</string>
+						<string>&apos;WorkType</string>
+					</array>
+				</dict>
+				<key>displayString</key>
+				<string>typeName</string>
+				<key>noSelectionString</key>
+				<string>_все_</string>
+				<key>popUp</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>id</key>

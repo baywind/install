@@ -4,6 +4,16 @@ GRANT ALL PRIVILEGES ON `RujelYear%`.* TO 'rujel'@'localhost' IDENTIFIED BY 'RUJ
 CREATE DATABASE RujelYear2010 DEFAULT CHARACTER SET utf8;
 USE RujelYear2010;
 
+CREATE TABLE SCHEMA_VERSION (
+  MODEL_NAME varchar(255),
+  VERSION_NUMBER smallint unsigned NOT NULL,
+  VERSION_TITLE varchar(255),
+  INSTALL_DATE timestamp
+);
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('BaseYearly',1,'0.9'),('Curriculum',1,'0.9'),('EduPlanYearly',1,'0.9');
+
 CREATE TABLE AI_AUTOITOG (
   AI_ID smallint NOT NULL,
   LIST_NAME varchar(28) NOT NULL,
@@ -158,7 +168,7 @@ CREATE TABLE BASE_TEXT_STORE (
 CREATE TABLE BASE_COURSE (
   CR_ID smallint NOT NULL,
   EDU_CYCLE smallint NOT NULL,
-  EDU_GROUP mediumint NOT NULL,
+  EDU_GROUP mediumint,
   TEACHER_ID mediumint,
   EDU_YEAR smallint NOT NULL,
   COMMENT_TEXT varchar(255),
@@ -185,25 +195,23 @@ CREATE TABLE BASE_INDEX_ROW (
 ) ENGINE=InnoDB;
 
 CREATE TABLE BASE_SETTINGS (
-  S_ID mediumint NOT NULL,
+  S_ID smallint NOT NULL,
   SETTING_KEY varchar(28) NOT NULL,
   TEXT_VALUE varchar(255),
   NUM_VALUE int,
   PRIMARY KEY (S_ID)
 ) ENGINE=InnoDB;
 
-CREATE TABLE BASE_BY_COURSE (
-  SC_ID mediumint NOT NULL,
-  SETTING_ID mediumint NOT NULL,
+CREATE TABLE BASE_QUALIFIED_SETTINGS (
+  QS_ID mediumint NOT NULL,
+  SETTING_ID smallint NOT NULL,
+  QUALIFIER_STRING varchar(255),
+  ARGUMENTS_STRING varchar(255),
   EDU_YEAR smallint,
-  EDU_COURSE smallint,
-  EDU_CYCLE smallint,
-  GRADE_NUM smallint,
-  EDU_GROUP mediumint,
-  TEACHER_ID mediumint,
+  ORDER_KEY smallint NOT NULL,
   TEXT_VALUE varchar(255),
   NUM_VALUE int,
-  PRIMARY KEY (SC_ID)
+  PRIMARY KEY (QS_ID)
 ) ENGINE=InnoDB;
 
 CREATE TABLE CPT_COMPLETION (
@@ -379,6 +387,7 @@ CREATE TABLE CU_VARIATION (
   VAR_DATE date NOT NULL,
   VAR_VALUE tinyint NOT NULL,
   REASON_ID mediumint NOT NULL,
+  LESSON_ID int,
   PRIMARY KEY (V_ID)
 ) ENGINE=InnoDB;
 
@@ -417,12 +426,25 @@ CREATE TABLE PL_EDU_PERIOD (
 
 CREATE TABLE PL_HOLIDAY (
   H_ID smallint NOT NULL,
-  HD_TYPE smallint NOT NULL,
+  HOLIDAY_NAME varchar(28) NOT NULL,
   DATE_BEGIN date NOT NULL,
   DATE_END date NOT NULL,
   LIST_NAME varchar(28),
   PRIMARY KEY (H_ID)
 ) ENGINE=InnoDB;
+
+/* Каникулы и праздники */
+INSERT INTO PL_HOLIDAY (H_ID, HOLIDAY_NAME, DATE_BEGIN, DATE_END) VALUES
+(1,'Осенние каникулы','2010-11-01','2010-11-07'),
+(2,'День народного единства','2010-11-04','2010-11-04'),
+(3,'Зимние каникулы','2010-12-29','2011-01-10'),
+(4,'День защитника отечества','2011-02-23','2011-02-23'),
+(5,'Международный женский день','2011-03-08','2011-03-08'),
+(6,'Весенние каникулы','2011-03-22','2011-03-28'),
+(7,'День весны и труда','2011-05-01','2011-05-01'),
+(8,'День Победы','2011-05-09','2011-05-09'),
+(9,'День России','2011-06-12','2011-06-12');
+
 
 CREATE TABLE PL_HOURS (
   PH_ID smallint NOT NULL,
@@ -506,6 +528,16 @@ GRANT ALL PRIVILEGES ON `RujelStatic`.* TO 'rujel'@'localhost';
 CREATE DATABASE RujelStatic DEFAULT CHARACTER SET utf8;
 USE RujelStatic;
 
+CREATE TABLE SCHEMA_VERSION (
+  MODEL_NAME varchar(255),
+  VERSION_NUMBER smallint unsigned NOT NULL,
+  VERSION_TITLE varchar(255),
+  INSTALL_DATE timestamp
+);
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('EduPlanModel',1,'0.9');
+
 CREATE TABLE BASE_EDU_CYCLE (
   C_ID smallint NOT NULL,
   GRADE_NUM tinyint,
@@ -583,7 +615,7 @@ CREATE TABLE PL_CYCLE (
   GRADE_NUM tinyint NOT NULL,
   SUBJECT_ID smallint NOT NULL,
   SCHOOL_NUM smallint NOT NULL,
-  LEVEL_EDU smallint NOT NULL,
+  EDU_SECTION smallint NOT NULL,
   PRIMARY KEY (C_ID)
 ) ENGINE=InnoDB;
 
@@ -597,28 +629,6 @@ INSERT INTO PL_CYCLE (C_ID,GRADE_NUM,SUBJECT_ID) VALUES
  (55,8,16), (56,9,16), (57,8,17), (61,5,18), (60,8,18), (59,6,18), (58,9,18), (62,7,18),
  (64,11,1), (74,10,4), (63,11,4), (73,10,5), (69,10,1), (68,11,5), (66,11,7), (67,10,12),
  (71,11,12), (70,10,6), (72,11,6), (65,10,7), (76,10,19), (78,11,19), (75,10,18), (77,11,18);
-
-CREATE TABLE PL_HOLIDAY_TYPE (
-  HT_ID smallint NOT NULL,
-  HOLIDAY_NAME varchar(28) NOT NULL,
-  BEGIN_MONTH tinyint NOT NULL,
-  BEGIN_DAY tinyint NOT NULL,
-  END_MONTH tinyint NOT NULL,
-  END_DAY tinyint NOT NULL,
-  PRIMARY KEY (HT_ID)
-) ENGINE=InnoDB;
-
-/* Каникулы и праздники */
-INSERT INTO PL_HOLIDAY_TYPE (HT_ID, HOLIDAY_NAME, BEGIN_MONTH, BEGIN_DAY, END_MONTH, END_DAY) VALUES
-(1,'Осенние каникулы',10,1,10,7),
-(2,'Зимние каникулы',11,29,12,10),
-(3,'Весенние каникулы',14,22,14,28),
-(4,'День народного единства',10,4,10,4),
-(5,'День защитника отечества',13,23,13,23),
-(6,'Международный женский день',14,8,14,8),
-(7,'День весны и труда',16,1,16,1),
-(8,'День Победы',16,9,16,9),
-(9,'День России',17,12,17,12);
  
 CREATE TABLE PL_SUBJECT (
   S_ID smallint NOT NULL,
@@ -628,30 +638,32 @@ CREATE TABLE PL_SUBJECT (
   FULL_NAME varchar(255),
   SUB_GROUPS tinyint NOT NULL,
   NORMAL_GROUP tinyint NOT NULL,
+  SPEC_FLAGS smallint NOT NULL,
   PRIMARY KEY (S_ID)
 ) ENGINE=InnoDB;
 
 /* предметы (по областям) */
-INSERT INTO PL_SUBJECT (S_ID,AREA_ID,SORT_NUM,SHORT_NAME,FULL_NAME,SUB_GROUPS,NORMAL_GROUP) VALUES 
- (1,1,1,'Русский язык',NULL,1,0),
- (2,2,2,'Алгебра','Алгебра и начала анализа',0,0),
- (3,2,3,'Геометрия',NULL,0,0),
- (4,1,2,'Литература',NULL,1,0),
- (5,3,0,'Англ.яз.','Английский язык',2,0),
- (6,4,0,'История',NULL,1,0),
- (7,4,1,'Общ-знание','Обществознание',1,0),
- (8,4,2,'География','География',1,0),
- (9,5,2,'Природ.','Природоведение',1,0),
- (10,5,5,'Биология','Биология',1,0),
- (11,5,3,'Физика',NULL,1,0),
- (12,2,1,'Математика',NULL,1,0),
- (13,5,4,'Химия',NULL,1,0),
- (14,6,0,'Искусство',NULL,1,0),
- (15,7,0,'Технология',NULL,2,0),
- (16,7,1,'ИКТ','Информатика и ИКТ',2,0),
- (17,8,0,'ОБЖ','Основы безопасности жизнедеятельности',1,0),
- (18,8,1,'Физкультура','Физическая культура',2,0),
- (19,5,1,'Ест-знание','Естествознание',1,0);
+INSERT INTO PL_SUBJECT 
+ (S_ID,AREA_ID,SORT_NUM,SHORT_NAME,FULL_NAME,SUB_GROUPS,NORMAL_GROUP,SPEC_FLAGS) VALUES 
+ (1,1,1,'Русский язык',NULL,1,0,0),
+ (2,2,2,'Алгебра','Алгебра и начала анализа',0,0,0),
+ (3,2,3,'Геометрия',NULL,0,0,0),
+ (4,1,2,'Литература',NULL,1,0,0),
+ (5,3,0,'Англ.яз.','Английский язык',2,0,0),
+ (6,4,0,'История',NULL,1,0,0),
+ (7,4,1,'Общ-знание','Обществознание',1,0,0),
+ (8,4,2,'География','География',1,0,0),
+ (9,5,2,'Природ.','Природоведение',1,0,0),
+ (10,5,5,'Биология','Биология',1,0,0),
+ (11,5,3,'Физика',NULL,1,0,0),
+ (12,2,1,'Математика',NULL,1,0,0),
+ (13,5,4,'Химия',NULL,1,0,0),
+ (14,6,0,'Искусство',NULL,1,0,0),
+ (15,7,0,'Технология',NULL,2,0,0),
+ (16,7,1,'ИКТ','Информатика и ИКТ',2,0,0),
+ (17,8,0,'ОБЖ','Основы безопасности жизнедеятельности',1,0,0),
+ (18,8,1,'Физкультура','Физическая культура',2,0,0),
+ (19,5,1,'Ест-знание','Естествознание',1,0,0);
 
 CREATE TABLE PL_SUBJ_AREA (
   A_ID smallint NOT NULL,
@@ -718,6 +730,16 @@ GRANT ALL PRIVILEGES ON `VseLists`.* TO 'rujel'@'localhost';
 CREATE DATABASE VseLists DEFAULT CHARACTER SET utf8;
 USE VseLists;
 
+CREATE TABLE SCHEMA_VERSION (
+  MODEL_NAME varchar(255),
+  VERSION_NUMBER smallint unsigned NOT NULL,
+  VERSION_TITLE varchar(255),
+  INSTALL_DATE timestamp
+);
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('VseLists',1,'0.9');
+
 CREATE TABLE VSE_EDU_GROUP (
   GR_ID mediumint NOT NULL,
   GROUP_TITLE varchar(28),
@@ -725,6 +747,8 @@ CREATE TABLE VSE_EDU_GROUP (
   FIRST_YEAR smallint NOT NULL,
   LAST_YEAR smallint NOT NULL,
   GR_FLAGS tinyint NOT NULL,
+  SECTION_NUM smallint NOT NULL,
+  SCHOOL_NUM smallint NOT NULL DEFAULT 0,
   PRIMARY KEY (GR_ID)
 ) ENGINE=InnoDB;
 
@@ -754,6 +778,7 @@ CREATE TABLE VSE_STUDENT (
   LEAVE_DT date,
   LICHN_DELO varchar(28),
   ABS_GRADE smallint NOT NULL,
+  SCHOOL_NUM smallint NOT NULL DEFAULT 0,
   PRIMARY KEY (S_ID)
 ) ENGINE=InnoDB;
 
@@ -764,6 +789,17 @@ CREATE TABLE VSE_TEACHER (
   LEAVE_DT date,
   LICHN_DELO varchar(28),
   JOB_POSITION varchar(255),
+  SCHOOL_NUM smallint NOT NULL DEFAULT 0,
+  PRIMARY KEY (T_ID)
+) ENGINE=InnoDB;
+
+CREATE TABLE VSE_TUTOR (
+  T_ID mediumint NOT NULL,
+  EDU_GROUP mediumint NOT NULL,
+  TEACHER_ID mediumint NOT NULL,
+  ENTER_DT date,
+  LEAVE_DT date,
+  STATUS_ID SMALLINT NOT NULL DEFAULT 0,
   PRIMARY KEY (T_ID)
 ) ENGINE=InnoDB;
 
@@ -809,6 +845,16 @@ GRANT ALL PRIVILEGES ON `RujelUsers`.* TO 'rujel'@'localhost';
 CREATE DATABASE RujelUsers DEFAULT CHARACTER SET utf8;
 USE RujelUsers;
 
+CREATE TABLE SCHEMA_VERSION (
+  MODEL_NAME varchar(255),
+  VERSION_NUMBER smallint unsigned NOT NULL,
+  VERSION_TITLE varchar(255),
+  INSTALL_DATE timestamp
+);
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('RujelUsers',1,'0.9');
+
 CREATE TABLE AUT_USER (
   U_ID mediumint NOT NULL,
   USER_NAME varchar(28) NOT NULL,
@@ -821,6 +867,7 @@ CREATE TABLE AUT_USER (
 CREATE TABLE AUT_GROUP (
   G_ID smallint NOT NULL,
   GROUP_TITLE varchar(28) NOT NULL,
+  SECTION_NUM smallint,
   EXTERNAL_EQUIVALENT varchar(255),
   PRIMARY KEY (G_ID)
 ) ENGINE=InnoDB;

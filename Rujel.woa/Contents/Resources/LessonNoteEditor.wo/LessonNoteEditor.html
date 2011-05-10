@@ -26,6 +26,19 @@
 <td class="backfield1 selectionBorder" style="border-left-style:none;">
 <webobject name="LessonList1"/></td></webobject>
 <webobject name="ShowTablist"><td align="right" valign="top" width="5%">
+<webobject name = "CustomTab"><webobject name = "CustomTabTitle"/>
+<script language = "JavaScript">
+	function toggleParam(cell) {
+		var tick = cell.getElementsByTagName("input")[0];
+		tick.checked = !tick.checked;
+		var nextCell = cell.nextSibling;
+		while(nextCell != null && nextCell.nodeName.toUpperCase() != "TD") {
+			nextCell = nextCell.nextSibling;
+		}
+		nextCell.style.visibility = (tick.checked)?"visible":"hidden";
+	}
+</script>
+</webobject>
 <webobject name = "TabsRepetition"><webobject name="LessonTabs1"/></webobject>
 <br/>
 <webobject name="BaseTabs"/>

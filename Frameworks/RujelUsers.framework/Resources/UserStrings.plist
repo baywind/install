@@ -7,7 +7,30 @@
 	<key>groups</key>
 	<string>группы</string>
 	<key>groupName</key>
-	<string>Имя группы</string>
+	<string>Группа</string>
+	<key>accessGroups</key>
+	<dict>
+		<key>array</key>
+		<array>
+			<string>root</string>
+			<string>zavuch</string>
+			<string>zav_kaf</string>
+			<string>teacher</string>
+			<string>tutor</string>
+		</array>
+		<key>root</key>
+		<string>Системный администратор</string>
+		<key>zavuch</key>
+		<string>Заведующий учебной частью</string>
+		<key>zav_kaf</key>
+		<string>Заведующий кафедрой</string>
+		<key>teacher</key>
+		<string>Преподаватель предметник</string>
+		<key>tutor</key>
+		<string>Классный руководитель</string>
+		<key>any</key>
+		<string>все</string>
+	</dict>
 	<key>messages</key>
 	<dict>
 		<key>noMatch</key>

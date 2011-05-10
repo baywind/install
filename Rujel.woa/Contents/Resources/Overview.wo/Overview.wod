@@ -101,7 +101,7 @@ PageWrapper1: PageWrapper {
 	scriptURL = present.scriptURL;
 	scriptResource = present.scriptResource;
 	resourcesFramework = present.framework;
-	styles = ".student{font-size:large; font-weight:bold; padding-left:2em;} .dates {padding-left:3em; font-style:italic; white-space:nowrap;} .sorting{display:none;};";
+	styles = ".student{font-size:large; font-weight:bold; padding-left:2em;} .dates {padding-left:3em; font-style:italic; white-space:nowrap;};";
 }
 
 PeriodSelector: PeriodSelector {
@@ -109,6 +109,7 @@ PeriodSelector: PeriodSelector {
 	end = to;
 	period = period;
 	selectAction = updateLessonLists;
+	allowNone = true;
 }
 
 PersonSelector1: PersonSelector {
@@ -298,3 +299,21 @@ NoReporters : WOConditional {
   condition = showReporterSelector;
   negate = true;
 }
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = session.state.section;
+  tablist = application.strings.sections.list;
+  titleAttribute = "value";
+  selectAction = resetSelections;
+  vertical = true;
+}
+
+HasSections : WOConditional {
+  condition = application.strings.sections.hasSections;
+}
+
+CurrSection : WOString {
+  value = session.state.section.value;
+}
+

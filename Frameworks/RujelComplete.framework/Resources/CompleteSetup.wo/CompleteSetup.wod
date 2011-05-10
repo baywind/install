@@ -19,29 +19,6 @@ ForcedForm : WOForm {
 	style = "margin:1em;float:right;";
 }
 
-StateTitle : WOString {
-  value = session.strings.RujelComplete_Complete.stateTitle;
-  escapeHTML = false;
-}
-
-CurrState : WOString {
-  value = stateCell;
-  escapeHTML = false;
-}
-
-StateToggle : OnClickContainer {
-  elementName = "td";
-  invokeAction = toggleActive;
-  onclick = session.tryLoad;
-  class = "button";
-  hide = noItem;
-}
-
-ToggleTitle : WOString {
-  value = toggleTitle;
-}
-
-
 SettingsByCourse : SettingsByCourse {
   item = item;
   base = base;
@@ -50,10 +27,7 @@ SettingsByCourse : SettingsByCourse {
   numericValue = session.eduYear;
   pushByCourse = "pushByCourse";
   access = session.readAccess.FLAGS.CompleteSetup;
-}
-
-Hide : WOConditional {
-  condition = true;
+  title = stamp;
 }
 
 StudentFiles : FileLister {
@@ -78,26 +52,10 @@ CoursesTitle : WOString {
   escapeHTML = false;
 }
 
-IsTitle : WOConditional {
-  condition = item;
-  negate = true;
-}
-
-Stamp : WOImage {
-  framework = "RujelComplete";
-  filename = "stamp.gif";
-  height = 24;
-  width = 24;
-}
-IsRow : WOConditional {
-  condition = item;
-}
-
 ClosedTick : WOCheckBox {
   checked = closed;
   disabled = session.readAccess._edit.CompleteSetup;
 }
-
 
 Submit : WOSubmitButton {
   value = session.strings.Reusables_Strings.uiElements.Submit;

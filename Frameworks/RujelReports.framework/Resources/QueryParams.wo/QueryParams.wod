@@ -1,0 +1,48 @@
+Parameters : WORepetition {
+  list = ^list;
+  item = item;
+}
+
+ParamTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+ParamContainer : OnClickContainer {
+  elementName = "th";
+  title = item.hover;
+  align = "right";
+  onclick = "toggleParam(this);";
+}
+
+Parameter : Parameter {
+  itemDict = item;
+  paramsDict = ^params;
+  editingContext = ^ec;
+}
+
+ShowParam : WOConditional {
+  condition = item.hidden;
+  negate = true;
+}
+
+IsActive : WOCheckBox {
+  checked = item.active;
+  style = "display:none;";
+}
+
+ParamCell : WOGenericContainer {
+  elementName = "td";
+  valign = "middle";
+  align = "left";
+  style = paramCellStyle;
+}
+
+HasComment : WOConditional {
+  condition = item.comment;
+}
+
+ParamComment : WOString {
+  value = item.comment;
+  escapeHTML = false;
+}

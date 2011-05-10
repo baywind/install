@@ -1,0 +1,142 @@
+TitleZPU : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.journalZPU;
+  escapeHTML = false;
+}
+
+MonthTitle : WOString {
+  value = currMonth.name;
+  escapeHTML = false;
+}
+
+Styles : ResourceLink {
+	cssLink = "style.css";
+	framework = "app";
+}
+
+ReusablesStyles : ResourceLink {
+	cssLink = "style.css";
+	framework = "Reusables";
+}
+
+DateTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Date;
+  valueWhenEmpty = "Date";
+  escapeHTML = false;
+}
+
+JournalZPU : WORepetition {
+  list = journalZPU;
+  item = item;
+}
+
+JRow : WOGenericContainer {
+  elementName = "tr";
+  class = jrowClass;
+}
+
+JDate : WOString {
+  value = item.date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+MinusTeacher : PersonDisplay {
+  person = item.minusTeacher;
+  second = 1;
+  first = 1;
+  last = 2;
+  startWithLast = true;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
+}
+
+MinusSubject : WOString {
+  value = item.minusCourse.subjectWithComment;
+  escapeHTML = false;
+}
+
+Reason : ReasonPresenter {
+  reason = item.reason;
+  refTeacher = currTeacher;
+}
+
+
+PlusTeacher : PersonDisplay {
+  person = item.plusTeacher;
+  second = 1;
+  first = 1;
+  last = 2;
+  startWithLast = true;
+}
+
+PlusSubject : WOString {
+  value = item.plusCourse.subjectWithComment;
+  escapeHTML = false;
+}
+
+
+JValue : WOString {
+  value = item.value;
+}
+
+JEduGrop : WOString {
+  value = item.eduGroup.name;
+  valueWhenEmpty = item.grade;
+}
+
+JHasCourse : WOConditional {
+  condition = item.minusCourse;
+}
+
+OrigTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.OrigTeacher;
+  escapeHTML = false;
+}
+GroupTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduGroup.this;
+  escapeHTML = false;
+}
+SubjectTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.EduCycle.subject;
+  escapeHTML = false;
+}
+ReasonTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Reason.Reason;
+  escapeHTML = false;
+}
+SustitutorTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Substitutor;
+  escapeHTML = false;
+}
+FactorTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.factor;
+  escapeHTML = false;
+}
+
+ExportZPU : WOHyperlink {
+  action = exportZPU;
+  string = application.strings.RujelReports_Reports.export;
+  style = "float:right;";
+}
+
+ReasonCell : WOGenericContainer {
+  elementName = "td";
+  class = item.cellClass;
+  title = item.reason.verification;
+}
+
+IsStandalone : WOConditional {
+  condition = parent;
+  negate = true;
+}
+
+YearTitle : WOString {
+  value = currMonth.year;
+}
+
+Wrapper : HTMLPageWrapper {
+  headOpen = true;
+}
+
+EndHead : HTMLPageWrapper {
+  headClose = true;
+}

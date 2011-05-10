@@ -40,8 +40,6 @@
 	<key>NSJavaPath</key>
 	<array>
 		<string>rujelcontacts.jar</string>
-		<string>activation.jar</string>
-		<string>mail.jar</string>
 	</array>
 	<key>NSJavaPathClient</key>
 	<string>rujelcontacts.jar</string>

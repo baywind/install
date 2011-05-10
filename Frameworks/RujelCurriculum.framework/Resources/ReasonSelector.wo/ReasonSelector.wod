@@ -14,7 +14,7 @@ ReasonRB : WORadioButton {
   name = "selectReason";
   value = itemID;
   selection = reasonID;
-  onclick = "if(checked){hideObj('reasonEdit');form.defaultDate.value=form.defaultDate.defaultValue;}";
+  onclick = "if(checked){hideObj('reasonEdit');form.defaultDate.value=form.defaultDate.defaultValue;form.reasonText.className='';}";
   disabled = ^readOnly;
 }
 
@@ -48,25 +48,11 @@ ReasonPresenter : ReasonPresenter {
   refEduGroup = course.eduGroup;
 }
 
-TextCell : WOGenericContainer {
-  elementName = "td";
-  colspan = colspan;
-}
-
-HasSpecs : WOConditional {
-  condition = colspan;
-  negate = true;
-}
-
-ExtsString : WOString {
-  value = rItem.extToString;
-}
-
 OtherRB : WORadioButton {
   name = "selectReason";
   selection = reasonID;
   value = 0;
-  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.relation[0].checked=true;fitWindow();}";
+  onclick = "if(checked){showObj('reasonEdit');form.begin.value=form.defaultDate.defaultValue;form.end.value='';form.defaultDate.value='';form.reasonText.value='';form.reasonText.className='required';form.relation[0].checked=true;fitWindow();}";
   disabled = ^readOnly;
 }
 
@@ -143,7 +129,7 @@ BeginDate : WOTextField {
   value = begin;
   size = 10;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
   name = "begin";
 }
 
@@ -151,12 +137,9 @@ EndDate : WOTextField {
   value = end;
   size = 10;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
   name = "end";
   onfocus = "if(value==null||value.length==0)value=form.begin.value;";
-}
-ActiveTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.isActive;
 }
 
 BeginTitle : WOString {

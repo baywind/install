@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="ResourceLink.java" wocomponentcontent="false">
+
+        
+        
+        
+    <binding name="condition"/>
+    <validation message="'condition' is a required binding.">
+            <unbound name="condition"/>
+        </validation>
+        <binding name="ifTrue"/>
+        <binding name="ifFalse"/>
+        <binding name="ifNull"/>
+        
+    <binding defaults="Boolean" name="escapeHTML"/>
+    </wo>
+</wodefinitions>

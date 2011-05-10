@@ -2,94 +2,37 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EduPlan</key>
-	<string>Учебный план </string>
-	<key>showAll</key>
-	<string>Добавить предметы</string>
-	<key>hideUnused</key>
-	<string>Скрыть неиспользуемые</string>
-	<key>PlanDetails</key>
-	<string>Детализация учебного плана</string>
-	<key>removeDetails</key>
-	<string>Удалить детализацию</string>
-	<key>properties</key>
-	<dict>
-		<key>subject</key>
-		<string>Предмет</string>
-		<key>subjects</key>
-		<string>Предметы</string>
-		<key>name</key>
-		<string>Название</string>
-		<key>fullName</key>
-		<string>Полное название</string>
-		<key>area</key>
-		<string>Предметная область</string>
-		<key>hours</key>
-		<string>часов</string>
-		<key>level</key>
-		<string>Уровень</string>
-		<key>normalGroup</key>
-		<string>норма</string>
-		<key>normalTitle</key>
-		<string>нормальное количество учащихся в подгруппе</string>
-		<key>subgroups</key>
-		<string>групп</string>
-		<key>subgrTitle</key>
-		<string>количество подгрупп в классе</string>
-		<key>holidays</key>
-		<string>Каникулы и праздники</string>
-		<key>listName</key>
-		<string>График</string>
-		<key>plan</key>
-		<string>План</string>
-		<key>total</key>
-		<string>Сумма</string>
-	</dict>
 	<key>EduPeriod</key>
 	<dict>
-		<key>this</key>
-		<string>Учебный период</string>
-		<key>eduYear</key>
-		<string>Учебный год</string>
 		<key>begin</key>
 		<string>Начало</string>
+		<key>eduYear</key>
+		<string>Учебный год</string>
 		<key>end</key>
 		<string>Конец</string>
-		<key>title</key>
-		<string>Кратко</string>
 		<key>fullName</key>
 		<string>Полное название</string>
+		<key>this</key>
+		<string>Учебный период</string>
+		<key>title</key>
+		<string>Кратко</string>
 		<key>weeksDays</key>
 		<string>циклов (дней)</string>
 	</dict>
+	<key>EduPlan</key>
+	<string>Учебный план </string>
+	<key>PlanDetails</key>
+	<string>Детализация учебного плана</string>
 	<key>SetupPeriods</key>
 	<dict>
-		<key>title</key>
-		<string>Настройка периодов</string>
 		<key>basicTitle</key>
-		<string>&lt;h2&gt;Базовые учебные модули&lt;/h2&gt;&lt;div style=&quot;text-align:center&quot;&gt;(для большинства учебных групп)&lt;/div&gt;</string>
-		<key>defaultListName</key>
-		<string>Базовый</string>
-		<key>total</key>
-		<string>всего</string>
-		<key>showDetails</key>
-		<string>Показать подробности</string>
-		<key>listsOverview</key>
-		<string>Список учебных графиков</string>
-		<key>week</key>
-		<string>цикл</string>
-		<key>days</key>
-		<string>дней</string>
+		<string>&lt;h2&gt;Базовые учебные модули&lt;/h2&gt;&lt;div style="text-align:center"&gt;(для большинства учебных групп)&lt;/div&gt;</string>
 		<key>choosePeriod</key>
 		<dict>
-			<key>title</key>
-			<string>Учебный модуль</string>
-			<key>presenter</key>
-			<string>EduPeriodSelector</string>
-			<key>takeValuesFromRequest</key>
-			<true/>
 			<key>invokeAction</key>
 			<true/>
+			<key>presenter</key>
+			<string>EduPeriodSelector</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>selectAction</key>
@@ -97,81 +40,298 @@
 				<key>selected</key>
 				<string>.</string>
 			</dict>
+			<key>takeValuesFromRequest</key>
+			<true/>
+			<key>title</key>
+			<string>Учебный модуль</string>
 		</dict>
+		<key>days</key>
+		<string>дней</string>
+		<key>defaultListName</key>
+		<string>Базовый</string>
+		<key>listsOverview</key>
+		<string>Список учебных графиков</string>
+		<key>showDetails</key>
+		<string>Показать подробности</string>
+		<key>title</key>
+		<string>Настройка периодов</string>
+		<key>total</key>
+		<string>всего</string>
+		<key>week</key>
+		<string>цикл</string>
 	</dict>
-	<key>planTabs</key>
-	<array>
-		<dict>
-			<key>component</key>
-			<string>GlobalPlan</string>
-			<key>title</key>
-			<string>Учебный план</string>
-			<key>resourcesFramework</key>
-			<string>RujelEduPlan</string>
-			<key>cssResource</key>
-			<string>EduPlan.css</string>
-			<key>sort</key>
-			<string>10</string>
-		</dict>
-		<dict>
-			<key>component</key>
-			<string>SetupPeriods</string>
-			<key>title</key>
-			<string>Учебные Периоды</string>
-			<key>sort</key>
-			<string>20</string>
-		</dict>
-	</array>
-	<key>regimeTabs</key>
-	<array>
-		<dict>
-			<key>title</key>
-			<string>недельный</string>
-			<key>hover</key>
-			<string>Показывать недельные часы</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>полный</string>
-			<key>hover</key>
-			<string>Показывать полное количество часов</string>
-		</dict>
-	</array>
+	<key>hideUnused</key>
+	<string>Скрыть неиспользуемые</string>
+	<key>messages</key>
+	<dict>
+		<key>beginEndPeriod</key>
+		<string>Конец периода не может быть раньше начала</string>
+		<key>cantDeleteArea</key>
+		<string>Нельзя удалять предметную область, пока в ней есть предметы</string>
+		<key>confirmDelete</key>
+		<string> Вы уверены, что хотите удалить этот период? Он включен в %d списков: </string>
+		<key>confirmRemove</key>
+		<string>Вы уверены, что хотите убрать этот период из списка \'%s\'?</string>
+		<key>datesNotInYear</key>
+		<string>указанные даты начала и конца не попадают в текущий учебный год</string>
+		<key>emptyDate</key>
+		<string>Необходимо указывать и начало и конец периода</string>
+		<key>invalidDateInMonth</key>
+		<string>Неверная дата для выбранного месяца</string>
+		<key>noPeriods</key>
+		<string>Не описано ни одного учебного периода.&lt;br/&gt; Детализация невозможна.</string>
+		<key>periodsIntersect</key>
+		<string>Периоды в списке пересекаются</string>
+		<key>titleRequired</key>
+		<string>Необходимо указать краткое название периода</string>
+		<key>titleTooLong</key>
+		<string>Слишком длинное краткое название периода.&lt;br/&gt; Можно использовать не более двух слов длиной не более 4 букв каждое.</string>
+	</dict>
 	<key>planRegime</key>
 	<dict>
-		<key>title</key>
-		<string>Учебный План</string>
 		<key>component</key>
 		<string>EduPlan</string>
 		<key>group</key>
 		<string>edu</string>
 		<key>sort</key>
 		<string>40</string>
+		<key>title</key>
+		<string>Учебный План</string>
 	</dict>
-	<key>messages</key>
+	<key>planTabs</key>
+	<array>
+		<dict>
+			<key>component</key>
+			<string>GlobalPlan</string>
+			<key>cssResource</key>
+			<string>EduPlan.css</string>
+			<key>resourcesFramework</key>
+			<string>RujelEduPlan</string>
+			<key>sort</key>
+			<string>10</string>
+			<key>title</key>
+			<string>Учебный план</string>
+		</dict>
+		<dict>
+			<key>component</key>
+			<string>SetupPeriods</string>
+			<key>resourcesFramework</key>
+			<string>RujelBase</string>
+			<key>scriptResource</key>
+			<string>sorting.js</string>
+			<key>sort</key>
+			<string>20</string>
+			<key>title</key>
+			<string>Учебные Периоды</string>
+		</dict>
+	</array>
+	<key>properties</key>
 	<dict>
-		<key>cantDeleteArea</key>
-		<string>Нельзя удалять предметную область, пока в ней есть предметы</string>
-		<key>emptyDate</key>
-		<string>Необходимо указывать и начало и конец периода</string>
-		<key>beginEndPeriod</key>
-		<string>Конец периода не может быть раньше начала</string>
-		<key>datesNotInYear</key>
-		<string>указанные даты начала и конца не попадают в текущий учебный год</string>
-		<key>invalidDateInMonth</key>
-		<string>Неверная дата для выбранного месяца</string>
-		<key>titleRequired</key>
-		<string>Необходимо указать краткое название периода</string>
-		<key>titleTooLong</key>
-		<string>Слишком длинное краткое название периода.&lt;br/&gt; Можно использовать не более двух слов длиной не более 4 букв каждое.</string>
-		<key>periodsIntersect</key>
-		<string>Периоды в списке пересекаются</string>
-		<key>confirmDelete</key>
-		<string> Вы уверены, что хотите удалить этот период? Он включен в %d списков: </string>
-		<key>confirmRemove</key>
-		<string>Вы уверены, что хотите убрать этот период из списка \&apos;%s\&apos;?</string>
-		<key>noPeriods</key>
-		<string>Не описано ни одного учебного периода.&lt;br/&gt; Детализация невозможна.</string>
+		<key>area</key>
+		<string>Предметная область</string>
+		<key>fullName</key>
+		<string>Полное название</string>
+		<key>holidays</key>
+		<string>Каникулы и праздники</string>
+		<key>hours</key>
+		<string>часов</string>
+		<key>level</key>
+		<string>Уровень</string>
+		<key>listName</key>
+		<string>График</string>
+		<key>name</key>
+		<string>Название</string>
+		<key>normalGroup</key>
+		<string>норма</string>
+		<key>normalTitle</key>
+		<string>нормальное количество учащихся в подгруппе</string>
+		<key>plan</key>
+		<string>План</string>
+		<key>subgrTitle</key>
+		<string>количество подгрупп в классе</string>
+		<key>subgroups</key>
+		<string>групп</string>
+		<key>subject</key>
+		<string>Предмет</string>
+		<key>subjects</key>
+		<string>Предметы</string>
+		<key>total</key>
+		<string>Сумма</string>
 	</dict>
+	<key>regimeTabs</key>
+	<array>
+		<dict>
+			<key>hover</key>
+			<string>Показывать недельные часы</string>
+			<key>title</key>
+			<string>недельный</string>
+		</dict>
+		<dict>
+			<key>hover</key>
+			<string>Показывать полное количество часов</string>
+			<key>title</key>
+			<string>полный</string>
+		</dict>
+	</array>
+	<key>removeDetails</key>
+	<string>Удалить детализацию</string>
+	<key>sections</key>
+	<dict>
+		<key>basic</key>
+		<string>Основная школа</string>
+		<key>eduSection</key>
+		<string>Отделение</string>
+		<key>sections</key>
+		<string>Отделения</string>
+		<key>setup</key>
+		<string>настроить</string>
+		<key>showAll</key>
+		<string>показать все</string>
+	</dict>
+	<key>settingEditors</key>
+	<array>
+		<dict>
+			<key>attribute</key>
+			<string>cycle.subjectEO*</string>
+			<key>attributeParam</key>
+			<string>selectSubject</string>
+			<key>attributeSubject</key>
+			<string>cycle.subjectEO</string>
+			<key>attributeSubjectArea</key>
+			<string>cycle.subjectEO.area</string>
+			<key>cellClass</key>
+			<string>gerade</string>
+			<key>cellStyle</key>
+			<string>border:double 3px #cccccc;</string>
+			<key>condFormat</key>
+			<true/>
+			<key>editorPresent</key>
+			<dict>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenter</key>
+				<string>SubjectSelector</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>ec</key>
+					<string>$ec</string>
+					<key>onclick</key>
+					<string>$onclick</string>
+					<key>selectAction</key>
+					<string>$doneEditing</string>
+					<key>selection</key>
+					<string>.</string>
+				</dict>
+			</dict>
+			<key>escapeHTML</key>
+			<false/>
+			<key>formatSubject</key>
+			<string>%[subject]s</string>
+			<key>formatSubjectArea</key>
+			<string>&lt;em&gt;%[areaName]$s&lt;/em&gt;</string>
+			<key>mask</key>
+			<integer>4</integer>
+			<key>or</key>
+			<true/>
+			<key>popup</key>
+			<true/>
+			<key>sort</key>
+			<integer>30</integer>
+			<key>title</key>
+			<string>Выбор предмета /&lt;br/&gt;предметной области</string>
+			<key>titleSubject</key>
+			<string>Выбор предмета</string>
+			<key>titleSubjectArea</key>
+			<string>Предметная область</string>
+		</dict>
+		<dict>
+			<key>attribute</key>
+			<string>cycle.section</string>
+			<key>attributeParam</key>
+			<string>section</string>
+			<key>cellClass</key>
+			<string>grey</string>
+			<key>cellStyle</key>
+			<string>border:double 3px #666666;</string>
+			<key>editorPresent</key>
+			<dict>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenter</key>
+				<string>Tabs</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>byAttribute</key>
+					<true/>
+					<key>currTab</key>
+					<string>.</string>
+					<key>idAttribute</key>
+					<string>'idx</string>
+					<key>onClick</key>
+					<string>$onclick</string>
+					<key>selectAction</key>
+					<string>$doneEditing</string>
+					<key>tablist</key>
+					<string>$application.strings.sections.list</string>
+					<key>titleAttribute</key>
+					<string>'value</string>
+					<key>vertical</key>
+					<true/>
+				</dict>
+			</dict>
+			<key>popup</key>
+			<true/>
+			<key>sort</key>
+			<integer>10</integer>
+			<key>title</key>
+			<string>Отделение</string>
+			<key>value</key>
+			<dict>
+				<key>cacheResult</key>
+				<true/>
+				<key>className</key>
+				<string>net.rujel.base.Indexer</string>
+				<key>methodName</key>
+				<string>valueForIndex</string>
+				<key>nullNull</key>
+				<true/>
+				<key>object</key>
+				<dict>
+					<key>cacheResult</key>
+					<true/>
+					<key>className</key>
+					<string>net.rujel.base.Indexer</string>
+					<key>methodName</key>
+					<string>getIndexer</string>
+					<key>paramClasses</key>
+					<array>
+						<string>com.webobjects.eocontrol.EOEditingContext</string>
+						<string>java.lang.String</string>
+						<string>java.lang.String</string>
+						<string>boolean</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string>$session.defaultEditingContext</string>
+						<string>'eduSections</string>
+						<string></string>
+						<false/>
+					</array>
+				</dict>
+				<key>paramClasses</key>
+				<array>
+					<string>int</string>
+					<string>java.math.RoundingMode</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>.</string>
+					<string></string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>showAll</key>
+	<string>Добавить предметы</string>
 </dict>
 </plist>

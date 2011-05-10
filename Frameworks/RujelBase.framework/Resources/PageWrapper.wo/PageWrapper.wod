@@ -150,9 +150,9 @@ UnsavedAlert: WOString {
 	escapeHTML = false;
 }
 
-ConfinmAlert : WOString {
+ConfirmAlert : WOString {
 	value = application.strings.Strings.messages.areYouShure;
-	valueWhenEmpty = "Are you shure, you want %s?"; 
+	valueWhenEmpty = "Are you shure, you want %s?";
 	escapeHTML = false;
 }
 
@@ -164,6 +164,11 @@ cross: WOImage {
 	onclick = "cancelLoading();";
 	style = "position:absolute;top:3px;right:3px;cursor:pointer;";
 	alt = "X";
+}
+
+AnalyseForm : ResourceLink {
+	jsLink = "formAnalys.js";
+	framework = "Reusables";
 }
 
 RGBColor : ResourceLink {
@@ -204,4 +209,8 @@ ReusableScripts : ResourceLink {
 
 EduYear : WOString {
   value = eduYear;
+}
+
+RefreshPage : WOActionURL {
+  action = refreshPage;
 }

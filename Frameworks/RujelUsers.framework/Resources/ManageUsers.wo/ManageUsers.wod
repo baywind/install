@@ -42,18 +42,18 @@ Save : WOSubmitButton {
 
 Form : WOForm {
   multipleSubmit = true;
+  action = submit;
 }
 
-UserSearch : WOTextField {
+UserSearch : WOGenericElement {
+  elementName = "input";
+  type = "text";
+  size = 10;
   value = usersList.queryMatch.userName;
-  disabled = usersList.selectedObject;
-}
-
-
-SearchUser : WOSubmitButton {
-  action = usersList.fetch;
-  value = application.strings.Reusables_Strings.uiElements.Search;
-  disabled = usersList.selectedObject;
+  name = "userName";
+  omitTags = usersList.selectedObject;
+  title = application.strings.Reusables_Strings.uiElements.Search;
+  class = "titled";
 }
 
 SelectedUser : WOConditional {
@@ -116,44 +116,52 @@ ParentAvailable : WOConditional {
 }
 
 GroupsList : WORepetition {
-  list = groupsList.displayedObjects;
-  item = item;
+  list = accGroups;
+  item = item2;
 }
 
 GroupCell : OnClickContainer {
   elementName = "td";
-  disabled = session.readAccess._edit.UserGroup;
+  disabled = cantEditGroup;
   invokeAction = selectGroup;
   onclick = session.checkRun;
   class = groupClass;
 }
 
+IsInGeneralGroup : WOCheckBox {
+  checked = isInGroup;
+  disabled = disableGroup;
+  onchange = "toggleGeneral(this);";
+}
+
 IsInGroup : WOCheckBox {
   checked = isInGroup;
+  disabled = disableGroup;
 }
 
 GroupName : WOString {
-  value = item.groupName;
+  value = item2.title;
+  valueWhenEmpty = item2.groupName;
 }
 
 AddGroup : OnClickContainer {
   elementName = "tr";
-  invokeAction = groupsList.insert;
-  onclick = session.checkRun;
-  hide = noAddGroup;
+  onclick = "showObj('newGroup');hideObj(this);";
+  hide = session.readAccess._create.UserGroup;
   class = "green";
 }
 
 SelectedGroup : WOConditional {
-  condition = groupsList.selectedObject;
+  condition = currGroup;
 }
 
-GroupNameField : WOTextField {
-  value = groupsList.selectedObject.groupName;
+GroupNameField : WOString {
+  value = currGroup.title;
+  valueWhenEmpty = currGroup.groupName;
 }
 
 ExternalName : WOTextField {
-  value = groupsList.selectedObject.externalEquivalent;
+  value = currGroup.externalEquivalent;
 }
 
 Delete : WOGenericElement {
@@ -216,10 +224,11 @@ GroupsTitle : WOString {
   value = session.strings.RujelUsers_UserStrings.groups;
   escapeHTML = false;
 }
-
+ShowSelector : WOConditional {
+  condition = showSelector;
+}
 ShowBatch : WOConditional {
-  condition = noBatch;
-  negate = true;
+  condition = showBatch;
 }
 
 Title : WOString {
@@ -227,3 +236,62 @@ Title : WOString {
   escapeHTML = false;
 }
 
+
+Sections : WORepetition {
+  list = sections;
+  item = item;
+}
+
+SectionTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.eduSection;
+  escapeHTML = false;
+}
+
+Section : WOString {
+  value = currGroup.sectionName;
+  valueWhenEmpty = "???";
+}
+
+SectionNum : WOString {
+  value = item.idx;
+  numberformat = "0";
+}
+
+SectionTH : WOGenericContainer {
+  elementName = "th";
+  style = "width:3ex;";
+  title = item.value;
+}
+
+SectionName : WOString {
+  value = item.value;
+}
+
+NewGroupName : WOGenericElement {
+  elementName = "input";
+  type = "text";
+  invokeAction = addGroup;
+  name = context.elementID;
+  formValue = passw2;
+}
+
+SaveGroup : WOSubmitButton {
+  action = saveGroup;
+  value = application.strings.Reusables_Strings.uiElements.Save;
+}
+
+ShowAll : OnClickContainer {
+  elementName = "span";
+  invokeAction = search;
+  hide = showBatch;
+  style = "float:left;color:#3333cc;";
+}
+
+NoLimit : WOString {
+  value = session.strings.RujelBase_Base.noLimit;
+}
+
+NoUserSelected : WOConditional {
+  condition = usersList.selectedObject;
+  negate = true;
+}

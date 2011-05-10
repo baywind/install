@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
 	<wo class="ClassListing" wocomponentcontent="false">
 
@@ -15,5 +15,6 @@
 			<unbound name="editingContext"/>
 		</validation>
 	<binding defaults="Boolean" name="showTitle"/>
+    <binding name="onClick"/>
     </wo>
 </wodefinitions>

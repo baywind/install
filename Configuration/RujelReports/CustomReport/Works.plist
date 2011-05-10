@@ -161,6 +161,35 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Тип</string>
+			<key>active</key>
+			<false/>
+			<key>attribute</key>
+			<string>workType</string>
+			<key>select</key>
+			<dict>
+				<key>className</key>
+				<string>com.webobjects.eoaccess.EOUtilities</string>
+				<key>methodName</key>
+				<string>objectsForEntityNamed</string>
+				<key>cacheResult</key>
+				<true/>
+				<key>paramClasses</key>
+				<array>
+					<string>com.webobjects.eocontrol.EOEditingContext</string>
+					<string>java.lang.String</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>^editingContext</string>
+					<string>&apos;WorkType</string>
+				</array>
+			</dict>
+			<key>displayString</key>
+			<string>.typeName</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Констатирующая</string>
 			<key>qualifierFormat</key>
 			<string>weight &gt; 0</string>
@@ -286,6 +315,22 @@
 			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>60</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Вес</string>
+			<key>hover</key>
+			<string>вес работы</string>
+			<key>keyPath</key>
+			<string>trimmedWeight</string>
+			<key>sortKey</key>
+			<string>weight</string>
+			<key>comparison</key>
+			<string>CompareDescending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>62</string>
 		</dict>
 		<dict>
 			<key>title</key>

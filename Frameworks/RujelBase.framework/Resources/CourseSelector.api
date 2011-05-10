@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="CourseSelector.java" wocomponentcontent="false">
+
+        <binding name="courseItem"/>
+        <validation message="'??????????' must be bound to a settable value">
+            <unsettable name="courseItem"/>
+        </validation>
+        <binding name="selection"/>
+        <validation message="'selection' must be bound to a settable value">
+            <unsettable name="selection"/>
+        </validation>
+        <binding name="editingContext"/>
+        <validation message="'editingContext' is a required binding.">
+            <unbound name="editingContext"/>
+        </validation>
+    <binding defaults="Actions" name="selectAction"/>
+    <binding defaults="Boolean" name="useAjax"/>
+        <binding defaults="Boolean" name="ajaxReturn"/>
+    </wo>
+</wodefinitions>

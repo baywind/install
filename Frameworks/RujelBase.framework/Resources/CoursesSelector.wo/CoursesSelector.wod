@@ -1,0 +1,38 @@
+ShowClasses : WOConditional {
+  condition = currTab;
+  negate = true;
+}
+
+ShowTeachers : WOConditional {
+  condition = showTeachers;
+}
+
+ShowSubjects : WOConditional {
+  condition = showSubjects;
+}
+
+ClassListing : ClassListing {
+	selection = selection;
+	width = "100%";
+	editingContext = ^ec;
+	onClick = session.checkRun;
+	selectAction = ^selectAction;
+	showTitle = true;
+}
+
+TeacherSelector : TeacherSelector {
+	editingContext = ^ec;
+	useAjaxPost = false;
+	selection = selection;
+	selectAction = ^selectAction;
+	allowDelete = false;
+	hideVacant = false;
+}
+SubjectSelector : WOSwitchComponent {
+  WOComponentName = subjectSelector;
+  ec = ^ec;
+  selection = selection;
+  onclick = session.checkRun;
+  selectAction = ^selectAction;
+  existingOnly = true;
+}

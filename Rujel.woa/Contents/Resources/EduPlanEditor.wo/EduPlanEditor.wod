@@ -163,7 +163,3 @@ Title: WOString {
 	value = title;
 	valueWhenEmpty = "Edu Plan";
 }
-
-UnsavedAlert: WOString {
-	value = application.strings.Strings.messages.unsavedChanges;
-}

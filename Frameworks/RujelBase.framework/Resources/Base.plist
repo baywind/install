@@ -2,80 +2,481 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CourseInspector</key>
+	<dict>
+		<key>change</key>
+		<string>Сменить преподавателя</string>
+		<key>history</key>
+		<string>История смен преподавателя</string>
+		<key>reason</key>
+		<string>Причина смены</string>
+		<key>reasonRequired</key>
+		<string>Пожалуйста, укажите причину смены преподавателя</string>
+	</dict>
+	<key>Indexer</key>
+	<dict>
+		<key>default</key>
+		<string>по умолчанию</string>
+		<key>defaultHover</key>
+		<string>значение, которое будет показано при запросе неописанного номера</string>
+		<key>idx</key>
+		<string>номер</string>
+		<key>indexer</key>
+		<string>Представление</string>
+		<key>nonUniqueIndex</key>
+		<string>Обнаружены неуникальные величины. В одни представлении кадая величина должна быть уникальной</string>
+		<key>title</key>
+		<string>Название</string>
+		<key>value</key>
+		<string>значение</string>
+	</dict>
+	<key>SettingsBase</key>
+	<dict>
+		<key>addByCourse</key>
+		<string>уточнить для отдельных курсов</string>
+		<key>advancedMode</key>
+		<string>Режим эксперта</string>
+		<key>advancedSetting</key>
+		<string>Ручная настройка не может быть преобразована в визуальную</string>
+		<key>byCourse</key>
+		<string>Привязка</string>
+		<key>default</key>
+		<string>Для всех курсов</string>
+		<key>duplicateByCourse</key>
+		<string>Указанная настройка уже существует</string>
+		<key>editors</key>
+		<array>
+			<dict>
+				<key>attribute</key>
+				<string>cycle</string>
+				<key>cellClass</key>
+				<string>highlight</string>
+				<key>cellStyle</key>
+				<string>border: 3px #cccc99; border-style: double;</string>
+				<key>colspan</key>
+				<string>2</string>
+				<key>format</key>
+				<string>%[subject]$s - %[grade]$d</string>
+				<key>mask</key>
+				<integer>6</integer>
+				<key>or</key>
+				<true/>
+				<key>popup</key>
+				<true/>
+				<key>sections</key>
+				<true/>
+				<key>showCycle</key>
+				<true/>
+				<key>sort</key>
+				<integer>50</integer>
+				<key>title</key>
+				<string>Учебный цикл</string>
+			</dict>
+			<dict>
+				<key>attribute</key>
+				<string>eduGroup</string>
+				<key>cellClass</key>
+				<string>ungerade</string>
+				<key>cellStyle</key>
+				<string>border:double 3px #ccccff;</string>
+				<key>editorPresent</key>
+				<dict>
+					<key>invokeAction</key>
+					<true/>
+					<key>presenter</key>
+					<string>ClassListing</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>editingContext</key>
+						<string>$ec</string>
+						<key>onClick</key>
+						<string>$onclick</string>
+						<key>selectAction</key>
+						<string>$doneEditing</string>
+						<key>selection</key>
+						<string>.</string>
+						<key>width</key>
+						<string>60</string>
+					</dict>
+				</dict>
+				<key>format</key>
+				<string>%[name]$s</string>
+				<key>mask</key>
+				<integer>2</integer>
+				<key>or</key>
+				<true/>
+				<key>popup</key>
+				<true/>
+				<key>sectionInSession</key>
+				<true/>
+				<key>sections</key>
+				<true/>
+				<key>sort</key>
+				<integer>25</integer>
+				<key>title</key>
+				<string>Класс</string>
+			</dict>
+			<dict>
+				<key>attribute</key>
+				<string>cycle.grade</string>
+				<key>attributeParam</key>
+				<string>grade</string>
+				<key>cellClass</key>
+				<string>gerade</string>
+				<key>cellStyle</key>
+				<string>border:double 3px #cccc99;</string>
+				<key>escapeHTML</key>
+				<false/>
+				<key>mask</key>
+				<integer>2</integer>
+				<key>popup</key>
+				<true/>
+				<key>range</key>
+				<true/>
+				<key>rangeTitle</key>
+				<string>От и/или до:</string>
+				<key>showGrade</key>
+				<true/>
+				<key>singleTitle</key>
+				<string>Один поток:</string>
+				<key>sort</key>
+				<integer>20</integer>
+				<key>title</key>
+				<string>Поток</string>
+				<key>valueWhenEmpty</key>
+				<string>&lt;em&gt;Выбрать&lt;/em&gt;</string>
+			</dict>
+			<dict>
+				<key>attribute</key>
+				<string>cycle.subject</string>
+				<key>attributeParam</key>
+				<string>subject</string>
+				<key>cellClass</key>
+				<string>gerade</string>
+				<key>cellStyle</key>
+				<string>border: 3px #cccc99 double;</string>
+				<key>mask</key>
+				<integer>4</integer>
+				<key>qualifierSelector</key>
+				<string>caseInsensitiveLike</string>
+				<key>sort</key>
+				<integer>40</integer>
+				<key>title</key>
+				<string>Название предмета</string>
+			</dict>
+			<dict>
+				<key>attribute</key>
+				<string>teacher</string>
+				<key>cellClass</key>
+				<string>female</string>
+				<key>cellStyle</key>
+				<string>border:double 3px #cc9999;</string>
+				<key>editorPresent</key>
+				<dict>
+					<key>invokeAction</key>
+					<true/>
+					<key>presenter</key>
+					<string>TeacherSelector</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>ajaxReturn</key>
+						<true/>
+						<key>editingContext</key>
+						<string>$ec</string>
+						<key>onclick</key>
+						<string>$onclick</string>
+						<key>selectAction</key>
+						<string>$doneEditing</string>
+						<key>selection</key>
+						<string>.</string>
+						<key>useAjaxPost</key>
+						<true/>
+					</dict>
+					<key>takeValuesFromRequest</key>
+					<true/>
+				</dict>
+				<key>mask</key>
+				<integer>8</integer>
+				<key>or</key>
+				<true/>
+				<key>popup</key>
+				<true/>
+				<key>presenter</key>
+				<string>PersonDisplay</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>first</key>
+					<string>1</string>
+					<key>last</key>
+					<string>2</string>
+					<key>person</key>
+					<string>.</string>
+					<key>second</key>
+					<string>1</string>
+					<key>valueWhenEmpty</key>
+					<string>&lt;em&gt;Вакансия&lt;/em&gt;</string>
+				</dict>
+				<key>sort</key>
+				<integer>60</integer>
+				<key>title</key>
+				<string>Преподаватель</string>
+			</dict>
+		</array>
+		<key>failedToParce</key>
+		<string>Не удалось считать ручную настройку выбора</string>
+		<key>selectorTitle</key>
+		<string>Для каких курсов действует настройка</string>
+		<key>setDefault</key>
+		<string>установить "для всех"</string>
+		<key>simpleMode</key>
+		<string>Простой режим</string>
+		<key>testSettings</key>
+		<string>Определение настройки для курса</string>
+		<key>unspecified</key>
+		<string>(все)</string>
+	</dict>
+	<key>Ticker</key>
+	<dict>
+		<key>All</key>
+		<string>Все</string>
+		<key>Invert</key>
+		<string>Инвертировать</string>
+		<key>None</key>
+		<string>Ничего</string>
+		<key>selectAll</key>
+		<string>Выбрать все</string>
+		<key>selectNone</key>
+		<string>Снять все</string>
+		<key>selection</key>
+		<string>Выделение</string>
+	</dict>
+	<key>allTeachers</key>
+	<string>Все учителя</string>
+	<key>before</key>
+	<string>до</string>
+	<key>courseComplete</key>
+	<dict>
+		<key>component</key>
+		<string>PrintLessons</string>
+		<key>id</key>
+		<string>lessons</string>
+		<key>lockEntity</key>
+		<string>BaseLesson</string>
+		<key>manual</key>
+		<true/>
+		<key>sort</key>
+		<string>10</string>
+		<key>title</key>
+		<string>уроки</string>
+	</dict>
+	<key>courseHasLessons</key>
+	<string>В этом курсе описаны уроки</string>
+	<key>dateAndThemeRequired</key>
+	<string>Для создания нового урока необходимо указать дату проведения и тему урока</string>
+	<key>diaryTab</key>
+	<dict>
+		<key>component</key>
+		<string>LessonsDiary</string>
+		<key>id</key>
+		<string>lessonThemes</string>
+		<key>period</key>
+		<string>true</string>
+		<key>sort</key>
+		<string>40</string>
+		<key>title</key>
+		<string>Уроки</string>
+	</dict>
+	<key>futureLessonForbidden</key>
+	<string>Запись уроков вперед запрещена</string>
 	<key>lessons</key>
 	<string>Уроки</string>
 	<key>lessonsTab</key>
 	<dict>
-		<key>title</key>
-		<string>уроки</string>
-		<key>hover</key>
-		<string>проведенные уроки</string>
-		<key>listPresenter</key>
-		<string>LessonList</string>
-		<key>id</key>
-		<string>lessonsTab</string>
-		<key>sort</key>
-		<string>05</string>
-		<key>entityName</key>
-		<string>BaseLesson</string>
 		<key>checkAccess</key>
 		<string>BaseNote</string>
 		<key>courseAttribute</key>
 		<string>course</string>
-		<key>presenter</key>
-		<string>NotePresenter</string>
+		<key>entityName</key>
+		<string>BaseLesson</string>
+		<key>hover</key>
+		<string>проведенные уроки</string>
+		<key>id</key>
+		<string>lessonsTab</string>
+		<key>listPresenter</key>
+		<string>LessonList</string>
+		<key>params</key>
+		<array>
+			<dict>
+				<key>active</key>
+				<true/>
+				<key>attribute</key>
+				<string>date</string>
+				<key>defaultMax</key>
+				<string>$session.today</string>
+				<key>defaultMin</key>
+				<dict>
+					<key>cacheResult</key>
+					<true/>
+					<key>methodName</key>
+					<string>timestampByAddingGregorianUnits</string>
+					<key>object</key>
+					<string>$session.today</string>
+					<key>paramClasses</key>
+					<array>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+						<string>int</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<integer>0</integer>
+						<integer>-1</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+						<integer>0</integer>
+					</array>
+				</dict>
+				<key>fieldSize</key>
+				<integer>10</integer>
+				<key>formatter</key>
+				<string>date</string>
+				<key>qualifierSelector</key>
+				<string>&gt;=</string>
+				<key>secondSelector</key>
+				<string>&lt;=</string>
+				<key>title</key>
+				<string>Дата</string>
+			</dict>
+		</array>
 		<key>prefetchPaths</key>
 		<array>
 			<string>notes</string>
 			<string>taskText</string>
 		</array>
+		<key>presenter</key>
+		<string>NotePresenter</string>
+		<key>sort</key>
+		<string>05</string>
+		<key>title</key>
+		<string>уроки</string>
 	</dict>
+	<key>limitedFutureLesson</key>
+	<string>Запись уроков вперед ограничена %d днями</string>
+	<key>newLesson</key>
+	<string>Новый урок</string>
+	<key>newPerson</key>
+	<dict>
+		<key>invokeAction</key>
+		<true/>
+		<key>onCancel</key>
+		<string>tryLoad</string>
+		<key>presenter</key>
+		<string>PersonEditor</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>deleteAction</key>
+			<string>$returnPage</string>
+			<key>person</key>
+			<string>.</string>
+			<key>saveAction</key>
+			<string>$returnPage</string>
+		</dict>
+		<key>takeValuesFromRequest</key>
+		<true/>
+		<key>title</key>
+		<string>Новая персона</string>
+		<key>wrapper</key>
+		<string>WOForm</string>
+	</dict>
+	<key>noLimit</key>
+	<string>все</string>
+	<key>notInEduYear</key>
+	<string>Указанная дата не попадает в учебный год</string>
+	<key>notInTab</key>
+	<string>Указанная дата не попадает в текущий диапазон. &lt;br/&gt; Перейдите на соответствующую закладку (справа) и попробуйте еще раз.</string>
+	<key>notMoreXwords</key>
+	<string>Можно использовать не более %d слов</string>
+	<key>presentation</key>
+	<dict>
+		<key>color</key>
+		<string>цвет</string>
+		<key>html</key>
+		<string>код HTML</string>
+		<key>image</key>
+		<string>изображение</string>
+		<key>inner</key>
+		<string>внутреннее</string>
+		<key>media</key>
+		<string>медиа</string>
+		<key>text</key>
+		<string>текст</string>
+	</dict>
+	<key>relatedNotesFound</key>
+	<string>найдены связанные отметки за уроки</string>
 	<key>reportSettings</key>
 	<dict>
-		<key>id</key>
-		<string>lessons</string>
-		<key>title</key>
-		<string>Уроки</string>
 		<key>active</key>
 		<true/>
+		<key>id</key>
+		<string>lessons</string>
 		<key>options</key>
 		<array>
 			<dict>
+				<key>active</key>
+				<false/>
+				<key>hover</key>
+				<string>показать все уроки за период (даже без отметок)</string>
 				<key>id</key>
 				<string>all</string>
 				<key>title</key>
 				<string>все</string>
-				<key>hover</key>
-				<string>показать все уроки за период (даже без отметок)</string>
-				<key>active</key>
-				<false/>
 			</dict>
 			<dict>
+				<key>active</key>
+				<false/>
+				<key>hover</key>
+				<string>показывать в строчку, без темы урока</string>
 				<key>id</key>
 				<string>short</string>
 				<key>title</key>
 				<string>кратко</string>
-				<key>hover</key>
-				<string>показывать в строчку, без темы урока</string>
-				<key>active</key>
-				<false/>
 			</dict>
 		</array>
 		<key>sort</key>
 		<string>12</string>
+		<key>title</key>
+		<string>Уроки</string>
+	</dict>
+	<key>selectCourse</key>
+	<dict>
+		<key>invokeAction</key>
+		<true/>
+		<key>style</key>
+		<string>min-width:20em</string>
+		<key>takeValuesFromRequest</key>
+		<false/>
+		<key>title</key>
+		<string>Выберите курс</string>
+		<key>wrapper</key>
+		<string>CourseSelector</string>
+		<key>wrapperBindings</key>
+		<dict>
+			<key>selection</key>
+			<string>.</string>
+			<key>useAjax</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>selectTeacher</key>
 	<dict>
-		<key>title</key>
-		<string>Выберите учителя</string>
-		<key>style</key>
-		<string>min-width:20em</string>
-		<key>presenter</key>
-		<string>TeacherSelector</string>
-		<key>takeValuesFromRequest</key>
-		<true/>
 		<key>invokeAction</key>
 		<true/>
+		<key>presenter</key>
+		<string>TeacherSelector</string>
 		<key>presenterBindings</key>
 		<dict>
 			<key>selection</key>
@@ -83,155 +484,20 @@
 			<key>useAjaxPost</key>
 			<true/>
 		</dict>
-	</dict>
-	<key>notMoreXwords</key>
-	<string>Можно использовать не более %d слов</string>
-	<key>newLesson</key>
-	<string>Новый урок</string>
-	<key>dateAndThemeRequired</key>
-	<string>Для создания нового урока необходимо указать дату проведения и тему урока</string>
-	<key>notInTab</key>
-	<string>Указанная дата не попадает в текущий диапазон. &lt;br/&gt; Перейдите на соответствующую закладку (справа) и попробуйте еще раз.</string>
-	<key>notInEduYear</key>
-	<string>Указанная дата не попадает в учебный год</string>
-	<key>futureLessonForbidden</key>
-	<string>Запись уроков вперед запрещена</string>
-	<key>limitedFutureLesson</key>
-	<string>Запись уроков вперед ограничена %d днями</string>
-	<key>courseHasLessons</key>
-	<string>В этом курсе описаны уроки</string>
-	<key>relatedNotesFound</key>
-	<string>найдены связанные отметки за уроки</string>
-	<key>Ticker</key>
-	<dict>
-		<key>selection</key>
-		<string>Выделение</string>
-		<key>All</key>
-		<string>Все</string>
-		<key>None</key>
-		<string>Ничего</string>
-		<key>selectAll</key>
-		<string>Выбрать все</string>
-		<key>selectNone</key>
-		<string>Снять все</string>
-		<key>Invert</key>
-		<string>Инвертировать</string>
-	</dict>
-	<key>allTeachers</key>
-	<string>Все учителя</string>
-	<key>vacant</key>
-	<string>Вакансия</string>
-	<key>before</key>
-	<string>до</string>
-	<key>SettingsBase</key>
-	<dict>
-		<key>duplicateByCourse</key>
-		<string>Указанная настройка уже существует</string>
-		<key>byCourse</key>
-		<string>Привязка</string>
-		<key>default</key>
-		<string>Для всех курсов</string>
-		<key>unspecified</key>
-		<string>(все)</string>
-		<key>addByCourse</key>
-		<string>уточнить для отдельных курсов</string>
-		<key>setDefault</key>
-		<string>установить &quot;для всех&quot;</string>
-	</dict>
-	<key>newPerson</key>
-	<dict>
-		<key>title</key>
-		<string>Новая персона</string>
-		<key>presenter</key>
-		<string>PersonEditor</string>
-		<key>wrapper</key>
-		<string>WOForm</string>
+		<key>style</key>
+		<string>min-width:20em</string>
 		<key>takeValuesFromRequest</key>
 		<true/>
-		<key>invokeAction</key>
-		<true/>
-		<key>onCancel</key>
-		<string>tryLoad</string>
-		<key>presenterBindings</key>
-		<dict>
-			<key>person</key>
-			<string>.</string>
-			<key>saveAction</key>
-			<string>$returnPage</string>
-			<key>deleteAction</key>
-			<string>$returnPage</string>
-		</dict>
-	</dict>
-	<key>diaryTab</key>
-	<dict>
-		<key>id</key>
-		<string>lessonThemes</string>
 		<key>title</key>
-		<string>Уроки</string>
-		<key>sort</key>
-		<string>40</string>
-		<key>component</key>
-		<string>LessonsDiary</string>
-		<key>period</key>
-		<string>true</string>
+		<string>Выберите учителя</string>
 	</dict>
-	<key>CourseInspector</key>
-	<dict>
-		<key>history</key>
-		<string>История смен преподавателя</string>
-		<key>change</key>
-		<string>Сменить преподавателя</string>
-		<key>reason</key>
-		<string>Причина смены</string>
-		<key>reasonRequired</key>
-		<string>Пожалуйста, укажите причину смены преподавателя</string>
-	</dict>
-	<key>courseComplete</key>
-	<dict>
-		<key>id</key>
-		<string>lessons</string>
-		<key>title</key>
-		<string>уроки</string>
-		<key>component</key>
-		<string>PrintLessons</string>
-		<key>lockEntity</key>
-		<string>BaseLesson</string>
-		<key>manual</key>
-		<true/>
-		<key>sort</key>
-		<string>10</string>
-	</dict>
-	<key>Indexer</key>
-	<dict>
-		<key>indexer</key>
-		<string>Представление</string>
-		<key>title</key>
-		<string>Название</string>
-		<key>idx</key>
-		<string>зн.</string>
-		<key>value</key>
-		<string>предст.</string>
-		<key>default</key>
-		<string>по умолчанию</string>
-		<key>defaultHover</key>
-		<string>значение, которое будет показано при запросе неописанного номера</string>
-		<key>nonUniqueIndex</key>
-		<string>Обнаружены неуникальные величины. В одни представлении кадая величина должна быть уникальной</string>
-	</dict>
-	<key>presentation</key>
-	<dict>
-		<key>text</key>
-		<string>текст</string>
-		<key>color</key>
-		<string>цвет</string>
-		<key>image</key>
-		<string>изображение</string>
-		<key>media</key>
-		<string>медиа</string>
-		<key>html</key>
-		<string>код HTML</string>
-		<key>inner</key>
-		<string>внутреннее</string>
-	</dict>
+	<key>selectorTabs</key>
+	<array>
+		<string>Классы</string>
+		<string>Предметы</string>
+		<string>Учителя</string>
+	</array>
+	<key>vacant</key>
+	<string>Вакансия</string>
 </dict>
 </plist>

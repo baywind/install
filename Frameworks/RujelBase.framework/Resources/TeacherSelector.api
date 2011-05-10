@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
         <wo class="TeacherSelector.java" wocomponentcontent="false">
 
@@ -11,5 +11,6 @@
     <binding defaults="Boolean" name="useAjaxPost"/>
     <binding defaults="Boolean" name="hideVacant"/>
         <binding defaults="Boolean" name="allowDelete"/>
+    <binding name="section"/>
     </wo>
 </wodefinitions>

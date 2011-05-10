@@ -2,8 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>title</key>
-	<string>Учащиеся</string>
+	<key>_prefetch</key>
+	<array>
+		<string>student</string>
+		<string>eduClass</string>
+	</array>
 	<key>description</key>
 	<string>Поиск по списку учащихся</string>
 	<key>entity</key>
@@ -13,24 +16,44 @@
 		<dict>
 			<key>active</key>
 			<true/>
-			<key>hidden</key>
-			<true/>
-			<key>title</key>
-			<string>Учебный год</string>
-			<key>qualifierFormat</key>
-			<string>eduClass.eduYear = %d</string>
 			<key>args</key>
 			<array>
 				<string>$session.eduYear</string>
 			</array>
+			<key>hidden</key>
+			<true/>
+			<key>qualifierFormat</key>
+			<string>eduClass.eduYear = %d</string>
+			<key>title</key>
+			<string>Учебный год</string>
 		</dict>
 		<dict>
 			<key>active</key>
 			<true/>
-			<key>title</key>
-			<string>Класс</string>
 			<key>attribute</key>
 			<string>eduClass</string>
+			<key>popup</key>
+			<dict>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenter</key>
+				<string>ClassListing</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>onClick</key>
+					<string>$session.tryLoad</string>
+					<key>selection</key>
+					<string>.</string>
+					<key>width</key>
+					<string>100%</string>
+				</dict>
+				<key>style</key>
+				<string>min-width:8em</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>title</key>
+				<string>Выберите класс</string>
+			</dict>
 			<key>presenterBindings</key>
 			<dict>
 				<key>value</key>
@@ -38,70 +61,48 @@
 				<key>valueWhenEmpty</key>
 				<string>Выбрать</string>
 			</dict>
-			<key>popup</key>
-			<dict>
-				<key>title</key>
-				<string>Выберите класс</string>
-				<key>style</key>
-				<string>min-width:8em</string>
-				<key>presenter</key>
-				<string>ClassListing</string>
-				<key>takeValuesFromRequest</key>
-				<true/>
-				<key>invokeAction</key>
-				<true/>
-				<key>presenterBindings</key>
-				<dict>
-					<key>width</key>
-					<string>100%</string>
-					<key>selection</key>
-					<string>.</string>
-					<key>onClick</key>
-					<string>$session.tryLoad</string>
-				</dict>
-			</dict>
+			<key>title</key>
+			<string>Класс</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Фамилия</string>
-			<key>hover</key>
-			<string>Используйте * для поиска по шаблону</string>
 			<key>attribute</key>
 			<string>student.lastName</string>
 			<key>fieldSize</key>
 			<integer>20</integer>
+			<key>hover</key>
+			<string>Используйте * для поиска по шаблону</string>
 			<key>qualifierSelector</key>
 			<string>caseInsensitiveLike</string>
+			<key>title</key>
+			<string>Фамилия</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Дата рождения</string>
 			<key>attribute</key>
 			<string>student.birthDate</string>
-			<key>formatter</key>
-			<string>date</string>
 			<key>fieldSize</key>
 			<integer>10</integer>
+			<key>formatter</key>
+			<string>date</string>
 			<key>qualifierSelector</key>
 			<string>&gt;=</string>
 			<key>secondSelector</key>
 			<string>&lt;</string>
+			<key>title</key>
+			<string>Дата рождения</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Пол</string>
-			<key>attributeParam</key>
-			<string>sex</string>
-			<key>qualifierFormat</key>
-			<string>student.sex = %@</string>
 			<key>args</key>
 			<array>
 				<string>.sex.value</string>
 			</array>
-			<key>presenter</key>
-			<string>PersonDisplay</string>
+			<key>attributeParam</key>
+			<string>sex</string>
 			<key>displayString</key>
 			<string>.title</string>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>qualifierFormat</key>
+			<string>student.sex = %@</string>
 			<key>select</key>
 			<array>
 				<dict>
@@ -117,92 +118,91 @@
 					<false/>
 				</dict>
 			</array>
+			<key>title</key>
+			<string>Пол</string>
 		</dict>
 		<dict>
 			<key>active</key>
 			<true/>
-			<key>title</key>
-			<string>Не исключен</string>
 			<key>comment</key>
 			<string>искать только неисключенных</string>
 			<key>qualifierFormat</key>
 			<string>isArhive &lt;&gt; 1</string>
+			<key>title</key>
+			<string>Не исключен</string>
 		</dict>
-	</array>
-	<key>_prefetch</key>
-	<array>
-		<string>student</string>
-		<string>eduClass</string>
 	</array>
 	<key>properties</key>
 	<array>
 		<dict>
-			<key>title</key>
-			<string>Класс</string>
-			<key>keyPath</key>
-			<string>eduClass</string>
-			<key>titlePath</key>
-			<string>name</string>
+			<key>active</key>
+			<true/>
 			<key>comparison</key>
 			<string>CompareCaseInsensitiveAscending</string>
-			<key>active</key>
-			<true/>
+			<key>keyPath</key>
+			<string>eduClass</string>
 			<key>sort</key>
 			<string>10</string>
+			<key>title</key>
+			<string>Класс</string>
+			<key>titlePath</key>
+			<string>name</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Фамилия</string>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.lastName</string>
-			<key>style</key>
-			<string>white-space:nowrap;</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
 			<key>sort</key>
 			<string>20</string>
+			<key>style</key>
+			<string>white-space:nowrap;</string>
+			<key>title</key>
+			<string>Фамилия</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Имя</string>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.firstName</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
 			<key>sort</key>
 			<string>21</string>
+			<key>title</key>
+			<string>Имя</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Отчество</string>
-			<key>keyPath</key>
-			<string>student.secondName</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>active</key>
 			<true/>
-			<key>sort</key>
-			<string>22</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Инициалы</string>
-			<key>keyPath</key>
-			<string>student.initials</string>
 			<key>comparison</key>
 			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
+			<key>keyPath</key>
+			<string>student.secondName</string>
 			<key>sort</key>
-			<string>25</string>
+			<string>22</string>
+			<key>title</key>
+			<string>Отчество</string>
 		</dict>
 		<dict>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>keyPath</key>
+			<string>student.initials</string>
+			<key>sort</key>
+			<string>25</string>
 			<key>title</key>
-			<string>Дата рождения</string>
+			<string>Инициалы</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.birthDate</string>
 			<key>presenterBindings</key>
@@ -210,35 +210,35 @@
 				<key>dateformat</key>
 				<string>$application.prefs.ui.dateFormat</string>
 			</dict>
-			<key>active</key>
-			<true/>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>30</string>
+			<key>title</key>
+			<string>Дата рождения</string>
 		</dict>
 		<dict>
 			<key>comparison</key>
 			<string>CompareDescending</string>
-			<key>title</key>
-			<string>Пол</string>
-			<key>sortKey</key>
-			<string>student.sex</string>
+			<key>presenterBindings</key>
+			<dict/>
 			<key>sort</key>
 			<string>40</string>
+			<key>sortKey</key>
+			<string>student.sex</string>
+			<key>title</key>
+			<string>Пол</string>
 			<key>value</key>
 			<dict>
-				<key>object</key>
-				<dict>
-					<key>true</key>
-					<string>Муж</string>
-					<key>false</key>
-					<string>Жен</string>
-				</dict>
-				<key>methodName</key>
-				<string>valueForKey</string>
 				<key>cacheResult</key>
 				<true/>
+				<key>methodName</key>
+				<string>valueForKey</string>
+				<key>object</key>
+				<dict>
+					<key>false</key>
+					<string>Ж</string>
+					<key>true</key>
+					<string>М</string>
+				</dict>
 				<key>paramClasses</key>
 				<array>
 					<string>java.lang.String</string>
@@ -250,22 +250,24 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Возраст</string>
-			<key>hover</key>
-			<string>сортируется по дате рождения - при суммировании ставьте на последнее место</string>
-			<key>sortKey</key>
-			<string>student.birthDate</string>
 			<key>comparison</key>
 			<string>CompareDescending</string>
+			<key>hover</key>
+			<string>сортируется по дате рождения - при суммировании ставьте на последнее место</string>
+			<key>presenterBindings</key>
+			<dict/>
+			<key>sortKey</key>
+			<string>student.birthDate</string>
+			<key>title</key>
+			<string>Возраст</string>
 			<key>value</key>
 			<dict>
+				<key>cacheResult</key>
+				<true/>
 				<key>className</key>
 				<string>net.rujel.interfaces.Person$Utility</string>
 				<key>methodName</key>
 				<string>calculateAge</string>
-				<key>cacheResult</key>
-				<true/>
 				<key>paramClasses</key>
 				<array>
 					<string>java.util.Date</string>
@@ -279,19 +281,21 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Статус</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>hover</key>
 			<string>0 - обычный; 1 - исключен; 2 - переведен</string>
 			<key>keyPath</key>
 			<string>isArhive</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
 			<key>sort</key>
 			<string>50</string>
+			<key>title</key>
+			<string>Статус</string>
 		</dict>
 	</array>
+	<key>title</key>
+	<string>Учащиеся</string>
 </dict>
 </plist>

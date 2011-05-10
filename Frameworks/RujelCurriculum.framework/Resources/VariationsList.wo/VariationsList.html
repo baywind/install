@@ -1,4 +1,5 @@
-<div class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
+<div class="backfield1" id="ajaxPopup">
+<webobject name = "CrossBox"><webobject name = "Cross"/></webobject>
 <webobject name = "Form"><table border = "1" style = "max-width:30em;">
 <tr><td style = "padding:0px;">
 	<table cellspacing = "0" width = "100%">
@@ -32,7 +33,8 @@
 	<webobject name = "ShowSuggestions">
 	<tr><th colspan = "3"><webobject name = "SuggestionsTitle"/></th></tr><webobject name = "Suggestions">
 	<tr class = "ungerade"><td align = "center"><webobject name = "VarDate"/></td>
-		<td align = "center"><webobject name = "VarValue"/></td>
+		<td align = "center"><webobject name = "VarValue"/></td><webobject name = "NoSubmit">
+		<td class = "grey"><webobject name = "Dop"/></td></webobject>
 		<webobject name = "SubmitSuggest"><webobject name = "SubmitString"/></webobject></tr>
 	</webobject></webobject></webobject>
 </tfoot>
@@ -40,13 +42,13 @@
 <tr class = "selection" style = "height:2px;"><td colspan = "3"></td></tr></webobject>
 <webobject name = "VarRow"><td align = "center"><webobject name = "VarDate"/></td>
 	<webobject name = "ValueCell"><webobject name = "VarValue"/></webobject>
-	<td><webobject name = "ReasonPresenter"/></td>
+	<td><webobject name = "ReasonPresenter"/> 
+		<webobject name = "BackTitle"/></td>
 	</webobject>
 </webobject></tbody>
 </table></td></tr>
-<webobject name = "HasMessage"><tr>
-	<td align = "center" class="message">
-		<webobject name="Message"/></td></tr></webobject>
 <tr><td align = "center" style = "padding:4pt;">
 		<webobject name="Button"/></td></tr>
 </table></webobject></div>
+<webobject name = "HasMessage"><div class = "messageAjax">
+<webobject name = "Message"/></div></webobject>

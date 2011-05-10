@@ -1,26 +1,64 @@
-<webobject name = "PageWrapper">
-<webobject name = "CanCreate">
+<webobject name = "PageWrapper"><webobject name = "HasSections">
+<div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade">
+	<webobject name = "SectionTabs"/>
+	<webobject name = "NoSection"><webobject name = "All"/></webobject>
+</div></webobject>
+<h1 style = "margin-bottom:10px;"><webobject name = "Title"/></h1>
+<table cellpadding = "4" style = "margin-left:12em;">
+<tr><th align = "right" style = "height:2em;"><webobject name = "MonthTitle"/>:</th>
+	<td align = "left"><webobject name = "Form">
+		<webobject name = "SelectMonth"/> <webobject name = "Year"/></webobject>
+		<webobject name = "DatesForm"><webobject name = "BeginDate"/> -
+			<webobject name = "EndDate"/> <webobject name = "SubmitDates"/></webobject></td>
+<webobject name = "CanCreate"><td rowspan = "3" valign = "top" align = "left">
+<script language = "JavaScript">
+function showZPU(form) {
+	var url = form.action + "?unsubmittedZPU=";
+	if(form.unsubmittedZPU.checked) {
+		url = url + form.unsubmittedZPU.value;
+	}
+	url = url + "&added=";
+	if(form.added.checked) {
+		url = url + form.added.value;
+	}
+	window.open(url,"_blank");
+}
+function showTabel(ini) {
+	var url = ini.form.action + '?' + formParams(ini);
+	window.open(url,"_blank");
+	return false;
+}
+</script>
 <webobject name = "TotalForm">
-		<strong><webobject name = "WholeSchool"/>:</strong><br/>
-		<webobject name = "ShowDetails"/><webobject name = "ShowDetailsTitle"/><br/>
-		<webobject name = "ShowLoad"/><webobject name = "ShowLoadTitle"/>
-			 &nbsp; <webobject name = "ExportLink"></webobject>
-</webobject></webobject>
-<h1><webobject name = "Title"/></h1>
-
-<table style = "table-layout:fixed;width:100%;">
-<thead><tr valign = "middle" style = "height:2em;">
-	<td style = "width:12em;" align = "center"><webobject name = "Form">
-	<webobject name = "SelectMonth"/> <webobject name = "Year"/></webobject></td>
-	<td><webobject name = "SelectTeacher">
-	<webobject name = "TeacherTitle"/></webobject>
-	<span style = "font-size:larger;margin-left:2em;"><webobject name = "TeacherName"/></span></td>
-	<webobject name = "HasDetails"><td align = "right" style = "width:3em;">
-		<webobject name = "ExportDetails"></webobject></td></webobject>
-</tr></thead>
-<webobject name = "HasDetails">
-	<tbody class = "backfield1"><tr valign = "top">
-	<td><div style = "overflow:hidden;">
+<table style = "border:#999999 double;position:absolute;" class = "backfield2" cellspacing = "4">
+<thead onclick = "toggleObj('wholeSchool');" onmouseover = "dim(this);" onmouseout = "unDim(this);">
+<tr><th colspan = "2" style = "padding:5px;"><webobject name = "WholeSchool"/></th></tr></thead>
+<tbody id = "wholeSchool" style = "display:none;" class = "grey">
+<tr><th><webobject name = "TabelShort"/></th>
+	<th><webobject name = "JournalShort"/></th></tr>
+<tr><td align = "left">
+		<webobject name = "ShowDetails"/>&nbsp;<webobject name = "ShowDetailsTitle"/><br/>
+		<webobject name = "ShowLoad"/>&nbsp;<webobject name = "ShowLoadTitle"/><br/>
+		<webobject name = "OmitUnsubmitted"/> <webobject name = "UnsubmittedTitle"/></td>
+	<td align = "left">
+		<webobject name = "IncludeAdded"/>&nbsp;<webobject name = "AddedTitle"/><br>
+		<webobject name = "ShowUnsubmittedZPU"/> <webobject name = "UnsubmittedTitle"/></td></tr>
+<tr><td align = "center"><webobject name = "ExportTabel"/> <webobject name = "ShowTabel"/></td>
+	<td align = "center"><webobject name = "ExportZPU"/> <webobject name = "ShowFullZPU"/></td></tr>
+</tbody></table></webobject></td></webobject></tr>
+<tr style = "height:2em;"><th align = "right"><webobject name = "TeacherTitle"/>:</th>
+	<webobject name = "SelectTeacher"><webobject name = "TeacherName"/></webobject></tr>
+<tr><td></td></tr>
+</table><webobject name = "HasDetails">
+<table style = "table-layout:fixed;width:100%;margin-top:2em;" cellpadding = "0">
+<thead>
+<tr><td style = "width:12em;"></td>
+	<th style = "font-size:110%;"align = "left"><webobject name = "TabelTitle"/></th>
+	<td style = "width:3em;" align = "center"><webobject name = "ExportDetails"></webobject>
+		</td></tr>
+</thead>
+<tbody class = "backfield1"><tr valign = "top">
+	<td style = "width:12em;"><div style = "overflow:hidden;width:12em;">
 		<table width = "100%">
 		<thead><tr><th colspan = "2" style = "max-width:12em;"><webobject name = "DateTitle"/></th>
 		</tr></thead>
@@ -38,8 +76,8 @@
 				<webobject name = "HoursTitle"/></div></th><webobject name = "Days">
 			<th><div style = "width:2em;"><webobject name = "Value"/></div></th></webobject>
 		</tr></thead>
-		<tbody><webobject name = "Details">
-			<webobject name = "Row"><td style = "border-right: 1px dotted #666666">
+		<tbody><webobject name = "Details"><webobject name = "Row">
+			<td style = "border-right: 1px dotted #666666;white-space:nowrap;">
 				<webobject name = "Hours"/></td>
 			<webobject name = "Days"><webobject name = "Cell">
 				<webobject name = "Value"/></webobject></webobject>
@@ -53,6 +91,10 @@
 		</webobject></webobject>
 		</tbody></table></div>
 </td></tr>
-</tbody></webobject>
-</table>
-</webobject>
+</tbody>
+</table></webobject><webobject name = "HasJournalZPU">
+<table width = "100%" style = "margin-top:2em;"><tr><th style = "font-size:110%;"><webobject name = "TitleZPU"/></th>
+	<td align = "right"><webobject name = "ExportTeacherZPU"></webobject></td></tr>
+<tr><td colspan = "2">
+<webobject name = "JournalZPU"/>
+</td></tr></table></webobject></webobject>

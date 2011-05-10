@@ -73,13 +73,6 @@ String2: WOString {
 	escapeHTML = false;
 }
 
-ThemeContainer: WOGenericContainer {
-	class = workItem.kind;
-	elementName = "td";
-	align = "left";
-}
-
-
 WorkTheme: WOString {
 	value = workItem.theme;
 	escapeHTML = false;

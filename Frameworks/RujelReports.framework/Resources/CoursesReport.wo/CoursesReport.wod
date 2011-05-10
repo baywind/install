@@ -2,8 +2,24 @@ PageWrapper : PageWrapper {
 	title = title;
 	resourcesFramework = "RujelBase";
 	scriptResource = "sorting.js";
-	styles = ".sorting {display:none;}";
 }
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = session.state.section;
+  tablist = application.strings.sections.list;
+  titleAttribute = "value";
+  vertical = true;
+}
+
+CurrSection : WOString {
+  value = session.state.section.value;
+}
+
+HasSections : WOConditional {
+  condition = application.strings.sections.hasSections;
+}
+
 Title : WOString {
   value = title;
   escapeHTML = false;
@@ -11,32 +27,16 @@ Title : WOString {
 
 Tabs : Tabs {
 	numeric = true;
-	currTab = tabindex;
-	tablist = session.strings.RujelReports_Reports.CoursesReport.tabs;
+	currTab = session.state.courseSelector;
+	tablist = session.strings.RujelBase_Base.selectorTabs;
 	onClick = session.tryLoad;
+	selectAction = modifyList;
 }
-ClassSelector : WOConditional {
-	condition = tabindex;
-	negate = true;
-}
-
-ClassListing1 : ClassListing {
-	selection = curSource;
-	width = "100%";
-	editingContext = ec;
-	onClick = session.tryLoad;
+CoursesSelector : CoursesSelector {
+  ec = ec;
+  courses = courses;
 }
 
-TeacherSelector : WOConditional {
-	condition = tabindex;
-	negate = false;
-}
-
-TeacherSelector2 : TeacherSelector {
-	editingContext = ec;
-	useAjaxPost = false;
-	selection = curSource;
-}
 ReportTable : ReportTable {
   list = courses;
   properties = display;

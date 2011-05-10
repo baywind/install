@@ -64,6 +64,7 @@ StudentTD: OnClickContainer {
 	disabled = cantSelectStudent;
 	title = studentItem.person.secondName;
 	colspan = 2;
+	style = "white-space:nowrap;";
 }
 
 StudentName: PersonDisplay {
@@ -116,4 +117,9 @@ NotePresenter2: WOSwitchComponent {
 	denyCreation = true;
 	single=^single;
 	presenterCache = presenterCache;
+}
+
+StudentNotes : WOString {
+  value = studentNotes;
+  escapeHTML = false;
 }

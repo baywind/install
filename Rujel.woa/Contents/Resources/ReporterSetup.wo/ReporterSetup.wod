@@ -13,14 +13,6 @@ Title : WOString {
   escapeHTML = false;
 }
 
-ReportTable : ReportTable {
-  list = courses;
-  properties = display;
-  rowClass = "ungerade";
-  itemDict = subItem;
-  itemRow = item;
-}
-
 Form : WOForm {
   style = "border: 1px solid #999999;";
   onsubmit = "enumerate(this,'sorting',1);return true;";
@@ -90,11 +82,6 @@ SubRow : WOGenericContainer {
   class = "grey";
 }
 
-AvailableTitle : WOString {
-  value = application.strings.RujelReports_Reports.CoursesReport.availableReports;
-  escapeHTML = false;
-}
-
 MoveUp: WOImage {
 	filename = "up.png";
 	framework ="RujelBase";
@@ -115,13 +102,6 @@ ShowPresets : OnClickContainer {
   elementName = "div";
   onclick = "toggleObj('saveSection');fitWindow();";
   style = "font-size:small;";
-}
-
-PresetsContainer : WOGenericContainer {
-  elementName = "td";
-  id = "reportPresets";
-  style = presetsStyle;
-  valign = "top";
 }
 
 Save : WOSubmitButton {
@@ -198,7 +178,7 @@ SubHasOptions : WOConditional {
 }
 
 SubOptions : WORepetition {
-  list = subItem.options;
+  list = options;
   item = optItem;
 }
 
@@ -206,7 +186,7 @@ SubOptions : WORepetition {
 OptRadio : WORadioButton {
   name = subItem.id;
   value = optItem.value;
-  selection = subItem.active;
+  selection = selection;
 }
 
 OptCell : WOGenericContainer {
@@ -216,4 +196,22 @@ OptCell : WOGenericContainer {
 
 OptName : WOString {
   value = optItem.title;
+}
+
+IsRadio : WOConditional {
+  condition = subItem.popUp;
+  negate = true;
+}
+
+IsPopup : WOConditional {
+  condition = subItem.popUp;
+}
+
+PopUp : WOPopUpButton {
+  list = options;
+  item = optItem;
+  noSelectionString = subItem.noSelectionString;
+  displayString = optTitle;
+  selection = selection;
+  name = subItem.id;
 }

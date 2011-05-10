@@ -3,7 +3,7 @@ PageWrapper : PageWrapper {
 }
 
 Title : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Tabel.extTitle;
+  value = application.strings.RujelCurriculum_Curriculum.Tabel.title;
   escapeHTML = false;
   valueWhenEmpty = "Teachers tabel";
 }
@@ -25,9 +25,14 @@ Year : WOString {
   escapeHTML = false;
 }
 
-ExportLink : WOSubmitButton {
-  action = export;
+ExportTabel : WOSubmitButton {
   value = application.strings.RujelReports_Reports.export;
+  action = exportTabel;
+}
+
+ExportZPU : WOSubmitButton {
+  value = application.strings.RujelReports_Reports.export;
+  action = exportFullZPU;
 }
 
 ExportDetails : WOHyperlink {
@@ -35,12 +40,17 @@ ExportDetails : WOHyperlink {
   string = application.strings.RujelReports_Reports.export;
 }
 
+ExportTeacherZPU : WOHyperlink {
+  action = exportTeacherZPU;
+  string = application.strings.RujelReports_Reports.export;
+}
 SelectTeacher : OnClickContainer {
-  elementName = "span";
-  class = "button";
+  elementName = "td";
+  class = "highlight";
   invokeAction = selectTeacher;
   onclick = session.ajaxPopup;
-  hide = cantSelect;
+  disabled = cantSelect;
+  style = "font-size:110%;";
 }
 
 TeacherName : PersonDisplay {
@@ -49,7 +59,9 @@ TeacherName : PersonDisplay {
   first = 2;
   second = 2;
   startWithLast = true;
-  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+  valueWhenEmpty = session.strings.Reusables_Strings.uiElements.Select;
+  nullValue = session.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
 }
 
 Row : WOGenericContainer {
@@ -110,7 +122,7 @@ SumTitle : WOString {
 }
 
 DateTitle : WOString {
-  value = application.strings.Reusables_Strings.dataTypes.Date;
+  value = session.strings.Reusables_Strings.dataTypes.Date;
   valueWhenEmpty = "Date";
   escapeHTML = false;
 }
@@ -141,7 +153,8 @@ Cell : WOGenericContainer {
 }
 
 TotalForm : WOForm {
-  style = "position:absolute;top:3em;right:1ex;padding:1ex;";
+  action = showFullZPU;
+  multipleSubmit = true;
 }
 
 ShowDetailsTitle : WOString {
@@ -152,10 +165,12 @@ ShowDetailsTitle : WOString {
 
 ShowDetails : WOCheckBox {
   checked = options.showDetails;
+  name = "details";
 }
 
 ShowLoad : WOCheckBox {
   checked = options.showLoad;
+  name = "load";
 }
 
 ShowLoadTitle : WOString {
@@ -172,5 +187,137 @@ Hours : WOString {
 HoursTitle : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Tabel.loadShort;
   valueWhenEmpty = "load";
+  escapeHTML = false;
+}
+
+TitleZPU : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.journalZPU;
+  escapeHTML = false;
+}
+
+HasJournalZPU : WOConditional {
+  condition = journalZPU.count;
+}
+
+IncludeAdded : WOCheckBox {
+  checked = options.includeAdded;
+  name = "added";
+}
+
+AddedTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.includeAdded;
+  escapeHTML = false;
+}
+
+UnsubmittedTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.unsubmitted;
+  escapeHTML = false;
+}
+
+OmitUnsubmitted : WOCheckBox {
+  checked = options.unsubmitted;
+  name = "unsubmitted";
+}
+
+ShowUnsubmittedZPU : WOCheckBox {
+  checked = options.unsubmittedZPU;
+  name = "unsubmittedZPU";
+}
+
+JournalZPU : JournalZPU {
+  currTeacher = currTeacher;
+  currMonth = currMonth;
+  journalZPU = journalZPU;
+}
+
+MonthTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.Month;
+  escapeHTML = false;
+}
+
+TabelTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.tabel;
+  escapeHTML = false;
+  valueWhenEmpty = "Tabel";
+}
+
+JournalShort : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.journalZPUshort;
+  escapeHTML = false;
+}
+
+TabelShort : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Tabel.tabelShort;
+  escapeHTML = false;
+}
+
+ShowFullZPU : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  value = session.strings.Reusables_Strings.uiElements.Show;
+  onclick = "showZPU(form);";
+}
+
+ShowTabel : WOSubmitButton {
+  action = exportTabel;
+  value = session.strings.Reusables_Strings.uiElements.Show;
+  name = "html";
+  onclick = "return showTabel(this);";
+}
+
+DatesForm : WOForm {
+  action = applyDates;
+}
+
+BeginDate : WOTextField {
+  value = currMonth.beginDate;
+  dateformat = application.prefs.ui.shortDateFormat;
+  size = 5;
+  maxlength = 5;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+}
+
+EndDate : WOTextField {
+  value = currMonth.endDate;
+  dateformat = application.prefs.ui.shortDateFormat;
+  size = 5;
+  maxlength = 5;
+  style = "text-align:center;";
+  onkeypress = "return isNumberInput(event,true);";
+}
+
+SubmitDates : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = "&radic;";
+}
+
+HasSections : WOConditional {
+  condition = application.strings.sections.hasSections;
+}
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = section;
+  byAttribute = true;
+  tablist = application.strings.sections.list;
+  titleAttribute = "value";
+  selectAction = go;
+  vertical = true;
+  onClick = session.tryLoad;
+}
+
+NoSection : OnClickContainer {
+  elementName = "div";
+  class = noneSectionClass;
+  invokeAction = noSection;
+  onclick = session.tryLoad;
+  style="margin:2pt 0pt;padding:1pt 3pt;white-space:nowrap;";
+}
+
+All : WOString {
+  value = session.strings.RujelBase_Base.noLimit;
+  valueWhenEmpty = "all";
   escapeHTML = false;
 }

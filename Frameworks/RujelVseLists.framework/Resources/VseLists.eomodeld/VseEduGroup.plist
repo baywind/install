@@ -35,6 +35,7 @@
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
+        {columnName = "SECTION_NUM"; name = section; prototypeName = short; }, 
         {
             columnName = "GROUP_TITLE"; 
             name = title; 
@@ -42,9 +43,9 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (absGrade, firstYear, flags, grID, lastYear, title); 
+    attributesUsedForLocking = (absGrade, firstYear, flags, grID, lastYear, section, title); 
     className = "net.rujel.vselists.VseEduGroup"; 
-    classProperties = (absGrade, firstYear, flags, lastYear, lists, title); 
+    classProperties = (absGrade, firstYear, flags, lastYear, lists, section, title, vseTutors); 
     externalName = "VSE_EDU_GROUP"; 
     fetchSpecificationDictionary = {}; 
     name = VseEduGroup; 
@@ -58,6 +59,13 @@
             joins = ({destinationAttribute = groupID; sourceAttribute = grID; }); 
             name = lists; 
             ownsDestination = Y; 
+        }, 
+        {
+            destination = VseTutor; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = groupID; sourceAttribute = grID; }); 
+            name = vseTutors; 
         }
     ); 
 }

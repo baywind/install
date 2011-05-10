@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
         <wo class="PersonDisplay.java" wocomponentcontent="false">
 
@@ -14,5 +14,6 @@
     <binding defaults="Boolean" name="nowrap"/>
         <binding name="valueWhenEmpty"/>
     <binding name="emptyStyle"/>
+    <binding name="nullValue"/>
     </wo>
 </wodefinitions>

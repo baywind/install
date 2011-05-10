@@ -17,13 +17,14 @@ DateField : WOTextField {
   value = newTitle;
   size = 10;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date required";
 }
 
 ThemeField : WOText {
   value = newTheme;
   rows = 2;
   cols = 40;
+  class = "required";
 }
 
 Form : WOForm {

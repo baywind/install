@@ -8,67 +8,31 @@ NotBase : WOConditional {
 }
 
 HasCourse : WOConditional {
-  condition = bc.course;
+  condition = islist;
 }
 
 NoCourse : WOConditional {
-  condition = bc.course;
+  condition = islist;
   negate = true;
 }
 
 CourseGroup : WOString {
-  value = bc.course.eduGroup.name;
+  value = item.eduGroup.name;
 }
 
 CourseSubject : WOString {
-  value = bc.course.subjectWithComment;
+  value = item.subjectWithComment;
   escapeHTML = false;
 }
 
 CourseTeacher : PersonDisplay {
-  person = bc.course.teacher;
+  person = item.teacher;
   last = 2;
   first = 1;
   second = 1;
   startWithLast = true;
 }
 
-GroupCell : WOGenericContainer {
-  elementName = "td";
-  class = groupStyle;
-  style = "border:double 3px #cccccc;";
-}
-
-Group : WOString {
-  value = bc.eduGroup.name;
-  valueWhenEmpty = bc.grade.toString;
-}
-
-SubjCell : WOGenericContainer {
-  elementName = "td";
-  class = subjectStyle;
-  style = "border:double 3px #cccccc;";
-}
-
-Subject : WOString {
-  value = bc.cycle.subject;
-  valueWhenEmpty = application.strings.RujelBase_Base.SettingsBase.unspecified;
-}
-
-TeacherCell : WOGenericContainer {
-  elementName = "td";
-  class = teacherStyle;
-  style = "border:double 3px #cccccc;";
-}
-
-Teacher : PersonDisplay {
-  person = bc.teacher;
-  last = 2;
-  first = 1;
-  second = 1;
-  startWithLast = true;
-  valueWhenEmpty = application.strings.RujelBase_Base.SettingsBase.unspecified;
-}
 BaseString : WOString {
   value = application.strings.RujelBase_Base.SettingsBase.default;
   escapeHTML = false;
@@ -79,6 +43,7 @@ EditCell : OnClickContainer {
   invokeAction = edit;
   hide = access._edit;
   onclick = session.ajaxPopup;
+  rowspan = rowspan;
 }
 
 CanEdit : WOConditional {
@@ -96,6 +61,7 @@ DeleteCell : OnClickContainer {
   invokeAction = delete;
   hide = access._delete;
   onclick = session.tryLoad;
+  rowspan = rowspan;
 }
 
 Cross : WOImage {
@@ -111,10 +77,108 @@ ComponentContent : WOComponentContent {
 Row : WOGenericContainer {
   elementName = "tr";
   title = bc.eduYear;
-   class = "grey";
+  class = "grey";
 }
 
 EditorHead : WOString {
   value = editorHead;
   escapeHTML = false;
+}
+Listing : WORepetition {
+  list = list;
+  item = item;
+}
+
+SpanCell : WOGenericContainer {
+  elementName = "td";
+  rowspan = rowspan;
+  class = "backfield2";
+  omitTags = hide;
+}
+
+Matrix : WORepetition {
+  count = 3;
+  index = index;
+}
+
+MatrixCell : WOGenericContainer {
+  elementName = "td";
+  class = dict.cellClass;
+  style = dict.cellStyle;
+  title = dict.title;
+  colspan = dict.colspan;
+}
+
+Value : DisplayAny {
+  value = value;
+  dict = dict;
+}
+
+HasOther : WOConditional {
+  condition = list;
+}
+
+Others : WORepetition {
+  list = list;
+  item = item;
+}
+
+OtherSpan : WOGenericContainer {
+  elementName = "span";
+  class = item.cellClass;
+  style = item.cellStyle;
+  title = item.title;
+}
+
+OtherValue : DisplayAny {
+  value = item;
+  dict = dict;
+}
+
+CondCell : WOGenericContainer {
+  elementName = "td";
+  rowspan = rowspan;
+  omitTags = omitCell;
+}
+
+IsSingle : WOConditional {
+  condition = single;
+}
+
+IsMultiple : WOConditional {
+  condition = single;
+  negate = true;
+}
+
+Values : WORepetition {
+  list = value;
+  item = item;
+}
+
+Rows : WORepetition {
+  list = rows;
+  item = matrix;
+}
+
+ShowCell : WOConditional {
+  condition = hide;
+  negate = true;
+}
+
+ShowMatrix : WOConditional {
+  condition = showCell;
+}
+IsAdvanced : WOConditional {
+  condition = advanced;
+}
+
+PrintQualifier : WOString {
+  value = bc.printQualifier;
+}
+
+EmptyCell : WOGenericContainer {
+  elementName = "td";
+  omitTags = advanced;
+  colspan = "3";
+  style = "height:0px;";
 }

@@ -1,18 +1,48 @@
-<table align = "center" style = "text-align:center;" cellpadding = "2">
+<webobject name = "SortForm"><table align = "center" style = "text-align:center;" cellpadding = "2">
 	<webobject name = "CanEdit"><caption align = "bottom" valign = "bottom">
 			&nbsp;<webobject name = "SetBase"><webobject name = "BaseTitle"/></webobject>
 			<webobject name = "AddByCourse">+</webobject>
 	</caption></webobject>
-	<thead><tr><webobject name = "ShowDetails">
+	<thead><webobject name = "ShowCourse">
+		<tr class = "selection"><td></td>
+			<td><webobject name = "CourseClass"/></td>
+			<td><webobject name = "CourseSubject"/></td>
+			<td><webobject name = "CourseTeacher"/></td>
+			<webobject name = "EditorHead"/><td>...</td>
+			<td><webobject name = "Content"/></td>
+		</tr>
+	</webobject><tr><webobject name = "ShowDetails"><td/>
 			<th><webobject name = "EduGroupLabel"/></th>
 			<th><webobject name = "EduPlanLabel"/></th>
 			<th><webobject name = "TeacherLabel"/></th>
-			<webobject name = "EditorHead"/>
-	</webobject><webobject name = "Content"/>
-	</tr></thead>
+			<webobject name = "EditorHead"/><webobject name = "CanSort">
+			<script language = "JavaScript">
+			function reorder() {
+				hideObj('testSort');
+				showObj('saveSort');
+			}
+			</script>
+			<th width = "24" rowspan = "2" id = "saveSort" style = "display:none;">
+				<webobject name = "SaveSort"/></th>
+			<webobject name = "TestSort">?</webobject>
+			</webobject><webobject name = "Title"/>
+	</webobject>
+	</tr>
+	<webobject name = "ShowBase"><tr class = "highlight2"><webobject name = "ShowDetails">
+		<td colspan = "4" align = "center">
+		<webobject name = "BaseString"/></td>
+		<webobject name = "EditorHead"/></webobject>
+		<webobject name = "CondCell"><webobject name = "Content"/></webobject>
+	</tr></webobject>
+	</thead>
 	<tbody>
 	<webobject name = "ByCourseList"><webobject name = "ShowDetails">
-		<webobject name = "ByCoursePresenter"><webobject name = "Content"/>
+		<webobject name = "ByCoursePresenter"><webobject name = "CanSort">
+		<webobject name = "SortCell"><webobject name = "MoveUp"/>
+			<webobject name = "MoveDown"/><webobject name = "ItemSorting"/></webobject>
+		</webobject><webobject name = "CondCell">
+			<webobject name = "Content"/></webobject>
 	</webobject></webobject><webobject name = "HideDetais">
-	<webobject name = "Content"/></webobject></webobject></tbody>
-</table>
+	<webobject name = "CondCell"><webobject name = "Content"/></webobject>
+	</webobject></webobject></tbody>
+</table></webobject>

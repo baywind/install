@@ -34,11 +34,6 @@ List : WORepetition {
 	item = item;
 }
 
-Date : WOString {
-  value = item.raised;
-  dateformat = application.prefs.ui.dateFormat;
-}
-
 Raised : WOString {
   value = item.raised;
   dateformat = application.prefs.ui.dateFormat;

@@ -19,13 +19,6 @@ CourseTitle : WOString {
   escapeHTML = false;
 }
 
-CourseLink : WOGenericContainer {
-  elementName = "a";
-  href = link;
-  onclick = "updateFrame(this.href);";
-  omitTags = disabled;
-}
-
 ByClass : WOString {
   value = application.strings.RujelComplete_Complete.byClass;
   valueWhenEmpty = "By Class";

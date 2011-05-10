@@ -2,9 +2,9 @@ PageWrapper : PageWrapper {
   title = application.strings.RujelReports_Reports.CustomReport.title;
   resourcesFramework = "RujelBase";
   scriptResource = "sorting.js";
-  styles = ".sorting {display:none;}";
   onLoad = "scrollToObj('curr','highlight2');";
 }
+
 Title : WOString {
   value = title;
   escapeHTML = false;
@@ -18,29 +18,6 @@ ReportsList : Tabs {
   vertical = true;
   hoverAttribute = "description";
   onClick = session.tryLoad;
-}
-
-Parameters : WORepetition {
-  list = currReport.params;
-  item = item;
-}
-
-ParamTitle : WOString {
-  value = item.title;
-  escapeHTML = false;
-}
-
-ParamContainer : OnClickContainer {
-  elementName = "th";
-  title = item.hover;
-  align = "right";
-  onclick = "toggleParam(this);";
-}
-
-Parameter : Parameter {
-  itemDict = item;
-  paramsDict = params;
-  editingContext = ec;
 }
 
 SearchForm : WOForm {
@@ -75,11 +52,6 @@ PropSelector : PropSelector {
 }
 ReportSelected : WOConditional {
   condition = currReport;
-}
-
-ShowParam : WOConditional {
-  condition = item.hidden;
-  negate = true;
 }
 
 ExportButton : WOHyperlink {
@@ -143,29 +115,8 @@ QueryTitle : WOString {
   escapeHTML = false;
 }
 
-ParamCell : WOGenericContainer {
-  elementName = "td";
-  valign = "middle";
-  align = "left";
-  style = paramCellStyle;
-}
-
-IsActive : WOCheckBox {
-  checked = item.active;
-  style = "display:none;";
-}
-
 ShowCount : WOString {
   value = showCount;
-  escapeHTML = false;
-}
-
-HasComment : WOConditional {
-  condition = item.comment;
-}
-
-ParamComment : WOString {
-  value = item.comment;
   escapeHTML = false;
 }
 
@@ -173,4 +124,10 @@ Count : WOString {
   value = list.count;
   numberformat = "0";
   escapeHTML = false;
+}
+
+QueryParams : QueryParams {
+  list = currReport.params;
+  params = params;
+  ec = ec;
 }

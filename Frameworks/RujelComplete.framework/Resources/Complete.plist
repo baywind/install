@@ -65,6 +65,10 @@
 		<string>CompleteSetup</string>
 		<key>sort</key>
 		<string>80</string>
+		<key>framework</key>
+		<string>RujelBase</string>
+		<key>scriptResource</key>
+		<string>sorting.js</string>
 	</dict>
 	<key>dashboard</key>
 	<dict>

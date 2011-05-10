@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
-        <wo class="EditIndex.java" wocomponentcontent="false">
+        <wo class="EditIndex.java" wocomponentcontent="true">
 
         <binding name="indexer"/>
         <validation message="'indexer' is a required binding.">
@@ -8,5 +8,16 @@
         </validation>
     <binding name="forcetype"/>
         <binding defaults="Boolean" name="subtypes"/>
+    <binding name="access"/>
+        <binding name="item"/>
+        <validation message="'item' must be bound to a settable value">
+            <unsettable name="item"/>
+        </validation>
+    <binding defaults="Boolean" name="showHeader"/>
+    <binding name="commentTitle"/>
+    <binding name="idxTitle"/>
+        <binding name="valueTitle"/>
+    <binding name="valueSize"/>
+    <binding defaults="Actions" name="updateAction"/>
     </wo>
 </wodefinitions>

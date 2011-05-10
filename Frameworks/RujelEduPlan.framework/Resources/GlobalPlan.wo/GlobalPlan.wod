@@ -89,11 +89,12 @@ CanEdit : WOConditional {
 
 CntEdit : WOConditional {
   condition = editable;
-  negate = true;
+  negate = hasSection;
 }
 
 ReadHours : WOString {
   value = planHours;
+  escapeHTML = false;
 }
 
 PlusImage : WOImage {
@@ -119,7 +120,7 @@ SubjectCell : OnClickContainer {
   elementName = "td";
   onclick = session.ajaxPopup;
   invokeAction = editSubject;
-  disabled = session.readAccess._edit.subjectItem.subjectEO;
+  disabled = access._edit.subjectItem.subjectEO;
   style = cellStyle;
   title = subjectItem.subjectEO.fullName;
 }
@@ -140,10 +141,6 @@ CanAddSubject : WOConditional {
 
 ShowRow : WOConditional {
   condition = showRow;
-}
-
-NextArea : WOConditional {
-  condition = area;
 }
 
 TogleAllButton : OnClickContainer {
@@ -197,4 +194,64 @@ Colspan : WOGenericContainer {
   colspan = colspan;
   style = "padding:1ex";
   align = "center";
+}
+
+Sections : WORepetition {
+  list = sections;
+  item = item;
+}
+
+SectionContainer : OnClickContainer {
+  elementName = "div";
+  class = sectionClass;
+  invokeAction = selectSection;
+  onclick = session.checkRun;
+  style = "margin:3px";
+  hide = noSections;
+}
+
+SectionNum : WOString {
+  value = item.idx;
+  numberformat = "0";
+}
+
+SectionTitle : WOString {
+  value = item.value;
+}
+
+ShowAll : WOConditional {
+  condition = hasSection;
+  negate = true;
+}
+
+HasSection : WOConditional {
+  condition = hasSection;
+}
+
+CycleLevel : WOTextField {
+  value = cycleLevel;
+  numberformat = "0";
+  style = "display:none;";
+}
+
+CanSave : WOConditional {
+  condition = access.edit.PlanCycle;
+}
+
+SectionsTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.sections;
+  escapeHTML = false;
+}
+
+SetupSections : OnClickContainer {
+  elementName = "div";
+  style = "font-size:120%;text-align:center;";
+  invokeAction = setupSections;
+  onclick = session.ajaxPopupNoPos;
+  disabled = access._edit.PlanCycle;
+}
+
+AllTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.showAll;
+  escapeHTML = false;
 }

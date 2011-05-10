@@ -520,13 +520,9 @@
 					<key>style</key>
 					<string>.valueStyle</string>
 					<key>popup</key>
-					<string>EditVariation</string>
+					<string>$variationEditor</string>
 					<key>popupParams</key>
 					<dict>
-						<key>course</key>
-						<string>.course</string>
-						<key>returnNormaly</key>
-						<true/>
 						<key>variation</key>
 						<string>.</string>
 					</dict>

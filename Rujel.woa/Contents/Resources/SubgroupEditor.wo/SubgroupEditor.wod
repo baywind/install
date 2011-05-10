@@ -97,15 +97,6 @@ TextField1: WOTextField {
 	value = total;
 }
 
-CSSLink: WOResourceURL {
-	filename = "style.css";
-	framework = "app";
-}
-
-JSLink: WOResourceURL {
-	filename = "scripts.js";
-}
-
 CanEdit : WOConditional {
   condition = cantEdit;
   negate = true;

@@ -80,23 +80,45 @@ function setDisplay(obj,value) {
 	return obj;
 }
 
-function showObj(obj) {
-	return setDisplay(obj,'');
-}
-
-function hideObj(obj) {
-	return setDisplay(obj,'none');
-}
-
-function toggleObj(obj) {
+function showObj(obj,inline) {
 	if(typeof obj == 'string') {
 		obj = document.getElementById(obj);
 		if(obj == null) return false;
 	}
-	if(obj.style.display == 'none')
+	if(inline)
+		obj.style.visibility = 'visible';
+	else
 		obj.style.display = '';
+	return obj;
+}
+
+function hideObj(obj,inline) {
+	if(typeof obj == 'string') {
+		obj = document.getElementById(obj);
+		if(obj == null) return false;
+	}
+	if(inline)
+		obj.style.visibility = 'hidden';
 	else
 		obj.style.display = 'none';
+}
+
+function toggleObj(obj,inline) {
+	if(typeof obj == 'string') {
+		obj = document.getElementById(obj);
+		if(obj == null) return false;
+	}
+	if(inline) {
+		if(obj.style.visibility == 'hidden')
+			obj.style.visibility = 'visible';
+		else
+			obj.style.visibility = 'hidden';
+	} else {
+		if(obj.style.display == 'none')
+			obj.style.display = '';
+		else
+			obj.style.display = 'none';
+	}
 	return obj;
 }
 

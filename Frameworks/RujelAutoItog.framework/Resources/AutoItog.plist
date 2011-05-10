@@ -11,7 +11,9 @@
 		<key>component</key>
 		<string>PrognosAddOn</string>
 		<key>defaultOn</key>
-		<string>true</string>
+		<true/>
+		<key>inSingle</key>
+		<true/>
 		<key>framework</key>
 		<string>app</string>
 		<key>id</key>
@@ -155,6 +157,8 @@
 		<string>Произошла ошибка при обновлении прогнозов</string>
 		<key>ItogLock</key>
 		<string>Прогнозируемый итог</string>
+		<key>perform</key>
+		<string>выставить сейчас</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

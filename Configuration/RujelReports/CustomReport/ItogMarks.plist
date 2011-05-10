@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>title</key>
-	<string>Итоговые</string>
 	<key>description</key>
 	<string>Итоговые отметки</string>
 	<key>entity</key>
@@ -11,20 +9,20 @@
 	<key>params</key>
 	<array>
 		<dict>
-			<key>title</key>
-			<string>Период</string>
 			<key>active</key>
 			<true/>
 			<key>attribute</key>
 			<string>container</string>
+			<key>displayString</key>
+			<string>.title</string>
 			<key>select</key>
 			<dict>
+				<key>cacheResult</key>
+				<true/>
 				<key>className</key>
 				<string>net.rujel.eduresults.ItogContainer</string>
 				<key>methodName</key>
 				<string>itogsInYear</string>
-				<key>cacheResult</key>
-				<true/>
 				<key>paramClasses</key>
 				<array>
 					<string>java.lang.Number</string>
@@ -36,126 +34,126 @@
 					<string>^editingContext</string>
 				</array>
 			</dict>
-			<key>displayString</key>
-			<string>.title</string>
+			<key>title</key>
+			<string>Период</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Отметка</string>
 			<key>attribute</key>
 			<string>mark</string>
 			<key>fieldSize</key>
 			<integer>5</integer>
 			<key>qualifierSelector</key>
 			<string>caseInsensitiveLike</string>
+			<key>title</key>
+			<string>Отметка</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Успешность</string>
 			<key>attribute</key>
 			<string>value</string>
-			<key>formatter</key>
-			<string>0.####</string>
+			<key>comment</key>
+			<string>в долях от единицы</string>
 			<key>fieldSize</key>
 			<integer>5</integer>
+			<key>formatter</key>
+			<string>0.####</string>
 			<key>qualifierSelector</key>
 			<string>&gt;=</string>
 			<key>secondSelector</key>
 			<string>&lt;</string>
-			<key>comment</key>
-			<string>в долях от единицы</string>
+			<key>title</key>
+			<string>Успешность</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Класс</string>
 			<key>attribute</key>
 			<string>grade</string>
+			<key>comment</key>
+			<string>без буквы</string>
 			<key>fieldSize</key>
 			<integer>3</integer>
 			<key>formatter</key>
 			<string>0</string>
-			<key>qualifierSelector</key>
-			<string>=</string>
-			<key>comment</key>
-			<string>без буквы</string>
 			<key>in</key>
 			<dict>
 				<key>relationship</key>
 				<string>cycle</string>
 			</dict>
+			<key>qualifierSelector</key>
+			<string>=</string>
+			<key>title</key>
+			<string>Класс</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Ученик</string>
 			<key>attribute</key>
 			<string>student</string>
-			<key>presenter</key>
-			<string>PersonDisplay</string>
-			<key>presenterBindings</key>
-			<dict>
-				<key>person</key>
-				<string>.</string>
-				<key>last</key>
-				<string>2</string>
-				<key>first</key>
-				<string>2</string>
-				<key>second</key>
-				<string>0</string>
-				<key>valueWhenEmpty</key>
-				<string>Выбрать</string>
-			</dict>
 			<key>popup</key>
 			<dict>
-				<key>title</key>
-				<string>Выберите ученика</string>
-				<key>style</key>
-				<string>min-width:20em</string>
-				<key>presenter</key>
-				<string>PersListing</string>
-				<key>takeValuesFromRequest</key>
-				<true/>
 				<key>invokeAction</key>
 				<true/>
+				<key>presenter</key>
+				<string>PersListing</string>
 				<key>presenterBindings</key>
 				<dict>
 					<key>entity</key>
 					<string>Student</string>
 					<key>firstNameDisplay</key>
 					<integer>2</integer>
+					<key>noEdit</key>
+					<true/>
 					<key>secondNameDisplay</key>
 					<integer>2</integer>
 					<key>selection</key>
 					<string>.</string>
 					<key>useAjaxPost</key>
 					<true/>
-					<key>noEdit</key>
-					<true/>
 				</dict>
+				<key>style</key>
+				<string>min-width:20em</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>title</key>
+				<string>Выберите ученика</string>
 			</dict>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>first</key>
+				<string>2</string>
+				<key>last</key>
+				<string>2</string>
+				<key>person</key>
+				<string>.</string>
+				<key>second</key>
+				<string>0</string>
+				<key>valueWhenEmpty</key>
+				<string>Выбрать</string>
+			</dict>
+			<key>title</key>
+			<string>Ученик</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Помеченные</string>
 			<key>comment</key>
-			<string>был установлен флаг &quot;пометить&quot;</string>
+			<string>был установлен флаг "пометить"</string>
 			<key>qualifierFormat</key>
 			<string>flags &gt;= 32</string>
+			<key>title</key>
+			<string>Помеченные</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>С изменениями</string>
 			<key>comment</key>
 			<string>после выставления изменялись составляющие оценки</string>
 			<key>qualifierFormat</key>
 			<string>(flags &gt;= 16 AND flags &lt; 32) OR flags &gt;= 48</string>
+			<key>title</key>
+			<string>С изменениями</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Флаги</string>
 			<key>comment</key>
 			<string>у отметки есть флаги</string>
 			<key>qualifierFormat</key>
 			<string>flags &gt; 0</string>
+			<key>title</key>
+			<string>Флаги</string>
 		</dict>
 	</array>
 	<key>prefetch</key>
@@ -165,169 +163,175 @@
 	<key>properties</key>
 	<array>
 		<dict>
-			<key>title</key>
-			<string>Год</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>container.eduYear</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
 			<key>sort</key>
 			<string>02</string>
+			<key>title</key>
+			<string>Год</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Период</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>container</string>
-			<key>titlePath</key>
-			<string>title</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
 			<key>sort</key>
 			<string>05</string>
+			<key>title</key>
+			<string>Период</string>
+			<key>titlePath</key>
+			<string>title</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Класс</string>
-			<key>keyPath</key>
-			<string>cycle.grade</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>active</key>
 			<true/>
-			<key>sort</key>
-			<string>10</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Буква класса</string>
-			<key>short</key>
-			<string>Б</string>
-			<key>keyPath</key>
-			<string>assumeCourse.eduGroup.title</string>
 			<key>comparison</key>
 			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
+			<key>keyPath</key>
+			<string>cycle.grade</string>
 			<key>sort</key>
-			<string>12</string>
+			<string>10</string>
+			<key>title</key>
+			<string>Класс</string>
 		</dict>
 		<dict>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>keyPath</key>
+			<string>assumeCourse.eduGroup.title</string>
+			<key>short</key>
+			<string>Б</string>
+			<key>sort</key>
+			<string>12</string>
 			<key>title</key>
-			<string>Преподаватель</string>
+			<string>Буква класса</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>assumeCourse.teacher</string>
-			<key>style</key>
-			<string>white-space:nowrap;</string>
 			<key>presenter</key>
 			<string>PersonDisplay</string>
 			<key>presenterBindings</key>
 			<dict>
-				<key>person</key>
-				<string>.</string>
-				<key>last</key>
-				<string>2</string>
 				<key>first</key>
 				<string>1</string>
+				<key>last</key>
+				<string>2</string>
+				<key>person</key>
+				<string>.</string>
 				<key>second</key>
 				<string>1</string>
 			</dict>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
 			<key>sort</key>
 			<string>15</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Предмет</string>
-			<key>keyPath</key>
-			<string>cycle.subjectEO</string>
-			<key>titlePath</key>
-			<string>subject</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
-			<key>sort</key>
-			<string>20</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Ученик</string>
-			<key>keyPath</key>
-			<string>student</string>
 			<key>style</key>
 			<string>white-space:nowrap;</string>
+			<key>title</key>
+			<string>Преподаватель</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>keyPath</key>
+			<string>cycle.subjectEO</string>
+			<key>sort</key>
+			<string>20</string>
+			<key>title</key>
+			<string>Предмет</string>
+			<key>titlePath</key>
+			<string>subject</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>keyPath</key>
+			<string>student</string>
 			<key>presenter</key>
 			<string>PersonDisplay</string>
 			<key>presenterBindings</key>
 			<dict>
-				<key>person</key>
-				<string>.</string>
-				<key>last</key>
-				<string>2</string>
 				<key>first</key>
 				<string>2</string>
+				<key>last</key>
+				<string>2</string>
+				<key>person</key>
+				<string>.</string>
 				<key>second</key>
 				<string>0</string>
 			</dict>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
 			<key>sort</key>
 			<string>30</string>
+			<key>style</key>
+			<string>white-space:nowrap;</string>
+			<key>title</key>
+			<string>Ученик</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Отметка</string>
-			<key>keyPath</key>
-			<string>mark</string>
-			<key>style</key>
-			<string>text-align:center;font-weight:bold;</string>
 			<key>active</key>
 			<true/>
-			<key>sort</key>
-			<string>50</string>
 			<key>comparison</key>
 			<string>CompareCaseInsensitiveDescending</string>
-			<key>onclick</key>
-			<string>$session.ajaxPopup</string>
 			<key>disabled</key>
 			<string>$session.readAccess._read.itemRow</string>
+			<key>keyPath</key>
+			<string>mark</string>
 			<key>nextPage</key>
 			<string>ItogPopup</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopup</string>
 			<key>pageParams</key>
 			<dict>
 				<key>itog</key>
 				<string>$itemRow</string>
-				<key>student</key>
-				<string>$itemRow.student</string>
 				<key>itogContainer</key>
 				<string>$itemRow.container</string>
+				<key>student</key>
+				<string>$itemRow.student</string>
 			</dict>
 			<key>popup</key>
 			<true/>
+			<key>sort</key>
+			<string>50</string>
+			<key>style</key>
+			<string>text-align:center;font-weight:bold;</string>
+			<key>title</key>
+			<string>Отметка</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Успешность</string>
-			<key>keyPath</key>
-			<string>value</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>itemHover</key>
 			<string>.</string>
+			<key>keyPath</key>
+			<string>value</string>
+			<key>sort</key>
+			<string>60</string>
+			<key>title</key>
+			<string>Успешность</string>
 			<key>value</key>
 			<dict>
-				<key>object</key>
-				<string>.value</string>
 				<key>methodName</key>
 				<string>movePointRight</string>
+				<key>object</key>
+				<string>.</string>
 				<key>paramClasses</key>
 				<array>
 					<string>int</string>
@@ -337,80 +341,24 @@
 					<integer>2</integer>
 				</array>
 			</dict>
-			<key>presenterBindings</key>
-			<dict>
-				<key>numberformat</key>
-				<string>&apos;0%</string>
-			</dict>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
-			<key>sort</key>
-			<string>60</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Комментарий</string>
+			<key>active</key>
+			<false/>
 			<key>keyPath</key>
 			<string>comment</string>
-			<key>style</key>
-			<string>text-align:left;font-style:italic;</string>
-			<key>active</key>
-			<false/>
 			<key>sort</key>
 			<string>70</string>
+			<key>style</key>
+			<string>text-align:left;font-style:italic;</string>
+			<key>title</key>
+			<string>Комментарий</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Флаги</string>
-			<key>flagNames</key>
-			<dict>
-				<key>className</key>
-				<string>net.rujel.eduresults.ItogMark</string>
-				<key>methodName</key>
-				<string>localisedFlagKeys</string>
-				<key>cacheResult</key>
-				<true/>
-			</dict>
-			<key>keyPath</key>
-			<string>readFlags</string>
-			<key>presenter</key>
-			<string>FlagsPresenter</string>
-			<key>presenterBindings</key>
-			<dict>
-				<key>disabled</key>
-				<true/>
-				<key>flags</key>
-				<string>.</string>
-				<key>flagNames</key>
-				<string>$valueOf.qqq.itemDict.exportDict.flagNames</string>
-				<key>inRow</key>
-				<true/>
-			</dict>
 			<key>active</key>
 			<false/>
-			<key>sort</key>
-			<string>80</string>
 			<key>exportDict</key>
 			<dict>
-				<key>title</key>
-				<dict>
-					<key>object</key>
-					<string>$valueOf.qqq.itemDict.flagNames</string>
-					<key>methodName</key>
-					<string>componentsJoinedByString</string>
-					<key>paramClasses</key>
-					<array>
-						<string>java.lang.String</string>
-					</array>
-					<key>paramValues</key>
-					<array>
-						<string> ; </string>
-					</array>
-					<key>cacheResult</key>
-					<true/>
-				</dict>
 				<key>_presenterBindings</key>
 				<dict>
 					<key>value</key>
@@ -418,25 +366,25 @@
 				</dict>
 				<key>flagNames</key>
 				<dict>
+					<key>cacheResult</key>
+					<true/>
 					<key>className</key>
 					<string>net.rujel.eduresults.ItogMark</string>
 					<key>methodName</key>
 					<string>localisedFlagKeys</string>
-					<key>cacheResult</key>
-					<true/>
 				</dict>
 				<key>subParams</key>
 				<array>
 					<dict>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
 						<key>title</key>
 						<string>изменялась</string>
 						<key>value</key>
 						<string>.changed</string>
-						<key>presenterBindings</key>
-						<dict>
-							<key>value</key>
-							<string>1</string>
-						</dict>
 						<key>wrapper</key>
 						<string>WOConditional</string>
 						<key>wrapperBindings</key>
@@ -446,15 +394,15 @@
 						</dict>
 					</dict>
 					<dict>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
 						<key>title</key>
 						<string>не соответствует успешности</string>
 						<key>value</key>
 						<string>.forced</string>
-						<key>presenterBindings</key>
-						<dict>
-							<key>value</key>
-							<string>1</string>
-						</dict>
 						<key>wrapper</key>
 						<string>WOConditional</string>
 						<key>wrapperBindings</key>
@@ -464,15 +412,15 @@
 						</dict>
 					</dict>
 					<dict>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
 						<key>title</key>
 						<string>остались задолженности</string>
 						<key>value</key>
 						<string>.incomplete</string>
-						<key>presenterBindings</key>
-						<dict>
-							<key>value</key>
-							<string>1</string>
-						</dict>
 						<key>wrapper</key>
 						<string>WOConditional</string>
 						<key>wrapperBindings</key>
@@ -482,15 +430,15 @@
 						</dict>
 					</dict>
 					<dict>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
 						<key>title</key>
 						<string>выставлена вручную</string>
 						<key>value</key>
 						<string>.manual</string>
-						<key>presenterBindings</key>
-						<dict>
-							<key>value</key>
-							<string>1</string>
-						</dict>
 						<key>wrapper</key>
 						<string>WOConditional</string>
 						<key>wrapperBindings</key>
@@ -500,15 +448,15 @@
 						</dict>
 					</dict>
 					<dict>
+						<key>presenterBindings</key>
+						<dict>
+							<key>value</key>
+							<string>1</string>
+						</dict>
 						<key>title</key>
 						<string>изменения в составляющих</string>
 						<key>value</key>
 						<string>.constituents</string>
-						<key>presenterBindings</key>
-						<dict>
-							<key>value</key>
-							<string>1</string>
-						</dict>
 						<key>wrapper</key>
 						<string>WOConditional</string>
 						<key>wrapperBindings</key>
@@ -518,15 +466,15 @@
 						</dict>
 					</dict>
 					<dict>
-						<key>title</key>
-						<string>помечен</string>
-						<key>value</key>
-						<string>.flagged</string>
 						<key>presenterBindings</key>
 						<dict>
 							<key>value</key>
 							<string>1</string>
 						</dict>
+						<key>title</key>
+						<string>помечен</string>
+						<key>value</key>
+						<string>.flagged</string>
 						<key>wrapper</key>
 						<string>WOConditional</string>
 						<key>wrapperBindings</key>
@@ -536,8 +484,55 @@
 						</dict>
 					</dict>
 				</array>
+				<key>title</key>
+				<dict>
+					<key>cacheResult</key>
+					<true/>
+					<key>methodName</key>
+					<string>componentsJoinedByString</string>
+					<key>object</key>
+					<string>$valueOf.qqq.itemDict.flagNames</string>
+					<key>paramClasses</key>
+					<array>
+						<string>java.lang.String</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string> ; </string>
+					</array>
+				</dict>
 			</dict>
+			<key>flagNames</key>
+			<dict>
+				<key>cacheResult</key>
+				<true/>
+				<key>className</key>
+				<string>net.rujel.eduresults.ItogMark</string>
+				<key>methodName</key>
+				<string>localisedFlagKeys</string>
+			</dict>
+			<key>keyPath</key>
+			<string>readFlags</string>
+			<key>presenter</key>
+			<string>FlagsPresenter</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>disabled</key>
+				<true/>
+				<key>flagNames</key>
+				<string>$valueOf.qqq.itemDict.exportDict.flagNames</string>
+				<key>flags</key>
+				<string>.</string>
+				<key>inRow</key>
+				<true/>
+			</dict>
+			<key>sort</key>
+			<string>80</string>
+			<key>title</key>
+			<string>Флаги</string>
 		</dict>
 	</array>
+	<key>title</key>
+	<string>Итоговые</string>
 </dict>
 </plist>

@@ -4,6 +4,7 @@ Wrapper : PageWrapper {
 	cssResource = currTab.cssResource;
 	scriptResource = currTab.scriptResource;
 	hasChanges = ec.hasChanges;
+	styles = currTab.styles;
 }
 
 Title : WOString {

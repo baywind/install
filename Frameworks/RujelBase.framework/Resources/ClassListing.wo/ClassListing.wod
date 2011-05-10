@@ -16,6 +16,7 @@ DynamicTableRow1: DynamicTableRow {
 	selectAction = anAction;
 	onClick = ^onClick;
 	switchParam = currClass.grade;
+	hover = rowTitle;
 }
 
 String1: WOString {

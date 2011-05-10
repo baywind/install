@@ -1,0 +1,24 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+}
+
+EditIndex : EditIndex {
+  indexer = sIndex;
+  access = session.readAccess.FLAGS.EduPlan;
+  showHeader = false;
+  forcetype = "eduSection";
+  onclick = session.ajaxPopupNoPos;
+  onsubmit = "refreshRequired = true;return ajaxPost(this);";
+  updateAction = update;
+}
+
+ClosePopup : OnClickContainer {
+  elementName = "span";
+  invokeAction = close;
+  onclick = session.checkRun;
+  style = "position:absolute;right:2pt;top:2pt;";
+}

@@ -1,12 +1,13 @@
 <div class="backfield1" id="ajaxPopup" style = "width:20em;">
-<webobject name = "ReturnNormaly"><webobject name = "Cross"/>
+<webobject name = "CrossBox"><webobject name = "Cross"/>
 </webobject><webobject name = "Form"><table border = "1" width = "100%">
 <tr><th colspan = "2" style = "padding:4pt;"><webobject name = "VariationTitle"/></th></tr>
 <tr><th><webobject name = "DateTitle"/>:</th>
 	<td><webobject name = "DateField"/></td></tr>
-<tr><td align = "left"><webobject name = "TrueRadio"/><webobject name = "MinusTitle"/><br/>
-		<webobject name = "FalseRadio"/><webobject name = "PlusTitle"/></td>
-	<td align = "center"><webobject name = "ValueField"/></td></tr>
+<tr><th><webobject name = "MinusTitle"/>:</th>
+	<td align = "center"><webobject name = "ValueField"/></td></tr><webobject name = "HasLesson">
+<tr><th><webobject name = "SubstituteTitle"/>:</th>
+	<webobject name = "ShowLesson"><webobject name = "SubsSubject"/></webobject></tr></webobject>
 <tr><td colspan = "2"><webobject name = "ReasonSelector"/></td></tr>
 <tr><td colspan = "2" style = "padding:4pt;">
 <webobject name="Save"/> 
@@ -15,3 +16,5 @@
 </td></tr>
 </table></webobject>
 </div>
+<webobject name = "HasMessage"><div class = "messageAjax">
+<webobject name = "SesMessage"/></div></webobject>

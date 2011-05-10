@@ -12,11 +12,6 @@
 		<string>guest</string>
 		<key>guestPassword</key>
 		<string></string>
-		<key>groupMapping</key>
-		<dict>
-			<key>any</key>
-			<string>*</string>
-		</dict>
 		<key>usersList</key>
 		<dict>
 			<key>root</key>

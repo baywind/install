@@ -22,7 +22,7 @@ SubstituteTD : OnClickContainer {
 
 AddSubstitute : OnClickContainer {
   elementName = "td";
-  invokeAction = edit;
+  invokeAction = add;
   disabled = cantCreate;
   onclick = session.ajaxPopup;
 }
@@ -36,8 +36,13 @@ ShowAny : WOConditional {
   condition = show;
 }
 
-showEmptyRow : WOConditional {
-  condition = empty;
+EmptyRow : OnClickContainer {
+  elementName = "tr";
+  hide = notEmpty;
+  invokeAction = edit;
+  disabled = cantCreate;
+  onclick = session.ajaxPopup;
+  class = emptyRowClass;
 }
 
 InspectorImage : WOImage {
@@ -66,13 +71,6 @@ IsAdded : WOString {
   escapeHTML = false;
 }
 
-JoinContainer : OnClickContainer {
-  elementName = "td";
-  onclick = session.ajaxPopupNoPos;
-  invokeAction = addJoin;
-  disabled = cantCreate;
-}
-
 JoinTitle : WOString {
   value = session.strings.RujelCurriculum_Curriculum.titles.joint;
   escapeHTML = false;
@@ -94,11 +92,7 @@ OpenJoint : OnClickContainer {
   title = session.strings.RujelCurriculum_Curriculum.titles.openJoint;
 }
 
-CanAdd : WOConditional {
-  condition = canAdd;
-}
-
-CantAdd : WOConditional {
-  condition = canAdd;
-  negate = true;
+SubsSubject : WOString {
+  value = variation.getPaired.course.subjectWithComment;
+  escapeHTML = false;
 }

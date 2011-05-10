@@ -9,9 +9,6 @@ AllowEdit: WOConditional {
 	condition = currLesson;
 }
 
-CanEdit: WOConditional {
-	condition = ^canEdit;
-}
 
 CanMove: WOString {
 	value = canMove;
@@ -87,9 +84,6 @@ DeleteButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	onclick = session.confirmMessage;
 }
-DispalayPopup: WOString {
-	value = dispalayPopup;
-}
 
 WeightTitle: WOString {
 	value = application.strings.RujelCriterial_Strings.weight;
@@ -98,10 +92,6 @@ WeightTitle: WOString {
 
 HasStudent: WOConditional {
 	condition = ^student;
-}
-
-OpenIspector : WOActionURL {
-  action = inspectorPopup;
 }
 
 InspectorCaller : WOGenericContainer {
@@ -214,13 +204,22 @@ Weight: WOString {
 StudentPresenter: WOSwitchComponent {
 	WOComponentName = studentPresenter;
 	lesson = lessonItem;
-	isSelected = false;
 	readOnly = true;
+	isSelected = false;
 	student = ^student;
 	denyCreation = false;
 	full=true;
 }
 
+WorkMarksPresenter: WOSwitchComponent {
+	WOComponentName = studentPresenter;
+	lesson = lessonItem;
+	readOnly = false;
+	isSelected = true;
+	student = ^student;
+	denyCreation = false;
+	full=true;
+}
 ThemeTitle: WOString {
 	value = application.strings.RujelCriterial_Strings.theme;
 }
@@ -231,10 +230,6 @@ TitlePresenter: WOSwitchComponent {
 	isSelected = false;
 	readOnly = true;
 	full=true;
-}
-
-IsNew : WOConditional {
-  condition = lessonIsNew;
 }
 
 AnnounceContainer : WOGenericContainer {
@@ -282,4 +277,12 @@ HasCriteria : WOConditional {
 NoCritMax : WOString {
   value = criterlessMax;
   escapeHTML = false;
+}
+
+StudentName : PersonDisplay {
+  person = ^student;
+  startWithLast = true;
+  last = 2;
+  first = 2;
+  second = 0;
 }

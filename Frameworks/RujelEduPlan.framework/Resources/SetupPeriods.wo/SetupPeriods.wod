@@ -130,7 +130,7 @@ WeekDaysField : WOTextField {
   maxlength = 3;
   numberformat = "0";
   style = "text-align:center;";
-  disabled = session.readAccess._edit.SettingByCourse;
+  disabled = session.readAccess._edit.QualifiedSetting;
   onkeypress = "return isNumberInput(event,false);";
 }
 

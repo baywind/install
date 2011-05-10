@@ -24,27 +24,21 @@ Repetition : WORepetition {
 }
 
 Exists : WOConditional {
-  condition = exists;
+  condition = selected;
+  negate = true;
 }
 
 ExistingRow : OnClickContainer {
   elementName = "tr";
   class = rowClass;
   disabled = session.readAccess._edit.Holiday;
-  onclick = session.tryLoad;
+  onclick = session.checkRun;
   invokeAction = select;
   title = item.listName;
 }
 
-NameCell: OnClickContainer {
-	elementName = "td";
-	onclick = session.tryLoad;
-	invokeAction = select;
-	disabled = item.name;
-}
-
 Name : WOString {
-  value = item.holidayType.name;
+  value = item.name;
 }
 
 Begin : WOString {
@@ -58,33 +52,36 @@ End : WOString {
 }
 
 Preset : WOConditional {
-  condition = exists;
-  negate = true;
+  condition = selected;
+  negate = false;
 }
 
 BeginField : WOTextField {
-	value = item.begin;
+	value = dict.begin;
 	dateformat = application.prefs.ui.dateFormat;
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
-	disabled = item.disabled;
+	class = "date";
+	disabled = dict.delete;
+	onchange = "checkChanges(this);";
+	name = "beginH";
 }
 
 EndField : WOTextField {
-	value = item.end;
+	value = dict.end;
 	dateformat = application.prefs.ui.dateFormat;
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
-	onfocus = "if(!value && defaultValue)value=defaultValue;";
-	disabled = item.disabled;
+	class = "date";
+	onfocus = "if(!value)value=form.beginH.value;";
+	disabled = dict.delete;
+	onchange = "checkChanges(this);";
 }
 
 Disabled : WOCheckBox {
-	checked = item.disabled;
+	checked = dict.delete;
 	style = "display:none;";
 }
 
@@ -100,12 +97,11 @@ Cross : WOImage {
   filename = "cross.png";
   height = 12;
   width = 12;
-  style = crossStyle;
 }
 
 PresetRow: WOGenericContainer {
 	elementName = "tr";
-	class = rowClass;
+	class = "ungerade";
 }
 
 Save: WOSubmitButton {
@@ -115,45 +111,11 @@ Save: WOSubmitButton {
 Form : WOForm {
 }
 
-BeginNewField : WOTextField {
-	value = newDict.begin;
-	dateformat = application.prefs.ui.dateFormat;
-	size = 10;
-	maxlength = 10;
-	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
-	name = "beginH";
-}
-
-EndNewField : WOTextField {
-	value = newDict.end;
-	dateformat = application.prefs.ui.dateFormat;
-	size = 10;
-	maxlength = 10;
-	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
-	onfocus = "if(!value)value=form.beginH.value;";
-}
-
-NewNameField : WOTextField {
-  value = newDict.name;
-  style = "width:96%;";
-  maxlength = 28;
-}
-
-IsDefined : WOConditional {
-  condition = item.name;
-  negate = true;
-}
-
-Undefined : WOConditional {
-  condition = item.name;
-}
-
 NameField : WOTextField {
-  value = item.name;
+  value = dict.name;
   style = "width:96%;";
   maxlength = 28;
+  onchange = "checkChanges(this);";
 }
 
 CanCreate : WOConditional {
@@ -174,5 +136,5 @@ ShowButtton : WOConditional {
 
 Plus : WOGenericContainer {
   elementName = "strong";
-  style = plusStyle;
+  style = "color:#009900;display:none;";
 }

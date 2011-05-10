@@ -1,6 +1,12 @@
 {
     attributes = (
-        {allowsNull = N; columnName = AREA_ID; name = areaID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "AREA_ID"; 
+            name = areaID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "SPEC_FLAGS"; name = flags; prototypeName = short; }, 
         {columnName = "FULL_NAME"; name = fullName; prototypeName = string; }, 
         {
             allowsNull = N; 
@@ -9,21 +15,26 @@
             prototypeName = byte; 
             valueType = i; 
         }, 
-        {allowsNull = N; columnName = SORT_NUM; name = num; prototypeName = short; }, 
+        {allowsNull = N; columnName = "SORT_NUM"; name = num; prototypeName = short; }, 
         {allowsNull = N; columnName = "S_ID"; name = sID; prototypeName = short; }, 
         {
             allowsNull = N; 
-            columnName = SUB_GROUPS; 
+            columnName = "SUB_GROUPS"; 
             name = subgroups; 
             prototypeName = byte; 
             valueType = i; 
         }, 
-        {allowsNull = N; columnName = SHORT_NAME; name = subject; prototypeName = word; }
+        {
+            allowsNull = N; 
+            columnName = "SHORT_NAME"; 
+            name = subject; 
+            prototypeName = word; 
+        }
     ); 
-    attributesUsedForLocking = (areaID, fullName, normalGroup, num, subgroups, subject); 
+    attributesUsedForLocking = (areaID, flags, fullName, normalGroup, num, subgroups, subject); 
     className = "net.rujel.eduplan.Subject"; 
-    classProperties = (area, fullName, normalGroup, num, subgroups, subject); 
-    externalName = PL_SUBJECT; 
+    classProperties = (area, flags, fullName, normalGroup, num, subgroups, subject); 
+    externalName = "PL_SUBJECT"; 
     fetchSpecificationDictionary = {}; 
     name = Subject; 
     primaryKeyAttributes = (sID); 

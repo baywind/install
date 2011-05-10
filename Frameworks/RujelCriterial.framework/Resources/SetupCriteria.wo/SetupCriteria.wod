@@ -25,9 +25,11 @@ ByCourseReview : SettingsByCourse {
   item = item;
   ec = ec;
   readOnly = true;
+  title = ^dict.critSet;
 }
 ItemName : WOString {
   value = item.textValue;
+  valueWhenEmpty = base.textValue;
 }
 
 Criteria : WORepetition {
@@ -392,7 +394,13 @@ CreateIndexPrompt : WOString {
 
 EditIndex : EditIndex {
   indexer = criterion;
-  forceType = "criteria"; 
+  forceType = "criteria";
+  showHeader = true;
+  access = session.readAccess.FLAGS.CriteriaSet;
+  idxTitle = session.strings.RujelCriterial_Strings.titles.idx;
+  valueTitle = session.strings.RujelCriterial_Strings.titles.value;
+  commentTitle = session.strings.Reusables_Strings.dataTypes.comment;
+  valueSize = 10;
 }
 
 IndicesForm : WOForm {

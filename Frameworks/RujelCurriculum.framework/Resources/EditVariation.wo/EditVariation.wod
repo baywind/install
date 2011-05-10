@@ -4,12 +4,17 @@ Cross : WOImage {
   align = "right";
   height = 10;
   width = 10;
-  onclick = "closePopup();";
+}
+
+CrossBox : OnClickContainer {
+  elementName = "span";
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = done;
   style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
 }
 
 Form : WOForm {
-  onsubmit = onsubmit;
+  onsubmit = "ajaxPost(this);return false;";
   action = save;
 }
 
@@ -32,21 +37,7 @@ DateField : WOTextField {
   size = 10;
   style = "text-align:center;";
   onchange = "ajaxPost(this.form);";
-  onkeypress = "return isNumberInput(event,true);";
-}
-
-TrueRadio : WORadioButton {
-	name = "negative";
-	selection = negative;
-	value = true;
-	disabled = onlyChooseReason;
-}
-
-FalseRadio : WORadioButton {
-	name = "negative";
-	selection = negative;
-	value = false;
-	disabled = onlyChooseReason;
+  class = "date";
 }
 
 ValueField : WOTextField {
@@ -55,7 +46,7 @@ ValueField : WOTextField {
   size = 3;
   style = "text-align:center;font-size:larger;";
   disabled = onlyChooseReason;
-  onkeypress = "return isNumberInput(event,false);";
+  class = "numeric";
 }
 
 ReasonSelector : ReasonSelector {
@@ -87,7 +78,7 @@ DeleteButton: WOGenericElement {
 CancelButton: WOGenericElement {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	invokeAction = done;
-	onclick = onCancel;
+	onclick = session.ajaxPopupNoPos;
 	elementName = "input";
 	type = "button";
 }
@@ -98,12 +89,32 @@ MinusTitle : WOString {
   escapeHTML = false;
 }
 
-PlusTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Variation.plus;
-  valueWhenEmpty = "Added";
+HasLesson : WOConditional {
+  condition = lesson;
+}
+
+SubstituteTitle : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Substitute.Substitute;
   escapeHTML = false;
 }
 
-ReturnNormaly : WOConditional {
-  condition = returnNormaly;
+ShowLesson : OnClickContainer {
+  elementName = "td";
+  onclick = session.checkRun;
+  class = "orange";
+  invokeAction = showLesson;
+}
+
+SubsSubject : WOString {
+  value = lesson.course.subjectWithComment;
+  escapeHTML = false;
+}
+
+HasMessage : WOConditional {
+  condition = session.message;
+}
+
+SesMessage: WOString {
+  value = session.message;
+  escapeHTML = false;
 }

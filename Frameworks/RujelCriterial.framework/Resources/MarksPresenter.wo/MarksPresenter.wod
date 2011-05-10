@@ -8,15 +8,6 @@ CanCreateMark: WOConditional {
 	negate = true;
 }
 
-Conditional1: WOConditional {
-	condition = student;
-	negate = true;
-}
-
-Content: WOConditional {
-	condition = student;
-}
-
 CriterTD: OnClickContainer {
 	onclick = session.ajaxPopup;
 	disabled = deactivate;
@@ -85,11 +76,6 @@ NoteEdit: WOTextField {
 	onkeypress = "return extOnSpace(event,this,this.size -1,null,'tr');";
 	onchange = "checkChanges(this);";
 	style = "width:90%;";
-}
-
-NoteTitle: WOString {
-	value = application.strings.Reusables_Strings.dataTypes.text;
-	valueWhenEmpty = "text";
 }
 
 Regular: WOConditional {

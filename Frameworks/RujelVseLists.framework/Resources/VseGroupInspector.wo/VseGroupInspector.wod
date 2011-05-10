@@ -34,11 +34,6 @@ YearTitle : WOString {
   escapeHTML = false;
 }
 
-AsTitle : WOString {
-  value = session.strings.RujelVseLists_VseStrings.VseGroupInspector.as;
-  escapeHTML = false;
-}
-
 GradePopUp : WOPopUpButton {
   list = grades;
   selection = grade;
@@ -70,4 +65,32 @@ Save: WOSubmitButton {
 ResetButton1: WOResetButton {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
+}
+
+HasSections : WOConditional {
+  condition = application.strings.sections.hasSections;
+}
+
+SectionTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.VseGroupInspector.section;
+  escapeHTML = false;
+}
+
+Sections : WORepetition {
+  list = application.strings.sections.list;
+  item = item;
+}
+
+SectionRadio : WORadioButton {
+  name = "section";
+  value = item.idx;
+  selection = currGroup.section;
+}
+
+SectionName : WOString {
+  value = item.value;
+}
+
+HasGroup : WOConditional {
+  condition = currGroup;
 }

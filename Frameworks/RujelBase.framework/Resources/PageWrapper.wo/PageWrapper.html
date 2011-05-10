@@ -7,6 +7,7 @@
         	<webobject name="Title"/></webobject></title>
         <webobject name = "ReusableScripts"/>
         <webobject name = "RGBColor"/>
+        <webobject name = "AnalyseForm"/>
         <webobject name = "JsAndCSS"/>
         <webobject name = "OuterResources"/>
 <webobject name="HasCSS"><webobject name="CSSurl"/>
@@ -14,13 +15,15 @@
   <webobject name="Styles"/>
 </style></webobject><webobject name="HasScript">
 <webobject name="ScriptLink"></webobject></webobject>
+<webobject name = "HasSesion">
 <script type="text/javascript" language="JavaScript">
 	unsavedAlert = '<webobject name="UnsavedAlert"></webobject>';
-	confirmAlert = '<webobject name="ConfinmAlert" />';
+	confirmAlert = '<webobject name="ConfirmAlert" />';
 	hasChanges = <webobject name="HasChanges"></webobject>;
-	<webobject name = "HasSesion">startTimeout = <webobject name="Timeout"/>;
-	timeout = startTimeout;</webobject>
-</script>
+	startTimeout = <webobject name="Timeout"/>;
+	timeout = startTimeout;
+	var pageRefreshUrl = '<webobject name = "RefreshPage"/>';
+</script></webobject>
    </head>
 <webobject name="Body">
 <webobject name="BackUrl"></webobject>

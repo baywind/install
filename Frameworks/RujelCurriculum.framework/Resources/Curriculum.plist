@@ -47,13 +47,15 @@
 		<string>Поправки</string>
 		<key>verification</key>
 		<string>Обоснование</string>
+		<key>toReturn</key>
+		<string>Возврат часов</string>
 	</dict>
 	<key>Variation</key>
 	<dict>
 		<key>minus</key>
-		<string>Пропущено</string>
+		<string>Пропущено уроков</string>
 		<key>plus</key>
-		<string>Добавлено</string>
+		<string>Дополнительный урок</string>
 		<key>Variation</key>
 		<string>Поправка</string>
 		<key>external</key>
@@ -66,9 +68,7 @@
 	<key>Tabel</key>
 	<dict>
 		<key>title</key>
-		<string>Табель (бух)</string>
-		<key>extTitle</key>
-		<string>Табель учета занятий</string>
+		<string>Учет занятий</string>
 		<key>total</key>
 		<string>всего</string>
 		<key>bySubs</key>
@@ -80,9 +80,21 @@
 		<key>showDetails</key>
 		<string>детализация по дням</string>
 		<key>load</key>
-		<string>нагрузка</string>
+		<string>недельная нагрузка</string>
 		<key>loadShort</key>
 		<string>нед</string>
+		<key>tabel</key>
+		<string>Табель учета занятий</string>
+		<key>tabelShort</key>
+		<string>Табель (бух)</string>
+		<key>journalZPU</key>
+		<string>Журнал учета пропущенных и замещенных уроков</string>
+		<key>journalZPUshort</key>
+		<string>Журнал замен</string>
+		<key>includeAdded</key>
+		<string>добавленные</string>
+		<key>unsubmitted</key>
+		<string>неподтверждённые</string>
 		<key>grandTotal</key>
 		<dict>
 			<key>colspan</key>
@@ -159,7 +171,7 @@
 		<key>wrongDates</key>
 		<string>Предлагаемый период актуальности причины не заключает в себе заданную дату.&lt;br/&gt;Граница периода была автоматически изменена.</string>
 		<key>wrongVariation</key>
-		<string>Неверное описание поправки</string>
+		<string>Не указано количество уроков</string>
 		<key>cantSetTeacher</key>
 		<string>Невозможно установить данного учителя, поскольку есть связанная Замена/Поправка для другого учителя</string>
 		<key>cantSetEduGroup</key>
@@ -178,6 +190,8 @@
 		<string>Для описания совмещения необходимо указать совместный урок</string>
 		<key>oldLesson</key>
 		<string>Вам запрещено редактирование старых уроков</string>
+		<key>reasonRequired</key>
+		<string>Укажите причину</string>
 	</dict>
 	<key>titles</key>
 	<dict>
@@ -213,6 +227,8 @@
 		<string>Указать присоединенную группу</string>
 		<key>addVariation</key>
 		<string>Указать курс, вместо которого проводится урок</string>
+		<key>varSub</key>
+		<string>урок проведен вместо занятия по курсу</string>
 		<key>chooseLesson</key>
 		<string>Укажите совместный урок:</string>
 		<key>selectTeacher</key>
@@ -227,8 +243,10 @@
 		<string>Конец периода</string>
 		<key>suggest</key>
 		<string>Предлагаемые поправки</string>
-		<key>varSubValue</key>
-		<string>Количество уроков</string>
+		<key>noSubstitute</key>
+		<string>Это не замена</string>
+		<key>deletePlus</key>
+		<string>Снять пометку доп. урока</string>
 	</dict>
 	<key>regimes</key>
 	<array>
@@ -244,9 +262,9 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Табель (бух)</string>
+			<string>Учет занятий</string>
 			<key>hover</key>
-			<string>Табель учета занятий</string>
+			<string>Табель учета занятий и Журнал учета пропущенных и замещенных уроков</string>
 			<key>component</key>
 			<string>Tabel</string>
 			<key>group</key>
@@ -270,44 +288,6 @@
 		<string>ReprPlugin</string>
 		<key>title</key>
 		<string>Замечания по ведению журнала</string>
-		<key>sort</key>
-		<string>20</string>
-	</dict>
-	<key>_reprPlugin</key>
-	<dict>
-		<key>title</key>
-		<string>Замечания по ведению журнала</string>
-		<key>component</key>
-		<string>DisplayAny</string>
-		<key>invokeAction</key>
-		<string>true</string>
-		<key>nextPage</key>
-		<string>ReprimList</string>
-		<key>pageParams</key>
-		<dict>
-			<key>course</key>
-			<string>^course</string>
-		</dict>
-		<key>presenter</key>
-		<string>WOString</string>
-		<key>presenterBindings</key>
-		<dict>
-			<key>value</key>
-			<string>Замечания</string>
-		</dict>
-		<key>wrapper</key>
-		<string>OnClickContainer</string>
-		<key>wrapperBindings</key>
-		<dict>
-			<key>elementName</key>
-			<string>span</string>
-			<key>style</key>
-			<string>padding:4px;background-color:#99ff99;border:double #339933;</string>
-			<key>onclick</key>
-			<string>$session.ajaxPopup</string>
-			<key>title</key>
-			<string>Замечания по ведению журнала</string>
-		</dict>
 		<key>sort</key>
 		<string>20</string>
 	</dict>

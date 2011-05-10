@@ -21,7 +21,7 @@ ClassListing : ClassListing {
 	width = "100%";
 	showTitle = true;
 	cellpadding = "3";
-	 class = "backfield2";
+	class = "backfield2";
 }
 
 SubjectsListing : DynamicTableRow {
@@ -126,7 +126,7 @@ TotalField : WOTextField {
   value = totalHours;
   numberformat = "0";
   maxlength = 3;
-  disabled = session.readAccess._edit.PlanDetail;
+  disabled = access._edit.PlanDetail;
   otherTagString = totalStyle;
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
@@ -135,7 +135,7 @@ TotalField : WOTextField {
 WeeklyField : WOTextField {
   value = weeklyHours;
   maxlength = 2;
-  disabled = session.readAccess._edit.PlanDetail;
+  disabled = access._edit.PlanDetail;
   otherTagString = weeklyStyle;
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
@@ -187,12 +187,6 @@ PeriodTitle : WOString {
 
 PerWeeksDays : WOString {
   value = perWeeksDays;
-  escapeHTML = false;
-}
-
-CycleHead : WOString {
-  value = application.strings.RujelInterfaces_Names.EduCourse.cycle;
-  valueWhenEmpty = "Cycle";
   escapeHTML = false;
 }
 
@@ -251,7 +245,7 @@ WeekDaysCell : WOGenericContainer {
 }
 
 CanEdit : WOConditional {
-  condition = session.readAccess.edit.PlanDetail;
+  condition = access.edit.PlanDetail;
 }
 
 Save: WOSubmitButton {
@@ -282,11 +276,4 @@ HasSelection : WOConditional {
 
 CalculatedTotal : WOString {
   value = rowItem.total;
-}
-
-Cross : WOImage {
-  framework = "RujelBase";
-  filename = "cross.png";
-  height = 9;
-  width = 9;
 }

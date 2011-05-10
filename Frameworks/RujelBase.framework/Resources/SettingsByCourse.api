@@ -21,5 +21,11 @@
     <binding name="editList"/>
     <binding name="selector"/>
     <binding defaults="Boolean" name="canSetBase"/>
+    <binding defaults="Boolean" name="cantSort"/>
+    <binding name="rowspan"/>
+        <validation message="'rowspan' must be bound to a settable value">
+            <unsettable name="rowspan"/>
+        </validation>
+    <binding name="title"/>
     </wo>
 </wodefinitions>

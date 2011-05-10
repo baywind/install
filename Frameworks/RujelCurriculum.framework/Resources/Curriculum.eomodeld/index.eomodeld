@@ -12,17 +12,9 @@
         {className = "net.rujel.curriculum.Variation"; name = Variation; }
     ); 
     userInfo = {
-        "_EntityModeler" = {
-            activeDatabaseConfigName = Default; 
-            databaseConfigs = {
-                Default = {
-                    adaptorName = JDBC; 
-                    connectionDictionary = {
-                        URL = "jdbc:mysql://localhost/Curriculum?capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
-                        username = rujel; 
-                    }; 
-                }; 
-            }; 
-        }; 
+        schemaVersion = {
+        	number = 1;
+        	title = "0.9";
+        };
     }; 
 }

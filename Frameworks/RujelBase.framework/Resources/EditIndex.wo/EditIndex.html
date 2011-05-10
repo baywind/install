@@ -1,13 +1,14 @@
-<webobject name = "Form"><table align = "center"><tbody class = "gerade">
+<webobject name = "Form"><webobject name = "ShowHeader">
+<table align = "center"><tbody class = "gerade">
 <tr><th align = "right"><webobject name = "TitleTitle"/>:</th>
 	<td><webobject name = "IndexTitle"/></td></tr>
 <tr style = "display:none;">
 	<th align = "right">formatString:</th>
 	<td><webobject name = "FormatString"/></td></tr>
-<tr><th align = "right"><webobject name = "CommentTitle"/>:</th>
+<tr><th align = "right"><webobject name = "IdxCommentTitle"/>:</th>
 	<td><webobject name = "CommentField"/></td>
 </tr>
-</tbody></table>
+</tbody></table></webobject>
 <table align = "center"><thead>
 <tr class = "grey" style = "display:none;"><td style = "width:2em;">&oslash;</td>
 	<td><webobject name = "DefaultValue"/></td>
@@ -25,12 +26,12 @@
 <webobject name = "Rows">
 <tr class = "ungerade"><td><webobject name = "RowIdx"/></td>
 	<td><webobject name = "RowValue"/></td>
-	<td><webobject name = "RowCommentText"/></td>
-	<webobject name = "DeleteCell">X</webobject></tr>
+	<td><webobject name = "ComponentContent"/></td>
+	<webobject name = "DeleteCell">X</webobject><webobject name = "IfDelete"></webobject></tr>
 </webobject>
 <tr id = "newIndexRow" style = "display:none;" class = "ungerade">
 	<td><webobject name = "NewIndex"/></td>
 	<td><webobject name = "NewValue"/></td>
-	<td>-=-</td><td></td></tr>
+	<td><webobject name = "ComponentContent"/></td><td></td></tr>
 </tbody>
 </table></webobject>

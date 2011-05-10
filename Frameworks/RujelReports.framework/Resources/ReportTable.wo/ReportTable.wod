@@ -86,7 +86,7 @@ SubParams : WORepetition {
 }
 
 SubDisplay : DisplayAny {
-  value = valueOf.item.subDict.value;
+  value = item;
   dict = subDict;
 }
 TableContainer : WOGenericContainer {

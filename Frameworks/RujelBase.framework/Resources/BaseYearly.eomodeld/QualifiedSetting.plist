@@ -1,0 +1,81 @@
+{
+    attributes = (
+        {
+            columnName = "ARGUMENTS_STRING"; 
+            name = argumentsString; 
+            prototypeName = string; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_YEAR"; 
+            name = eduYear; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NUM_VALUE"; 
+            name = numericValue; 
+            prototypeName = integer; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {allowsNull = N; columnName = "QS_ID"; name = qsID; prototypeName = "int_3"; }, 
+        {
+            columnName = "QUALIFIER_STRING"; 
+            name = qualifierString; 
+            prototypeName = string; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SETTING_ID"; 
+            name = settingsID; 
+            prototypeName = short; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "ORDER_KEY"; 
+            name = sort; 
+            prototypeName = short; 
+        }, 
+        {
+            columnName = "TEXT_VALUE"; 
+            name = textValue; 
+            prototypeName = string; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        argumentsString, 
+        eduYear, 
+        numericValue, 
+        qsID, 
+        qualifierString, 
+        sort, 
+        textValue
+    ); 
+    className = "net.rujel.base.QualifiedSetting"; 
+    classProperties = (
+        argumentsString, 
+        eduYear, 
+        numericValue, 
+        qualifierString, 
+        settingsBase, 
+        sort, 
+        textValue
+    ); 
+    externalName = "BASE_QUALIFIED_SETTINGS"; 
+    fetchSpecificationDictionary = {}; 
+    name = QualifiedSetting; 
+    primaryKeyAttributes = (qsID); 
+    relationships = (
+        {
+            destination = SettingsBase; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = settingsID; }); 
+            name = settingsBase; 
+        }
+    ); 
+}

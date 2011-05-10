@@ -22,7 +22,7 @@ PeriodTitle3: WOString {
 PeriodsPopUp: WOPopUpButton {
 	displayString = perItem.title;
 	item = perItem;
-	list = session.modules.periods;
+	list = periods;
 	noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
 	selection = period;
 	name = "periods";

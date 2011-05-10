@@ -13,11 +13,17 @@
             name = groupName; 
             prototypeName = word; 
             valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SECTION_NUM"; 
+            name = section; 
+            prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (externalEquivalent, gID, groupName); 
+    attributesUsedForLocking = (externalEquivalent, groupName, section); 
     className = "com.webobjects.eocontrol.EOGenericRecord"; 
-    classProperties = (externalEquivalent, groupName, users); 
+    classProperties = (externalEquivalent, groupName, section, users); 
     externalName = "AUT_GROUP"; 
     fetchSpecificationDictionary = {}; 
     name = UserGroup; 

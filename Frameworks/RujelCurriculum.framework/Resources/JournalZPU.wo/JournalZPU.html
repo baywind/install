@@ -1,0 +1,54 @@
+<webobject name = "Wrapper"><webobject name = "IsStandalone">
+        <title><webobject name = "MonthTitle"/> <webobject name = "YearTitle"/></title>
+        <webobject name = "Styles"/>
+        <webobject name = "ReusablesStyles"/>
+        <style type="text/css">
+        @media print {
+        	table {
+        	  border-collapse:collapse;
+        	}
+        	tr {
+        	  page-break-inside: avoid;
+        	}
+        	td , th {
+        	  border: solid 1px #666666;
+        	}
+        	table.layout td {
+        	  border: none;
+        	}
+        	a {
+        	  display: none;
+        	}
+        }
+        </style>
+<webobject name = "EndHead"></webobject>
+<h1><webobject name = "TitleZPU"/></h1>
+<table width = "100%" class = "layout"><tr>
+	<td style = "font-size:150%;">
+		<webobject name = "MonthTitle"/> <webobject name = "YearTitle"/></td>
+	<td valign = "bottom"><webobject name = "ExportZPU"></webobject></td>
+</tr></table></webobject>
+<table  cellpadding = "3" align = "center" class = "backfield2" width = "100%">
+<thead>
+<tr>
+	<th><webobject name = "DateTitle"/></th>
+	<th><webobject name = "OrigTitle"/></th>
+	<th><webobject name = "SubjectTitle"/></th>
+	<th><webobject name = "GroupTitle"/></th>
+	<th><webobject name = "ReasonTitle"/></th>
+	<th><webobject name = "SustitutorTitle"/></th>
+	<th><webobject name = "SubjectTitle"/></th>
+	<th><webobject name = "FactorTitle"/></th></tr>
+</thead>
+<tbody><webobject name = "JournalZPU"><webobject name = "JRow">
+	<td><webobject name = "JDate"/></td>
+	<td style = "white-space:nowrap;"><webobject name = "JHasCourse">
+		<webobject name = "MinusTeacher"/></webobject></td>
+	<td><webobject name = "MinusSubject"/></td>
+	<td style = "white-space:nowrap;" align = "center"><webobject name = "JEduGrop"/></td>
+	<webobject name = "ReasonCell"><webobject name = "Reason"/></webobject>
+	<td style = "white-space:nowrap;"><webobject name = "PlusTeacher"/></td>
+	<td><webobject name = "PlusSubject"/></td>
+	<td align = "center"><webobject name = "JValue"/></td>
+</webobject></webobject></tbody>
+</table></webobject>

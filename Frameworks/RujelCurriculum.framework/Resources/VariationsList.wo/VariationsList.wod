@@ -4,7 +4,12 @@ Cross : WOImage {
   align = "right";
   height = 10;
   width = 10;
-  onclick = "closePopup();";
+}
+
+CrossBox : OnClickContainer {
+  elementName = "span";
+  onclick = buttonOnClick;
+  invokeAction = done;
   style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
 }
 
@@ -211,6 +216,7 @@ ShowSuggestions : WOConditional {
 
 SubmitSuggest : OnClickContainer {
   elementName = "td";
+  hide = item.positive;
   onclick = session.ajaxPopupNoPos;
   invokeAction = editVariation;
   class = "orange";
@@ -224,5 +230,19 @@ SubmitString : WOString {
 
 SuggestionsTitle : WOString {
   value = session.strings.RujelCurriculum_Curriculum.titles.suggest;
+  escapeHTML = false;
+}
+
+BackTitle : WOString {
+  value = varSub;
+  escapeHTML = false;
+}
+
+NoSubmit : WOConditional {
+  condition = item.positive;
+}
+
+Dop : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Variation.isAdded;
   escapeHTML = false;
 }

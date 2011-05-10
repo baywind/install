@@ -2,8 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>title</key>
-	<string>Учащиеся</string>
+	<key>_prefetch</key>
+	<array>
+		<string>student.person</string>
+		<string>eduGroup</string>
+	</array>
 	<key>description</key>
 	<string>Поиск по списку учащихся</string>
 	<key>entity</key>
@@ -13,10 +16,30 @@
 		<dict>
 			<key>active</key>
 			<true/>
-			<key>title</key>
-			<string>Класс</string>
 			<key>attribute</key>
 			<string>eduGroup</string>
+			<key>popup</key>
+			<dict>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenter</key>
+				<string>ClassListing</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>onClick</key>
+					<string>$session.tryLoad</string>
+					<key>selection</key>
+					<string>.</string>
+					<key>width</key>
+					<string>100%</string>
+				</dict>
+				<key>style</key>
+				<string>min-width:8em</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>title</key>
+				<string>Выберите класс</string>
+			</dict>
 			<key>presenterBindings</key>
 			<dict>
 				<key>value</key>
@@ -24,80 +47,58 @@
 				<key>valueWhenEmpty</key>
 				<string>Выбрать</string>
 			</dict>
-			<key>popup</key>
-			<dict>
-				<key>title</key>
-				<string>Выберите класс</string>
-				<key>style</key>
-				<string>min-width:8em</string>
-				<key>presenter</key>
-				<string>ClassListing</string>
-				<key>takeValuesFromRequest</key>
-				<true/>
-				<key>invokeAction</key>
-				<true/>
-				<key>presenterBindings</key>
-				<dict>
-					<key>width</key>
-					<string>100%</string>
-					<key>selection</key>
-					<string>.</string>
-					<key>onClick</key>
-					<string>$session.tryLoad</string>
-				</dict>
-			</dict>
+			<key>title</key>
+			<string>Класс</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Фамилия</string>
-			<key>hover</key>
-			<string>Используйте * для поиска по шаблону</string>
 			<key>attribute</key>
 			<string>student.person.lastName</string>
 			<key>fieldSize</key>
 			<integer>20</integer>
-			<key>qualifierSelector</key>
-			<string>caseInsensitiveLike</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Имя</string>
 			<key>hover</key>
 			<string>Используйте * для поиска по шаблону</string>
+			<key>qualifierSelector</key>
+			<string>caseInsensitiveLike</string>
+			<key>title</key>
+			<string>Фамилия</string>
+		</dict>
+		<dict>
 			<key>attribute</key>
 			<string>student.person.firstName</string>
 			<key>fieldSize</key>
 			<integer>20</integer>
+			<key>hover</key>
+			<string>Используйте * для поиска по шаблону</string>
 			<key>qualifierSelector</key>
 			<string>caseInsensitiveLike</string>
+			<key>title</key>
+			<string>Имя</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Дата рождения</string>
 			<key>attribute</key>
 			<string>student.person.birthDate</string>
-			<key>formatter</key>
-			<string>date</string>
 			<key>fieldSize</key>
 			<integer>10</integer>
+			<key>formatter</key>
+			<string>date</string>
 			<key>qualifierSelector</key>
 			<string>&gt;=</string>
 			<key>secondSelector</key>
 			<string>&lt;</string>
+			<key>title</key>
+			<string>Дата рождения</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Пол</string>
-			<key>attributeParam</key>
-			<string>sex</string>
-			<key>qualifierFormat</key>
-			<string>student.person.sex = %@</string>
 			<key>args</key>
 			<array>
 				<string>.sex.value</string>
 			</array>
+			<key>attributeParam</key>
+			<string>sex</string>
 			<key>displayString</key>
 			<string>.title</string>
+			<key>qualifierFormat</key>
+			<string>student.person.sex = %@</string>
 			<key>select</key>
 			<array>
 				<dict>
@@ -113,16 +114,12 @@
 					<false/>
 				</dict>
 			</array>
+			<key>title</key>
+			<string>Пол</string>
 		</dict>
 		<dict>
 			<key>active</key>
 			<true/>
-			<key>title</key>
-			<string>Не исключен</string>
-			<key>comment</key>
-			<string>искать только неисключенных</string>
-			<key>qualifierFormat</key>
-			<string>(enter = nil OR enter &lt;= %@) AND (leave = nil OR leave &gt;= %@) AND (eduGroup.firstYear &lt;= %@) AND (eduGroup.lastYear &gt;= %@)</string>
 			<key>args</key>
 			<array>
 				<string>$session.today</string>
@@ -130,170 +127,173 @@
 				<string>$session.eduYear</string>
 				<string>$session.eduYear</string>
 			</array>
+			<key>comment</key>
+			<string>искать только неисключенных</string>
+			<key>qualifierFormat</key>
+			<string>(enter = nil OR enter &lt;= %@) AND (leave = nil OR leave &gt;= %@) AND (eduGroup.firstYear &lt;= %@) AND (eduGroup.lastYear &gt;= %@)</string>
+			<key>title</key>
+			<string>Не исключен</string>
 		</dict>
-	</array>
-	<key>_prefetch</key>
-	<array>
-		<string>student.person</string>
-		<string>eduGroup</string>
 	</array>
 	<key>properties</key>
 	<array>
 		<dict>
-			<key>title</key>
-			<string>личное дело №</string>
-			<key>short</key>
-			<string>Л/Д</string>
+			<key>active</key>
+			<false/>
 			<key>keyPath</key>
 			<string>student.delo</string>
-			<key>active</key>
-			<false/>
+			<key>short</key>
+			<string>Л/Д</string>
 			<key>sort</key>
 			<string>01</string>
+			<key>title</key>
+			<string>личное дело №</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Поступление в школу</string>
-			<key>short</key>
-			<string>пришел</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.enter</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>dateformat</key>
 				<string>$application.prefs.ui.dateFormat</string>
 			</dict>
-			<key>active</key>
-			<false/>
+			<key>short</key>
+			<string>пришел</string>
 			<key>sort</key>
 			<string>05</string>
+			<key>title</key>
+			<string>Поступление в школу</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Выбытие из школы</string>
-			<key>short</key>
-			<string>ушел</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.leave</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>dateformat</key>
 				<string>$application.prefs.ui.dateFormat</string>
 			</dict>
-			<key>active</key>
-			<false/>
+			<key>short</key>
+			<string>ушел</string>
 			<key>sort</key>
 			<string>06</string>
+			<key>title</key>
+			<string>Выбытие из школы</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Класс</string>
-			<key>keyPath</key>
-			<string>eduGroup</string>
-			<key>titlePath</key>
-			<string>name</string>
+			<key>active</key>
+			<true/>
 			<key>comparison</key>
 			<string>CompareCaseInsensitiveAscending</string>
-			<key>active</key>
-			<true/>
+			<key>keyPath</key>
+			<string>eduGroup</string>
 			<key>sort</key>
 			<string>10</string>
+			<key>title</key>
+			<string>Класс</string>
+			<key>titlePath</key>
+			<string>name</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>переведен в класс</string>
-			<key>short</key>
-			<string>с</string>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>enter</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>dateformat</key>
 				<string>$application.prefs.ui.dateFormat</string>
 			</dict>
-			<key>active</key>
-			<false/>
+			<key>short</key>
+			<string>с</string>
 			<key>sort</key>
 			<string>05</string>
+			<key>title</key>
+			<string>переведен в класс</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>выбыл из класса</string>
-			<key>short</key>
-			<string>по</string>
-			<key>keyPath</key>
-			<string>leave</string>
+			<key>active</key>
+			<false/>
 			<key>comparison</key>
 			<string>CompareAscending</string>
+			<key>keyPath</key>
+			<string>leave</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>dateformat</key>
 				<string>$application.prefs.ui.dateFormat</string>
 			</dict>
-			<key>active</key>
-			<false/>
+			<key>short</key>
+			<string>по</string>
 			<key>sort</key>
 			<string>06</string>
+			<key>title</key>
+			<string>выбыл из класса</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Фамилия</string>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.person.lastName</string>
-			<key>style</key>
-			<string>white-space:nowrap;</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
 			<key>sort</key>
 			<string>20</string>
+			<key>style</key>
+			<string>white-space:nowrap;</string>
+			<key>title</key>
+			<string>Фамилия</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Имя</string>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.person.firstName</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
-			<key>active</key>
-			<true/>
 			<key>sort</key>
 			<string>21</string>
+			<key>title</key>
+			<string>Имя</string>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Отчество</string>
-			<key>keyPath</key>
-			<string>student.person.secondName</string>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>active</key>
 			<true/>
-			<key>sort</key>
-			<string>22</string>
-		</dict>
-		<dict>
-			<key>title</key>
-			<string>Инициалы</string>
-			<key>keyPath</key>
-			<string>student.person.initials</string>
 			<key>comparison</key>
 			<string>CompareAscending</string>
-			<key>active</key>
-			<false/>
+			<key>keyPath</key>
+			<string>student.person.secondName</string>
 			<key>sort</key>
-			<string>25</string>
+			<string>22</string>
+			<key>title</key>
+			<string>Отчество</string>
 		</dict>
 		<dict>
+			<key>active</key>
+			<false/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>keyPath</key>
+			<string>student.person.initials</string>
+			<key>sort</key>
+			<string>25</string>
 			<key>title</key>
-			<string>Дата рождения</string>
+			<string>Инициалы</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>student.person.birthDate</string>
 			<key>presenterBindings</key>
@@ -301,35 +301,35 @@
 				<key>dateformat</key>
 				<string>$application.prefs.ui.dateFormat</string>
 			</dict>
-			<key>active</key>
-			<true/>
-			<key>comparison</key>
-			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>30</string>
+			<key>title</key>
+			<string>Дата рождения</string>
 		</dict>
 		<dict>
 			<key>comparison</key>
 			<string>CompareDescending</string>
-			<key>title</key>
-			<string>Пол</string>
-			<key>sortKey</key>
-			<string>student.person.sex</string>
+			<key>presenterBindings</key>
+			<dict/>
 			<key>sort</key>
 			<string>40</string>
+			<key>sortKey</key>
+			<string>student.person.sex</string>
+			<key>title</key>
+			<string>Пол</string>
 			<key>value</key>
 			<dict>
-				<key>object</key>
-				<dict>
-					<key>true</key>
-					<string>Муж</string>
-					<key>false</key>
-					<string>Жен</string>
-				</dict>
-				<key>methodName</key>
-				<string>valueForKey</string>
 				<key>cacheResult</key>
 				<true/>
+				<key>methodName</key>
+				<string>valueForKey</string>
+				<key>object</key>
+				<dict>
+					<key>false</key>
+					<string>Ж</string>
+					<key>true</key>
+					<string>М</string>
+				</dict>
 				<key>paramClasses</key>
 				<array>
 					<string>java.lang.String</string>
@@ -341,22 +341,24 @@
 			</dict>
 		</dict>
 		<dict>
-			<key>title</key>
-			<string>Возраст</string>
-			<key>hover</key>
-			<string>сортируется по дате рождения - при суммировании ставьте на последнее место</string>
-			<key>sortKey</key>
-			<string>student.person.birthDate</string>
 			<key>comparison</key>
 			<string>CompareDescending</string>
+			<key>hover</key>
+			<string>сортируется по дате рождения - при суммировании ставьте на последнее место</string>
+			<key>presenterBindings</key>
+			<dict/>
+			<key>sortKey</key>
+			<string>student.person.birthDate</string>
+			<key>title</key>
+			<string>Возраст</string>
 			<key>value</key>
 			<dict>
+				<key>cacheResult</key>
+				<true/>
 				<key>className</key>
 				<string>net.rujel.interfaces.Person$Utility</string>
 				<key>methodName</key>
 				<string>calculateAge</string>
-				<key>cacheResult</key>
-				<true/>
 				<key>paramClasses</key>
 				<array>
 					<string>java.util.Date</string>
@@ -370,5 +372,7 @@
 			</dict>
 		</dict>
 	</array>
+	<key>title</key>
+	<string>Учащиеся</string>
 </dict>
 </plist>

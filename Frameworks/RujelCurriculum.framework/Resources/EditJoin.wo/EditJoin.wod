@@ -79,6 +79,7 @@ Form : WOForm {
 Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
+	onclick = "return ajaxPost(this);";
 }
 
 CourseSelected : WOConditional {
@@ -92,4 +93,13 @@ HasLessons : WOConditional {
 ChooseLesson : WOString {
   value = session.strings.RujelCurriculum_Curriculum.titles.parallelJoin;
   escapeHTML = "false";
+}
+
+HasMessage : WOConditional {
+  condition = session.message;
+}
+
+SesMessage : WOString {
+	value = session.message;
+	escapeHTML = false;
 }

@@ -6,5 +6,10 @@
 	<string>net.rujel.reports.ReportsModule</string>
 	<key>reportsDir</key>
 	<string>CONFIGDIR/RujelReports</string>
+	<key>ui</key>
+	<dict>
+		<key>limitReportRows</key>
+		<integer>500</integer>
+	</dict>
 </dict>
 </plist>

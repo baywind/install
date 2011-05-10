@@ -1,3 +1,7 @@
+Wrapper : HTMLPageWrapper {
+	title = file.name;
+}
+
 Title : WOString {
   value = file.name;
 }
@@ -34,10 +38,6 @@ Act : OnClickContainer {
   invokeAction = perform;
   disabled = access._edit;
   title = actionHover;
-}
-
-Standalone : WOConditional {
-  condition = standalone;
 }
 
 Delete : OnClickContainer {

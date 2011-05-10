@@ -53,7 +53,7 @@ Name : PersonDisplay {
 Enter : WOTextField {
   value = item.enter;
   dateformat = application.prefs.ui.dateFormat;
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
   style = "text-align:center;";
   size = 10;
   maxlength = 10;
@@ -63,7 +63,7 @@ Enter : WOTextField {
 Leave : WOTextField {
   value = item.leave;
   dateformat = application.prefs.ui.dateFormat;
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
   style = "text-align:center;";
   size = 10;
   maxlength = 10;
@@ -135,14 +135,10 @@ Categories : WORepetition {
   item = item;
 }
 
-ShowAllBox : WOCheckBox {
-  checked = showAll;
-  onchange = "form.submit();";
-}
-
-ShowAllTitle : WOString {
-  value = session.strings.RujelVseLists_VseStrings.showAll;
-  escapeHTML = false;
+ShowAllTitle : ConditionalString {
+  condition = showAll;
+  ifTrue = session.strings.RujelVseLists_VseStrings.hideHistory;
+  ifFalse = session.strings.RujelVseLists_VseStrings.showHistory;
 }
 
 ShowAllToggle : OnClickContainer {
@@ -150,7 +146,7 @@ ShowAllToggle : OnClickContainer {
   colspan = 2;
   onclick = session.checkRun;
   invokeAction = toggleAll;
-  style = "font-style:italic;";
+  style = "font-style:italic;color:blue;border:1px solid #cccc99;";
 }
 
 CategoryRow : OnClickContainer {
@@ -234,7 +230,7 @@ DateField : WOTextField {
   maxlength = 10;
 }
 
-DateTitle : WOString {
+SinceTitle : WOString {
   value = session.strings.Reusables_Strings.dataTypes.since;
   escapeHTML = false;
 }
@@ -253,4 +249,56 @@ SubmitAction: WOSubmitButton {
 }
 ShowTicks : WOConditional {
   condition = showTicks;
+}
+
+IsEduGroup : WOConditional {
+  condition = group;
+}
+
+TutorTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.tutor;
+  escapeHTML = false;
+}
+
+ToTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.to;
+  escapeHTML = false;
+}
+
+Tutors : WORepetition {
+  list = tutors;
+  item = item;
+}
+
+ChooseTutor : OnClickContainer {
+  elementName = "td";
+  invokeAction = addTutor;
+  onclick = session.ajaxPopup;
+  style = "color:blue;";
+}
+
+TutorCell : WOGenericContainer {
+  elementName = "td";
+  align = "left";
+  title = tutorFullName;
+}
+
+TutorName : PersonDisplay {
+  person = item.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+}
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = session.state.section;
+  tablist = application.strings.sections.list;
+  titleAttribute = "value";
+  selectAction = switchMode;
+  vertical = true;
+}
+
+HasSections : WOConditional {
+  condition = application.strings.sections.hasSections;
 }

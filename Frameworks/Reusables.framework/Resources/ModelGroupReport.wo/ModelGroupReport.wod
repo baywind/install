@@ -103,3 +103,8 @@ Optional : WOCheckBox {
   value = false;
   selection = prop.isMandatory;
 }
+
+SchemaVersion : WOString {
+  value = modelVersion;
+  escapeHTML = false;
+}

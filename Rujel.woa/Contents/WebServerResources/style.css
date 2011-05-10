@@ -36,10 +36,19 @@
 	background-color:#ff6666;
 }
 
-.message {
+.message , .messageAjax {
 	font-size:large;
 	color:#ff6600;
 	text-align:center;
+}
+
+.messageAjax {
+	background-color:#ffffcc;
+	border: double 3px #ff6600;
+	position:fixed;
+	top:2em;
+	left:4em;
+	padding:1ex;
 }
 
 .dimtext {
@@ -134,3 +143,6 @@
 	vertical-align:middle;
 }
 
+input.sorting {
+	display:none;
+}

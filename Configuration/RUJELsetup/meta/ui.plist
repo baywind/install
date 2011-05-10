@@ -237,6 +237,34 @@
 					<key>advanced</key>
 					<true/>
 				</dict>
+				<dict>
+					<key>key</key>
+					<string>pageCacheSize</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>pageCacheSize</string>
+					<key>description</key>
+					<string>Настройка кеширования страниц. Ограничивает количество разрешенных шагов назад в браузере. Для освобождения памяти рекомендуются небольшие значения.</string>
+					<key>defaultValue</key>
+					<integer>5</integer>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>undoAfterSave</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>undoAfterSave</string>
+					<key>description</key>
+					<string>Позволить отмену действий после сохранения</string>
+					<key>defaultValue</key>
+					<false/>
+					<key>advanced</key>
+					<true/>
+				</dict>
 			</array>
 		</dict>
 	</array>

@@ -1,0 +1,51 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Form : WOForm {
+  action = submit;
+  multipleSubmit = true;
+  style = "border:1px solid #666666;";
+}
+
+QueryParams : QueryParams {
+  list = present.params;
+  params = params;
+  ec = ec;
+}
+
+Super : WOCheckBox {
+  checked = params.useSuper;
+}
+
+SuperTitle : WOString {
+  value = params.parentTab.hover;
+  valueWhenEmpty = params.parentTab.title;
+}
+
+HasSuper : WOConditional {
+  condition = params.parentTab;
+  negate = params.parentTab;
+}
+
+Submit : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = session.strings.Reusables_Strings.uiElements.Select;
+  style = "margin:1em;";
+}
+
+Title : WOString {
+  value = session.strings.Strings.LessonNoteEditor.manTab;
+  escapeHTML = false;
+}
+
+PresentTitle : WOString {
+  value = present.title;
+}

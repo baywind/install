@@ -10,6 +10,7 @@
         {className = "net.rujel.vselists.VseList"; name = VseList; }, 
         {className = "net.rujel.vselists.VsePerson"; name = VsePerson; }, 
         {className = "net.rujel.vselists.VseStudent"; name = VseStudent; }, 
-        {className = "net.rujel.vselists.VseTeacher"; name = VseTeacher; }
+        {className = "net.rujel.vselists.VseTeacher"; name = VseTeacher; }, 
+        {className = "net.rujel.vselists.VseTutor"; name = VseTutor; }
     ); 
 }

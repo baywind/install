@@ -14,14 +14,18 @@
 	<string>выбыл</string>
 	<key>duplicateEntry</key>
 	<string>Этот ученик уже есть в этой группе</string>
-	<key>showAll</key>
-	<string>показывать выбывших</string>
+	<key>showHistory</key>
+	<string>показать историю</string>
+	<key>hideHistory</key>
+	<string>спрятать историю</string>
 	<key>depersonalize</key>
 	<string>обезличить</string>
 	<key>personalize</key>
 	<string>персонифицировать</string>
 	<key>enterLaterLeave</key>
 	<string>Дата зачисления не может быть позже даты выбытия</string>
+	<key>tutor</key>
+	<string>Куратор</string>
 	<key>VseGroupInspector</key>
 	<dict>
 		<key>title</key>
@@ -34,6 +38,8 @@
 		<string>расформирован в</string>
 		<key>eduYear</key>
 		<string>учебном году</string>
+		<key>section</key>
+		<string>отделение</string>
 	</dict>
 	<key>editorTabs</key>
 	<array>

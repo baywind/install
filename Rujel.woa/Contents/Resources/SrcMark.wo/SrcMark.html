@@ -1,18 +1,20 @@
-<webobject name="PageWrapper1">
+<webobject name="PageWrapper1"><webobject name = "HasSections">
+<div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade"
+ onmouseover = "hideObj('SectionTitle');showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle')">
+<div id = "SectionTitle" style = "padding:3px;" class = "green">
+	<webobject name = "CurrSection"/></div>
+<div id = "SectionTabs" style = "display:none;">
+<webobject name = "SectionTabs"/></div></div></webobject>
 <h2><webobject name="Title"/></h2>
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
-<tr><th><webobject name = "SelectorTitle"/></th><td width="60%">
+<tr><th valign = "bottom"><webobject name = "Tabs"/></th><td width="60%">
 <table width="100%"><tr><th align="center" width="15%"><webobject name="EduGroupLabel"></webobject></th>
 <th align="center" width="55%"><webobject name="EduPlanLabel"></webobject>
 <span style="color:#aaaaaa;">[<webobject name = "CountTitle"/>]</span>
 </th>
 <th><webobject name="TeacherLabel"/></th></tr></table></td></tr>
 <tr><td class="backfield2 selectionBorder" style = "border-style:solid solid none none;">
-<table width = "100%" style = "border-style: none none solid none; padding:1ex 0px;" class = "selectionBorder"><tr>
-	<webobject name = "ChooseCurrTeacher"><webobject name="TeacherLabel"/></webobject>
-	<webobject name = "TeacherCell"><webobject name = "CurrTeacherName"/></webobject>
-</tr></table>
-<webobject name="ClassListing1"/></td>
+<webobject name="CoursesSelector"/></td>
 <td class="backfield1 selectionBorder" style = "border-style:solid none none;">
 <webobject name="Form1">
 <table width="100%"><col width="15%" /><col width="55%" /><col />

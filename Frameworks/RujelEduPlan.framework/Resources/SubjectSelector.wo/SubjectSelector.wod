@@ -1,0 +1,41 @@
+AreaList : DynamicTableRow {
+  item = item;
+  list = areas;
+  elementName = "div";
+  class = "ungerade";
+  onClick = ^onclick;
+  selection = area;
+  selectAction = openArea;
+  style = "margin:2px;";
+}
+
+SubjectsList : DynamicTableRow {
+  item = item;
+  list = subjects;
+  elementName = "div";
+  class = "gerade";
+  onClick = ^onclick;
+  selection = selectedSubject;
+  selectAction = selectSubject;
+  style = "margin:2px;";
+}
+
+AreaName : WOString {
+  value = item.areaName;
+}
+
+SubjectName : WOString {
+  value = item.subject;
+}
+
+SelectArea : OnClickContainer {
+  elementName = "div";
+  onclick = ^onclick;
+  class = noneClass;
+  invokeAction = selectArea;
+  style = "margin:2px; font-style:italic; border-bottom: 3px double #666666;";
+}
+
+GeneralName : WOString {
+  value = area.areaName;
+}

@@ -87,7 +87,7 @@
 			<key>filename</key>
 			<string>pie32.png</string>
 			<key>style</key>
-			<string>border:double #3333cc;padding:2px;</string>
+			<string>border:double #3333cc;padding:1px;</string>
 			<key>class</key>
 			<string>ungerade</string>
 			<key>onclick</key>
@@ -98,17 +98,12 @@
 			<string>unDim(this);</string>
 			<key>title</key>
 			<string>Статистика</string>
-		</dict>
-		<key>_wrapper</key>
-		<string>OnClickContainer</string>
-		<key>_wrapperBindings</key>
-		<dict>
-			<key>elementName</key>
-			<string>span</string>
-			<key>class</key>
-			<string>ungerade</string>
-			<key>onclick</key>
-			<string>$session.ajaxPopup</string>
+			<key>alt</key>
+			<string>stat</string>
+			<key>height</key>
+			<string>32</string>
+			<key>width</key>
+			<string>32</string>
 		</dict>
 		<key>sort</key>
 		<string>10</string>

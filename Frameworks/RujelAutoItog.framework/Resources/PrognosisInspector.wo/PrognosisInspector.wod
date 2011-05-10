@@ -88,16 +88,6 @@ HideTitle : WOString {
   escapeHTML = false;
 }
 
-DeactivateBox : WOCheckBox {
-  checked = autoItog.namedFlags.inactive;
-  disabled = true;
-}
-
-DeactivateTitle : WOString {
-  value = session.strings.RujelAutoItog_AutoItog.properties.AutoItog.flags.inactive;
-  escapeHTML = false;
-}
-
 FormulaCell : WOGenericContainer {
   elementName = "td";
   title = calcDict.description;
