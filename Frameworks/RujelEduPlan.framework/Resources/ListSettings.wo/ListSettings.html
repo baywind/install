@@ -1,14 +1,3 @@
-<script language = "JavaScript">
-	function toggleParam(cell) {
-		var tick = cell.getElementsByTagName("input")[0];
-		tick.checked = !tick.checked;
-		var nextCell = cell.nextSibling;
-		while(nextCell != null && nextCell.nodeName.toUpperCase() != "TD") {
-			nextCell = nextCell.nextSibling;
-		}
-		nextCell.style.visibility = (tick.checked)?"visible":"hidden";
-	}
-</script>
 <table cellspacing = "0"><tr>
 	<td class = "backfield1" style = "min-width:5em;">
 	<strong><webobject name = "ListTitle"/></strong>

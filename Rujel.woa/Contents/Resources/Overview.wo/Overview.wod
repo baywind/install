@@ -317,3 +317,8 @@ CurrSection : WOString {
   value = session.state.section.value;
 }
 
+
+ShowModes : WOConditional {
+  condition = access.students;
+  negate = access._subjects;
+}

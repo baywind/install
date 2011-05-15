@@ -747,3 +747,13 @@ function pagePreflight() {
 		}
 	}
 }
+
+function toggleParam(cell) {
+	var tick = cell.getElementsByTagName("input")[0];
+	tick.checked = !tick.checked;
+	var nextCell = cell.nextSibling;
+	while(nextCell != null && nextCell.nodeName.toUpperCase() != "TD") {
+		nextCell = nextCell.nextSibling;
+	}
+	nextCell.style.visibility = (tick.checked)?"visible":"hidden";
+}
