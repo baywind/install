@@ -25,6 +25,7 @@ ItemRow : WOGenericContainer {
 	elementName = "tr";
 	bgcolor = item.color;
 	title = item.workType.typeName;
+	style = item.font;
 }
 
 Label : WOString {

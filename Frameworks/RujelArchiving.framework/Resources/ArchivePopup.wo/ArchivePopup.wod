@@ -1,6 +1,6 @@
 PopupForm : WOForm {
 	action = save;
-	onsubmit = "q=(this.reasonText.value.length > 0);if(!q){alert(saveArchive.title);reasonText.focus()}return q;";
+	onsubmit = "q=(this.isEmpty.checked || this.reasonText.value.length > 0);if(!q){alert(saveArchive.title);reasonText.focus()}return q;";
 }
 
 SaveButton: WOSubmitButton {
@@ -68,7 +68,7 @@ ReasonText : WOTextField {
   style = "width:90%;";
   onclick = "ext(this,8);";
   onkeypress = "this.form.saveArchive.disabled=false;return extOnSpace(event,this,10);";
-  onchange = "this.form.saveArchive.disabled = (value == null || value.length < 2);";
+  onblur = "this.form.saveArchive.disabled = (!this.form.isEmpty.checked && (value == null || value.length < 2));";
 }
 
 HasDescription : WOConditional {
@@ -99,4 +99,10 @@ Cross : WOImage {
   width = 16;
   onclick = "closePopup();";
   style = "cursor:pointer;position:absolute;right:14pt;top:14pt;";
+}
+
+IsEmpty : WOCheckBox {
+  checked = isEmpty;
+  name = "isEmpty";
+  style = "display:none;";
 }

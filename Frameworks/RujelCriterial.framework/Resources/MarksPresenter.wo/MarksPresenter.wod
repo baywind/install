@@ -11,7 +11,7 @@ CanCreateMark: WOConditional {
 CriterTD: OnClickContainer {
 	onclick = session.ajaxPopup;
 	disabled = deactivate;
-	invokeAction = archivePopup;
+	invokeAction = selectAction;
 	elementName = td;
 	title = markTitle;
 	align = "center";

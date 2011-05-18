@@ -149,6 +149,7 @@ LessonRow: OnClickContainer {
 	title = work.workType.typeName;
 	bgcolor = rowColor;
 	hide = hideRow;
+	style = lessonItem.font;
 }
 
 LessonTheme: WOString {
