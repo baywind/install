@@ -152,5 +152,18 @@
 			<string>$returnPage</string>
 		</dict>
 	</dict>
+	<key>groupItogs</key>
+	<dict>
+		<key>component</key>
+		<string>GroupItogs</string>
+		<key>id</key>
+		<string>groupItogs</string>
+		<key>sort</key>
+		<string>10</string>
+		<key>title</key>
+		<string>Сводная ведомость</string>
+		<key>hover</key>
+		<string>Сводная ведомость учета успеваемости учащихся</string>
+	</dict>
 </dict>
 </plist>

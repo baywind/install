@@ -21,9 +21,11 @@ function unDim(obj) {
 	obj.style.backgroundColor='';
 }
 
+var otherPage = false;
 var pageName;
 function updateFrame(head) {
 	var frame = window.parent.frames["content"];
+	if(!otherPage) {
 	try {
 		var href = frame.location.href;
 		var idx = href.lastIndexOf("/");
@@ -31,5 +33,7 @@ function updateFrame(head) {
 			pageName = href.substring(idx);
 	} catch (e) {
 	}
+	}
 	frame.location = head.substring(0,head.lastIndexOf("/")) + pageName;
+	otherPage = false;
 }

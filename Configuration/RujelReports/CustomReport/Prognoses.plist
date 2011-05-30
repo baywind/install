@@ -544,8 +544,10 @@
 			<string>CompareDescending</string>
 			<key>hover</key>
 			<string>Процент выполненых работ (выставленых оценок)</string>
+			<key>keyPath</key>
+			<string>complete</string>
 			<key>itemHover</key>
-			<string>$itemRow.complete</string>
+			<string>.</string>
 			<key>presenterBindings</key>
 			<dict>
 				<key>numberformat</key>
@@ -560,7 +562,7 @@
 				<key>methodName</key>
 				<string>movePointRight</string>
 				<key>object</key>
-				<string>.complete</string>
+				<string>.</string>
 				<key>paramClasses</key>
 				<array>
 					<string>int</string>

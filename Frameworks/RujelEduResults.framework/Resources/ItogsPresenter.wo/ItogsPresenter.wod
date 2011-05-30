@@ -21,7 +21,7 @@ NoStudent: WOConditional {
 }
 
 PeriodTitle: WOString {
-	value = periodTitle;
+	value = periodItem.titleHTML;
 	escapeHTML = false;
 }
 

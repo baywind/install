@@ -322,3 +322,23 @@ ShowModes : WOConditional {
   condition = access.students;
   negate = access._subjects;
 }
+
+ShowGroupReports: WOConditional {
+	condition = showGroupReports;
+}
+
+GroupReporters : WORepetition {
+  list = session.modules.groupComplete;
+  item = reporterItem;
+}
+
+ReportPopup : WOHyperlink {
+  action = groupReport;
+  target = "_blank";
+  title = reporterItem.hover;
+}
+
+GroupReportsTitle : WOString {
+  value = session.strings.Strings.Overview.groupReporters;
+  escapeHTML = false;
+}

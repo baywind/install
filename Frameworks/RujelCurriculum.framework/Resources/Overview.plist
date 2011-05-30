@@ -471,8 +471,6 @@
 				<dict>
 					<key>title</key>
 					<string>Учитель</string>
-					<key>keyPath</key>
-					<string>course.teacher</string>
 					<key>style</key>
 					<string>white-space:nowrap;</string>
 					<key>presenter</key>

@@ -171,6 +171,8 @@
 		</array>
 		<key>title</key>
 		<string>Контроль успеваемости</string>
+		<key>groupReporters</key>
+		<string>Отчет по группе</string>
 	</dict>
 	<key>PrintReport</key>
 	<dict>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="generator" content="WebObjects 5.3.1" />
+        <title><webobject name="Title"/></title>
+<style type = "text/css">
+body {
+	font-family: serif;
+}
+td {
+	border-color:#666666;
+	border-width:1px;
+	border-style: solid;
+	text-align: center;
+	padding: 0px 2px;
+}
+td.nameCol {
+	text-align:left;
+	white-space:nowrap;
+	height:2em;
+}
+th {
+	border-color:#666666;
+	border-width:1px;
+	border-style:solid;
+	text-align: center;
+}
+.leftCol {
+	border-left-style: double;
+		border-left-width:3px;
+}
+.noborder td {
+	border-style:none;
+}
+tr.containers td {
+	border-bottom-width: 2px;
+	font-weight: bold;
+}
+.incomplete {
+	color:#999999;
+}
+</style>
+</head>
+<body>
+<table width = "100%" style = "font-size:150%;margin-bottom:25pt;" class = "noborder"><tr>
+	<td align = "left"><webobject name = "GroupName"/></td>
+	<td align = "center"><webobject name="FullTitle"/></td>
+	<td align = "right"><webobject name = "EduYear"/></td>
+</tr></table>
+<table cellspacing = "0" style = "border-collapse:collapse;"><thead>
+<tr><th rowspan = "2" style = "border-bottom-width: 2px;"><webobject name = "StudentTitle"/></th>
+<webobject name = "Cycles"><webobject name = "CycleCell">
+	<webobject name = "CycleTitle"/></webobject></webobject></tr>
+<tr class = "containers"><webobject name = "Cycles"><webobject name = "Itogs">
+	<webobject name = "ItogCell"><div style = "width:2em;">
+		<webobject name = "ItogTitle"/></div></webobject></webobject></webobject></tr>
+</thead>
+<tbody><webobject name = "Students"><tr>
+	<td class = "nameCol">
+		<webobject name = "StudentName"/></td><webobject name = "Cycles"><webobject name = "Itogs">
+	<webobject name = "ItogCell"><webobject name = "ItogValue"/></webobject></webobject>
+</webobject></tr></webobject></tbody>
+</table>
+</body>
+</html>

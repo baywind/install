@@ -24,6 +24,9 @@ StudentsList : WORepetition {
   item = student;
 }
 
+HasSections : WOConditional {
+  condition = application.strings.sections.hasSections;
+}
 StudentLink : WOGenericContainer {
   elementName = "a";
   omitTags = studentNotReady;
@@ -48,5 +51,59 @@ GroupContainer : WOGenericContainer {
 
 Count : WOString {
   value = ready;
+  escapeHTML = false;
+}
+
+GroupView : WOGenericContainer {
+  elementName = "a";
+  onclick="grFrame(this.href);";
+  class = "grView";
+  href = studentLink;
+}
+
+Sections : WORepetition {
+ list = application.strings.sections.list;
+ item = grDict;
+}
+
+SectionLink : WOGenericContainer {
+  elementName = "a";
+  href = sectionHref;
+  omitTags = style;
+  target = "_self";
+}
+
+SectionTitle : WOString {
+  value = grDict.value;
+}
+
+LI : WOGenericContainer {
+	elementName = "li";
+	style = style;
+}
+
+ShowGroupView : WOConditional {
+  condition = grReports;
+}
+
+GroupCount : WOString {
+  value = eduGroups.count;
+  numberformat = "0";
+}
+
+TotalStudents : WOString {
+  value = total;
+  numberformat = "0";
+}
+
+TotalGrTitle : WOString {
+  value = session.strings.RujelComplete_Complete.totalGroups;
+  valueWhenEmpty = "Total groups";
+  escapeHTML = false;
+}
+
+StudentsTitle : WOString {
+  value = session.strings.RujelComplete_Complete.students;
+  valueWhenEmpty = "Students";
   escapeHTML = false;
 }

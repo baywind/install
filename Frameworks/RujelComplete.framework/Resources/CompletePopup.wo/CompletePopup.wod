@@ -35,6 +35,8 @@ Submit : WOSubmitButton {
 }
 
 Form : WOForm {
+  action = save;
+  multipleSubmit = true;
   style = "border:1px solid #666666;";
 }
 

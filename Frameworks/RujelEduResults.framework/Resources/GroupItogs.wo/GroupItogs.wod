@@ -1,0 +1,73 @@
+Title : WOString {
+  value = session.strings.RujelEduResults_EduResults.groupItogs.title;
+  valueWhenEmpty = "Group Itogs";
+  escapeHTML = false;
+}
+
+FullTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.groupItogs.hover;
+  valueWhenEmpty = "Group Itogs";
+  escapeHTML = false;
+}
+
+EduYear : WOString {
+  value = eduYear;
+  escapeHTML = false;
+}
+
+GroupName : WOString {
+  value = eduGroup.name;
+}
+
+Students : WORepetition {
+  list = students;
+  item = stItem;
+}
+
+StudentName : PersonDisplay {
+  person = stItem.student;
+  last = 2;
+  first = 2;
+  second = 0;
+  startWithLast = true;
+}
+
+Cycles : WORepetition {
+  list = cycles;
+  item = cycle;
+  index = index;
+}
+
+CycleCell : WOGenericContainer {
+  elementName = "th";
+  colspan = itogsList.count;
+  class = "leftCol";
+}
+
+CycleTitle : WOString {
+  value = cycle.subject;
+}
+
+Itogs : WORepetition {
+  list = itogsList;
+  item = item;
+}
+
+ItogTitle : WOString {
+  value = item.titleHTML;
+  escapeHTML = false;
+}
+
+ItogValue : WOString {
+	value = itog;
+}
+ItogCell : WOGenericContainer {
+  elementName = "td";
+  class = cellClass;
+}
+
+StudentTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Student.this;
+  valueWhenEmpty = "Student";
+  escapeHTML = false;
+}

@@ -8,13 +8,32 @@
 	<base target="head"/>
 	<link rel="stylesheet" type="text/css" href = "styles.css"/>
 	<script type="text/javascript" language="JavaScript" src = "scripts.js"></script>
+	<script type="text/javascript" language="JavaScript">
+	var grPage = "/groupItogs.html";
+	function grFrame(head) {
+		var frame = window.parent.frames["content"];
+		frame.location = head.substring(0,head.lastIndexOf("/")) + grPage;
+		otherPage = true; 
+	}
+	</script>
 </head>
 <body onload = "pageName='/recentMarks.html'">
-<webobject name = "GroupsList">
+<webobject name = "HasSections"><ul><webobject name = "Sections">
+	<webobject name = "LI"><webobject name = "SectionLink">
+		<webobject name = "SectionTitle"/></webobject></webobject>
+</webobject></ul>
+</webobject><webobject name = "GroupsList"><div style = "clear:both;">
+	<webobject name = "ShowGroupView"><webobject name = "GroupView">&gt;&gt;</webobject></webobject>
 	<webobject name = "GroupContainer"><webobject name = "Count"/><webobject name = "GroupName"/></webobject>
 	<webobject name = "StudentsDiv"><webobject name = "StudentsList">
 		<webobject name = "StudentLink"><webobject name = "StudentName"/></webobject>
-	</webobject></webobject>
+	</webobject></webobject></div>
 </webobject>
+<table style = "margin:5pt;" align = "right" cellspacing = "0">
+<tr><td align = "right"><webobject name = "TotalGrTitle"/>:</td>
+	<td align = "left"><webobject name = "GroupCount"/></td></tr>
+<tr><td align = "right"><webobject name = "StudentsTitle"/>:</td>
+	<td align = "left"><webobject name = "TotalStudents"/></td></tr>
+</table>
 </body>
 </html>

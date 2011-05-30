@@ -36,3 +36,37 @@ ByTeacher : WOString {
   valueWhenEmpty = "By Class";
   escapeHTML = false;
 }
+Types : WORepetition {
+  list = types;
+  item = grHead;
+}
+
+TypeLink : WOGenericContainer {
+  elementName = "a";
+  target = "_self";
+  href = groupLink;
+  omitTags = style;
+}
+
+GroupTitle : WOString {
+  value = groupTitle;
+  escapeHTML = false;
+}
+
+Sections : WORepetition {
+ list = application.strings.sections.list;
+ item = courseID;
+}
+
+HasSections : WOConditional {
+  condition = showSections;
+}
+
+SectionTitle : WOString {
+  value = courseID.value;
+}
+
+LI : WOGenericContainer {
+  elementName = "li";
+  style = style;
+}
