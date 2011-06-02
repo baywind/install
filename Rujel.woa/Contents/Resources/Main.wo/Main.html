@@ -10,12 +10,6 @@
 		var timerID = null;
 
 		function onLoad() {
-			var w = 1040 - Math.max(window.innerWidth,document.width);
-			if(w > 0) w = 0;
-			var h = 700 - Math.max(window.innerHeight,document.height);
-			if(h > 0) h = 0;
-			if((h + w) < 0)
-				window.resizeBy(w,h);
 			if(timeout > 0) {
 				document.getElementById("buttons").style.display="none";
 				step();

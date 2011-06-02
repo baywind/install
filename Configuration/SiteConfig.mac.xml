@@ -35,7 +35,8 @@
 			<adaptorThreadsMax type="NSNumber">256</adaptorThreadsMax>
 			<startingPort type="NSNumber">2020</startingPort>
 			<cachingEnabled type="NSString">YES</cachingEnabled>
-			<additionalArgs type="NSString">-WODirectConnectEnabled NO</additionalArgs>
+			<additionalArgs type="NSString">-WODirectConnectEnabled NO
+-Xms64m -Xmx128m</additionalArgs>
 			<adaptor type="NSString">WODefaultAdaptor</adaptor>
 			<projectSearchPath type="NSString">()</projectSearchPath>
 			<autoRecover type="NSString">NO</autoRecover>
@@ -109,6 +110,7 @@
 			<cachingEnabled type="NSString">YES</cachingEnabled>
 			<schedulingStartDay type="NSNumber">1</schedulingStartDay>
 			<additionalArgs type="NSString">-WODirectConnectEnabled NO
+-Xms64m -Xmx128m
 -EMailBroadcast.disableWeekly true
 -AutoItog.disable true
 -PlanFactCheck.disable true</additionalArgs>

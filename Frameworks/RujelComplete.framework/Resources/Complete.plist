@@ -77,7 +77,7 @@
 	<key>dashboard</key>
 	<dict>
 		<key>title</key>
-		<string>Закрытие учебного года</string>
+		<string>Закрытие года (уроки, работы)</string>
 		<key>component</key>
 		<string>DisplayAny</string>
 		<key>invokeAction</key>
@@ -110,7 +110,7 @@
 			<key>onmouseout</key>
 			<string>unDim(this);</string>
 			<key>title</key>
-			<string>Закрытие учебного года</string>
+			<string>Закрытие года (уроки, работы)</string>
 			<key>height</key>
 			<string>38</string>
 			<key>width</key>
@@ -140,7 +140,7 @@
 		<key>width</key>
 		<string>24</string>
 		<key>title</key>
-		<string>Закрытие года</string>
+		<string>Закрытие года (учащиеся)</string>
 		<key>sort</key>
 		<string>90</string>
 	</dict>

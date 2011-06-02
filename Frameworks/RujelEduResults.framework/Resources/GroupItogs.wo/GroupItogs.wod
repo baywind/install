@@ -45,7 +45,7 @@ CycleCell : WOGenericContainer {
 }
 
 CycleTitle : WOString {
-  value = cycle.subject;
+  value = cycleTitle;
 }
 
 Itogs : WORepetition {
@@ -70,4 +70,8 @@ StudentTitle : WOString {
   value = session.strings.RujelInterfaces_Names.Student.this;
   valueWhenEmpty = "Student";
   escapeHTML = false;
+}
+
+ShowCycle : WOConditional {
+  condition = itogsList.count;
 }
