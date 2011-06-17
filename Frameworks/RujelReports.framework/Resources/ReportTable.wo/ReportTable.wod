@@ -51,7 +51,7 @@ ItemRow : WOGenericContainer {
 
 Cell : OnClickContainer {
   elementName = "td";
-  class = ^cellClass;
+  class = cellClass;
   style = style;
   onclick = onClick;
   disabled = disabledClick;
