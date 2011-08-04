@@ -1,0 +1,134 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+PageWrapper : PageWrapper {
+  title = title;
+}
+
+Lines : WORepetition {
+  list = list;
+  item = item;
+}
+
+Name : WOString {
+  value = value;
+}
+
+Array : WORepetition {
+  count = titles.count;
+  index = index;
+}
+
+Titles : WORepetition {
+  list = titles;
+  item = item;
+}
+
+ChooseTitle : WOPopUpButton {
+  list = availableTitles;
+  item = item2;
+  selection = item.best;
+  noSelectionString = "-= auto =-";
+}
+
+NotFine : WOConditional {
+  condition = readFine;
+  negate = true;
+}
+
+Fine : WOConditional {
+  condition = readFine;
+}
+
+
+Component : WOSwitchComponent {
+  WOComponentName = consumerComponent;
+  list = list;
+  params = consumerParams;
+  returnPage = returnPage;
+  title = title;
+  interpreted = interpreted;
+}
+
+NoData : WOConditional {
+  condition = data;
+  negate = true;
+}
+
+UploadForm : WOForm {
+  action = importFile;  
+  enctype = "multipart/form-data";
+  style = "border:1px solid #666666;padding: 0px 2ex 1ex;";
+}
+
+SubmitUpload : WOGenericElement {
+  elementName = "input";
+  type = "button";
+  onclick = "form.submit()";
+  value = session.strings.RujelBase_Base.import.Import;
+}
+
+HasData : WOConditional {
+  condition = data;
+}
+
+UploadTitle : WOString {
+  value = session.strings.RujelBase_Base.import.uploadFile;
+  escapeHTML = false;
+}
+
+Form : WOForm {
+  class = "backfield1";
+  multipleSubmit = true;
+}
+
+CharsetTitle : WOString {
+  value = session.strings.RujelBase_Base.import.charset;
+  escapeHTML = false;
+}
+
+Charsets : WOPopUpButton {
+  list = session.strings.RujelBase_Base.import.charsets;
+  selection = charset;
+}
+
+SeparatorTitle : WOString {
+  value = session.strings.RujelBase_Base.import.separator;
+}
+
+Separator : WOText {
+  value = separator;
+  cols = 3;
+  rows = 1;
+  style = "text-align:center;";
+}
+
+Retry : WOSubmitButton {
+  action = retry;
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+}
+
+GoManual : OnClickContainer {
+  elementName = "div";
+  class = "grey";
+  invokeAction = goManual;
+  onclick = session.tryLoad;
+  style = "float:left;padding:2px;border:3px double #666666;";
+}
+
+ManualTitle : WOString {
+  value = session.strings.RujelBase_Base.import.goManual;
+  escapeHTML = false;
+}
+
+ValueCell : WOGenericContainer {
+  elementName = "td";
+  class = valueClass;
+}

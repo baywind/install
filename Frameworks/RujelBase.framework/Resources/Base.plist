@@ -290,6 +290,8 @@
 	<string>Запись уроков вперед запрещена</string>
 	<key>lessons</key>
 	<string>Уроки</string>
+	<key>skipStrings</key>
+	<string>н Н H Б</string>
 	<key>lessonsTab</key>
 	<dict>
 		<key>checkAccess</key>
@@ -499,5 +501,27 @@
 	</array>
 	<key>vacant</key>
 	<string>Вакансия</string>
+	<key>import</key>
+	<dict>
+		<key>Import</key>
+		<string>Импорт</string>
+		<key>uploadFile</key>
+		<string>Укажите файл с данными</string>
+		<key>inputSettings</key>
+		<string>Параметры файла данных</string>
+		<key>charset</key>
+		<string>Кодировка</string>
+		<key>separator</key>
+		<string>Разделитель</string>
+		<key>goManual</key>
+		<string>Параметры файла</string>
+		<key>charsets</key>
+		<array>
+			<string>UTF-8</string>
+			<string>windows-1251</string>
+			<string>KOI8-R</string>
+			<string>x-MacCyrillic</string>
+		</array>
+	</dict>
 </dict>
 </plist>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Schedule</key>
+	<string>Расписание</string>
+	<key>Rings</key>
+	<string>Звонки</string>
+	<key>cantParce</key>
+	<string>Не удалось считать значения времени</string>
+	<key>lessonsOverlap</key>
+	<string>Нельзя делать уроки пересекающимися по времени</string>
+	<key>inversedLesson</key>
+	<string>Конец урока должен быть позже начала</string>
+	<key>initDate</key>
+	<string>Дата вступления изменений</string>
+	<key>actual</key>
+	<string>Актуальное расписание на </string>
+	<key>comingChanges</key>
+	<string>Ожидаемые измения в расписании</string>
+	<key>messageAddition</key>
+	<string>Обратите внимание на изменения в расписании</string>
+	<key>dashboard</key>
+	<dict>
+		<key>title</key>
+		<string>Расписание</string>
+		<key>component</key>
+		<string>DisplayAny</string>
+		<key>invokeAction</key>
+		<string>true</string>
+		<key>nextPage</key>
+		<string>SchedulePopup</string>
+		<key>pageParams</key>
+		<dict>
+			<key>course</key>
+			<string>^course</string>
+			<key>returnPage</key>
+			<string>$context.page</string>
+		</dict>
+		<key>presenter</key>
+		<string>WOImage</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>framework</key>
+			<string>RujelSchedule</string>
+			<key>filename</key>
+			<string>sched.png</string>
+			<key>style</key>
+			<string>border:double #996633;padding:1px;background-color:#ffcc99;</string>
+			<key>onclick</key>
+			<string>$session.ajaxPopupNoPos</string>
+			<key>onmouseover</key>
+			<string>dim(this);</string>
+			<key>onmouseout</key>
+			<string>unDim(this);</string>
+			<key>title</key>
+			<string>Расписание</string>
+			<key>alt</key>
+			<string>stat</string>
+			<key>height</key>
+			<string>32</string>
+			<key>width</key>
+			<string>32</string>
+		</dict>
+		<key>sort</key>
+		<string>20</string>
+		<key>resources</key>
+		<dict>
+			<key>framework</key>
+			<string>RujelSchedule</string>
+			<key>jsLink</key>
+			<string>schedule.js</string>
+		</dict>
+	</dict>
+	<key>planTab</key>
+	<dict>
+		<key>component</key>
+		<string>RingsSetup</string>
+		<key>sort</key>
+		<string>80</string>
+		<key>title</key>
+		<string>Расписание звонков</string>
+	</dict>
+	<key>diaryTab</key>
+	<dict>
+		<key>component</key>
+		<string>DiarySchedule</string>
+		<key>id</key>
+		<string>schedule</string>
+		<key>period</key>
+		<false/>
+		<key>sort</key>
+		<string>60</string>
+		<key>title</key>
+		<string>Расписание</string>
+	</dict>
+</dict>
+</plist>

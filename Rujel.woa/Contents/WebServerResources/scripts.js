@@ -748,12 +748,17 @@ function pagePreflight() {
 	}
 }
 
-function toggleParam(cell) {
+function toggleTick(cell) {
 	var tick = cell.getElementsByTagName("input")[0];
 	tick.checked = !tick.checked;
+	return tick.checked;
+}
+
+function toggleParam(cell) {
+	var tick = toggleTick(cell);
 	var nextCell = cell.nextSibling;
 	while(nextCell != null && nextCell.nodeName.toUpperCase() != "TD") {
 		nextCell = nextCell.nextSibling;
 	}
-	nextCell.style.visibility = (tick.checked)?"visible":"hidden";
+	nextCell.style.visibility = (tick)?"visible":"hidden";
 }

@@ -1,0 +1,66 @@
+<script language = "javascript" type = "text/javascript">
+function addRingRow() {
+	var template = document.getElementById("newRingRow");
+	var schedTable = template.parentNode;
+	template = template.cloneNode(true);
+	var time = new Date(2000,9,1,8,0);
+	list = schedTable.getElementsByTagName("input");
+	if(/(\d{1,2}):(\d{1,2})/.test(list[list.length -1].value))
+		time.setHours(RegExp.$1,RegExp.$2);
+	list = schedTable.getElementsByTagName("tr");
+	rowIndex = list.length;
+	list = template.getElementsByTagName("th");
+	list[0].innerHTML = rowIndex;
+	list = template.getElementsByTagName("input");
+	time.setMinutes(time.getMinutes() + 10);
+	list[0].name = list[0].name + rowIndex;
+	list[0].value = formatTime(time);
+	time.setMinutes(time.getMinutes() + 40);
+	list[1].name = list[1].name + rowIndex;
+	list[1].value = formatTime(time);
+	template.id = null;
+	schedTable.appendChild(template);
+	template.style.display = "";
+}
+function formatTime(time) {
+	var result = time.getHours() + ':';
+	if(time.getMinutes() < 10)
+		result = result + '0';
+	result = result + time.getMinutes();
+	return result;
+}
+</script>
+<webobject name = "Form">
+<table align = "center"><thead><tr>
+	<webobject name = "AddRow">+</webobject><webobject name = "CantEdit"><th>##</th></webobject>
+	<th><webobject name = "BeginTitle"/></th>
+	<th><webobject name = "EndTitle"/></th></tr>
+</thead><tfoot><webobject name = "CanEdit">
+<tr><td colspan = "3" style = "padding:1ex;"><webobject name = "Submit"/></td></tr></webobject>
+<webobject name = "CantEdit"><webobject name = "EnterEdit">
+	<td colspan = "3" style = "padding:1ex;"><webobject name = "EditTitle"/></td></webobject>
+	</webobject>
+</tfoot><tbody><webobject name = "CanEdit">
+	<tr id = "newRingRow" style = "display:none;" class = "grey">
+		<th>x</th>
+		<td><input type = "text" name = "start" size = "5" value = "00:00"/></td>
+		<td><input type = "text" name = "end" size = "5" value = "00:00"/></td>
+		</tr></webobject><webobject name = "NoList">
+		<tr class = "grey"><th>1</th>
+			<td><input type = "text" name = "start1" size = "5" value = "08:00"/></td>
+			<td><input type = "text" name = "end1" size = "5" value = "08:40"/></td></tr>
+		<tr class = "grey"><th>2</th>
+			<td><input type = "text" name = "start2" size = "5" value = "09:00"/></td>
+			<td><input type = "text" name = "end2" size = "5" value = "09:40"/></td></tr>
+		<tr class = "grey"><th>3</th>
+			<td><input type = "text" name = "start3" size = "5" value = "10:00"/></td>
+			<td><input type = "text" name = "end3" size = "5" value = "10:40"/></td></tr>
+		</webobject><webobject name = "List"><tr class = "ungerade">
+			<th><webobject name = "Num"/></th><webobject name = "CanEdit">
+			<td><webobject name = "StartField"/></td>
+			<td><webobject name = "EndField"/></td></webobject><webobject name = "CantEdit">
+			<td><webobject name = "LessonStart"/></td>
+			<td><webobject name = "LessonEnd"/></td></webobject>
+		</tr></webobject>
+</tbody></table>
+</webobject>

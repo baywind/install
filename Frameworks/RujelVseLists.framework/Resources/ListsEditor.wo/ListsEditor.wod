@@ -1,5 +1,5 @@
 PageWrapper : PageWrapper {
-  title = session.strings.RujelVseLists_VseStrings.title;
+  title = title;
 }
 
 Title : WOString {
@@ -183,26 +183,6 @@ DictCount : WOString {
   numberformat = "0";
 }
 
-UploadForm : WOForm {
-  target = "_blank";
-  enctype = "multipart/form-data";
-}
-
-FileUpload : WOFileUpload {
-  inputStream = uploadStream;
-  filePath = uploadDict.filePath;
-  mimeType = uploadDict.mimeType;
-}
-
-SubmitUpload : WOGenericElement {
-  elementName = "input";
-  type = "submit";
-}
-
-SubmitButton : WOSubmitButton {
-  action = upload;
-}
-
 Ticker: Ticker {
 	align = "left";
 	inline = true;
@@ -301,4 +281,22 @@ SectionTabs : Tabs {
 
 HasSections : WOConditional {
   condition = application.strings.sections.hasSections;
+}
+
+Export : WOHyperlink {
+  action = export;
+  string = session.strings.RujelReports_Reports.export;
+}
+
+Import : OnClickContainer {
+  elementName = "div";
+  invokeAction = importFile;
+  onclick = session.ajaxPopup;
+  hide = hideAddButton;
+  class = "orange";
+  style = "float:right;padding:0px 4px;border:double 3px #ff9933;margin:4px;";
+}
+
+ImportTitle : WOString {
+  value = session.strings.RujelBase_Base.import.Import;
 }

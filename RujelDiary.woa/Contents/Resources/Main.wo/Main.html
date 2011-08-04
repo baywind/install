@@ -45,13 +45,14 @@
 	<table width = "100%" cellpadding = "0" cellspacing = "0" border = "0" style = "border-style:none none solid;height:2.4em;background-color:#ffffff;" class = "selectionBorder">
 		<tr><td align = "center" valign = "bottom" style = "width:5em;font-size:larger;">
 		<a href = "#" onclick = "toggleObj('groupList');"><webobject name = "RecentGroupName"/></a>
+		<webobject name = "ShowStudent"><webobject name = "IndTitle"/></webobject>
 		</td><td valign = "bottom" align = "left">
 		<webobject name = "Tabs"/>
 		</td><td align = "right" valign = "bottom" style = "padding:3pt;">
 		<form action = "" name = "request" method = "get" onsubmit = "removeDefault(this);return true;">
 		<input type = "submit" value = "" class = "hiddenSubmit"/>
-		<webobject name = "RegimeField"/><webobject name = "GrField"/>
-		<webobject name = "ShowSince">
+		<webobject name = "RegimeField"/><webobject name = "GrField"/><webobject name = "ShowStudent">
+		<webobject name = "StudentField"/></webobject><webobject name = "ShowSince">
 		<webobject name = "PeriodTitle"/> <webobject name = "SinceTitle"/>:
 		<webobject name = "Since"/> <webobject name = "ToTitle"/>:</webobject>
 		<webobject name = "JustDate"><webobject name = "DateTitle"/>:</webobject>

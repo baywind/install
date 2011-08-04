@@ -4,6 +4,8 @@
 <dict>
 	<key>title</key>
 	<string>Дневник РУЖЭЛЬ</string>
+	<key>individual</key>
+	<string>(инд)</string>
 	<key>copy</key>
 	<string>РУЖЭЛЬ</string>
 	<key>photo</key>

@@ -12,15 +12,21 @@
 		<string>15</string>
 		<key>forceArchives</key>
 		<string>true</string>
+		<key>archiveAll</key>
+		<string>true</string>
 		<key>Mark</key>
 		<string>true</string>
 		<key>ItogMark</key>
+		<string>true</string>
+		<key>BaseLesson</key>
 		<string>true</string>
 		<key>BaseNote</key>
 		<string>true</string>
 		<key>Prognosis</key>
 		<string>true</string>
 		<key>Reason</key>
+		<string>true</string>
+		<key>Work</key>
 		<string>true</string>
 	</dict>
 	<key>dbConnection.MarkArchive</key>

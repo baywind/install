@@ -12,6 +12,7 @@ LOCALROOT\Library\Frameworks\RujelBase.framework\Resources\Java\rujelbase.jar
 LOCALROOT\Library\Frameworks\RujelCriterial.framework\Resources\Java\rujelcriterial.jar
 LOCALROOT\Library\Frameworks\RujelEduPlan.framework\Resources\Java\rujeleduplan.jar
 LOCALROOT\Library\Frameworks\RujelInterfaces.framework\Resources\Java\rujelinterfaces.jar
+LOCALROOT\Library\Frameworks\RujelSchedule.framework\Resources\Java\rujelschedule.jar
 LOCALROOT\Library\Frameworks\RujelVseLists.framework\Resources\Java\rujelvselists.jar
 LOCALROOT\Library\Frameworks\RujelVseobuch.framework\Resources\Java\rujelvseobuch.jar
 WOROOT\Library\Frameworks\JavaWOExtensions.framework\Resources\Java\JavaWOExtensions.jar

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>moduleClass</key>
+	<string>net.rujel.schedule.SchedModule</string>
+	<key>sort</key>
+	<string>80</string>
+	<key>dbConnection.Schedule</key>
+	<dict>
+		<key>dbName</key>
+		<string>RujelYear%s</string>
+	</dict>
+</dict>
+</plist>

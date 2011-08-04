@@ -13,4 +13,10 @@
         {className = "net.rujel.vselists.VseTeacher"; name = VseTeacher; }, 
         {className = "net.rujel.vselists.VseTutor"; name = VseTutor; }
     ); 
+    userInfo = {
+        schemaVersion = {
+        	number = 1;
+        	title = "0.9";
+        };
+    }; 
 }

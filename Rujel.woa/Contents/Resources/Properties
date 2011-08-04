@@ -3,7 +3,7 @@ WOSessionTimeOut=910
 #OnEditTimeOutMultiplier=2
 
 ApplicationName=Rujel
-RujelVersion=0.9
+RujelVersion=0.9.1
 
 #Settings.className = net.rujel.reusables.PrefsReader
 #PrefsReader.nodePath = /net/rujel

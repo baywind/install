@@ -297,6 +297,20 @@
 					<key>advanced</key>
 					<true/>
 				</dict>
+				<dict>
+					<key>key</key>
+					<string>diaryURL</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>diaryURL</string>
+					<key>description</key>
+					<string>адрес приложения РУЖЭЛЬ-дневник в интернете</string>
+					<key>defaultValue</key>
+					<string>http://_serverURL_/Apps/WebObjects/RujelDiary.woa</string>
+					<key>advanced</key>
+					<false/>
+				</dict>
 			</array>
 		</dict>
 	</array>

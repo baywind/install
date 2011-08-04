@@ -19,23 +19,6 @@ CourseTitle : WOString {
   escapeHTML = false;
 }
 
-ByClass : WOString {
-  value = application.strings.RujelComplete_Complete.byClass;
-  valueWhenEmpty = "By Class";
-  escapeHTML = false;
-}
-
-BySubject : WOString {
-  value = application.strings.RujelComplete_Complete.bySubject;
-  valueWhenEmpty = "By Class";
-  escapeHTML = false;
-}
-
-ByTeacher : WOString {
-  value = application.strings.RujelComplete_Complete.byTeacher;
-  valueWhenEmpty = "By Class";
-  escapeHTML = false;
-}
 Types : WORepetition {
   list = types;
   item = grHead;

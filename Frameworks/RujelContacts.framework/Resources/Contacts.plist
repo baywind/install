@@ -114,5 +114,7 @@
 		<key>denied</key>
 		<string>Отсылка по запросу отключена</string>
 	</dict>
+	<key>diaryLink</key>
+	<string>РУЖЭЛЬ-дневник: индивидуальное расписание и домашние задания для %2$s</string>
 </dict>
 </plist>

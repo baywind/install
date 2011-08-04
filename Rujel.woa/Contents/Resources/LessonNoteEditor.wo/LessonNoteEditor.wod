@@ -108,6 +108,7 @@ PageWrapper1: PageWrapper {
 	scriptURL = present.scriptURL;
 	scriptResource = present.scriptResource;
 	resourcesFramework = present.framework;
+	resources = resources;
 }
 
 SubGroup: WOString {
@@ -186,7 +187,7 @@ TabsRepetition : WORepetition {
 }
 
 JournalPlugins : WORepetition {
-	list = session.modules.journalPlugins;
+	list = dashboard;
 	item = item;
 }
 

@@ -196,40 +196,6 @@ CommentField : WOTextField {
   style = "text-align:center;";
 }
 
-ChooseCurrTeacher : OnClickContainer {
-  elementName = "td";
-  align = "right";
-  onclick = session.ajaxPopup;
-  invokeAction = chooseCurrentTeacher;
-  class = "orange";
-  width = "30%";
-  style = "font-weight:bold;font-style:italic;";
-}
-
-TeacherCell : OnClickContainer {
-  elementName = "td";
-  invokeAction = selectTeacher;
-  onclick = teacherOnClick;
-  class = teacherRowClass;
-  title = currFullname;
-}
-
-CurrTeacherName : PersonDisplay {
-  person = currTeacher;
-  valueWhenEmpty = session.strings.Reusables_Strings.uiElements.Select;
-  nullValue = session.strings.RujelBase_Base.vacant;
-  last = 2;
-  first = 1;
-  second = 1;
-  startWithLast = true;
-  emptyStyle = "font-style:italic;";
-}
-
-SelectorTitle : WOString {
-  value = session.strings.Strings.ChooseRegime.SrcMark;
-  escapeHTML = false;
-}
-
 TeacherIsSelected : WOConditional {
   condition = teacherIsSelected;
 }

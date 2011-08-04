@@ -1,0 +1,26 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "END_TIME"; 
+            name = endTime; 
+            prototypeName = time; 
+        }, 
+        {columnName = "SEQ_NUM"; name = num; prototypeName = short; }, 
+        {allowsNull = N; columnName = "R_ID"; name = rID; prototypeName = short; }, 
+        {
+            allowsNull = Y; 
+            columnName = "START_TIME"; 
+            name = startTime; 
+            prototypeName = time; 
+        }, 
+        {columnName = "TIME_SCHEME"; name = timeScheme; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (endTime, num, startTime, timeScheme); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (endTime, num, startTime, timeScheme); 
+    externalName = "SDL_RING"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScheduleRing; 
+    primaryKeyAttributes = (rID); 
+}

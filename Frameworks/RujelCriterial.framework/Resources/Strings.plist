@@ -549,5 +549,19 @@
 		<key>sort</key>
 		<string>20</string>
 	</dict>
+	<key>spesTypes</key>
+	<dict>
+		<key>onLesson</key>
+		<dict>
+			<key>typeName</key>
+			<string>работа на уроке</string>
+			<key>dfltFlags</key>
+			<integer>38</integer>
+			<key>colorNoWeight</key>
+			<string>#ffff66</string>
+			<key>colorWeight</key>
+			<string>#ffcc66</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

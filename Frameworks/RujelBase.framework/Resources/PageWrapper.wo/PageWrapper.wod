@@ -1,5 +1,5 @@
 AccessPath: WORepetition {
-	item = pathItem;
+	item = item;
 	list = session.pathStack;
 }
 BackUrl: WOGenericContainer {
@@ -67,8 +67,8 @@ Message: WOString {
 }
 
 PathTitle: WOString {
-	value = pathItem.title;
-	valueWhenEmpty = pathItem.name;
+	value = item.title;
+	valueWhenEmpty = item.name;
 }
 
 PleaseWait: WOString {
@@ -213,4 +213,16 @@ EduYear : WOString {
 
 RefreshPage : WOActionURL {
   action = refreshPage;
+}
+
+ExtraResources : WORepetition {
+  list = ^resources;
+  item = item;
+}
+
+ExtraRsrc : ResourceLink {
+  framework = item.framework;
+  cssLink = item.cssLink;
+  jsLink = item.jsLink;
+  languagesList = item.languagesList;
 }

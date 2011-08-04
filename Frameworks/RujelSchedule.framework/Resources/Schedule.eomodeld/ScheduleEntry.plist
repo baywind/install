@@ -1,0 +1,45 @@
+{
+    attributes = (
+        {columnName = "EDU_COURSE"; name = courseID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "SDL_FLAGS"; 
+            name = flags; 
+            prototypeName = byte; 
+        }, 
+        {columnName = "SEQ_NUM"; name = num; prototypeName = short; }, 
+        {
+            allowsNull = Y; 
+            columnName = "REASON_ID"; 
+            name = reasonID; 
+            prototypeName = "int_3"; 
+        }, 
+        {allowsNull = N; columnName = "S_ID"; name = sID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = Y; 
+            columnName = "OTHER_TEACHER"; 
+            name = teacherID; 
+            prototypeName = "int_3"; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VALID_SINCE"; 
+            name = validSince; 
+            prototypeName = date; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "VALID_TO"; 
+            name = validTo; 
+            prototypeName = date; 
+        }, 
+        {columnName = "WEEKDAY_NUM"; name = weekdayNum; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (courseID, flags, num, reasonID, teacherID, validSince, validTo, weekdayNum); 
+    className = "net.rujel.schedule.ScheduleEntry"; 
+    classProperties = (flags, num, validSince, validTo, weekdayNum); 
+    externalName = "SDL_SCHEDULE"; 
+    fetchSpecificationDictionary = {}; 
+    name = ScheduleEntry; 
+    primaryKeyAttributes = (sID); 
+}

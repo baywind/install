@@ -1,7 +1,6 @@
 <webobject name = "PageWrapper"><webobject name = "HasSections">
 <div style = "float:left;"><webobject name = "SectionTabs"/></div></webobject>
 <h1><webobject name = "Title"/></h1>
-
 <table align = "center">
 <tr><td colspan = "2"  class = "selectionBorder" style = "border-style:none none solid;padding:0px;">
 	<webobject name = "Modes"/></td></tr>
@@ -31,12 +30,14 @@
 	</webobject></webobject></webobject>
 	</thead><webobject name = "CanChange"><tfoot>
 		<tr><webobject name = "ShowTicks"><td></td></webobject>
-			<td colspan = "3" align = "right">
+			<td align = "right">
 				<webobject name = "AddPerson">+</webobject>
-				<webobject name = "CanChange"><webobject name = "Save"/>
+				<webobject name = "Import"><webobject name = "ImportTitle"/></webobject>
+				</td><td colspan = "2"><webobject name = "CanChange"><webobject name = "Save"/>
 		<webobject name = "ResetButton"/></webobject></td>
 		</tr><webobject name = "ShowTicks"><tr>
-			<td colspan = "4" align = "left"><webobject name = "Ticker"/></td></tr>
+			<td colspan = "3" align = "left"><webobject name = "Ticker"/></td>
+			<td><webobject name = "Export"></webobject></td></tr>
 		<tr><td><webobject name = "TickCount"/></td>
 		<td colspan = "3"><webobject name = "ActionPopup"/>
 			<webobject name = "SinceTitle"/>:

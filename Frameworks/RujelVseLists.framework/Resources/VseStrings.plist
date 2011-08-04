@@ -159,5 +159,125 @@
 		<key>fire</key>
 		<string>Исключить</string>
 	</dict>
+	<key>import</key>
+	<dict>
+		<key>title</key>
+		<string>Импорт данных в группу</string>
+		<key>toAdd</key>
+		<string>Добавить учащихся</string>
+		<key>toExclude</key>
+		<string>Исключить из группы</string>
+		<key>toUpdate</key>
+		<string>Обновить сведения</string>
+		<key>toStay</key>
+		<string>Остаются без изменений</string>
+		<key>found</key>
+		<string>Найден в БД</string>
+		<key>isIn</key>
+		<string>сейчас в &quot;%1$s&quot;</string>
+		<key>wasIn</key>
+		<string>был в &quot;%1$s&quot; до %2$s</string>
+ 		<key>willBe</key>
+		<string>будет в &quot;%1$s&quot; с %2$s</string>
+		<key>leavers</key>
+		<string>Выбывшие</string>
+		<key>onDate</key>
+		<string>Дата внесения изменений</string>
+ 	</dict>
+	<key>importAssistance</key>
+	<array>
+		<dict>
+			<key>regex</key>
+			<string>\d{1,3}[\.\)\>-]?</string>
+			<key>field</key>
+			<string>num</string>
+			<key>match</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>[мm]</string>
+			<key>field</key>
+			<string>sexLetter</string>
+			<key>extInfo</key>
+			<dict>
+				<key>sex</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>[жf]</string>
+			<key>field</key>
+			<string>sexLetter</string>
+			<key>extInfo</key>
+			<dict>
+				<key>sex</key>
+				<false/>
+			</dict>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>\'?\d{1,4}[\./-]\d{1,2}[\./-]\d{1,4}</string>
+			<key>field</key>
+			<string>birthDate</string>
+			<key>dateformat</key>
+			<array>
+				<string>dd.MM.yyyy</string>
+				<string>MM/dd/yyyy</string>
+				<string>yyyy-MM-dd</string>
+			</array>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>\p{L}+вич</string>
+			<key>field</key>
+			<string>secondName</string>
+			<key>extInfo</key>
+			<dict>
+				<key>sex</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>\p{L}+вна</string>
+			<key>field</key>
+			<string>secondName</string>
+			<key>extInfo</key>
+			<dict>
+				<key>sex</key>
+				<false/>
+			</dict>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>[\p{L}- ]+(ов|ев|ин|ий)</string>
+			<key>field</key>
+			<string>lastName</string>
+			<key>extInfo</key>
+			<dict>
+				<key>sex</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>[\p{L}- ]+((ов|ев|ин)а|ая)</string>
+			<key>field</key>
+			<string>lastName</string>
+			<key>extInfo</key>
+			<dict>
+				<key>sex</key>
+				<false/>
+			</dict>
+		</dict>
+		<dict>
+			<key>regex</key>
+			<string>[\p{L}\- ]+</string>
+			<key>field</key>
+			<string>firstName</string>
+		</dict>
+	</array>
 </dict>
 </plist>

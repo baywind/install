@@ -1,8 +1,8 @@
 SET NAMES utf8;
 GRANT ALL PRIVILEGES ON `RujelYear%`.* TO 'rujel'@'localhost' IDENTIFIED BY 'RUJELpassword';
 
-CREATE DATABASE RujelYear2010 DEFAULT CHARACTER SET utf8;
-USE RujelYear2010;
+CREATE DATABASE RujelYear2011 DEFAULT CHARACTER SET utf8;
+USE RujelYear2011;
 
 CREATE TABLE SCHEMA_VERSION (
   MODEL_NAME varchar(255),
@@ -12,7 +12,8 @@ CREATE TABLE SCHEMA_VERSION (
 );
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
-  VALUES ('BaseYearly',1,'0.9'),('Curriculum',1,'0.9'),('EduPlanYearly',1,'0.9');
+  VALUES ('BaseYearly',1,'0.9'),('Curriculum',1,'0.9'),('EduPlanYearly',1,'0.9'),
+  ('Schedule',1,'0.9.1'),('MarkArchive',1,'0.9.1');
 
 CREATE TABLE AI_AUTOITOG (
   AI_ID smallint NOT NULL,
@@ -302,10 +303,11 @@ CREATE TABLE CR_WORK_TYPE (
  /* типы работ */
 INSERT INTO CR_WORK_TYPE 
 (WT_ID,SORT_NUM,TYPE_NAME,DFLT_FLAGS,DFLT_WEIGHT,COLOR_NOWEIGHT,COLOR_WEIGHT) VALUES
-(0,0,'классная',4,1.0,'#ffcc66','#ff9966'),
-(1,1,'домашняя',20,1.0,'#ccffcc','#99ff66'),
-(2,2,'проектная',8,1.0,'#ff99ff','#ff99ff'),
-(3,3,'дополнительная',2,1.0,'#ccffff','#ccffff');
+(0,0,'классная',4,1.0,'#ffcc33','#ff9966'),
+(1,1,'работа на уроке',38,0.0,'#ffff66','#ffcc66'),
+(2,2,'домашняя',20,1.0,'#ccffcc','#99ff66'),
+(3,3,'проектная',8,1.0,'#ff99ff','#ff99ff'),
+(4,4,'дополнительная',2,1.0,'#ccffff','#ccffff');
 
 CREATE TABLE CR_MARK (
   WORK_ID mediumint NOT NULL,
@@ -398,6 +400,7 @@ CREATE TABLE MA_MARK_ARCHIVE (
   KEY2_VALUE int NOT NULL,
   KEY3_VALUE int NOT NULL,
   CHANGE_TIME timestamp NOT NULL,
+  ACTION_TYPE tinyint NOT NULL,
   ARCH_DATA text NOT NULL,
   BY_USER varchar(255) NOT NULL,
   WOSID_CODE varchar(28) NOT NULL,
@@ -435,15 +438,15 @@ CREATE TABLE PL_HOLIDAY (
 
 /* Каникулы и праздники */
 INSERT INTO PL_HOLIDAY (H_ID, HOLIDAY_NAME, DATE_BEGIN, DATE_END) VALUES
-(1,'Осенние каникулы','2010-11-01','2010-11-07'),
-(2,'День народного единства','2010-11-04','2010-11-04'),
-(3,'Зимние каникулы','2010-12-29','2011-01-10'),
-(4,'День защитника отечества','2011-02-23','2011-02-23'),
-(5,'Международный женский день','2011-03-08','2011-03-08'),
-(6,'Весенние каникулы','2011-03-22','2011-03-28'),
-(7,'День весны и труда','2011-05-01','2011-05-01'),
-(8,'День Победы','2011-05-09','2011-05-09'),
-(9,'День России','2011-06-12','2011-06-12');
+(1,'Осенние каникулы','2011-11-01','2011-11-07'),
+(2,'День народного единства','2011-11-04','2011-11-04'),
+(3,'Зимние каникулы','2011-12-29','2012-01-10'),
+(4,'День защитника отечества','2012-02-23','2012-02-23'),
+(5,'Международный женский день','2012-03-08','2012-03-08'),
+(6,'Весенние каникулы','2012-03-22','2012-03-28'),
+(7,'День весны и труда','2012-05-01','2012-05-01'),
+(8,'День Победы','2012-05-09','2012-05-09'),
+(9,'День России','2012-06-12','2012-06-12');
 
 
 CREATE TABLE PL_HOURS (
@@ -481,6 +484,36 @@ CREATE TABLE PL_PLAN_DETAIL (
   TOTAL_HOURS smallint NOT NULL,
   WEEKLY_HOURS smallint NOT NULL,
   PRIMARY KEY (EDU_COURSE,EDU_PERIOD)
+) ENGINE=InnoDB;
+
+CREATE TABLE SDL_RING (
+  R_ID smallint NOT NULL,
+  SEQ_NUM smallint NOT NULL,
+  TIME_SCHEME smallint NOT NULL DEFAULT 0,
+  START_TIME time,
+  END_TIME time,
+  PRIMARY KEY (R_ID)
+) ENGINE=InnoDB;
+
+CREATE TABLE SDL_SCHEDULE (
+  S_ID mediumint NOT NULL,
+  WEEKDAY_NUM smallint NOT NULL,
+  SEQ_NUM smallint NOT NULL,
+  EDU_COURSE smallint NOT NULL,
+  PLACE_ID smallint NOT NULL DEFAULT 0,
+  SDL_FLAGS tinyint NOT NULL,
+  OTHER_TEACHER mediumint,
+  REASON_ID mediumint,
+  VALID_SINCE date,
+  VALID_TO date,
+  PRIMARY KEY (S_ID)
+) ENGINE=InnoDB;
+
+CREATE TABLE SDL_PLACE (
+  P_ID smallint NOT NULL,
+  SHORT_TITLE varchar(10) NOT NULL,
+  FULL_NAME varchar(255),
+  PRIMARY KEY (P_ID)
 ) ENGINE=InnoDB;
 
 CREATE TABLE ST_DESCRIPTION (

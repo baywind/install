@@ -27,6 +27,7 @@ LOCALROOT/Library/Frameworks/RujelVseobuch.framework/Resources/Java/rujelvseobuc
 LOCALROOT/Library/Frameworks/RujelEmail.framework/Resources/Java/rujelemail.jar
 LOCALROOT/Library/Frameworks/RujelEmail.framework/Resources/Java/activation.jar
 LOCALROOT/Library/Frameworks/RujelEmail.framework/Resources/Java/mail.jar
+LOCALROOT/Library/Frameworks/RujelSchedule.framework/Resources/Java/rujelschedule.jar
 WOROOT/Library/Frameworks/JavaWOExtensions.framework/Resources/Java/JavaWOExtensions.jar
 WOROOT/Library/Frameworks/JavaWOExtensions.framework/Resources/Java/javawoextensions.jar
 WOROOT/Library/Frameworks/JavaWOExtensions.framework/WebServerResources/Java/JavaWOExtensions.jar

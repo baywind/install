@@ -103,27 +103,27 @@ TypeRow : OnClickContainer {
 
 FixWeight : WOCheckBox {
   checked = typeItem.namedFlags.fixWeight;
-  disabled = cantEdit;
+  disabled = cantEditFlags;
 }
 
 IsCompulsory : WOCheckBox {
   checked = typeItem.namedFlags.compulsory;
-  disabled = cantEdit;
+  disabled = cantEditFlags;
 }
 
 FixCompulsory : WOCheckBox {
   checked = typeItem.namedFlags.fixCompulsory;
-  disabled = cantEdit;
+  disabled = cantEditFlags;
 }
 
 IsHometask : WOCheckBox {
   checked = typeItem.namedFlags.hometask;
-  disabled = cantEdit;
+  disabled = cantEditFlags;
 }
 
 FixHometask : WOCheckBox {
   checked = typeItem.namedFlags.fixHometask;
-  disabled = cantEdit;
+  disabled = cantEditFlags;
 }
 
 Unused : WOCheckBox {
@@ -202,4 +202,13 @@ HasSelection : WOConditional {
 NoSelection : WOConditional {
   condition = currType.sort;
   negate = true;
+}
+
+IsManual : WOConditional {
+  condition = typeItem.namedFlags.system;
+  negate = true;
+}
+
+SystemType : WOConditional {
+  condition = typeItem.namedFlags.system;
 }

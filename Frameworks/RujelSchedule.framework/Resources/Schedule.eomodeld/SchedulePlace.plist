@@ -1,0 +1,19 @@
+{
+    attributes = (
+        {columnName = "FULL_NAME"; name = fullName; prototypeName = string; }, 
+        {allowsNull = N; columnName = "P_ID"; name = pID; prototypeName = short; }, 
+        {
+            columnName = "SHORT_TITLE"; 
+            name = shortTitle; 
+            prototypeName = anagram; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (fullName, shortTitle); 
+    className = "com.webobjects.eocontrol.EOGenericRecord"; 
+    classProperties = (fullName, shortTitle); 
+    externalName = "SDL_PLACE"; 
+    fetchSpecificationDictionary = {}; 
+    name = SchedulePlace; 
+    primaryKeyAttributes = (pID); 
+}

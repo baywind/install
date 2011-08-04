@@ -1,0 +1,101 @@
+<h2><webobject name = "Title"/> "<webobject name = "TargetName"/>"</h2>
+<webobject name = "Form"><webobject name = "Preparing"><table align = "center"><thead><tr>
+	<th>?</th><th style = "width:3ex;">#</th>
+	<th><webobject name = "LastNameTitle"/></th>
+	<th><webobject name = "FirstNameTitle"/></th>
+	<th><webobject name = "SecondNameTitle"/></th><webobject name = "ShowDate">
+	<th><webobject name = "BirthDateTitle"/></th></webobject>
+	<td colspan = "2"></td>
+</tr></thead><webobject name = "HaveToAdd"><tbody>
+	<tr class = "green">
+		<th colspan = "5"><webobject name = "ToAddTitle"/></th><webobject name = "ShowDate">
+		<td></td></webobject>
+		<td colspan = "2"><webobject name = "ShowFound"><webobject name = "FoundTitle"/></webobject></td>
+	</tr><webobject name = "ToAddList"><webobject name = "Row">
+		<td class = "green"><webobject name = "Check"/></td>
+		<td><webobject name = "Num"/></td>
+		<td align = "left"><webobject name = "LastName"/></td>
+		<td align = "left"><webobject name = "FirstName"/></td>
+		<td align = "left"><webobject name = "SecondName"/></td><webobject name = "ShowDate">
+		<td><webobject name = "BirthDate"/></td></webobject>
+		<td colspan = "2" align = "left"><webobject name = "HasFound">
+			<webobject name = "ChooseFound"/></webobject></td>
+	</webobject></webobject>
+	<tr class = "green" height = "3"><td colspan = "7"></td><webobject name = "ShowDate">
+		<td></td></webobject></tr>
+</tbody></webobject><webobject name = "HaveToUpdate"><tbody>
+	<tr class = "orange">
+		<th colspan = "5"><webobject name = "ToUpdateTitle"/></th><webobject name = "ShowDate">
+		<td></td></webobject>
+		<td colspan = "2"></td>
+	</tr><webobject name = "ToUpdateList"><webobject name = "Row">
+		<td class = "orange"><webobject name = "Check"/></td>
+		<td><webobject name = "Num"/></td>
+		<td align = "left"><webobject name = "LastName"/></td>
+		<td align = "left"><webobject name = "FirstName"/></td>
+		<webobject name = "SNameCell"><webobject name = "OldSName"/>
+			<webobject name = "SecondName"/></webobject><webobject name = "ShowDate">
+		<webobject name = "BDateCell"><webobject name = "OldBDate"/>
+			<webobject name = "BirthDate"/></webobject></webobject>
+		<td colspan = "2"></td>
+	</webobject></webobject>
+	<tr class = "orange" height = "3"><td colspan = "7"></td><webobject name = "ShowDate">
+		<td></td></webobject></tr>
+</tbody></webobject><webobject name = "HaveToExclude"><tbody>
+	<tr class = "warning">
+		<th colspan = "5"><webobject name = "ToExcludeTitle"/></th><webobject name = "ShowDate">
+		<td></td></webobject>
+		<td colspan = "2"></td>
+	</tr><webobject name = "ToExcludeList"><webobject name = "Row">
+		<td class = "warning"><webobject name = "Check"/></td>
+		<td><webobject name = "Num"/></td>
+		<td align = "left"><webobject name = "ExcludeLastName"/></td>
+		<td align = "left"><webobject name = "ExcludeFirstName"/></td>
+		<td align = "left"><webobject name = "ExcludeSecondName"/></td><webobject name = "ShowDate">
+		<td><webobject name = "ExcludeBirthDate"/></td></webobject>
+		<td colspan = "2"></td>
+	</webobject></webobject>
+	<tr class = "warning" height = "3"><td colspan = "7"></td><webobject name = "ShowDate">
+		<td></td></webobject></tr>
+</tbody></webobject><webobject name = "HaveToStay"><tbody>
+	<tr class = "grey">
+		<th colspan = "5"><webobject name = "ToStayTitle"/></th><webobject name = "ShowDate">
+		<td></td></webobject>
+		<td colspan = "2"></td>
+	</tr><webobject name = "ToStayList"><webobject name = "Row">
+		<td class = "grey"></td>
+		<td><webobject name = "Num"/></td>
+		<td align = "left"><webobject name = "LastName"/></td>
+		<td align = "left"><webobject name = "FirstName"/></td>
+		<td align = "left"><webobject name = "SecondName"/></td><webobject name = "ShowDate">
+		<td><webobject name = "BirthDate"/></td></webobject>
+		<td colspan = "2"></td>
+	</webobject></webobject>
+</tbody>
+</webobject>
+</table><div style = "clear:both;padding:1em;text-align:center;">
+	<webobject name = "OnDateTitle"/>: <webobject name = "OnDate"/><br/>
+		<webobject name = "Apply"/></div>
+</webobject><webobject name = "Resulting">
+<table align = "center"><thead><tr><th style = "width:3ex;">#</th>
+			<th align = "left"><webobject name = "LastNameTitle"/>
+				<webobject name = "FirstNameTitle"/></th>
+			<th><webobject name = "EnterTitle"/></th>
+			<th><webobject name = "LeaveTitle"/></th></tr>
+</thead><tfoot>
+<tr><td colspan = "4" style = "padding:1em;"><webobject name = "Reset"></webobject> <webobject name = "Save"/></td></tr>
+</tfoot>
+<tbody><webobject name = "ResultingList"><webobject name = "Row">
+		<td><webobject name = "Num"/></td>
+		<webobject name = "NameCell"><webobject name = "Name"/></webobject>
+		<td><webobject name = "Enter"/></td>
+		<td><webobject name = "Leave"/></td>
+</webobject></webobject></tbody>
+<tbody>
+<tr class = "grey"><th colspan = "4"><webobject name = "LeaversTitle"/></th></tr><webobject name = "Leavers">
+<tr class = "grey"><td><webobject name = "Num"/></td>
+		<webobject name = "NameCell"><webobject name = "Name"/></webobject>
+		<td><webobject name = "Enter"/></td>
+		<td><webobject name = "Leave"/></td>
+</tr></webobject></tbody>
+</table></webobject></webobject>

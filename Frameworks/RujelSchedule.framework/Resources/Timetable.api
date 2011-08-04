@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="Timetable" wocomponentcontent="false">    <binding name="course"/>
+        <binding name="courses"/>
+        <binding name="ec"/>
+        <validation message="'ec' is a required binding.">
+            <unbound name="ec"/>
+        </validation>
+        <binding defaults="Boolean" name="showSubject"/>
+        <binding defaults="Boolean" name="showGroupName"/>
+        <binding defaults="Actions" name="noAction"/>
+        <binding name="withAction"/>
+        <binding defaults="Boolean" name="readOnly"/>
+    <binding name="date"/>
+        <validation message="'date' must be bound to a settable value">
+            <unsettable name="date"/>
+        </validation>
+        <binding name="list"/>
+        <validation message="'list' must be bound to a settable value">
+            <unsettable name="list"/>
+        </validation>
+    </wo>
+</wodefinitions>

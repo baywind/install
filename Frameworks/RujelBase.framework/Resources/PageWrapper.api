@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
 	<wo class="PageWrapper" wocomponentcontent="true">
 
@@ -12,5 +12,6 @@
         <binding defaults="Frameworks" name="resourcesFramework"/>
     <binding name="onLoad"/>
     <binding name="onUnload"/>
+    <binding name="resources"/>
     </wo>
 </wodefinitions>

@@ -1,0 +1,49 @@
+Timetable : Timetable {
+  ec = ec;
+  courses = courses;
+  readOnly = true;
+  showSubject = true;
+  date = date;
+}
+
+ActualTitle : WOString {
+  value = application.strings.RujelSchedule_Schedule.actual;
+  escapeHTML = false;
+}
+
+ActualDate : WOString {
+  value = date;
+  formatter = formatter;
+}
+
+HasComing : WOConditional {
+  condition = coming.count;
+}
+
+ComingTitle : WOString {
+  value = application.strings.RujelSchedule_Schedule.comingChanges;
+  escapeHTML = false;
+}
+
+Coming : WORepetition {
+  list = coming;
+  item = item;
+}
+
+SinceTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.since;
+  escapeHTML = false;
+}
+
+SinceDate : WOString {
+  value = item.since;
+  formatter = formatter;
+}
+
+ComingTimetable : Timetable {
+  ec = ec;
+  courses = courses;
+  readOnly = true;
+  showSubject = true;
+  date = item.date;
+}

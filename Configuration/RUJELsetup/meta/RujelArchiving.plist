@@ -54,9 +54,9 @@
 			<key>title</key>
 			<string>markarchive</string>
 			<key>description</key>
-			<string></string>
+			<string>Изменения в каких данных архивировать</string>
 			<key>advanced</key>
-			<true/>
+			<false/>
 			<key>keys</key>
 			<array>
 				<dict>
@@ -67,7 +67,9 @@
 					<key>title</key>
 					<string>itemThreshold</string>
 					<key>description</key>
-					<string>критическое количество исправлений Одного объекта (при достижении указанного количества, генерируется оповещение для администратора)</string>
+					<string>критическое количество исправлений одного объекта (при достижении указанного количества, генерируется оповещение для администратора)</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -78,6 +80,8 @@
 					<string>sessionThreshold</string>
 					<key>description</key>
 					<string>критическое количество исправлений за одну сессию (при достижении указанного количества, генерируется оповещение для администратора)</string>
+					<key>advanced</key>
+					<true/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -93,25 +97,25 @@
 				</dict>
 				<dict>
 					<key>key</key>
-					<string>Mark</string>
+					<string>archiveAll</string>
 					<key>type</key>
 					<string>Boolean</string>
 					<key>title</key>
-					<string>Mark</string>
+					<string>archiveAll</string>
 					<key>description</key>
-					<string>критериальные оценки</string>
+					<string>архивировать по умолчанию все возможные измнения</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
-					<string>ItogMark</string>
+					<string>BaseLesson</string>
 					<key>type</key>
 					<string>Boolean</string>
 					<key>title</key>
-					<string>ItogMark</string>
+					<string>BaseLesson</string>
 					<key>description</key>
-					<string>итоговые отметки</string>
+					<string>темы уроков</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>
@@ -124,6 +128,42 @@
 					<string>BaseNote</string>
 					<key>description</key>
 					<string>отметки за уроки</string>
+					<key>defaultValue</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>Work</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>Work</string>
+					<key>description</key>
+					<string>описания работ</string>
+					<key>defaultValue</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>Mark</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>Mark</string>
+					<key>description</key>
+					<string>критериальные оценки за работы</string>
+					<key>defaultValue</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>ItogMark</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>ItogMark</string>
+					<key>description</key>
+					<string>итоговые отметки</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>

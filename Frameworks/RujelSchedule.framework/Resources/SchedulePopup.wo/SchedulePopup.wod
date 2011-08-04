@@ -1,0 +1,89 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Title : WOString {
+  value = session.strings.RujelSchedule_Schedule.Schedule;
+  escapeHTML = false;
+}
+
+GroupCell : OnClickContainer {
+  elementName = "td";
+  class = groupClass;
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = useGroup;
+  style = "white-space:nowrap;";
+}
+
+GroupTitle : WOString {
+  value = course.eduGroup.name;
+}
+
+SubjectCell : OnClickContainer {
+  elementName = "td";
+  class = subjectClass;
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = useCourse;
+  style = "white-space:nowrap;";
+}
+
+SubjectTitle : WOString {
+  value = course.subjectWithComment;
+  escapeHTML = false;
+}
+
+TeacherCell : OnClickContainer {
+  elementName = "td";
+  class = teacherClass;
+  onclick = session.ajaxPopupNoPos;
+  invokeAction = useTeacher;
+  style = "white-space:nowrap;";
+}
+
+TeacherTitle : PersonDisplay {
+  person = course.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  startWithLast = true;
+}
+
+LeftTabImage: WOImage {
+	border = "0";
+	filename = "leftTab.gif";
+	framework = "JavaWOExtensions";
+	name = "LeftTab";
+	style = "height:2ex;vertical-align:top;";
+	alt = "";
+}
+
+RightTabImage: WOImage {
+	border = "0";
+	filename = "rightTab.gif";
+	framework = "JavaWOExtensions";
+	style = "height:2ex;vertical-align:top;";
+	name = "RightTab";
+	alt = "";
+}
+
+Timetable : Timetable {
+  ec = course.editingContext;
+  courses = courses;
+  course = course;
+  readOnly = session.readAccess._edit.Schedule;
+  noAction = noAction;
+  showGroupName = forTeacher;
+  showSubject = forClass;
+  date =  date;
+  list = list;
+}
+
+Form : WOForm {
+  style = "border-width:2px 1px 1px; border-color:#00ff00 #999999 #999999; border-style:solid;";
+}

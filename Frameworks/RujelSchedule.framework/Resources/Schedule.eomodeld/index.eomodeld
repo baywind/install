@@ -1,0 +1,21 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/Schedule?capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        password = RUJELpassword; 
+        username = rujel; 
+    }; 
+    entities = (
+        {className = "net.rujel.schedule.ScheduleEntry"; name = ScheduleEntry; }, 
+        {
+            className = "com.webobjects.eocontrol.EOGenericRecord"; 
+            name = SchedulePlace; 
+        }, 
+        {className = "com.webobjects.eocontrol.EOGenericRecord"; name = ScheduleRing; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {reverseEngineered = Y; }; 
+        schemaVersion = {number = 1; title = "0.9.1"; }; 
+    }; 
+}

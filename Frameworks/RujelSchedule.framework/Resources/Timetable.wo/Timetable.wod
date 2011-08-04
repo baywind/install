@@ -1,0 +1,83 @@
+Rows : WORepetition {
+  list = list;
+  item = rowItem;
+  index = rowIndex;
+}
+
+Cols : WORepetition {
+  count = cols;
+  index = cellIndex;
+}
+
+Cell : OnClickContainer {
+  elementName = "td";
+  class = cellClass;
+  disabled = disabled;
+  onclick = "schedCell(this)";
+}
+
+Content : WOString {
+  value = cellValue;
+  escapeHTML = false;
+}
+
+Num : WOString {
+  value = rowIndex;
+}
+
+Check : WOGenericContainer {
+  elementName = "input";
+  type = "checkbox";
+  name = "activeCell";
+  value = cellID;
+  checked = checked;
+  style = "display:none;";
+}
+
+AddRow : OnClickContainer {
+  elementName = "td";
+  onclick = "addSchedRow();";
+  hide = ^readOnly;
+  style = "padding:2px 6px;border: 3px double #009900;font-weight:bold;";
+  class = "green";
+}
+
+HasIndex : WOConditional {
+  condition = rowIndex;
+}
+
+NoIndex : WOConditional {
+  condition = rowIndex;
+  negate = true;
+}
+
+Submit : WOSubmitButton {
+  action = submit;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+  onclick = "return ajaxPost(this);";
+}
+CanEdit : WOConditional {
+  condition = disabled;
+  negate = true;
+}
+
+CanSave : WOConditional {
+  condition = ^readOnly;
+  negate = true;
+}
+
+DateField : WOTextField {
+  value = date;
+  dateformat = application.prefs.ui.dateFormat;
+  class = "date";
+  size = 10;
+}
+
+DateTitle : WOString {
+  value = session.strings.RujelSchedule_Schedule.initDate;
+  escapeHTML = false;
+}
+
+ReadOnly : WOConditional {
+  condition = ^readOnly;
+}

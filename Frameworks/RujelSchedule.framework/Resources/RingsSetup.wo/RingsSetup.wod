@@ -1,0 +1,86 @@
+Form : WOForm {
+  action = save;
+  class = "backfield1";
+  style = "width:100%; padding:2em;";
+}
+
+AddRow : OnClickContainer {
+  elementName = "th";
+  onclick = "addRingRow();";
+  style = "padding:2px 6px;border: 3px double #009900;";
+  class = "green";
+  hide = noEdit;
+}
+
+BeginTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.begin;
+  escapeHTML = false;
+}
+
+EndTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.end;
+  escapeHTML = false;
+}
+
+List : WORepetition {
+  list = list;
+  item = item;
+}
+
+Num : WOString {
+  value = item.num;
+  numberformat = "0";
+}
+
+CanEdit : WOConditional {
+  condition = noEdit;
+  negate = true;
+}
+
+CantEdit : WOConditional {
+  condition = noEdit;
+}
+
+StartField : WOTextField {
+  value = item.startTime;
+  size = 5;
+  dateformat = "HH:mm";
+}
+
+EndField : WOTextField {
+  value = item.endTime;
+  size = 5;
+  dateformat = "HH:mm";
+}
+
+LessonStart : WOString {
+  value = item.startTime;
+  dateformat = "HH:mm";
+}
+
+LessonEnd : WOString {
+  value = item.endTime;
+  dateformat = "HH:mm";
+}
+
+EnterEdit : OnClickContainer {
+  elementName = "tr";
+  invokeAction = toggleEdit;
+  hide = session.readAccess._edit.ScheduleRing;
+  class = "orange";
+  onclick = session.tryLoad;
+}
+
+NoList : WOConditional {
+  condition = list.count;
+  negate = true;
+}
+
+Submit : WOSubmitButton {
+  action = save;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+EditTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Edit;
+}

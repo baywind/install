@@ -1,0 +1,296 @@
+
+LastNameTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Person.lastName;
+  escapeHTML = false;
+}
+
+FirstNameTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Person.firstName;
+  escapeHTML = false;
+}
+
+SecondNameTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Person.secondName;
+  escapeHTML = false;
+}
+
+ShowDate : WOConditional {
+  condition = params.showDate;
+}
+
+BirthDateTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Person.birthDate;
+  escapeHTML = false;
+}
+
+HaveToAdd : WOConditional {
+  condition = toAdd;
+}
+
+ToAddTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.toAdd;
+  escapeHTML = true;
+}
+
+ToAddList : WORepetition {
+  list = toAdd;
+  item = item;
+  index = index;
+}
+
+Check : WOCheckBox {
+  checked = check;
+}
+
+Num : WOString {
+  value = num;
+  escapeHTML = false;
+}
+
+LastName : WOString {
+  value = item.lastName;
+}
+
+FirstName : WOString {
+  value = item.firstName;
+}
+
+SecondName : WOString {
+  value = item.secondName;
+}
+
+BirthDate : WOString {
+  value = item.birthDate;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+HaveToUpdate : WOConditional {
+  condition = toUpdate;
+}
+
+ToUpdateTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.toUpdate;
+  escapeHTML = true;
+}
+
+ToUpdateList : WORepetition {
+  list = toUpdate;
+  item = item;
+  index = index;
+}
+
+HaveToExclude : WOConditional {
+  condition = toExclude;
+}
+
+ToExcludeTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.toExclude;
+  escapeHTML = true;
+}
+
+ToExcludeList : WORepetition {
+  list = toExclude;
+  item = item;
+  index = index;
+}
+
+HaveToStay : WOConditional {
+  condition = toStay;
+}
+
+ToStayTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.toStay;
+  escapeHTML = true;
+}
+
+ToStayList : WORepetition {
+  list = toStay;
+  item = item;
+  index = index;
+}
+
+ExcludeLastName : PersonDisplay {
+  person = item.student;
+  last = 2;
+  first = 0;
+  second = 0;
+}
+
+ExcludeFirstName : WOString {
+  value = item.student.person.firstName;
+}
+
+ExcludeSecondName : WOString {
+  value = item.student.person.secondName;
+}
+
+ExcludeBirthDate : WOString {
+  value = item.student.person.birthDate;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+SNameCell : WOGenericContainer {
+  elementName = "td";
+  class = item.sNameClass;
+  align = "left";
+}
+
+OldSName : WOString {
+  value = item.oldSName;
+  escapeHTML = false;
+}
+
+BDateCell : WOGenericContainer {
+  elementName = "td";
+  class = item.bDateClass;
+}
+
+OldBDate : WOString {
+  value = item.oldBDate;
+  escapeHTML = false;
+}
+
+Preparing : WOConditional {
+  condition = resultingList;
+  negate = true;
+}
+
+Resulting : WOConditional {
+  condition = resultingList;
+}
+
+Apply : WOSubmitButton {
+  action = apply;
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+}
+
+OnDate : WOTextField {
+  value = onDate;
+  class = "date";
+  size = 10;
+  maxlength = 10;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+EnterTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.enter;
+  escapeHTML = false;
+}
+
+LeaveTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.leave;
+  escapeHTML = false;
+}
+
+ResultingList : WORepetition {
+  list = resultingList;
+  item = item;
+  index = index;
+}
+
+Row : WOGenericContainer {
+  elementName = "tr";
+  class = rowClass;
+}
+
+NameCell : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopup;
+  invokeAction = editPerson;
+  align = "left";
+  title = item.student.person.secondName;
+  style = rowStyle;
+}
+
+Name : PersonDisplay {
+  person = item.student;
+  last = 2;
+  first = 2;
+  second = 0;
+}
+
+Enter : WOTextField {
+  value = item.enter;
+  dateformat = application.prefs.ui.dateFormat;
+  class = "date";
+  style = "text-align:center;";
+  size = 10;
+  maxlength = 10;
+  disabled = ^returnPage.access._edit;
+}
+
+Leave : WOTextField {
+  value = item.leave;
+  dateformat = application.prefs.ui.dateFormat;
+  class = "date";
+  style = "text-align:center;";
+  size = 10;
+  maxlength = 10;
+  disabled = ^returnPage.access._edit;
+}
+
+ShowFound : WOConditional {
+  condition = params.showFound;
+}
+
+
+
+HasFound : WOConditional {
+  condition = item.found.count;
+}
+
+ChooseFound : WOPopUpButton {
+  list = item.found;
+  item = item2;
+  displayString = presentFound;
+  noSelectionString = session.strings.Reusables_Strings.uiElements.Create;
+  selection = item.student;
+}
+
+Form : WOForm {
+  multipleSubmit = true;
+  class = "backfield1";
+}
+
+Leavers : WORepetition {
+  list = leavers;
+  item = item;
+  index = index;
+}
+
+Save : WOSubmitButton {
+  action = save;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+Reset : WOGenericContainer {
+  elementName = "input";
+  type = "button";
+  onclick = session.tryLoad;
+  invokeAction = revert;
+  value = session.strings.Reusables_Strings.uiElements.Reset;
+}
+
+LeaversTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.leavers;
+  escapeHTML = false;
+}
+
+FoundTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.found;
+  escapeHTML = false;
+}
+
+Title : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.title;
+  escapeHTML = false;
+}
+
+TargetName : WOString {
+  value = targetGroup.name;
+}
+
+OnDateTitle : WOString {
+  value = session.strings.RujelVseLists_VseStrings.import.onDate;
+  escapeHTML = false;
+}
