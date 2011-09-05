@@ -1,3 +1,13 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
 AddButton: WOGenericElement {
 	elementName = "input";
 	type = "submit";
@@ -51,4 +61,40 @@ HasMessage : WOConditional {
 Message : WOString {
 	value = session.message;
 	escapeHTML = false;
+}
+
+ShowHistory : WOConditional {
+  condition = ifArchive;
+}
+
+ArchiveTitle : ArchiveRow {
+	class = "grey";
+	hideReason = true;
+}
+
+ArchiveList : ArchiveRow {
+	class = "ungerade";
+	identifierDict = lesson.archiveIdentifier;
+	item = item;
+	ec = course.editingContext;
+	hideReason = true;
+}
+
+ArchiveDate : WOString {
+  value = item.@date_date;
+  dateformat = application.prefs.ui.dateFormat;
+}
+
+ArchiveTheme : WOString {
+  value = item.@theme;
+}
+
+CanEdit : WOConditional {
+  condition = noEdit;
+  negate = true;
+}
+
+ArchiveHeader : WOString {
+  value = session.strings.RujelArchiving_Archive.archiveTitle;
+  escapeHTML = false;
 }

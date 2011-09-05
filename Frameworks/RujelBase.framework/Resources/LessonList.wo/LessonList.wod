@@ -268,3 +268,12 @@ CanSave: WOConditional {
 CanDelete : WOConditional {
   condition = access.delete;
 }
+
+ShowArchive : OnClickContainer {
+  elementName = "div";
+  onclick = session.ajaxPopupNoPos;
+  hide = noArchive;
+  invokeAction = archivePopup;
+  style = "float:right;border: 1px solid #999999;margin:3pt;";
+  title = session.strings.RujelArchiving_Archive.archiveTitle;
+}

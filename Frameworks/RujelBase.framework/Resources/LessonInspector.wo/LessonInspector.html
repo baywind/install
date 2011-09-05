@@ -1,4 +1,6 @@
 <div class="backfield1" id="ajaxPopup">
+<webobject name = "Cross"/>
+<webobject name = "CanEdit">
 <webobject name = "Form"><table border="1">
 	<tr><th style="padding:1ex;text-align:center;" colspan = "2">
 			<webobject name = "PopupTitle"/></th></tr>
@@ -12,7 +14,16 @@
 			<webobject name="AddButton"/> <webobject name = "UndoButton"/>
 		</td>
 	</tr></table>
+	</webobject></webobject>
+<webobject name = "ShowHistory"><h3><webobject name = "ArchiveHeader"/></h3>
+<table width = "100%">
+	<webobject name = "ArchiveTitle"><th><webobject name = "DateTitle"/></th>
+		<th><webobject name = "ThemeTitle"/></th></webobject>
+	<webobject name = "ArchiveList">
+		<td><webobject name = "ArchiveDate"/></td>
+		<td><webobject name = "ArchiveTheme"/></td>
 	</webobject>
+</table></webobject>
 </div>
 <webobject name = "HasMessage"><div class = "messageAjax">
 <webobject name = "Message"/></div></webobject>

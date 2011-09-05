@@ -103,7 +103,7 @@
 					<key>title</key>
 					<string>archiveAll</string>
 					<key>description</key>
-					<string>архивировать по умолчанию все возможные измнения</string>
+					<string>архивировать по умолчанию все возможные изменения</string>
 					<key>defaultValue</key>
 					<false/>
 				</dict>

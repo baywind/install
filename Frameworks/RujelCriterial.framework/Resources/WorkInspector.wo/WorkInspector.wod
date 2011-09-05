@@ -9,6 +9,7 @@ Cross : WOImage {
   height = 10;
   width = 10;
 }
+
 Title : WOString {
 	value = application.strings.RujelCriterial_Strings.Work;
 	escapeHTML = false;
@@ -274,4 +275,54 @@ CritersAvailable : WOConditional {
 
 CritersDenied : WOConditional {
   condition = critSet.noCriteria;
+}
+
+ShowHistory : WOConditional {
+  condition = ifArchive;
+}
+
+ArchiveTitle : ArchiveRow {
+	class = "grey";
+	ec = course.editingContext;
+	hideReason = true;
+}
+
+ArchiveList : ArchiveRow {
+	class = "ungerade";
+	identifierDict = work.archiveIdentifier;
+	item = item;
+	ec = course.editingContext;
+	hideReason = true;
+}
+
+MarkInArchive : WOString {
+  value = item.@mark;
+}
+
+ArchiveContainer : WOGenericContainer {
+  elementName = "td";
+  title = item.@value;
+}
+
+ArchiveTheme : WOString {
+  value = item.@theme;
+}
+
+ArchiveWeight : WOString {
+  value = item.@weight;
+}
+
+ArchiveCrits : WOString {
+  value = archiveCriteria;
+  escapeHTML = false;
+}
+
+ArchiveAnnounce : WOString {
+  value = item.@date_announce;
+  dateformat = application.prefs.ui.shortDateFormat;
+}
+
+ArchiveDate : WOString {
+  value = item.@date_date;
+  dateformat = application.prefs.ui.shortDateFormat;
 }
