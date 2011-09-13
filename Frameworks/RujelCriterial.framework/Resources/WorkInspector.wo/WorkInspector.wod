@@ -159,7 +159,7 @@ CriterTitle : WOString {
 }
 
 CriterMax : WOString {
-	value = application.strings.RujelCriterial_Strings.criterMax;
+	value = criterMaxTitle;
 	escapeHTML = false;
 }
 
@@ -216,11 +216,6 @@ CriterContainer : WOGenericContainer {
 
 NoCriteria : WOString {
   value = application.strings.RujelCriterial_Strings.noCriteria;
-  escapeHTML = false;
-}
-
-NoCritMax : WOString {
-  value = application.strings.RujelCriterial_Strings.Max;
   escapeHTML = false;
 }
 

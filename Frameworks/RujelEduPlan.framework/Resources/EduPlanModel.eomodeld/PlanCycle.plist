@@ -21,21 +21,15 @@
             prototypeName = short; 
         }, 
         {
-            definition = "subjectEO.subject"; 
-            isReadOnly = Y; 
-            name = subject; 
-            prototypeName = word; 
-        }, 
-        {
             allowsNull = N; 
             columnName = "EDU_SECTION"; 
             name = section; 
             prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (grade, school, subjID, subject, section); 
+    attributesUsedForLocking = (grade, school, subjID, section); 
     className = "net.rujel.eduplan.PlanCycle"; 
-    classProperties = (grade, planHours, school, section, subject, subjectEO); 
+    classProperties = (grade, planHours, school, section, subjectEO); 
     externalName = "PL_CYCLE"; 
     fetchSpecificationDictionary = {}; 
     name = PlanCycle; 
