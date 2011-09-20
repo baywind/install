@@ -69,5 +69,18 @@
 		<key>any</key>
 		<string>1</string>
 	</dict>
+	<key>SetupItogs</key>
+	<dict>
+		<key>root</key>
+		<string>1023</string>
+		<key>zavuch</key>
+		<string>15</string>
+		<key>zav_kaf</key>
+		<string>1</string>
+		<key>tutor</key>
+		<string>1</string>
+		<key>teacher</key>
+		<string>1</string>
+	</dict>
 </dict>
 </plist>
