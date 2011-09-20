@@ -1,4 +1,11 @@
-<webobject name="PageWrapper1"><h1><webobject name="Heading"></webobject></h1><table cellspacing="0" cellpadding="0" width="100%"><tr><td class="backfield2" width="15%">
+<webobject name="PageWrapper1"><webobject name = "HasSections">
+<div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade"
+ onmouseover = "hideObj('SectionTitle');showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle')">
+<div id = "SectionTitle" style = "padding:3px;" class = "green">
+	<webobject name = "CurrSection"/></div>
+<div id = "SectionTabs" style = "display:none;">
+<webobject name = "SectionTabs"/></div></div></webobject>
+<h1><webobject name="Heading"></webobject></h1><table cellspacing="0" cellpadding="0" width="100%"><tr><td class="backfield2" width="15%">
 <div style="font-weight:bold;text-align:center;"><webobject name="ClassTitle"></webobject></div>
 <webobject name="ClassListing1"></webobject></td><td class="backfield1 selectionBorder" style="border-style:none solid;">
 <webobject name="Conditional2"><table width="100%">

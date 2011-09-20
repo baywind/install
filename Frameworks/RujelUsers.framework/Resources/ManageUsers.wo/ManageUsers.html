@@ -12,7 +12,7 @@
 		</td>
 	</tr></webobject><tr>
 		<th><webobject name = "UsernameTitle"/></th>
-		<th><webobject name = "Add"/></th>
+		<th><webobject name = "TeacherTitle"/></th>
 	</tr></thead>
 	<tfoot><webobject name = "AddUser">
 		<td colspan = "2"><webobject name = "Add"/></td>
@@ -49,7 +49,15 @@
 	<tr><td colspan = "2" style = "padding:1ex;"><webobject name = "SaveGroup"/>
 		</td></tr></webobject>
 	</table>
-	</webobject>
+	<webobject name = "IsGroup"><table align = "center" style = "margin-top:3ex;"><thead><tr>
+		<th><webobject name = "UsernameTitle"/></th>
+		<th><webobject name = "TeacherTitle"/></th>
+	</tr></thead><tbody><webobject name = "MemberList">
+	<webobject name = "UserRow">
+		<td><webobject name = "UserName"/></td>
+		<td><webobject name = "UserPerson"/></td>
+	</webobject></webobject></tbody></table>
+	</webobject></webobject>
 </td><td valign = "top">
 <script type = "text/javascript" language = "javascript">
 	function toggleGeneral(box) {

@@ -295,3 +295,12 @@ NoUserSelected : WOConditional {
   condition = usersList.selectedObject;
   negate = true;
 }
+
+MemberList : WORepetition {
+  list = currGroup.group.users;
+  item = userItem;
+}
+
+IsGroup : WOConditional {
+  condition = currGroup.group;
+}
