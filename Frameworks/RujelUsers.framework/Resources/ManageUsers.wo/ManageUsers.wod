@@ -20,12 +20,13 @@ UserRow : OnClickContainer {
   elementName = "tr";
   onclick = session.checkRun;
   invokeAction = selectUser;
-  disabled = session.readAccess._edit.userItem;
+  disabled = session.readAccess._read.userItem;
   class = userClass;
 }
 
 UserNameField : WOTextField {
   value = usersList.selectedObject.userName;
+  disabled = session.readAccess._edit.AutUser;
 }
 
 SelectPerson : OnClickContainer {
@@ -33,6 +34,7 @@ SelectPerson : OnClickContainer {
   style = "font-style:italic;";
   onclick = session.ajaxPopup;
   invokeAction = chooseUserPerson;
+  disabled = session.readAccess._edit.AutUser;
 }
 
 Save : WOSubmitButton {
@@ -71,6 +73,7 @@ ExternalTitle : WOString {
 
 ParentIdentifier : WOTextField {
   value = usersList.selectedObject.credential;
+  disabled = session.readAccess._edit.AutUser;
 }
 
 NoParent : WOConditional {
@@ -91,6 +94,7 @@ Password2 : WOPasswordField {
 AttachParent : WOSubmitButton {
   action = attachParent;
   value = session.strings.Reusables_Strings.uiElements.Edit;
+  disabled = session.readAccess._edit.AutUser;
 }
 
 AddUser : OnClickContainer {
@@ -170,6 +174,7 @@ Delete : WOGenericElement {
   invokeAction = delete;
   onclick = session.confirmMessage;
   value = session.strings.Reusables_Strings.uiElements.Delete;
+  omitTags = session.readAccess._delete.AutUser;
 }
 
 PrevButton : WOImageButton {
@@ -303,4 +308,12 @@ MemberList : WORepetition {
 
 IsGroup : WOConditional {
   condition = currGroup.group;
+}
+
+CanEditUser : WOConditional {
+  condition = session.readAccess.edit.AutUser;
+}
+
+CanSaveGroup : WOConditional {
+  condition = session.readAccess.edit.UserGroup;
 }

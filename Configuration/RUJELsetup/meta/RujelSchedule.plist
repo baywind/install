@@ -15,7 +15,7 @@
 	<key>presets</key>
 	<string>extra/RujelSchedule.plist</string>
 	<key>advanced</key>
-	<false/>
+	<true/>
 	<key>status</key>
 	<string>extra</string>
 	<key>keys</key>

@@ -23,15 +23,15 @@
 	</webobject></webobject></tbody>
 </table></td>
 <td class = "backfield2" width = "30%"><webobject name = "SelectedUser">
-	<table align = "center"><tfoot><tr><td colspan = "2">
+	<table align = "center"><webobject name = "CanEditUser"><tfoot><tr><td colspan = "2">
 		<webobject name = "Save"/>  <webobject name = "Delete"/>
-	</td></tr></tfoot><tbody>
+	</td></tr></tfoot></webobject><tbody>
 	<tr><th align = "right"><webobject name = "UsernameTitle"/>:</th>
 		<td><webobject name = "UserNameField"/></td></tr>
 	<tr><th align = "right"><webobject name = "TeacherTitle"/>:</th>
 		<webobject name = "SelectPerson"><webobject name = "PersonSelect"/></webobject></tr>
-	<tr><th align = "right"><webobject name = "Password"/>:</th>
-		<td><webobject name = "Password1"/><br/><webobject name = "Password2"/></td></tr>
+	<webobject name = "CanEditUser"><tr><th align = "right"><webobject name = "Password"/>:</th>
+	<td><webobject name = "Password1"/><br/><webobject name = "Password2"/></td></tr></webobject>
 	<webobject name = "ParentAvailable"><tr>
 		<th align = "right"><webobject name = "ExternalTitle"/>:</th>
 		<td><webobject name = "HasParent"><webobject name = "ParentIdentifier"/>
@@ -45,9 +45,9 @@
 		<td align = "left"><webobject name = "Section"/></td></tr>
 	<webobject name = "ParentAvailable">
 	<tr><th align = "right"><webobject name = "ExternalTitle"/>:</th>
-		<td align = "left"><webobject name = "ExternalName"/></td></tr>
+		<td align = "left"><webobject name = "ExternalName"/></td></tr><webobject name = "CanSaveGroup">
 	<tr><td colspan = "2" style = "padding:1ex;"><webobject name = "SaveGroup"/>
-		</td></tr></webobject>
+		</td></tr></webobject></webobject>
 	</table>
 	<webobject name = "IsGroup"><table align = "center" style = "margin-top:3ex;"><thead><tr>
 		<th><webobject name = "UsernameTitle"/></th>

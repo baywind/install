@@ -3,7 +3,6 @@
     adaptorName = JDBC; 
     connectionDictionary = {
         URL = "jdbc:mysql://localhost/Schedule?capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
-        password = RUJELpassword; 
         username = rujel; 
     }; 
     entities = (
