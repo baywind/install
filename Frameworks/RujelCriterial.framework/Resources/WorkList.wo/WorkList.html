@@ -15,7 +15,6 @@
 <thead>
 <tr>
 <webobject name="HasStudent"><webobject name="TitlePresenter"/><td class="selection" width="2"></td></webobject>
-<webobject name="IfFull"><th align="center" width="24px">№</th></webobject>
 <webobject name = "AnnounceContainer"><webobject name="AnnounceTitle"/></webobject>
 <webobject name = "DeadlineContainer"><webobject name="DeadLineTitle"/></webobject>
 <th><webobject name="ThemeTitle"></webobject></th>
@@ -24,7 +23,6 @@
 <tbody>
 <webobject name="LessonsListing"><webobject name="LessonRow">
 <webobject name="HasStudent"><webobject name="StudentPresenter"></webobject><td class="selection" width="2"></td></webobject>
-<webobject name="IfFull"><td align="center"><webobject name="LessonNumber"></webobject></td></webobject>
 <webobject name = "AnnounceCell"><webobject name="LessonAnnounceDate"/></webobject><webobject name = "DeadlineCell">
 <webobject name="LessonDate"/></webobject>
 <td><webobject name="LessonTheme"></webobject>
@@ -35,14 +33,14 @@
 	<webobject name="CritMaximum"></webobject></td></webobject></webobject><webobject name = "NoCritMax"/></webobject>
 </webobject><webobject name="IsRecent"><tr class="selection">
 <webobject name="HasStudent"><webobject name="WorkMarksPresenter"></webobject><td class="selection" width="2"></td></webobject>
-<webobject name="IfFull">
+<!-- webobject name="IfFull">
 <td align="center" onmouseout="navigate(false);" onmouseover="navigate(true);">
 	<div id="control" style="display:none;">
 	<webobject name="MoveUp"></webobject>
 	<webobject name="SplitTab"></webobject>
 	<webobject name="MoveDown"></webobject></div>
 	<b id="number"><webobject name="LessonNumber"></webobject></b>
-</td></webobject>
+</td></webobject -->
 	<td align="center"><webobject name="CurrAnnounceDateField"></webobject></td>
 	<td align="center"><webobject name="CurrLessonDateField"></webobject></td>
 	<td><webobject name="CurrLessonThemeField"></webobject></td>
