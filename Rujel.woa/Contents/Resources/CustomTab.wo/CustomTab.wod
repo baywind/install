@@ -31,7 +31,6 @@ SuperTitle : WOString {
 
 HasSuper : WOConditional {
   condition = params.parentTab;
-  negate = params.parentTab;
 }
 
 Submit : WOGenericElement {
