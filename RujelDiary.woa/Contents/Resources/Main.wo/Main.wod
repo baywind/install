@@ -10,12 +10,14 @@ RegimeField : WOHiddenField {
 
 GrField : WOHiddenField {
   name = "grID";
+  numberformat = "0";
   value = currGr;
 }
 
 StudentField : WOHiddenField {
   name = "studentID";
   value = studentID;
+  numberformat = "0";
 }
 
 DateField : DateField {
@@ -55,17 +57,19 @@ TabLinks : ResourceLink {
 	cssLink = currTab.cssLink;
 }
 
-GroupRow : DynamicTableRow {
-  item = item;
-  list = groupList;
-  onClick = item.onclick;
-  useStyles = true;
-  switchParam = item.grade;
-  isSelected = isSelected;
+GroupRow : OnClickContainer {
+  elementName = "tr";
+  onclick = item2.onclick;
+  disabled = current;
+  class = grClass;
 }
 
 GroupName : WOString {
-  value = item.title;
+  value = item2.title;
+}
+
+GroupTitle : WOString {
+  value = item3.title;
 }
 
 RGBColor : ResourceLink {
@@ -74,7 +78,7 @@ RGBColor : ResourceLink {
 }
 
 GoupGrade : WOString {
-  value = item.grade;
+  value = item2.grade;
 }
 
 Component : WOSwitchComponent {
@@ -155,4 +159,35 @@ IndTitle : WOString {
   value = application.strings.Strings.individual;
   valueWhenEmpty = "/ind/";
   escapeHTML = false;
+}
+
+Sections : WORepetition {
+  item = item;
+  list = groupList;
+}
+
+GroupRows : WORepetition {
+  list = item.rows;
+  item = item2;
+}
+
+HasTitle : WOConditional {
+  condition = item2.title;
+}
+
+GroupCells : WORepetition {
+  list = item2.groups;
+  item = item3;
+}
+
+GroupCell : OnClickContainer {
+  elementName = "td";
+  onclick = item3.onclick;
+  class = grClass;
+  style = "padding:2px 4px;";
+  disabled = current;
+}
+
+SectionTitle : WOString {
+  value = item.title;
 }

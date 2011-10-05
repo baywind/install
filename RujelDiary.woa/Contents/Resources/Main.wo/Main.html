@@ -49,24 +49,36 @@
 		</td><td valign = "bottom" align = "left">
 		<webobject name = "Tabs"/>
 		</td><td align = "right" valign = "bottom" style = "padding:3pt;">
-		<form action = "" name = "request" method = "get" onsubmit = "removeDefault(this);return true;">
+		<form name = "request" method = "get" onsubmit = "removeDefault(this);return true;">
 		<input type = "submit" value = "" class = "hiddenSubmit"/>
 		<webobject name = "RegimeField"/><webobject name = "GrField"/><webobject name = "ShowStudent">
-		<webobject name = "StudentField"/></webobject><webobject name = "ShowSince">
+		<webobject name = "StudentField"/></webobject>
+		<webobject name = "ShowSince">
 		<webobject name = "PeriodTitle"/> <webobject name = "SinceTitle"/>:
 		<webobject name = "Since"/> <webobject name = "ToTitle"/>:</webobject>
 		<webobject name = "JustDate"><webobject name = "DateTitle"/>:</webobject>
 		<webobject name = "DateField"/>
 		</form>
 	</td></tr></table>
-		<div id = "groupList" class = "backfield2 selectionBorder"  style = "position:absolute;display:none;width:5em;padding:4pt;border-width:1px;">
-		<table width = "100%">
+		<table id = "groupList" cellpadding = "0" cellspacing = "0" style = "position:absolute;display:none;">
+		<tr><webobject name = "Sections">
+		<th class = "backfield2 selectionBorder"
+			style = "padding:4pt;border-width:1px;border-style:none solid;vertical-align:middle;">
+		<webobject name = "SectionTitle"/>
+		</th></webobject>
+		</tr><tr><webobject name = "Sections">
+		<td style = "width:5em;" valign = "top">
+		<div  class = "backfield2 selectionBorder"  style = "padding:4pt;border-width:1px;border-style:none solid solid;">
+		<table width = "100%"><webobject name = "GroupRows">
 		<webobject name = "GroupRow">
-		<td align = "right"><webobject name = "GoupGrade"/></td>
-		<td align = "left"><webobject name = "GroupName"/></td>
-		</webobject>
-		</table>
-		</div>
+		<td align = "right" style = "padding:2px 4px;">
+			<webobject name = "GoupGrade"/></td><webobject name = "HasTitle">
+		<td align = "left"><webobject name = "GroupName"/></td></webobject>
+		<webobject name = "GroupCells"><webobject name = "GroupCell">
+			<webobject name = "GroupTitle"/></webobject></webobject>
+		</webobject></webobject>
+		</table></div></td></webobject>
+		</tr></table>
 		<webobject name = "FrontPage">
 		<script language = "JavaScript" type="text/javascript">
 			showObj("groupList");
