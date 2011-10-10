@@ -48,6 +48,7 @@ Save: WOSubmitButton {
 	action = save;
 	value = application.strings.Reusables_Strings.uiElements.Save;
 	onclick = "return ajaxPost(this);";
+	name = "save";
 }
 
 DeleteButton: WOGenericElement {
@@ -129,7 +130,7 @@ SubsButton : WORadioButton {
   name = "selectType";
   value = 0;
   selection = idx;
-  onchange = "if(checked)hideObj('joinBind');else showObj('joinBind');fitWindow();";
+  onchange = "if(checked){hideObj('joinBind');form.save.disabled=false;}else{showObj('joinBind');}fitWindow();";
   disabled = cantEdit;
 }
 
@@ -142,7 +143,7 @@ JoinButton : WORadioButton {
   name = "selectType";
   value = 1;
   selection = idx;
-  onchange = "if(checked)showObj('joinBind');else hideObj('joinBind');fitWindow();";
+  onchange = onChange;
   disabled = cantEdit;
 }
 
