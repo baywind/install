@@ -57,6 +57,24 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>Вес</string>
+			<key>active</key>
+			<false/>
+			<key>attribute</key>
+			<string>weight</string>
+			<key>formatter</key>
+			<string>0.#</string>
+			<key>fieldSize</key>
+			<integer>4</integer>
+			<key>qualifierSelector</key>
+			<string>&gt;=</string>
+			<key>secondSelector</key>
+			<string>&lt;</string>
+			<key>defaultMin</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Класс</string>
 			<key>attribute</key>
 			<string>eduGroup</string>
@@ -190,14 +208,6 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Констатирующая</string>
-			<key>qualifierFormat</key>
-			<string>weight &gt; 0</string>
-			<key>comment</key>
-			<string>учитывается в рассчете прогноза</string>
-		</dict>
-		<dict>
-			<key>title</key>
 			<string>Не домашняя</string>
 			<key>qualifierFormat</key>
 			<string>flags &lt; 16</string>
@@ -225,15 +235,26 @@
 			<key>title</key>
 			<string>Предмет</string>
 			<key>keyPath</key>
-			<string>course.cycle.subjectEO</string>
+			<string>course</string>
 			<key>titlePath</key>
-			<string>subject</string>
+			<string>subjectWithComment</string>
+			<key>escapeHTML</key>
+			<false/>
 			<key>comparison</key>
 			<string>CompareAscending</string>
 			<key>active</key>
 			<true/>
 			<key>sort</key>
 			<string>20</string>
+			<key>onclick</key>
+			<string>$session.tryLoad</string>
+			<key>nextPage</key>
+			<string>LessonNoteEditor</string>
+			<key>pageParams</key>
+			<dict>
+				<key>course</key>
+				<string>$itemRow.course</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -341,6 +362,38 @@
 			<false/>
 			<key>sort</key>
 			<string>70</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Критериев</string>
+			<key>short</key>
+			<string>кр</string>
+			<key>hover</key>
+			<string>Количество критериев, указанных в описании работы</string>
+			<key>keyPath</key>
+			<string>criterMask.count</string>
+			<key>comparison</key>
+			<string>CompareDescending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>80</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Оценок</string>
+			<key>short</key>
+			<string>оц</string>
+			<key>hover</key>
+			<string>Количество выставленных за работу оценок</string>
+			<key>keyPath</key>
+			<string>marks.count</string>
+			<key>comparison</key>
+			<string>CompareDescending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>90</string>
 		</dict>
 	</array>
 </dict>
