@@ -645,6 +645,32 @@
 			<string>mark</string>
 		</dict>
 		<dict>
+			<key>title</key>
+			<string>Соответствие</string>
+			<key>short</key>
+			<string>&amp;lt; &amp;gt;</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>81</string>
+			<key>style</key>
+			<string>text-align:center;font-weight:bold;color:#ff0000;</string>
+			<key>keyPath</key>
+			<string>itogDiffers</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>value</key>
+				<string>'#</string>
+			</dict>
+			<key>wrapper</key>
+			<string>WOConditional</string>
+			<key>wrapperBindings</key>
+			<dict>
+				<key>condition</key>
+				<string>.</string>
+			</dict>
+		</dict>
+		<dict>
 			<key>active</key>
 			<false/>
 			<key>disabled</key>

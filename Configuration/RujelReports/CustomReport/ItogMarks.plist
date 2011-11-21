@@ -330,6 +330,8 @@
 			<dict>
 				<key>methodName</key>
 				<string>movePointRight</string>
+				<key>nullNull</key>
+				<true/>
 				<key>object</key>
 				<string>.</string>
 				<key>paramClasses</key>
