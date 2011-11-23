@@ -24,11 +24,6 @@ ClassTitle: WOString {
 	value = application.strings.RujelInterfaces_Names.EduGroup.this;
 }
 
-Conditional1: WOConditional {
-	condition = reporter.hideDates;
-	negate = true;
-}
-
 Conditional2: WOConditional {
 	condition = false;
 }
@@ -153,6 +148,11 @@ ShowMarks: WOSubmitButton {
 	value = application.strings.Strings.Overview.showMarks;
 }
 
+ShowXML: WOSubmitButton {
+	action = genarateXML;
+	value = "XML";
+}
+
 ShowMarks2: WOSubmitButton {
 	action = overviewAction;
 	value = reporterItem.name;
@@ -163,24 +163,9 @@ ShowReporterSelector: WOConditional {
 	condition = showReporterSelector;
 }
 
-Since: WOString {
-	dateformat = application.prefs.ui.dateFormat;
-	value = since;
-}
-
 StudentContainer: WOGenericContainer {
 	class = studentStyle;
 	elementName = "tr";
-}
-
-StudentMarks : WOSwitchComponent {
-	since = since;
-	student = currStudent;
-	to = to;
-	courses = existingCourses;
-	WOComponentName = reporter.component;
-	reporter = reporter;
-	period = period;
 }
 
 StudentName: PersonDisplay {
@@ -196,14 +181,6 @@ StudentNameContainer: OnClickContainer {
 	style = "white-space:nowrap;";
 	invokeAction = selectStudent;
 	onclick = session.tryLoad;
-}
-
-CurrStudentName: PersonDisplay {
-	person = currStudent;
-	startWithLast = true;
-	last = 2;
-	first = 2;
-	second = 1;
 }
 
 StudentSelected: WOConditional {
@@ -251,11 +228,6 @@ TeacherName: PersonDisplay {
 Ticker1: Ticker {
 	align = "left";
 	inline = true;
-}
-
-To: WOString {
-	dateformat = application.prefs.ui.dateFormat;
-	value = to;
 }
 
 ShowThemes : WOHyperlink {
@@ -341,4 +313,19 @@ ReportPopup : WOHyperlink {
 GroupReportsTitle : WOString {
   value = session.strings.Strings.Overview.groupReporters;
   escapeHTML = false;
+}
+
+ReportFrame : WOGenericContainer {
+  elementName = "iframe";
+  name = "reportFrame";
+  src = context.componentActionURL;
+  invokeAction = printCurrStudent;
+  height = "100%";
+  width = "100%";
+  style = "background-color:#ffffff;";
+  onload = "height=(parentNode.offsetHeight -60);if(window.innerHeight<height)height=window.innerHeight;";
+}
+
+AccessXML : WOConditional {
+  condition = session.readAccess.edit.Maintenance;
 }

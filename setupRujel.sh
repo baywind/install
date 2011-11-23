@@ -113,6 +113,7 @@ for f in * ; do
             fi
         fi
         cp -r $f $1
+        chown -R _appserver:_appserveradm $1/$f
     fi
 done
 }

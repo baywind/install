@@ -50,16 +50,6 @@ WorkWeight: WOTextField {
 	name = "weight";
 }
 
-Number : WOString {
-  value = dict.number;
-  escapeHTML = false;
-}
-
-LessonTitle : WOString {
-  value = lessonTitle;
-  escapeHTML = false;
-}
-
 DateTitle : WOString {
 	value = application.strings.RujelCriterial_Strings.dates;
   escapeHTML = false;

@@ -20,5 +20,5 @@ flagBox: WOCheckBox {
 }
 
 HasName : WOConditional {
-  condition = item.length;
+  condition = hasName;
 }

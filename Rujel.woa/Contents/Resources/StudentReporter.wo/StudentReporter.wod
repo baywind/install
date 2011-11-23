@@ -51,6 +51,7 @@ Reporter : WOSwitchComponent {
   student = student;
   course = courseItem;
   period = period;
+  settings = reporter.settings;
 }
 
 ShowGroup : WOConditional {

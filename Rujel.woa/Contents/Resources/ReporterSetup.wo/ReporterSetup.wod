@@ -139,6 +139,7 @@ PresetContainer : OnClickContainer {
   elementName = "td";
   onclick = session.ajaxPopupNoPos;
   invokeAction = usePreset;
+  class = item.style;
 }
 
 PresetTitle : WOString {
@@ -214,4 +215,8 @@ PopUp : WOPopUpButton {
   displayString = optTitle;
   selection = selection;
   name = subItem.id;
+}
+
+CanSort : WOConditional {
+  condition = item.sort;
 }

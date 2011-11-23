@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hover</key>
+	<string>Вывод в XML с преобразованием</string>
+	<key>sort</key>
+	<string>20</string>
+	<key>title</key>
+	<string>Кратко</string>
+	<key>id</key>
+	<string>shortXSLT</string>
+	<key>transform</key>
+	<string>short.xsl</string>
+	<key>sources</key>
+	<array>
+		<string>Persdata</string>
+		<string>Options</string>
+	</array>
+	<key>studentInOptions</key>
+	<true/>
+	<key>options</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<string>autoitog</string>
+			<key>title</key>
+			<string>Прогноз</string>
+			<key>active</key>
+			<true/>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>id</key>
+					<string>timeout</string>
+					<key>title</key>
+					<string>отсрочки</string>
+					<key>active</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>id</key>
+			<string>lessons</string>
+			<key>title</key>
+			<string>Уроки</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>marks</string>
+			<key>title</key>
+			<string>Работы</string>
+			<key>active</key>
+			<true/>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>options</key>
+					<array>
+						<dict>
+							<key>id</key>
+							<string>all</string>
+							<key>title</key>
+							<string>все</string>
+							<key>hover</key>
+							<string>все работы за период</string>
+							<key>value</key>
+							<integer>5</integer>
+						</dict>
+						<dict>
+							<key>id</key>
+							<string>markable</string>
+							<key>title</key>
+							<string>оцениваемые</string>
+							<key>hover</key>
+							<string>работы, предусматривающие оценку</string>
+							<key>value</key>
+							<integer>2</integer>
+						</dict>
+						<dict>
+							<key>id</key>
+							<string>marked</string>
+							<key>title</key>
+							<string>с оценками</string>
+							<key>hover</key>
+							<string>работы с выставленными оценками</string>
+							<key>value</key>
+							<integer>1</integer>
+						</dict>
+						<dict>
+							<key>id</key>
+							<string>required</string>
+							<key>title</key>
+							<string>весомые</string>
+							<key>hover</key>
+							<string>работы, влияющие на итоговую</string>
+							<key>value</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>level</string>
+					<key>hover</key>
+					<string>какие работы показывать в распечатке</string>
+					<key>active</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>workType</string>
+					<key>title</key>
+					<string>Тип</string>
+					<key>options</key>
+					<dict>
+						<key>className</key>
+						<string>com.webobjects.eoaccess.EOUtilities</string>
+						<key>methodName</key>
+						<string>objectsForEntityNamed</string>
+						<key>cacheResult</key>
+						<true/>
+						<key>paramClasses</key>
+						<array>
+							<string>com.webobjects.eocontrol.EOEditingContext</string>
+							<string>java.lang.String</string>
+						</array>
+						<key>paramValues</key>
+						<array>
+							<string>$returnPage.ec</string>
+							<string>&apos;WorkType</string>
+						</array>
+					</dict>
+					<key>displayString</key>
+					<string>typeName</string>
+					<key>noSelectionString</key>
+					<string>_все_</string>
+					<key>popUp</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>dateSet</string>
+					<key>title</key>
+					<string>оценки по дате выставления</string>
+					<key>hover</key>
+					<string>включать работы, оценки за которые были выставлены в искомый период</string>
+					<key>active</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>hideMax</string>
+					<key>title</key>
+					<string>скрыть максимумы</string>
+					<key>hover</key>
+					<string>не показывать в индексе максимумы</string>
+					<key>active</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

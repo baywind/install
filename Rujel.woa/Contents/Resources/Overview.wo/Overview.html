@@ -27,8 +27,10 @@
 <webobject name="StudentName"/></webobject></webobject></webobject></webobject>
 <webobject name="PersonSelector1"></webobject><webobject name="HasClass">
 <tr><td align="center"><webobject name = "TickCount"/></td><td align="center">
-<webobject name="ShowMarks"></webobject></td></tr></webobject><webobject name="Repetition2"><tr><td></td>
-<td align = "center"><webobject name="ShowMarks2"></webobject></td></tr></webobject></table></webobject></webobject></webobject></td>
+<webobject name="ShowMarks"/></td></tr></webobject><webobject name = "AccessXML">
+<tr><td></td><td align = "center"><webobject name="ShowXML"/></td></tr></webobject>
+<webobject name="Repetition2"><tr><td></td>
+<td align = "center"><webobject name="ShowMarks2"/></td></tr></webobject></table></webobject></webobject></webobject></td>
 <td class="backfield2 selectionBorder" style="border-style:none;border-top-style:solid;padding:3pt;text-align:left;" valign="top">
 <webobject name="SubjectMode">
 <table border="1" width="100%"><webobject name="Repetition1"><tr class="course"><td><webobject name="CourseComment"></webobject></td>
@@ -46,13 +48,8 @@
 </tr></table><br clear = "all" /><hr width="100%" align="center" />
 </webobject><webobject name = "NoReporters"><div style = "float:right;">
 <webobject name = "EditReporter"><webobject name="EditImage"/><webobject name="ReporterTitle"/></webobject></div>
-</webobject><webobject name="StudentSelected"><div style="margin-top:10pt;line-height:200%;text-align:left;"><span class="student">
-<webobject name="CurrStudentName"/></span>
-<span class="dates"><webobject name="Conditional1"><webobject name="Since"></webobject>
-    -
-    <webobject name="To"></webobject></webobject>
-    <br clear="all" /></span></div>
-    <webobject name="StudentMarks"></webobject></webobject><webobject name="ShowGroupReports">
+</webobject><webobject name="StudentSelected"><webobject name = "ReportFrame"></webobject>
+	</webobject><webobject name="ShowGroupReports">
     	<div class = "grey" style = "margin:3em;border:1px dotted #999999;float:left;padding:1ex;">
     	<span style = "text-align:left;font-size:120%;text-decoration:underline;">
     		<webobject name = "GroupReportsTitle"/>:</span>

@@ -1,7 +1,6 @@
 <div class="backfield1" id="ajaxPopup">
 <webobject name = "Cross"/><webobject name = "Form">
 <div style = "font-size:larger;margin:5pt;"><webobject name = "Title"/></div>
-<webobject name = "DefaultContainer"><webobject name = "DefaultTitle"/></webobject>
 	<table width = "100%"><webobject name = "Presets">
 	<tr class = "ungerade"><webobject name = "PresetContainer">
 		<webobject name = "PresetTitle"/></webobject>
@@ -15,8 +14,10 @@
 			<tr class = "orange"><td style = "width:1.2em;"><webobject name = "ItemCheckBox"/>
 			</td><webobject name = "ReportCell"><webobject name = "ItemTitle"/>
 			</webobject>
-				<td width = "24"><webobject name = "MoveUp"/><webobject name = "MoveDown"/>
-					<webobject name = "ItemSorting"/></td>
+				<td width = "24"><webobject name = "CanSort">
+					<webobject name = "MoveUp"/><webobject name = "MoveDown"/>
+						<webobject name = "ItemSorting"/>
+				</webobject></td>
 			</tr></thead>
 			<webobject name = "SubsContainer"><webobject name = "SubsRepetition">
 				<webobject name = "SubRow"><td/>
