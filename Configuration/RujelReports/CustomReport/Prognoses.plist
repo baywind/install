@@ -646,7 +646,7 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Соответствие</string>
+			<string>Соответствие итога прогнозу</string>
 			<key>short</key>
 			<string>&amp;lt; &amp;gt;</string>
 			<key>active</key>
