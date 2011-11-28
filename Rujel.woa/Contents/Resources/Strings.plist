@@ -173,6 +173,8 @@
 		<string>Контроль успеваемости</string>
 		<key>groupReporters</key>
 		<string>Отчет по группе</string>
+		<key>noStudentsSelected</key>
+		<string>Не выбрано ни одного учащегося</string>
 	</dict>
 	<key>PrintReport</key>
 	<dict>

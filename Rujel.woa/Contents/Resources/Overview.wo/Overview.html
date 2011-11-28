@@ -6,7 +6,7 @@
 <div id = "SectionTabs" style = "display:none;">
 <webobject name = "SectionTabs"/></div></div></webobject>
 	<div style = "text-align:right;margin-right:10%;">
-		<webobject name="PeriodSelector"/>  
+		<webobject name="PeriodSelector"/>
 	</div>
 <table cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
 <th valign="bottom" width="15%"><webobject name="ClassTitle"></webobject></th>
@@ -28,8 +28,12 @@
 <webobject name="PersonSelector1"></webobject><webobject name="HasClass">
 <tr><td align="center"><webobject name = "TickCount"/></td><td align="center">
 <webobject name="ShowMarks"/></td></tr></webobject><webobject name = "AccessXML">
-<tr><td></td><td align = "center"><webobject name="ShowXML"/></td></tr></webobject>
-<webobject name="Repetition2"><tr><td></td>
+<tr><td colspan = "2" align = "center"><select name = "xmlSource">
+	<option>ejdata</option>
+	<option>Persdata</option>
+	<option>Options</option></select>
+	<webobject name="ShowXML"/></td></tr></webobject>
+	<webobject name="Repetition2"><tr><td></td>
 <td align = "center"><webobject name="ShowMarks2"/></td></tr></webobject></table></webobject></webobject></webobject></td>
 <td class="backfield2 selectionBorder" style="border-style:none;border-top-style:solid;padding:3pt;text-align:left;" valign="top">
 <webobject name="SubjectMode">
