@@ -19,6 +19,21 @@
 	</array>
 	<key>studentInOptions</key>
 	<true/>
+	<key>settings</key>
+	<dict>
+		<key>eduPlan</key>
+		<dict>
+			<key>active</key>
+			<string>false</string>
+		</dict>
+		<key>schedule</key>
+		<dict>
+			<key>active</key>
+			<string>false</string>
+			<key>changes</key>
+			<string>false</string>
+		</dict>
+	</dict>
 	<key>options</key>
 	<array>
 		<dict>

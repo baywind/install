@@ -117,19 +117,6 @@ NameField : WOTextField {
   onkeypress = "b=form.savePreset;t=(value.length);if(t)b.disabled=false;if(eventKey(event)==13){if(t)ajaxPost(b);return false;}return true;";
 }
 
-DefaultContainer : OnClickContainer {
-  elementName = "div";
-  class = "gerade";
-  onclick = session.ajaxPopupNoPos;
-  invokeAction = usePreset;
-  style = "min-width:16ex;";
-}
-
-DefaultTitle : WOString {
-  value = session.strings.Strings.PrintReport.defaultSettings;
-  escapeHTML = false;
-}
-
 Presets : WORepetition {
   list = presets;
   item = item;
