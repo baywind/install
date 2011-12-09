@@ -24,7 +24,7 @@
 		<key>eduPlan</key>
 		<dict>
 			<key>active</key>
-			<string>false</string>
+			<string>true</string>
 		</dict>
 		<key>schedule</key>
 		<dict>
