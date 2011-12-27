@@ -17,5 +17,6 @@
         	number = 1;
         	title = "0.9";
         };
+	    framework = "RujelEduPlan";
     }; 
 }

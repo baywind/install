@@ -32,6 +32,10 @@ while [ -d $BACKUP ] ; do
 done
 mkdir -p $BACKUP/Frameworks/
 
+if [ "$1" != "nodb" ] ; then
+    ./backup.sh all $BACKUP
+fi
+
 # Applications
 WOAPPSFOLDER=${LOCALROOT}/Library/WebObjects/Applications
 mkdir -p $WOAPPSFOLDER
@@ -252,6 +256,47 @@ if [ ! -e ${CONFIGFOLDER}/message.txt ] ; then
 fi
 
 cd ..
+
+# prepare backup
+if $ONMAC || [ "$1" = "nodb" ]
+then echo
+else
+	if [ ! -d /usr/share/rujel ]
+	then mkdir -p /usr/share/rujel
+	fi
+	if [ -e /usr/share/rujel/backup.sh ] ; then
+		mv /usr/share/rujel/backup.sh $BACKUP/
+      	echo "rm -f /usr/share/rujel/backup.sh" >> $BACKUP/restore.tmp
+      	echo "cp backup.sh /usr/share/rujel/" >> $BACKUP/restore.tmp
+	fi
+	cp backup.sh /usr/share/rujel/
+	chmod +x /usr/share/rujel/backup.sh
+	chown _appserver:_appserveradm /usr/share/rujel/backup.sh
+	echo "Database backup script installed : /usr/share/rujel/backup.sh "
+
+	if grep -iq "rujel" /etc/crontab || [ -e /usr/share/rujel/backupCron.sh ]
+	then echo
+	else
+		echo '#!/bin/sh' > /usr/share/rujel/backupCron.sh
+		echo "export NEXT_ROOT=$NEXT_ROOT" >> /usr/share/rujel/backupCron.sh
+		echo 'echo >> /var/lib/rujel/backup.log' >> /usr/share/rujel/backupCron.sh
+		echo 'echo `date` >> /var/lib/rujel/backup.log' >> /usr/share/rujel/backupCron.sh
+		echo '/usr/share/rujel/backup.sh $1 /var/lib/rujel/backup >> /var/lib/rujel/backup.log 2>&1' >> /usr/share/rujel/backupCron.sh
+		chmod +x /usr/share/rujel/backupCron.sh
+		chown _appserver:_appserveradm /usr/share/rujel/backupCron.sh
+		
+		echo "## backup Rujel databases" >> /etc/crontab
+		echo "05 5 1 * * _appserver /usr/share/rujel/backupCron.sh all" >> /etc/crontab
+		echo "05 5 2-31 * * _appserver /usr/share/rujel/backupCron.sh day" >> /etc/crontab
+		echo "03 5 * * 0 _appserver /usr/share/rujel/backupCron.sh week" >> /etc/crontab
+		mkdir -p /var/lib/rujel/backup
+		chown -R _appserver:_appserveradm /var/lib/rujel
+		/etc/init.d/crond restart
+		echo "Database backup added to cron"
+	fi
+fi
+
+# final cleanup
 rmdir $BACKUP/Configuration > /dev/null 2>&1
 fi
 echo ""

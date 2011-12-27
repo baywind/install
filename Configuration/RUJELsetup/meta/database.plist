@@ -121,6 +121,18 @@
 				</dict>
 				<dict>
 					<key>key</key>
+					<string>disableSchemaUpdate</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>запретить автообновление</string>
+					<key>description</key>
+					<string>Запретить автоматическое обновление схемы БД и создание годовой БД к новому учебному году</string>
+					<key>advanced</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>key</key>
 					<string>dbMapping</string>
 					<key>type</key>
 					<string>Dictionary</string>

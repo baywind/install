@@ -18,6 +18,8 @@
 		<string>masterkey</string>
 		<key>prototypes</key>
 		<string>Firebird</string>
+		<key>disableSchemaUpdate</key>
+		<true/>
 	</dict>
 </dict>
 </plist>

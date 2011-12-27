@@ -1,0 +1,1 @@
+GRANT ALL PRIVILEGES ON `Rujel%`.* TO 'rujel'@'localhost';

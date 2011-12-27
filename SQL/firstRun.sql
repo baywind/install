@@ -1,5 +1,5 @@
 SET NAMES utf8;
-GRANT ALL PRIVILEGES ON `RujelYear%`.* TO 'rujel'@'localhost' IDENTIFIED BY 'RUJELpassword';
+GRANT ALL PRIVILEGES ON `Rujel%`.* TO 'rujel'@'localhost' IDENTIFIED BY 'RUJELpassword';
 
 CREATE DATABASE RujelYear2011 DEFAULT CHARACTER SET utf8;
 USE RujelYear2011;
@@ -556,8 +556,6 @@ CREATE TABLE  EO_PK_TABLE (
 ) ENGINE=InnoDB;
 
 
-GRANT ALL PRIVILEGES ON `RujelStatic`.* TO 'rujel'@'localhost';
-
 CREATE DATABASE RujelStatic DEFAULT CHARACTER SET utf8;
 USE RujelStatic;
 
@@ -872,8 +870,6 @@ CREATE TABLE  EO_PK_TABLE (
   PK int
 ) ENGINE=InnoDB;
 
-
-GRANT ALL PRIVILEGES ON `RujelUsers`.* TO 'rujel'@'localhost';
 
 CREATE DATABASE RujelUsers DEFAULT CHARACTER SET utf8;
 USE RujelUsers;

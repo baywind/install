@@ -660,7 +660,8 @@
                         username = rujel; 
                     }; 
                 }; 
-            }; 
-        }; 
+            };
+        };
+        framework = "RujelContacts";
     }; 
 }

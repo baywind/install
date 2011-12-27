@@ -16,5 +16,6 @@
     userInfo = {
         "_EntityModeler" = {reverseEngineered = Y; }; 
         schemaVersion = {number = 1; title = "0.9.1"; }; 
+	    framework = "RujelSchedule";
     }; 
 }
