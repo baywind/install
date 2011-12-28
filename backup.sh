@@ -80,6 +80,9 @@ if [ "$1" != "week" ] ; then
 				rm $f
 			fi
 		done
+	elif [ "$1" = "conf" ] ; then
+		BASE=
+		KEY="conf"
 	else
 		KEY="all"
 		BASE="$BASE VseLists RujelUsers Contacts"
@@ -94,14 +97,20 @@ else
 	done
 fi
 
-echo "Backing up databases: $BASE ..."
-FILE="RujelBackup_`date +%F`_$KEY.sql"
-if mysqldump -u $USERNAME $PASSWORD -r $FILE --single-transaction -B $BASE
-then
-	bzip2 -f $FILE
-	echo "Backup saved $FILE.bz2"
-else
-	rm $FILE
+if [ ! -z "$BASE" ] ; then
+	echo "Backing up databases: $BASE ..."
+	FILE="RujelBackup_`date +%F`_$KEY.sql"
+	if mysqldump -u $USERNAME $PASSWORD -r $FILE --single-transaction -B $BASE ; then
+		bzip2 -f $FILE
+		echo "Backup saved $FILE.bz2"
+	else
+		rm $FILE
+	fi
+fi
+
+if [ "$KEY" = "all" -o "$KEY" = "conf" ] ; then
+	echo "Backing up Rujel configuration: RujelConfig_`date +%F`_conf.tar.bz2"
+	tar -cj -f "RujelConfig_`date +%F`.tar.bz2" -C $CONFIGDIR/.. rujel
 fi
 
 cd $TARGET
