@@ -273,18 +273,31 @@ else
 	chmod +x /usr/share/rujel/backup.sh
 	chown _appserver:_appserveradm /usr/share/rujel/backup.sh
 	echo "Database backup script installed : /usr/share/rujel/backup.sh "
+	if [ -e /usr/share/rujel/backupCron.sh ] ; then
+		mv /usr/share/rujel/backupCron.sh $BACKUP/
+	fi
+	echo '#!/bin/sh' > /usr/share/rujel/backupCron.sh
+	echo 'if [ -z "$1" ]' >> /usr/share/rujel/backupCron.sh
+	echo "  then exit 0" >> /usr/share/rujel/backupCron.sh
+	echo "fi" >> /usr/share/rujel/backupCron.sh
+	echo "export NEXT_ROOT=$NEXT_ROOT" >> /usr/share/rujel/backupCron.sh
+	echo 'case $1 in' >> /usr/share/rujel/backupCron.sh
+	echo '  "day") MT=1;;' >> /usr/share/rujel/backupCron.sh
+	echo '  "week") MT=7;;' >> /usr/share/rujel/backupCron.sh
+	echo '  *) MT=31;;' >> /usr/share/rujel/backupCron.sh
+	echo "esac" >> /usr/share/rujel/backupCron.sh
+	echo 'if [ -z "`find $NEXT_ROOT/Local/Library/WebObjects/Logs/ -name Rujel?_0* -mtime -$MT`" ]' >> /usr/share/rujel/backupCron.sh
+	echo "  then exit 0" >> /usr/share/rujel/backupCron.sh
+	echo "fi" >> /usr/share/rujel/backupCron.sh
+	echo 'echo >> /var/lib/rujel/backup.log' >> /usr/share/rujel/backupCron.sh
+	echo 'echo `date` >> /var/lib/rujel/backup.log' >> /usr/share/rujel/backupCron.sh
+	echo '/usr/share/rujel/backup.sh $1 /var/lib/rujel/backup >> /var/lib/rujel/backup.log 2>&1' >> /usr/share/rujel/backupCron.sh
+	chmod +x /usr/share/rujel/backupCron.sh
+	chown _appserver:_appserveradm /usr/share/rujel/backupCron.sh
 
-	if grep -iq "rujel" /etc/crontab || [ -e /usr/share/rujel/backupCron.sh ]
-	then echo
-	else
-		echo '#!/bin/sh' > /usr/share/rujel/backupCron.sh
-		echo "export NEXT_ROOT=$NEXT_ROOT" >> /usr/share/rujel/backupCron.sh
-		echo 'echo >> /var/lib/rujel/backup.log' >> /usr/share/rujel/backupCron.sh
-		echo 'echo `date` >> /var/lib/rujel/backup.log' >> /usr/share/rujel/backupCron.sh
-		echo '/usr/share/rujel/backup.sh $1 /var/lib/rujel/backup >> /var/lib/rujel/backup.log 2>&1' >> /usr/share/rujel/backupCron.sh
-		chmod +x /usr/share/rujel/backupCron.sh
-		chown _appserver:_appserveradm /usr/share/rujel/backupCron.sh
-		
+
+	if ! grep -iq "rujel" /etc/crontab ; then
+		echo >> /etc/crontab
 		echo "## backup Rujel databases" >> /etc/crontab
 		echo "05 5 1 * * _appserver /usr/share/rujel/backupCron.sh all" >> /etc/crontab
 		echo "05 5 2-31 * * _appserver /usr/share/rujel/backupCron.sh day" >> /etc/crontab

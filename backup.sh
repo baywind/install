@@ -3,19 +3,9 @@
 if [ -z $CONFIGDIR ] ; then
 if [ "`uname -s`" = "Darwin" ] ; then
 	CONFIGDIR=/Library/WebObjects/Configuration/rujel
-	if [ -z $2 ] ; then
-		TARGET=/Users/Shared/rujel/backup
-	fi
 else
 	CONFIGDIR=$NEXT_ROOT/Local/Library/WebObjects/Configuration/rujel
-	if [ -z $2 ] ; then
-		TARGET=/var/lib/rujel/backup
-	fi
 fi
-fi
-
-if [ -z $TARGET ] ; then
-	TARGET=$2
 fi
 
 CONF=$CONFIGDIR/modules/database.plist
@@ -38,10 +28,15 @@ if [ ! -z $PASSWORD ] ; then
 	PASSWORD="--password=$PASSWORD"
 fi
 
-FILE=`pwd`
-mkdir -p $TARGET
-cd $TARGET
-TARGET=$FILE
+PWD=`pwd`
+if [ -n "$2" ] ; then
+#	mkdir -p $2
+	if [ ! -d $2 ] ; then
+		echo "First argument should be level (day|week|db|conf|all), second - target directory"
+		exit 1
+	fi
+	cd $2
+fi
 
 if [ "`uname -s`" = "Darwin" ] ; then
 	FILE="RujelBackup_`date -j -v -1m +%F`_$KEY.sql.bz2"
@@ -108,9 +103,9 @@ if [ ! -z "$BASE" ] ; then
 	fi
 fi
 
-if [ "$KEY" = "all" -o "$KEY" = "conf" ] ; then
+if [ "$1" = "all" -o "$KEY" = "conf" ] ; then
 	echo "Backing up Rujel configuration: RujelConfig_`date +%F`_conf.tar.bz2"
 	tar -cj -f "RujelConfig_`date +%F`.tar.bz2" -C $CONFIGDIR/.. rujel
 fi
 
-cd $TARGET
+cd $PWD
