@@ -277,3 +277,10 @@ ShowArchive : OnClickContainer {
   style = "float:right;border: 1px solid #999999;margin:3pt;";
   title = session.strings.RujelArchiving_Archive.archiveTitle;
 }
+
+CurrLessonNumField : WOTextField {
+  value = lessonNumber;
+  size = 2;
+  style = "text-align:center;";
+  class = "numeric";
+}

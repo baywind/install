@@ -243,3 +243,13 @@ CustomTabTitle : WOString {
   value = session.strings.Strings.LessonNoteEditor.manTab;
   escapeHTML = false;
 }
+
+HasSelection : WOConditional {
+  condition = currLesson;
+}
+
+SaveButton : WOImageButton {
+  framework = "JavaWOExtensions";
+  filename = "TransparentPixel.gif";
+  action = save;
+}

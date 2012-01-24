@@ -98,3 +98,11 @@ ArchiveHeader : WOString {
   value = session.strings.RujelArchiving_Archive.archiveTitle;
   escapeHTML = false;
 }
+
+NumField : WOTextField {
+  value = newNumber;
+  size = 3;
+  numberformat = "0";
+  style = "text-align:center;";
+  class = "integer";
+}

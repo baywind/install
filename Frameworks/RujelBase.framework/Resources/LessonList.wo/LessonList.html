@@ -1,15 +1,5 @@
 <script language="JavaScript"><!--
 	var htTitle = '<webobject name="HomeTaskTitle"/>';
-	function navigate(ifnav) {
-		var canEdit = <webobject name="CanMove"></webobject>;
-		if(canEdit) {
-			var nav = document.getElementById("control");
-			var num = document.getElementById("number");
-			nav.style.display = (ifnav)?"":"none";
-			num.style.display = (ifnav)?"none":"";
-		}
-		return canEdit;
-	}
 --></script>
 <table border="0" width="100%">
 <thead>
@@ -33,8 +23,8 @@
 <webobject name="IfFull"><td align="left"><webobject name="LessonHomeTask"></webobject></td></webobject>
 </webobject></webobject><webobject name="IsRecent"><tr class="selection"><webobject name="HasStudent">
 <webobject name="LessonNotePresenter"></webobject><td class="selection" width="2"></td></webobject>
-<webobject name="IfFull"><td align="center" onmouseout="navigate(false);" onmouseover="navigate(true);"><div id="control" style="display:none;"><webobject name="MoveUp"></webobject><webobject name="SplitTab"></webobject><webobject name="MoveDown"></webobject></div>
-<b id="number"><webobject name="LessonNumber"></webobject></b></td></webobject>
+<webobject name="IfFull"><td align="center">
+<b id="number"><webobject name = "CurrLessonNumField"/></b></td></webobject>
 <td align="center"><webobject name="CurrLessonDateField"></webobject></td><td><webobject name="CurrLessonThemeField"></webobject></td>
 <webobject name = "TaskCell">
 	<webobject name="IfAbbreviated">
