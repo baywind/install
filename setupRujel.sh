@@ -62,7 +62,12 @@ echo "Installed "$i" WO Applications"
 
 if [ -e ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties ] ; then
 	echo >> ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties
-	echo "RujelRevision="`basename \`pwd\`` >> ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties
+	if [ -e .git/refs/heads/master ] ; then
+		REVISION=`cat .git/refs/heads/master`
+	else
+		REVISION=`basename \`pwd\``
+	fi
+	echo "RujelRevision=$REVISION" >> ${WOAPPSFOLDER}/Rujel.woa/Contents/Resources/Properties
 fi
 
 if [ -d Frameworks ]
