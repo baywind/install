@@ -181,13 +181,13 @@
 				</dict>
 				<dict>
 					<key>key</key>
-					<string>запретить запросы</string>
+					<string>denyRequesting</string>
 					<key>type</key>
 					<string>Boolean</string>
 					<key>default</key>
 					<false/>
 					<key>title</key>
-					<string>denyRequesting</string>
+					<string>запретить запросы</string>
 					<key>description</key>
 					<string>не вставлять в рассылаемые сообщения ссылку на индивидуальный запрос почты</string>
 					<key>advanced</key>

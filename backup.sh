@@ -1,8 +1,16 @@
 #!/bin/sh
 
+if [ "$1" = "?" -o "$1" = "-?" ] ; then
+	echo "First argument should be level (day|week|db|conf|all), second - target directory"
+	exit 0
+fi
+
 if [ -z $CONFIGDIR ] ; then
 if [ "`uname -s`" = "Darwin" ] ; then
 	CONFIGDIR=/Library/WebObjects/Configuration/rujel
+	if ! which -s mysqldump ; then
+		alias mysqldump=/usr/local/mysql/bin/mysqldump
+	fi
 else
 	CONFIGDIR=$NEXT_ROOT/Local/Library/WebObjects/Configuration/rujel
 fi
