@@ -198,6 +198,7 @@ PluginLabel : WOSwitchComponent {
   present = present;
   currTab = currTab;
   lesson = currLesson;
+  weekFootprint = weekFootprint;
 }
 
 GroupSpan : OnClickContainer {

@@ -78,6 +78,7 @@ Timetable : Timetable {
   course = course;
   readOnly = session.readAccess._edit.Schedule;
   noAction = noAction;
+  withAction = withAction;
   showGroupName = forTeacher;
   showSubject = forClass;
   date =  date;
