@@ -16,7 +16,7 @@
 			<key>attribute</key>
 			<string>note</string>
 			<key>defaultValue</key>
-			<string>Н</string>
+			<string>о*</string>
 			<key>fieldSize</key>
 			<integer>20</integer>
 			<key>active</key>

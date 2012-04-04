@@ -290,8 +290,8 @@
 	<string>Запись уроков вперед запрещена</string>
 	<key>lessons</key>
 	<string>Уроки</string>
-	<key>skipStrings</key>
-	<string>н Н H Б</string>
+	<key>skipChars</key>
+	<string>нНоОHoO</string>
 	<key>lessonsTab</key>
 	<dict>
 		<key>checkAccess</key>

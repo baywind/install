@@ -90,6 +90,7 @@ NotesPage1: NotesPage {
 	studentsList = course.groupList;
 	selectStudent = selector;
 	selectStudentAction = selectStudent;
+	currStudent = student;
 	single = single;
 	present = present;
 }

@@ -18,7 +18,7 @@
 			<key>hidden</key>
 			<true/>
 			<key>qualifierFormat</key>
-			<string>note caseInsensitiveLike &apos;н&apos; OR note caseInsensitiveLike &apos;H&apos;</string>
+			<string>note = &apos;н&apos; OR note = &apos;Н&apos; OR note = &apos;H&apos; OR note caseInsensitiveLike &apos;н:*&apos; OR note like &apos;H:*&apos;</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -172,6 +172,18 @@
 	</array>
 	<key>properties</key>
 	<array>
+		<dict>
+			<key>title</key>
+			<string>Метка</string>
+			<key>keyPath</key>
+			<string>note</string>
+			<key>comparison</key>
+			<string>CompareAscending</string>
+			<key>active</key>
+			<false/>
+			<key>sort</key>
+			<string>05</string>
+		</dict>
 		<dict>
 			<key>title</key>
 			<string>Класс</string>
