@@ -7,7 +7,7 @@ PageWrapper : PageWrapper {
 SectionTabs : Tabs {
   idAttribute = "idx";
   currTab = session.state.section;
-  tablist = application.strings.sections.list;
+  tablist = session.strings.sections.list;
   titleAttribute = "value";
   vertical = true;
 }
@@ -17,7 +17,7 @@ CurrSection : WOString {
 }
 
 HasSections : WOConditional {
-  condition = application.strings.sections.hasSections;
+  condition = session.strings.sections.hasSections;
 }
 
 Title : WOString {

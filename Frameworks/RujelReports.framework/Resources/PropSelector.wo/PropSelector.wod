@@ -1,17 +1,3 @@
-ReportTable : ReportTable {
-  list = courses;
-  properties = display;
-  rowClass = "ungerade";
-  itemDict = subItem;
-  itemRow = item;
-}
-
-Form : WOForm {
-  class = "backfield2 selectionBorder";
-  style = ^style;
-  onsubmit = "enumerate(this,'sorting',1);return true;";
-}
-
 ReportsRepetition : WORepetition {
   list = reports;
   item = item;
@@ -55,10 +41,6 @@ HasShort : WOConditional {
 SubHasShort : WOConditional {
   condition = subItem.short;
 }
-SubmitButton : WOSubmitButton {
-  action = modifyList;
-  value = application.strings.Reusables_Strings.uiElements.Submit;
-}
 
 ReportCell : OnClickContainer {
   elementName = "td";
@@ -99,20 +81,10 @@ SubRow : WOGenericContainer {
   class = "grey";
 }
 
-AvailableTitle : WOString {
-  value = application.strings.RujelReports_Reports.CoursesReport.availableReports;
-  escapeHTML = false;
-}
-
 ReportsTable : WOGenericContainer {
   elementName = "div";
   id = ^id;
   style = ^style;
-}
-
-ExportButton : WOHyperlink {
-  action = export;
-  string = application.strings.RujelReports_Reports.export;
 }
 
 MoveUp: WOImage {

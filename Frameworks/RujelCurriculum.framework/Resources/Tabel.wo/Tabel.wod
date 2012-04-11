@@ -294,14 +294,14 @@ SubmitDates : WOGenericElement {
 }
 
 HasSections : WOConditional {
-  condition = application.strings.sections.hasSections;
+  condition = session.strings.sections.hasSections;
 }
 
 SectionTabs : Tabs {
   idAttribute = "idx";
   currTab = section;
   byAttribute = true;
-  tablist = application.strings.sections.list;
+  tablist = session.strings.sections.list;
   titleAttribute = "value";
   selectAction = go;
   vertical = true;

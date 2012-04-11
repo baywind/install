@@ -68,7 +68,7 @@ ResetButton1: WOResetButton {
 }
 
 HasSections : WOConditional {
-  condition = application.strings.sections.hasSections;
+  condition = session.strings.sections.hasSections;
 }
 
 SectionTitle : WOString {
@@ -77,7 +77,7 @@ SectionTitle : WOString {
 }
 
 Sections : WORepetition {
-  list = application.strings.sections.list;
+  list = session.strings.sections.list;
   item = item;
 }
 

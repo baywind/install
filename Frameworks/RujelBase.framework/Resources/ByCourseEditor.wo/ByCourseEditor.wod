@@ -201,7 +201,7 @@ SimpleButton : WOSubmitButton {
 SectionTabs : Tabs {
   idAttribute = "idx";
   currTab = tmpValues.section;
-  tablist = application.strings.sections.list;
+  tablist = session.strings.sections.list;
   titleAttribute = "value";
   selectAction = sectionChanged;
   vertical = true;

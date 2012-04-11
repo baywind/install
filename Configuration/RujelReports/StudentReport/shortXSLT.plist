@@ -162,7 +162,7 @@
 					<key>hover</key>
 					<string>включать работы, оценки за которые были выставлены в искомый период</string>
 					<key>active</key>
-					<true/>
+					<false/>
 				</dict>
 				<dict>
 					<key>id</key>

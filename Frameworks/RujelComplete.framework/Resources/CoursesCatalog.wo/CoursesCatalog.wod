@@ -37,7 +37,7 @@ GroupTitle : WOString {
 }
 
 Sections : WORepetition {
- list = application.strings.sections.list;
+ list = session.strings.sections.list;
  item = courseID;
 }
 

@@ -143,7 +143,7 @@ select="/ejdata/courses/course[eduGroup[@type='full' and @id=$curr-group] or edu
 	<xsl:param name="stid"/>
 	<xsl:variable name="lvl" select="$options/marks/level"/>
 	<xsl:variable name="list"
-select="container[$lvl > 2 or calc/@compulsory = 'true' or ($lvl = 2 and criteria) or ($lvl = 1 and marks/mark[@student = $stid])]"/>
+select="container[$lvl > 2 or calc/@compulsory = 'true' or ($lvl = 2 and marks) or ($lvl = 1 and marks/mark[@student = $stid])]"/>
 	<xsl:if test="$list">
 	<tr><td colspan="3">
  <strong style="font-size:110%;">Работы: </strong>
