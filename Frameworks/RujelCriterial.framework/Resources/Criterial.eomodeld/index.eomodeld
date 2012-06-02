@@ -670,5 +670,10 @@
                 }; 
             }; 
         }; 
+        framework = "RujelCriterial";
+        schemaVersion = {
+        	number = 1;
+        	title = "0.9.4";
+        };
     }; 
 }

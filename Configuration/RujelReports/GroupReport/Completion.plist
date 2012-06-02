@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>active</key>
+	<false/>
+	<key>title</key>
+	<string>Закрытие года</string>
+	<key>entity</key>
+	<string>Completion</string>
+	<key>id</key>
+	<string>completion</string>
+	<key>sort</key>
+	<string>90</string>
+	<key>preload</key>
+	<dict>
+		<key>cacheResult</key>
+		<false/>
+		<key>className</key>
+		<string>net.rujel.complete.Completion</string>
+		<key>methodName</key>
+		<string>completionsForGroup</string>
+		<key>paramClasses</key>
+		<array>
+			<string>net.rujel.interfaces.EduGroup</string>
+			<string>java.lang.Integer</string>
+		</array>
+		<key>paramValues</key>
+		<array>
+			<string>.</string>
+			<string>$session.eduYear</string>
+		</array>
+	</dict>
+	<key>subParams</key>
+	<array>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>id</key>
+			<string>closedCount</string>
+			<key>title</key>
+			<string>Закрытых курсов</string>
+			<key>hover</key>
+			<string>Количество курсов, по которым учащийся отмечен, как закрытый.</string>
+			<key>short</key>
+			<string>V</string>
+			<key>value</key>
+			<string>$preloadedValue.closedCount</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>numberformat</key>
+				<string>0</string>
+			</dict>
+			<key>titleStyle</key>
+			<string>width:3ex;color:#009933;</string>
+			<key>style</key>
+			<string>color:#009933;</string>
+			<key>sort</key>
+			<string>02</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>id</key>
+			<string>leftCount</string>
+			<key>title</key>
+			<string>Незакрытых курсов</string>
+			<key>hover</key>
+			<string>Количество курсов, по которым учащийся имеет задолженность.</string>
+			<key>short</key>
+			<string>X</string>
+			<key>value</key>
+			<string>$preloadedValue.leftCount</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>numberformat</key>
+				<string>0</string>
+			</dict>
+			<key>titleStyle</key>
+			<string>width:3ex;color:#cc3333;</string>
+			<key>style</key>
+			<string>color:#cc3333;</string>
+			<key>sort</key>
+			<string>04</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<false/>
+			<key>id</key>
+			<string>closed</string>
+			<key>title</key>
+			<string>Список закрытых</string>
+			<key>hover</key>
+			<string>Перечень курсов, по которым учащийся отмечен, как закрытый.</string>
+			<key>value</key>
+			<string>$preloadedValue.closed</string>
+			<key>sort</key>
+			<string>12</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<false/>
+			<key>id</key>
+			<string>closed</string>
+			<key>title</key>
+			<string>Список незакрытых</string>
+			<key>hover</key>
+			<string>Перечень курсов, по которым учащийся отмечен имеет задолженность.</string>
+			<key>value</key>
+			<string>$preloadedValue.left</string>
+			<key>sort</key>
+			<string>14</string>
+		</dict>
+	</array>
+</dict>
+</plist>

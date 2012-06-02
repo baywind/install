@@ -68,7 +68,7 @@ CyclesRepetition : WORepetition {
 
 CycleHours : WOTextField {
   value = planHours;
-  size = 4;
+  size = 3;
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
   otherTagString = fieldStyle;

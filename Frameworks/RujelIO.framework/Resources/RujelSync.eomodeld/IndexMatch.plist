@@ -1,0 +1,30 @@
+{
+    attributes = (
+        {columnName = "EXT_VALUE"; name = extValue; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = "INDEX_ID"; 
+            name = idxID; 
+            prototypeName = integer; 
+        }, 
+        {columnName = "LOCAL_VALUE"; name = localValue; prototypeName = string; }, 
+        {allowsNull = N; columnName = "M_ID"; name = mID; prototypeName = integer; }
+    ); 
+    attributesUsedForLocking = (extValue, idxID, localValue); 
+    className = EOGenericRecord; 
+    classProperties = (extValue, localValue, syncIndex); 
+    externalName = "SYNC_IDX_MATCH"; 
+    fetchSpecificationDictionary = {}; 
+    name = IndexMatch; 
+    primaryKeyAttributes = (mID); 
+    relationships = (
+        {
+            destination = SyncIndex; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = iID; sourceAttribute = idxID; }); 
+            name = syncIndex; 
+        }
+    ); 
+}

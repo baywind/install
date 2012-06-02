@@ -1,0 +1,78 @@
+PageWrapper : PageWrapper {
+	title = title;
+	resourcesFramework = "RujelBase";
+	scriptResource = "sorting.js";
+}
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = session.state.section;
+  tablist = session.strings.sections.list;
+  titleAttribute = "value";
+  vertical = true;
+}
+
+CurrSection : WOString {
+  value = session.state.section.value;
+}
+
+HasSections : WOConditional {
+  condition = session.strings.sections.hasSections;
+}
+
+Title : WOString {
+  value = title;
+  escapeHTML = false;
+}
+
+ClassListing : ClassListing {
+	selection = currClass;
+	width = "100%";
+	editingContext = ec;
+	onClick = session.tryLoad;
+	showTitle = true;
+}
+
+ReportTable : ReportTable {
+  list = students;
+  properties = display;
+  rowClass = "ungerade";
+  itemDict = subItem;
+  itemRow = item;
+  commonParam = currClass;
+}
+
+Form : WOForm {
+  class = "backfield2 selectionBorder";
+  style = "position:absolute;right:5em;top:5em;width:14em;";
+  onsubmit = "enumerate(this,'sorting',1);return true;";
+}
+
+SubmitButton : WOSubmitButton {
+  action = modifyList;
+  value = application.strings.Reusables_Strings.uiElements.Submit;
+}
+
+AvailableTitle : WOString {
+  value = application.strings.RujelReports_Reports.CoursesReport.availableReports;
+  escapeHTML = false;
+}
+
+ExportButton : WOHyperlink {
+  action = export;
+  string = application.strings.RujelReports_Reports.export;
+}
+
+PropSelector : PropSelector {
+  active = display;
+  available = reports;
+  forceActive = prepareDisplay;
+  initDefault = true;
+  style = "max-height:30em;overflow:auto;";
+}
+
+PropsDiv : WOGenericContainer {
+  elementName = "div";
+  style = reportStyle;
+  id = "reportsAvailable";
+}

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>type</key>
+	<string>export</string>
+	<key>id</key>
+	<string>simpleOut</string>
+	<key>title</key>
+	<string>Просто XML</string>
+	<key>description</key>
+	<string>Вывод непреобразованного файла XML в формате ejdata</string>
+	<key>sort</key>
+	<string>90</string>
+	<key>mimeType</key>
+	<string>application/multipart</string>
+	<key>filename</key>
+	<string>ejdata.xml</string>
+	<key>filext</key>
+	<string>xml</string>
+	<key>submitTitle</key>
+	<string>Загрузить</string>
+	<key>options</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<string>eduGroups</string>
+			<key>title</key>
+			<string>Классы</string>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>id</key>
+					<string>tutors</string>
+					<key>title</key>
+					<string>Классный руководитель</string>
+					<key>active</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>nolist</string>
+					<key>title</key>
+					<string>Без состава</string>
+					<key>hover</key>
+					<string>Не выводить списки, только описания</string>
+					<key>active</key>
+					<true/>
+				</dict>
+			</array>
+			<key>active</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>eduPlan</string>
+			<key>title</key>
+			<string>Учебный план</string>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>id</key>
+					<string>noHours</string>
+					<key>title</key>
+					<string>Архивные</string>
+					<key>hover</key>
+					<string>показывать циклы, даже если по ним нет часов</string>
+					<key>active</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>courses</string>
+			<key>title</key>
+			<string>Курсы</string>
+			<key>hover</key>
+			<string>Выводить информацию об учебных курсах</string>
+			<key>active</key>
+			<true/>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>id</key>
+					<string>nolist</string>
+					<key>title</key>
+					<string>Без подгруппы</string>
+					<key>hover</key>
+					<string>не показывать состав подгруппы</string>
+					<key>active</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>nodata</string>
+					<key>title</key>
+					<string>Без данных</string>
+					<key>hover</key>
+					<string>не выводить никаких дополнительных сведений о курсе</string>
+					<key>active</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>autoitog</string>
+			<key>title</key>
+			<string>Прогноз</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>schedule</string>
+			<key>title</key>
+			<string>Расписание</string>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>id</key>
+					<string>changes</string>
+					<key>title</key>
+					<string>История изменений</string>
+					<key>hover</key>
+					<string>показывать всю историю изменений расписания</string>
+					<key>active</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>lessons</string>
+			<key>title</key>
+			<string>Уроки</string>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>id</key>
+					<string>noMarks</string>
+					<key>title</key>
+					<string>скрыть отметки</string>
+					<key>hover</key>
+					<string>вывести только описания уроков</string>
+					<key>active</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>marks</string>
+			<key>title</key>
+			<string>Работы</string>
+			<key>active</key>
+			<false/>
+			<key>options</key>
+			<array>
+				<dict>
+					<key>options</key>
+					<array>
+						<dict>
+							<key>id</key>
+							<string>all</string>
+							<key>title</key>
+							<string>все</string>
+							<key>hover</key>
+							<string>все работы за период</string>
+							<key>value</key>
+							<integer>5</integer>
+						</dict>
+						<dict>
+							<key>id</key>
+							<string>markable</string>
+							<key>title</key>
+							<string>оцениваемые</string>
+							<key>hover</key>
+							<string>работы, предусматривающие оценку</string>
+							<key>value</key>
+							<integer>2</integer>
+						</dict>
+						<dict>
+							<key>id</key>
+							<string>marked</string>
+							<key>title</key>
+							<string>с оценками</string>
+							<key>hover</key>
+							<string>работы с выставленными оценками</string>
+							<key>value</key>
+							<integer>1</integer>
+						</dict>
+						<dict>
+							<key>id</key>
+							<string>required</string>
+							<key>title</key>
+							<string>весомые</string>
+							<key>hover</key>
+							<string>работы, влияющие на итоговую</string>
+							<key>value</key>
+							<integer>0</integer>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>level</string>
+					<key>hover</key>
+					<string>какие работы показывать в распечатке</string>
+					<key>active</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>workType</string>
+					<key>title</key>
+					<string>Тип</string>
+					<key>options</key>
+					<dict>
+						<key>className</key>
+						<string>com.webobjects.eoaccess.EOUtilities</string>
+						<key>methodName</key>
+						<string>objectsForEntityNamed</string>
+						<key>cacheResult</key>
+						<true/>
+						<key>paramClasses</key>
+						<array>
+							<string>com.webobjects.eocontrol.EOEditingContext</string>
+							<string>java.lang.String</string>
+						</array>
+						<key>paramValues</key>
+						<array>
+							<string>$returnPage.ec</string>
+							<string>&apos;WorkType</string>
+						</array>
+					</dict>
+					<key>displayString</key>
+					<string>typeName</string>
+					<key>noSelectionString</key>
+					<string>_все_</string>
+					<key>popUp</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>dateSet</string>
+					<key>title</key>
+					<string>оценки по дате выставления</string>
+					<key>hover</key>
+					<string>включать работы, оценки за которые были выставлены в искомый период</string>
+					<key>active</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>id</key>
+					<string>noMarks</string>
+					<key>title</key>
+					<string>скрыть оценки</string>
+					<key>hover</key>
+					<string>вывести только описания работ</string>
+					<key>active</key>
+					<true/>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

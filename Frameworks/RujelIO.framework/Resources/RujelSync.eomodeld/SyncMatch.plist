@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "BASE_ID"; 
+            name = baseID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_YEAR"; 
+            name = eduYear; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "ENTITY_ID"; 
+            name = entityID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "EXTERNAL_ID"; name = extID; prototypeName = string; }, 
+        {allowsNull = N; columnName = "M_ID"; name = mID; prototypeName = integer; }, 
+        {columnName = "OBJECT_ID"; name = objID; prototypeName = integer; }, 
+        {
+            allowsNull = N; 
+            columnName = "SYSTEM_ID"; 
+            name = sysID; 
+            prototypeName = short; 
+        }
+    ); 
+    attributesUsedForLocking = (eduYear, entityID, extID, objID, sysID); 
+    className = "net.rujel.io.SyncMatch"; 
+    classProperties = (eduYear, entityIndex, extBase, extID, extSystem, objID); 
+    externalName = "SYNC_MATCH"; 
+    fetchSpecificationDictionary = {}; 
+    name = SyncMatch; 
+    primaryKeyAttributes = (mID); 
+    relationships = (
+        {
+            destination = EntityIndex; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = eID; sourceAttribute = entityID; }); 
+            name = entityIndex; 
+        }, 
+        {
+            destination = ExtBase; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bID; sourceAttribute = baseID; }); 
+            name = extBase; 
+        }, 
+        {
+            destination = ExtSystem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sysID; }); 
+            name = extSystem; 
+        }
+    ); 
+}

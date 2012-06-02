@@ -1,0 +1,25 @@
+<webobject name = "PageWrapper"><webobject name = "HasSections">
+<div style = "float:left;position:absolute;absolute;left:7px;border:1px solid #999999;" class = "gerade"
+ onmouseover = "hideObj('SectionTitle');showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle')">
+<div id = "SectionTitle" style = "padding:3px;" class = "green">
+	<webobject name = "CurrSection"/></div>
+<div id = "SectionTabs" style = "display:none;">
+<webobject name = "SectionTabs"/></div></div></webobject>
+<h1><webobject name = "Title"/></h1>
+<webobject name = "Form">
+<div onclick = "toggleObj('reportsAvailable');" style = "font-size:larger;margin:3px;" onmouseover = "dim(this);" onmouseout = "unDim(this);">
+<webobject name = "AvailableTitle"/>:</div>
+<webobject name = "PropsDiv">
+	<webobject name = "PropSelector"/>
+	<div style = "padding:1ex;"><webobject name = "SubmitButton"/></div>
+	</webobject>
+</webobject>
+	<div style = "float:right;"><webobject name = "ExportButton"/></div>
+<table width = "100%" cellspacing = "0" cellpadding = "0"><tr>
+	<td class="backfield2 selectionBorder" style = "border-style:solid solid none none;" width = "20%">
+	<webobject name="ClassListing"/></td>
+	<td></td>
+	<td class="backfield1 selectionBorder" style = "border-style:solid none none;">
+		<webobject name = "ReportTable"></webobject></td>
+</tr></table>
+</webobject>

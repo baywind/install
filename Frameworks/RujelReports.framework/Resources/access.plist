@@ -24,5 +24,23 @@
 		<key>tutor</key>
 		<string>1</string>
 	</dict>
+	<key>GroupReport</key>
+	<dict>
+		<key>root</key>
+		<string>1023</string>
+		<key>zavuch</key>
+		<string>15</string>
+		<key>tutor</key>
+		<string>1</string>
+	</dict>
+	<key>PedDecision</key>
+	<dict>
+		<key>root</key>
+		<string>1023</string>
+		<key>zavuch</key>
+		<string>15</string>
+		<key>tutor</key>
+		<string>1</string>
+	</dict>
 </dict>
 </plist>

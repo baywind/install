@@ -330,7 +330,7 @@
         {className = EOGenericRecord; name = UsedEntity; }
     ); 
     userInfo = {
-    	schemaVersion = {number = 1; title = "0.9.1"; };
+    	schemaVersion = {number = 2; title = "0.9.4"; };
 	    framework = "RujelArchiving";
     };
 }

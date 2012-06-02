@@ -25,7 +25,7 @@ LessonNum : WOString {
 }
 
 LessonDate : WOString {
-  value = lessonItem.date;
+  value = lessonItem.title;
 }
 
 LessonTheme : WOString {

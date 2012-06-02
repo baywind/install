@@ -76,11 +76,31 @@
 				<string>eduGroup.name</string>
 			</dict>
 		</dict>
-		<key>tabs</key>
-		<array>
-			<string>Классы</string>
-			<string>Учителя</string>
-		</array>
+	</dict>
+	<key>GroupReport</key>
+	<dict>
+		<key>title</key>
+		<string>Отчеты по классам</string>
+		<key>defaultDisplay</key>
+		<dict>
+			<key>title</key>
+			<string>Фамилия Имя</string>
+			<key>presenter</key>
+			<string>PersonDisplay</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>person</key>
+				<string>.</string>
+				<key>last</key>
+				<string>2</string>
+				<key>first</key>
+				<string>2</string>
+				<key>second</key>
+				<string>0</string>
+			</dict>
+			<key>style</key>
+			<string>'text-align:left; padding:1px 4px;</string>
+		</dict>
 	</dict>
 	<key>CustomReport</key>
 	<dict>
@@ -127,6 +147,16 @@
 			<string>report</string>
 			<key>sort</key>
 			<string>20</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>По классам</string>
+			<key>component</key>
+			<string>GroupReport</string>
+			<key>group</key>
+			<string>report</string>
+			<key>sort</key>
+			<string>30</string>
 		</dict>
 		<dict>
 			<key>title</key>

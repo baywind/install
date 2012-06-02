@@ -1,0 +1,65 @@
+PageWrapper : PageWrapper {
+  title = session.strings.RujelIO_ImportExport.ImportExport;
+  onLoad = onLoad;
+  styles = ".ioblock{border: 1px solid #666666;margin: 10px 2px 2px;padding: 2px;}";
+  action = export;
+}
+
+ExportTitle : WOString {
+  value = session.strings.RujelIO_ImportExport.Export;
+  valueWhenEmpty = "Export";
+  escapeHTML = false;
+}
+
+ImportTitle : WOString {
+  value = session.strings.RujelIO_ImportExport.Import;
+  valueWhenEmpty = "Import";
+  escapeHTML = false;
+}
+
+ExportDescr : WOString {
+  value = session.strings.RujelIO_ImportExport.ExportDescr;
+  valueWhenEmpty = "Export";
+  escapeHTML = false;
+}
+
+ImportDescr : WOString {
+  value = session.strings.RujelIO_ImportExport.ImportDescr;
+  valueWhenEmpty = "Import";
+  escapeHTML = false;
+}
+ExportList : WORepetition {
+  list = exportList;
+  item = item;
+}
+
+ImportList : WORepetition {
+  list = importList;
+  item = item;
+}
+
+ItemTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+ItemDescription : WOString {
+  value = item.description;
+  escapeHTML = false;
+}
+
+ItemContainer : OnClickContainer {
+  elementName = "div";
+  invokeAction = useItem;
+  onclick = session.ajaxPopupNoPos;
+  class = "ioblock";
+  disabled = disabled;
+}
+
+ImportContainer : OnClickContainer {
+  elementName = "div";
+  invokeAction = useItem;
+  onclick = session.ajaxPopupNoPos;
+  class = "ioblock";
+  disabled = true;
+}

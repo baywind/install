@@ -1,0 +1,61 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "BASE_ID"; 
+            name = baseID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_YEAR"; 
+            name = eduYear; 
+            prototypeName = short; 
+        }, 
+        {allowsNull = N; columnName = "I_ID"; name = iID; prototypeName = integer; }, 
+        {
+            allowsNull = N; 
+            columnName = "INDEX_NAME"; 
+            name = indexName; 
+            prototypeName = word; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SYSTEM_ID"; 
+            name = sysID; 
+            prototypeName = short; 
+        }
+    ); 
+    attributesUsedForLocking = (eduYear, indexName, sysID); 
+    className = "net.rujel.io.SyncIndex"; 
+    classProperties = (eduYear, extBase, extSystem, indexMatches, indexName); 
+    externalName = "SYNC_INDEX"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = SyncIndex; }; 
+    name = SyncIndex; 
+    primaryKeyAttributes = (iID); 
+    relationships = (
+        {
+            destination = ExtBase; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bID; sourceAttribute = baseID; }); 
+            name = extBase; 
+        }, 
+        {
+            destination = ExtSystem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sysID; }); 
+            name = extSystem; 
+        }, 
+        {
+            destination = IndexMatch; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = idxID; sourceAttribute = iID; }); 
+            name = indexMatches; 
+        }
+    ); 
+}

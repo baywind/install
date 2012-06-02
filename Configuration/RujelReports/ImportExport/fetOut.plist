@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>type</key>
+	<string>export</string>
+	<key>id</key>
+	<string>fetOut</string>
+	<key>title</key>
+	<string>данные для FET</string>
+	<key>description</key>
+	<string>Подготовить файл исходных данных для программы составления расписаний FET</string>
+	<key>sort</key>
+	<string>20</string>
+	<key>mimeType</key>
+	<string>application/multipart</string>
+	<key>filext</key>
+	<string>fet</string>
+	<key>transform</key>
+	<string>fetOut.xsl</string>
+	<key>_sources</key>
+	<array>
+		<string>Persdata</string>
+		<string>Options</string>
+	</array>
+	<key>settings</key>
+	<dict>
+		<key>eduGroups</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>nolist</key>
+			<true/>
+		</dict>
+		<key>eduPlan</key>
+		<dict>
+			<key>active</key>
+			<true/>
+		</dict>
+		<key>schedule</key>
+		<dict>
+			<key>active</key>
+			<string>false</string>
+			<key>changes</key>
+			<string>false</string>
+		</dict>
+		<key>courses</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>nolist</key>
+			<false/>
+			<key>nodata</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -110,32 +110,6 @@ IsRecent: WOConditional {
 	condition = canEdit;
 }
 
-MoveUp: WOImageButton {
-	action = ^up;
-	filename = "up.png";
-	framework = "app";
-	align = "center";
-	valign = "top";
-}
-
-SplitTab: WOImageButton {
-	action = ^splitTab;
-	filename = "tab.png";
-	framework = "app";
-	align = "center";
-	valign = "middle";
-	style = "margin:3px 0;";
-	onmouseover = "this.style.backgroundColor='blue';";
-	onmouseout = "this.style.backgroundColor='';";
-	title=^splitTitle;
-}
-
-MoveDown: WOImageButton {
-	action = ^down;
-	filename = "down.png";
-	framework = "app";
-}
-
 CurrLessonDateField: WOTextField {
 	size = lessonTitle.length;
 	value = lessonTitle;
@@ -201,10 +175,6 @@ DeleteButton: WOGenericElement {
 	invokeAction = ^delete;
 	value = application.strings.Reusables_Strings.uiElements.Delete;
 	onclick = session.confirmMessage;
-}
-
-CanMove: WOString {
-	value = canMove;
 }
 
 ShowExtentions : WOConditional {

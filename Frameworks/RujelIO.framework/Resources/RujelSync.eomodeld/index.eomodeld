@@ -1,0 +1,34 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:mysql://localhost/RujelSync? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+        username = rujel; 
+    }; 
+    entities = (
+        {className = "net.rujel.io.ExtBase"; name = ExtBase; }, 
+        {className = EOGenericRecord; name = ExtData; }, 
+        {className = "net.rujel.io.ExtSystem"; name = ExtSystem; }, 
+        {className = EOGenericRecord; name = IndexMatch; }, 
+        {className = "net.rujel.io.SyncIndex"; name = SyncIndex; }, 
+        {className = "net.rujel.io.SyncMatch"; name = SyncMatch; }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Default; 
+            databaseConfigs = {
+                Default = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:mysql://localhost/RujelSync? capitalizeTypeNames=true&useUnicode=true&characterEncoding=utf8"; 
+                        username = rujel; 
+                    }; 
+                    prototypeEntityName = EOJDBCPrototypes; 
+                }; 
+            }; 
+        }; 
+        creationScript = "addRujelSync.sql"; 
+        framework = RujelIO; 
+        schemaVersion = {number = 1; title = "0.9.4"; }; 
+    }; 
+}

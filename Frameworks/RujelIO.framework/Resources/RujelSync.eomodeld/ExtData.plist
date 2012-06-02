@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "BASE_ID"; 
+            name = baseID; 
+            prototypeName = short; 
+        }, 
+        {allowsNull = N; columnName = "D_ID"; name = dID; prototypeName = integer; }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_YEAR"; 
+            name = eduYear; 
+            prototypeName = short; 
+        }, 
+        {allowsNull = N; columnName = "DATA_KEY"; name = key; prototypeName = word; }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOR_SECTION"; 
+            name = section; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SYSTEM_ID"; 
+            name = sysID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "DATA_VALUE"; name = value; prototypeName = text; }
+    ); 
+    attributesUsedForLocking = (baseID, eduYear, key, section, sysID, value); 
+    className = EOGenericRecord; 
+    classProperties = (eduYear, extBase, extSystem, key, section, value); 
+    externalName = "SYNC_EXT_DATA"; 
+    fetchSpecificationDictionary = {}; 
+    name = ExtData; 
+    primaryKeyAttributes = (dID); 
+    relationships = (
+        {
+            destination = ExtBase; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bID; sourceAttribute = baseID; }); 
+            name = extBase; 
+        }, 
+        {
+            destination = ExtSystem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sysID; }); 
+            name = extSystem; 
+        }
+    ); 
+}

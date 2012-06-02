@@ -1,0 +1,79 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Form : WOForm {
+  style = "border:1px solid #999999;";
+}
+
+Title : WOString {
+  value = title;
+}
+StudentTitle : WOString {
+  value = session.strings.RujelInterfaces_Names.Student.this;
+  escapeHTML = false;
+}
+
+StudentName : PersonDisplay {
+  person = student;
+  first = 2;
+  last = 2;
+  second = 0;
+  startWithLast = true;
+}
+
+OptionNone : WORadioButton {
+  name = "state";
+  value = 0;
+  selection = state;
+  onchange = "form.customDecision.disabled = this.checked;form.customDecision.style.backgroundColor='#ccc';";
+  disabled = disable.none;
+}
+
+OptionDefault : WORadioButton {
+  name = "state";
+  value = 1;
+  selection = state;
+  onchange = "form.customDecision.disabled = this.checked;form.customDecision.style.backgroundColor='#ccc';";
+  disabled = disable.default;
+}
+
+OptionCustom : WORadioButton {
+  name = "state";
+  value = 2;
+  selection = state;
+  onchange = "form.customDecision.disabled = !this.checked;form.customDecision.focus();form.customDecision.style.backgroundColor='';";
+  disabled = disable.custom;
+}
+
+NoneTitle : WOString {
+  value = session.strings.RujelComplete_Complete.noDecision;
+  valueWhenEmpty = "none";
+  escapeHTML = false;
+}
+
+DefaultValue : WOString {
+	value = dfltDecision;
+}
+
+CustomValue : WOText {
+  value = decision;
+  rows = 2;
+  cols = 30;
+  name = "customDecision";
+  disabled = disable.text;
+  onload = "alert(form.state);";
+}
+
+
+Save : WOSubmitButton {
+  value = session.strings.Reusables_Strings.uiElements.Submit;
+  action = save;
+  disabled = disable.save;
+}

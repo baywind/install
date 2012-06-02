@@ -19,6 +19,8 @@
 		<dict>
 			<key>skip</key>
 			<string>false</string>
+			<key>dbName</key>
+			<string>VseLists</string>
 		</dict>
 		<key>VseobuchSimple</key>
 		<dict>

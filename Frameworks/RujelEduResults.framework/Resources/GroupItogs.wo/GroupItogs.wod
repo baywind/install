@@ -75,3 +75,13 @@ StudentTitle : WOString {
 ShowCycle : WOConditional {
   condition = itogsList.count;
 }
+
+Pedsovet : WOString {
+  value = pedsovet.title;
+  escapeHTML = false;
+}
+
+Decision : WOString {
+  value = stItem.pedsovet;
+  escapeHTML = false;
+}

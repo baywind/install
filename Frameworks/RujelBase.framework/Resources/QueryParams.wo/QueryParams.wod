@@ -13,6 +13,7 @@ ParamContainer : OnClickContainer {
   title = item.hover;
   align = "right";
   onclick = "toggleParam(this);";
+  disabled = ^noToggle;
 }
 
 Parameter : Parameter {
@@ -21,6 +22,7 @@ Parameter : Parameter {
   editingContext = ^ec;
   editor = ^editor;
   useAjax = ^useAjax;
+  disabled = ^disabled;
 }
 
 ShowParam : WOConditional {

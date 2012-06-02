@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "BASE_IDENTIFIER"; 
+            name = baseID; 
+            prototypeName = string; 
+        }, 
+        {allowsNull = N; columnName = "B_ID"; name = bID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "SYSTEM_ID"; 
+            name = sysID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "BASE_TITLE"; name = title; prototypeName = string; }
+    ); 
+    attributesUsedForLocking = (baseID, sysID, title); 
+    className = "net.rujel.io.ExtBase"; 
+    classProperties = (baseID, extData, extSystem, syncIndexes, title); 
+    externalName = "SYNC_EXT_BASE"; 
+    fetchSpecificationDictionary = {}; 
+    name = ExtBase; 
+    primaryKeyAttributes = (bID); 
+    relationships = (
+        {
+            destination = ExtData; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = baseID; sourceAttribute = bID; }); 
+            name = extData; 
+        }, 
+        {
+            destination = ExtSystem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sysID; }); 
+            name = extSystem; 
+        }, 
+        {
+            destination = SyncIndex; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = baseID; sourceAttribute = bID; }); 
+            name = syncIndexes; 
+        }
+    ); 
+}

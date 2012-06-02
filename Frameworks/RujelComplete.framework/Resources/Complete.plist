@@ -38,6 +38,18 @@
 	<string>Всего групп</string>
 	<key>students</key>
 	<string>Учащихся</string>
+	<key>pedsovetSection</key>
+	<string>Настройка графы "Решение педсовета"</string>
+	<key>pedsovet</key>
+	<string>Решение педсовета</string>
+	<key>decision</key>
+	<string>переведен в %d класс</string>
+	<key>pedsovetTitle</key>
+	<string>Заголовок решения</string>
+	<key>decisionTitle</key>
+	<string>Типовое решение</string>
+	<key>noDecision</key>
+	<string>Нет решения</string>
 	<key>messages</key>
 	<dict>
 		<key>closingTitle</key>

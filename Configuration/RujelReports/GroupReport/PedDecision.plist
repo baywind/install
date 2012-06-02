@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>active</key>
+	<false/>
+	<key>title</key>
+	<string>Решение педсовета</string>
+	<key>entity</key>
+	<string>PedDecision</string>
+	<key>id</key>
+	<string>decision</string>
+	<key>sort</key>
+	<string>80</string>
+	<key>value</key>
+	<string>$preloadedValue.decision</string>
+	<key>style</key>
+	<string>$preloadedValue.style</string>
+	<key>preload</key>
+	<dict>
+		<key>cacheResult</key>
+		<false/>
+		<key>className</key>
+		<string>net.rujel.complete.DecisionInspector</string>
+		<key>methodName</key>
+		<string>dictForGroup</string>
+		<key>paramClasses</key>
+		<array>
+			<string>net.rujel.interfaces.EduGroup</string>
+		</array>
+		<key>paramValues</key>
+		<array>
+			<string>.</string>
+		</array>
+	</dict>
+	<key>popup</key>
+	<true/>
+	<key>onclick</key>
+	<string>$session.ajaxPopup</string>
+	<key>nextPage</key>
+	<string>DecisionInspector</string>
+	<key>pageParams</key>
+	<dict>
+		<key>student</key>
+		<string>.</string>
+		<key>eduGroup</key>
+		<string>^commonParam</string>
+	</dict>
+</dict>
+</plist>

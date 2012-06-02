@@ -2,5 +2,9 @@
     EOModelVersion = "2.1"; 
     adaptorName = JDBC; 
     connectionDictionary = {URL = "jdbc:mysql://localhost/Complete"; username = rujel; }; 
-    entities = ({className = "net.rujel.complete.Completion"; name = Completion; }); 
+    entities = (
+        {className = "net.rujel.complete.Completion"; name = Completion; }, 
+        {className = "net.rujel.complete.PedDecision"; name = PedDecision; }
+    ); 
+    userInfo = {framework = RujelComplete; schemaVersion = {number = 1; title = "0.9.4"; }; }; 
 }

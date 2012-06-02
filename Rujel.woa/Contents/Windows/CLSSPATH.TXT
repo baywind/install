@@ -19,6 +19,7 @@ LOCALROOT\Library\Frameworks\RujelCurriculum.framework\Resources\Java\rujelcurri
 LOCALROOT\Library\Frameworks\RujelEduPlan.framework\Resources\Java\rujeleduplan.jar
 LOCALROOT\Library\Frameworks\RujelEduResults.framework\Resources\Java\rujeleduresults.jar
 LOCALROOT\Library\Frameworks\RujelInterfaces.framework\Resources\Java\rujelinterfaces.jar
+LOCALROOT\Library\Frameworks\RujelIO.framework\Resources\Java\rujelio.jar
 LOCALROOT\Library\Frameworks\RujelReports.framework\Resources\Java\rujelreports.jar
 LOCALROOT\Library\Frameworks\RujelStats.framework\Resources\Java\rujelstats.jar
 LOCALROOT\Library\Frameworks\RujelUsers.framework\Resources\Java\rujelusers.jar

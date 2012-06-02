@@ -215,6 +215,10 @@ RefreshPage : WOActionURL {
   action = refreshPage;
 }
 
+ActionUrl : WOActionURL {
+  action = ^action;
+}
+
 ExtraResources : WORepetition {
   list = ^resources;
   item = item;
@@ -225,4 +229,8 @@ ExtraRsrc : ResourceLink {
   cssLink = item.cssLink;
   jsLink = item.jsLink;
   languagesList = item.languagesList;
+}
+
+HasAction : WOConditional {
+  condition = hasAction;
 }

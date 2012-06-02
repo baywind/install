@@ -4,6 +4,8 @@ TextField : WOTextField {
   onkeypress = onkeypress;
   formatter = formatter;
   style = "text-align:center;";
+  class = valueOf.paramsDict.itemDict.styleClass;
+  disabled = ^disabled;
 }
 
 SecondField : WOTextField {
@@ -28,6 +30,7 @@ PopUpButton : WOPopUpButton {
   item = item;
   displayString = valueOf.item.itemDict.displayString;
   noSelectionString = valueOf.paramsDict.itemDict.noSelectionString;
+  disabled = ^disabled;
 }
 
 IsPopup : WOConditional {
@@ -39,6 +42,7 @@ PopupCaller : OnClickContainer {
   onclick = "getElementsByTagName('input')[0].click();";
   class = paramClass;
   style = paramStyle;
+  disabled = ^disabled;
 }
 
 PopupPresenter : DisplayAny {
@@ -96,4 +100,18 @@ AddParam : OnClickContainer {
   class = plusClass;
   onclick = "getElementsByTagName('input')[0].click();";
   style = "color:green;padding:1px 4px;border:1px solid green;";
+  disabled = ^disabled;
+}
+
+ShowLongtext : WOConditional {
+  condition = itemDict.rows;
+}
+
+LongText : WOText {
+  value = value;
+  cols = valueOf.paramsDict.itemDict.fieldSize;
+  rows = valueOf.paramsDict.itemDict.rows;
+  formatter = formatter;
+  class = valueOf.paramsDict.itemDict.styleClass;
+  disabled = ^disabled;
 }

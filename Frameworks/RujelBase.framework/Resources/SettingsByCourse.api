@@ -7,7 +7,7 @@
             <unbound name="item"/>
         </validation>
         <binding name="base"/>
-        <binding name="baseKey"/>
+        <binding name="key"/>
         <binding name="access"/>
         <binding name="ec"/>
     <validation message="'item' must be bound to a settable value">

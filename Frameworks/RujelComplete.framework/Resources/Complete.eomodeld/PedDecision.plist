@@ -1,0 +1,20 @@
+{
+    attributes = (
+        {columnName = "DECISION_FLAGS"; name = flags; prototypeName = byte; }, 
+        {allowsNull = N; columnName = "P_ID"; name = pID; prototypeName = short; }, 
+        {columnName = "SPEC_DECISION"; name = specDecision; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = "STUDENT_ID"; 
+            name = studentID; 
+            prototypeName = integer; 
+        }
+    ); 
+    attributesUsedForLocking = (flags, specDecision); 
+    className = "net.rujel.complete.PedDecision"; 
+    classProperties = (flags, specDecision); 
+    externalName = "CPT_PED_DECISION"; 
+    fetchSpecificationDictionary = {}; 
+    name = PedDecision; 
+    primaryKeyAttributes = (pID); 
+}

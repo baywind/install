@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Import</key>
+	<string>Импорт</string>
+	<key>Export</key>
+	<string>Экспорт</string>
+	<key>ImportExport</key>
+	<string>Импорт/Экспорт</string>
+	<key>ImportDescr</key>
+	<string>Загрузка данных в систему</string>
+	<key>ExportDescr</key>
+	<string>Выгрузка данных из системы</string>
+	<key>exportParams</key>
+	<dict>
+		<key>title</key>
+		<string>Параметры выгрузки</string>
+		<key>extraData</key>
+		<string>Дополнительные параметры</string>
+		<key>saveParams</key>
+		<string>Сохранить параметры</string>
+	</dict>
+	<key>messages</key>
+	<dict>
+		<key>noMatch</key>
+		<string>Введенные пароли не совпадают</string>
+		<key>enterPassword</key>
+		<string>Пожалуйста введите пароль</string>
+	</dict>
+	<key>ioRegime</key>
+	<dict>
+		<key>title</key>
+		<string>Импорт/Экспорт</string>
+		<key>hover</key>
+		<string>загрузка и выгрузка информации в разных форматах</string>
+		<key>component</key>
+		<string>ImportExport</string>
+		<key>group</key>
+		<string>other</string>
+		<key>sort</key>
+		<string>60</string>
+	</dict>
+</dict>
+</plist>

@@ -9,7 +9,8 @@ Cross : WOImage {
 }
 
 Title : WOString {
-  value = session.strings.Strings.PrintReport.reportSettings;
+  value = reporter.title;
+  valueWhenEmpty = session.strings.Strings.PrintReport.reportSettings;
   escapeHTML = false;
 }
 
@@ -43,7 +44,7 @@ ItemTitle : WOString {
 
 SubmitButton : WOSubmitButton {
   action = submit;
-  value = application.strings.Reusables_Strings.uiElements.Submit;
+  value = submitTitle;
   style = "margin:1ex;";
 }
 
@@ -206,4 +207,8 @@ PopUp : WOPopUpButton {
 
 CanSort : WOConditional {
   condition = item.sort;
+}
+
+HasOptions : WOConditional {
+  condition = reports.count;
 }

@@ -4,7 +4,7 @@ Title : WOString {
 }
 
 Form : WOForm {
-  style = "margin:1em;float:left;max-width:60%;";
+  style = "margin:1ex; padding: 1ex; border: 1px solid #666666;";
 }
 
 WriteCourses : WOCheckBox {
@@ -91,4 +91,61 @@ SubmitForced : WOSubmitButton {
   action = force;
   value = session.strings.Reusables_Strings.uiElements.Submit;
   disabled = session.readAccess._edit.CompleteSetup;
+}
+
+Pedsovet : WOForm {
+  style = "margin:1ex; padding: 1ex; border: 1px solid #666666;";
+}
+
+PedsovetTitle : SettingsByCourse {
+  item = item;
+  base = pedsovet;
+  ec = ^ec;
+  hideEmptyDetails = false;
+  access = session.readAccess.FLAGS.CompleteSetup;
+  title = session.strings.RujelComplete_Complete.pedsovetTitle;
+}
+
+TitleText : WOText {
+  value = pedsovet.textValue;
+  rows = 2;
+  cols = 40;
+}
+
+DecisionText : WOText {
+  value = decision.textValue;
+  rows = 2;
+  cols = 40;
+}
+
+ByCourseText : WOText {
+  value = item.textValue;
+  rows = 2;
+  cols = 40;
+}
+PedsovetDecision : SettingsByCourse {
+  item = item;
+  base = decision;
+  ec = ^ec;
+  hideEmptyDetails = false;
+  access = session.readAccess.FLAGS.CompleteSetup;
+  title = session.strings.RujelComplete_Complete.decisionTitle;
+}
+
+SavePedsovet : WOSubmitButton {
+  action = ^ec.saveChanges;
+}
+
+ByCourse : WOConditional {
+  condition = item;
+}
+
+GlobalSetting : WOConditional {
+  condition = item;
+  negate = true;
+}
+
+PedsovetSection : WOString {
+  value = session.strings.RujelComplete_Complete.pedsovetSection;
+  escapeHTML = false;
 }

@@ -13,5 +13,6 @@
     <binding name="onLoad"/>
     <binding name="onUnload"/>
     <binding name="resources"/>
+    <binding defaults="Actions" name="action"/>
     </wo>
 </wodefinitions>

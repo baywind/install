@@ -270,6 +270,16 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>исключить помеченные "не выставлять"</string>
+			<key>qualifierFormat</key>
+			<string>flags &lt; 64</string>
+			<key>title</key>
+			<string>Только активные</string>
+			<key>active</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>у прогноза есть бонус</string>
 			<key>qualifierFormat</key>
 			<string>bonus != nil</string>

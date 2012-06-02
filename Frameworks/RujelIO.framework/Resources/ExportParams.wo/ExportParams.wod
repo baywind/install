@@ -1,0 +1,135 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Form: WOForm {
+  style = "border: 1px solid #999999;";
+  multipleSubmit = true;
+}
+
+Title : WOString {
+  value = plist.title;
+  escapeHTML = false;
+}
+
+Description : WOString {
+  value = plist.description;
+  escapeHTML = false;
+}
+
+
+ExtraData : QueryParams {
+  list = plist.extData;
+  params = extraData;
+  ec = ec;
+  useAjax = true;
+  noToggle = true;
+  disabled = access._edit;
+}
+
+Submit : WOSubmitButton {
+  value = session.strings.RujelIO_ImportExport.Export;
+  action = export;
+  disabled = access._create;
+}
+
+Save : WOSubmitButton {
+  value = session.strings.RujelIO_ImportExport.exportParams.saveParams;
+  action = save;
+  id = "saveParams";
+  style = dataStyle;
+}
+
+Indexes : WORepetition {
+  list = plist.indexes;
+  item = indexItem;
+}
+
+IndexTitle : WOString {
+  value = indexItem.title;
+  escapeHTML = false;
+}
+
+LocalTitle : WOString {
+  value = indexItem.localTitle;
+  escapeHTML = false;
+}
+
+ExternalTitle : WOString {
+  value = indexItem.externalTitle;
+  escapeHTML = false;
+}
+
+IndexRows : WORepetition {
+  list = localList;
+  item = item1;
+}
+
+LocalValue : WOString {
+  value = value1;
+  escapeHTML = false;
+}
+
+ExtValue : WOPopUpButton {
+  list = indexItem.external;
+  item = item2;
+  displayString = value2;
+  selection = selection;
+  onchange = "showObj(saveParams);";
+  disabled = access._edit;
+}
+
+SectionPopup : WOPopUpButton {
+  list = session.strings.sections.list;
+  item = item1;
+  displayString = item1.value;
+  selection = section;
+  noSelectionString = session.strings.RujelEduPlan_EduPlan.sections.showAll;
+}
+
+ShowSections : WOConditional {
+  condition = showSections;
+}
+
+ExtraContainer : WOGenericContainer {
+  elementName = "tbody";
+  style = dataStyle;
+  id = "extraData";
+}
+
+IndexContainer : WOGenericContainer {
+  elementName = "tbody";
+  style = indexStyle;
+  id = indexItem.name;
+}
+
+IndexToggle : OnClickContainer {
+  elementName = "tr";
+  onclick = toggleIndex;
+  class = "backfield2";
+}
+
+ExtraToggle : OnClickContainer {
+  elementName = "tr";
+  onclick = "setDisplay('saveParams',toggleObj('extraData').style.display);";
+  class = "backfield2";
+}
+
+ExtraTitle : WOString {
+  value = session.strings.RujelIO_ImportExport.exportParams.extraData;
+  escapeHTML = false;
+}
+
+SectionTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.eduSection;
+}
+
+ShowSave : WOConditional {
+  condition = access.edit;
+}
