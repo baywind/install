@@ -12,11 +12,5 @@
         {className = EOGenericRecord; name = PlanDetail; }, 
         {className = EOGenericRecord; name = PlanHours; }
     ); 
-    userInfo = {
-        schemaVersion = {
-        	number = 2;
-        	title = "0.9.4";
-        };
-	    framework = "RujelEduPlan";
-    }; 
+    userInfo = {framework = RujelEduPlan; schemaVersion = {number = 3; title = "0.9.5"; }; }; 
 }

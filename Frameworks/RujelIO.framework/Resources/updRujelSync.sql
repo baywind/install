@@ -1,0 +1,17 @@
+-- Schema updates for RujelSync model --
+
+-- v2 (0.9.4) --
+
+CREATE TABLE IF NOT EXISTS SYNC_EVENT (
+  E_ID integer NOT NULL,
+  SYSTEM_ID smallint NOT NULL,
+  BASE_ID smallint,
+  EXEC_TIME DATETIME NOT NULL,
+  SYNC_ENTITY varchar(28),
+  EVENT_RESULT smallint NOT NULL,
+  PRIMARY KEY (E_ID),
+  INDEX (SYSTEM_ID, BASE_ID)
+) ENGINE=InnoDB;
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('RujelSync',2,'0.9.4');

@@ -21,6 +21,13 @@ function createIndex() {
 		aform.submit();
 	}
 }
+function addCriterion(src) {
+	//showObj('newRow');
+	document.getElementById('newRow').style.visibility='';
+	//document.getElementById('critSave').style.visibility='visible';
+	hideObj(src);
+	document.getElementById('newCr').checked = true;
+}
 </script>
 <h1><webobject name = "Title"/></h1>
 <webobject name = "Tabs"/>
@@ -42,7 +49,9 @@ function createIndex() {
 	<webobject name = "ByCourse"></webobject>
 	<div>&nbsp;</div>
 	</td>
-	<td rowspan = "2" width = "50%" align = "center"><webobject name = "CriteriaAvailable">
+	<td rowspan = "2" width = "50%" align = "center"><webobject name = "FreeCriteria">
+		<div style = "margin:2em;font-size:150%;"><webobject name = "FreeCritDescription"/></div>
+	</webobject><webobject name = "CriteriaAvailable">
 	<webobject name = "SetForm">
 	<table><thead>
 		<tr><th colspan = "2"><webobject name = "CurrName"/></th></tr>
@@ -53,49 +62,55 @@ function createIndex() {
 		<td align = "left"><webobject name = "FixWeightTitle"/></td></tr>
 		<tr class = "gerade"><td><webobject name = "FixList"/></td>
 		<td align = "left"><webobject name = "FixListTitle"/></td></tr>
-		<tr class = "gerade"><td><webobject name = "OnlyCriter"/></td>
-		<td align = "left"><webobject name = "OnlyCriterTitle"/></td></tr>
 		<tr class = "gerade"><td colspan = "2" align = "center">
 			<webobject name = "SetComment"/><br/>
-			<webobject name = "Save"/>
 		</td></tr>
-	</tbody></table></webobject>
-	<hr width = "80%"/><webobject name = "CriteriaForm">
+	</tbody></table>
+	<hr width = "80%"/>
 	<table><thead>
-		<tr><th><webobject name = "CritNameTitle"/></th>
-			<th>max</th>
-			<th><webobject name = "CritWeightTitle"/></th><webobject name = "CanIndex">
-			<th><webobject name = "CritIndexTitle"/></th></webobject>
-			<th><webobject name = "CommentTitle"/></th></tr>
+		<tr><td align = "center"><webobject name = "CriterlessToggle"/></td>
+			<th colspan = "3" align = "left"><webobject name = "NoCriterTitle"/></th></tr>
+		<webobject name = "NoCrRow"><td colspan = "4">
+		<webobject name = "CritIndexTitle"/>: <webobject name = "CanIndex">
+		<webobject name = "NoCritIndexer"/>
+		</webobject><webobject name = "NoCritMax"/></td></webobject>
+		<tr><td align = "center"><webobject name = "CriteriaToggle"/></td>
+			<th colspan = "3" align = "left"><webobject name = "CriteriaTitle"/></th></tr>
 	</thead>
-	<tfoot><webobject name = "CanCreateCrit">
-	<webobject name = "AddCriterion">
-		<td colspan = "5" align = "center"><webobject name = "AddTitle"/></td>
-	</webobject><tr class = "selection" id = "newRow" style = "display:none;">
-		<td align = "center"><webobject name = "NewCritTitle"/></td>
-		<td align = "center"><webobject name = "NewCritMax"/></td>
-		<td align = "center"><webobject name = "NewCritWeight"/></td><webobject name = "CanIndex">
-		<td><webobject name = "NewCritIndexer"/></td></webobject>
-		<td><webobject name = "NewCritComment"/></td>
-	</tr></webobject><webobject name = "SaveCritRow">
+	<tfoot><tr>
 		<td colspan = "5" align = "center"><webobject name = "SaveCriter"/>
 			<webobject name = "UnselectCriter"/>
-			<webobject name = "DeleteCriter"/></td>
-	</webobject>
+			<webobject name = "DeleteCriter"><webobject name = "Cross"/></webobject></td>
+	</tr>
 	</tfoot>
-	<tbody><webobject name = "Criteria"><webobject name = "CriterRow">
+	<webobject name = "CritTable">
+		<tr><th><webobject name = "CritNameTitle"/></th>
+			<th><webobject name = "CritWeightTitle"/></th>
+			<th><webobject name = "CritIndexTitle"/></th>
+			<th><webobject name = "CommentTitle"/></th></tr>
+	<webobject name = "Criteria"><webobject name = "CriterRow">
 		<td align = "center"><webobject name = "CritTitle"/></td>
-		<td align = "center"><webobject name = "CritMax"/></td>
-		<td align = "center"><webobject name = "CritWeight"/></td><webobject name = "CanIndex">
-		<td><webobject name = "CritIndex"/></td></webobject>
+		<td align = "center"><webobject name = "CritWeight"/></td>
+		<td><webobject name = "CritIndex"/></td>
 		<td><webobject name = "CritComment"/></td>
 	</webobject><webobject name = "EditCriter"><tr class = "selection">
 		<td align = "center"><webobject name = "EditCritTitle"/></td>
-		<td align = "center"><webobject name = "EditCritMax"/></td>
-		<td align = "center"><webobject name = "EditCritWeight"/></td><webobject name = "CanIndex">
-		<td><webobject name = "EditCritIndexer"/></td></webobject>
+		<td align = "center"><webobject name = "EditCritWeight"/></td>
+		<td><webobject name = "CanIndex"><webobject name = "EditCritIndexer"/></webobject>
+			<webobject name = "EditCritMax"/></td>
 		<td><webobject name = "EditCritComment"/></td></tr></webobject>
-	</webobject></tbody></table></webobject></webobject></td>
+	</webobject><webobject name = "CanCreateCrit">
+	<webobject name = "AddCriterion">
+		<td colspan = "5" align = "center"><webobject name = "AddTitle"/></td>
+	</webobject><tr class = "selection" id = "newRow" style = "visibility:hidden;">
+		<td align = "center"><webobject name = "AddNew"/>
+		<webobject name = "NewCritTitle"/></td>
+		<td align = "center"><webobject name = "NewCritWeight"/></td>
+		<td><webobject name = "CanIndex"><webobject name = "NewCritIndexer"/></webobject>
+			<webobject name = "NewCritMax"/></td>
+		<td><webobject name = "NewCritComment"/></td>
+	</tr></webobject></webobject>
+</table></webobject></webobject></td>
 </webobject><webobject name = "Regime1">
 <td  class = "backfield2 selectionBorder" style = "border-style:none solid;min-width:8em;" align = "center">
 <webobject name = "IndicesForm">

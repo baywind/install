@@ -291,6 +291,30 @@
 			<key>messageSent</key>
 			<string>Сообщение отправлено</string>
 		</dict>
+		<key>printReport</key>
+		<dict>
+			<key>sort</key>
+			<string>40</string>
+			<key>settingBase</key>
+			<string>reportCourses</string>
+			<key>title</key>
+			<string>Распечатка</string>
+			<key>description</key>
+			<string>Какие курсы включаются в распечатку (и рассылку) текущих оценок.</string>
+			<key>instructions</key>
+			<string>В распечатку(рассылку) включается информация о курсах, попадающих в категории, напротив которых стоит галка. &lt;br/&gt;Курсы из неотмеченных категорий из распечатки исключаются.</string>
+			<key>settingTitle</key>
+			<string>вкл</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>defaultValue</key>
+				<true/>
+				<key>boolean</key>
+				<string>number</string>
+			</dict>
+		</dict>
 		<key>title</key>
 		<string>Центр управления</string>
 		<key>color</key>

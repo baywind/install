@@ -101,6 +101,16 @@
 					<key>active</key>
 					<false/>
 				</dict>
+				<dict>
+					<key>id</key>
+					<string>hidden</string>
+					<key>title</key>
+					<string>Показывать скрытые</string>
+					<key>hover</key>
+					<string>включить информацию о курсах, которые настроены, как неотображаемые</string>
+					<key>active</key>
+					<false/>
+				</dict>
 			</array>
 		</dict>
 		<dict>

@@ -1,0 +1,44 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "BASE_ID"; 
+            name = baseID; 
+            prototypeName = short; 
+        }, 
+        {allowsNull = N; columnName = "E_ID"; name = eID; prototypeName = integer; }, 
+        {columnName = "EXEC_TIME"; name = execTime; prototypeName = datetime; }, 
+        {columnName = "EVENT_RESULT"; name = result; prototypeName = short; }, 
+        {columnName = "SYNC_ENTITY"; name = syncEntity; prototypeName = word; }, 
+        {
+            allowsNull = N; 
+            columnName = "SYSTEM_ID"; 
+            name = sysID; 
+            prototypeName = short; 
+        }
+    ); 
+    attributesUsedForLocking = (execTime, result, syncEntity, sysID); 
+    className = "net.rujel.io.SyncEvent"; 
+    classProperties = (execTime, extBase, extSystem, result, syncEntity); 
+    externalName = "SYNC_EVENT"; 
+    fetchSpecificationDictionary = {}; 
+    name = SyncEvent; 
+    primaryKeyAttributes = (eID); 
+    relationships = (
+        {
+            destination = ExtBase; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = bID; sourceAttribute = baseID; }); 
+            name = extBase; 
+        }, 
+        {
+            destination = ExtSystem; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sysID; }); 
+            name = extSystem; 
+        }
+    ); 
+}

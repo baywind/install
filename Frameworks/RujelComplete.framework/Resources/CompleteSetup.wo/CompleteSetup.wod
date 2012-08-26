@@ -110,18 +110,21 @@ TitleText : WOText {
   value = pedsovet.textValue;
   rows = 2;
   cols = 40;
+  disabled = session.readAccess._edit.CompleteSetup;
 }
 
 DecisionText : WOText {
   value = decision.textValue;
   rows = 2;
   cols = 40;
+  disabled = session.readAccess._edit.CompleteSetup;
 }
 
 ByCourseText : WOText {
   value = item.textValue;
   rows = 2;
   cols = 40;
+  disabled = session.readAccess._edit.CompleteSetup;
 }
 PedsovetDecision : SettingsByCourse {
   item = item;
@@ -134,6 +137,8 @@ PedsovetDecision : SettingsByCourse {
 
 SavePedsovet : WOSubmitButton {
   action = ^ec.saveChanges;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+  disabled = session.readAccess._edit.CompleteSetup;
 }
 
 ByCourse : WOConditional {

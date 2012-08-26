@@ -25,6 +25,7 @@ Subject : WOTextField {
   style = "width:98%;";
   name = "subject";
   disabled = cantChange;
+  maxlength = 28;
 }
 
 FullSubjectName : WOString {

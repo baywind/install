@@ -670,10 +670,7 @@
                 }; 
             }; 
         }; 
-        framework = "RujelCriterial";
-        schemaVersion = {
-        	number = 1;
-        	title = "0.9.4";
-        };
+        framework = RujelCriterial; 
+        schemaVersion = {number = 2; title = "0.9.5"; }; 
     }; 
 }

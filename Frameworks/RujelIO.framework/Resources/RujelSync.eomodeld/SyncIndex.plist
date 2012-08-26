@@ -51,6 +51,7 @@
             name = extSystem; 
         }, 
         {
+            deleteRule = EODeleteRuleCascade; 
             destination = IndexMatch; 
             isToMany = Y; 
             joinSemantic = EOInnerJoin; 

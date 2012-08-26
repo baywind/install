@@ -14,6 +14,8 @@
 	<string>30</string>
 	<key>_mimeType</key>
 	<string>text/csv</string>
+	<key>filename</key>
+	<string>persdata.csv</string>
 	<key>filext</key>
 	<string>csv</string>
 	<key>transform</key>
@@ -68,8 +70,6 @@
 			<string>Идентификатор школы в ОЭЖД</string>
 			<key>fieldSize</key>
 			<integer>40</integer>
-			<key>qualifierSelector</key>
-			<string>like</string>
 			<key>styleClass</key>
 			<string>required</string>
 			<key>required</key>
@@ -84,8 +84,6 @@
 			<string>Название школы</string>
 			<key>fieldSize</key>
 			<integer>40</integer>
-			<key>qualifierSelector</key>
-			<string>like</string>
 			<key>styleClass</key>
 			<string>required</string>
 			<key>required</key>
@@ -104,8 +102,6 @@
 			<integer>40</integer>
 			<key>rows</key>
 			<integer>2</integer>
-			<key>qualifierSelector</key>
-			<string>like</string>
 			<key>active</key>
 			<true/>
 		</dict>
@@ -116,8 +112,6 @@
 			<string>Округ города</string>
 			<key>fieldSize</key>
 			<integer>40</integer>
-			<key>qualifierSelector</key>
-			<string>like</string>
 			<key>styleClass</key>
 			<string>required</string>
 			<key>required</key>
@@ -137,7 +131,7 @@
 				<key>settingsBase</key>
 				<string>ItogMark</string>
 				<key>reindex</key>
-				<string>periods</string>
+				<string>regimes</string>
 			</dict>
 		</array>
 		<key>person</key>
@@ -147,7 +141,7 @@
 	<array>
 		<dict>
 			<key>name</key>
-			<string>periods</string>
+			<string>regimes</string>
 			<key>inOptions</key>
 			<false/>
 			<key>title</key>
@@ -196,8 +190,450 @@
 			<array>
 				<string>Четверти</string>
 				<string>Триместры</string>
-				<string>Полугодия</string>
+				<string>Семестры</string>
+				<string>Модули</string>
 			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>eduAreas</string>
+			<key>inOptions</key>
+			<false/>
+			<key>title</key>
+			<string>Образовательные области</string>
+			<key>localTitle</key>
+			<string>в РУЖЭЛЬ</string>
+			<key>externalTitle</key>
+			<string>в ОЭЖД</string>
+			<key>local</key>
+			<dict>
+				<key>entityName</key>
+				<string>SubjectArea</string>
+				<key>titlePath</key>
+				<string>areaName</string>
+				<key>sorter</key>
+				<array>
+					<string>num</string>
+				</array>
+			</dict>
+			<key>external</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>Прочее</string>
+					<key>value</key>
+					<string>Common</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Филология</string>
+					<key>value</key>
+					<string>Philology</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Математика</string>
+					<key>value</key>
+					<string>Mathematics</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Обществознание</string>
+					<key>value</key>
+					<string>SocialStudies</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Естествознание</string>
+					<key>value</key>
+					<string>NaturalScience</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Искусство</string>
+					<key>value</key>
+					<string>Art</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Физическая культура</string>
+					<key>value</key>
+					<string>PhysicalCulture</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Технология</string>
+					<key>value</key>
+					<string>Technology</string>
+				</dict>
+			</array>
+			<key>defaultValue</key>
+			<string>ASSUME</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>workType</string>
+			<key>inOptions</key>
+			<false/>
+			<key>title</key>
+			<string>Типы работ</string>
+			<key>localTitle</key>
+			<string>в РУЖЭЛЬ</string>
+			<key>externalTitle</key>
+			<string>в ОЭЖД</string>
+			<key>local</key>
+			<dict>
+				<key>entityName</key>
+				<string>WorkType</string>
+				<key>titlePath</key>
+				<string>typeName</string>
+				<key>sorter</key>
+				<array>
+					<string>sort</string>
+				</array>
+			</dict>
+			<key>external</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>= Не определено =</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Домашнее задание</string>
+					<key>value</key>
+					<string>LessonHomework</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Самостоятельная работа</string>
+					<key>value</key>
+					<string>LessonSelfWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Контрольная</string>
+					<key>value</key>
+					<string>LessonControlWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Сочинение</string>
+					<key>value</key>
+					<string>LessonComposition</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Доклад</string>
+					<key>value</key>
+					<string>LessonReport</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Реферат</string>
+					<key>value</key>
+					<string>LessonEssay</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Практическая работа</string>
+					<key>value</key>
+					<string>LessonPracticalWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Административная контрольная работа</string>
+					<key>value</key>
+					<string>LessonAdministrativeControlWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Итоговая контрольная работа</string>
+					<key>value</key>
+					<string>LessonFinalControlWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Диктант</string>
+					<key>value</key>
+					<string>LessonDictation</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Контрольный диктант</string>
+					<key>value</key>
+					<string>LessonControlDictation</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Итоговый контрольный диктант</string>
+					<key>value</key>
+					<string>LessonFinalControlDictation</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Изложение</string>
+					<key>value</key>
+					<string>LessonExposition</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Изложение с элементами сочинения</string>
+					<key>value</key>
+					<string>LessonExpositionComposition</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Работа с контурными картами</string>
+					<key>value</key>
+					<string>LessonContourMapWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Диагностический срез</string>
+					<key>value</key>
+					<string>LessonDiagnosticCut</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Коллоквиум</string>
+					<key>value</key>
+					<string>LessonColloquium</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Проект</string>
+					<key>value</key>
+					<string>LessonProject</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Тест</string>
+					<key>value</key>
+					<string>LessonTest</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Зачет</string>
+					<key>value</key>
+					<string>LessonExamination</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Наизусть</string>
+					<key>value</key>
+					<string>LessonByHeart</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Лабораторная работа</string>
+					<key>value</key>
+					<string>LessonLaboratoryWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Рабочая тетрадь</string>
+					<key>value</key>
+					<string>LessonCopyBook</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Опрос</string>
+					<key>value</key>
+					<string>LessonPoll</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Портфолио</string>
+					<key>value</key>
+					<string>LessonPortfolio</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Математический диктант</string>
+					<key>value</key>
+					<string>LessonMathematicDictation</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Недельное задание</string>
+					<key>value</key>
+					<string>LessonWeekWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Тематическая работа на уроке</string>
+					<key>value</key>
+					<string>LessonThematicWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Аудирование</string>
+					<key>value</key>
+					<string>LessonAudition</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Диалогическая речь</string>
+					<key>value</key>
+					<string>LessonDialogicSpeech</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Устное изложение</string>
+					<key>value</key>
+					<string>LessonOralExposition</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Устное сочинение</string>
+					<key>value</key>
+					<string>LessonOralEssay</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Чтение вслух</string>
+					<key>value</key>
+					<string>LessonReadingAloud</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Чтение молча</string>
+					<key>value</key>
+					<string>LessonReadingSilently</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Говорение</string>
+					<key>value</key>
+					<string>LessonTalking</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Чтение</string>
+					<key>value</key>
+					<string>LessonReading</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Письмо</string>
+					<key>value</key>
+					<string>LessonWriting</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Языковая тема</string>
+					<key>value</key>
+					<string>LessonLinguisticTheme</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Списывание</string>
+					<key>value</key>
+					<string>LessonWritingOut</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Экскурсия</string>
+					<key>value</key>
+					<string>LessonExcursion</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Ответ у доски</string>
+					<key>value</key>
+					<string>LessonAnswer</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Пересказ</string>
+					<key>value</key>
+					<string>LessonRetelling</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Правила</string>
+					<key>value</key>
+					<string>LessonRules</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Письмо по памяти</string>
+					<key>value</key>
+					<string>LessonWritingByMem</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Грамматика, Лексика</string>
+					<key>value</key>
+					<string>LessonGrammar</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Устный счет</string>
+					<key>value</key>
+					<string>LessonMentalArithmetic</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Словарный диктант</string>
+					<key>value</key>
+					<string>LessonWordDictation</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Нормативы</string>
+					<key>value</key>
+					<string>LessonQualifyingStandards</string>
+				</dict>			
+				<dict>
+					<key>title</key>
+					<string>Государственная итоговая аттестация</string>
+					<key>value</key>
+					<string>LessonFinalGovernmentCertification</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Оценка за период</string>
+					<key>value</key>
+					<string>LessonHomework</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Экзамен</string>
+					<key>value</key>
+					<string>LessonSelfWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Результирующая оценка за период</string>
+					<key>value</key>
+					<string>LessonControlWork</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Итоговая</string>
+					<key>value</key>
+					<string>LessonComposition</string>
+				</dict>
+			</array>
+			<key>_defaultValue</key>
+			<string>ASSUME</string>
+			<key>defaultValue</key>
+			<dict>
+					<key>className</key>
+					<string>net.rujel.dnevnik.Sychroniser</string>
+					<key>methodName</key>
+					<string>assumeWorkType</string>
+					<key>paramClasses</key>
+					<array>
+						<string>net.rujel.criterial.WorkType</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string>.</string>
+					</array>
+			</dict>
 		</dict>
 	</array>
 </dict>

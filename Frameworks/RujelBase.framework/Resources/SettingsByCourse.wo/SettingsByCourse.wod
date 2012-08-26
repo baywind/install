@@ -136,8 +136,7 @@ Title : WOString {
 }
 
 ShowBase : WOConditional {
-  condition = ^selector;
-  negate = true;
+  condition = showBase;
 }
 
 TestSort : OnClickContainer {

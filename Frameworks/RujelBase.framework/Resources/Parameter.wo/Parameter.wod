@@ -55,13 +55,8 @@ IsRange : WOConditional {
   condition = itemDict.secondSelector;
 }
 
-Sign : WOString {
-  value = sign;
-  escapeHTML = false;
-}
-
-Sign2 : WOString {
-  value = sign2;
+Signs : WOString {
+  value = signs;
   escapeHTML = false;
 }
 
@@ -113,5 +108,14 @@ LongText : WOText {
   rows = valueOf.paramsDict.itemDict.rows;
   formatter = formatter;
   class = valueOf.paramsDict.itemDict.styleClass;
+  disabled = ^disabled;
+}
+
+IsBoolean : WOConditional {
+  condition = itemDict.boolean;
+}
+
+CheckBox : WOCheckBox {
+  checked = value;
   disabled = ^disabled;
 }

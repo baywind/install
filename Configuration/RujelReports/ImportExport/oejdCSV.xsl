@@ -79,7 +79,7 @@
 	<xsl:param name="groupData"/>
 	<xsl:value-of select="$schoolData"/><xsl:value-of select="$groupData"/>
 	<xsl:call-template name="person">
-		<xsl:with-param name="pers" select="$persdata/person[@id=current()/@id]"/>
+		<xsl:with-param name="pers" select="$persdata/person[@id=current()/@id and @type='student']"/>
 	</xsl:call-template>
 	<xsl:call-template name="guid">
 		<xsl:with-param name="syncdata" select="../syncdata"/>
@@ -91,7 +91,7 @@
 	<xsl:param name="groupData"/>
 	<xsl:value-of select="$schoolData"/><xsl:value-of select="$groupData"/>
 	<xsl:call-template name="person">
-		<xsl:with-param name="pers" select="$persdata/person[@id=current()/@id]"/>
+		<xsl:with-param name="pers" select="$persdata/person[@id=current()/@id and @type='teacher']"/>
 	</xsl:call-template>
 	<xsl:call-template name="guid">
 		<xsl:with-param name="syncdata" select="../syncdata"/>

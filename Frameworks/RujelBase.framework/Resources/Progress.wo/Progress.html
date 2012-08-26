@@ -1,0 +1,23 @@
+<div id = "ajaxPopup" class = "backfield1" style = "width:520px;">
+<webobject name = "Cross"/>
+<div style = "border: 1px solid #999999;width:510px;padding:5px;text-align:left;">
+	<h3><webobject name = "Title"/></h3>
+	<div style = "border:1px solid #999999;height:20px;width:500px;" class = "highlight">
+		<webobject name = "BarCell"></webobject></div>
+	<div><webobject name = "Stage"/></div>
+	<webobject name = "Messages"/>
+	<webobject name = "HasException">
+	<div class = "highlight">
+	<webobject name = "ErrorText"/>
+	</div>
+	</webobject>
+</div>
+</div>
+<webobject name = "NoException">
+<script>
+function refreshProgress() {
+	ajaxPopupAction('<webobject name = "ActionUrl"/>',document.getElementById('ajaxPopup'));
+}
+setTimeout(refreshProgress,2000);
+</script>
+</webobject>

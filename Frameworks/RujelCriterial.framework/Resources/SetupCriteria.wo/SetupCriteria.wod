@@ -41,10 +41,6 @@ CritTitle : WOString {
   value = item.title;
 }
 
-CritMax : WOString {
-  value = item.dfltMax;
-}
-
 CritWeight : WOString {
   value = item.dfltWeight;
 }
@@ -74,11 +70,22 @@ EditCritTitle : WOTextField {
 
 EditCritMax : WOTextField {
   value = item.dfltMax;
-  style = "width:3ex;text-align:center;";
+  style = maxFieldStyle;
   maxlength = 5;
   numberformat = "0";
   onkeypress = "return isNumberInput(event);";
   class = "checkChanges";
+  name = "crMax";
+}
+
+NoCritMax : WOTextField {
+  value = noCriter.dfltMax;
+  style = maxFieldStyle;
+  maxlength = 5;
+  numberformat = "0";
+  onkeypress = "return isNumberInput(event);";
+  class = "checkChanges";
+  name = "nocrMax";
 }
 
 EditCritWeight : WOTextField {
@@ -93,15 +100,10 @@ EditCritWeight : WOTextField {
 EditCritComment : WOText {
   value = item.comment;
   rows = 2;
+  cols = 15;
 }
 CanCreateCrit : WOConditional {
   condition = canAddCriter;
-}
-
-SaveCritRow : WOGenericContainer {
-  elementName = "tr";
-  style = styleCritSave;
-  id = "critSave";
 }
 
 SaveCriter : WOSubmitButton {
@@ -109,13 +111,19 @@ SaveCriter : WOSubmitButton {
   value = session.strings.Reusables_Strings.uiElements.Save;
 }
 
-DeleteCriter : WOGenericElement {
-  elementName = "input";
-  type = "button";
+DeleteCriter : OnClickContainer {
+  elementName = "span";
   invokeAction = deleteCriter;
   onclick = session.confirmMessage;
-  omitTags = cantDeleteCriter;
-  value = session.strings.Reusables_Strings.uiElements.Delete;
+  hide = cantDeleteCriter;
+  title = session.strings.Reusables_Strings.uiElements.Delete;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 20;
+  width = 20;
 }
 
 UnselectCriter : WOGenericElement {
@@ -141,6 +149,7 @@ NewCritMax : WOTextField {
   numberformat = "0";
   onkeypress = "return isNumberInput(event);";
   class = "checkChanges";
+  name = "newMax";
 }
 
 NewCritWeight : WOTextField {
@@ -155,14 +164,12 @@ NewCritWeight : WOTextField {
 NewCritComment : WOText {
   value = critDict.comment;
   rows = 2;
+  cols = 20;
 }
 AddCriterion : OnClickContainer {
   elementName = "tr";
-  onclick = "showObj('newRow');document.getElementById('critSave').style.visibility='visible';hideObj(this);";
+  onclick = "addCriterion(this)";
   class = "orange";
-}
-
-CriteriaForm : WOForm {
 }
 
 CreatePrompt : WOString {
@@ -257,6 +264,7 @@ SetComment : WOText {
   rows = 2;
   style = "width:98%;";
   title = session.strings.Reusables_Strings.dataTypes.comment;
+  class = "titled";
 }
 
 FixMax : WOCheckBox {
@@ -286,15 +294,6 @@ FixListTitle : WOString {
   escapeHTML = false;
 }
 
-OnlyCriter : WOCheckBox {
-  checked = currSet.namedFlags.onlyCriter;
-}
-
-OnlyCriterTitle : WOString {
-  value = ^dict.flags.onlyCriter;
-  escapeHTML = false;
-}
-
 Save : WOSubmitButton {
   action = save;
   value = session.strings.Reusables_Strings.uiElements.Save;
@@ -309,27 +308,39 @@ CanIndex : WOConditional {
 }
 
 CritIndex : WOString {
-  value = item.indexer.title;
+  value = presentMax;
+  escapeHTML = false;
 }
 
 EditCritIndexer : WOPopUpButton {
   list = indices;
-  noSelectionString = "--===--";
+  noSelectionString = "max:";
   selection = item.indexer;
   item = item2;
-  displayString = item2.title; 
+  displayString = item2.title;
+  onchange = "form.crMax.style.visibility=(selectedIndex>0)?'hidden':'';";
+}
+
+NoCritIndexer : WOPopUpButton {
+  list = indices;
+  noSelectionString = " max:";
+  selection = noCriter.indexer;
+  item = item2;
+  displayString = item2.title;
+  onchange = "form.nocrMax.style.visibility=(selectedIndex>0)?'hidden':'';";
 }
 
 NewCritIndexer : WOPopUpButton {
   list = indices;
-  noSelectionString = "--===--";
+  noSelectionString = "max:";
   selection = critDict.indexer;
   item = item2;
-  displayString = item2.title; 
+  displayString = item2.title;
+  onchange = "form.newMax.style.visibility=(selectedIndex>0)?'hidden':'';";
 }
 
 CritIndexTitle : WOString {
-  value = session.strings.RujelBase_Base.Indexer.indexer;
+  value = presentTitle;
 }
 
 Tabs : Tabs {
@@ -413,3 +424,50 @@ IndexerEditTitle : WOString {
 NoIndexTitle : WOString {
   value = ^dict.noIndex;
 }
+
+CriterlessToggle : WOCheckBox {
+  checked = hasCriterless;
+  onchange = "document.getElementById('noCrRow').style.visibility=(checked)?'visible':'hidden';";
+}
+
+CriteriaToggle : WOCheckBox {
+  checked = hasCriteria;
+  onchange = "document.getElementById('crList').style.visibility=(checked)?'visible':'hidden';";
+}
+NoCriterTitle : WOString {
+  value = ^dict.noCriter;
+}
+
+CriteriaTitle : WOString {
+  value = ^dict.criteria;
+}
+
+FreeCriteria : WOConditional {
+  condition = currSet.editingContext;
+  negate = true;
+}
+
+FreeCritDescription : WOString {
+  value = ^dict.freeCritDescription;
+  valueWhenEmpty = "free criteria";
+}
+
+CritTable : WOGenericContainer {
+  elementName = "tbody";
+  id = "crList";
+  style = crListStyle;
+}
+
+NoCrRow : WOGenericContainer {
+  elementName = "tr";
+  class = "ungerade";
+  id = "noCrRow";
+  style = noCritStyle;
+}
+
+AddNew : WOCheckBox {
+  checked = critDict.newCr;
+  id = 'newCr';
+  style = "display:none;";
+}
+

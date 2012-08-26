@@ -27,5 +27,6 @@
             <unsettable name="rowspan"/>
         </validation>
     <binding name="title"/>
+    <binding defaults="Boolean" name="create"/>
     </wo>
 </wodefinitions>

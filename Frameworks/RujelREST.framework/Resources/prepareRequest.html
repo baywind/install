@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>Request agregate</title>
+	<script type = "text/javascript" >
+		function onLoad() {
+			u = window.location.toString();
+			if(u.charAt(u.length -1) != '/') {
+				form = document.forms[0];
+				form.action = u + "/itogMark";
+			}
+		}
+	</script>
+</head>
+<body onload = "onLoad()">
+<h1>Request Agregate</h1>
+<form action = "itogMark" method="get" target = "_blank">
+	<table align = "left">
+	<tr><th align="right">eduYear:</th>
+		<td><input name = "eduYear" type="text" value = "2011" size = "20"/></td></tr>
+	<tr><th align="right">perNum:</th>
+		<td><input name = "perNum" type="text" value = "1" size = "20"/></td></tr>
+	<tr><th align="right">perCount:</th>
+		<td><input name = "perCount" type="text" value = "1" size = "20"/></td></tr>
+	<tr><th align="right">grade:</th>
+		<td><input name = "grade" type="text" size = "20"/></td></tr>
+	</table>
+	<br clear = "left"/>
+	<table align = "left">
+	<tbody>
+	<tr><th align="right">_grp1:</th>
+		<td><input name = "_grp1" type="text" value = "grade,student" size = "40"/></td></tr>
+	<tr><th align="right">_agr1:</th>
+		<td><input name = "_agr1" type="text" value = "c0,c2,c3,c4,c5,cn" size = "40"/></td></tr>
+	</tbody><tbody>
+	<tr><th align="right">c0:</th>
+		<td><input name = "c0" type="text" value = "count(mark='н/а')" size = "40"/></td></tr>
+	<tr><th align="right">c2:</th>
+		<td><input name = "c2" type="text" value = "count(mark='2')" size = "40"/></td></tr>
+	<tr><th align="right">c3:</th>
+		<td><input name = "c3" type="text" value = "count(mark='3')" size = "40"/></td></tr>
+	<tr><th align="right">c4:</th>
+		<td><input name = "c4" type="text" value = "count(mark='4')" size = "40"/></td></tr>
+	<tr><th align="right">c5:</th>
+		<td><input name = "c5" type="text" value = "count(mark='5')" size = "40"/></td></tr>
+	<tr><th align="right">cn:</th>
+		<td><input name = "cn" type="text" value = "count(mark='осв')" size = "40"/></td></tr>
+	</tbody></table>
+	<table align = "left">
+	<tbody>
+	<tr><th align="right">_grp2:</th>
+		<td><input name = "_grp2" type="text" value = "grade" size = "80"/></td></tr>
+	<tr><th align="right">_agr2:</th>
+		<td><input name = "_agr2" type="text" size = "80"
+			value = "total,fine,exl,good,one4,one3,na,bad,bad1,bad2,worse,cnSum"/></td></tr>
+	</tbody><tbody>
+	<tr><th align="right">total:</th>
+		<td><input name = "total" type="text" value = "count(*)" size = "80"/></td></tr>
+	<tr><th align="right">fine:</th>
+		<td><input name = "fine" type="text" value = "count(c0=0&amp;c2=0)" size = "80"/></td></tr>
+	<tr><th align="right">exl:</th>
+		<td><input name = "exl" type="text" value = "count(c0=0&amp;c2=0&amp;c3=0&amp;c4=0)" size = "80"/></td></tr>
+	<tr><th align="right">good:</th>
+		<td><input name = "good" type="text" value = "count(c0=0&amp;c2=0&amp;c3=0)" size = "80"/></td></tr>
+	<tr><th align="right">one4:</th>
+		<td><input name = "one4" type="text" value = "count(c0=0&amp;c2=0&amp;c3=0&amp;c4=1)" size = "80"/></td></tr>
+	<tr><th align="right">one3:</th>
+		<td><input name = "one3" type="text" value = "count(c0=0&amp;c2=0&amp;c3=1)" size = "80"/></td></tr>
+	<tr><th align="right">na:</th>
+		<td><input name = "na" type="text" value = "count(c0>0)" size = "80"/></td></tr>
+	<tr><th align="right">bad:</th>
+		<td><input name = "bad" type="text" value = "count(c0=0&amp;c2>0)" size = "80"/></td></tr>
+	<tr><th align="right">bad1:</th>
+		<td><input name = "bad1" type="text" value = "count(c0=0&amp;c2=1)" size = "80"/></td></tr>
+	<tr><th align="right">bad2:</th>
+		<td><input name = "bad2" type="text" value = "count(c0=0&amp;c2=2)" size = "80"/></td></tr>
+	<tr><th align="right">worse:</th>
+		<td><input name = "worse" type="text" value = "count(c0=0&amp;c2>2)" size = "80"/></td></tr>
+	<tr><th align="right">cnSum:</th>
+		<td><input name = "cnSum" type="text" value = "sum(cn,*)" size = "80"/></td></tr>
+	</tbody>
+	</table>
+	<br clear = "all"/>
+	<input type = "submit" value = "Send request"/>
+</form>
+<hr/>
+<table align = "center" border = "1">
+	<thead>
+	<tr><th colspan = "2">ItogMark</th><td>Итоговая оценка</td></tr>
+	</thead><tbody>
+	<tr><td style = "font-weight:bold">subject</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Наименование предмета, за который выставлена оценка</td></tr>
+	<tr><td style = "font-weight:bold">grade</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Поток (цифра класса)</td></tr>
+	<tr><td style = "font-weight:bold">eduYear</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
+	<tr><td style = "font-weight:bold">perNum</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Номер учебного периода, за который выставлена оценка. (Для финального итога — 0)</td></tr>
+	<tr><td style = "font-weight:bold">perCount</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Количество периодов данного типа в году <br/>(4-четверти, 1-уч.год, для экзамена и финального итога — 0)</td></tr>
+	<tr><td style = "font-weight:bold">mark</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Оценка в том виде, как выставлена. Это текстовое поле: допустимы 'н/а', 'осв'</td></tr>
+	<tr><td style = "font-weight:bold">value</td>
+		<td style = "font-style:italic;">decimal</td>
+		<td>Численное выражение оценки в долях от 1. (4 из 5 = 0.8)</td></tr>
+	<tr><td style = "font-weight:bold">student</td>
+		<td style = "font-style:italic;">Student</td>
+		<td>Учащийся, получивший оценку.</td></tr>
+	<tr><td style = "font-weight:bold">course</td>
+		<td style = "font-style:italic;">Course</td>
+		<td>Курс, за который получена оценка. (доступно только для оценок текущего уч. года)</td></tr>
+	<tr><td colspan = "3">Атрибуты student и course содержат сложные объекты, соответствующего типа.<br/>
+		Через объекты можно обратиться к их характеристикам. (Для курса — класс, предмет, учитель)<br/>
+		В прототипе пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
+	</tbody>
+</table>
+</body>
+</html>

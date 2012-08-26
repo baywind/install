@@ -33,6 +33,25 @@
 			<key>changes</key>
 			<string>false</string>
 		</dict>
+		<key>autoitog</key>
+		<dict>
+			<key>timeout</key>
+			<true/>
+			<key>active</key>
+			<true/>
+		</dict>
+		<key>lessons</key>
+		<dict>
+			<key>active</key>
+			<true/>
+		</dict>
+		<key>marks</key>
+		<dict>
+			<key>level</key>
+			<integer>1</integer>
+			<key>active</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>options</key>
 	<array>

@@ -233,7 +233,7 @@ CompulsoryTitle : WOString {
 }
 
 NoCritAllowed : WOConditional {
-  condition = critSet.namedFlags.onlyCriter;
+  condition = critSet.onlyCriter;
   negate = true;
 }
 

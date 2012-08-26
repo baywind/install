@@ -1,0 +1,47 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Title : WOString {
+  value = title;
+}
+
+BarCell : WOGenericContainer {
+  elementName = "div";
+  style = progress;
+  class = "orange";
+}
+
+Stage : WOString {
+  value = stage;
+  escapeHTML = false;
+}
+
+ActionUrl : WOActionURL {
+  action = refresh;
+}
+
+HasException : WOConditional {
+  condition = error;
+}
+
+ErrorText : WOString {
+  value = error;
+  escapeHTML = false;
+}
+
+NoException : WOConditional {
+  condition = error;
+  negate = true;
+}
+
+Messages : WOString {
+	value = messages;
+	escapeHTML = false;
+}

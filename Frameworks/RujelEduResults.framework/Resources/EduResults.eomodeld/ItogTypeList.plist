@@ -13,11 +13,17 @@
             columnName = "ITOG_TYPE"; 
             name = typeID; 
             prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MARK_INDEX"; 
+            name = indexID; 
+            prototypeName = short; 
         }
     ); 
     attributesUsedForLocking = (listName, typeID); 
     className = EOGenericRecord; 
-    classProperties = (itogType, listName); 
+    classProperties = (itogType, listName, markIndex); 
     externalName = "ITOG_TYPE_LIST"; 
     fetchSpecificationDictionary = {}; 
     name = ItogTypeList; 
@@ -30,6 +36,13 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = tID; sourceAttribute = typeID; }); 
             name = itogType; 
+        }, 
+        {
+            destination = Indexer; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = indID; sourceAttribute = indexID; }); 
+            name = markIndex; 
         }
     ); 
 }

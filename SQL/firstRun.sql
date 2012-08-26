@@ -1,8 +1,8 @@
 SET NAMES utf8;
 GRANT ALL PRIVILEGES ON `Rujel%`.* TO 'rujel'@'localhost' IDENTIFIED BY 'RUJELpassword';
 
-CREATE DATABASE RujelYear2011 DEFAULT CHARACTER SET utf8;
-USE RujelYear2011;
+CREATE DATABASE RujelYear2012 DEFAULT CHARACTER SET utf8;
+USE RujelYear2012;
 
 CREATE TABLE SCHEMA_VERSION (
   MODEL_NAME varchar(255),
@@ -12,9 +12,9 @@ CREATE TABLE SCHEMA_VERSION (
 );
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
-  VALUES ('BaseYearly',2,'0.9.4'),('Curriculum',2,'0.9.4'),('EduPlanYearly',2,'0.9.4'),
+  VALUES ('BaseYearly',2,'0.9.4'),('Curriculum',2,'0.9.4'),('EduPlanYearly',3,'0.9.5'),
   ('Schedule',2,'0.9.4'),('MarkArchive',2,'0.9.4'),('Stats',1,'0.9.4'),('AutoItog',1,'0.9.4'),
-  ('Criterial',1,'0.9.4');
+  ('Criterial',2,'0.9.5');
 
 CREATE TABLE AI_AUTOITOG (
   AI_ID smallint NOT NULL,
@@ -307,6 +307,12 @@ CREATE TABLE CR_CRIT_SET (
   PRIMARY KEY (CS_ID)
 ) ENGINE=InnoDB;
 
+/* 5-балльная система оценивания */
+INSERT INTO CR_CRIT_SET (CS_ID,SET_NAME,CRITER_FLAGS)
+VALUES (1,"5 баллов",1);
+INSERT INTO CR_CRITERION (CRIT_SET,CRITER_NUM,DFLT_MAX)
+VALUES (1,0,5);
+
 CREATE TABLE CR_WORK_TYPE (
   WT_ID smallint NOT NULL,
   SORT_NUM smallint NOT NULL,
@@ -449,6 +455,7 @@ CREATE TABLE PL_EDU_PERIOD (
   DATE_END date NOT NULL,
   SHORT_TITLE varchar(9) NOT NULL,
   FULL_NAME varchar(28),
+  ITOG_ID smallint,
   PRIMARY KEY (P_ID)
 ) ENGINE=InnoDB;
 
@@ -463,15 +470,15 @@ CREATE TABLE PL_HOLIDAY (
 
 /* Каникулы и праздники */
 INSERT INTO PL_HOLIDAY (H_ID, HOLIDAY_NAME, DATE_BEGIN, DATE_END) VALUES
-(1,'Осенние каникулы','2011-11-01','2011-11-07'),
-(2,'День народного единства','2011-11-04','2011-11-04'),
-(3,'Зимние каникулы','2011-12-29','2012-01-10'),
-(4,'День защитника отечества','2012-02-23','2012-02-23'),
-(5,'Международный женский день','2012-03-08','2012-03-08'),
-(6,'Весенние каникулы','2012-03-22','2012-03-28'),
-(7,'День весны и труда','2012-05-01','2012-05-01'),
-(8,'День Победы','2012-05-09','2012-05-09'),
-(9,'День России','2012-06-12','2012-06-12');
+(1,'Осенние каникулы','2012-11-01','2012-11-07'),
+(2,'День народного единства','2012-11-04','2012-11-04'),
+(3,'Зимние каникулы','2012-12-29','2013-01-10'),
+(4,'День защитника отечества','2013-02-23','2013-02-23'),
+(5,'Международный женский день','2013-03-08','2013-03-08'),
+(6,'Весенние каникулы','2013-03-22','2013-03-28'),
+(7,'День весны и труда','2013-05-01','2013-05-01'),
+(8,'День Победы','2013-05-09','2013-05-09'),
+(9,'День России','2013-06-12','2013-06-12');
 
 
 CREATE TABLE PL_HOURS (
@@ -596,7 +603,7 @@ CREATE TABLE SCHEMA_VERSION (
 );
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
-  VALUES ('EduPlanModel',1,'0.9');
+  VALUES ('EduPlanModel',1,'0.9'),('EduResults',2,'0.9.5');
 
 CREATE TABLE BASE_EDU_CYCLE (
   C_ID smallint NOT NULL,
@@ -669,6 +676,7 @@ CREATE TABLE ITOG_TYPE_LIST (
   TL_ID mediumint NOT NULL,
   LIST_NAME varchar(28) NOT NULL,
   ITOG_TYPE smallint NOT NULL,
+  MARK_INDEX smallint,
   PRIMARY KEY (TL_ID)
 ) ENGINE=InnoDB;
 

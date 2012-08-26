@@ -37,6 +37,7 @@ Submit : WOSubmitButton {
   value = session.strings.RujelIO_ImportExport.Export;
   action = export;
   disabled = access._create;
+  onclick = "return ajaxPost(this);";
 }
 
 Save : WOSubmitButton {

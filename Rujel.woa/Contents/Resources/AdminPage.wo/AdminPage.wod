@@ -3,6 +3,7 @@ PageWrapper : PageWrapper {
   resourcesFramework = currModule.framework;
   cssResource = currModule.cssResource;
   scriptResource = currModule.scriptResource;
+  hasChanges = ec.hasChanges;
 }
 
 Title : WOString {
@@ -30,5 +31,52 @@ ModuleComponent : WOSwitchComponent {
 }
 
 ModuleIsSelected : WOConditional {
-  condition = currModule;
+  condition = currModule.component;
+}
+
+IsSetting : WOConditional {
+  condition = currModule.settingBase;
+}
+
+SettingsByCourse : SettingsByCourse {
+  item = item;
+  key = currModule.settingBase;
+  create = true;
+  ec = ec;
+  hideEmptyDetails = false;
+  numericValue = session.eduYear;
+  title = currModule.settingTitle;
+}
+
+TextParam : Parameter {
+  attribute = "textValue";
+  itemDict = currModule.textValue;
+  paramsDict = item;
+}
+
+NumParam : Parameter {
+  attribute = "numericValue";
+  itemDict = currModule.numericValue;
+  paramsDict = item;
+}
+
+SettingTitle : WOString {
+  value = currModule.title;
+}
+
+Description : WOString {
+  value = currModule.description;
+}
+
+Form : WOForm {
+}
+
+Instructions : WOString {
+  value = currModule.instructions;
+  escapeHTML = false;
+}
+
+Submit : WOSubmitButton {
+  action = saveSetting;
+  value = session.strings.Reusables_Strings.uiElements.Save;
 }

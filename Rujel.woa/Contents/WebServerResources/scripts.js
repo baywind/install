@@ -413,6 +413,12 @@ function onReadyStateChange(pos) {
 	}*/
 	container.innerHTML = xmlHttp.responseText;
 	analyse(container);
+	scripts = container.getElementsByTagName("script");
+	if(scripts != null) {
+		for(var i=0; i<scripts.length; i++) {
+			eval(scripts[i].innerHTML);
+		}
+	}
 	cancelLoading();
 	if(pos != null) {
 		positionPopup(container.firstChild,pos);
