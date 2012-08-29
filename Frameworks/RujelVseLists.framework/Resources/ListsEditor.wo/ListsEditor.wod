@@ -109,7 +109,6 @@ AddPerson : OnClickContainer {
   invokeAction = addPerson;
   class = "green";
   style = "float:left;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;margin:4px;";
-  hide = hideAddButton;
 }
 
 Form : WOForm {
@@ -292,11 +291,16 @@ Import : OnClickContainer {
   elementName = "div";
   invokeAction = importFile;
   onclick = session.ajaxPopup;
-  hide = hideAddButton;
+  hide = mode;
   class = "orange";
   style = "float:right;padding:0px 4px;border:double 3px #ff9933;margin:4px;";
 }
 
 ImportTitle : WOString {
   value = session.strings.RujelBase_Base.import.Import;
+}
+
+ShowAdd : WOConditional {
+  condition = hideAddButton;
+  negate = true;
 }

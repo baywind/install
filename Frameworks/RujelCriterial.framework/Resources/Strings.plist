@@ -172,7 +172,7 @@
 		<string>нельзя зафиксировать максимумы, пока они не указаны во всех критериях</string>
 		<key>weightsRequired</key>
 		<string>нельзя зафиксировать веса, пока они не указаны во всех критериях</string>
-		<key>critersRequired</key>
+		<key>critersDescRequired</key>
 		<string>Набор критериев должен содержать хотя бы один критерий, либо допускать бескритериальные оценки.</string>
 		<key>indexIsUsed</key>
 		<string>Это представление используется в критериях %d раз</string>
