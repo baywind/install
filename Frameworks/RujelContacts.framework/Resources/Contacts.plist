@@ -30,6 +30,8 @@
 		<string>Нет адресов для выбранных учащихся</string>
 		<key>noAddressesFor</key>
 		<string>У следующих учащихся не указаны адреса</string>
+		<key>teacherSign</key>
+		<string>Преподаватель по предмету &quot;%s&quot;</string>
 	</dict>
 	<key>broadcastInitiated</key>
 	<string>Письма добавлены в очередь на отправку</string>

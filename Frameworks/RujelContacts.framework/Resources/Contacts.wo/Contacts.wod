@@ -10,10 +10,6 @@ ClassTitle: WOString {
 	value = application.strings.RujelInterfaces_Names.EduGroup.this;
 }
 
-Conditional1: WOConditional {
-	condition = currPerson;
-}
-
 Conditional2: WOConditional {
 	condition = currClass;
 }

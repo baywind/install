@@ -166,6 +166,20 @@
 			</dict>
 			<dict>
 				<key>attribute</key>
+				<string>comment</string>
+				<key>cellClass</key>
+				<string>highlight</string>
+				<key>cellStyle</key>
+				<string>border: solid 1px #cc9966; margin: 1px 2px; padding: 0px 2px; font-style:italic;</string>
+				<key>qualifierSelector</key>
+				<string>caseInsensitiveLike</string>
+				<key>sort</key>
+				<integer>45</integer>
+				<key>title</key>
+				<string>Комментарий курса</string>
+			</dict>
+			<dict>
+				<key>attribute</key>
 				<string>teacher</string>
 				<key>cellClass</key>
 				<string>female</string>

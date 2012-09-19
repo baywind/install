@@ -172,3 +172,6 @@ CantReadContact : WOConditional {
 HasMessage : WOConditional {
 	condition = message;
 }
+Sign : WOString {
+  value = dict.sign;
+}
