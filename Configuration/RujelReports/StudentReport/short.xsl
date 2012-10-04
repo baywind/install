@@ -82,7 +82,7 @@
 	</xsl:if>
 	<table style="margin-top: 1em; width: 100%;" border="0">
 		<xsl:for-each 
-select="/ejdata/courses/course[eduGroup[@type='full' and @id=$curr-group] or eduGroup/student[@id=$curr-student]]">
+select="/ejdata/courses/course[eduGroup[@type='full' and @id=$curr-group] or eduGroup/student[@id=$curr-student] or containers/descendant::mark[@student=$curr-student]]">
 			<xsl:call-template name="print_course">
 				<xsl:with-param name="stid" select="$curr-student"/>
 			</xsl:call-template>
