@@ -158,8 +158,10 @@ select="container[$lvl > 2 or calc/@compulsory = 'true' or ($lvl = 2 and marks) 
 
 <xsl:template match="container" name = "work">
 	<xsl:param name="stid"/>
-	<xsl:variable name="criteria" select="criteria/criterion[@idx>0]"/>
+	<xsl:variable name="criteria" select="criteria/criterion"/>
 	<xsl:variable name="mark" select="marks/mark[@student=$stid]"/>
+	<xsl:variable name="brace" select="$criteria[@idx > 0] or 
+	(($criteria or $mark/@value) and ($mark/comment or $mark/weblink))"/>
 	<span style="font-family: serif;" class="withWeight">
 		<xsl:attribute name="title">
 			<xsl:value-of select="content"/><xsl:if test="calc/@weight and calc/@weight != 1">
@@ -174,9 +176,10 @@ select="container[$lvl > 2 or calc/@compulsory = 'true' or ($lvl = 2 and marks) 
 		<xsl:if test="task"><xsl:attribute name="onclick">
 			window.open('<xsl:value-of select="task"/>','_blank');
 		</xsl:attribute></xsl:if>
+	<xsl:if test="$brace">[</xsl:if>
 	<xsl:choose>
-		<xsl:when test="$criteria">[<xsl:for-each select="$criteria">
-		<xsl:value-of select="@title"/>:<xsl:choose>
+		<xsl:when test="$criteria"><xsl:for-each select="$criteria">
+		<xsl:if test="current()/@idx > 0"><xsl:value-of select="@title"/>:</xsl:if><xsl:choose>
 					<xsl:when test="$mark/crmark[@criter=current()/@idx]">
 						<xsl:value-of select="$mark/crmark[@criter=current()/@idx]/@value"/>
 						<xsl:if test="$options/marks/hideMax != 'true'">
@@ -194,27 +197,24 @@ select="container[$lvl > 2 or calc/@compulsory = 'true' or ($lvl = 2 and marks) 
 				<xsl:if test="$mark/weblink"><a target = "_blank">
 					<xsl:attribute name="href"><xsl:value-of select="$mark/weblink"/></xsl:attribute>
 					<xsl:text disable-output-escaping="yes">&amp;gt;&amp;gt;</xsl:text>
-				</a></xsl:if>]
+				</a></xsl:if>
 		</xsl:when>
-		<xsl:when test="$mark/@value and ($mark/comment or $mark/weblink)">
-			[<xsl:value-of select="$mark/@value"/>
-			<xsl:text disable-output-escaping="yes">,&amp;nbsp;</xsl:text>
-			<xsl:value-of select="$mark/comment"/>
-				<xsl:if test="$mark/weblink"><a target = "_blank">
-					<xsl:attribute name="href"><xsl:value-of select="$mark/weblink"/></xsl:attribute>
-					<xsl:text disable-output-escaping="yes">&amp;gt;&amp;gt;</xsl:text>
-				</a></xsl:if>]
-		</xsl:when>
-		<xsl:when test="$mark/@value">
+		<xsl:when test="$mark/@value or $mark/comment or $mark/weblink">
 			<xsl:value-of select="$mark/@value"/>
-		</xsl:when>
-		<xsl:when test="$mark/comment">
+			<xsl:if test="$mark/@value and $mark/comment">
+				<xsl:text disable-output-escaping="yes">,&amp;nbsp;</xsl:text>
+			</xsl:if>
 			<xsl:value-of select="$mark/comment"/>
+			<xsl:if test="$mark/weblink"><a target = "_blank">
+				<xsl:attribute name="href"><xsl:value-of select="$mark/weblink"/></xsl:attribute>
+				<xsl:text disable-output-escaping="yes">&amp;gt;&amp;gt;</xsl:text>
+			</a></xsl:if>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:text disable-output-escaping="yes">&amp;oslash;</xsl:text>
 		</xsl:otherwise>
 	</xsl:choose>
+	<xsl:if test="$brace">]</xsl:if>
 	</span>
 </xsl:template>
 
