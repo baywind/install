@@ -4,7 +4,8 @@
 	<h3><webobject name = "Title"/></h3>
 	<div style = "border:1px solid #999999;height:20px;width:500px;" class = "highlight">
 		<webobject name = "BarCell"></webobject></div>
-	<div><webobject name = "Stage"/></div>
+	<div><webobject name = "CanStop"><webobject name = "Stop">Stop</webobject></webobject>
+	<webobject name = "Stage"/></div>
 	<webobject name = "Messages"/>
 	<webobject name = "HasException">
 	<div class = "highlight">
@@ -18,6 +19,6 @@
 function refreshProgress() {
 	ajaxPopupAction('<webobject name = "ActionUrl"/>',document.getElementById('ajaxPopup'));
 }
-setTimeout(refreshProgress,2000);
+var refresh = setTimeout(refreshProgress,2000);
 </script>
 </webobject>

@@ -621,18 +621,13 @@
 			<string>ASSUME</string>
 			<key>defaultValue</key>
 			<dict>
-					<key>className</key>
-					<string>net.rujel.dnevnik.Sychroniser</string>
-					<key>methodName</key>
-					<string>assumeWorkType</string>
-					<key>paramClasses</key>
-					<array>
-						<string>net.rujel.criterial.WorkType</string>
-					</array>
-					<key>paramValues</key>
-					<array>
-						<string>.</string>
-					</array>
+				<key>dict</key>
+				<dict>
+					<key>true</key>
+					<string>LessonHomework</string>
+				</dict>
+				<key>key</key>
+				<string>.namedFlags.hometask</string>
 			</dict>
 		</dict>
 	</array>

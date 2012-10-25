@@ -29,6 +29,7 @@ StudentNameContainer: OnClickContainer {
 	invokeAction = select;
 	onclick = onClick;
 	class = rowStyle;
+	align = "left";
 }
 
 SwitchComponent1: WOSwitchComponent {
