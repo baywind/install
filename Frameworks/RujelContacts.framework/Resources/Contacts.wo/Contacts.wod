@@ -79,3 +79,6 @@ HasSections : WOConditional {
 CurrSection : WOString {
   value = session.state.section.value;
 }
+HasPresenter : WOConditional {
+  condition = presenter;
+}
