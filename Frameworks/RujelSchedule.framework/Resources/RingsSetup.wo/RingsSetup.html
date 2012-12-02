@@ -30,7 +30,12 @@ function formatTime(time) {
 	return result;
 }
 </script>
+<table width = "100%"><tr>
+<td align = "right" valign = "top" width = "15%"><webobject name = "Sections"/></td>
+<td>
 <webobject name = "Form">
+<div style = "font-size:120%;text-decoration:underline;margin-bottom:1ex;">
+	<webobject name = "TitleString"/></div>
 <table align = "center"><thead><tr>
 	<webobject name = "AddRow">+</webobject><webobject name = "CantEdit"><th>##</th></webobject>
 	<th><webobject name = "BeginTitle"/></th>
@@ -40,7 +45,7 @@ function formatTime(time) {
 <webobject name = "CantEdit"><webobject name = "EnterEdit">
 	<td colspan = "3" style = "padding:1ex;"><webobject name = "EditTitle"/></td></webobject>
 	</webobject>
-</tfoot><tbody><webobject name = "CanEdit">
+</tfoot><tbody id = "mainBody"><webobject name = "CanEdit">
 	<tr id = "newRingRow" style = "display:none;" class = "grey">
 		<th>x</th>
 		<td><input type = "text" name = "start" size = "5" value = "00:00"/></td>
@@ -62,5 +67,7 @@ function formatTime(time) {
 			<td><webobject name = "LessonStart"/></td>
 			<td><webobject name = "LessonEnd"/></td></webobject>
 		</tr></webobject>
-</tbody></table>
+</tbody>
+</table>
 </webobject>
+</td></tr></table>

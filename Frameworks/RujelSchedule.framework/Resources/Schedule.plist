@@ -20,6 +20,14 @@
 	<string>Ожидаемые измения в расписании</string>
 	<key>messageAddition</key>
 	<string>Обратите внимание на изменения в расписании</string>
+	<key>isGlobal</key>
+	<string>Общее расписание звонков</string>
+	<key>useGlobal</key>
+	<string>Используется общее расписание</string>
+	<key>isLocal</key>
+	<string>Расписание для отделения</string>
+	<key>makeLocal</key>
+	<string>Создание расписания для отделения</string>
 	<key>dashboard</key>
 	<dict>
 		<key>title</key>

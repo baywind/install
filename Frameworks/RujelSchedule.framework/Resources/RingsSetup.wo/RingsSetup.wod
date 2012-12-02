@@ -84,3 +84,17 @@ Submit : WOSubmitButton {
 EditTitle : WOString {
   value = session.strings.Reusables_Strings.uiElements.Edit;
 }
+
+Sections : Tabs {
+  idAttribute = "idx";
+  currTab = session.state.section;
+  tablist = session.strings.sections.list;
+  titleAttribute = "value";
+  selectAction = updateSection;
+  vertical = true;
+  onClick = session.tryLoad;
+}
+
+TitleString : WOString {
+  value = title;
+}

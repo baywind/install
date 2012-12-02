@@ -98,10 +98,13 @@ function blockCriters(e) {
 
 function setDefaults(flags,weight) {
 	var form = document.getElementById('workForm');
-	if(weight == null)
-		form.weight.value = form.weight.defaultValue;
-	else
-		form.weight.value = weight;
+	if(flags & 1 || form.weight.disabled || form.weight.value == 0 || 
+		 form.weight.value.length == 0 || form.weight.value == form.weight.defaultValue) {
+		if(weight == null)
+			form.weight.value = form.weight.defaultValue;
+		else
+			form.weight.value = weight;
+	}
 	form.weight.disabled = (flags & 1);
 	form.isHometask.checked = (flags & 16);
 	form.isHometask.disabled = (flags & 4);
