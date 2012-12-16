@@ -60,6 +60,7 @@ SwitchComponent1: WOSwitchComponent {
 	person = currPerson;
 	selection = selectedContact;
 	access = access;
+	value = "qqq";
 }
 
 SectionTabs : Tabs {

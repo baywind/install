@@ -303,7 +303,6 @@ SectionTabs : Tabs {
   byAttribute = true;
   tablist = session.strings.sections.list;
   titleAttribute = "value";
-  selectAction = go;
   vertical = true;
   onClick = session.tryLoad;
 }
@@ -319,5 +318,30 @@ NoSection : OnClickContainer {
 All : WOString {
   value = session.strings.RujelBase_Base.noLimit;
   valueWhenEmpty = "all";
+  escapeHTML = false;
+}
+CurrSection : WOString {
+  value = sectionName;
+}
+
+CanHideTabs : WOConditional {
+  condition = sectionName;
+}
+
+HideTabs : OnClickContainer {
+  elementName = "div";
+  onclick = session.tryLoad;
+  invokeAction = updateSectionName;
+  style = "text-align:right;font-size:60%;";
+}
+
+CantHideTabs : WOConditional {
+  condition = sectionName;
+  negate = true;
+}
+
+HideTitle : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Tabel.hide;
+  valueWhenEmpty = "hide";
   escapeHTML = false;
 }

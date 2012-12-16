@@ -5,14 +5,14 @@
 <xsl:strip-space elements="*"/>
 
 <xsl:variable name="persdata" select="document('persdata.xml')/persdata"/>
-<xsl:variable name="info" select="document('options.xml')/options/info"/>
+<xsl:variable name="options" select="document('options.xml')/options"/>
 <xsl:variable name="schoolGUID"><xsl:text>{</xsl:text>
-	<xsl:value-of select="$info/extraData/schoolGUID"/><xsl:text>};</xsl:text>
+	<xsl:value-of select="$options/info/extraData/schoolGUID"/><xsl:text>};</xsl:text>
 </xsl:variable>
 <xsl:variable name="schoolData"><xsl:value-of select="$schoolGUID"/>
-	<xsl:value-of select="$info/extraData/title"/><xsl:text>;</xsl:text>
-	<xsl:value-of select="$info/extraData/fullTitle"/><xsl:text>;</xsl:text>
-	<xsl:value-of select="$info/extraData/district"/><xsl:text>;</xsl:text></xsl:variable>
+	<xsl:value-of select="$options/info/extraData/title"/><xsl:text>;</xsl:text>
+	<xsl:value-of select="$options/info/extraData/fullTitle"/><xsl:text>;</xsl:text>
+	<xsl:value-of select="$options/info/extraData/district"/><xsl:text>;</xsl:text></xsl:variable>
 <xsl:variable name="base" select="/ejdata/@base"/>
 <xsl:variable name="tutors" select="/ejdata/eduGroups/eduGroup/teacher/@id"/>
 
@@ -20,6 +20,7 @@
 <xsl:template match="text()"/>
 
 <xsl:template match="/">
+<xsl:if test="$options/byContact/sendAll"><xsl:value-of select="$options/byContact/sendAll"/></xsl:if>
 <xsl:text>GUID [guid] школы;Название [nvarchar(100)];Полное название (опционально) [nvarchar(500)];</xsl:text>
 <xsl:text>Округ города (nvarchar(300));GUID [guid] класса;GUID [guid] школы;Литера [nvarchar(1)];</xsl:text>
 <xsl:text>Параллель [tinyint];Учебный год [int];Группа отчетных периодов [nvarchar(50)];</xsl:text>
@@ -59,16 +60,30 @@
 	<xsl:call-template name="guid">
 		<xsl:with-param name="syncdata" select="$pers/syncdata"/>
 	</xsl:call-template>
+	<xsl:choose>
+	<xsl:when test="not($options/byContact) or $options/byContact=0 or $pers/@type='teacher' or $pers/syncdata/param[@key='contactFlags']">
 	<xsl:value-of select="$pers/name[@type='first']"/><xsl:text>;</xsl:text>
 	<xsl:value-of select="$pers/name[@type='last']"/><xsl:text>;</xsl:text>
 	<xsl:value-of select="$pers/name[@type='second']"/><xsl:text>;</xsl:text>
 	<xsl:call-template name="formatDate">
 		<xsl:with-param name="date" select="$pers/date[@type='birth']"/>
-	</xsl:call-template><xsl:text>;</xsl:text>
+	</xsl:call-template>
+	</xsl:when>
+	<xsl:otherwise>
+	<xsl:variable name="guid" select="translate($pers/syncdata/extid[@product='GUID' and @base=$base],
+		'0123456789abcdef','иклмнопрстабвгде')"/>
+	<xsl:value-of select="substring($guid,1,8)"/><xsl:text>;</xsl:text>
+	<xsl:value-of select="substring($guid,10,4)"/><xsl:value-of select="substring($guid,15,4)"/>
+	<xsl:value-of select="substring($guid,20,4)"/><xsl:text>;</xsl:text>
+	<xsl:value-of select="substring($guid,25,12)"/><xsl:text>;</xsl:text>
+	</xsl:otherwise>
+	</xsl:choose>
+	<xsl:text>;</xsl:text>
 	<xsl:choose>
 		<xsl:when test="$pers/@sex='male'"><xsl:text>м</xsl:text></xsl:when>
 		<xsl:when test="$pers/@sex='female'"><xsl:text>ж</xsl:text></xsl:when>
-	</xsl:choose><xsl:text>;;</xsl:text>
+	</xsl:choose>
+	<xsl:text>;;</xsl:text>
 	<xsl:call-template name="guid">
 		<xsl:with-param name="syncdata" select="$pers/syncdata"/>
 	</xsl:call-template>
@@ -77,14 +92,16 @@
 
 <xsl:template match="student">
 	<xsl:param name="groupData"/>
+	<xsl:variable name="pers"  select="$persdata/person[@id=current()/@id and @type='student']"/>
+	<xsl:if test="not($options/byContact) or $options/byContact=0 or $options/byContact=2 or $pers/syncdata/param[@key='contactFlags']">
 	<xsl:value-of select="$schoolData"/><xsl:value-of select="$groupData"/>
 	<xsl:call-template name="person">
-		<xsl:with-param name="pers" select="$persdata/person[@id=current()/@id and @type='student']"/>
+		<xsl:with-param name="pers" select="$pers"/>
 	</xsl:call-template>
 	<xsl:call-template name="guid">
 		<xsl:with-param name="syncdata" select="../syncdata"/>
 	</xsl:call-template>
-	<xsl:text>Ученик;;&#xd;&#xa;</xsl:text>
+	<xsl:text>Ученик;;&#xd;&#xa;</xsl:text></xsl:if>
 </xsl:template>
 
 <xsl:template match="teacher">

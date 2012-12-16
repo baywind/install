@@ -1,8 +1,19 @@
 <webobject name = "PageWrapper"><webobject name = "HasSections">
+<webobject name = "CanHideTabs">
+<div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade"
+ onmouseover = "hideObj('SectionTitle');showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle')">
+<div id = "SectionTitle" style = "padding:3px;" class = "green">
+	<webobject name = "CurrSection"/></div>
+<div id = "SectionTabs" style = "display:none;">
+	<webobject name = "SectionTabs"/>
+	<webobject name = "NoSection"><webobject name = "All"/></webobject></div>
+</div></webobject>
+<webobject name = "CantHideTabs">
 <div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade">
 	<webobject name = "SectionTabs"/>
 	<webobject name = "NoSection"><webobject name = "All"/></webobject>
-</div></webobject>
+<webobject name = "HideTabs"><webobject name = "HideTitle"/></webobject></div></webobject>
+</webobject>
 <h1 style = "margin-bottom:10px;"><webobject name = "Title"/></h1>
 <table cellpadding = "4" style = "margin-left:12em;">
 <tr><th align = "right" style = "height:2em;"><webobject name = "MonthTitle"/>:</th>

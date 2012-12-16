@@ -95,6 +95,8 @@
 		<string>добавленные</string>
 		<key>unsubmitted</key>
 		<string>неподтверждённые</string>
+		<key>hide</key>
+		<string>скрыть</string>
 		<key>grandTotal</key>
 		<dict>
 			<key>colspan</key>
