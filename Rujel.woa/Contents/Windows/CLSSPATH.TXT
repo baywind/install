@@ -32,6 +32,7 @@ LOCALROOT\Library\Frameworks\RujelSchedule.framework\Resources\Java\rujelschedul
 LOCALROOT\Library\Frameworks\RujelREST.framework\Resources\Java\rujelrest.jar
 LOCALROOT\Library\Frameworks\DnevnikSync.framework\Resources\Java\dnevniksync.jar
 WOROOT\Library\Frameworks\JavaWOExtensions.framework\Resources\Java\JavaWOExtensions.jar
+WOROOT\Library\Frameworks\JavaWOExtensions.framework\Resources\Java\javawoextensions.jar
 WOROOT\Library\Frameworks\JavaWOExtensions.framework\WebServerResources\Java\JavaWOExtensions.jar
 WOROOT\Library\Frameworks\JavaEOAccess.framework\Resources\Java\javaeoaccess.jar
 WOROOT\Library\Frameworks\JavaEOAccess.framework\WebServerResources\Java\JavaEOAccess.jar
