@@ -1,5 +1,12 @@
-<webobject name="Generic1"><webobject name = "HasTitle">
-<thead><tr><th colspan = "2"><webobject name = "Title"/></th></tr></thead></webobject>
+<webobject name="Generic1">
+<thead><webobject name = "ShowSection"><webobject name = "HasSections">
+<tr><td colspan = "2" style = "padding:3px;margin-top:2px;" align = "center"
+ onmouseover = "hideObj('SectionTitle',true);showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle',true)">
+<div id = "SectionTabs" style = "display:none;position:absolute;">
+<webobject name = "SectionTabs"/></div><span id = "SectionTitle" style = "padding:3px;border:1px solid #999999;" class = "green">
+	<webobject name = "CurrSection"/></span></td></tr></webobject>
+</webobject><webobject name = "HasTitle">
+<tr><th colspan = "2"><webobject name = "Title"/></th></tr></webobject></thead>
 <tbody><webobject name="DynamicTableRow1">
 <td align="right"><webobject name="String1"></webobject></td>
 <td align="left"><webobject name="String2"></webobject></td>

@@ -36,3 +36,25 @@ Title : WOString {
 	valueWhenEmpty = "Class";
 	escapeHTML = false;
 }
+
+ShowSection : WOConditional {
+  condition = ^showSection;
+}
+
+HasSections : WOConditional {
+  condition = session.strings.sections.hasSections;
+}
+
+SectionTabs : Tabs {
+  idAttribute = "idx";
+  currTab = currSection;
+  tablist = session.strings.sections.list;
+  titleAttribute = "value";
+  vertical = true;
+  onClick = session.ajaxPopup;
+  selectAction = context.page;
+}
+
+CurrSection : WOString {
+  value = currSection.value;
+}

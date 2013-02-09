@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output method="text" indent="no" omit-xml-declaration="yes"
-		media-type="text/csv" encoding="windows-1251"/>
+		media-type="text/csv" encoding="UTF-8"/>
 <xsl:strip-space elements="*"/>
 
 <xsl:variable name="persdata" select="document('persdata.xml')/persdata"/>
@@ -20,7 +20,7 @@
 <xsl:template match="text()"/>
 
 <xsl:template match="/">
-<xsl:if test="$options/byContact/sendAll"><xsl:value-of select="$options/byContact/sendAll"/></xsl:if>
+<xsl:text disable-output-escaping="yes">&#xFEFF;</xsl:text><!-- it is BOM  -->
 <xsl:text>GUID [guid] школы;Название [nvarchar(100)];Полное название (опционально) [nvarchar(500)];</xsl:text>
 <xsl:text>Округ города (nvarchar(300));GUID [guid] класса;GUID [guid] школы;Литера [nvarchar(1)];</xsl:text>
 <xsl:text>Параллель [tinyint];Учебный год [int];Группа отчетных периодов [nvarchar(50)];</xsl:text>

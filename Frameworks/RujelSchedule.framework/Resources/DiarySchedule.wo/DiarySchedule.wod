@@ -1,6 +1,7 @@
 Timetable : Timetable {
   ec = ec;
   courses = courses;
+  forCourse = forCourse;
   readOnly = true;
   showSubject = true;
   date = date;

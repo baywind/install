@@ -165,6 +165,8 @@
 					<string>.</string>
 					<key>width</key>
 					<string>100%</string>
+					<key>showSection</key>
+					<true/>
 				</dict>
 				<key>style</key>
 				<string>min-width:8em</string>

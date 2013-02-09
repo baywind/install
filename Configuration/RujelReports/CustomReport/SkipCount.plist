@@ -148,6 +148,8 @@
 					<string>.</string>
 					<key>onClick</key>
 					<string>$session.tryLoad</string>
+					<key>showSection</key>
+					<true/>
 				</dict>
 			</dict>
 			<key>in</key>

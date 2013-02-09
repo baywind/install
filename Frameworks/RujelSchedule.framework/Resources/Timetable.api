@@ -19,5 +19,6 @@
         <validation message="'list' must be bound to a settable value">
             <unsettable name="list"/>
         </validation>
+    <binding name="forCourse"/>
     </wo>
 </wodefinitions>
