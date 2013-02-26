@@ -369,6 +369,8 @@
 			<string>CompareAscending</string>
 			<key>keyPath</key>
 			<string>criterion</string>
+			<key>comparison</key>
+			<string>CompareAscending</string>
 			<key>sort</key>
 			<string>60</string>
 			<key>title</key>
@@ -418,7 +420,7 @@
 			<string>72</string>
 			<key>title</key>
 			<string>Максимум</string>
-			<key>value</key>
+			<key>itemValue</key>
 			<dict>
 				<key>methodName</key>
 				<string>maxForCriter</string>

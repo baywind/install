@@ -21,7 +21,7 @@
 	<string>35</string>
 	<key>title</key>
 	<string>Замененные уроки</string>
-	<key>value</key>
+	<key>itemValue</key>
 	<dict>
 		<key>cacheResult</key>
 		<true/>

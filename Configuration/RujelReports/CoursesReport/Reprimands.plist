@@ -130,7 +130,7 @@
 			<string>10</string>
 		</dict>
 	</array>
-	<key>value</key>
+	<key>itemValue</key>
 	<dict>
 		<key>className</key>
 		<string>net.rujel.curriculum.ReprPlugin</string>

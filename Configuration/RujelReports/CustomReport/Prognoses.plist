@@ -569,7 +569,7 @@
 			<string>65</string>
 			<key>title</key>
 			<string>Выполнено</string>
-			<key>value</key>
+			<key>itemValue</key>
 			<dict>
 				<key>methodName</key>
 				<string>movePointRight</string>

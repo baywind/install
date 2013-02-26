@@ -319,7 +319,7 @@
 			<string>student.person.sex</string>
 			<key>title</key>
 			<string>Пол</string>
-			<key>value</key>
+			<key>itemValue</key>
 			<dict>
 				<key>cacheResult</key>
 				<true/>
@@ -353,7 +353,7 @@
 			<string>student.person.birthDate</string>
 			<key>title</key>
 			<string>Возраст</string>
-			<key>value</key>
+			<key>itemValue</key>
 			<dict>
 				<key>cacheResult</key>
 				<true/>
