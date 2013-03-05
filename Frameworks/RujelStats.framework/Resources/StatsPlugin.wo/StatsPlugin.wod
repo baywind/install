@@ -9,7 +9,7 @@ Cross : WOImage {
 }
 
 Title : WOString {
-  value = application.strings.RujelStats_Stats.title;
+  value = session.strings.RujelStats_Stats.title;
   escapeHTML = false;
 }
 
@@ -72,4 +72,24 @@ Table : WOGenericContainer {
   border = "0";
   style = "border:solid 1pt #999999;";
   omitTags = notPopup;
+}
+
+Recalculate : OnClickContainer {
+  elementName = "td";
+  onclick = session.ajaxPopup;
+  invokeAction = recalculate;
+  hide = item.noRecalc;
+  disabled = item.isTitle;
+  title = session.strings.RujelStats_Stats.recalculate;
+}
+
+NotTitle : WOConditional {
+  condition = item.isTitle;
+  negate = true;
+}
+
+ReloadGif : WOImage {
+  framework = "RujelStats";
+  filename = "reload.gif";
+  width = "10";
 }

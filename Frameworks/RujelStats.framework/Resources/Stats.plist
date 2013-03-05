@@ -12,6 +12,8 @@
 	<string>Без значения</string>
 	<key>omitKey</key>
 	<string>осв</string>
+	<key>recalculate</key>
+	<string>Пересчитать</string>
 	<key>formulas</key>
 	<dict>
 		<key>uspevaemost</key>
