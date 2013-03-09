@@ -1,0 +1,239 @@
+PageWrapper : PageWrapper {
+  title = session.strings.RujelArchiving_Archive.ReadArchives.title;
+}
+
+Title : WOString {
+  value = session.strings.RujelArchiving_Archive.ReadArchives.title;
+  escapeHTML = false;
+}
+
+Rows : WORepetition {
+  list = list;
+  item = item;
+}
+
+Form : WOForm {
+}
+
+PeriodTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.period;
+	valueWhenEmpty = "period";
+	escapeHTML = false;
+}
+
+SinceTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.since;
+	valueWhenEmpty = "begin";
+	escapeHTML = false;
+}
+
+ToTitle: WOString {
+	value = application.strings.Reusables_Strings.dataTypes.to;
+	valueWhenEmpty = "end";
+	escapeHTML = false;
+}
+
+SinceField: WOTextField {
+	value = params.since;
+	size = 20;
+	maxlength = 19;
+	name = "begin";
+  dateformat = "yyyy-MM-dd HH:mm:ss";
+}
+
+ToField: WOTextField {
+	value = params.to;
+	size = 20;
+	maxlength = 19;
+	name = "end";
+  dateformat = "yyyy-MM-dd HH:mm:ss";
+}
+
+Select : WOSubmitButton {
+  value = application.strings.Reusables_Strings.uiElements.Select;
+  action = select;
+}
+
+DateTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.Date;
+  valueWhenEmpty = "Date";
+  escapeHTML = false;
+}
+
+TimeTitle : WOString {
+  value = application.strings.Reusables_Strings.dataTypes.Time;
+  valueWhenEmpty = "Time";
+  escapeHTML = false;
+}
+
+AuthorTitle : WOString {
+  value = application.strings.RujelArchiving_Archive.author;
+  valueWhenEmpty = "Author";
+  escapeHTML = false;
+}
+
+Timestamp : WOString {
+  value = item.timestamp;
+  dateformat = "yyyy-MM-dd HH:mm:ss";
+}
+
+Author : WOString {
+  value = item.user;
+}
+
+Entity : WOString {
+  value = item.usedEntity.title;
+}
+
+ActionType : WOString {
+  value = item.actionType;
+}
+
+Radio0 : WORadioButton {
+  value = 0;
+  selection = params.level;
+  name = "actionType";
+}
+
+Action0 : WOString {
+  value = session.strings.RujelArchiving_Archive.ReadArchives.action0;
+}
+
+Radio2 : WORadioButton {
+  value = 2;
+  selection = params.level;
+  name = "actionType";
+}
+
+Action2 : WOString {
+  value = session.strings.RujelArchiving_Archive.ReadArchives.action2;
+}
+
+Radio3 : WORadioButton {
+  value = 3;
+  selection = params.level;
+  name = "actionType";
+}
+
+Action3 : WOString {
+  value = session.strings.RujelArchiving_Archive.ReadArchives.action3;
+}
+
+RowContainer : WOGenericContainer {
+  elementName = "tr";
+  class = item.rowClass;
+}
+
+EntityTitle : WOString {
+  value = session.strings.RujelArchiving_Archive.entity;
+  escapeHTML = false;
+  valueWhenEmpty = "Entity";
+}
+
+EduGroup : WOString {
+  value = item.group;
+}
+
+Subject : WOString {
+  value = item.subject;
+  escapeHTML = false;
+}
+
+TeacherName : PersonDisplay {
+  person = item.course.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+}
+
+ChooseEnt : WOPopUpButton {
+  list = entities;
+  item = item;
+  displayString = item.title;
+  selection = params.usedEntity;
+  noSelectionString = "-= ??? =-";
+}
+
+EduGroupLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduGroup.this;
+	valueWhenEmpty = "Class";
+	escapeHTML = false;
+}
+SubjectLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCycle.subject;
+	valueWhenEmpty = "Subject";
+	escapeHTML = false;
+}
+TeacherLabel: WOString {
+	value = application.strings.RujelInterfaces_Names.EduCourse.teacher;
+	valueWhenEmpty = "Teacher";
+	escapeHTML = false;
+}
+
+ActionTitle : WOString {
+  value = session.strings.RujelArchiving_Archive.ReadArchives.actionTitle;
+  escapeHTML = false;
+}
+
+TeacherCell : WOGenericContainer {
+  elementName = "td";
+  class = item.teacherClass;
+  title = item.teacherName;
+}
+
+HasCourse : WOConditional {
+  condition = params.usedEntity.noCourse;
+  negate = true;
+}
+
+HasTeacher : WOConditional {
+  condition = params.usedEntity.noTeacher;
+  negate = true;
+}
+
+SubjectTH : OnClickContainer {
+  elementName = "th";
+  onclick = session.tryLoad;
+  invokeAction = sortBySubject;
+  class = sortStyle.subject;
+}
+
+TeacherTH : OnClickContainer {
+  elementName = "th";
+  onclick = session.tryLoad;
+  hide = params.usedEntity.noTeacher;
+  invokeAction = sortByTeacher;
+  class = sortStyle.teacher;
+}
+
+GroupTH : OnClickContainer {
+  elementName = "th";
+  onclick = session.tryLoad;
+  invokeAction = sortByGroup;
+  class = sortStyle.group;
+}
+
+UserTH : OnClickContainer {
+  elementName = "th";
+  onclick = session.tryLoad;
+  invokeAction = sortByUser;
+  class = sortStyle.user;
+}
+
+DateTH : OnClickContainer {
+  elementName = "th";
+  onclick = session.tryLoad;
+  invokeAction = sortByDate;
+  class = sortStyle.date;
+}
+
+Multiplier : WOString {
+  value = item.multiplier;
+}
+
+ActCell : WOGenericContainer {
+  elementName = "td";
+  align = "center";
+  title = item.reason;
+  style = item.actStyle;
+}

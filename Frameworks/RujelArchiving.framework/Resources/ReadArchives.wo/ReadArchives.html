@@ -1,0 +1,48 @@
+<webobject name = "PageWrapper">
+<h1><webobject name = "Title"/></h1>
+<webobject name = "Form">
+<table align = "center">
+<tr><th colspan = "2"><webobject name="PeriodTitle"/>:</th>
+<th><webobject name = "ActionTitle"/></th>
+<td></td>
+</tr>
+<tr><th align = "right"><webobject name="SinceTitle"/>:</th><td><webobject name="SinceField"/></td>
+<td rowspan = "2">
+	<webobject name = "Radio0"/> <webobject name = "Action0"/>
+<br/><webobject name = "Radio2"/> <webobject name = "Action2"/>
+<br/><webobject name = "Radio3"/> <webobject name = "Action3"/>
+</td><td><webobject name = "ChooseEnt"/></td>
+</tr>
+<tr><th align = "right"><webobject name="ToTitle"/>:</th><td><webobject name="ToField"/></td>
+<td style = "padding:10px;"><webobject name = "Select"/></td>
+</tr>
+</table>
+</webobject>
+<table align = "center">
+<thead>
+<tr class = "orange"><webobject name = "DateTH">
+<webobject name = "DateTitle"/> + <webobject name = "TimeTitle"/></webobject>
+<webobject name = "UserTH"><webobject name = "AuthorTitle"/></webobject>
+<th><webobject name = "EntityTitle"/></th>
+<th>?</th><webobject name = "HasCourse">
+<webobject name = "GroupTH"><webobject name="EduGroupLabel"/></webobject>
+<webobject name = "SubjectTH"><webobject name="SubjectLabel"/></webobject>
+<webobject name = "TeacherTH"><webobject name="TeacherLabel"/></webobject>
+</webobject>
+
+</tr>
+</thead><tbody><webobject name = "Rows">
+<webobject name = "RowContainer">
+	<td><webobject name = "Timestamp"/></td>
+	<td><webobject name = "Author"/></td>
+	<td align = "center"><webobject name = "Entity"/></td>
+	<webobject name = "ActCell">
+		<webobject name = "ActionType"/><webobject name = "Multiplier"/></webobject>
+	<webobject name = "HasCourse"><td align = "center"><webobject name = "EduGroup"/></td>
+	<td><webobject name = "Subject"/></td><webobject name = "HasTeacher">
+	<webobject name = "TeacherCell"><webobject name = "TeacherName"/></webobject>
+	</webobject></webobject>
+</webobject>
+</webobject></tbody>
+</table>
+</webobject>

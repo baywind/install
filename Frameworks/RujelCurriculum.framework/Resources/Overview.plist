@@ -269,7 +269,7 @@
 					<string>Замененный</string>
 					<key>hover</key>
 					<string>Учитель, который ведет курс</string>
-					<key>value</key>
+					<key>itemValue</key>
 					<dict>
 						<key>object</key>
 						<string>.lesson.course</string>
@@ -477,7 +477,7 @@
 					<string>white-space:nowrap;</string>
 					<key>presenter</key>
 					<string>PersonDisplay</string>
-					<key>value</key>
+					<key>itemValue</key>
 					<dict>
 						<key>object</key>
 						<string>.course</string>

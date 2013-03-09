@@ -569,5 +569,31 @@
 			<string>#ffcc66</string>
 		</dict>
 	</dict>
+	<key>archiveType</key>
+	<array>
+		<dict>
+			<key>entityName</key>
+			<string>Mark</string>
+			<key>title</key>
+			<string>Оценка</string>
+			<key>course</key>
+			<dict>
+				<key>fromKey</key>
+				<string>work</string>
+				<key>fromEntity</key>
+				<string>Work</string>
+			</dict>
+			<key>grouping</key>
+			<string>student</string>
+		</dict>
+		<dict>
+			<key>entityName</key>
+			<string>Work</string>
+			<key>title</key>
+			<string>Работа</string>
+			<key>course</key>
+			<string>course</string>
+		</dict>
+	</array>
 </dict>
 </plist>

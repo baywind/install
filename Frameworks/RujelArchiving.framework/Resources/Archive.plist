@@ -10,9 +10,39 @@
 	<string>Автор</string>
 	<key>reason</key>
 	<string>Причина исправления</string>
+	<key>entity</key>
+	<string>Объект</string>
 	<key>newValues</key>
 	<string>Изменить</string>
 	<key>requiredReason</key>
 	<string>Необходимо указать причину изменения</string>
+	<key>ReadArchives</key>
+	<dict>
+		<key>title</key>
+		<string>Активность</string>
+		<key>hover</key>
+		<string>Обзор архива исправлений</string>
+		<key>component</key>
+		<string>ReadArchives</string>
+		<key>group</key>
+		<string>other</string>
+		<key>sort</key>
+		<string>10</string>
+		<key>actionTitle</key>
+		<string>действие</string>
+		<key>action0</key>
+		<string>Любое действие</string>
+		<key>action2</key>
+		<string>Исправление и удаление</string>
+		<key>action3</key>
+		<string>Только удаление</string>
+	</dict>
+	<key>actionTypes</key>
+	<array>
+		<string>?</string>
+		<string>созд</string>
+		<string>ред</string>
+		<string>удал</string>
+	</array>
 </dict>
 </plist>

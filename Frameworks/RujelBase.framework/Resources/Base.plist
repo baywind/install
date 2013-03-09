@@ -537,5 +537,31 @@
 			<string>x-MacCyrillic</string>
 		</array>
 	</dict>
+	<key>archiveType</key>
+	<array>
+		<dict>
+			<key>entityName</key>
+			<string>BaseNote</string>
+			<key>title</key>
+			<string>Метка</string>
+			<key>course</key>
+			<dict>
+				<key>fromKey</key>
+				<string>lesson</string>
+				<key>fromEntity</key>
+				<string>EduLesson</string>
+			</dict>
+			<key>grouping</key>
+			<string>student</string>
+		</dict>
+		<dict>
+			<key>entityName</key>
+			<string>BaseLesson</string>
+			<key>title</key>
+			<string>Урок</string>
+			<key>course</key>
+			<string>course</string>
+		</dict>
+	</array>
 </dict>
 </plist>

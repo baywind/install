@@ -338,5 +338,14 @@
 			<string>70</string>
 		</dict>
 	</array>
+	<key>archiveType</key>
+	<dict>
+		<key>entityName</key>
+		<string>Reason</string>
+		<key>title</key>
+		<string>Причина</string>
+		<key>noCourse</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

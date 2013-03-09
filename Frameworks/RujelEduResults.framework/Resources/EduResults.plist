@@ -165,5 +165,18 @@
 		<key>hover</key>
 		<string>Сводная ведомость учета успеваемости учащихся</string>
 	</dict>
+	<key>archiveType</key>
+	<dict>
+		<key>entityName</key>
+		<string>ItogMark</string>
+		<key>title</key>
+		<string>Итоговая</string>
+		<key>cycle</key>
+		<string>eduCycle</string>
+		<key>noTeacher</key>
+		<true/>
+		<key>grouping</key>
+		<string>student</string>
+	</dict>
 </dict>
 </plist>
