@@ -346,6 +346,56 @@
 		<string>Причина</string>
 		<key>noCourse</key>
 		<true/>
+		<key>hideReason</key>
+		<true/>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Начало</string>
+				<key>value</key>
+				<string>.@date_begin</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>dateformat</key>
+					<string>dd.MM.yyyy</string>
+				</dict>				
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Конец</string>
+				<key>value</key>
+				<string>.@date_end</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>dateformat</key>
+					<string>dd.MM.yyyy</string>
+				</dict>				
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Причина</string>
+				<key>value</key>
+				<string>.@reason</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Связь</string>
+				<key>value</key>
+				<string>.@teacher</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>valueWhenEmpty</key>
+					<string>.@eduGroup</string>
+				</dict>				
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Обоснование</string>
+				<key>value</key>
+				<string>.@verification</string>
+			</dict>
+		</array>
 	</dict>
 </dict>
 </plist>

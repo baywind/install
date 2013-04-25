@@ -54,6 +54,7 @@
         }
     ); 
     attributesUsedForLocking = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName); 
+    cachesObjects = Y; 
     className = "net.rujel.criterial.WorkType"; 
     classProperties = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName); 
     externalName = "CR_WORK_TYPE"; 

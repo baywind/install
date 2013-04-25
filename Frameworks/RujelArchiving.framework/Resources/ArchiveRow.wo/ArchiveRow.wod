@@ -66,3 +66,12 @@ ShowReason : WOConditional {
   condition = ^hideReason;
   negate = true;
 }
+
+FullReason : WOConditional {
+  condition = ^fullReason;
+}
+
+ShortReason : WOConditional {
+  condition = ^fullReason;
+  negate = true;
+}

@@ -1,9 +1,9 @@
 PageWrapper : PageWrapper {
-  title = session.strings.RujelArchiving_Archive.ReadArchives.title;
+  title = title;
 }
 
 Title : WOString {
-  value = session.strings.RujelArchiving_Archive.ReadArchives.title;
+  value = title;
   escapeHTML = false;
 }
 
@@ -13,6 +13,7 @@ Rows : WORepetition {
 }
 
 Form : WOForm {
+  multipleSubmit = true;
 }
 
 PeriodTitle: WOString {
@@ -34,24 +35,27 @@ ToTitle: WOString {
 }
 
 SinceField: WOTextField {
-	value = params.since;
-	size = 20;
-	maxlength = 19;
-	name = "begin";
+  value = params.since;
+  disabled = session.readAccess._create.ReadArchives;
+  size = 20;
+  maxlength = 19;
+  name = "begin";
   dateformat = "yyyy-MM-dd HH:mm:ss";
 }
 
 ToField: WOTextField {
-	value = params.to;
-	size = 20;
-	maxlength = 19;
-	name = "end";
+  value = params.to;
+  disabled = session.readAccess._create.ReadArchives;
+  size = 20;
+  maxlength = 19;
+  name = "end";
   dateformat = "yyyy-MM-dd HH:mm:ss";
 }
 
 Select : WOSubmitButton {
   value = application.strings.Reusables_Strings.uiElements.Select;
   action = select;
+  disabled = session.readAccess._create.ReadArchives;
 }
 
 DateTitle : WOString {
@@ -67,7 +71,7 @@ TimeTitle : WOString {
 }
 
 AuthorTitle : WOString {
-  value = application.strings.RujelArchiving_Archive.author;
+  value = session.strings.RujelArchiving_Archive.author;
   valueWhenEmpty = "Author";
   escapeHTML = false;
 }
@@ -93,6 +97,7 @@ Radio0 : WORadioButton {
   value = 0;
   selection = params.level;
   name = "actionType";
+  disabled = session.readAccess._create.ReadArchives;
 }
 
 Action0 : WOString {
@@ -103,6 +108,7 @@ Radio2 : WORadioButton {
   value = 2;
   selection = params.level;
   name = "actionType";
+  disabled = session.readAccess._create.ReadArchives;
 }
 
 Action2 : WOString {
@@ -113,6 +119,7 @@ Radio3 : WORadioButton {
   value = 3;
   selection = params.level;
   name = "actionType";
+  disabled = session.readAccess._create.ReadArchives;
 }
 
 Action3 : WOString {
@@ -144,6 +151,8 @@ TeacherName : PersonDisplay {
   last = 2;
   first = 1;
   second = 1;
+  valueWhenEmpty = item.teacherName;
+  emptyStyle = "font-style:italic;";
 }
 
 ChooseEnt : WOPopUpButton {
@@ -152,6 +161,7 @@ ChooseEnt : WOPopUpButton {
   displayString = item.title;
   selection = params.usedEntity;
   noSelectionString = "-= ??? =-";
+  disabled = session.readAccess._create.ReadArchives;
 }
 
 EduGroupLabel: WOString {
@@ -201,9 +211,9 @@ SubjectTH : OnClickContainer {
 TeacherTH : OnClickContainer {
   elementName = "th";
   onclick = session.tryLoad;
-  hide = params.usedEntity.noTeacher;
   invokeAction = sortByTeacher;
   class = sortStyle.teacher;
+  hide = params.usedEntity.noTeacher;
 }
 
 GroupTH : OnClickContainer {
@@ -236,4 +246,69 @@ ActCell : WOGenericContainer {
   align = "center";
   title = item.reason;
   style = item.actStyle;
+}
+
+UserCell : OnClickContainer {
+  elementName = "td";
+  title = item.wosid;
+  onclick = session.tryLoad;
+  invokeAction = filterUser;
+  disabled = params.byKey.user;
+}
+
+ExtraQuals : WORepetition {
+  list = params.extraQuals;
+  item = item;
+}
+
+QualTitle : WOString {
+  value = item.title;
+  escapeHTML = false;
+}
+
+QualSpan : WOGenericContainer {
+  elementName = "span";
+  class = item.styleClass;
+  style = "padding:1px 2px;";
+}
+
+QualValue : WOString {
+  value = item.value;
+  escapeHTML = false;
+}
+
+Cross : WOImageButton {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
+  action = removeExtra;
+}
+HasWarnings : WOConditional {
+  condition = params.warnings;
+}
+
+ToggleWarnings : OnClickContainer {
+  elementName = "td";
+  onclick = session.tryLoad;
+  invokeAction = toggleWarnings;
+  class = params.warnings;
+  align = "center";
+}
+
+ObjectCell : OnClickContainer {
+  elementName = "th";
+  onclick = session.ajaxPopup;
+  invokeAction = expand;
+}
+
+CanEdit : WOConditional {
+  condition = session.readAccess.edit.ReadArchives;
+}
+
+CourseCell : OnClickContainer {
+  elementName = "td";
+  onclick = session.tryLoad;
+  invokeAction = filterCourse;
+  disabled = cantFilterCourse;
 }

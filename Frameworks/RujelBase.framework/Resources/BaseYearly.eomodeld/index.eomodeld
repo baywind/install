@@ -672,10 +672,7 @@
                 }; 
             }; 
         }; 
-        framework = "RujelBase";
-        schemaVersion = {
-        	number = 2;
-        	title = "0.9.4";
-        };
+        framework = RujelBase; 
+        schemaVersion = {number = 3; title = "0.9.7"; }; 
     }; 
 }

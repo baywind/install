@@ -329,8 +329,5 @@
         {className = "net.rujel.markarchive.MarkArchive"; name = MarkArchive; }, 
         {className = EOGenericRecord; name = UsedEntity; }
     ); 
-    userInfo = {
-    	schemaVersion = {number = 2; title = "0.9.4"; };
-	    framework = "RujelArchiving";
-    };
+    userInfo = {framework = RujelArchiving; schemaVersion = {number = 3; title = "0.9.7"; }; }; 
 }

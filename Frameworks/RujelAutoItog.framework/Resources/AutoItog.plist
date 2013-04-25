@@ -222,6 +222,54 @@
 		<string>course</string>
 		<key>grouping</key>
 		<string>student</string>
+		<key>params</key>
+		<array>
+			<dict>
+				<key>key</key>
+				<string>itog</string>
+				<key>title</key>
+				<string>Отчетный период</string>
+				<key>entityName</key>
+				<string>ItogContainer</string>
+				<key>keyPath</key>
+				<string>title</string>
+			</dict>
+			<dict>
+				<key>key</key>
+				<string>student</string>
+				<key>title</key>
+				<string>Учащийся</string>
+				<key>entityName</key>
+				<string>Student</string>
+				<key>displayDict</key>
+				<dict>
+					<key>presenter</key>
+					<string>PersonDisplay</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>person</key>
+						<string>.</string>
+						<key>first</key>
+						<string>2</string>
+						<key>last</key>
+						<string>2</string>
+						<key>second</key>
+						<string>0</string>
+					</dict>
+				</dict>
+			</dict>
+		</array>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Оценка</string>
+				<key>value</key>
+				<string>.@mark</string>
+				<key>hover</key>
+				<string>.@value</string>
+			</dict>
+		</array>
 	</dict>
 </dict>
 </plist>

@@ -9,9 +9,11 @@
 		<key>zavuch</key>
 		<string>127</string>
 		<key>tutor</key>
-		<string>1</string>
+		<string>15</string>
 		<key>zav_kaf</key>
-		<string>1</string>
+		<string>7</string>
+		<key>teacher</key>
+		<string>3</string>
 	</dict>
 </dict>
 </plist>

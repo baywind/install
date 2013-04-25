@@ -36,6 +36,12 @@
 		<string>Исправление и удаление</string>
 		<key>action3</key>
 		<string>Только удаление</string>
+		<key>toList</key>
+		<string>к списку</string>
+		<key>openCourse</key>
+		<string>Показать на странице журнала</string>
+		<key>limitedSelection</key>
+		<string>Выборка ограничена по датам, так как количество показанных записей превысило порог 500</string>
 	</dict>
 	<key>actionTypes</key>
 	<array>

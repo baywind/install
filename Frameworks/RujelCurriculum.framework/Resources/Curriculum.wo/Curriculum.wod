@@ -32,12 +32,12 @@ Form : WOForm {
 }
 
 BeginTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.begin;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.begin;
   valueWhenEmpty = "since";
 }
 
 EndTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.end;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.end;
   valueWhenEmpty = "since";
 }
 
@@ -63,7 +63,7 @@ EndDate : WOTextField {
 }
 
 ReasonTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.Reason;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.Reason;
   valueWhenEmpty = "Reason";
   escapeHTML = false;
 }
@@ -82,7 +82,7 @@ CanChange : WOConditional {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
+	value = session.strings.Reusables_Strings.uiElements.Save;
     disabled = tmpDict.reasonsToMoveIn;
 }
 CanDelete: WOConditional {
@@ -90,7 +90,7 @@ CanDelete: WOConditional {
 }
 
 DeleteButton: WOGenericElement {
-	value = application.strings.Reusables_Strings.uiElements.Delete;
+	value = session.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
 	onclick = session.tryLoad;
 	elementName = "input";
@@ -125,7 +125,7 @@ ReasonSelected : WOConditional {
 }
 
 RelatedTitle : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
   valueWhenEmpty = "Related to";
   escapeHTML = false;
 }
@@ -138,7 +138,7 @@ HasTeacher : WORadioButton {
 }
 
 WithTeacher : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.withTeacher;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.withTeacher;
   escapeHTML = false;
 }
 
@@ -150,7 +150,7 @@ HasEduGroup : WORadioButton {
 }
 
 WithEduGroup : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.withEduGroup;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.withEduGroup;
   escapeHTML = false;
 }
 
@@ -159,7 +159,7 @@ ReasonTeacher : PersonDisplay {
   last = 2;
   first = 1;
   second = 1;
-  valueWhenEmpty = application.strings.RujelBase_Base.vacant;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
   valueWhenEmptyOld = plist.Select;
 }
 
@@ -211,7 +211,7 @@ ForWholeSchool : WORadioButton {
 }
 
 WithWholeSchool : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
   escapeHTML = false;
 }
 
@@ -342,7 +342,7 @@ SubmitMoveReasons : WOSubmitButton {
 }
 
 CancelButton: WOGenericElement {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	value = session.strings.Reusables_Strings.uiElements.Cancel;
 	invokeAction = cancelMove;
 	onclick = session.tryLoad;
 	elementName = "input";
@@ -479,7 +479,7 @@ CanSubmit : WOConditional {
 
 ExportButton : WOHyperlink {
   action = export;
-  string = application.strings.RujelReports_Reports.export;
+  string = session.strings.RujelReports_Reports.export;
 }
 
 ShowDetails : WOConditional {

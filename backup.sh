@@ -52,6 +52,7 @@ else
 	FILE="RujelBackup_`date -d \"1 month ago\" +%F`_$KEY.sql.bz2"
 fi
 
+KEY=$1
 if [ "$1" != "week" ] ; then
 	CONF=$CONFIGDIR/rujel.plist
 	if [ -e $CONF ] ; then
@@ -75,9 +76,8 @@ if [ "$1" != "week" ] ; then
 		BASE="$BASE RujelYear$YEAR"
 		YEAR=$(($YEAR-1))
 	fi
-	BASE="$BASE RujelYear$YEAR"
+	BASE="$BASE RujelYear$YEAR RujelSync"
 	if [ "$1" = "day" ] ; then
-		KEY="day"
 		for f in RujelBackup_*_$KEY.sql.bz2 ; do
 			if [ -e $f -a "$FILE" \> "$f" ] ; then
 				rm $f
@@ -85,13 +85,10 @@ if [ "$1" != "week" ] ; then
 		done
 	elif [ "$1" = "conf" ] ; then
 		BASE=
-		KEY="conf"
 	else
-		KEY="all"
 		BASE="$BASE VseLists RujelUsers Contacts"
 	fi
 else
-	KEY=$1
 	BASE="VseLists RujelUsers Contacts"
 	for f in RujelBackup_*_$KEY.sql.bz2 ; do
 		if [ -e $f -a "$FILE" \> "$f" ] ; then
@@ -104,10 +101,12 @@ if [ ! -z "$BASE" ] ; then
 	echo "Backing up databases: $BASE ..."
 	FILE="RujelBackup_`date +%F`_$KEY.sql"
 	if mysqldump -u $USERNAME $PASSWORD -r $FILE --single-transaction -B $BASE ; then
+		echo "Compressing $FILE ..."
 		bzip2 -f $FILE
 		echo "Backup saved $FILE.bz2"
 	else
 		rm $FILE
+		echo "Database backup failed"
 	fi
 fi
 

@@ -553,6 +553,69 @@
 			</dict>
 			<key>grouping</key>
 			<string>student</string>
+			<key>parent</key>
+			<dict>
+				<key>entityName</key>
+				<string>BaseLesson</string>
+				<key>parentKey</key>
+				<string>lesson</string>
+				<key>searchKey</key>
+				<string>lesson</string>
+			</dict>
+			<key>params</key>
+			<array>
+				<dict>
+					<key>key</key>
+					<string>lesson</string>
+					<key>title</key>
+					<string>Урок</string>
+					<key>entityName</key>
+					<string>BaseLesson</string>
+					<key>subValues</key>
+					<array>
+						<string>.date</string>
+						<string>.theme</string>
+					</array>
+					<key>parentValues</key>
+					<array>
+						<string>.@date_date</string>
+						<string>.@theme</string>
+					</array>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>student</string>
+					<key>title</key>
+					<string>Учащийся</string>
+					<key>entityName</key>
+					<string>Student</string>
+					<key>displayDict</key>
+					<dict>
+						<key>presenter</key>
+						<string>PersonDisplay</string>
+						<key>presenterBindings</key>
+						<dict>
+							<key>person</key>
+							<string>.</string>
+							<key>first</key>
+							<string>2</string>
+							<key>last</key>
+							<string>2</string>
+							<key>second</key>
+							<string>0</string>
+						</dict>
+					</dict>
+				</dict>
+			</array>
+			<key>properties</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>Отметка</string>
+					<key>value</key>
+					<string>.@text</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>entityName</key>
@@ -561,6 +624,41 @@
 			<string>Урок</string>
 			<key>course</key>
 			<string>course</string>
+			<key>hideReason</key>
+			<true/>
+			<key>properties</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>Дата</string>
+					<key>value</key>
+					<string>.@date_date</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>dateformat</key>
+						<string>dd.MM.yyyy</string>
+					</dict>
+					<key>hover</key>
+					<string>.@number</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Тема</string>
+					<key>value</key>
+					<string>.@theme</string>
+				</dict>
+			</array>
+			<key>children</key>
+			<dict>
+				<key>title</key>
+				<string>Отметки</string>
+				<key>searchKey</key>
+				<string>lesson</string>
+				<key>parentKey</key>
+				<string>lesson</string>
+				<key>entityName</key>
+				<string>BaseNote</string>
+			</dict>
 		</dict>
 	</array>
 </dict>

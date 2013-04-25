@@ -333,11 +333,5 @@
         {className = "net.rujel.autoitog.AutoItog"; name = AutoItog; }, 
         {className = EOGenericRecord; name = ItogRelated; }
     ); 
-    userInfo = {
-        framework = "RujelAutoItog";
-        schemaVersion = {
-        	number = 1;
-        	title = "0.9.4";
-        };
-    }; 
+    userInfo = {framework = RujelAutoItog; schemaVersion = {number = 2; title = "0.9.7"; }; }; 
 }

@@ -4,7 +4,7 @@
 <table align = "center">
 <tr><th colspan = "2"><webobject name="PeriodTitle"/>:</th>
 <th><webobject name = "ActionTitle"/></th>
-<td></td>
+<th><webobject name = "EntityTitle"/></th>
 </tr>
 <tr><th align = "right"><webobject name="SinceTitle"/>:</th><td><webobject name="SinceField"/></td>
 <td rowspan = "2">
@@ -14,12 +14,20 @@
 </td><td><webobject name = "ChooseEnt"/></td>
 </tr>
 <tr><th align = "right"><webobject name="ToTitle"/>:</th><td><webobject name="ToField"/></td>
-<td style = "padding:10px;"><webobject name = "Select"/></td>
+<td rowspan = "2" style = "padding:10px;"><webobject name = "Select"/></td>
 </tr>
+<tr><td colspan = "3"><webobject name = "ExtraQuals">
+	<div style = "margin:5px;"><webobject name = "QualSpan">
+	<strong><webobject name = "QualTitle"/>:</strong>
+	<webobject name = "QualValue"/><webobject name = "CanEdit">
+		<webobject name = "Cross"/></webobject></webobject>
+</div></webobject></td></tr>
 </table>
 </webobject>
-<table align = "center">
-<thead>
+<table align = "center" style = "margin-top:1em;">
+<thead><webobject name = "HasWarnings"><tr>
+<td colspan = "6"></td><webobject name = "ToggleWarnings">Только чужие</webobject>
+</tr></webobject>
 <tr class = "orange"><webobject name = "DateTH">
 <webobject name = "DateTitle"/> + <webobject name = "TimeTitle"/></webobject>
 <webobject name = "UserTH"><webobject name = "AuthorTitle"/></webobject>
@@ -34,12 +42,12 @@
 </thead><tbody><webobject name = "Rows">
 <webobject name = "RowContainer">
 	<td><webobject name = "Timestamp"/></td>
-	<td><webobject name = "Author"/></td>
-	<td align = "center"><webobject name = "Entity"/></td>
+	<webobject name = "UserCell"><webobject name = "Author"/></webobject>
+	<webobject name = "ObjectCell"><webobject name = "Entity"/></webobject>
 	<webobject name = "ActCell">
 		<webobject name = "ActionType"/><webobject name = "Multiplier"/></webobject>
 	<webobject name = "HasCourse"><td align = "center"><webobject name = "EduGroup"/></td>
-	<td><webobject name = "Subject"/></td><webobject name = "HasTeacher">
+	<webobject name = "CourseCell"><webobject name = "Subject"/></webobject><webobject name = "HasTeacher">
 	<webobject name = "TeacherCell"><webobject name = "TeacherName"/></webobject>
 	</webobject></webobject>
 </webobject>
