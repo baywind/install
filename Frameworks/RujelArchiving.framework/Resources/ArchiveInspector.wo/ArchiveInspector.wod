@@ -1,0 +1,181 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Title : WOString {
+  value = dict.usedEntity.title;
+}
+
+Multiplier : WOString {
+  value = dict.multiplier;
+}
+
+IfCourse : WOConditional {
+  condition = dict.course;
+}
+
+EduGroup : WOString {
+  value = dict.group;
+}
+
+Subject : WOString {
+  value = dict.subject;
+  escapeHTML = false;
+}
+
+Teacher : PersonDisplay {
+  person = dict.course.teacher;
+  last = 2;
+  first = 1;
+  second = 1;
+  valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+  emptyStyle = "font-style:italic;";
+}
+
+Params : WORepetition {
+  list = params;
+  item = item;
+}
+
+ParamTitle : WOString {
+  value = item.title;
+}
+
+ParamValue : DisplayAny {
+  value = item.value;
+  dict = item.displayDict;
+}
+
+List : ArchiveRow {
+  list = list;
+  item = item;
+  class = rowClass;
+  fullReason = true;
+  hideReason = dict.usedEntity.hideReason;
+}
+
+ArchiveTitle : ArchiveRow {
+  class = "grey";
+  fullReason = true;
+  hideReason = dict.usedEntity.hideReason;
+}
+
+HasGrouping : WOConditional {
+  condition = grouping;
+}
+
+GroupingTitle : WOString {
+  value = grouping.title;
+  escapeHTML = false;
+}
+
+GroupingValue : DisplayAny {
+  value = groupingValue;
+  dict = grouping.displayDict;
+}
+
+Cell : WOGenericContainer {
+  elementName = "td";
+  title = valueOf.item.item2.hover;
+  class = valueOf.item.item2.cellClass;
+  omitTags = item2.omitTD;
+}
+
+CellValue : DisplayAny {
+  value = item;
+  dict = item2;
+}
+
+Properties : WORepetition {
+  list = dict.usedEntity.properties;
+  item = item2;
+}
+
+PropTitle : WOString {
+  value = item2.title;
+}
+
+TitleCell : WOGenericContainer {
+  elementName = "th";
+  colspan = valueOf.item.item2.colspan;
+  omitTags = item2.titleDict;
+}
+
+TitleItem : DisplayAny {
+  value = initData;
+  dict = item2.titleDict;
+}
+
+GroupingCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = expandGrouped;
+  onclick = session.ajaxPopupNoPos;
+}
+
+Back : OnClickContainer {
+  elementName = "div";
+  hide = noReturn;
+  style = "float:right;font-style:italic;padding:0px 2px;";
+  class = "orange";
+  invokeAction = dict.returnPage;
+  onclick = session.ajaxPopupNoPos;
+}
+
+ToList : WOString {
+  value = session.strings.RujelArchiving_Archive.ReadArchives.toList;
+  valueWhenEmpty = "to list";
+  escapeHTML = false;
+}
+
+HasChildren : WOConditional {
+  condition = enterChildren;
+}
+
+ChildrenTitle : WOString {
+  value = dict.usedEntity.children.title;
+}
+
+ChildArchiveTitle : ArchiveRow {
+  class = "grey";
+  fullReason = true;
+  hideReason = children.usedEntity.hideReason;
+}
+Children : ArchiveRow {
+  list = children.list;
+  item = item;
+  class = rowClass;
+  fullReason = true;
+  hideReason = children.usedEntity.hideReason;
+}
+
+ChildGroupingValue : DisplayAny {
+  value = childGroupingValue;
+  dict = children.grouping.displayDict;
+}
+
+ChildProperties : WORepetition {
+  list = children.usedEntity.properties;
+  item = item2;
+}
+ChildGroupingTitle : WOString {
+  value = children.grouping.title;
+  escapeHTML = false;
+}
+LeaveChildren : WOString {
+  value = leaveChildren;
+}
+
+OpenCourse : OnClickContainer {
+  elementName = "div";
+  class = "orange";
+  onclick = session.tryLoad;
+  invokeAction = openCourse;
+  style = "float:right;font-weight:bold;";
+  title = session.strings.RujelArchiving_Archive.ReadArchives.openCourse;
+}
