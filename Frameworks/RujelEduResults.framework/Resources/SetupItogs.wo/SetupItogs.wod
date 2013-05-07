@@ -181,4 +181,6 @@ ExtTitle : WOSwitchComponent {
   WOComponentName = extItem.component;
   listName = listName;
   dict = extItem;
+  itogsList = itogsList;
+  ec = ec;
 }
