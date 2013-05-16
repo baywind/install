@@ -91,7 +91,12 @@ CourseSubject: WOString {
 	escapeHTML = false;
 }
 
-TeacherLN: PersonDisplay {
+TeacherLN: WOString {
+	value = courseTeacher;
+	escapeHTML = false;
+}
+
+TeacherLN1: PersonDisplay {
 	person = item.teacher;
 	last = 2;
 	first = 1;
@@ -104,7 +109,7 @@ TeacherLN: PersonDisplay {
 
 EditLink: OnClickContainer {
 	elementName = "span";
-	hide = session.readAccess._edit.item.@comment;
+	hide = session.readAccess._edit.item;
 	invokeAction = inspectCourse;
 	style = "z-index:4;";
 	onclick = session.ajaxPopup;
@@ -129,7 +134,6 @@ TeacherName: PersonDisplay {
   first = 1;
   second = 1;
   startWithLast = true;
-  emptyStyle = "font-style:italic;";
 }
 
 SubmitName: WOImageButton {

@@ -173,7 +173,7 @@ PresentTabs: Tabs {
 }
 
 TeacherName: PersonDisplay {
-	person = course.teacher;
+	person = activeTeacher;
 	first = 2;
 	last = 2;
 	second = 2;
@@ -214,6 +214,20 @@ TeacherSpan : OnClickContainer {
   onclick = session.checkRun;
   invokeAction = chooseTeacher;
   title = application.strings.Strings.LessonNoteEditor.byTeacher;
+  style = teacherStyle;
+}
+
+EditLink: OnClickContainer {
+	elementName = "span";
+	hide = course.namedFlags._teacherChanged;
+	invokeAction = inspectCourse;
+	onclick = session.ajaxPopup;
+}
+
+files_edit: WOImage {
+	filename = "files_edit.png";
+	height = 16;
+	width = 16;
 }
 
 AddTabDiv : OnClickContainer {

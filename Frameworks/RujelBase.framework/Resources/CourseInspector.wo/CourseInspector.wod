@@ -191,5 +191,5 @@ Delete : WOGenericElement {
   value = application.strings.Reusables_Strings.uiElements.Delete;
   invokeAction = delete;
   onclick = session.tryLoad;
-  omitTags = session.readAccess._delete.course;
+  omitTags = cantDelete;
 }
