@@ -1,7 +1,7 @@
 <webobject name="PageWrapper1"><webobject name = "HasSections">
 <div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade"
  onmouseover = "hideObj('SectionTitle');showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle')">
-<div id = "SectionTitle" style = "padding:3px;" class = "green">
+<div id = "SectionTitle" style = "padding:3px;" class = "green" onclick = "hideObj(this);showObj('SectionTabs')">
 	<webobject name = "CurrSection"/></div>
 <div id = "SectionTabs" style = "display:none;">
 <webobject name = "SectionTabs"/></div></div></webobject>

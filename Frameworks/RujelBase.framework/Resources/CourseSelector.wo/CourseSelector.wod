@@ -4,6 +4,7 @@ EduGroup : ClassListing {
   onClick = act;
   selectAction = context.page;
   width = "100%";
+  showSection = true;
 }
 
 CourseRow : DynamicTableRow {

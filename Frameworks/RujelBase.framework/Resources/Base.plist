@@ -97,6 +97,8 @@
 						<string>.</string>
 						<key>width</key>
 						<string>60</string>
+						<key>showSection</key>
+						<true/>
 					</dict>
 				</dict>
 				<key>format</key>
@@ -110,7 +112,7 @@
 				<key>sectionInSession</key>
 				<true/>
 				<key>sections</key>
-				<true/>
+				<false/>
 				<key>sort</key>
 				<integer>25</integer>
 				<key>title</key>

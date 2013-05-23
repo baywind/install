@@ -96,17 +96,6 @@ TeacherLN: WOString {
 	escapeHTML = false;
 }
 
-TeacherLN1: PersonDisplay {
-	person = item.teacher;
-	last = 2;
-	first = 1;
-	second = 1;
-	startWithLast = true;
-	nullValue = application.strings.RujelBase_Base.vacant;
-	valueWhenEmpty = application.strings.RujelBase_Base.vacant;
-	emptyStyle = "font-style:italic;";
-}
-
 EditLink: OnClickContainer {
 	elementName = "span";
 	hide = session.readAccess._edit.item;

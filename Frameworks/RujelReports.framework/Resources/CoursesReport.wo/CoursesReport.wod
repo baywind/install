@@ -66,38 +66,6 @@ ExportButton : WOHyperlink {
   string = application.strings.RujelReports_Reports.export;
 }
 
-MoveUp: WOImage {
-	filename = "up.png";
-	framework ="RujelBase";
-	align = "center";
-	valign = "top";
-	onclick="up(get(this,'table',0));";
-	style = "cursor:pointer;";
-}
-MoveDown: WOImage {
-	align = "center";
-	filename = "down.png";
-	framework ="RujelBase";
-	onclick= "down(get(this,'table',0));";
-	style = "cursor:pointer;";
-}
-
-MoveSubUp: WOImage {
-	filename = "up.png";
-	framework ="RujelBase";
-	align = "center";
-	valign = "top";
-	onclick="up(get(this,'tr',0));";
-	style = "cursor:pointer;";
-}
-MoveSubDown: WOImage {
-	align = "center";
-	filename = "down.png";
-	framework ="RujelBase";
-	onclick= "down(get(this,'tr',0));";
-	style = "cursor:pointer;";
-}
-
 PropSelector : PropSelector {
   active = display;
   available = reports;

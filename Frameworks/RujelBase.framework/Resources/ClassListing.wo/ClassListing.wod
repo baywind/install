@@ -51,7 +51,7 @@ SectionTabs : Tabs {
   tablist = session.strings.sections.list;
   titleAttribute = "value";
   vertical = true;
-  onClick = session.ajaxPopup;
+  onClick = session.ajaxPopupNoPos;
   selectAction = context.page;
 }
 

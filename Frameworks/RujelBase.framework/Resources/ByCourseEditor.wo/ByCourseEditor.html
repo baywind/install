@@ -21,8 +21,9 @@
 <div style = "text-align:left;padding:3px;margin-top:2px;"
  onmouseover = "hideObj('SectionTitle',true);showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle',true)">
 <div id = "SectionTabs" style = "display:none;position:absolute;">
-<webobject name = "SectionTabs"/></div><span id = "SectionTitle" style = "padding:3px;border:1px solid #999999;" class = "green">
-	<webobject name = "CurrSection"/></span>
+	<webobject name = "SectionTabs"/></div>
+<div id = "SectionTitle" style = "padding:3px;border:1px solid #999999;" class = "green" onclick = "hideObj(this,true);showObj('SectionTabs')">
+	<webobject name = "CurrSection"/></div>
 </div></webobject>
 <webobject name = "IfGrade"><webobject name = "GradeForm">
 	<div style = "text-decoration:underline;"><webobject name = "SingleGradeTitle"/></div>
