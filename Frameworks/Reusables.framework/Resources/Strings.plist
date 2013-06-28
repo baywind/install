@@ -93,6 +93,7 @@
 		</dict>
 		<key>weekdayShort</key>
 		<array>
+			<string>сб</string>
 			<string>вс</string>
 			<string>пн</string>
 			<string>вт</string>
@@ -100,10 +101,10 @@
 			<string>чт</string>
 			<string>пт</string>
 			<string>сб</string>
-			<string>вс</string>
 		</array>
 		<key>weekdayLong</key>
 		<array>
+			<string>Суббота</string>
 			<string>Воскресенье</string>
 			<string>Понедельник</string>
 			<string>Вторник</string>
@@ -111,7 +112,6 @@
 			<string>Четверг</string>
 			<string>Пятница</string>
 			<string>Суббота</string>
-			<string>Воскресенье</string>
 		</array>
 	</dict>
 	<key>uiElements</key>

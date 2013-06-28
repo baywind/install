@@ -4,6 +4,7 @@ PageWrapper : PageWrapper {
   cssResource = currModule.cssResource;
   scriptResource = currModule.scriptResource;
   hasChanges = ec.hasChanges;
+  onLoad = "pagePreflight()";
 }
 
 Title : WOString {
@@ -40,43 +41,57 @@ IsSetting : WOConditional {
 
 SettingsByCourse : SettingsByCourse {
   item = item;
-  key = currModule.settingBase;
+  key = grItem.settingBase;
   create = true;
   ec = ec;
-  hideEmptyDetails = false;
-  numericValue = session.eduYear;
-  title = currModule.settingTitle;
+  hideEmptyDetails = true;
+  title = grItem.settingTitle;
+  canSave = true;
 }
 
 TextParam : Parameter {
   attribute = "textValue";
-  itemDict = currModule.textValue;
+  itemDict = grItem.textValue;
   paramsDict = item;
 }
 
 NumParam : Parameter {
   attribute = "numericValue";
-  itemDict = currModule.numericValue;
+  itemDict = grItem.numericValue;
   paramsDict = item;
 }
 
 SettingTitle : WOString {
-  value = currModule.title;
+  value = grItem.title;
 }
 
 Description : WOString {
-  value = currModule.description;
+  value = grItem.description;
 }
 
 Form : WOForm {
+ style = "margin:1ex;";
 }
 
 Instructions : WOString {
-  value = currModule.instructions;
+  value = grItem.instructions;
   escapeHTML = false;
 }
 
 Submit : WOSubmitButton {
   action = saveSetting;
   value = session.strings.Reusables_Strings.uiElements.Save;
+}
+
+IsGrouping : WOConditional {
+  condition = currModule.grouping;
+}
+
+GroupingTitle : WOString {
+  value = currModule.grouping;
+}
+
+GrSettings : WORepetition {
+  list = currModule.grSettings;
+  item = grItem;
 }

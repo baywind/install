@@ -42,6 +42,15 @@ AddByCourse : OnClickContainer {
   hide = ^access._create;
 }
 
+AddByCourse2 : OnClickContainer {
+  elementName = "span";
+  onclick = session.ajaxPopup;
+  invokeAction = addByCourse;
+  style = "float:right;padding:0px 1px;color:#3333cc;";
+  title = session.strings.RujelBase_Base.SettingsBase.addByCourse;
+  hide = ^access._create;
+}
+
 Content : WOComponentContent {
 }
 
@@ -69,7 +78,7 @@ SetBase : OnClickContainer {
   invokeAction = makeBase;
   onclick = session.checkRun;
   class = "orange";
-  style = "float:left;padding:0px 4px;border:double 3px #ccaa66;";
+  style = "float:left;padding:0px 4px;border:double 3px #ccaa66;margin-left:1ex;";
 }
 
 BaseTitle : WOString {
@@ -118,8 +127,9 @@ BaseString : WOString {
   value = application.strings.RujelBase_Base.SettingsBase.default;
   escapeHTML = false;
 }
+
 SortForm : WOForm {
-  action = saveSort;
+  action = saveSetting;
 }
 
 SaveSort : WOImage {
@@ -172,4 +182,30 @@ CourseTeacher : PersonDisplay {
   second = 1;
   emptyStyle = "font-style:italic;";
   valueWhenEmpty = session.strings.RujelBase_Base.vacant;
+}
+
+NoDetails : WOConditional {
+  condition = hideDetails;
+}
+
+BaseCell : WOGenericContainer {
+  elementName = "td";
+  align = "center";
+  class = "highlight2";
+  colspan = colspan;
+}
+
+AddTitle : WOString {
+  value = session.strings.RujelBase_Base.SettingsBase.addByCourse;
+  escapeHTML = false;
+}
+
+CanSave : WOConditional {
+  condition = ^canSave;
+}
+
+SaveSettings : WOSubmitButton {
+  action = saveSetting;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+  onclick = "enumerate(get(this,'table',0),'sorting',1);";
 }

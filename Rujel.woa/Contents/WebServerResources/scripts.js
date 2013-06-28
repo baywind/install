@@ -746,11 +746,13 @@ function pagePreflight() {
 	var ins = document.getElementsByTagName("input");
 	for(var i = 0; i < ins.length; i++) {
 		if(ins[i].type == "text") {
-			if(ins[i].disabled)
+			if(ins[i].disabled) {
 				ins[i].style.backgroundColor='#cccccc';
-			else if(ins[i].className == 'checkChanges')
-				ins[i].onchange = function() {checkChanges(this);};
+				continue;
+			}
 		}
+		if(/checkChanges/.test(ins[i].className))
+				ins[i].onchange = function() {checkChanges(this);};
 	}
 }
 

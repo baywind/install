@@ -1,0 +1,204 @@
+Title : WOString {
+  value = ^dict.title;
+}
+
+SetsTitle : WOString {
+  value = ^dict.bsTitle;
+}
+
+BSetsList : WORepetition {
+  list = borders;
+  item = item;
+}
+
+BSetRow : OnClickContainer {
+  elementName = "div";
+  class = styleClass;
+  invokeAction = selectBS;
+  style = "margin:2px;";
+  onclick = session.checkRun;
+}
+
+ItemTitle : WOString {
+  value = item.title;
+}
+
+NewBSRow : OnClickContainer {
+  elementName = "div";
+  class = newBSetStyle;
+  onclick = session.checkRun;
+  style = "margin: 4px 2px;";
+  invokeAction = addBSet;
+  hide = disabled;
+}
+
+CurrTitle : WOTextField {
+  value = currentBS.title;
+  title = ^dict.bsTitle;
+  class = "titled checkChanges";
+  size = 12;
+  disabled = disabled;
+}
+
+Ge : WORadioButton {
+  name = "comparison";
+  value = false;
+  selection = currentBS.exclude;
+  class = "checkChanges";
+  disabled = disabled;
+}
+
+Gt : WORadioButton {
+  name = "comparison";
+  value = true;
+  selection = currentBS.exclude;
+  class = "checkChanges";
+  disabled = disabled;
+}
+
+TextType : WORadioButton {
+  name = "valueType";
+  value = 0;
+  selection = currentBS.valueType;
+  class = "checkChanges";
+  disabled = disabled;
+}
+
+ColorType : WORadioButton {
+  name = "valueType";
+  value = 1;
+  selection = currentBS.valueType;
+  class = "checkChanges";
+  disabled = disabled;
+}
+
+TitleLabel : WOString {
+  value = ^dict.value;
+}
+
+Borders : WORepetition {
+  list = currentBS.sortedBorders;
+  item = item;
+}
+
+ZeroValue : WOTextField {
+  value = currentBS.zeroValue;
+  class = "checkChanges";
+  size = 12;
+  maxlength = 28;
+  disabled = disabled;
+}
+
+Border : WOTextField {
+  value = item.least;
+  class = "decimal checkChanges";
+  size = 4;
+  disabled = disabled;
+}
+
+BValue : WOTextField {
+  value = item.title;
+  class = "checkChanges";
+  size = 12;
+  maxlength = 28;
+  disabled = disabled;
+}
+
+HasSelection : WOConditional {
+  condition = currentBS;
+}
+
+Save : WOSubmitButton {
+  action = saveBS;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+  style = "margin-bottom:1em;";
+}
+
+Form : WOForm {
+  style = "border: 1px solid #999999;";
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 8;
+  width = 8;
+}
+
+DelBorderCell : OnClickContainer {
+  elementName = "td";
+  onclick = session.checkRun;
+  invokeAction = deleteBorder;
+  disabled = disabled;
+}
+
+ComparisonTitle : WOString {
+  value = ^dict.comparison;
+}
+
+ValueType : WOString {
+  value = ^dict.valueType;
+}
+
+TextTitle : WOString {
+  value = ^dict.textType;
+}
+ColorTitle : WOString {
+  value = ^dict.colorType;
+}
+
+NewLabel : WOString {
+  value = ^dict.newBSet;
+}
+
+UseClass : WOTextField {
+  value = currentBS.useClass;
+  style = "width:98%;";
+  disabled = disabled;
+}
+
+NoBorders : WOConditional {
+  condition = currentBS.borders.count;
+  negate = true;
+}
+
+Settings : WORepetition {
+  list = ^dict.settings;
+  item = item;
+}
+
+Description : WOString {
+  value = item.description;
+}
+
+SettingsByCourse : SettingsByCourse {
+  item = setting;
+  key = item.settingBase;
+  create = true;
+  ec = ^ec;
+  hideEmptyDetails = true;
+  title = ^dict.bsTitle;
+  canSave = session.readAccess.edit.SettingsBase;
+}
+SelectPresenter : WOPopUpButton {
+  list = borders;
+  item = item3;
+  noSelectionString = ^dict.namedPresenter;
+  selection = selection;
+  displayString = item3.title;
+  onchange = "nextElementSibling.style.display=(selectedIndex>0)?'none':'';";
+  class = "checkChanges";
+  disabled = disabled;
+}
+
+TxtSetting : WOTextField {
+  value = txtValue;
+  size = 8;
+  style = txtStyle;
+  disabled = disabled;
+}
+
+CanEdit : WOConditional {
+  condition = disabled;
+  negate = true;
+}

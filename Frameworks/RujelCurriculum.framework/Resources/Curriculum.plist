@@ -397,5 +397,171 @@
 			</dict>
 		</array>
 	</dict>
+	<key>adminModules</key>
+	<array>
+		<dict>
+			<key>sort</key>
+			<string>51</string>
+			<key>settingBase</key>
+			<string>weekStart</string>
+			<key>grouping</key>
+			<string>Дни и уроки</string>
+			<key>checkAccess</key>
+			<string>SettingsBase</string>
+			<key>title</key>
+			<string>Начало недели</string>
+			<key>description</key>
+			<string>Первый день недели</string>
+			<key>settingTitle</key>
+			<string>день</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>defaultValue</key>
+				<dict>
+					<key>object</key>
+					<integer>2</integer>
+					<key>methodName</key>
+					<string>intValue</string>
+				</dict>
+				<key>select</key>
+				<string>$itemDict.nums.intValue</string>
+				<key>nums</key>
+				<array>
+					<integer>2</integer>
+					<integer>3</integer>
+					<integer>4</integer>
+					<integer>5</integer>
+					<integer>6</integer>
+					<integer>7</integer>
+					<integer>1</integer>
+				</array>
+				<key>noSelectionString</key>
+				<string>-= выбрать =-</string>
+				<key>displayString</key>
+				<dict>
+					<key>object</key>
+					<string>$session.strings.Reusables_Strings.presets.weekdayLong</string>
+					<key>methodName</key>
+					<string>objectAtIndex</string>
+					<key>paramClasses</key>
+					<array>
+						<string>int</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<string>.</string>
+					</array>
+					<key>cacheMethod</key>
+					<true/>
+					<key>cacheResult</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>53</string>
+			<key>settingBase</key>
+			<string>OldLessonLock</string>
+			<key>grouping</key>
+			<string>Дни и уроки</string>
+			<key>checkAccess</key>
+			<string>BaseLesson</string>
+			<key>title</key>
+			<string>Блокировка</string>
+			<key>description</key>
+			<string>через сколько дней блокировать редактирование уроков и работ</string>
+			<key>settingTitle</key>
+			<string>дней</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>formatter</key>
+				<string>'0</string>
+				<key>styleClass</key>
+				<string>numeric</string>
+				<key>fieldSize</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>61</string>
+			<key>settingBase</key>
+			<string>PlanFactWidget</string>
+			<key>grouping</key>
+			<string>Контроль заполнения</string>
+			<key>checkAccess</key>
+			<string>Variation</string>
+			<key>title</key>
+			<string>План/дано</string>
+			<key>description</key>
+			<string>скрывать блок "план/дано"</string>
+			<key>settingTitle</key>
+			<string>скрыть</string>
+			<key>textValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>textValue</string>
+				<key>boolean</key>
+				<string>'hide</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>62</string>
+			<key>settingBase</key>
+			<string>deviationForReprimand</string>
+			<key>grouping</key>
+			<string>Контроль заполнения</string>
+			<key>checkAccess</key>
+			<string>Reprimand</string>
+			<key>title</key>
+			<string>Замечания</string>
+			<key>description</key>
+			<string>минимальное отклонение для создания замечания</string>
+			<key>settingTitle</key>
+			<string>откл.</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>defaultValue</key>
+				<integer>1</integer>
+				<key>formatter</key>
+				<string>'0</string>
+				<key>styleClass</key>
+				<string>numeric</string>
+				<key>fieldSize</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>63</string>
+			<key>settingBase</key>
+			<string>ignoreUnverifiedReasons</string>
+			<key>grouping</key>
+			<string>Контроль заполнения</string>
+			<key>checkAccess</key>
+			<string>Curriculum</string>
+			<key>title</key>
+			<string>Неподтвержденные</string>
+			<key>description</key>
+			<string>не учитывать поправки по неподтвержденным причинам</string>
+			<key>settingTitle</key>
+			<string>игнор.</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>boolean</key>
+				<string>number</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

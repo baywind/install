@@ -54,14 +54,15 @@ Number : WOString {
 NameField : WOTextField {
   value = typeItem.typeName;
   style = "text-align:center;";
+  class = "checkChanges";
 }
 
 WeightField : WOTextField {
   value = typeItem.dfltWeight;
   size = 4;
   maxlength = 4;
-  onkeypress = "return isNumberInput(this,true);";
   disabled = cantEdit;
+  class = "checkChanges decimal";
 }
 
 WithWeightTitile : WOString {
@@ -76,7 +77,7 @@ NoWeightTitile : WOString {
 
 NoWeightField : WOTextField {
   value = typeItem.noWeightHex;
-  class = "color";
+  class = "color checkChanges";
   size = 6;
   maxlength = 6;
   onchange = "get(this,'tr').style.backgroundColor = '#' + value";
@@ -85,7 +86,7 @@ NoWeightField : WOTextField {
 
 WithWeightField : WOTextField {
   value = typeItem.weightHex;
-  class = "color";
+  class = "color checkChanges";
   size = 6;
   maxlength = 6;
   onchange = "get(this,'tr').style.backgroundColor = '#' + value";
@@ -104,31 +105,37 @@ TypeRow : OnClickContainer {
 FixWeight : WOCheckBox {
   checked = typeItem.namedFlags.fixWeight;
   disabled = cantEditFlags;
+  class = "checkChanges";
 }
 
 IsCompulsory : WOCheckBox {
   checked = typeItem.namedFlags.compulsory;
   disabled = cantEditFlags;
+  class = "checkChanges";
 }
 
 FixCompulsory : WOCheckBox {
   checked = typeItem.namedFlags.fixCompulsory;
   disabled = cantEditFlags;
+  class = "checkChanges";
 }
 
 IsHometask : WOCheckBox {
   checked = typeItem.namedFlags.hometask;
   disabled = cantEditFlags;
+  class = "checkChanges";
 }
 
 FixHometask : WOCheckBox {
   checked = typeItem.namedFlags.fixHometask;
   disabled = cantEditFlags;
+  class = "checkChanges";
 }
 
 Unused : WOCheckBox {
   checked = typeItem.namedFlags.unused;
   disabled = cantEdit;
+  class = "checkChanges";
 }
 
 CanEdit : WOConditional {

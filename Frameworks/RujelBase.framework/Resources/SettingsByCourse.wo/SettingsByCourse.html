@@ -1,7 +1,10 @@
 <webobject name = "SortForm"><table align = "center" style = "text-align:center;" cellpadding = "2">
 	<webobject name = "CanEdit"><caption align = "bottom" valign = "bottom">
-			&nbsp;<webobject name = "SetBase"><webobject name = "BaseTitle"/></webobject>
-			<webobject name = "AddByCourse">+</webobject>
+			<webobject name = "SetBase"><webobject name = "BaseTitle"/></webobject>
+			<webobject name = "CanSave"><webobject name = "SaveSettings"/></webobject>
+			<webobject name = "ShowDetails"><webobject name = "AddByCourse">+</webobject></webobject>
+			<webobject name = "NoDetails"><webobject name = "AddByCourse2">
+				уточнить</webobject></webobject>
 	</caption></webobject>
 	<thead><webobject name = "ShowCourse">
 		<tr class = "selection"><td></td>
@@ -11,7 +14,7 @@
 			<webobject name = "EditorHead"/><td>...</td>
 			<td><webobject name = "Content"/></td>
 		</tr>
-	</webobject><tr><webobject name = "ShowDetails"><td/>
+	</webobject><webobject name = "ShowDetails"><tr><td/>
 			<th><webobject name = "EduGroupLabel"/></th>
 			<th><webobject name = "EduPlanLabel"/></th>
 			<th><webobject name = "TeacherLabel"/></th>
@@ -26,12 +29,11 @@
 				<webobject name = "SaveSort"/></th>
 			<webobject name = "TestSort">?</webobject>
 			</webobject><webobject name = "Title"/>
-	</webobject>
-	</tr>
-	<webobject name = "ShowBase"><tr class = "highlight2"><webobject name = "ShowDetails">
-		<td colspan = "4" align = "center">
-		<webobject name = "BaseString"/></td>
-		<webobject name = "EditorHead"/></webobject>
+	</tr></webobject>
+	<webobject name = "ShowBase"><tr><webobject name = "ShowDetails">
+		<webobject name = "BaseCell"><webobject name = "BaseString"/></webobject>
+		</webobject>
+		<webobject name = "NoDetails"><td><webobject name = "Title"/></td></webobject>
 		<webobject name = "CondCell"><webobject name = "Content"/></webobject>
 	</tr></webobject>
 	</thead>

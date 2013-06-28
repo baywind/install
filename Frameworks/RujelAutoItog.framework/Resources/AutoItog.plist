@@ -159,6 +159,8 @@
 		<string>Прогнозируемый итог</string>
 		<key>perform</key>
 		<string>выставить сейчас</string>
+		<key>disabledPrognosis</key>
+		<string>Этот прогноз помечен "не выставлять".</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

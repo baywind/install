@@ -259,18 +259,18 @@
 		<key>manualRedirect</key>
 		<string>Если перенаправление не происходит, нажмите здесь</string>
 	</dict>
-	<key>AdminPage</key>
-	<dict>
-		<key>maintenance</key>
+	<key>baseSettings</key>
+	<array>
 		<dict>
 			<key>title</key>
 			<string>Системные процедуры</string>
 			<key>component</key>
 			<string>Maintenance</string>
+			<key>checkAccess</key>
+			<string>Maintenance</string>
 			<key>sort</key>
 			<string>98</string>
 		</dict>
-		<key>bugReport</key>
 		<dict>
 			<key>title</key>
 			<string>Отчет об ошибке</string>
@@ -291,12 +291,15 @@
 			<key>messageSent</key>
 			<string>Сообщение отправлено</string>
 		</dict>
-		<key>printReport</key>
 		<dict>
 			<key>sort</key>
 			<string>40</string>
 			<key>settingBase</key>
 			<string>reportCourses</string>
+			<key>grouping</key>
+			<string>Курсы</string>
+			<key>checkAccess</key>
+			<string>ReporterSetup</string>
 			<key>title</key>
 			<string>Распечатка</string>
 			<key>description</key>
@@ -315,6 +318,84 @@
 				<string>number</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>sort</key>
+			<string>41</string>
+			<key>settingBase</key>
+			<string>coursesDone</string>
+			<key>grouping</key>
+			<string>Курсы</string>
+			<key>checkAccess</key>
+			<string>SrcMark</string>
+			<key>title</key>
+			<string>Пустые строки</string>
+			<key>description</key>
+			<string>Скрыть пустые строки в режиме выбора журнала</string>
+			<key>instructions</key>
+			<string></string>
+			<key>settingTitle</key>
+			<string>скрыть</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>boolean</key>
+				<string>number</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>42</string>
+			<key>settingBase</key>
+			<string>defaultCourseFlags</string>
+			<key>grouping</key>
+			<string>Курсы</string>
+			<key>checkAccess</key>
+			<string>BaseCourse</string>
+			<key>title</key>
+			<string>Смешанные группы</string>
+			<key>description</key>
+			<string>Предпочтительно хранить группы как смешанные</string>
+			<key>settingTitle</key>
+			<string>смеш.</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>boolean</key>
+				<integer>16</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>55</string>
+			<key>settingBase</key>
+			<string>restrictFutureLessonDays</string>
+			<key>grouping</key>
+			<string>Дни и уроки</string>
+			<key>checkAccess</key>
+			<string>BaseLesson</string>
+			<key>title</key>
+			<string>Вперёд</string>
+			<key>description</key>
+			<string>на сколько дней запретить запись уроков вперед</string>
+			<key>settingTitle</key>
+			<string>дней</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>formatter</key>
+				<string>'0</string>
+				<key>styleClass</key>
+				<string>numeric</string>
+				<key>fieldSize</key>
+				<integer>3</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>AdminPage</key>
+	<dict>
 		<key>title</key>
 		<string>Центр управления</string>
 		<key>color</key>

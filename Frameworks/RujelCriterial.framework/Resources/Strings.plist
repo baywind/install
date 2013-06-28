@@ -135,6 +135,292 @@
 			<key>scriptResource</key>
 			<string>sorting.js</string>
 		</dict>
+		<key>BorderSet</key>
+		<dict>
+			<key>title</key>
+			<string>Преобразование процентов</string>
+			<key>component</key>
+			<string>BordersSetup</string>
+			<key>sort</key>
+			<string>35</string>
+			<key>bsTitle</key>
+			<string>Набор</string>
+			<key>newBSet</key>
+			<string>Новый набор</string>
+			<key>comparison</key>
+			<string>Сравнение</string>
+			<key>valueType</key>
+			<string>Тип значения</string>
+			<key>textType</key>
+			<string>текст</string>
+			<key>colorType</key>
+			<string>цвет</string>
+			<key>value</key>
+			<string>Значение</string>
+			<key>namedPresenter</key>
+			<string>Имя...</string>
+			<key>settings</key>
+			<array>
+				<dict>
+					<key>settingBase</key>
+					<string>presenters.workIntegral</string>
+					<key>description</key>
+					<string>Интегральная оценка за работу (с весом > 0)</string>
+					<key>defaultValue</key>
+					<string>%</string>
+				</dict>
+				<dict>
+					<key>settingBase</key>
+					<string>presenters.weightless</string>
+					<key>description</key>
+					<string>Интегральная оценка за работу (с весом = 0)</string>
+					<key>defaultValue</key>
+					<string>none#</string>
+				</dict>
+				<dict>
+					<key>settingBase</key>
+					<string>presenters.integralColor</string>
+					<key>description</key>
+					<string>Цвет подсветки интегральной (с весом > 0)</string>
+					<key>defaultValue</key>
+					<string>color</string>
+				</dict>
+				<dict>
+					<key>settingBase</key>
+					<string>presenters.weightlessColor</string>
+					<key>description</key>
+					<string>Цвет подсветки интегральной (с весом = 0)</string>
+					<key>defaultValue</key>
+					<string>color</string>
+				</dict>
+				<dict>
+					<key>settingBase</key>
+					<string>bonusBorders</string>
+					<key>description</key>
+					<string>Граничные проценты для назначения бонусов при 100-балльном оценивании.</string>
+				</dict>
+			</array>
+		</dict>
+		<key>SettingsBase</key>
+		<array>
+			<dict>
+				<key>sort</key>
+				<string>71</string>
+				<key>settingBase</key>
+				<string>defaultWorkType</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>WorkType</string>
+				<key>title</key>
+				<string>Тип по-умолчанию</string>
+				<key>description</key>
+				<string>Какого типа по-умолчанию создаются работы</string>
+				<key>settingTitle</key>
+				<string>тип</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>idAttribute</key>
+					<string>PRIMARY_KEY</string>
+					<key>select</key>
+					<dict>
+						<key>className</key>
+						<string>net.rujel.ui.WorkTypeSetup</string>
+						<key>methodName</key>
+						<string>types</string>
+						<key>cacheResult</key>
+						<true/>
+						<key>paramClasses</key>
+						<array>
+							<string>com.webobjects.eocontrol.EOEditingContext</string>
+						</array>
+						<key>paramValues</key>
+						<array>
+							<string>$parent.ec</string>
+						</array>
+					</dict>
+					<key>displayString</key>
+					<string>.typeName</string>
+					<key>defaultValue</key>
+					<dict>
+						<key>className</key>
+						<string>net.rujel.criterial.WorkType</string>
+						<key>methodName</key>
+						<string>defaultType</string>
+						<key>cacheMethod</key>
+						<true/>
+						<key>paramClasses</key>
+						<array>
+							<string>com.webobjects.eocontrol.EOEditingContext</string>
+						</array>
+						<key>paramValues</key>
+						<array>
+							<string>$parent.ec</string>
+						</array>
+					</dict>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>72</string>
+				<key>settingBase</key>
+				<string>noLessonMarks</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Mark</string>
+				<key>title</key>
+				<string>Оценки в уроке</string>
+				<key>description</key>
+				<string>Запретить ставить оценки в режиме "уроки"</string>
+				<key>instructions</key>
+				<string>Если отмечено, все записи в уроках сохраняются только как текстовые комментарии.
+				В противном случае, оценки распознаются и сохраняются в работу на уроке.</string>
+				<key>settingTitle</key>
+				<string>запрет</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>boolean</key>
+					<string>number</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>73</string>
+				<key>settingBase</key>
+				<string>lessonWorkNotes</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>WorkNote</string>
+				<key>title</key>
+				<string>Работа на уроке</string>
+				<key>description</key>
+				<string>Комментарии к урокам переносятся в "работу на уроке"</string>
+				<key>instructions</key>
+				<string>Если отмечено, все текстовые комментарии на уроке, кроме отметок об отсутствии, сохраняются в соответствующей работе типа "Работа на уроке"</string>
+				<key>settingTitle</key>
+				<string>переносить</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>boolean</key>
+					<string>number</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>74</string>
+				<key>settingBase</key>
+				<string>allowMarkLowerZero</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Mark</string>
+				<key>title</key>
+				<string>Отрицательные оценки</string>
+				<key>description</key>
+				<string>Разрешить ставить оценки меньше нуля.</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>boolean</key>
+					<string>number</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>75</string>
+				<key>settingBase</key>
+				<string>weightToMax</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Work</string>
+				<key>title</key>
+				<string>Вес = максимуму</string>
+				<key>description</key>
+				<string>Приводить вес критериев к максимуму по критерию.</string>
+				<key>instructions</key>
+				<string>Если отмечено, при рассчёте интегральной оценки за работу, вклад каждого критерия по-умолчанию определяется максимум по этому критерию.
+				Если не отмечено, все критерии по-умолчанию равнозначны, независимо от максимумов.</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>defaultValue</key>
+					<true/>
+					<key>boolean</key>
+					<string>number</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>76</string>
+				<key>settingBase</key>
+				<string>countMarklessWorkAfter</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Work</string>
+				<key>title</key>
+				<string>Без оценок не считать</string>
+				<key>description</key>
+				<string>Сколько дней не учитывать работу без выставленных оценок в расчёте прогноза.</string>
+				<key>instructions</key>
+				<string>Если не указано, пустая работа начинает влиять на прогноз с момента проведения.</string>
+				<key>settingTitle</key>
+				<string>дней</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>formatter</key>
+					<string>'0</string>
+					<key>styleClass</key>
+					<string>numeric</string>
+					<key>fieldSize</key>
+					<integer>3</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>77</string>
+				<key>settingBase</key>
+				<string>CriterlessMax</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Mark</string>
+				<key>title</key>
+				<string>Максимум бескритериальной</string>
+				<key>description</key>
+				<string>Значение по-умолчанию для максимума бескритериальной отметки.</string>
+				<key>instructions</key>
+				<string>Эта настройка устарела. Рекомендуется использовать средства настройки оценивания.</string>
+				<key>settingTitle</key>
+				<string>max</string>
+				<key>numericValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>numericValue</string>
+					<key>formatter</key>
+					<string>'0</string>
+					<key>styleClass</key>
+					<string>numeric</string>
+					<key>fieldSize</key>
+					<integer>3</integer>
+					<key>defaultValue</key>
+					<integer>5</integer>
+				</dict>
+			</dict>
+		</array>
 	</dict>
 	<key>messages</key>
 	<dict>
