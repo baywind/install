@@ -522,9 +522,9 @@ CREATE TABLE SCHEMA_VERSION (
 );
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
-  VALUES ('BaseYearly',3,'0.9.7'),('Curriculum',2,'0.9.4'),('EduPlanYearly',2,'0.9.4'),
+  VALUES ('BaseYearly',3,'0.9.7'),('Curriculum',2,'0.9.4'),('EduPlanYearly',3,'0.9.5'),
   ('Schedule',2,'0.9.4'),('MarkArchive',3,'0.9.7'),('Stats',1,'0.9.4'),('AutoItog',2,'0.9.7'),
-  ('Criterial',3,'0.9.7');
+  ('Criterial',3,'0.9.7'),('Complete',1,'0.9.4');
 
 CREATE TABLE  EO_PK_TABLE (
   NAME char(40),
