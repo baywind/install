@@ -27,10 +27,6 @@
 			<key>any</key>
 			<string>*</string>
 		</dict>
-		<key>guestUser</key>
-		<string>rujelGuest</string>
-		<key>guestPassword</key>
-		<string>guest</string>
 		<key>ldap</key>
 		<dict>
 			<key>providerUrl</key>

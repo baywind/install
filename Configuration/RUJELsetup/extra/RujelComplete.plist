@@ -7,9 +7,9 @@
 	<key>edu</key>
 	<dict>
 		<key>studentsCompleteDir</key>
-		<string>/tmp/complete/students</string>
+		<string>/var/lib/rujel/complete/students</string>
 		<key>coursesCompleteDir</key>
-		<string>/tmp/complete/courses</string>
+		<string>/var/lib/rujel/complete/courses</string>
 	</dict>
 	<key>dbConnection.Complete</key>
 	<dict>

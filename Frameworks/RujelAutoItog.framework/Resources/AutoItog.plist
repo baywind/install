@@ -161,6 +161,10 @@
 		<string>выставить сейчас</string>
 		<key>disabledPrognosis</key>
 		<string>Этот прогноз помечен "не выставлять".</string>
+		<key>addedToPrognose</key>
+		<string>Добавлено в расчёт прогноза</string>
+		<key>removedFromPrognose</key>
+		<string>Исключено из расчёта прогноза</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>

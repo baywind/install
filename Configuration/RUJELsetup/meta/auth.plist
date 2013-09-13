@@ -233,13 +233,27 @@
 					<key>type</key>
 					<string>Boolean</string>
 					<key>title</key>
-					<string>useHTTPS</string>
+					<string>переадресация HTTPS</string>
 					<key>description</key>
 					<string>переходить на использование HTTPS для шифрованной пересылки пароля. Включайте этот режим только если у Вас настроен HTTPS на web-сервере Apache</string>
 					<key>defaultValue</key>
 					<true/>
 					<key>advanced</key>
-					<true/>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>secureForm</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>Защищённый вход</string>
+					<key>description</key>
+					<string>Использовать форму отправки пароля по протоколу HTTPS. Включайте этот режим только если у Вас настроен HTTPS на web-сервере Apache</string>
+					<key>defaultValue</key>
+					<false/>
+					<key>advanced</key>
+					<false/>
 				</dict>
 				<dict>
 					<key>key</key>
@@ -249,9 +263,23 @@
 					<key>title</key>
 					<string>sessionSecure</string>
 					<key>description</key>
-					<string>продолжать работу по шифрованному соединению после успешной авторизации, не возвращаться на нешифрованный HTTP</string>
+					<string>Всегда работать по шифрованному соединению HTTPS, не возвращаться на нешифрованный HTTP после успешной авторизации.</string>
 					<key>defaultValue</key>
 					<false/>
+					<key>advanced</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>bruteforcingProtect</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>bruteforcingProtect</string>
+					<key>description</key>
+					<string>Защита от подбора пароля с увеличением времени до следующей попытки.</string>
+					<key>defaultValue</key>
+					<true/>
 					<key>advanced</key>
 					<true/>
 				</dict>

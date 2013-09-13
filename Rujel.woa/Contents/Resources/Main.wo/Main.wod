@@ -99,3 +99,9 @@ Guest : WOGenericElement {
 Version : WOString {
   value = version;
 }
+Form : WOGenericContainer {
+  elementName = "form";
+  onsubmit="return (timeout &lt;= 0);";
+  method="post";
+  action = action;
+}
