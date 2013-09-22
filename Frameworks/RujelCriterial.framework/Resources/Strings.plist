@@ -124,6 +124,8 @@
 				<string>запретить изменять веса критериев</string>
 				<key>fixList</key>
 				<string>всегда использовать все критерии</string>
+				<key>numerousCriteria</key>
+				<string>показывать перечень критериев по вертикали в описании работы</string>
 			</dict>
 			<key>tabs</key>
 			<array>
@@ -336,7 +338,7 @@
 			</dict>
 			<dict>
 				<key>sort</key>
-				<string>75</string>
+				<string>76</string>
 				<key>settingBase</key>
 				<string>weightToMax</string>
 				<key>grouping</key>
@@ -362,7 +364,7 @@
 			</dict>
 			<dict>
 				<key>sort</key>
-				<string>76</string>
+				<string>77</string>
 				<key>settingBase</key>
 				<string>countMarklessWorkAfter</string>
 				<key>grouping</key>
@@ -391,7 +393,7 @@
 			</dict>
 			<dict>
 				<key>sort</key>
-				<string>77</string>
+				<string>78</string>
 				<key>settingBase</key>
 				<string>CriterlessMax</string>
 				<key>grouping</key>

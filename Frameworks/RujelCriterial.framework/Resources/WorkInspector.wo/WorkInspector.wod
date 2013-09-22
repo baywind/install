@@ -311,3 +311,22 @@ ArchiveDate : WOString {
   value = item.@date_date;
   dateformat = application.prefs.ui.shortDateFormat;
 }
+
+NumerousCriteria : WOConditional {
+  condition = critSet.namedFlags.numerousCriteria;
+}
+
+StandardCriteria : WOConditional {
+  condition = critSet.namedFlags.numerousCriteria;
+  negate = true;
+}
+
+CriterComment : WOString {
+  value = critItem.comment;
+}
+
+CommentTitle : WOString {
+  value = session.strings.Reusables_Strings.dataTypes.comment;
+  valueWhenEmpty = "comment";
+  escapeHTML = false;
+}

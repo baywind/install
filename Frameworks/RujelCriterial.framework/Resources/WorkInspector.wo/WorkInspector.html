@@ -32,7 +32,22 @@
 	</tr><tr><td align = "right"><webobject name = "CriterMax"/>:</td>
 		<td><webobject name = "MaxField"/></td></tr>
 	</table></webobject>
-	<table align = "center" border = "1" cellspacing = "1">
+	<div style = "width:100%;max-height:320px;overflow:auto;">
+	<table align = "center" border = "1" cellspacing = "1"><webobject name = "NumerousCriteria">
+	<thead>
+	<tr><th colspan = "2"><webobject name = "CriterMax"/></th>
+		<th><webobject name = "CommentTitle"/></th>
+		<th><webobject name = "CriterWeight"/></th>
+	</tr>
+	</thead>
+	<tbody>
+	<webobject name = "CriteriaList"><tr>
+	<td><webobject name = "MaxField"/></td><th><webobject name = "CriterTitle"/></th>
+	<td align = "left"><webobject name = "CriterComment"/></td>
+	<td><webobject name = "WeightField"/></td>
+	</tr></webobject>
+	</tbody>
+	</webobject><webobject name = "StandardCriteria">
 	<thead>
 	<tr id = "titles"><th onclick = "toggleObj('weights');"><webobject name = "CritCount"/>
 		<webobject name = "CriterHead"/></th><webobject name = "CriteriaList">
@@ -48,7 +63,7 @@
 		<td><webobject name = "WeightField"/></td>
 		</webobject>
 	</tr></tbody>
-	</table>
+	</webobject></table></div>
 </td></webobject><webobject name = "CritersDenied">
 	<td colspan = "2"></td>
 	<td colspan = "2" align = "right" style = "padding-right:1em;">

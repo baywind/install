@@ -294,6 +294,14 @@ FixListTitle : WOString {
   escapeHTML = false;
 }
 
+NumerousCriteria : WOCheckBox {
+  checked = currSet.namedFlags.numerousCriteria;
+}
+
+NumerousCriteriaTitle : WOString {
+  value = ^dict.flags.numerousCriteria;
+  escapeHTML = false;
+}
 Save : WOSubmitButton {
   action = save;
   value = session.strings.Reusables_Strings.uiElements.Save;
