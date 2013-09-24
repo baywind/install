@@ -31,10 +31,13 @@ Repetition1: WORepetition {
 	list = personList;
 	index = index;
 }
-
-StyledRow: OnClickContainer {
-	class = style;
+StyledRow: WOGenericContainer {
 	elementName = "tr";
+	class = style;
+}
+SelectTD: OnClickContainer {
+	elementName = "td";
+	parent = "tr";
 	onclick = onClick;
 	invokeAction = select;
 	title = itemFullName;
@@ -48,7 +51,7 @@ ComposeName: WOString {
 	value = itemName;
 }
 
-RemoveFromList: WOGenericContainer {
+RemoveFromList: OnClickContainer {
 	elementName = "td";
 	onclick = act;
 	invokeAction = delete;

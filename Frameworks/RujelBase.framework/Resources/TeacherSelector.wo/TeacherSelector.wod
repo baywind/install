@@ -40,7 +40,7 @@ SubjectsRepetition : WORepetition {
 }
 
 SelectTeacher : OnClickContainer {
-  elementName = "div";
+  elementName = "td";
   invokeAction = select;
   onclick = onSelect;
   class = teacherClass;
@@ -53,6 +53,13 @@ TeacherDisplay : PersonDisplay {
   last = 2;
   first = 1;
   second = 1;
+}
+
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  height = 12;
+  width = 12;
 }
 
 List : WORepetition {
@@ -94,4 +101,13 @@ DeleteTitle : WOString {
 
 ShowDelete : WOConditional {
   condition = ^allowDelete;
+}
+
+Delete : OnClickContainer {
+  elementName = "td";
+  width = 16;
+  class = teacherClass;
+  hide = currSubject;
+  onclick = act;
+  invokeAction = deleteTeacher;
 }

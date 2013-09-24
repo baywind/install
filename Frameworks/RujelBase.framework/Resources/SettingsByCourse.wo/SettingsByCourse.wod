@@ -195,11 +195,6 @@ BaseCell : WOGenericContainer {
   colspan = colspan;
 }
 
-AddTitle : WOString {
-  value = session.strings.RujelBase_Base.SettingsBase.addByCourse;
-  escapeHTML = false;
-}
-
 CanSave : WOConditional {
   condition = ^canSave;
 }
