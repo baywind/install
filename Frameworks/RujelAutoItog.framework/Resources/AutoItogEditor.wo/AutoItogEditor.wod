@@ -28,6 +28,7 @@ DateField : WOTextField {
   size = 10;
   maxLength = 10;
   disabled = cantChange;
+  id = "prognosisFireDate";
 }
 
 TimeTitle : WOString {

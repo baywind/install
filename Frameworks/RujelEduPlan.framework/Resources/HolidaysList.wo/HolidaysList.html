@@ -38,7 +38,19 @@ function toggleDisabled(cell) {
 <webobject name = "CanCreate">
 	<tr class = "grey"><td><webobject name = "NameField"/></td>
 		<td><webobject name = "BeginField"/></td>
-		<td><webobject name = "EndField"/></td>
+		<td><webobject name = "EndField"/>
+<script type="text/javascript" charset="utf-8">
+	new Kalendae.Input('currHolidayBegin', {
+		side:'bottom',
+		offsetLeft:-90,
+		offsetTop:4
+	});
+	new Kalendae.Input('currHolidayEnd', {
+		side:'bottom',
+		offsetTop:4
+	});
+</script>
+		</td>
 		<td style = "color:#666666;"><webobject name = "DaysTitle"/></td>
 	</tr></webobject><webobject name = "ShowButtton">
 <tr><td colspan = "4" align = "center"><webobject name = "Save"/></td></tr></webobject>
@@ -51,7 +63,19 @@ function toggleDisabled(cell) {
 </webobject></webobject><webobject name = "Preset"><webobject name = "PresetRow">
 	<td><webobject name = "NameField"/></td>
 	<td><webobject name = "BeginField"/></td>
-	<td><webobject name = "EndField"/></td>
+	<td><webobject name = "EndField"/>
+<script type="text/javascript" charset="utf-8">
+	new Kalendae.Input('currHolidayBegin', {
+		side:'bottom',
+		offsetLeft:-90,
+		offsetTop:4
+	});
+	new Kalendae.Input('currHolidayEnd', {
+		side:'bottom',
+		offsetTop:4
+	});
+</script>
+	</td>
 	<webobject name = "DeleteCell"><webobject name = "Disabled"/>
 		<webobject name = "Cross"/><webobject name = "Plus">+</webobject></webobject>
 </webobject></webobject></webobject>

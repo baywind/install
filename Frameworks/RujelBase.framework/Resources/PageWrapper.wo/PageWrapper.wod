@@ -234,3 +234,14 @@ ExtraRsrc : ResourceLink {
 HasAction : WOConditional {
   condition = hasAction;
 }
+
+KalendaeLocal : ResourceLink {
+  framework = "RujelBase";
+  jsLink = "kalendae_local.js";
+}
+
+Kalendae : ResourceLink {
+  framework = "Reusables";
+  cssLink = "kalendae.css";
+  jsLink = "kalendae.standalone.min.js";
+}

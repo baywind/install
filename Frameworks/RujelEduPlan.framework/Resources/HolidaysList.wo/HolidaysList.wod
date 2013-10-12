@@ -66,6 +66,7 @@ BeginField : WOTextField {
 	disabled = dict.delete;
 	onchange = "checkChanges(this);";
 	name = "beginH";
+	id = "currHolidayBegin";
 }
 
 EndField : WOTextField {
@@ -78,6 +79,7 @@ EndField : WOTextField {
 	onfocus = "if(!value)value=form.beginH.value;";
 	disabled = dict.delete;
 	onchange = "checkChanges(this);";
+	id = "currHolidayEnd";
 }
 
 Disabled : WOCheckBox {

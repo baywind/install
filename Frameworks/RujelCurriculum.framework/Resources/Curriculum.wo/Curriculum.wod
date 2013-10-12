@@ -46,9 +46,10 @@ BeginDate : WOTextField {
   dateformat = application.prefs.ui.dateFormat;
   size = 10;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
   name = "begin";
   disabled = cantEdit;
+  id = "reasonBeginDate";
 }
 
 EndDate : WOTextField {
@@ -56,10 +57,16 @@ EndDate : WOTextField {
   dateformat = application.prefs.ui.dateFormat;
   size = 10;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
   name = "end";
   onfocus = "if(value==null||value.length==0)value=form.begin.value;";
   disabled = cantEdit;
+  id = "reasonEndDate";
+}
+
+BeginDateString : WOString {
+  value = currReason.begin;
+  dateformat = application.prefs.ui.dateFormat;
 }
 
 ReasonTitle : WOString {

@@ -3,7 +3,14 @@
 </webobject><webobject name = "Form"><table border = "1" width = "100%">
 <tr><th colspan = "2" style = "padding:4pt;"><webobject name = "VariationTitle"/></th></tr>
 <tr><th><webobject name = "DateTitle"/>:</th>
-	<td><webobject name = "DateField"/></td></tr>
+	<td><webobject name = "DateField"/>
+<script type="text/javascript" charset="utf-8">
+	new Kalendae.Input('VariationDate', {
+		side:'bottom',
+		offsetTop:4
+	});
+</script>
+	</td></tr>
 <tr><th><webobject name = "MinusTitle"/>:</th>
 	<td align = "center"><webobject name = "ValueField"/></td></tr><webobject name = "HasLesson">
 <tr><th><webobject name = "SubstituteTitle"/>:</th>

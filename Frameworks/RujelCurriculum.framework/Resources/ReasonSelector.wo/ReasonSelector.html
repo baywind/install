@@ -24,6 +24,19 @@
 		<webobject name = "BeginDate"/></span>
 	<span style = "white-space:nowrap;"><webobject name = "EndTitle"/>:
 		<webobject name = "EndDate"/></span>
+<script type="text/javascript" charset="utf-8">
+	new Kalendae.Input('reasonBeginDate', {
+		side:'top',
+		viewStartDate:'<webobject name = "BeginDateString"/>',
+		offsetLeft:-90,
+		offsetTop:-2
+	});
+	new Kalendae.Input('reasonEndDate', {
+		side:'top',
+		viewStartDate:'<webobject name = "BeginDateString"/>',
+		offsetTop:-2
+	});
+</script>
 	</td></tr>
 	</tfoot>	
 	<tbody><webobject name = "ReasonsRepetition"><webobject name = "ReasonRow">

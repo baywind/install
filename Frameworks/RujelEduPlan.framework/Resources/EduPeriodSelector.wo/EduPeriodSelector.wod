@@ -89,8 +89,9 @@ BeginField : WOTextField {
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
+	class = "date";
 	name = "begin";
+	id = "currPeriodBegin";
 }
 
 EndField : WOTextField {
@@ -99,9 +100,10 @@ EndField : WOTextField {
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	onkeypress = "return isNumberInput(event,true);";
+	class = "date";
 	name = "end";
 	onfocus = "if(!value)value=form.begin.value;";
+	id = "currPeriodEnd";
 }
 
 Save: WOSubmitButton {

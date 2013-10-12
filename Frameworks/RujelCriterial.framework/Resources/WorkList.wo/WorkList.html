@@ -42,7 +42,25 @@
 	<b id="number"><webobject name="LessonNumber"></webobject></b>
 </td></webobject -->
 	<td align="center"><webobject name="CurrAnnounceDateField"></webobject></td>
-	<td align="center"><webobject name="CurrLessonDateField"></webobject></td>
+	<td align="center"><webobject name="CurrLessonDateField"></webobject>
+		<script type="text/javascript" charset="utf-8">
+		new Kalendae.Input('currAnnounce', {
+			side:'top',
+			offsetTop:-1,<webobject name = "NotFull">
+			format:shortDateFormat,
+			selected:Kalendae.moment('<webobject name = "AnnounceFullDate"/>'),
+			offsetLeft:-120
+			</webobject>
+		});
+		new Kalendae.Input('<webobject name = "DateFieldID"/>', {<webobject name = "NotFull">
+			format:shortDateFormat,
+			selected:Kalendae.moment('<webobject name = "DeadlineFullDate"/>'),
+			</webobject>
+			side:'top',
+			offsetTop:-1,
+		});
+	</script>
+	</td>
 	<td><webobject name="CurrLessonThemeField"></webobject></td>
     <webobject name = "InspectorCaller"><webobject name="InspectorImage"/></webobject>
     <webobject name="IfFull"><webobject name="CriterList">

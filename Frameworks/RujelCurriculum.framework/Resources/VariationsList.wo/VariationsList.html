@@ -26,7 +26,15 @@
 	 / <webobject name = "RealTitle"/>: <webobject name = "RealCount"/></span>
 	= <webobject name = "TotalTotal"/></td></tr>
 <webobject name = "CanCreate">
-<tr class = "orange"><td align = "center"><webobject name = "DateField"/></td> 
+<tr class = "orange"><td align = "center"><webobject name = "DateField"/>
+<script type="text/javascript" charset="utf-8">
+	new Kalendae.Input('newDateField', {
+		side:'bottom',
+		offsetLeft:-90,
+		offsetTop:4
+	});
+</script>
+</td> 
 		<td align = "center"><webobject name = "ValueField"/></td>
 		<td><webobject name = "AddButton"></webobject></td>
 	</tr>

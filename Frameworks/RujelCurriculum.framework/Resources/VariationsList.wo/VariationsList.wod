@@ -89,7 +89,8 @@ DateField : WOTextField {
   value = date;
   size = 10;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
+  id = "newDateField";
 }
 
 ValueField : WOTextField {
@@ -216,7 +217,7 @@ ShowSuggestions : WOConditional {
 
 SubmitSuggest : OnClickContainer {
   elementName = "td";
-  hide = item.positive;
+  hide = item.cantSubmit;
   onclick = session.ajaxPopupNoPos;
   invokeAction = editVariation;
   class = "orange";
@@ -239,7 +240,7 @@ BackTitle : WOString {
 }
 
 NoSubmit : WOConditional {
-  condition = item.positive;
+  condition = item.cantSubmit;
 }
 
 Dop : WOString {

@@ -16,6 +16,15 @@
 	<webobject name = "SetToday"><webobject name = "TodayString"/>:</webobject>
 	<webobject name="TextField1"></webobject>
 	<webobject name="SubmitButton1"></webobject></div>
+<script type="text/javascript" charset="utf-8">
+	var todayCal = new Kalendae.Input('currentDate', {
+		side:'bottom',
+		useYearNav:true,
+		offsetTop:2
+	});
+	document.getElementById('setTodaySpan').addEventListener('click',
+		function(){<webobject name = "TodayOnClick"/>});
+</script>
 	<div style="color:#666666;"><webobject name="String1"/></div>
 	</webobject>
 </webobject>

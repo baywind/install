@@ -275,7 +275,8 @@ BeginDate : WOTextField {
   size = 5;
   maxlength = 5;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
+  id = "tabelBeginDate";
 }
 
 EndDate : WOTextField {
@@ -284,9 +285,19 @@ EndDate : WOTextField {
   size = 5;
   maxlength = 5;
   style = "text-align:center;";
-  onkeypress = "return isNumberInput(event,true);";
+  class = "date";
+  id = "tabelEndDate";
 }
 
+BeginFullDate : WOString {
+  value = currMonth.beginDate;
+  dateformat = "yyyy-MM-dd";
+}
+
+EndFullDate : WOString {
+  value = currMonth.endDate;
+  dateformat = "yyyy-MM-dd";
+}
 SubmitDates : WOGenericElement {
   elementName = "input";
   type = "submit";

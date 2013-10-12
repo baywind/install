@@ -25,6 +25,7 @@ DateField : DateField {
   name = "date";
   date = date;
   style = "text-align:center;";
+  id = "diaryTo";
 }
 
 ShowSince : WOConditional {
@@ -38,6 +39,7 @@ Since : DateField {
   baseName = "date";
   shift = -7;
   style = "text-align:center;";
+  id = "diarySince";
 }
 Reusables : ResourceLink {
 	framework = "Reusables";
@@ -55,6 +57,17 @@ TabLinks : ResourceLink {
 	framework = currTab.framework;
 	jsLink = currTab.jsLink;
 	cssLink = currTab.cssLink;
+}
+
+KalendaeLocal : ResourceLink {
+  framework = "RujelBase";
+  jsLink = "kalendae_local.js";
+}
+
+Kalendae : ResourceLink {
+  framework = "Reusables";
+  cssLink = "kalendae.css";
+  jsLink = "kalendae.standalone.min.js";
 }
 
 GroupRow : OnClickContainer {

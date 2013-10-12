@@ -14,7 +14,12 @@
 <webobject name="HasCSS"><webobject name="CSSurl"/>
 </webobject><webobject name="HasStyles"><style type="text/css">
   <webobject name="Styles"/>
-</style></webobject><webobject name="HasScript">
+</style></webobject>
+	<!-- script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"
+		 type="text/javascript" charset="utf-8"></script -->
+	<webobject name = "Kalendae"/>
+	<webobject name = "KalendaeLocal"/>
+<webobject name="HasScript">
 <webobject name="ScriptLink"></webobject></webobject>
 <webobject name = "HasSesion">
 <script type="text/javascript" language="JavaScript">
@@ -25,6 +30,7 @@
 	timeout = startTimeout;
 	var pageRefreshUrl = '<webobject name = "RefreshPage"/>';<webobject name = "HasAction">
 	var globalActionUrl = '<webobject name = "ActionUrl"/>';</webobject>
+	Kalendae.moment.lang("ru");
 </script></webobject>
    </head>
 <webobject name="Body">

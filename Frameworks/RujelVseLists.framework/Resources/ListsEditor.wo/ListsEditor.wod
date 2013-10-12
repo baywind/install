@@ -207,6 +207,7 @@ DateField : WOTextField {
   style = "text-align:center;";
   size = 10;
   maxlength = 10;
+  id = "actionDate";
 }
 
 SinceTitle : WOString {

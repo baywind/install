@@ -28,6 +28,7 @@ DateField : WOTextField {
   size = 10;
   style = "text-align:center;";
   class = "date required";
+  id = "lessonDate";
 }
 
 ThemeField : WOText {

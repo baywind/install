@@ -22,6 +22,7 @@ AnnounceDate : WOTextField {
 	maxlength = 10;
 	style = "text-align:center;";
 	class = "date required";
+	id = "announceDate";
 }
 
 Date: WOTextField {
@@ -31,6 +32,7 @@ Date: WOTextField {
 	maxlength = 10;
 	style = "text-align:center;";
 	class = "date required";
+	id = "deadlineDate";
 }
 
 WeightTitle: WOString {

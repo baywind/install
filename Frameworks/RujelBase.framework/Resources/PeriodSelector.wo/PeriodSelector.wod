@@ -33,6 +33,7 @@ SinceField: WOTextField {
 	size = 10;
 	maxlength = 10;
 	name = "begin";
+	id = "periodSinceField";
 }
 
 ToField: WOTextField {
@@ -40,6 +41,7 @@ ToField: WOTextField {
 	size = 10;
 	maxlength = 10;
 	name = "end";
+	id = "periodToField";
 }
 
 SubmitButton1: WOSubmitButton {

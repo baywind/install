@@ -30,6 +30,7 @@ TextField1: WOTextField {
 	style = "text-align:center;";
 	name = "dateField";
 	onkeypress = "return isNumberInput(event,true);";
+	id = "currentDate";
 }
 
 TodayString : WOString {
@@ -41,8 +42,9 @@ TodayString : WOString {
 SetToday : OnClickContainer {
   elementName = "span";
   invokeAction = null;
-  onclick = onClick;
+  onclick = "";
   style = "font-weight:bold;";
+  id = "setTodaySpan";
 }
 
 InTable : WOConditional {
@@ -52,4 +54,9 @@ InTable : WOConditional {
 NoTable : WOConditional {
   condition = ^inTable;
   negate = true;
+}
+
+TodayOnClick : WOString {
+  value = onClick;
+  escapeHTML = false;
 }

@@ -38,6 +38,7 @@ DateField : WOTextField {
   style = "text-align:center;";
   onchange = "ajaxPost(this.form);";
   class = "date";
+  id = "VariationDate";
 }
 
 ValueField : WOTextField {

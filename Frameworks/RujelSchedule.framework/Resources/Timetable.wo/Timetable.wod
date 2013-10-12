@@ -71,6 +71,7 @@ DateField : WOTextField {
   dateformat = application.prefs.ui.dateFormat;
   class = "date";
   size = 10;
+  id = "scheduleChangeDate";
 }
 
 DateTitle : WOString {

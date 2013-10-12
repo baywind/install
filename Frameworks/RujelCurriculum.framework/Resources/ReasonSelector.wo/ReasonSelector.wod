@@ -131,6 +131,7 @@ BeginDate : WOTextField {
   style = "text-align:center;";
   class = "date";
   name = "begin";
+  id = "reasonBeginDate";
 }
 
 EndDate : WOTextField {
@@ -140,6 +141,7 @@ EndDate : WOTextField {
   class = "date";
   name = "end";
   onfocus = "if(value==null||value.length==0)value=form.begin.value;";
+  id = "reasonEndDate";
 }
 
 BeginTitle : WOString {
@@ -173,4 +175,9 @@ RelatedTitle : WOString {
   value = application.strings.RujelCurriculum_Curriculum.Reason.relatedTo;
   valueWhenEmpty = "Related to";
   escapeHTML = false;
+}
+
+BeginDateString : WOString {
+  value = begin;
+  valueWhenEmpty = aDate;
 }

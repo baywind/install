@@ -16,7 +16,19 @@
 &gt;&gt;&gt;</span>
 </td></tr><tr>
 <td style = "width:12ex;"><webobject name = "AnnounceDate"/></td>
-<td style = "width:12ex;"><webobject name = "Date"/></td>
+<td style = "width:12ex;"><webobject name = "Date"/>
+	<script type="text/javascript" charset="utf-8">
+		new Kalendae.Input('announceDate', {
+			side:'top',
+			offsetTop:-2,
+			offsetLeft:-90
+		});
+		new Kalendae.Input('deadlineDate', {
+			side:'top',
+			offsetTop:-2
+		});
+	</script>
+</td>
 <td colspan = "2" rowspan = "2" valign = "top"><webobject name = "NameField"/>
 <div><label><webobject name = "IsHometask"/> <webobject name = "HometaskTitle"/></label>
 	<label><webobject name = "IsComulsory"/> <webobject name = "CompulsoryTitle"/></label>	

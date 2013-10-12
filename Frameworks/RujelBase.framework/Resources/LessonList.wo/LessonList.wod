@@ -114,7 +114,7 @@ CurrLessonDateField: WOTextField {
 	size = lessonTitle.length;
 	value = lessonTitle;
 	disabled = access._edit;
-	onchange = "checkChanges(this);";
+	onblur = "checkChanges(this);";
 	onfocus = "if(!tryLoad(false)) blur();";
 	onkeypress = "isNumberInput(event,true)";
 	style = "text-align:center;";
@@ -128,7 +128,7 @@ CurrLessonThemeField: WOText {
 	rows = 2;
 	value = ^currLesson.theme;
 	disabled = access._edit;
-	onChange = "checkChanges(this);";
+	onchange = "checkChanges(this);";
 	onFocus = "if(!tryLoad(false)) blur();";
 	id = themeFieldID;
 	tabindex = "2";
@@ -253,4 +253,18 @@ CurrLessonNumField : WOTextField {
   size = 2;
   style = "text-align:center;";
   class = "numeric";
+}
+
+NotFull : WOConditional {
+  condition = ^wide;
+  negate = true;
+}
+
+DateFieldID : WOString {
+  value = dateFieldID;
+}
+
+FullDate : WOString {
+  value = ^currLesson.date;
+  dateformat = "yyyy-MM-dd";
 }
