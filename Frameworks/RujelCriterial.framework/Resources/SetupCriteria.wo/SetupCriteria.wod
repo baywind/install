@@ -4,6 +4,7 @@ SetsTabs : Tabs {
   vertical = true;
   titleAttribute = "setName";
   hoverAttribute = "comment";
+  onClick = session.tryLoad;
 }
 
 Title : WOString {
@@ -356,6 +357,7 @@ Tabs : Tabs {
   tablist = ^dict.tabs;
   numeric = true;
   selectAction = changeTab;
+  onClick = session.tryLoad;
 }
 
 Regime0 : WOConditional {

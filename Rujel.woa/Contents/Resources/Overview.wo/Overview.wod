@@ -279,6 +279,7 @@ SectionTabs : Tabs {
   titleAttribute = "value";
   selectAction = resetSelections;
   vertical = true;
+  onClick = session.tryLoad;
 }
 
 HasSections : WOConditional {

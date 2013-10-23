@@ -47,7 +47,6 @@ DeleteImage: WOImage {
 }
 
 Form1: WOForm {
-	onsubmit = session.tryLoad;
 }
 
 GradeItem: WOString {
@@ -93,7 +92,6 @@ ItemSubject: WOString {
 }
 
 NewCycleForm: WOForm {
-	onsubmit = session.tryLoad;
 }
 
 NewGrade: WOTextField {
@@ -104,7 +102,6 @@ NewGrade: WOTextField {
 }
 
 NewGradeForm: WOForm {
-	onsubmit = session.checkRun;
 }
 
 NoneSelected: WOConditional {

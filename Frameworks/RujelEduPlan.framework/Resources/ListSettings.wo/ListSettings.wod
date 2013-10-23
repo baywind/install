@@ -2,6 +2,7 @@ Tabs : Tabs {
   currTab = currList;
   tablist = lists;
   vertical = true;
+  onClick = session.checkRun;
 }
 
 ComponentContent : WOComponentContent {

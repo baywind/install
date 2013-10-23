@@ -7,7 +7,7 @@ Cross : WOImage {
 }
 
 Form : WOForm {
-  onsubmit = "ajaxPost(this,document.getElementById('ajaxPopup'));return false;";
+  onsubmit = "return ajaxPost(this,document.getElementById('ajaxPopup'));";
 }
 
 Title : WOString {

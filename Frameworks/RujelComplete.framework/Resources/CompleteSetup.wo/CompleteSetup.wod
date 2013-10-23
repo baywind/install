@@ -34,12 +34,16 @@ StudentFiles : FileLister {
   file = studentsFolder;
   target = "_blank";
   access = session.readAccess.FLAGS.CompleteSetup;
+  onClick = session.tryLoad;
+  loadTarget = "download";
 }
 
 CourseFiles : FileLister {
   file = coursesFolder;
   target = "_blank";
   access = session.readAccess.FLAGS.CompleteSetup;
+  onClick = session.tryLoad;
+  loadTarget = "download";
 }
 
 StudentsTitle : WOString {

@@ -277,6 +277,7 @@ SectionTabs : Tabs {
   titleAttribute = "value";
   selectAction = switchMode;
   vertical = true;
+  onClick = session.checkRun;
 }
 
 HasSections : WOConditional {
@@ -286,6 +287,7 @@ HasSections : WOConditional {
 Export : WOHyperlink {
   action = export;
   string = session.strings.RujelReports_Reports.export;
+  target = "download";
 }
 
 Import : OnClickContainer {

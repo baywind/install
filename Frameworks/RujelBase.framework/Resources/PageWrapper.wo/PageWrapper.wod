@@ -26,7 +26,7 @@ ComponentContent: WOComponentContent {
 }
 
 Exit: WOString {
-	value = application.strings.Reusables_Strings.uiElements.Exit;
+	value = session.strings.Reusables_Strings.uiElements.Exit;
 	valueWhenEmpty = "Exit";
 }
 
@@ -72,7 +72,7 @@ PathTitle: WOString {
 }
 
 PleaseWait: WOString {
-	value = application.strings.Strings.messages.pleaseWait;
+	value = session.strings.Strings.messages.pleaseWait;
 	valueWhenEmpty = "Please Wait";
 }
 
@@ -106,7 +106,7 @@ RegimeCaller : OnClickContainer {
 }
 
 RegimesTitle : WOString {
-  value = application.strings.Strings.ChooseRegime.title;
+  value = session.strings.Strings.ChooseRegime.title;
   valueWhenEmpty = "Choose regime";
   escapeHTML = false;
 }
@@ -125,7 +125,7 @@ Styles: WOString {
 }
 
 TerminatingMessage: WOString {
-	value = application.strings.Strings.messages.refusingSessions;
+	value = session.strings.Strings.messages.refusingSessions;
 	escapeHTML = false;
 }
 
@@ -145,14 +145,20 @@ Title: WOString {
 }
 
 UnsavedAlert: WOString {
-	value = application.strings.Strings.messages.unsavedChanges;
+	value = session.strings.Strings.messages.unsavedChanges;
 	valueWhenEmpty = "Unsaved Changes will be lost";
 	escapeHTML = false;
 }
 
 ConfirmAlert : WOString {
-	value = application.strings.Strings.messages.areYouShure;
+	value = session.strings.Strings.messages.areYouShure;
 	valueWhenEmpty = "Are you shure, you want %s?";
+	escapeHTML = false;
+}
+
+UnloadAlert : WOString {
+	value = session.strings.Strings.messages.unloadAlert;
+	valueWhenEmpty = "Don't navigate using browser arrows or close button. Please use RUJEL inner navigation.";
 	escapeHTML = false;
 }
 
@@ -189,7 +195,7 @@ OuterResources : ResourceLink {
 }
 
 Rujel : WOString {
-  value = application.strings.Strings.title;
+  value = session.strings.Strings.title;
   escapeHTML = false;
 }
 

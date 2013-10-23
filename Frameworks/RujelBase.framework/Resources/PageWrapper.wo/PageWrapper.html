@@ -9,6 +9,8 @@
         <webobject name = "RGBColor"/>
         <webobject name = "AnalyseForm"/>
         <webobject name = "JsAndCSS"/>
+ 		<webobject name = "Kalendae"/>
+		<webobject name = "KalendaeLocal"/>
         <webobject name = "OuterResources"/><webobject name = "ExtraResources">
         <webobject name = "ExtraRsrc"/></webobject>
 <webobject name="HasCSS"><webobject name="CSSurl"/>
@@ -17,14 +19,13 @@
 </style></webobject>
 	<!-- script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"
 		 type="text/javascript" charset="utf-8"></script -->
-	<webobject name = "Kalendae"/>
-	<webobject name = "KalendaeLocal"/>
 <webobject name="HasScript">
 <webobject name="ScriptLink"></webobject></webobject>
 <webobject name = "HasSesion">
 <script type="text/javascript" language="JavaScript">
 	unsavedAlert = '<webobject name="UnsavedAlert"></webobject>';
 	confirmAlert = '<webobject name="ConfirmAlert" />';
+	unloadAlert = '<webobject name="UnloadAlert" />';
 	hasChanges = <webobject name="HasChanges"></webobject>;
 	startTimeout = <webobject name="Timeout"/>;
 	timeout = startTimeout;

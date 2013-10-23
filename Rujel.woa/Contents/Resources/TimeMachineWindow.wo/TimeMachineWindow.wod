@@ -1,5 +1,4 @@
 Form1: WOForm {
-	onsubmit = "return tryLoad();";
 	action = ^action;
 }
 

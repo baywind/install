@@ -4,6 +4,7 @@ Title : WOString {
 
 GetFile : WOHyperlink {
   action = enironment;
+  target = "download";
 }
 
 FileTitle : WOString {

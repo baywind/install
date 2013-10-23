@@ -5,7 +5,7 @@ Comment: WOString {
 
 CommentForm: WOForm {
 	name = "commentForm";
-	onsubmit = session.checkRun;
+	onsubmit = "return checkRun();";
 	style = "display:none;";
 }
 
@@ -27,7 +27,6 @@ EditCommentLink: WOGenericContainer {
 
 Form1: WOForm {
 	multipleSubmit = true;
-	onSubmit = "return tryLoad();";
 }
 
 GoLeft: WOImageButton {

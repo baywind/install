@@ -56,7 +56,7 @@ ItogDefined: WOConditional {
 }
 
 ItogEditForm: WOForm {
-	onsubmit = "return (!save.disabled);";
+	onsubmit = "return (!save.disabled && tryLoad());";
 }
 
 MarkField: WOTextField {

@@ -38,6 +38,7 @@ Act : OnClickContainer {
   invokeAction = perform;
   disabled = access._edit;
   title = actionHover;
+  onclick = ^onClick;
 }
 
 Delete : OnClickContainer {

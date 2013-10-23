@@ -10,6 +10,7 @@ TotalToggle : Tabs {
   vertical = true;
   numeric = true;
   currTab = showTotal;
+  onClick = session.checkRun;
 }
 
 AreaTitle : WOString {

@@ -58,7 +58,7 @@ ReasonSelector : ReasonSelector {
 }
 
 Form : WOForm {
-  onsubmit = "ajaxPost(this);return false;";
+  onsubmit = "return ajaxPost(this);";
   action = save;
   style = "border-top: 1px #666 solid;";
 }

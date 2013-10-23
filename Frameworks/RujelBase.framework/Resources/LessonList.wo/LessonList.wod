@@ -221,7 +221,7 @@ CanCreate : WOConditional {
 ShowAdd : WOSubmitButton {
   value = application.strings.Reusables_Strings.uiElements.Add;
   action = newLessonPopup;
-  onclick = "ajaxPost(this);return false;";
+  onclick = "return ajaxPost(this);";
 }
 
 TaskCell : OnClickContainer {

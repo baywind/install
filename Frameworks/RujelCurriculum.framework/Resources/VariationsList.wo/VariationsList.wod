@@ -20,7 +20,7 @@ Title : WOString {
 }
 
 Form : WOForm {
-  onsubmit = "ajaxPost(this);return false;";
+  onsubmit = "return ajaxPost(this);";
   action = editVariation;
 }
 

@@ -1,6 +1,6 @@
 PopupForm : WOForm {
 	action = save;
-	onsubmit = "q=(this.isEmpty.checked || this.reasonText.value.length > 0);if(!q){alert(saveArchive.title);reasonText.focus()}return q;";
+	onsubmit = "q=(this.isEmpty.checked || this.reasonText.value.length > 0);if(!q){alert(saveArchive.title);reasonText.focus();}return q && tryLoad();";
 }
 
 SaveButton: WOSubmitButton {

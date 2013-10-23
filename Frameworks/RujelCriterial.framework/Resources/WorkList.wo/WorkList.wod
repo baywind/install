@@ -1,6 +1,6 @@
 AddButton: WOSubmitButton {
 	value = application.strings.Reusables_Strings.uiElements.Add;
-	onclick = "changed=false;ajaxPost(this);";
+	onclick = "changed=false;return ajaxPost(this);";
 	disabled = session.readAccess._create.Work;
 	action = addWork;
 }

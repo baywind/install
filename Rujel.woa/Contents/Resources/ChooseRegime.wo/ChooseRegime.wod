@@ -37,6 +37,7 @@ GroupTitleCell : WOGenericContainer {
 JournalesCell : OnClickContainer {
   elementName = "div";
   invokeAction = chooseJournal;
+  onclick = session.tryLoad;
   class = "orange";
   style = "margin:3pt;padding:2pt;";
 }

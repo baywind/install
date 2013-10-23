@@ -10,6 +10,7 @@ SectionTabs : Tabs {
   tablist = session.strings.sections.list;
   titleAttribute = "value";
   vertical = true;
+  onClick = session.tryLoad;
 }
 
 CurrSection : WOString {
@@ -48,7 +49,7 @@ ReportTable : ReportTable {
 Form : WOForm {
   class = "backfield2 selectionBorder";
   style = "position:absolute;right:5em;top:5em;width:14em;";
-  onsubmit = "enumerate(this,'sorting',1);return true;";
+  onsubmit = "enumerate(this,'sorting',1);return tryLoad();";
 }
 
 SubmitButton : WOSubmitButton {
@@ -64,6 +65,7 @@ AvailableTitle : WOString {
 ExportButton : WOHyperlink {
   action = export;
   string = application.strings.RujelReports_Reports.export;
+  target = "download";
 }
 
 PropSelector : PropSelector {

@@ -16,7 +16,7 @@ Title : WOString {
 
 Form : WOForm {
   style = "border: 1px solid #999999;";
-  onsubmit = "enumerate(this,'sorting',1);return true;";
+  onsubmit = "enumerate(this,'sorting',1);return tryLoad();";
   multipleSubmit = true;
 }
 

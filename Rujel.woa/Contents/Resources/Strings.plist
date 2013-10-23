@@ -231,6 +231,8 @@
 		<string>Несохраненные изменения будут потеряны</string>
 		<key>unavailableYearlyDb</key>
 		<string>Для выбранного учебного года %1$s нет базы данных.</string>
+		<key>unloadAlert</key>
+		<string>Пожалуйста, не используйте кнопку "Назад" при навигации и нажимайте кнопку "Выход" при закрытии журнала!</string>
 	</dict>
 	<key>ErrorPages</key>
 	<dict>

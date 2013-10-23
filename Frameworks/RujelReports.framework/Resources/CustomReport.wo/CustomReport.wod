@@ -57,6 +57,7 @@ ReportSelected : WOConditional {
 ExportButton : WOHyperlink {
   action = export;
   string = application.strings.RujelReports_Reports.export;
+  target = "download";
 }
 
 HasList : WOConditional {
@@ -85,7 +86,7 @@ NewTitle : WOString {
 Form : WOForm {
   class = "backfield2 selectionBorder";
   style = "position:absolute;right:5em;top:5em;width:14em;";
-  onsubmit = "enumerate(this,'sorting',1);return true;";
+  onsubmit = "enumerate(this,'sorting',1);return tryLoad();";
 }
 
 ResultsSetup : WOString {

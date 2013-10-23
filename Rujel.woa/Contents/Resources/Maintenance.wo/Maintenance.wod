@@ -17,6 +17,7 @@ PlanFactButton : WOSubmitButton {
   value = "PlanFactCheck";
 }
 
-EmailBroadcast : WOHyperlink {
-  action = broadcastMail;
+EmailBroadcast : OnClickContainer {
+  invokeAction = broadcastMail;
+  onclick = session.tryLoad;
 }

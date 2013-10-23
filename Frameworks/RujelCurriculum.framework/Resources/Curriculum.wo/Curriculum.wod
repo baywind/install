@@ -487,6 +487,7 @@ CanSubmit : WOConditional {
 ExportButton : WOHyperlink {
   action = export;
   string = session.strings.RujelReports_Reports.export;
+  target = "download";
 }
 
 ShowDetails : WOConditional {

@@ -158,7 +158,6 @@ CreateNew: WOConditional {
 
 Form1: WOForm {
 	multipleSubmit = true;
-	onSubmit = "return tryLoad();";
 	action = chooseTeacherForDict;
 }
 

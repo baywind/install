@@ -2,6 +2,8 @@ PageWrapper : PageWrapper {
   title = session.strings.RujelIO_ImportExport.ImportExport;
   onLoad = onLoad;
   styles = ".ioblock{border: 1px solid #666666;margin: 10px 2px 2px;padding: 2px;}";
+  resourcesFramework = "RujelBase";
+  scriptResource = "sorting.js";
   action = export;
 }
 
@@ -62,4 +64,15 @@ ImportContainer : OnClickContainer {
   onclick = session.ajaxPopupNoPos;
   class = "ioblock";
   disabled = true;
+}
+DownloadFrame : WOGenericContainer {
+  elementName = "iframe";
+  name = "download";
+  invokeAction = export;
+  src = context.componentActionURL;
+  style = "display:none;";
+}
+
+HasResult : WOConditional {
+  condition = result;
 }

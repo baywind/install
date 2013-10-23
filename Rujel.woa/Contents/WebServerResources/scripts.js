@@ -138,7 +138,8 @@ function checkRun(loc) {
 			loading=false;
 		}
 		loading = true;
-		window.location=loc;
+		if(loc != null)
+			window.location=loc;
 	}
 	return true;
 }
@@ -322,6 +323,28 @@ function focus() {
 	}
 }
 
+function bodyOnLoad() {
+	analyse(document);
+	countdown();
+	var root = window.addEventListener || window.attachEvent ? window : 
+				document.addEventListener ? document : null;
+	root.onbeforeunload = function() {
+		if(!loading && timeout > -5)
+			return unloadAlert;
+	};
+	addOnsubmit(document.forms);
+}
+
+function addOnsubmit(forms) {
+	if(forms == null || forms.length == 0)
+		return;
+	for(var i = 0; i < forms.length; i++) {
+		var f = forms[i];
+		if(f.onsubmit == null)
+			f.onsubmit = tryLoad;
+	}
+}
+
 var timerID = null;
 var timeout = 1200;
 function countdown() {
@@ -419,6 +442,7 @@ function onReadyStateChange(pos) {
 			eval(scripts[i].innerHTML);
 		}
 	}
+	addOnsubmit(container.getElementsByTagName("form"));
 	cancelLoading();
 	if(pos != null) {
 		positionPopup(container.firstChild,pos);
