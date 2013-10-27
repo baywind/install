@@ -255,16 +255,6 @@ CurrLessonNumField : WOTextField {
   class = "numeric";
 }
 
-NotFull : WOConditional {
-  condition = ^wide;
-  negate = true;
-}
-
 DateFieldID : WOString {
   value = dateFieldID;
-}
-
-FullDate : WOString {
-  value = ^currLesson.date;
-  dateformat = "yyyy-MM-dd";
 }

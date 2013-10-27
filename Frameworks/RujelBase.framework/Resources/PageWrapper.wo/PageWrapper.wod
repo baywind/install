@@ -249,5 +249,5 @@ KalendaeLocal : ResourceLink {
 Kalendae : ResourceLink {
   framework = "Reusables";
   cssLink = "kalendae.css";
-  jsLink = "kalendae.standalone.min.js";
+  jsLink = "kalendae.standalone.js";
 }

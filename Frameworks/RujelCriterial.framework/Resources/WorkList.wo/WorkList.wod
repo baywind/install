@@ -291,21 +291,6 @@ StudentName : PersonDisplay {
   second = 0;
 }
 
-AnnounceFullDate : WOString {
-  value = work.announce;
-  dateformat = "yyyy-MM-dd";
-}
-
-DeadlineFullDate : WOString {
-  value = work.date;
-  dateformat = "yyyy-MM-dd";
-}
-
-NotFull : WOConditional {
-  condition = ^wide;
-  negate = true;
-}
-
 DateFieldID : WOString {
   value = dateFieldID;
 }

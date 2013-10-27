@@ -26,18 +26,16 @@
 <webobject name="IfFull"><td align="center">
 <b id="number"><webobject name = "CurrLessonNumField"/></b></td></webobject>
 <td align="center"><webobject name="CurrLessonDateField"/>
-<script type="text/javascript" charset="utf-8">
-	new Kalendae.Input('<webobject name = "DateFieldID"/>', {<webobject name = "NotFull">
-		format:shortDateFormat,
-		selected:Kalendae.moment('<webobject name = "FullDate"/>'),</webobject>
-		side:'top',
-		offsetTop:-1
-	});
-</script>
 </td><td><webobject name="CurrLessonThemeField"></webobject></td>
 <webobject name = "TaskCell">
 	<webobject name="IfAbbreviated">
 	<webobject name="HomeTaskImage2"/><webobject name="HomeTaskHiddenField"/></webobject><webobject name="IfFull">
+<script type="text/javascript" charset="utf-8">
+	new Kalendae.Input('<webobject name = "DateFieldID"/>', {
+		side:'top',
+		offsetTop:-1
+	});
+</script>
 	<webobject name="CurrLessonHomeTaskField"></webobject></webobject>
 </webobject>
 </tr></webobject>
