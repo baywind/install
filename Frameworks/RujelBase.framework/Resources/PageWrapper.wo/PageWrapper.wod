@@ -195,7 +195,7 @@ OuterResources : ResourceLink {
 }
 
 Rujel : WOString {
-  value = session.strings.Strings.title;
+  value = application.strings.Strings.title;
   escapeHTML = false;
 }
 
