@@ -1,6 +1,9 @@
 <div style="width:36em;" class="backfield1" id="ajaxPopup">
 <webobject name = "CloseContainer"><webobject name = "Cross"/></webobject>
-<webobject name="Form1"><table border="1" width="100%" align="center" style = "border-collapse:collapse;border:2px solid #999999;">
+<webobject name="Form1">
+<table border="1" align="center" style = "width:100%;border-collapse:collapse;border:2px solid #999999;table-layout:fixed;">
+<colgroup><col style = "width:12ex;"/><col style = "width:12ex;"/>
+<col/><col style = "width:12ex;"/></colgroup>
 <tr>
 <th colspan = "4" style = "padding:6pt;font-size:120%;"><webobject name = "Title"/></th>
 </tr><tr>
@@ -15,8 +18,8 @@
 <span style = "cursor:pointer;display:none;" onclick = "t=document.getElementById('URLfield');window.open(t.value);">
 &gt;&gt;&gt;</span>
 </td></tr><tr>
-<td style = "width:12ex;"><webobject name = "AnnounceDate"/></td>
-<td style = "width:12ex;"><webobject name = "Date"/>
+<td><webobject name = "AnnounceDate"/></td>
+<td><webobject name = "Date"/>
 	<script type="text/javascript" charset="utf-8">
 		new Kalendae.Input('announceDate', {
 			side:'top',
@@ -47,7 +50,7 @@
 	<div style = "width:100%;max-height:320px;overflow:auto;">
 	<table align = "center" border = "1" cellspacing = "1"><webobject name = "NumerousCriteria">
 	<thead>
-	<tr><th colspan = "2"><webobject name = "CriterMax"/></th>
+	<tr><th colspan = "2"><webobject name = "CriterMax"/><webobject name = "CritCount"/></th>
 		<th><webobject name = "CommentTitle"/></th>
 		<th><webobject name = "CriterWeight"/></th>
 	</tr>
@@ -85,7 +88,7 @@
 	<webobject name="Save"/>  <webobject name="ResetButton1"/>
 </td></tr>
 <webobject name = "ShowHistory">
-<td colspan = "4"><table width = "100%">
+<td colspan = "4"><div style = "overflow:auto;max-height:300px;"><table width = "100%">
 	<webobject name = "ArchiveTitle">
 		<th><webobject name = "DateTitle"/></th>
 		<th><webobject name = "NameTitle"/></th>
@@ -99,7 +102,7 @@
 		<td><webobject name = "ArchiveCrits"/></td>
 	<webobject name = "ArchiveContainer">
 		<webobject name = "MarkInArchive"/></webobject></webobject>
-</table></td>
+</table></div></td>
 </webobject></table></webobject>
 </div>
 <webobject name = "HasMessage"><div class = "message" style = "background-color:#ffffcc; border: double 3px #ff6600;position:fixed;top:2em;left:4em;padding:1ex;">

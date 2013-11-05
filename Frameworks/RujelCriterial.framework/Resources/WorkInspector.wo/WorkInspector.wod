@@ -20,7 +20,7 @@ AnnounceDate : WOTextField {
 	value = dict.announce;
 	size = 10;
 	maxlength = 10;
-	style = "text-align:center;";
+	style = "text-align:center;width:12ex;";
 	class = "date required";
 	id = "announceDate";
 }
@@ -30,7 +30,7 @@ Date: WOTextField {
 	value = dict.date;
 	size = 10;
 	maxlength = 10;
-	style = "text-align:center;";
+	style = "text-align:center;width:12ex;";
 	class = "date required";
 	id = "deadlineDate";
 }
@@ -46,7 +46,7 @@ WorkWeight: WOTextField {
 	numberformat = "0.####";
 	size = 3;
 	value = dict.trimmedWeight;
-	style = "text-align:center;";
+	style = "text-align:center;width:5ex;";
 	class = "decimal required";
 	disabled = dict.workType.namedFlags.fixWeight;
 	name = "weight";
