@@ -663,5 +663,6 @@
             };
         };
         framework = "RujelContacts";
+        schemaVersion = {number = 1; title = "0.9.7"; }; 
     }; 
 }

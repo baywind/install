@@ -5,15 +5,33 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title><webobject name = "Title"/></title>
+	<webobject name = "Kalendae"/>
+	<webobject name = "KalendaeLocal"/>
+<script type="text/javascript" language="JavaScript">
+	function showHide(select) {
+		var dates = document.getElementById('datesSpan');
+		if(select.value == 'WONoSelectionString')
+			dates.style.display='';
+		else
+			dates.style.display='none';
+	}
+</script>
 </head>
-<body>
+<body onload = "showHide(document.forms[0].period);">
 <h1><webobject name = "Title"/></h1>
-<webobject name = "Text"/>
 <webobject name = "Form">
-<webobject name = "NoCode">code:
-<input type = "text" size = "4" name = "code" />
-<br/></webobject>
-<input type = "text" size = "28" name = "addr" /><br/>
+<webobject name = "NoCode"><p>code:
+<input type = "text" size = "4" name = "code" /></p>
+</webobject>
+<p>
+<webobject name = "HasPeriods">
+<webobject name = "SelectPeriod"/></webobject>
+<span id = "datesSpan"><webobject name = "Since"/> – <webobject name = "To"/></span>
+</p>
+<p>
+<webobject name = "Text"/><br/>
+<input type = "text" size = "28" name = "addr" />
+</p>
 <webobject name = "Submit"/>
 </webobject>
 </body>

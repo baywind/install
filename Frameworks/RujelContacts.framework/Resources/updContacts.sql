@@ -1,6 +1,8 @@
 -- Schema updates for Contacts model --
 
--- v1 (0.9.2) --
+-- v1 (0.9.7) --
+
+ALTER TABLE CNT_CONTACT ADD INDEX (PERSON_ID);
 
 CREATE TABLE IF NOT EXISTS SCHEMA_VERSION (
   MODEL_NAME varchar(255),
@@ -10,33 +12,4 @@ CREATE TABLE IF NOT EXISTS SCHEMA_VERSION (
 );
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
-  VALUES ('Contacts',1,'0.9'); 
-
--- v2 (0.9.x) --
-
-ALTER TABLE EO_PK_TABLE
-  MODIFY COLUMN PK integer;
-
-UPDATE SCHEMA_VERSION
-  set VERSION_NUMBER = 2 , VERSION_TITLE = '0.9.x'
-  where MODEL_NAME = 'Contacts';
-
--- v3 --
-
-CREATE TABLE TMP_TABLE 
-	select CON_ID as C_ID, CONTACT_STRING as C_VAL
-	from CNT_CONTACT
-	where CONTACT_STRING like '%@mail.ru'
-	limit 25;
-
-UPDATE SCHEMA_VERSION
-  set VERSION_NUMBER = 3 , VERSION_TITLE = '0.9.3'
-  where MODEL_NAME = 'Contacts';
-
--- v4 (0.9.x) --
-
-DROP TABLE TMP_TABLE;
-
-UPDATE SCHEMA_VERSION
-  set VERSION_NUMBER = 4 , VERSION_TITLE = '0.9.3x'
-  where MODEL_NAME = 'Contacts';
+  VALUES ('Contacts',1,'0.9.7'); 

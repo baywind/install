@@ -3,6 +3,17 @@ Title : WOString {
   escapeHTML = false;
 }
 
+KalendaeLocal : ResourceLink {
+  framework = "RujelBase";
+  jsLink = "kalendae_local.js";
+}
+
+Kalendae : ResourceLink {
+  framework = "Reusables";
+  cssLink = "kalendae.css";
+  jsLink = "kalendae.standalone.js";
+}
+
 Form : WOForm {
   actionClass = "RequestMail";
   directActionName = code;
@@ -24,4 +35,36 @@ Submit : WOGenericElement {
 NoCode : WOConditional {
   condition = code;
   negate = true;
+}
+
+SelectPeriod : WOPopUpButton {
+  name = "period";
+  list = periods;
+  item = item;
+  displayString = item.name;
+  value = item.id;
+  selection = current;
+  noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
+  onchange = "showHide(this);";
+}
+
+HasPeriods : WOConditional {
+  condition = periods.count;
+}
+
+Since : WOTextField {
+  name = "since";
+  value = since;
+  dateformat = application.prefs.ui.dateFormat;
+  size = 10;
+  class = "auto-kal";
+  data-kal="offsetLeft:-90";
+}
+
+To : WOTextField {
+  name = "to";
+  value = to;
+  dateformat = application.prefs.ui.dateFormat;
+  size = 10;
+  class = "auto-kal";
 }
