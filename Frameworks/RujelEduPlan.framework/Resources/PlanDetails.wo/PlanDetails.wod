@@ -23,6 +23,7 @@ ClassListing : ClassListing {
 	showTitle = true;
 	cellpadding = "3";
 	class = "backfield2";
+	onClick = session.checkRun;
 }
 
 SubjectsListing : DynamicTableRow {

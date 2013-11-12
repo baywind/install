@@ -18,6 +18,8 @@ PlanFactButton : WOSubmitButton {
 }
 
 EmailBroadcast : OnClickContainer {
+  elementName = "span";
   invokeAction = broadcastMail;
   onclick = session.tryLoad;
+  class = "button";
 }
