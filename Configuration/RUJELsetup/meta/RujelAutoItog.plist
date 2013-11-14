@@ -82,6 +82,18 @@
 				</dict>
 				<dict>
 					<key>key</key>
+					<string>prognonesStatCalculations</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>Статистические показатели</string>
+					<key>description</key>
+					<string>Вычислять статистические показатели (среднее, процент успеваемости, СОУ) для прогнозируемых оценок.</string>
+					<key>defaultValue</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>key</key>
 					<string>overwriteItogsScheduled</string>
 					<key>type</key>
 					<string>Boolean</string>
@@ -90,6 +102,8 @@
 					<key>description</key>
 					<string>перезаписывать итоговую отметку в соответствии с прогнозом при автоматическом выставлении итоговых в конце учебного периода</string>
 					<key>defaultValue</key>
+					<key>advanced</key>
+					<true/>
 					<false/>
 				</dict>
 			</array>
