@@ -102,9 +102,9 @@
 					<key>description</key>
 					<string>перезаписывать итоговую отметку в соответствии с прогнозом при автоматическом выставлении итоговых в конце учебного периода</string>
 					<key>defaultValue</key>
+					<false/>
 					<key>advanced</key>
 					<true/>
-					<false/>
 				</dict>
 			</array>
 		</dict>

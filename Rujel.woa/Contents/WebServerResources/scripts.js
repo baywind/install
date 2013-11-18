@@ -342,6 +342,8 @@ function addOnsubmit(forms) {
 		var f = forms[i];
 		if(f.onsubmit == null)
 			f.onsubmit = tryLoad;
+		else if(f.onsubmit.name == "presubmit")
+			f.onsubmit = new Function("return presubmit(this) && tryLoad();");
 	}
 }
 

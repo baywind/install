@@ -48,9 +48,8 @@ function analyseIns (ins) {
 		if (/titled/i.test(cl)) {
 			titulize(ins[i]);
 			ins[i].onblur = new Function("titulize(this);");
-			if(ins[i].form.onsubmit == null) {
-				ins[i].form.onsubmit = new Function("return presubmit(this);");
-			}
+			if(ins[i].form.onsubmit == null)
+				ins[i].form.onsubmit = presubmit;
 		} else if (/date/i.test(cl) || /decimal/i.test(cl)) {
 			ins[i].onkeypress = new Function("event","return isNumberInput(event,true);");
 		}  else if (/numeric/i.test(cl)) {
@@ -63,7 +62,7 @@ function analyseIns (ins) {
 			ins[i].maxLength = 255;
 		}
 		if (/required/i.test(cl) && ins[i].form.onsubmit == null)
-			ins[i].form.onsubmit = new Function("return presubmit(this);");
+			ins[i].form.onsubmit = presubmit;
 		if(ins[i].disabled && 
 				ins[i].type != "submit" && ins[i].type != "button" && ins[i].type != "reset")
 			ins[i].style.backgroundColor='#cccccc';
