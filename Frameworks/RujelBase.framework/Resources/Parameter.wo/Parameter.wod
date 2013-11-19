@@ -1,19 +1,19 @@
 TextField : WOTextField {
   value = value;
   size = valueOf.paramsDict.itemDict.fieldSize;
-  onkeypress = onkeypress;
   formatter = formatter;
   style = "text-align:center;";
-  class = valueOf.paramsDict.itemDict.styleClass;
+  class = styleClass;
   disabled = ^disabled;
 }
 
 SecondField : WOTextField {
   value = secondValue;
   size = valueOf.paramsDict.itemDict.fieldSize;
-  onkeypress = onkeypress;
   formatter = formatter;
   style = "text-align:center;";
+  class = styleClass;
+  disabled = ^disabled;
 }
 
 ShowField : WOConditional {

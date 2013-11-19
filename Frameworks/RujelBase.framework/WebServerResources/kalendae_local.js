@@ -16,6 +16,7 @@ Kalendae.prototype.defaults.useYearNav = false;
 Kalendae.Input.prototype.defaults.weekStart = 1;
 Kalendae.Input.prototype.defaults.format = 'DD.MM.YYYY';
 Kalendae.Input.prototype.defaults.useYearNav = false;
+Kalendae.Input.prototype.defaults.offsetTop = 3;
 
 Kalendae.moment.defaultFormat = 'DD.MM.YYYY';
 
