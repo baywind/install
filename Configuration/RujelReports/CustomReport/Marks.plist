@@ -102,6 +102,55 @@
 		</dict>
 		<dict>
 			<key>attribute</key>
+			<string>grade</string>
+			<key>title</key>
+			<string>Поток</string>
+			<key>fieldSize</key>
+			<integer>3</integer>
+			<key>formatter</key>
+			<string>0</string>
+			<key>_qualifierFormat</key>
+			<string>absGrade &gt; 0</string>
+			<key>in</key>
+			<dict>
+				<key>relationship</key>
+				<string>student</string>
+				<key>qualifierFormat</key>
+				<string>absGrade=%d</string>
+				<key>args</key>
+				<array>
+					<dict>
+						<key>object</key>
+						<dict>
+							<key>className</key>
+							<string>java.math.BigDecimal</string>
+							<key>methodName</key>
+							<string>valueOf</string>
+							<key>paramClasses</key>
+							<array>
+								<string>long</string>
+							</array>
+							<key>paramValues</key>
+							<array>
+								<string>$session.eduYear</string>
+							</array>
+						</dict>
+						<key>methodName</key>
+						<string>subtract</string>
+						<key>paramClasses</key>
+						<array>
+							<string>java.math.BigDecimal</string>
+						</array>
+						<key>paramValues</key>
+						<array>
+							<string>.grade</string>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>attribute</key>
 			<string>eduGroup</string>
 			<key>in</key>
 			<dict>

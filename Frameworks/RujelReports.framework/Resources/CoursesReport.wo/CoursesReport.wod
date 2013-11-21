@@ -11,6 +11,7 @@ SectionTabs : Tabs {
   titleAttribute = "value";
   vertical = true;
   onClick = session.tryLoad;
+  selectAction = sectionChanged;
 }
 
 CurrSection : WOString {
