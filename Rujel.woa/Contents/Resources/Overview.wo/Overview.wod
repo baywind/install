@@ -36,6 +36,7 @@ Form2: WOForm {
 	target = "_blank";
 	multipleSubmit = true;
 	method = "get";
+	onsubmit = "return true;";
 }
 
 HasClass: WOConditional {
