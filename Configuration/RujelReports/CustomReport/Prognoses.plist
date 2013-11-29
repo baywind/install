@@ -82,6 +82,8 @@
 		<dict>
 			<key>attribute</key>
 			<string>teacher</string>
+			<key>qualifierSelector</key>
+			<string>=</string>
 			<key>in</key>
 			<dict>
 				<key>args</key>
@@ -140,6 +142,8 @@
 		<dict>
 			<key>attribute</key>
 			<string>eduGroup</string>
+			<key>qualifierSelector</key>
+			<string>=</string>
 			<key>in</key>
 			<dict>
 				<key>args</key>
@@ -278,7 +282,7 @@
 			<key>title</key>
 			<string>Только активные</string>
 			<key>active</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>comment</key>

@@ -115,6 +115,8 @@
 			<string>Учитель</string>
 			<key>attribute</key>
 			<string>teacher</string>
+			<key>qualifierSelector</key>
+			<string>=</string>
 			<key>presenter</key>
 			<string>PersonDisplay</string>
 			<key>presenterBindings</key>
