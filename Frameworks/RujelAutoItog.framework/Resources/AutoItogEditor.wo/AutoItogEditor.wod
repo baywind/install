@@ -161,3 +161,17 @@ RecalculateTitle : WOString {
   value = session.strings.RujelAutoItog_AutoItog.ui.recalculate;
   escapeHTML = false;
 }
+
+CanDeleteItogs : WOConditional {
+  condition = canDeleteItogs;
+}
+
+DeleteItogsBox : WOCheckBox {
+  checked = deleteItogs;
+  name = "deleteItogs";
+}
+
+DeleteItogsTitle : WOString {
+  value = session.strings.RujelAutoItog_AutoItog.ui.deleteItogs;
+  escapeHTML = false;
+}

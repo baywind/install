@@ -165,6 +165,10 @@
 		<string>Добавлено в расчёт прогноза</string>
 		<key>removedFromPrognose</key>
 		<string>Исключено из расчёта прогноза</string>
+		<key>deleteItogs</key>
+		<string>Удалить все итоговые по этому прогнозу</string>
+		<key>itogsDeleted</key>
+		<string>Удалено итоговых:</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>
