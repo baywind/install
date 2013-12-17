@@ -16,7 +16,7 @@ SelectMonth : WOPopUpButton {
   item = item;
   selection = currMonth;
   displayString = item.name;
-  onchange = "this.form.submit();";
+  onchange = "if(tryLoad())this.form.submit();";
 }
 
 Year : WOString {

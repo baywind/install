@@ -66,6 +66,8 @@
 		<dict>
 			<key>attribute</key>
 			<string>grade</string>
+			<key>title</key>
+			<string>Поток</string>
 			<key>comment</key>
 			<string>без буквы</string>
 			<key>fieldSize</key>
@@ -79,8 +81,57 @@
 			</dict>
 			<key>qualifierSelector</key>
 			<string>=</string>
+		</dict>
+		<dict>
+			<key>attribute</key>
+			<string>eduGroup</string>
 			<key>title</key>
 			<string>Класс</string>
+			<key>in</key>
+			<dict>
+				<key>list</key>
+				<dict>
+					<key>cacheResult</key>
+					<false/>
+					<key>methodName</key>
+					<string>list</string>
+					<key>object</key>
+					<string>.eduGroup</string>
+				</dict>
+				<key>relationship</key>
+				<string>student</string>
+			</dict>
+			<key>popup</key>
+			<dict>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenter</key>
+				<string>ClassListing</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>onClick</key>
+					<string>$session.tryLoad</string>
+					<key>selection</key>
+					<string>.</string>
+					<key>width</key>
+					<string>100%</string>
+					<key>showSection</key>
+					<true/>
+				</dict>
+				<key>style</key>
+				<string>min-width:8em</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>title</key>
+				<string>Выберите класс</string>
+			</dict>
+			<key>presenterBindings</key>
+			<dict>
+				<key>value</key>
+				<string>.name</string>
+				<key>valueWhenEmpty</key>
+				<string>Выбрать</string>
+			</dict>
 		</dict>
 		<dict>
 			<key>attribute</key>
