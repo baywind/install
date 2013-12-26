@@ -107,3 +107,7 @@ StudentsTitle : WOString {
   valueWhenEmpty = "Students";
   escapeHTML = false;
 }
+DefaultReport : WOString {
+  value = defaultReport;
+  valueWhenEmpty = "default";
+}
