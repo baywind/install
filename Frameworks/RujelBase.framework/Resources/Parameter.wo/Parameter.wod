@@ -5,6 +5,7 @@ TextField : WOTextField {
   style = "text-align:center;";
   class = styleClass;
   disabled = ^disabled;
+  onchange = ^onchange;
 }
 
 SecondField : WOTextField {
@@ -31,6 +32,7 @@ PopUpButton : WOPopUpButton {
   displayString = valueOf.item.itemDict.displayString;
   noSelectionString = valueOf.paramsDict.itemDict.noSelectionString;
   disabled = ^disabled;
+  onchange = ^onchange;
 }
 
 IsPopup : WOConditional {
@@ -109,6 +111,7 @@ LongText : WOText {
   formatter = formatter;
   class = valueOf.paramsDict.itemDict.styleClass;
   disabled = ^disabled;
+  onchange = ^onchange;
 }
 
 IsBoolean : WOConditional {
@@ -118,4 +121,5 @@ IsBoolean : WOConditional {
 CheckBox : WOCheckBox {
   checked = value;
   disabled = ^disabled;
+  onchange = ^onchange;
 }

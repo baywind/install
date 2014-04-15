@@ -395,6 +395,29 @@
 				<key>sort</key>
 				<string>78</string>
 				<key>settingBase</key>
+				<string>defaultHometask</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Work</string>
+				<key>title</key>
+				<string>Заготовка домашнего задания</string>
+				<key>description</key>
+				<string>Значение по умолчанию в поле темы работы при создании домашнего задания</string>
+				<key>settingTitle</key>
+				<string>текст</string>
+				<key>textValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>textValue</string>
+					<key>fieldSize</key>
+					<integer>20</integer>
+				</dict>
+			</dict>
+			<dict>
+				<key>sort</key>
+				<string>79</string>
+				<key>settingBase</key>
 				<string>CriterlessMax</string>
 				<key>grouping</key>
 				<string>Работы и оценки</string>
@@ -613,6 +636,29 @@
 				<string>flags &lt; 16</string>
 				<key>comment</key>
 				<string>все, кроме д/з</string>
+			</dict>
+		</array>
+		<key>filter</key>
+		<array>
+			<dict>
+				<key>attribute</key>
+				<string>worksLevel</string>
+				<key>select</key>
+				<array>
+					<string>все</string>
+					<string>оцениваемые</string>
+					<string>кроме домашних</string>
+					<string>с оценками</string>
+					<string>значимые</string>
+				</array>
+				<key>useIndex</key>
+				<true/>
+				<key>defaultValue</key>
+				<string>кроме домашних</string>
+				<key>filterClass</key>
+				<string>net.rujel.ui.WorkList</string>
+				<key>method</key>
+				<string>filterWorks</string>
 			</dict>
 		</array>
 	</dict>

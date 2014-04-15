@@ -1,6 +1,6 @@
 -- Schema updates for RujelSync model --
 
--- v2 (0.9.4) --
+-- v2 (0.9.5) --
 
 CREATE TABLE IF NOT EXISTS SYNC_EVENT (
   E_ID integer NOT NULL,
@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS SYNC_EVENT (
 ) ENGINE=InnoDB;
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
-  VALUES ('RujelSync',2,'0.9.4');
+  VALUES ('RujelSync',2,'0.9.5');

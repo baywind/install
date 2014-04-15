@@ -104,6 +104,7 @@ NameField : WOText {
   rows = 3;
   style = "width:96%;";
   class = "required";
+  id = "workTheme";
 }
 
 LoadTitle: WOString {
@@ -331,4 +332,9 @@ CommentTitle : WOString {
   value = session.strings.Reusables_Strings.dataTypes.comment;
   valueWhenEmpty = "comment";
   escapeHTML = false;
+}
+
+NewWork : WOConditional {
+  condition = work;
+  negate = true;
 }

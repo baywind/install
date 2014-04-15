@@ -268,3 +268,25 @@ SaveButton : WOImageButton {
   filename = "TransparentPixel.gif";
   action = save;
 }
+
+HasFilter : WOConditional {
+  condition = present.filter;
+}
+
+FilterForm : WOForm {
+  action = refresh;
+  style = "float: right;";
+  onsubmit = "return checkRun();";
+}
+
+Filters : WORepetition {
+  list = present.filter;
+  item = item;
+}
+
+Parameter : Parameter {
+  itemDict = item;
+  paramsDict = session.state;
+  editingContext = ec;
+  onchange = "if(checkRun())form.submit();";
+}

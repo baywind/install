@@ -30,6 +30,6 @@
         }; 
         creationScript = "addRujelSync.sql"; 
         framework = RujelIO; 
-        schemaVersion = {number = 2; title = "0.9.4"; }; 
+        schemaVersion = {number = 2; title = "0.9.5"; }; 
     }; 
 }

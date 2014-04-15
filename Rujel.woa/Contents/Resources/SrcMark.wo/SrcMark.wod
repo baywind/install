@@ -210,3 +210,25 @@ HasSections : WOConditional {
 CurrSection : WOString {
   value = session.state.section.value;
 }
+
+SortByGroup : OnClickContainer {
+  elementName = "span";
+  onclick = session.tryLoad;
+  disabled = ifGroup;
+  invokeAction = sortByGroup;
+  title = session.strings.Strings.SrcMark.sort;
+}
+SortBySubj : OnClickContainer {
+  elementName = "span";
+  onclick = session.tryLoad;
+  disabled = ifGroup;
+  invokeAction = sortByCycle;
+  title = session.strings.Strings.SrcMark.sort;
+}
+SortByTeacher : OnClickContainer {
+  elementName = "span";
+  onclick = session.tryLoad;
+  disabled = ifGroup;
+  invokeAction = sortByTeacher;
+  title = session.strings.Strings.SrcMark.sort;
+}

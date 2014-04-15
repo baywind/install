@@ -88,6 +88,8 @@
 	<dict>
 		<key>title</key>
 		<string>Выбор журнала</string>
+		<key>sort</key>
+		<string>Сортировать</string>
 	</dict>
 	<key>LessonNoteEditor</key>
 	<dict>
