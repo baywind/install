@@ -239,5 +239,53 @@
 			</dict>
 		</array>
 	</dict>
+	<key>groupTabel</key>
+	<dict>
+		<key>title</key>
+		<string>История итоговых</string>
+		<key>component</key>
+		<string>DisplayAny</string>
+		<key>invokeAction</key>
+		<string>true</string>
+		<key>nextPage</key>
+		<string>GroupTabel</string>
+		<key>pageParams</key>
+		<dict>
+			<key>course</key>
+			<string>^course</string>
+		</dict>
+		<key>presenter</key>
+		<string>WOImage</string>
+		<key>presenterBindings</key>
+		<dict>
+			<key>framework</key>
+			<string>RujelEduResults</string>
+			<key>filename</key>
+			<string>tick.png</string>
+			<key>alt</key>
+			<string>stat</string>
+		</dict>
+		<key>wrapperBindings</key>
+		<dict>
+			<key>elementName</key>
+			<string>a</string>
+			<key>href</key>
+			<string>$context.componentActionURL</string>
+			<key>style</key>
+			<string>display:block;border:double #3333cc;height:20px;width:20px;padding:7px;</string>
+			<key>class</key>
+			<string>gerade</string>
+			<key>onmouseover</key>
+			<string>dim(this);</string>
+			<key>onmouseout</key>
+			<string>unDim(this);</string>
+			<key>target</key>
+			<string>_blank</string>
+			<key>title</key>
+			<string>История итоговых оценок по предмету</string>
+		</dict>
+		<key>sort</key>
+		<string>11</string>
+	</dict>	
 </dict>
 </plist>

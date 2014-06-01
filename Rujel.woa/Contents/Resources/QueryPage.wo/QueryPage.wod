@@ -1,0 +1,237 @@
+ModelReport : WOHyperlink {
+	action = modelReport;
+	target = "_blank";
+}
+NewQueryText : WOText {
+  value = newIter.query.sql;
+  rows = 6;
+  cols = 70;
+}
+QueryText : WOText {
+  value = iter.query.sql;
+  rows = 6;
+  cols = 70;
+}
+
+Iterations : WORepetition {
+  list = iterations;
+  item = iter;
+}
+
+Columns : WORepetition {
+  list = iter.cols;
+  item = colItem;
+}
+
+ColTitle : WOString {
+  value = colItem;
+}
+
+ResultRows : WORepetition {
+  list = iter.result;
+  item = rowItem;
+}
+NewIterMessage : WOString {
+  value = newIter.message;
+}
+DatabaseMessage : WOString {
+  value = iter.message;
+}
+
+Value : WOString {
+  value = value;
+  escapeHTML = false;
+}
+
+QueryForm : WOForm {
+  multipleSubmit = true;
+  style = "clear:right;";
+}
+
+PerformQuery : WOSubmitButton {
+  value = "Run";
+  action = performQuery;
+}
+NewModel : WOPopUpButton {
+  list = models;
+  selection = newIter.query.model;
+}
+Model : WOPopUpButton {
+  list = models;
+  selection = iter.query.model;
+}
+
+UploadForm : WOForm {
+  enctype = "multipart/form-data";
+}
+
+Qupload : WOFileUpload {
+  data = queryPlist;
+  filePath = params.uploadFilename;
+}
+
+SaveQuery : WOHyperlink {
+  action = saveQuery;
+  target = "download";
+}
+
+Params : WORepetition {
+  list =rootQuery.parameters;
+  item = rowItem;
+}
+
+ParamName : WOString {
+  value = rowItem.attribute;
+}
+
+Parameter : Parameter {
+  itemDict = rowItem;
+  paramsDict = params;
+  editingContext = ecs.curr; 
+}
+
+NewParamName : WOTextField {
+  value = params.newParamName;
+}
+
+NewParamType : WOPopUpButton {
+  list = plist.parameters;
+  item = colItem;
+  displayString = colItem.title;
+  selection = params.newParamType;
+  noSelectionString = "-=New param type=-";
+}
+
+AddNewParam : WOSubmitButton {
+  action = addNewParam;
+}
+
+DeleteRow : OnClickContainer {
+  elementName = "td";
+  invokeAction = deleteParam;
+  onclick = session.tryLoad;
+  style = "color:#FF0000;";
+}
+
+DecodeForm : WOForm {
+  action = applyExtInfo;
+}
+
+DecodeOptions : WOPopUpButton {
+  list = extoptions;
+  item = rowItem;
+  displayString = rowItem.name;
+  selection = extInfo;
+  onchange = "if(checkRun())form.submit();";
+  noSelectionString = "-= Decode =-";
+}
+
+ExtValue : DisplayAny {
+  value = extValue;
+  dict = extInfo.displayDict;
+}
+
+ExtModel : WOPopUpButton {
+  list = models;
+  selection = iter.extModel;
+}
+ExtText : WOText {
+  value = iter.extSql;
+  rows = 5;
+  cols = 40;
+}
+ExtQueryModel : WOPopUpButton {
+  list = models;
+  selection = colItem.model;
+}
+ExtQueryText : WOText {
+  value = colItem.sql;
+  rows = 5;
+  cols = 40;
+}
+PerfomExt : WOSubmitButton {
+  value = "Run ext";
+  action = performExtQuery;
+}
+
+ExtKey : WOString {
+  value = colItem.key;
+}
+ExtTitle : WOString {
+  value = colItem.title;
+  escapeHTML = false;
+}
+ExtTitleCell : WOGenericContainer {
+  elementName = "td";
+  title = colItem.sql;
+}
+
+ExtQueries : WORepetition {
+  list = iter.query.extQueries;
+  item = colItem;
+}
+
+ShowNewIter : WOConditional {
+  condition = newIter;
+}
+
+IsRecent : WOConditional {
+  condition = iter.recent;
+}
+
+AddIteration : OnClickContainer {
+  elementName = "span";
+  onclick = session.checkRun;
+  invokeAction = addIteration;
+  class = "orange";
+}
+
+DownloadCSV : WOHyperlink {
+  action = exportCSV;
+  target = "download";
+  style = "float:right;";
+}
+
+HasResult : WOConditional {
+  condition = iter.result.count;
+}
+
+CancelIter : OnClickContainer {
+  elementName = "span";
+  onclick = session.checkRun;
+  invokeAction = cancelIteration;
+  class = "dimtext";
+  hide = noIterations;
+}
+
+IterNum : WOString {
+  value = iter.index;
+}
+
+NewYear : WOTextField {
+  value = newIter.query.year;
+  size = 4;
+  title = "year";
+  class = "titled";
+}
+
+IterYear : WOTextField {
+  value = iter.query.year;
+  size = 4;
+  title = "year";
+  class = "titled";
+}
+
+ExtYear : WOTextField {
+  value = iter.extYear;
+  size = 4;
+  title = "year";
+  class = "titled";
+}
+
+ExtQueryYear : WOTextField {
+  value = colItem.year;
+  size = 4;
+  title = "year";
+  class = "titled";
+}

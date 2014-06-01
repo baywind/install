@@ -1,0 +1,111 @@
+<script language = "JavaScript">
+	function describe(cell) {
+		displayElts(cell,"form","");
+		cell.onmouseover='';
+		cell.onmouseout='';
+	}
+	function displayElts(cell,tag,value) {
+		elts = cell.getElementsByTagName(tag);
+		for(i=0;i<elts.length;i++) {
+			elts[i].style.display = value;
+		}
+	}	
+</script>
+<div style = "float:center;border:1px dotted #666666;">
+<webobject name = "UploadForm"><webobject name = "Qupload"/> <webobject name = "AddNewParam"/>
+ <webobject name = "ModelReport">Model Report</webobject></webobject>
+</div><webobject name = "ShowNewIter">
+<webobject name = "QueryForm">
+	<table align = "left">
+	<tfoot>
+	<tr><td><webobject name = "NewParamName"/></td>
+		<td><webobject name = "NewParamType"/> <webobject name = "AddNewParam"/></td></tr>
+	</tfoot>
+	<tbody><webobject name = "Params">
+		<tr class = "gerade"><th><webobject name = "ParamName"/></th>
+			<td><webobject name = "Parameter"/></td>
+			<webobject name = "DeleteRow">X</webobject></tr>
+	</webobject></tbody>
+	</table>
+<p style = "clear:left;">
+	<strong>Query </strong><webobject name = "NewModel"/> <webobject name = "NewYear"/><br/>
+	<webobject name = "NewQueryText"/></p>
+	<p><webobject name = "PerformQuery"/>
+	<webobject name = "CancelIter">Cancel</webobject></p>
+<p style = "clear:both;font-size:large;"><webobject name = "NewIterMessage"/></p>
+	<hr/>
+</webobject></webobject>
+
+<webobject name = "Iterations">
+<webobject name = "QueryForm">
+<table width = "100%"><tr valign = "bottom"><td>
+	<webobject name = "IsRecent"><table align = "left">
+	<tfoot>
+	<tr><td><webobject name = "NewParamName"/></td>
+		<td><webobject name = "NewParamType"/> <webobject name = "AddNewParam"/></td></tr>
+	</tfoot>
+	<tbody><webobject name = "Params">
+		<tr class = "gerade"><th><webobject name = "ParamName"/></th>
+			<td><webobject name = "Parameter"/></td>
+			<webobject name = "DeleteRow">X</webobject></tr>
+	</webobject></tbody>
+	</table>
+	</webobject>
+	<div style = "clear:left;">
+<p>
+	<strong>Query </strong><webobject name = "Model"/> <webobject name = "IterYear"/><br/>
+	<webobject name = "QueryText"/></p>
+	<p><webobject name = "PerformQuery"/></p>
+<webobject name = "IsRecent"><webobject name = "AddIteration">Next query</webobject></webobject>
+</div>
+	</td><td>
+	<table align = "right" style = "border-color:#666666;border-collapse:collapse;text-align:center;" border = "1">
+	<tfoot>
+	<tr><th>ext</th>
+		<td><webobject name = "ExtModel"/> <webobject name = "ExtYear"/></td></tr>
+	<tr><td colspan = "2"><webobject name = "ExtText"/></td></tr>
+	<tr><td colspan = "2"><webobject name = "PerfomExt"/></td></tr>
+	</tfoot>
+	<webobject name = "ExtQueries"><body>
+	<tr><th><webobject name = "ExtKey"/></th>
+		<td align = " left"><webobject name = "ExtQueryModel"/> <webobject name = "ExtQueryYear"/></td></tr>
+	<tr><td colspan = "2"><webobject name = "ExtQueryText"/>
+	<div style = "text-align:right;border-bottom:1px solid #333;">
+		<webobject name = "PerfomExt"/></div>
+	</td></tr></body></webobject>
+	</table>
+</td></tr>
+<tr><td colspan = "2" class = "message">
+<webobject name = "DatabaseMessage"/></td></tr>
+</table>
+</webobject><webobject name = "HasResult">
+<table border = "1" align = "center">
+<caption align = "top" style = "text-align:left;font-weight:bold;font-style:italic;">
+	res<webobject name = "IterNum"/></caption>
+<thead>
+<tr><webobject name = "Columns">
+	<th><webobject name = "ColTitle"/>
+	<webobject name = "DecodeForm"><webobject name = "DecodeOptions"/></webobject>
+	</th>
+</webobject><webobject name = "ExtQueries"><webobject name = "ExtTitleCell">
+<strong><webobject name = "ExtKey"/></strong><br/><webobject name = "ExtTitle"/></webobject></webobject></tr>
+</thead>
+<tfoot>
+<tr><webobject name = "Columns">
+	<th><webobject name = "ColTitle"/></th>
+</webobject><webobject name = "ExtQueries"><webobject name = "ExtTitleCell">
+<webobject name = "ExtKey"/></webobject></webobject></tr>
+</tfoot>
+<tbody><webobject name = "ResultRows">
+	<tr><webobject name = "Columns"><td><webobject name = "Value"/>
+		<span class = "dimtext"><webobject name = "ExtValue"/></span></td></webobject>
+		<webobject name = "ExtQueries"><td><webobject name = "Value"/>
+		</td></webobject></tr>
+</webobject></tbody>
+<caption align = "bottom"><webobject name = "DownloadCSV">CSV</webobject></caption>
+</table>
+</webobject>
+<hr style = "clear:both;"/>
+</webobject><webobject name = "SaveQuery">Save query</webobject>
+<iframe name = "download" style = "display:none;"></iframe>
+

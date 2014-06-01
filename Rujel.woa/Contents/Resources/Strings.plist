@@ -273,6 +273,16 @@
 			<key>checkAccess</key>
 			<string>Maintenance</string>
 			<key>sort</key>
+			<string>97</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>База данных</string>
+			<key>component</key>
+			<string>QueryPage</string>
+			<key>checkAccess</key>
+			<string>Maintenance</string>
+			<key>sort</key>
 			<string>98</string>
 		</dict>
 		<dict>
