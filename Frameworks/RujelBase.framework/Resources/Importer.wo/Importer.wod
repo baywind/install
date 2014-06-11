@@ -71,7 +71,7 @@ UploadForm : WOForm {
 SubmitUpload : WOGenericElement {
   elementName = "input";
   type = "button";
-  onclick = "form.submit()";
+  onclick = "if(tryLoad())form.submit()";
   value = session.strings.RujelBase_Base.import.Import;
 }
 

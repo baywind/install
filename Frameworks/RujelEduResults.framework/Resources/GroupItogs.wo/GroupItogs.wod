@@ -22,6 +22,7 @@ GroupName : WOString {
 Students : WORepetition {
   list = students;
   item = stItem;
+  index = stIndex;
 }
 
 StudentName : PersonDisplay {
@@ -42,6 +43,7 @@ CycleCell : WOGenericContainer {
   elementName = "th";
   colspan = itogsList.count;
   class = "leftCol";
+  onclick = "prepare(offsetLeft + offsetWidth);";
 }
 
 CycleTitle : WOString {
@@ -84,4 +86,24 @@ Pedsovet : WOString {
 Decision : WOString {
   value = stItem.pedsovet;
   escapeHTML = false;
+}
+
+
+StudentNumber : WOString {
+  value = number;
+}
+
+Button : WOGenericElement {
+  elementName = "input";
+  type = "submit";
+  value = session.strings.RujelEduResults_EduResults.groupItogs.wrap;
+  onclick = "return prepare(form.maxwidth.value,form.student.checked);";
+}
+
+WidthTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.groupItogs.width;
+}
+
+CopyNames : WOString {
+  value = session.strings.RujelEduResults_EduResults.groupItogs.copyNames;
 }

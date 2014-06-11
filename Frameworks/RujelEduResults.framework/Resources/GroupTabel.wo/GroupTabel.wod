@@ -1,0 +1,75 @@
+Years : WORepetition {
+  list = years;
+  item = item;
+}
+
+StudentTitle: WOString {
+	value = session.strings.RujelInterfaces_Names.Student.this;
+	valueWhenEmpty = "Student";
+	escapeHTML = false;
+}
+
+Student : PersonDisplay {
+  person = student;
+  first = 2;
+  last = 2;
+  second = 0;
+  startWithLast = true;
+}
+
+YearCell : WOGenericContainer {
+  elementName = "th";
+  colspan = item.colspan;
+  style = "border-left:double 3px;";
+}
+
+YearTitle : WOString {
+  value = item.text;
+  escapeHTML = false;
+}
+
+MarkCell : WOGenericContainer {
+  elementName = "td";
+  style = cellStyle;
+}
+
+TitleCell : WOGenericContainer {
+  elementName = "th";
+  style = cellStyle;
+}
+
+PeriodList: WORepetition {
+	item = itog;
+	list = containers;
+}
+
+PeriodTitle: WOString {
+	value = itog.titleHTML;
+	escapeHTML = false;
+}
+
+StudentList: WORepetition {
+	list = students;
+	item = student;
+}
+
+Mark: WOString {
+	value = mark;
+	escapeHTML = false;
+}
+
+Title : WOString {
+	value = session.strings.RujelEduResults_EduResults.groupTabel.title;
+	valueWhenEmpty = "Itog history";
+	escapeHTML = false;
+}
+
+SubjectName : WOString {
+  value = course.subjectWithComment;
+  escapeHTML = false;
+}
+
+GroupName : WOString {
+  value = course.eduGroup.name;
+  escapeHTML = false;
+}

@@ -163,7 +163,13 @@
 		<key>title</key>
 		<string>Сводная ведомость</string>
 		<key>hover</key>
-		<string>Сводная ведомость учета успеваемости учащихся</string>
+		<string>Сводная ведомость учёта успеваемости учащихся</string>
+		<key>width</key>
+		<string>Ширина страницы</string>
+		<key>wrap</key>
+		<string>Разделить</string>
+		<key>copyNames</key>
+		<string>переносить имена</string>
 	</dict>
 	<key>archiveType</key>
 	<dict>
@@ -286,6 +292,6 @@
 		</dict>
 		<key>sort</key>
 		<string>11</string>
-	</dict>	
+	</dict>
 </dict>
 </plist>
