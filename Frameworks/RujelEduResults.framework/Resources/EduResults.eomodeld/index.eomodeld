@@ -334,6 +334,6 @@
     ); 
     userInfo = {
         framework = RujelEduResults; 
-        schemaVersion = {number = 2; title = "0.9.5"; }; 
+        schemaVersion = {number = 3; title = "0.9.9"; }; 
     }; 
 }

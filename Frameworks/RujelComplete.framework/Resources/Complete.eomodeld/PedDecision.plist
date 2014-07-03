@@ -1,6 +1,11 @@
 {
     attributes = (
-        {columnName = "DECISION_FLAGS"; name = flags; prototypeName = byte; }, 
+        {
+            allowsNull = N; 
+            columnName = "DECISION_FLAGS"; 
+            name = flags; 
+            prototypeName = byte; 
+        }, 
         {allowsNull = N; columnName = "P_ID"; name = pID; prototypeName = short; }, 
         {columnName = "SPEC_DECISION"; name = specDecision; prototypeName = string; }, 
         {

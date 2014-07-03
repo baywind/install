@@ -1,11 +1,6 @@
 {
     attributes = (
-        {
-            allowsNull = N; 
-            columnName = "ZERO_VALUE"; 
-            name = zeroValue; 
-            prototypeName = word; 
-        }, 
+        {columnName = "ZERO_VALUE"; name = zeroValue; prototypeName = word; }, 
         {columnName = "BS_ID"; name = bsID; prototypeName = short; }, 
         {columnName = "EXCLUDE_MIN"; name = exclude; prototypeName = boolean; }, 
         {

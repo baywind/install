@@ -153,6 +153,8 @@
 		<string>Запущено обновление прогнозов</string>
 		<key>updateFinished</key>
 		<string>Обновление прогнозов завершено</string>
+		<key>prognosesFired</key>
+		<string>Выставление итоговых на основе прогнозов завершено.</string>
 		<key>updateError</key>
 		<string>Произошла ошибка при обновлении прогнозов</string>
 		<key>ItogLock</key>

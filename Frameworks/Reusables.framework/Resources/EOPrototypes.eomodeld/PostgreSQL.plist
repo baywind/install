@@ -1,0 +1,184 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = anagram; 
+            externalType = VARCHAR; 
+            name = anagram; 
+            valueClassName = NSString; 
+            width = 5; 
+        }, 
+        {
+            columnName = boolean; 
+            externalType = BIT; 
+            name = boolean; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSNumber; 
+            valueType = c; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = byte; 
+            externalType = SMALLINT; 
+            name = byte; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = chars; 
+            externalType = CHAR; 
+            name = chars; 
+            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            columnName = date; 
+            externalType = DATE; 
+            name = date; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = NSCalendarDate; 
+            valueType = D; 
+        }, 
+        {
+            columnName = datetime; 
+            externalType = TIMESTAMP; 
+            name = datetime; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = decimal; 
+            externalType = DECIMAL; 
+            name = decimal; 
+            precision = 4; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            adaptorValueConversionMethodName = toBytes; 
+            columnName = flags; 
+            externalType = SMALLINT; 
+            factoryMethodArgumentType = EOFactoryMethodArgumentIsBytes; 
+            name = flags; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = "net.rujel.reusables.Flags"; 
+            valueFactoryMethodName = "makeFlags:"; 
+        }, 
+        {
+            columnName = "int_3"; 
+            externalType = INTEGER; 
+            name = "int_3"; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = integer; 
+            externalType = INTEGER; 
+            name = integer; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = long; 
+            externalType = BIGINT; 
+            name = long; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = short; 
+            externalType = SMALLINT; 
+            name = short; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = string; 
+            externalType = VARCHAR; 
+            name = string; 
+            valueClassName = NSString; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = text; 
+            externalType = TEXT; 
+            name = text; 
+            valueClassName = NSString; 
+            width = 65533; 
+        }, 
+        {
+            columnName = time; 
+            externalType = TIME; 
+            name = time; 
+            valueClassName = NSCalendarDate; 
+            valueType = t; 
+        }, 
+        {
+            columnName = timestamp; 
+            externalType = TIMESTAMP; 
+            name = timestamp; 
+            serverTimeZone = "Europe/Moscow"; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = word; 
+            externalType = VARCHAR; 
+            name = word; 
+            valueClassName = NSString; 
+            width = 28; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        anagram, 
+        boolean, 
+        byte, 
+        chars, 
+        date, 
+        datetime, 
+        decimal, 
+        flags, 
+        "int_3", 
+        integer, 
+        long, 
+        short, 
+        string, 
+        text, 
+        time, 
+        timestamp, 
+        word
+    ); 
+    className = EOGenericRecord; 
+    classProperties = (
+        anagram, 
+        boolean, 
+        byte, 
+        chars, 
+        date, 
+        datetime, 
+        decimal, 
+        flags, 
+        "int_3", 
+        integer, 
+        long, 
+        short, 
+        string, 
+        text, 
+        time, 
+        timestamp, 
+        word
+    ); 
+    externalName = PostgreSQL; 
+    fetchSpecificationDictionary = {}; 
+    name = PostgreSQL; 
+    primaryKeyAttributes = ("int_3"); 
+    userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+}

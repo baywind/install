@@ -19,11 +19,12 @@
             columnName = "MARK_INDEX"; 
             name = indexID; 
             prototypeName = short; 
-        }
+        }, 
+        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }
     ); 
-    attributesUsedForLocking = (listName, typeID); 
+    attributesUsedForLocking = (eduYear, listName, typeID); 
     className = EOGenericRecord; 
-    classProperties = (itogType, listName, markIndex); 
+    classProperties = (eduYear, itogType, listName, markIndex); 
     externalName = "ITOG_TYPE_LIST"; 
     fetchSpecificationDictionary = {}; 
     name = ItogTypeList; 

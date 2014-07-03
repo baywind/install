@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>PostgreSQL</string>
+	<key>dbConnection</key>
+	<dict>
+		<key>serverURL</key>
+		<string>jdbc:postgresql://localhost/</string>
+		<key>changeCase</key>
+		<string>lowercase</string>
+		<key>username</key>
+		<string>rujel</string>
+		<key>password</key>
+		<string>RUJELpassword</string>
+		<key>prototypes</key>
+		<string>PostgreSQL</string>
+	</dict>
+</dict>
+</plist>

@@ -4,6 +4,7 @@
     entities = (
         {className = EOGenericRecord; name = EOJDBCPrototypes; }, 
         {className = EOGenericRecord; name = Firebird; }, 
-        {className = EOGenericRecord; name = MySQL; }
+        {className = EOGenericRecord; name = MySQL; }, 
+        {className = EOGenericRecord; name = PostgreSQL; }
     ); 
 }

@@ -365,5 +365,116 @@
 			</dict>
 		</dict>
 	</array>
+	<key>defaultHolidays</key>
+	<array>
+		<dict>
+			<key>title</key>
+			<string>Осенние каникулы</string>
+			<key>startMonth</key>
+			<integer>11</integer>
+			<key>startDay</key>
+			<integer>3</integer>
+			<key>endMonth</key>
+			<integer>11</integer>
+			<key>endDay</key>
+			<integer>9</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>День народного единства</string>
+			<key>startMonth</key>
+			<integer>11</integer>
+			<key>startDay</key>
+			<integer>4</integer>
+			<key>endMonth</key>
+			<integer>11</integer>
+			<key>endDay</key>
+			<integer>4</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Зимние каникулы</string>
+			<key>startMonth</key>
+			<integer>12</integer>
+			<key>startDay</key>
+			<integer>31</integer>
+			<key>endMonth</key>
+			<integer>1</integer>
+			<key>endDay</key>
+			<integer>13</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>День защитника отечества</string>
+			<key>startMonth</key>
+			<integer>2</integer>
+			<key>startDay</key>
+			<integer>23</integer>
+			<key>endMonth</key>
+			<integer>2</integer>
+			<key>endDay</key>
+			<integer>23</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Международный женский день</string>
+			<key>startMonth</key>
+			<integer>3</integer>
+			<key>startDay</key>
+			<integer>8</integer>
+			<key>endMonth</key>
+			<integer>3</integer>
+			<key>endDay</key>
+			<integer>8</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Весенние каникулы</string>
+			<key>startMonth</key>
+			<integer>2</integer>
+			<key>startDay</key>
+			<integer>25</integer>
+			<key>endMonth</key>
+			<integer>3</integer>
+			<key>endDay</key>
+			<integer>31</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>День весны и труда</string>
+			<key>startMonth</key>
+			<integer>5</integer>
+			<key>startDay</key>
+			<integer>1</integer>
+			<key>endMonth</key>
+			<integer>5</integer>
+			<key>endDay</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>Осенние каникулы</string>
+			<key>startMonth</key>
+			<integer>11</integer>
+			<key>startDay</key>
+			<integer>4</integer>
+			<key>endMonth</key>
+			<integer>11</integer>
+			<key>endDay</key>
+			<integer>10</integer>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>День Победы</string>
+			<key>startMonth</key>
+			<integer>5</integer>
+			<key>startDay</key>
+			<integer>9</integer>
+			<key>endMonth</key>
+			<integer>5</integer>
+			<key>endDay</key>
+			<integer>9</integer>
+		</dict>
+	</array>
 </dict>
 </plist>

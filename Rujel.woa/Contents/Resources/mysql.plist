@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>createDatabase</key>
+		<array>
+			<string>CREATE DATABASE %s DEFAULT CHARACTER SET utf8;</string>
+		</array>
+		<key>systemTables</key>
+		<array>
+			<string>CREATE TABLE SCHEMA_VERSION (
+  MODEL_NAME varchar(255),
+  VERSION_NUMBER smallint unsigned NOT NULL,
+  VERSION_TITLE varchar(255),
+  INSTALL_DATE timestamp
+);</string>
+			<string>CREATE TABLE  EO_PK_TABLE (
+  NAME char(40),
+  PK int
+) ENGINE=InnoDB;</string>
+		</array>
+	</dict>
+</plist>

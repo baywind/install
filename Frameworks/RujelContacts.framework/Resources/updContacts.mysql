@@ -1,0 +1,15 @@
+-- Schema updates for Contacts model --
+
+-- v1 (0.9.7) --
+
+ALTER TABLE CNT_CONTACT ADD INDEX (PERSON_ID);
+
+CREATE TABLE IF NOT EXISTS SCHEMA_VERSION (
+  MODEL_NAME varchar(255),
+  VERSION_NUMBER smallint unsigned NOT NULL,
+  VERSION_TITLE varchar(255),
+  INSTALL_DATE timestamp
+);
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('Contacts',1,'0.9.7'); 

@@ -29,7 +29,7 @@
 	<key>results</key>
 	<string>Результаты</string>
 	<key>forced</key>
-	<string>Принудительное закрытие</string>
+	<string>Принудительное создание архива</string>
 	<key>running</key>
 	<string>Выполняется</string>
 	<key>progress</key>
