@@ -157,6 +157,8 @@
 		<string>Предметы</string>
 		<key>total</key>
 		<string>Сумма</string>
+		<key>forAll</key>
+		<string>Для всех графиков</string>
 	</dict>
 	<key>regimeTabs</key>
 	<array>

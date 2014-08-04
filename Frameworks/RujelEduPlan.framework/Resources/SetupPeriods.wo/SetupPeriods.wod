@@ -13,6 +13,7 @@ HolidaysList : HolidaysList {
   ec = ec;
   listName = listName;
   shouldReset = ^shouldReset;
+  details = details;
 }
 
 ListSettings : ListSettings {
