@@ -145,8 +145,8 @@ if [ -e ${CONFIGFOLDER}/SiteConfig.xml ] ; then
 	else
 		mv ${CONFIGFOLDER}/SiteConfig.xml $BACKUPFOLDER/
 		if $ONMAC ; then
-			WOTASKD=`find -f /System/Library/LaunchDaemons /Library/LaunchDaemons -iname *wotaskd*`
-			WOMONITOR=`find -f /System/Library/LaunchDaemons /Library/LaunchDaemons -iname *womonitor*`
+			WOTASKD=`find -f /System/Library/LaunchDaemons /Library/LaunchDaemons /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons -iname *wotaskd*`
+			WOMONITOR=`find -f /System/Library/LaunchDaemons /Library/LaunchDaemons /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons -iname *womonitor*`
 			if [ -n $WOMONITOR ] ; then
 				launchctl unload $WOMONITOR >> /dev/null 2>&1
 			fi
@@ -241,13 +241,21 @@ if [ ! -e ${CONFIGFOLDER}/rujel.plist ] ; then
     mv ${CONFIGFOLDER}/modules/rujel.plist ${CONFIGFOLDER}/
 #    cp RUJELsetup/recommended/* ${CONFIGFOLDER}/modules/
     cd logging
+        if $ONMAC
+        then echo
+        else
         PATTERN=`echo $LOCALROOT | sed 's/\//\\\\\\//g'`
+        fi
         for f in *.properties ; do
         if [ -f $f ] ; then
             if [ -e ${CONFIGFOLDER}/$f ] ; then
                 mv ${CONFIGFOLDER}/$f $BACKUPFOLDER
             fi
-            sed "s/\\/Library/$PATTERN&/g" $f > ${CONFIGFOLDER}/$f
+            if $ONMAC ; then
+                cp $f ${CONFIGFOLDER}/
+            else
+                sed "s/\\/Library/$PATTERN&/g" $f > ${CONFIGFOLDER}/$f
+            fi
         fi
         done
     cd ..
