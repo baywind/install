@@ -3,14 +3,14 @@
         {
             allowsNull = Y; 
             columnName = anagram; 
-            externalType = VARCHAR; 
+            externalType = varchar; 
             name = anagram; 
             valueClassName = NSString; 
             width = 5; 
         }, 
         {
             columnName = boolean; 
-            externalType = BIT; 
+            externalType = bool; 
             name = boolean; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
             valueClassName = NSNumber; 
@@ -20,14 +20,14 @@
         {
             allowsNull = Y; 
             columnName = byte; 
-            externalType = SMALLINT; 
+            externalType = int2; 
             name = byte; 
             valueClassName = NSNumber; 
             valueType = i; 
         }, 
         {
             columnName = chars; 
-            externalType = CHAR; 
+            externalType = char; 
             name = chars; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
             valueClassName = NSString; 
@@ -35,7 +35,7 @@
         }, 
         {
             columnName = date; 
-            externalType = DATE; 
+            externalType = date; 
             name = date; 
             serverTimeZone = "Europe/Moscow"; 
             valueClassName = NSCalendarDate; 
@@ -43,7 +43,7 @@
         }, 
         {
             columnName = datetime; 
-            externalType = TIMESTAMP; 
+            externalType = timestamp; 
             name = datetime; 
             serverTimeZone = "Europe/Moscow"; 
             valueClassName = NSCalendarDate; 
@@ -51,7 +51,7 @@
         {
             allowsNull = Y; 
             columnName = decimal; 
-            externalType = DECIMAL; 
+            externalType = numeric; 
             name = decimal; 
             precision = 4; 
             scale = 2; 
@@ -61,7 +61,7 @@
         {
             adaptorValueConversionMethodName = toBytes; 
             columnName = flags; 
-            externalType = SMALLINT; 
+            externalType = int2; 
             factoryMethodArgumentType = EOFactoryMethodArgumentIsBytes; 
             name = flags; 
             serverTimeZone = "Europe/Moscow"; 
@@ -70,14 +70,14 @@
         }, 
         {
             columnName = "int_3"; 
-            externalType = INTEGER; 
+            externalType = int4; 
             name = "int_3"; 
             valueClassName = NSNumber; 
             valueType = i; 
         }, 
         {
             columnName = integer; 
-            externalType = INTEGER; 
+            externalType = int4; 
             name = integer; 
             valueClassName = NSNumber; 
             valueType = i; 
@@ -85,14 +85,14 @@
         {
             allowsNull = Y; 
             columnName = long; 
-            externalType = BIGINT; 
+            externalType = int8; 
             name = long; 
             valueClassName = NSNumber; 
             valueType = l; 
         }, 
         {
             columnName = short; 
-            externalType = SMALLINT; 
+            externalType = int2; 
             name = short; 
             valueClassName = NSNumber; 
             valueType = i; 
@@ -100,7 +100,7 @@
         {
             allowsNull = Y; 
             columnName = string; 
-            externalType = VARCHAR; 
+            externalType = varchar; 
             name = string; 
             valueClassName = NSString; 
             width = 255; 
@@ -108,21 +108,20 @@
         {
             allowsNull = Y; 
             columnName = text; 
-            externalType = TEXT; 
+            externalType = text; 
             name = text; 
             valueClassName = NSString; 
-            width = 65533; 
         }, 
         {
             columnName = time; 
-            externalType = TIME; 
+            externalType = time; 
             name = time; 
             valueClassName = NSCalendarDate; 
             valueType = t; 
         }, 
         {
             columnName = timestamp; 
-            externalType = TIMESTAMP; 
+            externalType = timestamp; 
             name = timestamp; 
             serverTimeZone = "Europe/Moscow"; 
             valueClassName = NSCalendarDate; 
@@ -131,7 +130,7 @@
         {
             allowsNull = Y; 
             columnName = word; 
-            externalType = VARCHAR; 
+            externalType = varchar; 
             name = word; 
             valueClassName = NSString; 
             width = 28; 

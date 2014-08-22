@@ -16,6 +16,10 @@
 		<string>RUJELpassword</string>
 		<key>prototypes</key>
 		<string>PostgreSQL</string>
+		<key>driver</key>
+		<string>org.postgresql.Driver</string>
+		<key>plugin</key>
+		<string>PostgresqlPlugIn</string>
 	</dict>
 </dict>
 </plist>
