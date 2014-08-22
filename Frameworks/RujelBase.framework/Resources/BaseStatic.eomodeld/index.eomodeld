@@ -25,5 +25,6 @@
             }; 
         }; 
         framework = "RujelBase";
+        schemaVersion = {number = 1; title = "0.9"; };
     }; 
 }
