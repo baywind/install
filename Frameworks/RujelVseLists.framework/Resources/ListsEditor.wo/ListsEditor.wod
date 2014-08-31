@@ -294,7 +294,6 @@ Import : OnClickContainer {
   elementName = "div";
   invokeAction = importFile;
   onclick = session.ajaxPopup;
-  hide = mode;
   class = "orange";
   style = "float:right;padding:0px 4px;border:double 3px #ff9933;margin:4px;";
 }

@@ -110,22 +110,22 @@ ToStayList : WORepetition {
 }
 
 ExcludeLastName : PersonDisplay {
-  person = item.student;
+  person = plinkItem;
   last = 2;
   first = 0;
   second = 0;
 }
 
 ExcludeFirstName : WOString {
-  value = item.student.person.firstName;
+  value = plinkItem.person.firstName;
 }
 
 ExcludeSecondName : WOString {
-  value = item.student.person.secondName;
+  value = plinkItem.person.secondName;
 }
 
 ExcludeBirthDate : WOString {
-  value = item.student.person.birthDate;
+  value = plinkItem.person.birthDate;
   dateformat = application.prefs.ui.dateFormat;
 }
 
@@ -198,12 +198,12 @@ NameCell : OnClickContainer {
   onclick = session.ajaxPopup;
   invokeAction = editPerson;
   align = "left";
-  title = item.student.person.secondName;
+  title = plinkItem.person.secondName;
   style = rowStyle;
 }
 
 Name : PersonDisplay {
-  person = item.student;
+  person = plinkItem;
   last = 2;
   first = 2;
   second = 0;

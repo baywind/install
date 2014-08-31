@@ -186,6 +186,8 @@
 		<string>Выбывшие</string>
 		<key>onDate</key>
 		<string>Дата внесения изменений</string>
+		<key>fired</key>
+		<string>Был в штате до </string>
  	</dict>
 	<key>importAssistance</key>
 	<array>
