@@ -30,4 +30,4 @@ WOROOT/Library/Frameworks/JavaWebObjects.framework/Resources/Java/javawebobjects
 WOROOT/Library/Frameworks/JavaWebObjects.framework/WebServerResources/Java/JavaWebObjects.jar
 WOROOT/Library/Frameworks/JavaXML.framework/Resources/Java/javaxml.jar
 WOROOT/Library/Frameworks/JavaXML.framework/WebServerResources/Java/javaxml.jar
-
+LOCALROOT/Library/Frameworks/PostgresqlPlugIn.framework/Resources/Java/PostgresqlPlugIn.jar

@@ -146,3 +146,8 @@
 input.sorting {
 	display:none;
 }
+
+.leftpad {
+	text-align:left;
+	padding-left: 4px;
+}

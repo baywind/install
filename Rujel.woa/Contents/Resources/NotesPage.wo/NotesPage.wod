@@ -57,7 +57,7 @@ Index: WOString {
 }
 
 StudentTD: OnClickContainer {
-	align = "left";
+	class = "leftpad";
 	elementName = "td";
 	invokeAction = studentSelection;
 	onclick = session.checkRun;
