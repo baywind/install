@@ -229,6 +229,7 @@ TaskCell : OnClickContainer {
   onclick = showHomeTaskOnClick;
   invokeAction = popupHomeTask;
   disabled = disableCell;
+  class = hometaskClass;
 }
 
 CanSave: WOConditional {

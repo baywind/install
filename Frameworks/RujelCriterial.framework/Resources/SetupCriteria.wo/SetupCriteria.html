@@ -10,7 +10,7 @@ function rename(aform) {
 	var val = prompt('<webobject name = "RenamePrompt"/>',aform.csTitle.defaultValue);
 	if(val && val != aform.csTitle.defaultValue) {
 		aform.csTitle.value = val;
-		aform.submit();
+		if(tryLoad()) aform.submit();
 	}
 }
 function createIndex() {

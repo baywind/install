@@ -407,6 +407,27 @@
 				<integer>3</integer>
 			</dict>
 		</dict>
+		<dict>
+			<key>sort</key>
+			<string>66</string>
+			<key>settingBase</key>
+			<string>alertMissingHometask</string>
+			<key>grouping</key>
+			<string>Дни и уроки</string>
+			<key>checkAccess</key>
+			<string>Work</string>
+			<key>title</key>
+			<string>Требовать домашнее задание</string>
+			<key>description</key>
+			<string>Предупреждать учителя, если к уроку не определено домашнее задание.</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>boolean</key>
+				<string>number</string>
+			</dict>
+		</dict>
 	</array>
 	<key>AdminPage</key>
 	<dict>

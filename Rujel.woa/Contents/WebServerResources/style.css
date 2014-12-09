@@ -151,3 +151,18 @@ input.sorting {
 	text-align:left;
 	padding-left: 4px;
 }
+
+.alertingBackground {
+	-webkit-animation: alertingBackground 1s infinite alternate; /* Chrome, Safari, Opera */
+    animation: alertingBackground 1s infinite alternate;
+}
+
+@-webkit-keyframes alertingBackground {
+from  {background-color:#ffff66;}
+to    {background-color:#66ffff;}
+}
+
+@keyframes alertingBackground {
+from  {background-color:#ffff66;}
+to    {background-color:#66ffff;}
+}

@@ -54,7 +54,7 @@ CriterRow : OnClickContainer {
   elementName = "tr";
   hide = isSelected;
   invokeAction = selectCriter;
-  onClick = session.checkRun;
+  onclick = session.checkRun;
   class = "ungerade";
 }
 
