@@ -7,8 +7,10 @@
 		function onLoad() {
 			u = window.location.toString();
 			if(u.charAt(u.length -1) != '/') {
-				form = document.forms[0];
-				form.action = u + "/itogMark";
+				for(i=0 ; i < document.forms.length ; i++) { 
+					form = document.forms[i];
+					form.action = u + "/" + form.getAttribute("action");
+				}
 			}
 		}
 	</script>
@@ -121,5 +123,68 @@
 		В прототипе пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
 	</tbody>
 </table>
+<hr/>
+<h2>По курсам</h2>
+<form action = "course" method="get" target = "_blank">
+	<table align = "left">
+	<tr><th align="right">eduYear:</th>
+		<td><input name = "eduYear" type="text" value = "2011" size = "20"/></td></tr>
+	<tr><th align="right">grade:</th>
+		<td><input name = "grade" type="text" size = "20"/></td></tr>
+	<tr><th align="right">results:</th>
+		<td><input name = "grade" type="text" size = "20"/></td></tr>
+	</table>
+	<table align = "left">
+	<tbody>
+	<tr><th align="right">_grp1:</th>
+		<td><input name = "_grp1" type="text" value = "results" size = "40"/></td></tr>
+	<tr><th align="right">_agr1:</th>
+		<td><input name = "_agr1" type="text" value = "a,b,c" size = "40"/></td></tr>
+	<tr><th align="right">_list1:</th>
+		<td><input name = "_list1" type="text" value = "form" size = "40"/></td></tr>
+	</tbody><tbody>
+	<tr><th align="right">a:</th>
+		<td><input name = "a" type="text" value = "count(grade:[1,4])" size = "40"/></td></tr>
+	<tr><th align="right">b:</th>
+		<td><input name = "b" type="text" value = "count(grade:[5,9])" size = "40"/></td></tr>
+	<tr><th align="right">c:</th>
+		<td><input name = "c" type="text" value = "count(grade:{10,11})" size = "40"/></td></tr>
+	<tr><th align="right">d:</th>
+		<td><input name = "d" type="text" size = "40"/></td></tr>
+	<tr><th align="right">e:</th>
+		<td><input name = "e" type="text" size = "40"/></td></tr>
+	<tr><th align="right">f:</th>
+		<td><input name = "f" type="text" size = "40"/></td></tr>
+	</tbody></table>
+<br clear = "all"/>
+	<input type = "submit" value = "Send request"/>
+</form>
+<table align = "center" border = "1">
+	<thead>
+	<tr><th colspan = "2">Course</th><td>Учебный курс</td></tr>
+	</thead><tbody>
+	<tr><td style = "font-weight:bold">subject</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Наименование предмета</td></tr>
+	<tr><td style = "font-weight:bold">grade</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Поток (цифра класса)</td></tr>
+	<tr><td style = "font-weight:bold">eduYear</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
+	<tr><td style = "font-weight:bold">form</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Название класса, в котором ведётся этот курс</td></tr>
+	<tr><td style = "font-weight:bold">results</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Количество отчётных периодов в учебном году, за которые выставляются итоговые по этому курсу</td></tr>
+	<tr><td style = "font-weight:bold">teacher</td>
+		<td style = "font-style:italic;">Teacher</td>
+		<td>Учитель, ведущий данный курс</td></tr>
+	<tr><td colspan = "3">Атрибут teacher содержит сложные объекты, соответствующего типа. Через объект можно обратиться к его характеристикам.<br/>
+		В прототипе это пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
+	</tbody>
+</table>
+
 </body>
 </html>
