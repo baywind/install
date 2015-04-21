@@ -160,7 +160,7 @@ MaxField : WOGenericElement {
 	elementName = "input";
 	type = inputType;
 	name = maxName;
-	size = 2;
+	size = 3;
 	value = criterMax;
 	checked = checked;
 	style = "text-align:center;";
@@ -179,7 +179,7 @@ WeightField : WOGenericElement {
 	elementName = "input";
 	type = "text";
 	name = weightName;
-	size = 2;
+	size = 3;
 	value = criterWeight;
 	style = "text-align:center;";
 	disabled = disableWeight;
@@ -191,7 +191,7 @@ Save: WOGenericElement {
 	type = "submit";
 	value = application.strings.Reusables_Strings.uiElements.Save;
     omitTags = cantSave;
-    onclick = "return ajaxPost(form);";
+    onclick = "form.doSave.checked=true; return ajaxPost(form);";
 }
 
 ResetButton1: WOGenericElement {
@@ -337,4 +337,11 @@ CommentTitle : WOString {
 NewWork : WOConditional {
   condition = work;
   negate = true;
+}
+
+DoSave : WOGenericElement {
+  elementName = "input";
+  type = "checkbox";
+  name = "doSave";
+  style = "display:none;";
 }

@@ -219,3 +219,12 @@ IsManual : WOConditional {
 SystemType : WOConditional {
   condition = typeItem.namedFlags.system;
 }
+
+SelectCritSet : WOPopUpButton {
+  list = critSets;
+  item = item;
+  displayString = item.setName;
+  selection = selectedCritSet;
+  noSelectionString = "-=-=-=-=-";
+  disabled = cantEdit;
+}

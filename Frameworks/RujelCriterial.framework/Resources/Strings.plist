@@ -450,7 +450,7 @@
 	<key>messages</key>
 	<dict>
 		<key>critersRequired</key>
-		<string>В работе с ненулевым весом должен быть хотя бы один критерий с ненулевым весом.</string>
+		<string>В работе с ненулевым весом должен быть указан способ оценивания.</string>
 		<key>notSaved</key>
 		<string>Нужно сохранить изменения</string>
 		<key>longText</key>

@@ -18,6 +18,12 @@
             width = 7; 
         }, 
         {
+            allowsNull = Y; 
+            columnName = "CRITERIA_SET"; 
+            name = critSetID; 
+            prototypeName = short; 
+        }, 
+        {
             allowsNull = N; 
             columnName = "DFLT_FLAGS"; 
             name = dfltFlags; 
@@ -56,9 +62,26 @@
     attributesUsedForLocking = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName); 
     cachesObjects = Y; 
     className = "net.rujel.criterial.WorkType"; 
-    classProperties = (colorNoWeight, colorWeight, dfltFlags, dfltWeight, sort, typeName); 
+    classProperties = (
+        colorNoWeight, 
+        colorWeight, 
+        criteriaSet, 
+        dfltFlags, 
+        dfltWeight, 
+        sort, 
+        typeName
+    ); 
     externalName = "CR_WORK_TYPE"; 
     fetchSpecificationDictionary = {}; 
     name = WorkType; 
     primaryKeyAttributes = (wtID); 
+    relationships = (
+        {
+            destination = CriteriaSet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = setID; sourceAttribute = critSetID; }); 
+            name = criteriaSet; 
+        }
+    ); 
 }

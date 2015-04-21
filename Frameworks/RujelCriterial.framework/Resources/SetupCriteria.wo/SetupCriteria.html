@@ -3,7 +3,7 @@ function create(aform) {
 	var val = prompt("<webobject name = "CreatePrompt"/>","");
 	if(val) {
 		aform.csTitle.value = "$new$" + val;
-		aform.submit();
+		if(tryLoad()) aform.submit();
 	}
 }
 function rename(aform) {
@@ -18,7 +18,7 @@ function createIndex() {
 	if(val) {
 		var aform = document.getElementById('nameForm');
 		aform.csTitle.value = "$idx$" + val;
-		aform.submit();
+		if(tryLoad()) aform.submit();
 	}
 }
 function addCriterion(src) {

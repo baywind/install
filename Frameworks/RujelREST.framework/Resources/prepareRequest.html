@@ -9,9 +9,39 @@
 			if(u.charAt(u.length -1) != '/') {
 				for(i=0 ; i < document.forms.length ; i++) { 
 					form = document.forms[i];
+					action = form.getAttribute("action");
+					if(!action)
+						continue;
 					form.action = u + "/" + form.getAttribute("action");
 				}
 			}
+		}
+		
+		function setAction(actionName) {
+			u = window.location.toString();
+			if(u.charAt(u.length -1) != '/')
+				u = u + '/';
+			form = document.getElementById("customForm");
+			form.action = u + actionName;
+			document.getElementById("submitCustom").disabled = false;
+		}
+		
+		function addField() {
+			var newField = document.getElementById("newField");
+			if(!newField.value) {
+				alert("Укажите имя поля, которе нужно добавить");
+				return;
+			}
+			var node = document.getElementById("sampleTR");
+			var clone = node.cloneNode(true);
+			node = clone.getElementsByTagName("th")[0];
+			node.innerHTML = newField.value;
+			node = clone.getElementsByTagName("input")[0];
+			node.name = newField.value;
+			node.value = "";
+			node = document.getElementById("customTableBody");
+			node.appendChild(clone);
+			newField.value = "";
 		}
 	</script>
 </head>
@@ -97,6 +127,9 @@
 	<tr><td style = "font-weight:bold">grade</td>
 		<td style = "font-style:italic;">int</td>
 		<td>Поток (цифра класса)</td></tr>
+	<tr><td style = "font-weight:bold">form</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Полное наименование класса. (Использование без grade может замедлять процесс)</td></tr>
 	<tr><td style = "font-weight:bold">eduYear</td>
 		<td style = "font-style:italic;">int</td>
 		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
@@ -185,6 +218,31 @@
 		В прототипе это пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
 	</tbody>
 </table>
+<hr/>
+<h1>Произвольный запрос</h1>
+<select onchange = "setAction(value);">
+	<option>Выберите сущность</option>
+	<option>ItogMark</option>
+	<option>Course</option>
+</select>
+<input id="newField" type="text" size = "20" value = "_agr1"/>
+	<input type = "button" value = "Add field" onclick = "addField();">
 
+<form id = "customForm" method="get" target = "_blank"> 
+<table border = "1">
+<tfoot>
+	<tr><td></td><td>	
+		<input type = "submit" disabled="disabled" value = "Send request" id = "submitCustom"/>
+</td>
+	</tr>
+</tfoot>
+<tbody id="customTableBody">
+	<tr><th align="right">eduYear:</th>
+		<td><input name = "eduYear" type="text" size = "30"/></td></tr>
+	<tr id="sampleTR"><th align="right">_grp1:</th>
+		<td><input name = "_grp1" type="text" value = "grade" size = "40"/></td></tr>
+</tbody>
+</table>
+</form>
 </body>
 </html>

@@ -140,3 +140,47 @@ WorkLink : WOHyperlink {
   style = "font-style:italic;";
   string = application.strings.RujelCriterial_Strings.URL;
 }
+
+SpecWorksGroups : WORepetition {
+  list = courseItem.specWorks;
+  item = specItem;
+}
+
+SpecTitle : WOString {
+  value = specItem.title;
+}
+
+GenericContainer1s: WOGenericContainer {
+	colspan = specItem.criteria.count;
+	elementName = "td";
+	style = "border-left:none;text-align:left;";
+}
+
+Repetition1s: WORepetition {
+	item = workItem;
+	list = specItem.criteria;
+}
+
+SpecWorks: WORepetition {
+	item = workItem;
+	list = specItem.works;
+}
+
+MarksPresenter1s: MarksPresenter {
+	denyCreation = false;
+	full = true;
+	isSelected = false;
+	lesson = workItem.work;
+	readOnly = true;
+	student = ^student;
+	maxlen = 255;
+	align = "left";
+	presenterCache = parent.presenterCache;
+	criteria = specItem.criteria;
+}
+
+BcMaxCellS : WOGenericContainer {
+  elementName = "td";
+  colspan = specItem.criteria.count;
+  align = "center";
+}
