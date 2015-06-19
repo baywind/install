@@ -49,7 +49,8 @@ PrognosisPresentValue: WOString {
 }
 
 PeriodTitle : WOString {
-  value = currAddOn.periodItem.itogContainer.title;
+  value = currAddOn.periodItem.itogContainer.titleHTML;
+  escapeHTML = false;
 }
 
 PeriodsRepetition : WORepetition {

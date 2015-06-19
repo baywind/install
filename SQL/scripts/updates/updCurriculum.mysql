@@ -1,4 +1,4 @@
--- Schema updates for Curriculum model --
+-- Schema updates for Curriculum model in MySQL --
 
 -- v1 (0.9) --
 
@@ -131,3 +131,12 @@ ALTER TABLE CU_VARIATION ADD INDEX (EDU_COURSE);
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
   VALUES ('Curriculum',2,'0.9.4');
+
+-- v3 (1.0) --
+
+ALTER TABLE CU_REASON
+  ADD COLUMN GRADE_NUM tinyint,
+  ADD COLUMN SECTION_NUM smallint;
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('Curriculum',3,'1.0');

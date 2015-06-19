@@ -2,6 +2,8 @@ CREATE TABLE CU_REASON (
   R_ID mediumint NOT NULL,
   TEACHER_ID mediumint,
   EDU_GROUP mediumint,
+  GRADE_NUM tinyint,
+  SECTION_NUM smallint,
   DATE_BEGIN date NOT NULL,
   DATE_END date,
   REASON_TEXT varchar(255) NOT NULL,

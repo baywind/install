@@ -7,7 +7,7 @@ ListSettings : ListSettings {
 }
 
 AllTypes : WORepetition {
-  list = allTypes;
+  list = typesList;
   item = item;
 }
 
@@ -15,7 +15,7 @@ Form : WOForm {
 }
 
 Active : WOCheckBox {
-  checked = active;
+  checked = item.active;
   disabled = session.readAccess._edit.ItogTypeList;
 }
 
@@ -25,15 +25,15 @@ TypesTitle : WOString {
 }
 
 TypeName : WOString {
-  value = item.name;
+  value = item.type.name;
 }
 
 TypeTitle : WOString {
-  value = item.title;
+  value = item.type.title;
 }
 
 InYearCount : WOString {
-  value = item.inYearCount;
+  value = item.type.inYearCount;
   numberformat = "#;*;(#)";
 }
 
@@ -57,7 +57,7 @@ HasSelection : WOConditional {
 }
 
 ItogTypeEditor : ItogTypeEditor {
-  currType = currType;
+  currType = currType.type;
   ec = ec;
   class = "grey";
 }
@@ -99,7 +99,7 @@ MoveDown: WOImage {
 	style = "cursor:pointer;";
 }
 SortField : WOTextField {
-  value = item.sort;
+  value = item.type.sort;
   style = "display:none;";
   numberformat = "0";
   class = "numerate";
@@ -183,4 +183,40 @@ ExtTitle : WOSwitchComponent {
   dict = extItem;
   itogsList = itogsList;
   ec = ec;
+}
+
+Preset : WOString {
+  value = item.preset;
+}
+
+CurrPreset : WOPopUpButton {
+  list = allPresets;
+  item = item;
+  displayString = item.fullName;
+  selection = currPreset;
+  value = item.presetGroup;
+  onchange = "onselection(this);";
+  id = "presetSelector";
+}
+
+PresetTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.this;
+  escapeHTML = false;
+}
+
+PopupLink : WOHyperlink {
+  action = editPreset;
+  onclick = "return editSelection(this);";
+  id = "persetPopupLink";
+  title = session.strings.Reusables_Strings.uiElements.Edit;
+}
+
+EditImage : WOImage {
+	filename = "files_edit.png";
+	framework = "app";
+	height = 16;
+	width = 16;
+}
+IsActive : WOConditional {
+  condition = currType.active;
 }

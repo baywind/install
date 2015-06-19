@@ -18,15 +18,15 @@ CanDelete: WOConditional {
 }
 
 DeleteButton: WOGenericElement {
-	value = application.strings.Reusables_Strings.uiElements.Delete;
+	value = session.strings.Reusables_Strings.uiElements.Delete;
 	invokeAction = delete;
-	onclick = "form.mark.value='';form.mark.onchange();form.save.click();form.changeReason.focus();";
+	onclick = "form.mark.value='';form.preset.selectedIndex=0;form.mark.onchange();form.save.click();form.changeReason.focus();";
 	elementName = "input";
 	type = "button";
 }
 
 MarkTitle: WOString {
-	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.mark;
+	value = session.strings.RujelEduResults_EduResults.properties.ItogMark.mark;
 }
 
 EduPeriodTitle: WOString {
@@ -48,7 +48,7 @@ FlagName: WOString {
 }
 
 FlagsTitle: WOString {
-	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.flags.this;
+	value = session.strings.RujelEduResults_EduResults.properties.ItogMark.flags.this;
 }
 
 ItogDefined: WOConditional {
@@ -62,7 +62,7 @@ ItogEditForm: WOForm {
 MarkField: WOTextField {
 	maxlength = 5;
 	size = 4;
-	value = mark;
+	value = dict.mark;
 	style = "text-align:center;";
 	disabled = readOnly;
 	onkeypress = onkeypress;
@@ -72,12 +72,12 @@ MarkField: WOTextField {
 }
 
 PopupTitle: WOString {
-	value = application.strings.RujelEduResults_EduResults.properties.ItogMark.this;
+	value = session.strings.RujelEduResults_EduResults.properties.ItogMark.this;
 }
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
+	value = session.strings.Reusables_Strings.uiElements.Save;
 	name = "save";
 }
 
@@ -113,7 +113,7 @@ ArchiveContainer : WOGenericContainer {
 }
 
 ReasonTitle : WOString {
-  value = application.strings.RujelArchiving_Archive.reason;
+  value = session.strings.RujelArchiving_Archive.reason;
   valueWhenEmpty = "Reason";
   escapeHTML = false;
 }
@@ -145,4 +145,66 @@ CommentText : WOText {
   disabled = session.readAccess._edit.ItogComment;
   rows = 2;
   style = "width:92%;";
+}
+
+PresetPopup : WOPopUpButton {
+  list = presets;
+  item = item;
+  selection = dict.preset;
+  displayString = item.mark;
+  name = "preset";
+  noSelectionString = session.strings.RujelEduResults_EduResults.properties.ItogPreset.manual;
+  onchange = "if(selectedIndex){hideObj('manualMark');}else{showObj('manualMark');form.mark.focus();}form.mark.onchange();";
+}
+
+IsNone : WORadioButton {
+  name = "state";
+  value = 0;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.none;
+  disabled = readOnly;
+}
+
+IsBad : WORadioButton {
+  name = "state";
+  value = 1;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.bad;
+  disabled = readOnly;
+}
+
+IsSoSo : WORadioButton {
+  name = "state";
+  value = 2;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.acceptable;
+  disabled = readOnly;
+}
+
+IsGood : WORadioButton {
+  name = "state";
+  value = 3;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.good;
+  disabled = readOnly;
+}
+
+ManualMarkContainer : WOGenericContainer {
+  elementName = "span";
+  id = "manualMark";
+  style = manualMarkStyle;
+  omitTags = dict.noPresets;
+}
+
+ReadOnly : WOConditional {
+  condition = readOnly;
+}
+
+MarkValue : WOString {
+  value = dict.mark;
+  valueWhenEmpty = "&oslash;";
+}
+
+HasPresets : WOConditional {
+  condition = presets.count;
 }

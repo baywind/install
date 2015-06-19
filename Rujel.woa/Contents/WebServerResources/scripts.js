@@ -485,7 +485,7 @@ function formParams(ini) {
 				continue;
 		if(params.length > 0)
 			params = params + '&';
-		params = params.concat(elt.name,'=',elt.value);
+		params = params.concat(elt.name,'=',encodeURIComponent(elt.value));
 		//alert(elt.name + ' = ' + elt.value);
 	}
 	return params;
@@ -500,7 +500,7 @@ function ajaxPost(ini,aevent) {
 	if(ini.form)
 		aForm = ini.form;
 	var params = formParams(ini);
-	if(!presubmit(aForm))
+	if(ini.type != "select-one" && !presubmit(aForm))
 		return false;
 	getAjaxPopup(aevent, aForm.action, params);
 	return false;
@@ -712,7 +712,7 @@ function fitWindow(w,ph,pw) {
 
 function closePopup(aForm) {
 	container = document.getElementById('ajaxMask');
-	if(refreshRequired) {
+	if(refreshRequired && tryLoad()) {
 		container.innerHTML = '';
 		window.location = pageRefreshUrl;
 		return;

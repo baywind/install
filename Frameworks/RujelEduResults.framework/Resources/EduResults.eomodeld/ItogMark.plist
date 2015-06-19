@@ -1,11 +1,21 @@
 {
     attributes = (
-        {allowsNull = N; columnName = ITOG_FLAGS; name = flags; prototypeName = byte; }, 
-        {columnName = EDU_CYCLE; name = eduCycleID; prototypeName = "int_3"; }, 
-        {allowsNull = N; columnName = MARK_TITLE; name = mark; prototypeName = anagram; }, 
-        {columnName = STUDENT_ID; name = studentID; prototypeName = integer; }, 
         {
-            columnName = SUCCESS_VALUE; 
+            allowsNull = N; 
+            columnName = "ITOG_FLAGS"; 
+            name = flags; 
+            prototypeName = byte; 
+        }, 
+        {columnName = "EDU_CYCLE"; name = eduCycleID; prototypeName = "int_3"; }, 
+        {
+            allowsNull = N; 
+            columnName = "MARK_TITLE"; 
+            name = mark; 
+            prototypeName = anagram; 
+        }, 
+        {columnName = "STUDENT_ID"; name = studentID; prototypeName = integer; }, 
+        {
+            columnName = "SUCCESS_VALUE"; 
             name = value; 
             precision = 5; 
             prototypeName = decimal; 
@@ -13,14 +23,15 @@
         }, 
         {
             allowsNull = N; 
-            columnName = ITOG_CONTAINER; 
+            columnName = "ITOG_CONTAINER"; 
             name = containerID; 
             prototypeName = short; 
-        }
+        }, 
+        {columnName = "VALUE_STATE"; name = state; prototypeName = byte; }
     ); 
-    attributesUsedForLocking = (value, mark, flags); 
+    attributesUsedForLocking = (value, mark, flags, state); 
     className = "net.rujel.eduresults.ItogMark"; 
-    classProperties = (value, mark, flags, container); 
+    classProperties = (value, mark, flags, container, state); 
     externalName = "ITOG_MARK"; 
     fetchSpecificationDictionary = {}; 
     name = ItogMark; 

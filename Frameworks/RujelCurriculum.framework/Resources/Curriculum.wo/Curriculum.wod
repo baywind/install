@@ -142,6 +142,7 @@ HasTeacher : WORadioButton {
   selection = relation;
   name = "relation";
   disabled = cantEdit;
+  onchange = "form.gradePopup.disabled=this.checked";
 }
 
 WithTeacher : WOString {
@@ -154,11 +155,31 @@ HasEduGroup : WORadioButton {
   selection = relation;
   name = "relation";
   disabled = noEduGroup;
+  onchange = "form.gradePopup.disabled=this.checked";
 }
 
 WithEduGroup : WOString {
   value = session.strings.RujelCurriculum_Curriculum.Reason.withEduGroup;
   escapeHTML = false;
+}
+
+HasGrade : WORadioButton {
+  value = 3;
+  selection = relation;
+  name = "relation";
+  disabled = cantEdit;
+  onchange = "form.gradePopup.disabled=!this.checked";
+}
+
+WithGrade : WOString {
+  value = session.strings.RujelCurriculum_Curriculum.Reason.withGrade;
+  escapeHTML = false;
+}
+
+ReasonGrade : WOPopUpButton {
+  list = grades;
+  selection = reasonGrade;
+  name = "gradePopup";
 }
 
 ReasonTeacher : PersonDisplay {
@@ -215,6 +236,7 @@ ForWholeSchool : WORadioButton {
   selection = relation;
   name = "relation";
   disabled = cantEdit;
+  onchange = "form.gradePopup.disabled=this.checked";
 }
 
 WithWholeSchool : WOString {
@@ -363,7 +385,7 @@ MoveSelected : WOGenericElement {
   elementName = "input";
   type = "button";
   value = plist.chooseReason;
-  onclick = "document.getElementById('ticks').submit();";
+  onclick = "tryLoad() && document.getElementById('ticks').submit();";
 }
 
 MoveTitle : WOString {
@@ -426,16 +448,8 @@ PropsEnd : WOString {
   value = tmpDict.reasonProps.end;
    dateformat = application.prefs.ui.dateFormat;
 }
-PropsEduGroup : WOString {
-  value = tmpDict.reasonProps.eduGroup.name;
-}
-
-PropsTeacher : PersonDisplay {
-  person = tmpDict.reasonProps.teacher;
-  last = 2;
-  first = 1;
-  second = 1;
-  startWithLast = true;
+PropsPresent : WOString {
+  value = tmpDict.reasonProps.present;
 }
 
 IfArchive : WOConditional {
@@ -502,4 +516,21 @@ ToReturn : WOCheckBox {
 ReturnTitle : WOString {
   value = session.strings.RujelCurriculum_Curriculum.Reason.toReturn;
   escapeHTML = false;
+}
+
+NoSections : WOConditional {
+  condition = session.strings.sections.hasSections;
+  negate = true;
+}
+
+HasSections : WOConditional {
+  condition = session.strings.sections.hasSections;
+}
+
+SectionsPopup : WOPopUpButton {
+  list = session.strings.sections.list;
+  item = item;
+  displayString = item.value;
+  noSelectionString = session.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
+  selection = reasonSection;
 }

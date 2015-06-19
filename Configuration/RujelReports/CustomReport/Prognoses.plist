@@ -48,6 +48,45 @@
 			<string>Отметка</string>
 		</dict>
 		<dict>
+			<key>title</key>
+			<string>Уровень</string>
+			<key>comment</key>
+			<string>успешность по уровням</string>
+			<key>attribute</key>
+			<string>state</string>
+			<key>displayString</key>
+			<string>.title</string>
+			<key>idAttribute</key>
+			<string>value</string>
+			<key>select</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>+ Хорошо</string>
+					<key>value</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>~ Удовлетворительно</string>
+					<key>value</key>
+					<integer>2</integer>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>- Плохо</string>
+					<key>value</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>⊗ Не определено</string>
+					<key>value</key>
+					<integer>0</integer>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>attribute</key>
 			<string>value</string>
 			<key>comment</key>
@@ -187,7 +226,62 @@
 				<string>Выбрать</string>
 			</dict>
 			<key>title</key>
-			<string>Класс</string>
+			<string>Класс курса</string>
+			<key>comment</key>
+			<string>К какому классу приписан курс</string>
+		</dict>
+		<dict>
+			<key>attribute</key>
+			<string>eduGroup</string>
+			<key>title</key>
+			<string>Класс ученика</string>
+			<key>in</key>
+			<dict>
+				<key>list</key>
+				<dict>
+					<key>cacheResult</key>
+					<false/>
+					<key>methodName</key>
+					<string>list</string>
+					<key>object</key>
+					<string>.eduGroup</string>
+				</dict>
+				<key>relationship</key>
+				<string>student</string>
+			</dict>
+			<key>popup</key>
+			<dict>
+				<key>invokeAction</key>
+				<true/>
+				<key>presenter</key>
+				<string>ClassListing</string>
+				<key>presenterBindings</key>
+				<dict>
+					<key>onClick</key>
+					<string>$session.tryLoad</string>
+					<key>selection</key>
+					<string>.</string>
+					<key>width</key>
+					<string>100%</string>
+					<key>showSection</key>
+					<true/>
+				</dict>
+				<key>style</key>
+				<string>min-width:8em</string>
+				<key>takeValuesFromRequest</key>
+				<true/>
+				<key>title</key>
+				<string>Выберите класс</string>
+			</dict>
+			<key>presenterBindings</key>
+			<dict>
+				<key>value</key>
+				<string>.name</string>
+				<key>valueWhenEmpty</key>
+				<string>Выбрать</string>
+			</dict>
+			<key>comment</key>
+			<string>По ученикам - для смешанных групп</string>
 		</dict>
 		<dict>
 			<key>attribute</key>
@@ -423,6 +517,49 @@
 			<string>white-space:nowrap;</string>
 			<key>title</key>
 			<string>Учитель</string>
+		</dict>
+		<dict>
+			<key>keyPath</key>
+			<string>stateKey</string>
+			<key>sortKey</key>
+			<string>state</string>
+			<key>comparison</key>
+			<string>CompareDescending</string>
+			<key>active</key>
+			<true/>
+			<key>presenterBindings</key>
+			<dict>
+				<key>escapeHTML</key>
+				<false/>
+			</dict>
+			<key>sort</key>
+			<string>45</string>
+			<key>title</key>
+			<string>Уровень</string>
+			<key>short</key>
+			<string>~</string>
+			<key>itemHover</key>
+			<dict>
+				<key>cacheResult</key>
+				<true/>
+				<key>methodName</key>
+				<string>objectAtIndex</string>
+				<key>object</key>
+				<array>
+					<string>Не определено</string>
+					<string>Плохо</string>
+					<string>Удовлетворительно</string>
+					<string>Хорошо</string>
+				</array>
+				<key>paramClasses</key>
+				<array>
+					<string>int</string>
+				</array>
+				<key>paramValues</key>
+				<array>
+					<string>$itemRow.state</string>
+				</array>
+			</dict>
 		</dict>
 		<dict>
 			<key>active</key>

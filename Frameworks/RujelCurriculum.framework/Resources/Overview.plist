@@ -123,6 +123,18 @@
 					<string>Причина</string>
 					<key>keyPath</key>
 					<string>reason</string>
+					<key>presenter</key>
+					<string>ReasonPresenter</string>
+					<key>presenterBindings</key>
+					<dict>
+						<key>reason</key>
+						<string>$itemRow</string>
+					</dict>
+					<key>exportDict</key>
+					<dict>
+						<key>title</key>
+						<string>Причина</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>title</key>
@@ -143,25 +155,6 @@
 					<string>white-space:nowrap;</string>
 					<key>keyPath</key>
 					<string>extToString</string>
-				</dict>
-				<dict>
-					<key>title</key>
-					<string>&amp;nbsp;</string>
-					<key>titleStyle</key>
-					<string>width:20px</string>
-					<key>skipExport</key>
-					<true/>
-					<key>keyPath</key>
-					<string>namedFlags</string>
-					<key>presenter</key>
-					<string>ReasonPresenter</string>
-					<key>presenterBindings</key>
-					<dict>
-						<key>reason</key>
-						<string>$itemRow</string>
-						<key>hideText</key>
-						<true/>
-					</dict>
 				</dict>
 			</array>
 		</dict>

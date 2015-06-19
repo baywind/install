@@ -61,3 +61,6 @@ CanEdit : WOConditional {
   condition = cantEdit;
   negate = true;
 }
+
+Content : WOComponentContent {
+}

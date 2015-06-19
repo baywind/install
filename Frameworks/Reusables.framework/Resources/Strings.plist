@@ -146,6 +146,8 @@
 		<string>Сохранить</string>
 		<key>Search</key>
 		<string>Искать</string>
+		<key>Sort</key>
+		<string>Сортировать</string>
 		<key>Submit</key>
 		<string>Подтвердить</string>
 		<key>Select</key>

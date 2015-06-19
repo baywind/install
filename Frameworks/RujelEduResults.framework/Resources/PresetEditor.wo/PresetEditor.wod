@@ -1,0 +1,212 @@
+Cross : WOImage {
+  framework = "RujelBase";
+  filename = "cross.png";
+  align = "right";
+  height = 10;
+  width = 10;
+  onclick = "closePopup();";
+  style = "cursor:pointer;position:absolute;right:2pt;top:2pt;";
+}
+
+Form: WOForm {
+  multipleSubmit = true;
+  onsubmit = "return tryLoad();";
+}
+
+Title : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.this;
+}
+
+Title2 : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.percent;
+}
+
+PresetName : WOString {
+  value = groupName;
+}
+
+MarkTitle: WOString {
+	value = session.strings.RujelEduResults_EduResults.properties.ItogMark.mark;
+}
+
+Success: WOString {
+	value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.value;
+}
+
+PresetsList : WORepetition {
+  list = presets;
+  item = item;
+  index = index;
+}
+
+Mark : WOTextField {
+  value = item.mark;
+  size = 5;
+  maxlength = 5;
+  style = "text-align:center;";
+  disabled = readOnly;
+  class = "required";
+}
+
+IsNone : WORadioButton {
+  name = rowName;
+  value = 0;
+  selection = item.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.none;
+  disabled = readOnly;
+}
+
+IsBad : WORadioButton {
+  name = rowName;
+  value = 1;
+  selection = item.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.bad;
+  disabled = readOnly;
+}
+
+IsSoSo : WORadioButton {
+  name = rowName;
+  value = 2;
+  selection = item.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.acceptable;
+  disabled = readOnly;
+}
+
+IsGood : WORadioButton {
+  name = rowName;
+  value = 3;
+  selection = item.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.good;
+  disabled = readOnly;
+}
+Value : WOTextField {
+  value = percentValue;
+  size = 4;
+  class = "decimal";
+  disabled = readOnly;
+  style = "text-align:center;";
+}
+
+DeleteButton : WOSubmitButton {
+  action = delete;
+  value = "X";
+  style = "font-weight:bold;color:red;";
+  onclick = "return ajaxPost(this);";
+}
+
+CanEdit : WOConditional {
+  condition = readOnly;
+  negate = true;
+}
+
+Save : WOSubmitButton {
+  action = save;
+  value = session.strings.Reusables_Strings.uiElements.Save;
+  name = "save";
+}
+
+Submit : WOSubmitButton {
+  action = update;
+  value = session.strings.Reusables_Strings.uiElements.Sort;
+  onclick = "return ajaxPost(this);";
+  style = "float:right;";
+}
+
+IsPreset : WOConditional {
+  condition = dict.isPercent;
+  negate = true;
+}
+
+IsPercent : WOConditional {
+  condition = dict.isPercent;
+}
+
+GoodTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.good;
+}
+
+GoodValue : WOTextField {
+  value = dict.goodValue;
+  size = 5;
+  style = "text-align:center;";
+  class = "decimal";
+}
+
+AcceptableTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.acceptable;
+}
+
+AcceptableValue : WOTextField {
+  value = dict.acceptableValue;
+  size = 5;
+  style = "text-align:center;";
+  class = "decimal";
+}
+
+BadTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.bad;
+}
+
+PercentName : WOTextField {
+  value = groupName;
+  disabled = readOnly;
+  size = 5;
+  maxlength = 5;
+  class = "required";
+  style = "text-align:center;";
+}
+
+NameTitle : WOString {
+  value = session.strings.RujelEduResults_EduResults.properties.ItogPreset.name;
+}
+
+AddTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Add;
+}
+
+NewMark : WOTextField {
+  value = dict.mark;
+  size = 5;
+  maxlength = 5;
+  style = "text-align:center;";
+  name = "newMark";
+}
+NewNone : WORadioButton {
+  name = "newPreset";
+  value = 0;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.none;
+}
+
+NewBad : WORadioButton {
+  name = "newPreset";
+  value = 1;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.bad;
+}
+
+NewSoSo : WORadioButton {
+  name = "newPreset";
+  value = 2;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.acceptable;
+}
+
+NewGood : WORadioButton {
+  name = "newPreset";
+  value = 3;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.good;
+}
+NewValue : WOTextField {
+  value = dict.value;
+  size = 4;
+  class = "decimal";
+  style = "text-align:center;";
+}
+SubmitNew : WOSubmitButton {
+  action = addPreset;
+  onclick = "m=form.newMark;if(m.value){return ajaxPost(this);}else{m.style.border='2pt dotted #ff0000';m.focus();return false;}";
+  value = "+";
+  style = "font-weight:bold;color:green;";
+}

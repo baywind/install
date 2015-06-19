@@ -119,6 +119,21 @@ WithWholeSchool : WOString {
   escapeHTML = false;
 }
 
+HasGrade : WORadioButton {
+  value = 3;
+  selection = relation;
+  name = "relation";
+}
+
+WithGrade : WOString {
+  value = application.strings.RujelCurriculum_Curriculum.Reason.withGrade;
+  escapeHTML = false;
+}
+
+CourseGrade : WOString {
+  value = course.cycle.grade;
+}
+
 DefaultDate : WOTextField {
   value = aDate;
   name = "defaultDate";

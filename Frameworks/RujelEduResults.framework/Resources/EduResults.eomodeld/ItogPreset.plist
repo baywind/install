@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = "MARK_TITLE"; 
+            name = mark; 
+            prototypeName = anagram; 
+        }, 
+        {columnName = "PRESET_GROUP"; name = presetGroup; prototypeName = short; }, 
+        {allowsNull = N; columnName = "PR_ID"; name = prID; prototypeName = short; }, 
+        {columnName = "VALUE_STATE"; name = state; prototypeName = byte; }, 
+        {
+            columnName = "SUCCESS_VALUE"; 
+            name = value; 
+            precision = 5; 
+            prototypeName = decimal; 
+            scale = 4; 
+        }
+    ); 
+    attributesUsedForLocking = (mark, presetGroup, state, value); 
+    className = "net.rujel.eduresults.ItogPreset"; 
+    classProperties = (mark, presetGroup, state, value); 
+    externalName = "ITOG_PRESET"; 
+    fetchSpecificationDictionary = {}; 
+    name = ItogPreset; 
+    primaryKeyAttributes = (prID); 
+}

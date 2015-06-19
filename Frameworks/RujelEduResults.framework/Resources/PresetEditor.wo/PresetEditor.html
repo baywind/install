@@ -1,0 +1,73 @@
+<div style="display:block;position:absolute;width:18em;padding:10pt;" class="backfield1" id="ajaxPopup">
+<webobject name = "Cross"/><webobject name="Form">
+<table width="100%" border="1">
+<webobject name = "IsPreset">
+<thead><tr>
+<th colspan = "4" style = "font-size:large;"><webobject name = "Title"/></th>
+</tr>
+<tr>
+<td colspan = "4">
+<webobject name = "NameTitle"/>: <strong><webobject name = "PresetName"/></strong>
+</td>
+</tr><tr>
+	<th><webobject name = "MarkTitle"/></th>
+	<th><webobject name = "Success"/></th>
+	<th>%</th><webobject name = "CanEdit">
+	<td></td></webobject>
+	</tr>
+</thead>
+<webobject name = "CanEdit">
+<tfoot>
+<tr><th colspan = "4" align = "left" valign = "bottom">
+<webobject name = "Submit"/>
+<webobject name = "AddTitle"/></th></tr>
+<tr><td><webobject name = "NewMark"/></td>
+	<td style = "white-space:nowrap;">⊗<webobject name = "NewNone"/>
+	 -<webobject name = "NewBad"/><webobject name = "NewSoSo"/><webobject name = "NewGood"/>+</td>
+	<td><webobject name = "NewValue"/></td>
+	<td><webobject name = "SubmitNew"/></td></tr>
+<tr><td colspan = "4"><webobject name = "Save"/></td>
+</tr>
+</tfoot>
+</webobject>
+<tbody><webobject name = "PresetsList">
+	<tr>
+	<td><webobject name = "Mark"/></td>
+	<td style = "white-space:nowrap;">⊗<webobject name = "IsNone"/>
+	 -<webobject name = "IsBad"/><webobject name = "IsSoSo"/><webobject name = "IsGood"/>+</td>
+	<td><webobject name = "Value"/></td><webobject name = "CanEdit">
+	<td><webobject name = "DeleteButton"/></td></webobject></tr>
+	</webobject>
+	</tbody>
+</webobject><webobject name = "IsPercent">
+<thead><tr>
+<th colspan = "2" style = "font-size:large;"><webobject name = "Title2"/></th>
+</tr>
+<tr>
+<td colspan = "2">
+<webobject name = "NameTitle"/>: <webobject name = "PercentName"/>
+</td></tr>
+<tr><th>&ge; %</th>
+<th><webobject name = "Success"/></th></tr>
+</thead>
+<webobject name = "CanEdit"><tfoot>
+<tr><td colspan = "2"><webobject name = "Save"/></td></tr>
+</tfoot></webobject>
+<tbody>
+<tr>
+<td><webobject name = "GoodValue"/></td>
+<td align = "left"><webobject name = "GoodTitle"/></td>
+</tr>
+<tr>
+<td><webobject name = "AcceptableValue"/></td>
+<td align = "left"><webobject name = "AcceptableTitle"/></td>
+</tr>
+<tr>
+<td>0</td>
+<td align = "left"><webobject name = "BadTitle"/></td>
+</tr>
+</tbody>
+</webobject>
+</table>
+</webobject>
+</div>

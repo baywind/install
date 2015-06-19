@@ -46,7 +46,149 @@
 	</script>
 </head>
 <body onload = "onLoad()">
-<h1>Request Agregate</h1>
+<div>
+<h1>Произвольный запрос</h1>
+<select onchange = "setAction(value);">
+	<option>Выберите сущность</option>
+	<option>ItogMark</option>
+	<option>Course</option>
+	<option>Prognos</option>
+</select>
+<input id="newField" type="text" size = "20" value = "_agr1"/>
+	<input type = "button" value = "Add field" onclick = "addField();" />
+
+<form id = "customForm" method="get" target = "_blank"> 
+<table border = "1">
+<tfoot>
+	<tr><td></td><td>	
+		<input type = "submit" disabled="disabled" value = "Send request" id = "submitCustom"/>
+</td>
+	</tr>
+</tfoot>
+<tbody id="customTableBody">
+	<tr><th align="right">eduYear:</th>
+		<td><input name = "eduYear" type="text" size = "30"/></td></tr>
+	<tr id="sampleTR"><th align="right">_grp1:</th>
+		<td><input name = "_grp1" type="text" value = "grade" size = "40"/></td></tr>
+</tbody>
+</table>
+</form>
+</div>
+<hr/>
+<table align = "center" border = "1">
+	<thead>
+	<tr><th colspan = "2">ItogMark</th><td>Итоговая оценка</td></tr>
+	</thead><tbody>
+	<tr><td style = "font-weight:bold">subject</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Наименование предмета, за который выставлена оценка</td></tr>
+	<tr><td style = "font-weight:bold">grade</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Поток (цифра класса)</td></tr>
+	<tr><td style = "font-weight:bold">form</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Полное наименование класса. (Использование без grade может замедлять процесс)</td></tr>
+	<tr><td style = "font-weight:bold">eduYear</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
+	<tr><td style = "font-weight:bold">perNum</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Номер учебного периода, за который выставлена оценка. (Для финального итога — 0)</td></tr>
+	<tr><td style = "font-weight:bold">perCount</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Количество периодов данного типа в году <br/>(4-четверти, 1-уч.год, для экзамена и финального итога — 0)</td></tr>
+	<tr><td style = "font-weight:bold">mark</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Оценка в том виде, как выставлена. Это текстовое поле: допустимы 'н/а', 'осв'</td></tr>
+	<tr><td style = "font-weight:bold">state</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Значение оценки: (0 - нет оценки, 1 - плохо, 2 - удовлетворительно, 3 - хорошо)</td></tr>
+	<tr><td style = "font-weight:bold">value</td>
+		<td style = "font-style:italic;">decimal</td>
+		<td>Численное выражение оценки в долях от 1. (4 из 5 = 0.8)</td></tr>
+	<tr><td style = "font-weight:bold">student</td>
+		<td style = "font-style:italic;">Student</td>
+		<td>Учащийся, получивший оценку.</td></tr>
+	<tr><td style = "font-weight:bold">course</td>
+		<td style = "font-style:italic;">Course</td>
+		<td>Курс, за который получена оценка. (доступно только для оценок текущего уч. года)</td></tr>
+	<tr><td colspan = "3">Атрибуты student и course содержат сложные объекты, соответствующего типа.<br/>
+		Через объекты можно обратиться к их характеристикам. (Для курса — класс, предмет, учитель)<br/>
+		В прототипе пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
+	</tbody>
+</table>
+<hr/>
+<table align = "center" border = "1">
+	<thead>
+	<tr><th colspan = "2">Prognos</th><td>Прогнозируемая итоговая оценка</td></tr>
+	</thead><tbody>
+	<tr><td style = "font-weight:bold">subject</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Наименование предмета, за который выставлена оценка</td></tr>
+	<tr><td style = "font-weight:bold">grade</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Поток (цифра класса)</td></tr>
+	<tr><td style = "font-weight:bold">form</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Полное наименование класса</td></tr>
+	<tr><td style = "font-weight:bold">eduYear</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
+	<tr><td style = "font-weight:bold">perNum</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Номер учебного периода, за который выставлена оценка. Если не указано, берётся актуальный прогноз в настоящий момент.</td></tr>
+	<tr><td style = "font-weight:bold">perCount</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Количество периодов данного типа в году <br/>(4-четверти, 1-уч.год, для экзамена и финального итога — 0)</td></tr>
+	<tr><td style = "font-weight:bold">mark</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Оценка в том виде, как выставлена. Это текстовое поле: допустимы 'н/а', 'осв'</td></tr>
+	<tr><td style = "font-weight:bold">state</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Значение оценки: (0 - нет оценки, 1 - плохо, 2 - удовлетворительно, 3 - хорошо)</td></tr>
+	<tr><td style = "font-weight:bold">value</td>
+		<td style = "font-style:italic;">decimal</td>
+		<td>Численное выражение оценки в долях от 1. (4 из 5 = 0.8)</td></tr>
+	<tr><td style = "font-weight:bold">student</td>
+		<td style = "font-style:italic;">Student</td>
+		<td>Учащийся, получивший оценку.</td></tr>
+	<tr><td style = "font-weight:bold">course</td>
+		<td style = "font-style:italic;">Course</td>
+		<td>Курс, за который получена оценка. (доступно только для оценок текущего уч. года)</td></tr>
+	<tr><td colspan = "3">Атрибуты student и course содержат сложные объекты, соответствующего типа.<br/>
+		Через объекты можно обратиться к их характеристикам. (Для курса — класс, предмет, учитель)<br/>
+		В прототипе пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
+	</tbody>
+</table>
+<hr/>
+<table align = "center" border = "1">
+	<thead>
+	<tr><th colspan = "2">Course</th><td>Учебный курс</td></tr>
+	</thead><tbody>
+	<tr><td style = "font-weight:bold">subject</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Наименование предмета</td></tr>
+	<tr><td style = "font-weight:bold">grade</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Поток (цифра класса)</td></tr>
+	<tr><td style = "font-weight:bold">eduYear</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
+	<tr><td style = "font-weight:bold">form</td>
+		<td style = "font-style:italic;">string</td>
+		<td>Название класса, в котором ведётся этот курс</td></tr>
+	<tr><td style = "font-weight:bold">results</td>
+		<td style = "font-style:italic;">int</td>
+		<td>Количество отчётных периодов в учебном году, за которые выставляются итоговые по этому курсу</td></tr>
+	<tr><td style = "font-weight:bold">teacher</td>
+		<td style = "font-style:italic;">Teacher</td>
+		<td>Учитель, ведущий данный курс</td></tr>
+	<tr><td colspan = "3">Атрибут teacher содержит сложные объекты, соответствующего типа. Через объект можно обратиться к его характеристикам.<br/>
+		В прототипе это пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
+	</tbody>
+</table>
+<hr/>
+<h2>Статистика итоговых оценок</h2>
 <form action = "itogMark" method="get" target = "_blank">
 	<table align = "left">
 	<tr><th align="right">eduYear:</th>
@@ -116,46 +258,7 @@
 	<br clear = "all"/>
 	<input type = "submit" value = "Send request"/>
 </form>
-<hr/>
-<table align = "center" border = "1">
-	<thead>
-	<tr><th colspan = "2">ItogMark</th><td>Итоговая оценка</td></tr>
-	</thead><tbody>
-	<tr><td style = "font-weight:bold">subject</td>
-		<td style = "font-style:italic;">string</td>
-		<td>Наименование предмета, за который выставлена оценка</td></tr>
-	<tr><td style = "font-weight:bold">grade</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Поток (цифра класса)</td></tr>
-	<tr><td style = "font-weight:bold">form</td>
-		<td style = "font-style:italic;">string</td>
-		<td>Полное наименование класса. (Использование без grade может замедлять процесс)</td></tr>
-	<tr><td style = "font-weight:bold">eduYear</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
-	<tr><td style = "font-weight:bold">perNum</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Номер учебного периода, за который выставлена оценка. (Для финального итога — 0)</td></tr>
-	<tr><td style = "font-weight:bold">perCount</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Количество периодов данного типа в году <br/>(4-четверти, 1-уч.год, для экзамена и финального итога — 0)</td></tr>
-	<tr><td style = "font-weight:bold">mark</td>
-		<td style = "font-style:italic;">string</td>
-		<td>Оценка в том виде, как выставлена. Это текстовое поле: допустимы 'н/а', 'осв'</td></tr>
-	<tr><td style = "font-weight:bold">value</td>
-		<td style = "font-style:italic;">decimal</td>
-		<td>Численное выражение оценки в долях от 1. (4 из 5 = 0.8)</td></tr>
-	<tr><td style = "font-weight:bold">student</td>
-		<td style = "font-style:italic;">Student</td>
-		<td>Учащийся, получивший оценку.</td></tr>
-	<tr><td style = "font-weight:bold">course</td>
-		<td style = "font-style:italic;">Course</td>
-		<td>Курс, за который получена оценка. (доступно только для оценок текущего уч. года)</td></tr>
-	<tr><td colspan = "3">Атрибуты student и course содержат сложные объекты, соответствующего типа.<br/>
-		Через объекты можно обратиться к их характеристикам. (Для курса — класс, предмет, учитель)<br/>
-		В прототипе пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
-	</tbody>
-</table>
+
 <hr/>
 <h2>По курсам</h2>
 <form action = "course" method="get" target = "_blank">
@@ -192,57 +295,6 @@
 <br clear = "all"/>
 	<input type = "submit" value = "Send request"/>
 </form>
-<table align = "center" border = "1">
-	<thead>
-	<tr><th colspan = "2">Course</th><td>Учебный курс</td></tr>
-	</thead><tbody>
-	<tr><td style = "font-weight:bold">subject</td>
-		<td style = "font-style:italic;">string</td>
-		<td>Наименование предмета</td></tr>
-	<tr><td style = "font-weight:bold">grade</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Поток (цифра класса)</td></tr>
-	<tr><td style = "font-weight:bold">eduYear</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Учебный год. Если не указано, по умолчанию текущий</td></tr>
-	<tr><td style = "font-weight:bold">form</td>
-		<td style = "font-style:italic;">string</td>
-		<td>Название класса, в котором ведётся этот курс</td></tr>
-	<tr><td style = "font-weight:bold">results</td>
-		<td style = "font-style:italic;">int</td>
-		<td>Количество отчётных периодов в учебном году, за которые выставляются итоговые по этому курсу</td></tr>
-	<tr><td style = "font-weight:bold">teacher</td>
-		<td style = "font-style:italic;">Teacher</td>
-		<td>Учитель, ведущий данный курс</td></tr>
-	<tr><td colspan = "3">Атрибут teacher содержит сложные объекты, соответствующего типа. Через объект можно обратиться к его характеристикам.<br/>
-		В прототипе это пока не реализовано. По объектным атрибутам можно только осуществлять группировку.</td></tr>
-	</tbody>
-</table>
-<hr/>
-<h1>Произвольный запрос</h1>
-<select onchange = "setAction(value);">
-	<option>Выберите сущность</option>
-	<option>ItogMark</option>
-	<option>Course</option>
-</select>
-<input id="newField" type="text" size = "20" value = "_agr1"/>
-	<input type = "button" value = "Add field" onclick = "addField();">
 
-<form id = "customForm" method="get" target = "_blank"> 
-<table border = "1">
-<tfoot>
-	<tr><td></td><td>	
-		<input type = "submit" disabled="disabled" value = "Send request" id = "submitCustom"/>
-</td>
-	</tr>
-</tfoot>
-<tbody id="customTableBody">
-	<tr><th align="right">eduYear:</th>
-		<td><input name = "eduYear" type="text" size = "30"/></td></tr>
-	<tr id="sampleTR"><th align="right">_grp1:</th>
-		<td><input name = "_grp1" type="text" value = "grade" size = "40"/></td></tr>
-</tbody>
-</table>
-</form>
 </body>
 </html>

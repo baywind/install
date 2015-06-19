@@ -41,13 +41,14 @@ MarkProperty : WOString {
   value = application.strings.RujelAutoItog_AutoItog.properties.Prognosis.mark;
 }
 
-Mark : WOTextField {
+MarkField : WOTextField {
   value = mark;
-  disabled = cantChange;
   maxlength = 5;
   size = 4;
   style = "text-align:center;";
   onkeypress = onkeypress;
+  onchange = onkeypress;
+  name = "mark";
 }
 CanChange: WOConditional {
 	condition = cantChange;
@@ -132,7 +133,8 @@ Student : PersonDisplay {
 }
 
 CanManual : WOConditional {
-  condition = eduPeriod.namedFlags.manual;
+  condition = cantEdit;
+  negate = true;
 }
 
 BonusPercent : WOString {
@@ -253,7 +255,7 @@ MarkValue : WOString {
 }
 
 NotManual : WOConditional {
-  condition = eduPeriod.namedFlags._manual;
+  condition = cantEdit;
 }
 
 PerformPrognos : OnClickContainer {
@@ -267,4 +269,57 @@ PerformPrognos : OnClickContainer {
 PerformTitle : WOString {
   value = application.strings.RujelAutoItog_AutoItog.ui.perform;
   escapeHTML = false;
+}
+
+PresetPopup : WOPopUpButton {
+  list = dict.presets;
+  item = dict.item;
+  selection = dict.preset;
+  displayString = dict.item.mark;
+  name = "preset";
+  noSelectionString = session.strings.RujelEduResults_EduResults.properties.ItogPreset.manual;
+  onchange = "if(selectedIndex){hideObj('manualMark');}else{showObj('manualMark');form.mark.focus();}form.mark.onchange();";
+}
+
+IsNone : WORadioButton {
+  name = "state";
+  value = 0;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.none;
+  disabled = cantEdit;
+}
+
+IsBad : WORadioButton {
+  name = "state";
+  value = 1;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.bad;
+  disabled = cantEdit;
+}
+
+IsSoSo : WORadioButton {
+  name = "state";
+  value = 2;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.acceptable;
+  disabled = cantEdit;
+}
+
+IsGood : WORadioButton {
+  name = "state";
+  value = 3;
+  selection = dict.state;
+  title = session.strings.RujelEduResults_EduResults.properties.ItogPreset.good;
+  disabled = cantEdit;
+}
+
+ManualMarkContainer : WOGenericContainer {
+  elementName = "span";
+  id = "manualMark";
+  style = manualMarkStyle;
+  omitTags = dict.noPresets;
+}
+
+HasPresets : WOConditional {
+  condition = dict.presets.count;
 }

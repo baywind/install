@@ -63,8 +63,14 @@
 				<webobject name = "HasEduGroup"/> <webobject name = "WithEduGroup"/></td>
 				<webobject name = "GroupCell"><webobject name = "GroupIcon"/>
 					<webobject name = "ReasonGroup"/></webobject></tr>
-			<tr class = "gerade"><td align = "left"  onclick = "getElementsByTagName('input')[0].click();">
-				<webobject name = "ForWholeSchool"/> <webobject name = "WithWholeSchool"/></td>
+			<tr class = "gerade" onclick = "getElementsByTagName('input')[0].click();">
+			<td align = "left"><webobject name = "HasGrade"/> <webobject name = "WithGrade"/></td>
+				<td align = "left"><webobject name = "GroupIcon"/><webobject name = "GroupIcon"/>
+					<webobject name = "ReasonGrade"/></td></tr>
+			<tr class = "gerade"><td align = "left" onclick = "getElementsByTagName('input')[0].click();">
+				<webobject name = "ForWholeSchool"/><webobject name = "NoSections">
+				<webobject name = "WithWholeSchool"/></webobject><webobject name = "HasSections">
+				<webobject name = "SectionsPopup"/></webobject></td>
 				<td><webobject name = "SchoolIcon"/></td></tr><tr>
 				<td class = "ungerade" colspan = "2" align = "left"><webobject name = "ToReturn"/>
 					<webobject name = "ReturnTitle"/></td></tr>
@@ -99,7 +105,7 @@
 				<td><webobject name = "NewNextRadio"/></td>
 				<td><webobject name = "NewReasonTitle"/><div style = "display:none;">
 					<i><webobject name = "PropsBegin"/> - <webobject name = "PropsEnd"/><br />
-					<webobject name = "PropsTeacher"/><webobject name = "PropsEduGroup"/></i></div></td>
+					<webobject name = "PropsPresent"/></i></div></td>
 			</tr>
 			<tr><td colspan = "2" align = "center" valign = "middle" style = "padding:1ex;">
 				<webobject name = "SubmitMoveReasons"/> <webobject name = "CancelButton"/></td></tr>

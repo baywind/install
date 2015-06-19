@@ -29,6 +29,10 @@
 		<string>преподавателя</string>
 		<key>withEduGroup</key>
 		<string>класса</string>
+		<key>withGrade</key>
+		<string>потока</string>
+		<key>withSection</key>
+		<string>отделения</string>
 		<key>withWholeSchool</key>
 		<string>всей школы</string>
 		<key>wholeSchool</key>
@@ -178,6 +182,10 @@
 		<string>Невозможно установить данного учителя, поскольку есть связанная Замена/Поправка для другого учителя</string>
 		<key>cantSetEduGroup</key>
 		<string>Невозможно установить данный класс, поскольку есть связанная Замена/Поправка для другого класса</string>
+		<key>cantSetGrade</key>
+		<string>Невозможно установить данный поток, поскольку есть связанная Замена/Поправка для другого потока</string>
+		<key>cantSetSection</key>
+		<string>Невозможно установить данное отделение, поскольку есть связанная Замена/Поправка для другого отделения</string>
 		<key>cantSetDates</key>
 		<string>Некоторые из связанных замен/поправок не попадают в указанный период</string>
 		<key>invalidPeriod</key>

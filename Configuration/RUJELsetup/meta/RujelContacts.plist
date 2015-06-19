@@ -171,6 +171,18 @@
 				</dict>
 				<dict>
 					<key>key</key>
+					<string>subjectPrefix</string>
+					<key>type</key>
+					<string>String</string>
+					<key>title</key>
+					<string>Префикс заголовка</string>
+					<key>description</key>
+					<string>Ключевое слово, с которого будут начинаться все отправленные из РУЖЭЛЬ сообщения</string>
+					<key>defaultValue</key>
+					<string>&quot;RUJEL: &quot;</string>
+				</dict>
+				<dict>
+					<key>key</key>
 					<string>messageFilePath</string>
 					<key>type</key>
 					<string>String</string>

@@ -2,7 +2,7 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = DATE_BEGIN; 
+            columnName = "DATE_BEGIN"; 
             name = begin; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -16,21 +16,22 @@
         }, 
         {
             allowsNull = Y; 
-            columnName = DATE_END; 
+            columnName = "DATE_END"; 
             name = end; 
             prototypeName = date; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = N; 
-            columnName = REASON_FLAGS; 
+            columnName = "REASON_FLAGS"; 
             name = flags; 
             prototypeName = byte; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
+        {columnName = "GRADE_NUM"; name = grade; prototypeName = byte; }, 
         {
             allowsNull = N; 
-            columnName = REASON_TEXT; 
+            columnName = "REASON_TEXT"; 
             name = reason; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -44,29 +45,57 @@
         }, 
         {
             allowsNull = N; 
-            columnName = SCHOOL_NUM; 
+            columnName = "SCHOOL_NUM"; 
             name = school; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
             allowsNull = Y; 
-            columnName = TEACHER_ID; 
+            columnName = "SECTION_NUM"; 
+            name = section; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEACHER_ID"; 
             name = teacherID; 
             prototypeName = "int_3"; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            columnName = VERIFY_TEXT; 
+            columnName = "VERIFY_TEXT"; 
             name = verification; 
             prototypeName = string; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (begin, eduGroupID, end, flags, reason, school, teacherID, verification); 
+    attributesUsedForLocking = (
+        begin, 
+        eduGroupID, 
+        end, 
+        flags, 
+        grade, 
+        reason, 
+        school, 
+        section, 
+        teacherID, 
+        verification
+    ); 
     className = "net.rujel.curriculum.Reason"; 
-    classProperties = (begin, end, flags, reason, school, substitutes, variations, verification); 
-    externalName = CU_REASON; 
+    classProperties = (
+        begin, 
+        end, 
+        flags, 
+        grade, 
+        reason, 
+        school, 
+        section, 
+        substitutes, 
+        variations, 
+        verification
+    ); 
+    externalName = "CU_REASON"; 
     fetchSpecificationDictionary = {}; 
     name = Reason; 
     primaryKeyAttributes = (rID); 

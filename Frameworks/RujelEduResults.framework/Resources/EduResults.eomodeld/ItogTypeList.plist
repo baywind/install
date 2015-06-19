@@ -20,11 +20,12 @@
             name = indexID; 
             prototypeName = short; 
         }, 
-        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }
+        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }, 
+        {columnName = "PRESET_GROUP"; name = presetGroup; prototypeName = short; }
     ); 
-    attributesUsedForLocking = (eduYear, listName, typeID); 
+    attributesUsedForLocking = (eduYear, listName, presetGroup, typeID); 
     className = EOGenericRecord; 
-    classProperties = (eduYear, itogType, listName, markIndex); 
+    classProperties = (eduYear, itogType, listName, markIndex, presetGroup); 
     externalName = "ITOG_TYPE_LIST"; 
     fetchSpecificationDictionary = {}; 
     name = ItogTypeList; 
