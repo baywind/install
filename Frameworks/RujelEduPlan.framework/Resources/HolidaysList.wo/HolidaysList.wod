@@ -141,11 +141,6 @@ Plus : WOGenericContainer {
   style = "color:#009900;display:none;";
 }
 
-ShowForAll : WOConditional {
-  condition = notGlobal;
-  negate = ^details;
-}
-
 ForAllBox : WOCheckBox {
   checked = dict.forAll;
 }
