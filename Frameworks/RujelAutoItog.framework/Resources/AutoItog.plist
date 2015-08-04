@@ -171,6 +171,8 @@
 		<string>Удалить все итоговые по этому прогнозу</string>
 		<key>itogsDeleted</key>
 		<string>Удалено итоговых:</string>
+		<key>updateDates</key>
+		<string>Обновить даты выставления всех прогнозов</string>
 	</dict>
 	<key>reportSettings</key>
 	<dict>
