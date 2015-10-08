@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Reset Cooldown</title>
+</head>
+<body>
+<strong><webobject name = "Message"/></strong>
+<webobject name = "Unauthorized">
+<form method="post">
+<table>
+	<tr><td align="right">
+	<b>login</b>
+	</td><td>
+	<input type = "text" name = "username"/>
+	</td></tr><tr><td align="right">
+	<b>Password</b>
+	</td><td>
+	<input type="password" name="password">
+	</td></tr>
+	<tr><td align="center" colspan="2">
+	<input type="submit" value="Вход">
+	</td></tr>
+	</table></form>
+</webobject><webobject name = "Authorized"><webobject name = "NotInFrame">
+<webobject name = "Done">Done</webobject></webobject>
+<webobject name = "Form">
+<table border = "1">
+<tr><th>Users</th><th>Hosts</th><th>Reset attempts</th></tr>
+<tr><td>
+<table><webobject name = "Users">
+<tr><td><webobject name = "ResetUser"/></td>
+	<td><webobject name = "KeyItem"/></td>
+	<td><webobject name = "UserCounter"/></td>
+</tr></webobject>
+</table>
+</td><td>
+<table><webobject name = "Hosts">
+<tr><td><webobject name = "ResetHost"/></td>
+	<td><webobject name = "KeyItem"/></td>
+	<td><webobject name = "HostCounter"/></td>
+</tr></webobject>
+</table>
+</td><td>
+<table><webobject name = "Attempts">
+<tr><td><webobject name = "ResetAttempt"/></td>
+	<td><webobject name = "KeyItem"/></td>
+	<td><webobject name = "AttemptCounter"/></td>
+</tr></webobject>
+</table>
+</td></tr>
+<tr><td colspan = "3" align = "center"><webobject name = "DoReset"/></td></tr>
+</table>
+</webobject>
+
+</webobject>
+</body>
+</html>

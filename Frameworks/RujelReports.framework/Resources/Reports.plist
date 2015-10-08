@@ -75,6 +75,15 @@
 				<key>keyPath</key>
 				<string>eduGroup.name</string>
 			</dict>
+			<key>summaryRow</key>
+			<dict>
+				<key>title</key>
+				<string>Всего:</string>
+				<key>colspan</key>
+				<string>2</string>
+				<key>style</key>
+				<string>font-weight:bold;text-align:right;</string>
+			</dict>
 		</dict>
 	</dict>
 	<key>GroupReport</key>

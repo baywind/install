@@ -515,7 +515,7 @@
 				<key>attribute</key>
 				<string>textValue</string>
 				<key>boolean</key>
-				<string>'hide</string>
+				<string>hide</string>
 			</dict>
 		</dict>
 		<dict>

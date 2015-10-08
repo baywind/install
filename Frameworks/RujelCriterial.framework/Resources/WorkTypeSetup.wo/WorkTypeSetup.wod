@@ -228,3 +228,8 @@ SelectCritSet : WOPopUpButton {
   noSelectionString = "-=-=-=-=-";
   disabled = cantEdit;
 }
+
+CriteriaSet : WOString {
+  value =  ^dict.critSet;
+  escapeHTML = false;
+}

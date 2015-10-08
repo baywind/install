@@ -180,27 +180,26 @@
 
 /** Selected day, when outside the selectable area **/
 .kalendae .k-days span.k-selected {
-	border-color:#006600;
-	color:#009900;
+	border-color:#1072A5;
+	color:#1072A5;
 }
 
 /** Selected day, when inside the selectable area **/
 .kalendae .k-days span.k-selected.k-active {
-	background:#00CC00;
+	background:#7EA0E2;
 	color:white;
 }
 
 /** Days between the start and end points on a range, outside of the selectable area **/
 .kalendae .k-days span.k-range {
 	background:none;
-	border-color:#99FF99;
-	color:#339933;
+	border-color:#6DD4FE;
 }
 
 /** Days between the start and end points on a range, inside of the selectable area **/
 .kalendae .k-days span.k-range.k-in-month {
-	background:#99FF99;
-	border-color:#339933;
+	background:#C4D4F1;
+	border-color:#19AEFE;
 	color:#333;
 }
 
@@ -209,6 +208,12 @@
 	border-color:#666;
 }
 
+/** Selectable week, hovered **/
+.kalendae .k-week:hover span.k-active {
+	border-color:#666;
+}
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 
 /*-------------------------------------IE8 ONLY CODE BELOW THIS LINE--------------------------------------------*/
 

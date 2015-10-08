@@ -118,6 +118,7 @@ Type : WOString {
 
 IntegralTitle : WOString {
   value = courseItem.integral;
+  escapeHTML = false;
 }
 
 IsBcMax : WOConditional {

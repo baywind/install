@@ -58,7 +58,6 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = groupID; sourceAttribute = grID; }); 
             name = lists; 
-            ownsDestination = Y; 
         }, 
         {
             destination = VseTutor; 

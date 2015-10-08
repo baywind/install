@@ -159,6 +159,8 @@
 		<string>Сумма</string>
 		<key>forAll</key>
 		<string>Для всех графиков</string>
+		<key>summary</key>
+		<string>Полное количество часов</string>
 	</dict>
 	<key>regimeTabs</key>
 	<array>

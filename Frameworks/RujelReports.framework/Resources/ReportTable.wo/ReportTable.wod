@@ -105,3 +105,19 @@ Script : WOString {
   value = itemDict.script;
   escapeHTML = false;
 }
+
+HasSummary : WOConditional {
+  condition = summary;
+}
+
+Sum : WOString {
+  value = sumValue;
+}
+
+SumCell : WOGenericContainer {
+  elementName = "td";
+  colspan = currDict.summary.colspan;
+  omitTags = currDict.summary.omit;
+  class = currDict.summary.styleClass;
+  style = style;
+}

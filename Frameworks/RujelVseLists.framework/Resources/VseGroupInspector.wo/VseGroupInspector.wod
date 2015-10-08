@@ -60,10 +60,10 @@ LastPopUp : WOPopUpButton {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
+	value = session.strings.Reusables_Strings.uiElements.Save;
 }
 ResetButton1: WOResetButton {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	value = session.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
 }
 
@@ -93,4 +93,17 @@ SectionName : WOString {
 
 HasGroup : WOConditional {
   condition = currGroup;
+}
+
+Delete : OnClickContainer {
+  elementName = "span";
+  hide = cantDelete;
+  invokeAction = delete;
+  onclick = session.tryLoad;
+  class = "button";
+}
+
+DeleteTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Delete;
+  escapeHTML = false;
 }

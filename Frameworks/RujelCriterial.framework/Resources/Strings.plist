@@ -79,6 +79,8 @@
 			<string>вес=0</string>
 			<key>compulsory</key>
 			<string>обязат.</string>
+			<key>critSet</key>
+			<string>особый набор критериев</string>
 		</dict>
 		<key>CriteriaSet</key>
 		<dict>

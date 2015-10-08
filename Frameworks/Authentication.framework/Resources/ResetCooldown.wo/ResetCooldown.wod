@@ -1,0 +1,73 @@
+Unauthorized : WOConditional {
+  condition = authorized;
+  negate = true;
+}
+
+Authorized : WOConditional {
+  condition = authorized;
+}
+
+Message : WOString {
+  value = message;
+}
+
+Form : WOForm {
+}
+
+Users : WORepetition {
+  list = suspiciousUsers;
+  item = keyItem;
+}
+
+ResetUser : WOCheckBox {
+  checked = resetUser;
+}
+
+KeyItem : WOString {
+  value = keyItem;
+}
+
+Hosts : WORepetition {
+  list = suspiciousHosts;
+  item = keyItem;
+}
+
+ResetHost : WOCheckBox {
+  checked = resetHost;
+}
+
+Attempts : WORepetition {
+  list = attempts;
+  item = keyItem;
+}
+
+ResetAttempt : WOCheckBox {
+  checked = resetAttempt;
+}
+DoReset : WOSubmitButton {
+ action = doReset;
+ value = "Reset";
+}
+
+UserCounter : WOString {
+  value = userCounter;
+}
+
+HostCounter : WOString {
+  value = hostCounter;
+}
+
+AttemptCounter : WOString {
+  value = attemptCounter;
+}
+
+Done : WOHyperlink {
+  style = "float:right;";
+  directActionName = "default";
+  disabled = inFrame;
+}
+
+NotInFrame : WOConditional {
+  condition = inFrame;
+  negate = true;
+}

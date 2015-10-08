@@ -295,6 +295,48 @@
 					<key>advanced</key>
 					<true/>
 				</dict>
+				<dict>
+					<key>key</key>
+					<string>resetLoginAttempts</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>resetLoginAttempts</string>
+					<key>description</key>
+					<string>Количество разрешённых попыток авторизации в режиме сброса счётчиков защиты от взлома</string>
+					<key>advanced</key>
+					<true/>
+					<key>defaultValue</key>
+					<integer>3</integer>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>compromisedUserLoginAttempts</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>compromisedUserLoginAttempts</string>
+					<key>description</key>
+					<string>Количество разрешённых попыток авторизации в режиме сброса счётчиков защиты от взлома для пользователя, который находится в списке подозрительных.</string>
+					<key>advanced</key>
+					<true/>
+					<key>defaultValue</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>key</key>
+					<string>compromisedHostLoginAttempts</string>
+					<key>type</key>
+					<string>Integer</string>
+					<key>title</key>
+					<string>compromisedHostLoginAttempts</string>
+					<key>description</key>
+					<string>Количество разрешённых попыток авторизации в режиме сброса счётчиков защиты от взлома с IP-адреса, который находится в списке подозрительных.</string>
+					<key>advanced</key>
+					<true/>
+					<key>defaultValue</key>
+					<integer>2</integer>
+				</dict>
 			</array>
 		</dict>
 	</array>
