@@ -118,3 +118,7 @@ MoveSubDown: WOImage {
 	onclick= "down(get(this,'tr',0));";
 	style = "cursor:pointer;";
 }
+ShowRow : WOConditional {
+  condition = subItem.hiddenSub;
+  negate = true;
+}

@@ -17,7 +17,8 @@ ColHead : WOGenericContainer {
   title = hover;
   style = style;
   rowspan = rowspan;
-  colspan = itemDict.subParams.count;
+  colspan = colspan;
+  class = itemDict.titleClass;
 }
 
 SubHead : WOGenericContainer {
@@ -67,6 +68,7 @@ SubCell : OnClickContainer {
   onclick = onClick;
   invokeAction = select;
   title = valueOf.item.subDict.itemHover;
+  hide = subDict.metaSub;
 }
 
 Display : DisplayAny {
@@ -120,4 +122,10 @@ SumCell : WOGenericContainer {
   omitTags = currDict.summary.omit;
   class = currDict.summary.styleClass;
   style = style;
+}
+
+
+NotMeta : WOConditional {
+  condition = subDict.metaSub;
+  negate = true;
 }

@@ -324,5 +324,51 @@
 		<key>sort</key>
 		<string>11</string>
 	</dict>
+	<key>groupReportSubs</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<string>successStats</string>
+			<key>title</key>
+			<string>Статистика успешности</string>
+			<key>sort</key>
+			<integer>1</integer>
+			<key>metaSub</key>
+			<true/>
+			<key>active</key>
+			<false/>
+			<key>hovers</key>
+			<array>
+				<string>нет оценки</string>
+				<string>плохо</string>
+				<string>удовлетворительно</string>
+				<string>хорошо</string>
+			</array>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>allMarks</string>
+			<key>title</key>
+			<string>Сводная таблица</string>
+			<key>sort</key>
+			<integer>2</integer>
+			<key>metaSub</key>
+			<true/>
+			<key>active</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>markStats</string>
+			<key>title</key>
+			<string>Статистика оценок</string>
+			<key>sort</key>
+			<integer>3</integer>
+			<key>metaSub</key>
+			<true/>
+			<key>active</key>
+			<true/>
+		</dict>
+	</array>
 </dict>
 </plist>

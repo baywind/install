@@ -1,3 +1,4 @@
+<iframe name = "download" style = "display:none;"></iframe>
 <webobject name = "TableContainer">
 	<thead><tr>
 		<webobject name = "Columns"><webobject name = "ColHead">
@@ -8,9 +9,9 @@
 		</webobject>
 		</webobject></tr><tr>
 		<webobject name = "Columns"><webobject name = "NoSubs"><!-- td? -->
-		</webobject><webobject name = "SubParams"><webobject name = "SubHead">
-		<webobject name = "SubTitle"/></webobject></webobject></webobject>
-		<webobject name = "Content"/>
+		</webobject><webobject name = "SubParams"><webobject name = "NotMeta">
+		<webobject name = "SubHead"><webobject name = "SubTitle"/></webobject></webobject>
+		</webobject></webobject><webobject name = "Content"/>
 	</tr></thead>
 	<tbody>
 		<webobject name = "List"><webobject name = "RowExists">
@@ -24,9 +25,9 @@
 	<webobject name = "HasSummary">
 		<tfoot class = "grey"><webobject name = "Columns"><webobject name = "NoSubs">
 			<webobject name = "SumCell"><webobject name = "Sum"/></webobject>
-		</webobject><webobject name = "SubParams">
+		</webobject><webobject name = "SubParams"><webobject name = "NotMeta">
 			<webobject name = "SumCell"><webobject name = "Sum"/></webobject></webobject>
-		</webobject>
+		</webobject></webobject>
 		</tfoot>
 	</webobject>
 	
