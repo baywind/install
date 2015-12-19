@@ -1,18 +1,25 @@
+<style>
+.load {
+  float:right;
+  color:#666666;
+}
+</style>
 <table border = "0" width = "100%"><tr>
 <th class="label" style = "background-color:transparent"><webobject name = "LabelTitle"/></th>
-<th><webobject name = "ContentTitle"/></th>
+<th><div class = "load"><webobject name = "EstimatedLoad"/></div><webobject name = "ContentTitle"/></th>
 <th style = "width:10ex;"><webobject name = "AnnounceTitle"/>
 </th></tr></table>
 <webobject name = "Sections">
 	<webobject name = "RegularSection">
 		<div class = "section">
+			<div class = "load" style = "margin-right:10ex;"><webobject name = "SectionLoad"/></div>
 			<webobject name = "SectionTitle"/>
 		</div>
 		<webobject name = "Table"><webobject name = "ListRepetition">
 		<webobject name = "RegularRow">
 		<webobject name = "ItemRow">
 			<td class = "label"><webobject name = "Label"/></td>
-			<td><webobject name = "WorkText"/>
+			<td><div class = "load"><webobject name = "Load"/></div><webobject name = "WorkText"/>
 			<webobject name = "HasLink"><webobject name = "LinkImage"/>
 			<webobject name = "Hyperlink"><webobject name = "LinkLabel"/></webobject>
 			<span class = "printLink"><webobject name = "LinkAdress"/></span></webobject></td>

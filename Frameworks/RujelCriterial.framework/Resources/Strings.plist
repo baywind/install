@@ -81,6 +81,10 @@
 			<string>обязат.</string>
 			<key>critSet</key>
 			<string>особый набор критериев</string>
+			<key>maskTitle</key>
+			<string>Название набора</string>
+			<key>addMaskSettings</key>
+			<string>Настроить наборы</string>
 		</dict>
 		<key>CriteriaSet</key>
 		<dict>

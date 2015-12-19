@@ -21,21 +21,6 @@
 		<webobject name = "SelectMonth"/> <webobject name = "Year"/></webobject>
 		<webobject name = "DatesForm"><webobject name = "BeginDate"/> -
 			<webobject name = "EndDate"/> <webobject name = "SubmitDates"/></webobject>
-<script type="text/javascript" charset="utf-8">
-		new Kalendae.Input('tabelBeginDate', {
-			side:'bottom',
-			offsetTop:4,
-			format:shortDateFormat,
-			selected:Kalendae.moment('<webobject name = "BeginFullDate"/>'),
-			offsetLeft:-120
-		});
-		new Kalendae.Input('tabelEndDate', {
-			format:shortDateFormat,
-			selected:Kalendae.moment('<webobject name = "EndFullDate"/>'),
-			side:'bottom',
-			offsetTop:4,
-		});
-</script>
 			</td>
 <webobject name = "CanCreate"><td rowspan = "3" valign = "top" align = "left">
 <script language = "JavaScript">
@@ -82,6 +67,7 @@ function showTabel(ini) {
 <tr><td style = "width:12em;"></td>
 	<th style = "font-size:110%;"align = "left"><webobject name = "TabelTitle"/></th>
 	<td style = "width:3em;" align = "center"><webobject name = "ExportDetails"></webobject>
+	<iframe name = "download" style = "display:none;"></iframe>
 		</td></tr>
 </thead>
 <tbody class = "backfield1"><tr valign = "top">

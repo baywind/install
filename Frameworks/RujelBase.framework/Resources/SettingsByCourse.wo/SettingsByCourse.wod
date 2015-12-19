@@ -204,3 +204,8 @@ SaveSettings : WOSubmitButton {
   value = session.strings.Reusables_Strings.uiElements.Save;
   onclick = "enumerate(get(this,'table',0),'sorting',1);";
 }
+
+AddByCourseTitle : WOString {
+  value = session.strings.RujelBase_Base.SettingsBase.addByCourseShort;
+  valueWhenEmpty = "уточнить";
+}

@@ -38,12 +38,15 @@ ExportZPU : WOSubmitButton {
 ExportDetails : WOHyperlink {
   action = exportDetails;
   string = application.strings.RujelReports_Reports.export;
+  target = "download";
 }
 
 ExportTeacherZPU : WOHyperlink {
   action = exportTeacherZPU;
   string = application.strings.RujelReports_Reports.export;
+  target = "download";
 }
+
 SelectTeacher : OnClickContainer {
   elementName = "td";
   class = "highlight";
@@ -289,15 +292,6 @@ EndDate : WOTextField {
   id = "tabelEndDate";
 }
 
-BeginFullDate : WOString {
-  value = currMonth.beginDate;
-  dateformat = "yyyy-MM-dd";
-}
-
-EndFullDate : WOString {
-  value = currMonth.endDate;
-  dateformat = "yyyy-MM-dd";
-}
 SubmitDates : WOGenericElement {
   elementName = "input";
   type = "submit";

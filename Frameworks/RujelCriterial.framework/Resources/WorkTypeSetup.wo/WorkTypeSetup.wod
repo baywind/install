@@ -162,7 +162,7 @@ CanSave : WOConditional {
 }
 
 NumField : WOTextField {
-  value = typeItem.sort;
+  value = sortValue;
   style = "display:none;";
   class = "typeNum";
   numberformat = "0";
@@ -232,4 +232,62 @@ SelectCritSet : WOPopUpButton {
 CriteriaSet : WOString {
   value =  ^dict.critSet;
   escapeHTML = false;
+}
+
+MaskSettings : SettingsByCourse {
+  base = maskSettings;
+  item = item;
+  access = session.readAccess.FLAGS.WorkType;
+  ec = ^ec;
+  title = ^dict.maskTitle;
+  rowspan = rowspan;
+  pushByCourse = "currMask";
+  textValue = "...";
+}
+
+TextSetting : WOString {
+  value = item.textValue;
+}
+
+MaskActive : WOConditional {
+  condition = currMask;
+}
+
+TypeIsActive : WOCheckBox {
+  checked = typeIsActive;
+  class = "checkChanges";
+}
+
+MaskCell : OnClickContainer {
+  elementName = "td";
+  invokeAction = selectMask;
+  onclick = session.checkRun;
+  rowspan = rowspan;
+  class = "ungerade";
+  style = maskStyle;
+}
+
+MaskName : WOTextField {
+  value = currMask.textValue;
+  class = "checkChanges";
+  size = 20;
+  style = "text-align:center;";
+  id = "focus";
+}
+
+MaskAvailable : WOConditional {
+  condition = maskSettings;
+}
+
+AddMaskButton : OnClickContainer {
+  elementName = "div";
+  invokeAction = addMaskSettings;
+  onclick = session.ajaxPopup;
+  class = "button";
+  hide = maskSettings;
+  style = "float:right;width:10em;padding:4pt;";
+}
+
+AddMaskSettingsTitle : WOString {
+  value = ^dict.addMaskSettings;
 }

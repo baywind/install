@@ -101,3 +101,15 @@ Hyperlink : WOHyperlink {
 LinkAdress : WOString {
   value = item.taskUrl;
 }
+
+Load : WOString {
+  value = item.presentLoad;
+}
+
+SectionLoad : WOString {
+  value = sectionSum;
+}
+
+EstimatedLoad : WOString {
+  value = estimatedLoad;
+}

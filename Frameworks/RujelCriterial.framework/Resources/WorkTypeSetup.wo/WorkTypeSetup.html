@@ -1,7 +1,16 @@
 <webobject name = "Jscolor"/>
 <webobject name = "SorterScriptLink"/>
-<webobject name = "Form"><table align = "center">
-<thead><tr>
+<webobject name = "Form">
+<webobject name = "MaskAvailable">
+	<webobject name = "MaskSettings"><webobject name = "CanEdit">
+	<td class = "selection"><webobject name = "MaskName"/></td>
+	</webobject><webobject name = "CantEdit"><webobject name = "MaskCell">
+	<webobject name = "TextSetting"/></webobject></webobject></webobject>
+</webobject><webobject name = "AddMaskButton"><webobject name = "AddMaskSettingsTitle"/></webobject>
+<br clear = "all"><hr/>
+<table align = "center">
+<thead><tr><webobject name = "MaskActive">
+	<td rowspan = "2">?</td></webobject>
 	<webobject name = "HasSelection"><td rowspan = "2" width="24"><webobject name = "CurrUp"/><webobject name = "CurrDown"/></td>
 	</webobject><webobject name = "NoSelection"><th rowspan = "2">№</th></webobject>
 	<th rowspan = "2"><webobject name = "NameTitle"/></th>
@@ -26,6 +35,7 @@
 <tfoot><tr><td colspan = "8"><webobject name="Save"/>
 </td></tr></tfoot></webobject>
 <tbody id = "typeList"><webobject name = "Types"><webobject name = "TypeRow">
+	<webobject name = "MaskActive"><td><webobject name = "TypeIsActive"/></td></webobject>
 	<td><webobject name = "Number"/><webobject name = "NumField"/></td>
 	<webobject name = "CanEdit"><td class = "selectionBorder">
 		<webobject name = "NameField"/></td></webobject>
