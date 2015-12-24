@@ -129,10 +129,6 @@ ShowSeparator: WOConditional {
 	condition = showSeparator;
 }
 
-ShowTablist: WOConditional {
-	condition = showTabs;
-}
-
 Span: OnClickContainer {
 	class = "button";
 	elementName = "span";
