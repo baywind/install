@@ -55,6 +55,7 @@ NameField : WOTextField {
   value = typeItem.typeName;
   style = "text-align:center;";
   class = "checkChanges";
+  maxlength = 28;
 }
 
 WeightField : WOTextField {
