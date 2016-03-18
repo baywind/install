@@ -37,6 +37,7 @@ Tabs : Tabs {
 CoursesSelector : CoursesSelector {
   ec = ec;
   courses = courses;
+  selection = selection;
 }
 
 ReportTable : ReportTable {
