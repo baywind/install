@@ -64,3 +64,39 @@ Table: WOGenericContainer {
 Vertical: WOConditional {
 	condition = ^vertical;
 }
+
+Grouped : WOConditional {
+  condition = ^tabgroups;
+}
+NotGrouped : WOConditional {
+  condition = ^tabgroups;
+  negate = true;
+}
+
+Tabgroups : WORepetition {
+	item = tabgroup;
+	list = ^tablist;
+	index = index;
+}
+
+GroupTitleContainer: OnClickContainer {
+	class = "ungerade";
+	elementName = "div";
+	onclick = "t=this.nextSibling;while(t.nodeName.toLowerCase()!='div'){t=t.nextSibling;}toggleObj(t);";
+	style="margin:2pt 0pt;padding:1pt 3pt;white-space:nowrap;";
+	title = tabgroup.hover;
+	hide = tabgroup.noTitle;
+}
+GroupTitle : WOString {
+  value = tabgroup.title;
+}
+
+TabGroupContainer : WOGenericContainer {
+  elementName = "div";
+  style = tabgroup.style;
+}
+
+Tabgroup : WORepetition {
+  list = tabgroup.list;
+  item = tabItem;
+}

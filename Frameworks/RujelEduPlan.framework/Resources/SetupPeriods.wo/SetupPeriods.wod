@@ -21,7 +21,8 @@ ListSettings : ListSettings {
   key = "EduPeriod";
   currList = listName;
   extraLists = extraLists;
-  access = session.readAccess.FLAGS.PeriodList;
+  checkAccess = "PeriodList";
+  listAccess = access;
   currNum = weekDays;
 }
 
@@ -80,23 +81,23 @@ AddPeriod : OnClickContainer {
   invokeAction = addPeriodToList;
   class = "green";
   style = "padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
-  hide = session.readAccess._create.PeriodList;
+  hide = access._create;
 }
 
 PeriodCell : OnClickContainer {
   elementName = "td";
   invokeAction = editPeriod;
   onclick = session.ajaxPopup;
-  disabled = session.readAccess._edit.item.period;
+  disabled = access._edit;
   parent = "tr";
 }
 
 DeleteCell : OnClickContainer {
   elementName = "td";
   invokeAction = deletePeriod;
-  disabled = session.readAccess._delete.item;
+  disabled = access._delete;
   onclick = session.tryLoad;
-  hide = session.readAccess._create.PeriodList;
+  hide = access._create;
 }
 
 Cross : WOImage {
@@ -117,7 +118,7 @@ WeeksTitle : WOString {
 
 EmptyCell : WOGenericElement {
   elementName = "td";
-  omitTags = session.readAccess._create.PeriodList;
+  omitTags = access._create;
 }
 
 WeekDaysForm : WOForm {
@@ -131,7 +132,7 @@ WeekDaysField : WOTextField {
   maxlength = 3;
   numberformat = "0";
   style = "text-align:center;";
-  disabled = session.readAccess._edit.QualifiedSetting;
+  disabled = access._edit;
   onkeypress = "return isNumberInput(event,false);";
 }
 

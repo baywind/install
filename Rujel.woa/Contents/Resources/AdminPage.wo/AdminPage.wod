@@ -47,18 +47,22 @@ SettingsByCourse : SettingsByCourse {
   hideEmptyDetails = true;
   title = grItem.settingTitle;
   canSave = true;
+  checkAccess = currModule.checkAccess;
+  itemAccess = access;
 }
 
 TextParam : Parameter {
   attribute = "textValue";
   itemDict = grItem.textValue;
   paramsDict = item;
+  disabled = access._edit;
 }
 
 NumParam : Parameter {
   attribute = "numericValue";
   itemDict = grItem.numericValue;
   paramsDict = item;
+  disabled = access._edit;
 }
 
 SettingTitle : WOString {

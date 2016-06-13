@@ -3,11 +3,11 @@
 	<webobject name = "EditorHead"/>
 	<webobject name = "CondCell"><webobject name = "ComponentContent"/></webobject></tr></webobject>
 <webobject name = "NotBase"><webobject name = "HasCourse">
-	<tr class = "grey"><webobject name = "SpanCell"></webobject><webobject name = "EmptyCell"></webobject>
+	<tr class = "grey"><webobject name = "SpanCell"><webobject name = "SectionID"/></webobject><webobject name = "EmptyCell"></webobject>
 	<webobject name = "IsAdvanced"><td class = "backfield2" colspan = "3" style = "border:1px solid #999999;">
 		<webobject name = "PrintQualifier"/></td></webobject>
-	<webobject name = "CanEdit"><webobject name = "EditCell"><webobject name = "EditImage"/>
-	</webobject><webobject name = "DeleteCell"><webobject name = "Cross"/></webobject></webobject>
+	<webobject name = "CanEdit"><webobject name = "NoEditCell"/><webobject name = "EditCell"><webobject name = "EditImage"/>
+	</webobject><webobject name = "NoDeleteCell"/><webobject name = "DeleteCell"><webobject name = "Cross"/></webobject></webobject>
 	<webobject name = "CondCell"><webobject name = "ComponentContent"/></webobject></tr>
 	<webobject name = "Listing"><tr class = "green">
 	<td><webobject name = "CourseGroup"/></td>
@@ -15,21 +15,21 @@
 	<td><webobject name = "CourseTeacher"/></td>
 	</tr></webobject>
 </webobject><webobject name = "NoCourse"><webobject name = "HasOther">
-	<tr class = "grey"><webobject name = "SpanCell"></webobject>
+	<tr class = "grey"><webobject name = "SpanCell"><webobject name = "SectionID"/></webobject>
 		<td colspan = "3" class = "backfield2" style = "border:1px solid #999999;text-align:left;">
 		<webobject name = "Others"><webobject name = "OtherSpan"><webobject name = "IsSingle"><webobject name = "Value"/>
 			</webobject><webobject name = "IsMultiple"><webobject name = "Values">|
 			 <webobject name = "OtherValue"/> |</webobject></webobject></webobject>
-	</webobject></td><webobject name = "ShowCell"><webobject name = "CanEdit"><webobject name = "EditCell"><webobject name = "EditImage"/>
-		</webobject><webobject name = "DeleteCell"><webobject name = "Cross"/></webobject></webobject>
+	</webobject></td><webobject name = "ShowCell"><webobject name = "CanEdit"><webobject name = "NoEditCell"/><webobject name = "EditCell"><webobject name = "EditImage"/>
+		</webobject><webobject name = "NoDeleteCell"/><webobject name = "DeleteCell"><webobject name = "Cross"/></webobject></webobject>
 		<webobject name = "CondCell"><webobject name = "ComponentContent"/></webobject></webobject>
 	</tr></webobject><webobject name = "Rows">
-<webobject name = "Row"><webobject name = "SpanCell"></webobject><webobject name = "Matrix">
+<webobject name = "Row"><webobject name = "SpanCell"><webobject name = "SectionID"/></webobject><webobject name = "Matrix">
 	<webobject name = "ShowMatrix"><webobject name = "MatrixCell"><webobject name = "IsSingle"><webobject name = "Value"/>
 			</webobject><webobject name = "IsMultiple"><webobject name = "Values"><div>
 			<webobject name = "OtherValue"/></div></webobject></webobject></webobject></webobject></webobject>
-		<webobject name = "ShowCell"><webobject name = "CanEdit"><webobject name = "EditCell"><webobject name = "EditImage"/>
-		</webobject><webobject name = "DeleteCell"><webobject name = "Cross"/></webobject></webobject>
+		<webobject name = "ShowCell"><webobject name = "CanEdit"><webobject name = "NoEditCell"></webobject><webobject name = "EditCell"><webobject name = "EditImage"/>
+		</webobject><webobject name = "NoDeleteCell"/><webobject name = "DeleteCell"><webobject name = "Cross"/></webobject></webobject>
 		<webobject name = "CondCell"><webobject name = "ComponentContent"/></webobject></webobject>
 </webobject></webobject>
 </webobject></webobject>

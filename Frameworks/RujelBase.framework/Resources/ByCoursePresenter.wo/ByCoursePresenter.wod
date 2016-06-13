@@ -45,6 +45,11 @@ EditCell : OnClickContainer {
   onclick = session.ajaxPopup;
   rowspan = rowspan;
 }
+NoEditCell : WOGenericContainer {
+  elementName = "td";
+  omitTags = access.edit;
+  rowspan = rowspan;
+}
 
 CanEdit : WOConditional {
   condition = ^readOnly;
@@ -63,7 +68,11 @@ DeleteCell : OnClickContainer {
   onclick = session.tryLoad;
   rowspan = rowspan;
 }
-
+NoDeleteCell : WOGenericContainer {
+  elementName = "td";
+  omitTags = access.delete;
+  rowspan = rowspan;
+}
 Cross : WOImage {
   framework = "RujelBase";
   filename = "cross.png";
@@ -92,8 +101,10 @@ Listing : WORepetition {
 SpanCell : WOGenericContainer {
   elementName = "td";
   rowspan = rowspan;
-  class = "backfield2";
+  class = spanClass;
   omitTags = hide;
+  title = bc.section.name;
+  valign = "middle";
 }
 
 Matrix : WORepetition {
@@ -174,6 +185,7 @@ IsAdvanced : WOConditional {
 
 PrintQualifier : WOString {
   value = bc.printQualifier;
+  valueWhenEmpty = bc.section.name;
 }
 
 EmptyCell : WOGenericContainer {
@@ -181,4 +193,8 @@ EmptyCell : WOGenericContainer {
   omitTags = advanced;
   colspan = "3";
   style = "height:0px;";
+}
+
+SectionID : WOString {
+  value = sectionID;
 }

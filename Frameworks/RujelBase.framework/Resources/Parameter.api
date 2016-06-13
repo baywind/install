@@ -17,5 +17,6 @@
             <unsettable name="editor"/>
         </validation>
     <binding defaults="Boolean" name="useAjax"/>
+    <binding defaults="Boolean" name="disabled"/>
     </wo>
 </wodefinitions>

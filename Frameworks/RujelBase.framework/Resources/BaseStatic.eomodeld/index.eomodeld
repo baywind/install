@@ -8,6 +8,7 @@
     entities = (
         {className = "net.rujel.base.EntityIndex"; name = EntityIndex; }, 
         {className = "net.rujel.base.PrimitiveEduCycle"; name = PrimitiveEduCycle; }, 
+        {className = "net.rujel.base.SchoolSection"; name = SchoolSection; }, 
         {className = EOGenericRecord; name = StaticTextStore; }
     ); 
     userInfo = {
@@ -24,7 +25,7 @@
                 }; 
             }; 
         }; 
-        framework = "RujelBase";
-        schemaVersion = {number = 1; title = "0.9"; };
+        framework = RujelBase; 
+        schemaVersion = {number = 2; title = "1.1"; }; 
     }; 
 }

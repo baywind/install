@@ -26,6 +26,12 @@
             prototypeName = string; 
         }, 
         {
+            allowsNull = Y; 
+            columnName = "SECTION_NUM"; 
+            name = sectionID; 
+            prototypeName = short; 
+        }, 
+        {
             allowsNull = N; 
             columnName = "SETTING_ID"; 
             name = settingsID; 
@@ -60,6 +66,7 @@
         eduYear, 
         numericValue, 
         qualifierString, 
+        section, 
         settingsBase, 
         sort, 
         textValue
@@ -69,6 +76,13 @@
     name = QualifiedSetting; 
     primaryKeyAttributes = (qsID); 
     relationships = (
+        {
+            destination = SchoolSection; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sectionID; }); 
+            name = section; 
+        }, 
         {
             destination = SettingsBase; 
             isMandatory = Y; 

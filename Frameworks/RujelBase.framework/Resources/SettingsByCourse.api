@@ -28,5 +28,10 @@
         </validation>
     <binding name="title"/>
     <binding defaults="Boolean" name="create"/>
+    <binding name="checkAccess"/>
+        <binding name="itemAccess"/>
+        <validation message="'itemAccedd' must be bound to a settable value">
+            <unsettable name="itemAccess"/>
+        </validation>
     </wo>
 </wodefinitions>

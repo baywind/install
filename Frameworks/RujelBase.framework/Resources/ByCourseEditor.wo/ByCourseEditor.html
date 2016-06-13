@@ -1,9 +1,17 @@
-<div class="backfield1" id="ajaxPopup"><webobject name = "Cross"/>
+<div class="backfield1" id="ajaxPopup" onclick = "showObj('SectionTitle',true);hideObj('SectionTabs');"><webobject name = "Cross"/>
 <table cellpadding = "0" cellspacing = "0" border = "1" style = "border-collapse:collapse;">
 <tr><td colspan = "2" style = "padding:5px;font-size:large;font-weight:bold;">
 	<webobject name = "SelectorTitle"/></td></tr>
 <tr><td valign = "top"><webobject name = "Form">
-	<table width = "100%"><webobject name = "NotAdvanced">
+	<table width = "100%"><webobject name = "ShowSections">
+	 <tr><td colspan = "2"  style = "text-align:left;padding:3px;margin-top:2px;">
+	 <webobject name = "HasSections">
+	<div id = "SectionTabs" style = "display:none;position:absolute;padding:3px;" class = "ungerade" onclick = "event.stopPropagation();">
+		<webobject name = "SectionTabs"/></div></webobject>
+	<div id = "SectionTitle" style = "padding:3px;border:1px solid #999999;" class = "green" onclick = "if(showObj('SectionTabs'))hideObj(this,true);event.stopPropagation();">
+		<webobject name = "CurrSection"/></div>
+	</td></tr></webobject>
+	<webobject name = "NotAdvanced">
 	<tr><td width = "180"></td><td align = "right"><webobject name = "ExpertButton"/></td></tr> 
 	<webobject name = "QueryParams"/></webobject>
 	<tr><td colspan = "2"><webobject name = "IsAdvanced">
@@ -16,15 +24,7 @@
 		<webobject name = "SaveButton"/>
 		<webobject name = "CurrYear"/> <webobject name = "Year"/></td></tr>
 	</table></webobject>
-</td><td valign = "top"><webobject name = "HasSelection">
-<webobject name = "HasSections">
-<div style = "text-align:left;padding:3px;margin-top:2px;"
- onmouseover = "hideObj('SectionTitle',true);showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle',true)">
-<div id = "SectionTabs" style = "display:none;position:absolute;">
-	<webobject name = "SectionTabs"/></div>
-<div id = "SectionTitle" style = "padding:3px;border:1px solid #999999;" class = "green" onclick = "hideObj(this,true);showObj('SectionTabs')">
-	<webobject name = "CurrSection"/></div>
-</div></webobject>
+</td><td valign = "top"><webobject name = "SectionRequired"/><webobject name = "HasSelection">
 <webobject name = "IfGrade"><webobject name = "GradeForm">
 	<div style = "text-decoration:underline;"><webobject name = "SingleGradeTitle"/></div>
 	<div style = "margin-bottom:1em;">= <webobject name = "GradeSelector"/></div>

@@ -1,0 +1,11 @@
+ -destination Sources \
+ -extension java \
+ -java \
+ -javaTemplate _MyEntity.java \
+ -model Resources/BaseStatic.eomodeld \
+ -packagedirs \
+ -subclassDestination Sources \
+ -subclassJavaTemplate MyEntity.java \
+ -templatedir /Users/gena/Documents/WOProj/templates \
+ -verbose \
+ -loadModelGroup

@@ -130,6 +130,18 @@
 					<key>defaultValue</key>
 					<false/>
 				</dict>
+				<dict>
+					<key>key</key>
+					<string>maskGlobalAccess</string>
+					<key>type</key>
+					<string>Boolean</string>
+					<key>title</key>
+					<string>maskGlobalAccess</string>
+					<key>description</key>
+					<string>Использовать маску доступа по отделениям</string>
+					<key>defaultValue</key>
+					<false/>
+				</dict>
 			</array>
 		</dict>
 		<dict>

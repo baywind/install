@@ -12,7 +12,7 @@
 			<td><webobject name = "CourseSubject"/></td>
 			<td><webobject name = "CourseTeacher"/></td>
 			<webobject name = "EditorHead"/><td>...</td>
-			<td><webobject name = "Content"/></td>
+			<webobject name = "CondCell"><webobject name = "Content"/></webobject>
 		</tr>
 	</webobject><webobject name = "ShowDetails"><tr><td/>
 			<th><webobject name = "EduGroupLabel"/></th>
@@ -39,9 +39,14 @@
 	</thead>
 	<tbody>
 	<webobject name = "ByCourseList"><webobject name = "ShowDetails">
+	<webobject name = "NextSection"><webobject name = "SectionRow">
+	<webobject name = "SectionCell"><webobject name = "SectionName"/></webobject>
+	</webobject></webobject>
 		<webobject name = "ByCoursePresenter"><webobject name = "CanSort">
-		<webobject name = "SortCell"><webobject name = "MoveUp"/>
-			<webobject name = "MoveDown"/><webobject name = "ItemSorting"/></webobject>
+		<webobject name = "SortCell"><webobject name = "ItemSorting"/>
+		<webobject name = "SorterArrows">
+			<webobject name = "MoveUp"/><webobject name = "MoveDown"/>
+		</webobject></webobject>
 		</webobject><webobject name = "CondCell">
 			<webobject name = "Content"/></webobject>
 	</webobject></webobject><webobject name = "HideDetais">

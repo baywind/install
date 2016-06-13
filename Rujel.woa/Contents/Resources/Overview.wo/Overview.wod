@@ -274,21 +274,20 @@ NoReporters : WOConditional {
 }
 
 SectionTabs : Tabs {
-  idAttribute = "idx";
   currTab = session.state.section;
-  tablist = session.strings.sections.list;
-  titleAttribute = "value";
+  tablist = session.sections.list;
+  titleAttribute = "name";
   selectAction = resetSelections;
   vertical = true;
   onClick = session.tryLoad;
 }
 
 HasSections : WOConditional {
-  condition = session.strings.sections.hasSections;
+  condition = session.sections.hasSections;
 }
 
 CurrSection : WOString {
-  value = session.state.section.value;
+  value = session.state.section.name;
 }
 
 

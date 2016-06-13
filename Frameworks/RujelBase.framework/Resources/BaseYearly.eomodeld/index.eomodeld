@@ -673,6 +673,6 @@
             }; 
         }; 
         framework = RujelBase; 
-        schemaVersion = {number = 3; title = "0.9.7"; }; 
+        schemaVersion = {number = 4; title = "1.1"; }; 
     }; 
 }

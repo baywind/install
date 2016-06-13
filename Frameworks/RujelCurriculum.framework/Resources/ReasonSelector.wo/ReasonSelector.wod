@@ -39,7 +39,7 @@ SchoolIcon : WOImage {
   filename = "school.png";
   align = "right";
   alt = "school";
-  title = application.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
+  title = session.strings.RujelCurriculum_Curriculum.Reason.wholeSchool;
 }
 
 ReasonPresenter : ReasonPresenter {
@@ -115,7 +115,7 @@ ForWholeSchool : WORadioButton {
 }
 
 WithWholeSchool : WOString {
-  value = application.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
+  value = session.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
   escapeHTML = false;
 }
 

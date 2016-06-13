@@ -59,6 +59,12 @@
 		<string>всего</string>
 		<key>week</key>
 		<string>цикл</string>
+		<key>delete</key>
+		<string>Удалить активный график</string>
+		<key>createPrompt</key>
+		<string>Название нового графика</string>
+		<key>renamePrompt</key>
+		<string>Переименовать активный график</string>
 	</dict>
 	<key>hideUnused</key>
 	<string>Скрыть неиспользуемые</string>
@@ -191,6 +197,8 @@
 		<string>настроить</string>
 		<key>showAll</key>
 		<string>показать все</string>
+		<key>addSection</key>
+		<string>Добавить отделение</string>
 	</dict>
 	<key>settingEditors</key>
 	<array>
@@ -220,7 +228,7 @@
 					<key>ec</key>
 					<string>$ec</string>
 					<key>onclick</key>
-					<string>$onclick</string>
+					<string>$session.ajaxPopupNoPos</string>
 					<key>selectAction</key>
 					<string>$doneEditing</string>
 					<key>selection</key>
@@ -247,92 +255,6 @@
 			<string>Выбор предмета</string>
 			<key>titleSubjectArea</key>
 			<string>Предметная область</string>
-		</dict>
-		<dict>
-			<key>attribute</key>
-			<string>cycle.section</string>
-			<key>attributeParam</key>
-			<string>section</string>
-			<key>cellClass</key>
-			<string>grey</string>
-			<key>cellStyle</key>
-			<string>border:double 3px #666666;</string>
-			<key>editorPresent</key>
-			<dict>
-				<key>invokeAction</key>
-				<true/>
-				<key>presenter</key>
-				<string>Tabs</string>
-				<key>presenterBindings</key>
-				<dict>
-					<key>byAttribute</key>
-					<true/>
-					<key>currTab</key>
-					<string>.</string>
-					<key>idAttribute</key>
-					<string>'idx</string>
-					<key>onClick</key>
-					<string>$onclick</string>
-					<key>selectAction</key>
-					<string>$doneEditing</string>
-					<key>tablist</key>
-					<string>$application.strings.sections.list</string>
-					<key>titleAttribute</key>
-					<string>'value</string>
-					<key>vertical</key>
-					<true/>
-				</dict>
-			</dict>
-			<key>popup</key>
-			<true/>
-			<key>sort</key>
-			<integer>10</integer>
-			<key>title</key>
-			<string>Отделение</string>
-			<key>value</key>
-			<dict>
-				<key>cacheResult</key>
-				<true/>
-				<key>className</key>
-				<string>net.rujel.base.Indexer</string>
-				<key>methodName</key>
-				<string>valueForIndex</string>
-				<key>nullNull</key>
-				<true/>
-				<key>object</key>
-				<dict>
-					<key>cacheResult</key>
-					<true/>
-					<key>className</key>
-					<string>net.rujel.base.Indexer</string>
-					<key>methodName</key>
-					<string>getIndexer</string>
-					<key>paramClasses</key>
-					<array>
-						<string>com.webobjects.eocontrol.EOEditingContext</string>
-						<string>java.lang.String</string>
-						<string>java.lang.String</string>
-						<string>boolean</string>
-					</array>
-					<key>paramValues</key>
-					<array>
-						<string>$session.defaultEditingContext</string>
-						<string>'eduSections</string>
-						<string></string>
-						<false/>
-					</array>
-				</dict>
-				<key>paramClasses</key>
-				<array>
-					<string>int</string>
-					<string>java.math.RoundingMode</string>
-				</array>
-				<key>paramValues</key>
-				<array>
-					<string>.</string>
-					<string></string>
-				</array>
-			</dict>
 		</dict>
 	</array>
 	<key>showAll</key>

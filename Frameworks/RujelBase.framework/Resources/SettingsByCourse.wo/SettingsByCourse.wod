@@ -24,7 +24,7 @@ ByCourseList : WORepetition {
 ByCoursePresenter : ByCoursePresenter {
   value = item;
   readOnly = ^readOnly;
-  access = ^access;
+  access = access;
   pushByCourse = "^pushByCourse";
   editList = byCourse;
   rowspan = rowspan;
@@ -39,7 +39,7 @@ AddByCourse : OnClickContainer {
   class = "green";
   style = "float:right;padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
   title = session.strings.RujelBase_Base.SettingsBase.addByCourse;
-  hide = ^access._create;
+  hide = session.readAccess._create.QualifiedSetting;
 }
 
 AddByCourse2 : OnClickContainer {
@@ -48,7 +48,7 @@ AddByCourse2 : OnClickContainer {
   invokeAction = addByCourse;
   style = "float:right;padding:0px 1px;color:#3333cc;";
   title = session.strings.RujelBase_Base.SettingsBase.addByCourse;
-  hide = ^access._create;
+  hide = session.readAccess._create.QualifiedSetting;
 }
 
 Content : WOComponentContent {
@@ -135,7 +135,7 @@ SortForm : WOForm {
 SaveSort : WOImage {
   filename = "button_ok.gif";
   framework = "app";
-  onclick = "enumerate(get(this,'table',0),'sorting',1);get(this,'form',0).submit();";
+  onclick = "enumerate(get(this,'table',0),'sorting',1);if(tryLoad()){get(this,'form',0).submit();}";
   title = session.strings.Reusables_Strings.uiElements.Save;
 }
 
@@ -208,4 +208,26 @@ SaveSettings : WOSubmitButton {
 AddByCourseTitle : WOString {
   value = session.strings.RujelBase_Base.SettingsBase.addByCourseShort;
   valueWhenEmpty = "уточнить";
+}
+
+NextSection : WOConditional {
+  condition = nextSection;
+}
+
+SectionRow : WOGenericContainer {
+  elementName = "tr";
+  class = "ungerade";
+}
+
+SectionCell : WOGenericContainer {
+  elementName = "td";
+  colspan = sectionColspan;
+}
+
+SectionName : WOString {
+  value = item.section.name;
+}
+
+SorterArrows : WOConditional {
+  condition = access.edit;
 }

@@ -26,8 +26,9 @@ SettingsByCourse : SettingsByCourse {
   hideEmptyDetails = false;
   numericValue = session.eduYear;
   pushByCourse = "pushByCourse";
-  access = session.readAccess.FLAGS.CompleteSetup;
+  checkAccess = "CompleteSetup";
   title = stamp;
+  itemAccess = itemAccess;
 }
 
 StudentFiles : FileLister {
@@ -58,7 +59,7 @@ CoursesTitle : WOString {
 
 ClosedTick : WOCheckBox {
   checked = closed;
-  disabled = session.readAccess._edit.CompleteSetup;
+  disabled = itemAccess._edit;
 }
 
 Submit : WOSubmitButton {
@@ -106,37 +107,39 @@ PedsovetTitle : SettingsByCourse {
   base = pedsovet;
   ec = ^ec;
   hideEmptyDetails = false;
-  access = session.readAccess.FLAGS.CompleteSetup;
+  checkAccess = "CompleteSetup";
   title = session.strings.RujelComplete_Complete.pedsovetTitle;
+  itemAccess = itemAccess;
 }
 
 TitleText : WOText {
   value = pedsovet.textValue;
   rows = 2;
   cols = 40;
-  disabled = session.readAccess._edit.CompleteSetup;
+  disabled = itemAccess._edit;
 }
 
 DecisionText : WOText {
   value = decision.textValue;
   rows = 2;
   cols = 40;
-  disabled = session.readAccess._edit.CompleteSetup;
+  disabled = itemAccess._edit;
 }
 
 ByCourseText : WOText {
   value = item.textValue;
   rows = 2;
   cols = 40;
-  disabled = session.readAccess._edit.CompleteSetup;
+  disabled = itemAccess._edit;
 }
 PedsovetDecision : SettingsByCourse {
   item = item;
   base = decision;
   ec = ^ec;
   hideEmptyDetails = false;
-  access = session.readAccess.FLAGS.CompleteSetup;
+  checkAccess = "CompleteSetup";
   title = session.strings.RujelComplete_Complete.decisionTitle;
+  itemAccess = itemAccess;
 }
 
 SavePedsovet : WOSubmitButton {

@@ -3,6 +3,7 @@ Tabs : Tabs {
   tablist = lists;
   vertical = true;
   onClick = session.checkRun;
+  tabgroups = tabgroups;
 }
 
 ComponentContent : WOComponentContent {
@@ -34,11 +35,11 @@ ListTitle : WOString {
 }
 
 ListsOverviewTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.listsOverview;
+  value = session.strings.RujelEduPlan_EduPlan.SetupPeriods.listsOverview;
 }
 
 CanCreate : WOConditional {
-  condition = ^access._create;
+  condition = cantCreate;
   negate = true;
 }
 

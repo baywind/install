@@ -1,6 +1,10 @@
 <webobject name="PageWrapper1">
-<div style = "float:left;">
-<webobject name = "ExportButton"/>
+<div style = "position:absolute;left:7px;border:1px solid #999999;" class = "gerade"
+ onmouseover = "hideObj('SectionTitle');showObj('SectionTabs')" onmouseout = "hideObj('SectionTabs');showObj('SectionTitle')">
+<div id = "SectionTitle" style = "padding:3px;" class = "green" onclick = "hideObj(this);showObj('SectionTabs')">
+	<webobject name = "CurrSection"/></div>
+<div id = "SectionTabs" style = "display:none;">
+	<webobject name = "SectionTabs"/></div>
 </div>
 <div style = "min-height:2em;">
 	<webobject name = "Params"><div style = "text-align:right;">
@@ -8,8 +12,9 @@
 </div>
 <table width = "100%" cellspacing = "0">
 	<tr style = "height:2em;">
-		<td class = "selectionBorder" style = "border-style:none none solid; padding-bottom:0px;" valign = "bottom">
+		<td class = "selectionBorder" style = "border-style:none none solid; padding-bottom:0px;" align = "center" valign = "bottom">
 		<webobject name = "RegimeTabs"/>
+<webobject name = "ExportButton"/>
 		<webobject name = "ManipulateSelection">
 		<div style = "float:right;"><webobject name = "Ticker"/></div><br />
 		</webobject>
@@ -66,11 +71,11 @@
 			<td align = "left"><webobject name = "HasGrade"/> <webobject name = "WithGrade"/></td>
 				<td align = "left"><webobject name = "GroupIcon"/><webobject name = "GroupIcon"/>
 					<webobject name = "ReasonGrade"/></td></tr>
-			<tr class = "gerade"><td align = "left" onclick = "getElementsByTagName('input')[0].click();">
+			<tr class = "gerade"><td align = "left" colspan = "2">
 				<webobject name = "ForWholeSchool"/><webobject name = "NoSections">
 				<webobject name = "WithWholeSchool"/></webobject><webobject name = "HasSections">
-				<webobject name = "SectionsPopup"/></webobject></td>
-				<td><webobject name = "SchoolIcon"/></td></tr><tr>
+				<webobject name = "SectionsPopup"/></webobject>
+				<webobject name = "SchoolIcon"/></td></tr><tr>
 				<td class = "ungerade" colspan = "2" align = "left"><webobject name = "ToReturn"/>
 					<webobject name = "ReturnTitle"/></td></tr>
 				<webobject name = "CanSubmit">

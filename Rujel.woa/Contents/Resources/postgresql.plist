@@ -12,7 +12,7 @@
   MODEL_NAME varchar(255),
   VERSION_NUMBER smallint NOT NULL,
   VERSION_TITLE varchar(255),
-  INSTALL_DATE timestamp
+  INSTALL_DATE timestamp DEFAULT CURRENT_TIMESTAMP
 );</string>
 			<string>CREATE TABLE  EO_PK_TABLE (
   NAME char(40),

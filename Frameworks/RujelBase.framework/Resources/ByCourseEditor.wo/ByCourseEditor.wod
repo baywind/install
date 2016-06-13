@@ -14,7 +14,7 @@ Grades : DynamicTableRow {
   selectAction = pickGrade;
   selection = tmpValues.currGrade;
   class = "ungerade";
-  onClick = onclick;
+  onClick = session.ajaxPopupNoPos;
 }
 
 Grade : WOString {
@@ -31,7 +31,7 @@ CycleRow : OnClickContainer {
   elementName = "tr";
   class = item.styleClass;
   invokeAction = selectCycle;
-  onclick = onclick;
+  onclick = session.ajaxPopupNoPos;
 }
 
 
@@ -57,6 +57,7 @@ Year : WOString {
 
 HasSelection : WOConditional {
   condition = currEditor;
+  negate = sectionRequired;
 }
 
 IfGrade : WOConditional {
@@ -199,19 +200,25 @@ SimpleButton : WOSubmitButton {
 
 
 SectionTabs : Tabs {
-  idAttribute = "idx";
-  currTab = tmpValues.section;
-  tablist = session.strings.sections.list;
-  titleAttribute = "value";
+  currTab = activeSection;
+  tablist = sections;
+  titleAttribute = "name";
   selectAction = sectionChanged;
   vertical = true;
-  onClick = onclick;
+  onClick = session.ajaxPopupNoPos;
 }
 
 HasSections : WOConditional {
-  condition = showSections;
+  condition = sections;
 }
 
 CurrSection : WOString {
-  value = tmpValues.section.value;
+  value = activeSection.name;
+}
+ShowSections : WOConditional {
+  condition = session.sections.hasSections;
+}
+
+SectionRequired : WOString {
+  value = sectionRequired;
 }

@@ -10,12 +10,6 @@
         }, 
         {
             allowsNull = N; 
-            columnName = "SCHOOL_NUM"; 
-            name = school; 
-            prototypeName = short; 
-        }, 
-        {
-            allowsNull = N; 
             columnName = "SUBJECT_ID"; 
             name = subjID; 
             prototypeName = short; 
@@ -23,13 +17,13 @@
         {
             allowsNull = N; 
             columnName = "EDU_SECTION"; 
-            name = section; 
+            name = sectionID; 
             prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (grade, school, subjID, section); 
+    attributesUsedForLocking = (grade, subjID, sectionID); 
     className = "net.rujel.eduplan.PlanCycle"; 
-    classProperties = (grade, planHours, school, section, subjectEO); 
+    classProperties = (grade, planHours, section, subjectEO); 
     externalName = "PL_CYCLE"; 
     fetchSpecificationDictionary = {}; 
     name = PlanCycle; 
@@ -41,6 +35,14 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = cycleID; sourceAttribute = cID; }); 
             name = planHours; 
+        }, 
+        {
+            destination = SchoolSection; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sectionID; }); 
+            name = section; 
         }, 
         {
             destination = Subject; 

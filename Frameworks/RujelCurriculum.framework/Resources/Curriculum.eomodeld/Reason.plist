@@ -44,16 +44,9 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
-            allowsNull = N; 
-            columnName = "SCHOOL_NUM"; 
-            name = school; 
-            prototypeName = short; 
-            userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
-        }, 
-        {
             allowsNull = Y; 
             columnName = "SECTION_NUM"; 
-            name = section; 
+            name = sectionID; 
             prototypeName = short; 
         }, 
         {
@@ -77,8 +70,7 @@
         flags, 
         grade, 
         reason, 
-        school, 
-        section, 
+        sectionID, 
         teacherID, 
         verification
     ); 
@@ -89,7 +81,6 @@
         flags, 
         grade, 
         reason, 
-        school, 
         section, 
         substitutes, 
         variations, 
@@ -100,6 +91,13 @@
     name = Reason; 
     primaryKeyAttributes = (rID); 
     relationships = (
+        {
+            destination = SchoolSection; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sectionID; }); 
+            name = section; 
+        }, 
         {
             deleteRule = EODeleteRuleDeny; 
             destination = Substitute; 

@@ -1,0 +1,33 @@
+{
+    attributes = (
+        {columnName = "SECTION_FLAGS"; name = flags; prototypeName = byte; }, 
+        {columnName = "ID_STRING"; name = idString; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = "MAX_GRADE"; 
+            name = maxGrade; 
+            prototypeName = byte; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "MIN_GRADE"; 
+            name = minGrade; 
+            prototypeName = byte; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SECTION_NAME"; 
+            name = name; 
+            prototypeName = word; 
+        }, 
+        {allowsNull = N; columnName = "S_ID"; name = sID; prototypeName = short; }, 
+        {columnName = "SORT_NUM"; name = sort; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (flags, idString, maxGrade, minGrade, name, sort); 
+    className = "net.rujel.base.SchoolSection"; 
+    classProperties = (flags, idString, maxGrade, minGrade, name, sID, sort); 
+    externalName = "SCHOOL_SECTION"; 
+    fetchSpecificationDictionary = {}; 
+    name = SchoolSection; 
+    primaryKeyAttributes = (sID); 
+}

@@ -3,7 +3,8 @@ ListSettings : ListSettings {
   key = "ItogMark";
   currList = listName;
   extraLists = extraLists;
-  access = session.readAccess.FLAGS.ItogContainer;
+  checkAccess = "ItogTypeList";
+  listAccess = access;
 }
 
 AllTypes : WORepetition {
@@ -16,7 +17,7 @@ Form : WOForm {
 
 Active : WOCheckBox {
   checked = item.active;
-  disabled = session.readAccess._edit.ItogTypeList;
+  disabled = access._edit;
 }
 
 TypesTitle : WOString {
@@ -43,7 +44,7 @@ AddType : OnClickContainer {
   invokeAction = addType;
   class = "green";
   style = "padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
-  hide = session.readAccess._create.ItogType;
+  hide = typeAccess._create;
 }
 
 Save: WOSubmitButton {
@@ -60,6 +61,7 @@ ItogTypeEditor : ItogTypeEditor {
   currType = currType.type;
   ec = ec;
   class = "grey";
+  access = typeAccess;
 }
 
 SelectType : OnClickContainer {
@@ -149,7 +151,7 @@ DeleteContainer : OnClickContainer {
   invokeAction = deleteContainer;
   hide = cantDeleteContainer;
   style = "float:right;margin:3px;";
-  title = application.strings.Reusables_Strings.uiElements.Delete;
+  title = session.strings.Reusables_Strings.uiElements.Delete;
   onclick = session.confirmMessage;
 }
 
@@ -158,11 +160,11 @@ Cross : WOImage {
   filename = "cross.png";
   height = 12;
   width = 12;
-  alt = application.strings.Reusables_Strings.uiElements.Delete;
+  alt = session.strings.Reusables_Strings.uiElements.Delete;
 }
 
 CanSort : WOConditional {
-  condition = session.readAccess.edit.ItogTypeList;
+  condition = access.edit;
 }
 
 Extensions : WORepetition {

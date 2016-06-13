@@ -84,7 +84,7 @@ ReasonTextField : WOText {
 }
 
 CanChange : WOConditional {
-	condition = session.readAccess.edit.currReason;
+	condition = readAccess.edit.currReason;
 }
 
 Save: WOSubmitButton {
@@ -495,7 +495,7 @@ IsRow : WOConditional {
 }
 
 CanSubmit : WOConditional {
-  condition = session.readAccess.edit.Curriculum;
+  condition = readAccess.edit.Curriculum;
 }
 
 ExportButton : WOHyperlink {
@@ -519,18 +519,31 @@ ReturnTitle : WOString {
 }
 
 NoSections : WOConditional {
-  condition = session.strings.sections.hasSections;
+  condition = session.sections.hasSections;
   negate = true;
 }
 
 HasSections : WOConditional {
-  condition = session.strings.sections.hasSections;
+  condition = session.sections.hasSections;
 }
 
 SectionsPopup : WOPopUpButton {
-  list = session.strings.sections.list;
+  list = sections;
   item = item;
-  displayString = item.value;
+  displayString = item.name;
   noSelectionString = session.strings.RujelCurriculum_Curriculum.Reason.withWholeSchool;
-  selection = reasonSection;
+  selection = currReason.section;
+}
+
+CurrSection : WOString {
+	value = activeSection.name;
+	valueWhenEmpty = session.strings.RujelBase_Base.noLimit;
+}
+SectionTabs : Tabs {
+  currTab = activeSection;
+  tablist = sections;
+  titleAttribute = "name";
+  vertical = true;
+  onClick = session.tryLoad;
+  idAttribute = "sectionID";
 }

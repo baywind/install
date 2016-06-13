@@ -68,7 +68,7 @@ ResetButton1: WOResetButton {
 }
 
 HasSections : WOConditional {
-  condition = session.strings.sections.hasSections;
+  condition = session.sections.hasSections;
 }
 
 SectionTitle : WOString {
@@ -77,18 +77,18 @@ SectionTitle : WOString {
 }
 
 Sections : WORepetition {
-  list = session.strings.sections.list;
+  list = sections;
   item = item;
 }
 
 SectionRadio : WORadioButton {
   name = "section";
-  value = item.idx;
+  value = item;
   selection = currGroup.section;
 }
 
 SectionName : WOString {
-  value = item.value;
+  value = item.name;
 }
 
 HasGroup : WOConditional {

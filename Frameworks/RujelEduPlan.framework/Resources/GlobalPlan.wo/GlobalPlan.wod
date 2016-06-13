@@ -212,12 +212,12 @@ SectionContainer : OnClickContainer {
 }
 
 SectionNum : WOString {
-  value = item.idx;
+  value = item.sectionID;
   numberformat = "0";
 }
 
 SectionTitle : WOString {
-  value = item.value;
+  value = item.name;
 }
 
 ShowAll : WOConditional {
@@ -249,7 +249,7 @@ SetupSections : OnClickContainer {
   style = "font-size:120%;text-align:center;";
   invokeAction = setupSections;
   onclick = session.ajaxPopupNoPos;
-  disabled = access._edit.PlanCycle;
+  disabled = cantSetupSections;
 }
 
 AllTitle : WOString {

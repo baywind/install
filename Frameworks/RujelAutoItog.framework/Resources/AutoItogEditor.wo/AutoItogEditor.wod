@@ -121,7 +121,7 @@ CanChange: WOConditional {
 }
 
 CanDelete: WOConditional {
-	condition = session.readAccess.delete.autoItog;
+	condition = access.delete;
 }
 
 Save: WOSubmitButton {

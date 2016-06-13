@@ -17,11 +17,11 @@
         {
             allowsNull = Y; 
             columnName = "SECTION_NUM"; 
-            name = section; 
+            name = sectionID; 
             prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (externalEquivalent, groupName, section); 
+    attributesUsedForLocking = (externalEquivalent, groupName, sectionID); 
     className = "com.webobjects.eocontrol.EOGenericRecord"; 
     classProperties = (externalEquivalent, groupName, section, users); 
     externalName = "AUT_GROUP"; 
@@ -38,6 +38,13 @@
             name = members; 
             ownsDestination = Y; 
             propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = SchoolSection; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sectionID; }); 
+            name = section; 
         }, 
         {definition = "members.user"; name = users; }
     ); 

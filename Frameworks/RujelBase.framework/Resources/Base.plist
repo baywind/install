@@ -92,7 +92,7 @@
 						<key>editingContext</key>
 						<string>$ec</string>
 						<key>onClick</key>
-						<string>$onclick</string>
+						<string>$session.ajaxPopupNoPos</string>
 						<key>selectAction</key>
 						<string>$doneEditing</string>
 						<key>selection</key>
@@ -100,7 +100,7 @@
 						<key>width</key>
 						<string>60</string>
 						<key>showSection</key>
-						<true/>
+						<false/>
 					</dict>
 				</dict>
 				<key>format</key>
@@ -114,7 +114,7 @@
 				<key>sectionInSession</key>
 				<true/>
 				<key>sections</key>
-				<false/>
+				<true/>
 				<key>sort</key>
 				<integer>25</integer>
 				<key>title</key>
@@ -202,7 +202,7 @@
 						<key>editingContext</key>
 						<string>$ec</string>
 						<key>onclick</key>
-						<string>$onclick</string>
+						<string>$session.ajaxPopupNoPos</string>
 						<key>selectAction</key>
 						<string>$doneEditing</string>
 						<key>selection</key>
@@ -242,6 +242,8 @@
 		</array>
 		<key>failedToParce</key>
 		<string>Не удалось считать ручную настройку выбора</string>
+		<key>sectionRequired</key>
+		<string>Для выбора значения необходимо указать отделение</string>
 		<key>selectorTitle</key>
 		<string>Для каких курсов действует настройка</string>
 		<key>setDefault</key>

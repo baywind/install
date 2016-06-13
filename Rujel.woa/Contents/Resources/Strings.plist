@@ -140,6 +140,8 @@
 				<string>.editingContext</string>
 				<key>onClick</key>
 				<string>$session.tryLoad</string>
+				<key>showSection</key>
+				<true/>
 			</dict>
 		</dict>
 	</dict>
@@ -388,7 +390,7 @@
 			<key>grouping</key>
 			<string>Дни и уроки</string>
 			<key>checkAccess</key>
-			<string>BaseLesson</string>
+			<string>BaseCourse</string>
 			<key>title</key>
 			<string>Вперёд</string>
 			<key>description</key>
@@ -415,7 +417,7 @@
 			<key>grouping</key>
 			<string>Дни и уроки</string>
 			<key>checkAccess</key>
-			<string>Work</string>
+			<string>BaseCourse</string>
 			<key>title</key>
 			<string>Требовать домашнее задание</string>
 			<key>description</key>

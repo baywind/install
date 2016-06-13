@@ -18,6 +18,7 @@ SubjectsList : DynamicTableRow {
   selection = selectedSubject;
   selectAction = selectSubject;
   style = "margin:2px;";
+  hover = item.fullName;
 }
 
 AreaName : WOString {

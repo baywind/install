@@ -11,5 +11,5 @@
         {className = "net.rujel.curriculum.Substitute"; name = Substitute; }, 
         {className = "net.rujel.curriculum.Variation"; name = Variation; }
     ); 
-    userInfo = {framework = RujelCurriculum; schemaVersion = {number = 3; title = "1.0"; }; }; 
+    userInfo = {framework = RujelCurriculum; schemaVersion = {number = 4; title = "1.1"; }; }; 
 }

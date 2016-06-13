@@ -43,7 +43,6 @@
             prototypeName = integer; 
         }, 
         {
-            allowsNull = N; 
             columnName = "SUCCESS_VALUE"; 
             name = value; 
             precision = 5; 

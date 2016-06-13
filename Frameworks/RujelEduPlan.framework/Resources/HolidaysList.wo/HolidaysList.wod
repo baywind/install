@@ -31,7 +31,7 @@ Exists : WOConditional {
 ExistingRow : OnClickContainer {
   elementName = "tr";
   class = rowClass;
-  disabled = session.readAccess._edit.Holiday;
+  disabled = access._edit;
   onclick = session.checkRun;
   invokeAction = select;
   title = item.listName;
@@ -51,7 +51,7 @@ End : WOString {
   dateformat = application.prefs.ui.dateFormat;
 }
 
-Preset : WOConditional {
+Selected : WOConditional {
   condition = selected;
   negate = false;
 }
@@ -89,7 +89,7 @@ Disabled : WOCheckBox {
 
 DeleteCell : OnClickContainer {
   elementName = "td";
-  disabled = session.readAccess._delete.Holiday;
+  disabled = access._delete;
   onclick = "toggleDisabled(this);";
   style = "font-size:larger;";
 }
@@ -133,7 +133,7 @@ DaysTitle : WOString {
 }
 
 ShowButtton : WOConditional {
-  condition = session.readAccess.create.Holiday;
+  condition = access.create;
 }
 
 Plus : WOGenericContainer {

@@ -39,7 +39,7 @@ SelectPerson : OnClickContainer {
 
 Save : WOSubmitButton {
   action = save;
-  value = application.strings.Reusables_Strings.uiElements.Save;
+  value = session.strings.Reusables_Strings.uiElements.Save;
 }
 
 Form : WOForm {
@@ -258,18 +258,18 @@ Section : WOString {
 }
 
 SectionNum : WOString {
-  value = item.idx;
+  value = item.sectionID;
   numberformat = "0";
 }
 
 SectionTH : WOGenericContainer {
   elementName = "th";
   style = "width:3ex;";
-  title = item.value;
+  title = item.name;
 }
 
 SectionName : WOString {
-  value = item.value;
+  value = item.name;
 }
 
 NewGroupName : WOGenericElement {
