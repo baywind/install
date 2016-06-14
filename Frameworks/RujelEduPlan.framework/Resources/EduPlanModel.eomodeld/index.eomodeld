@@ -10,11 +10,5 @@
         {className = "net.rujel.eduplan.Subject"; name = Subject; }, 
         {className = EOGenericRecord; name = SubjectArea; }
     ); 
-    userInfo = {
-        schemaVersion = {
-        	number = 1;
-        	title = "0.9";
-        };
-	    framework = "RujelEduPlan";
-    };
+    userInfo = {framework = RujelEduPlan; schemaVersion = {number = 2; title = "1.1"; }; }; 
 }

@@ -1,0 +1,9 @@
+-- Schema updates for EduPlanModel model --
+
+-- v2 (1.1) --
+
+ALTER TABLE PL_CYCLE
+  DROP COLUMN SCHOOL_NUM;
+
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('EduPlanModel',2,'1.1');

@@ -110,4 +110,6 @@ function setDefaults(flags,weight) {
 	form.isHometask.disabled = (flags & 4);
 	form.isCompulsory.checked = (flags & 8);
 	form.isCompulsory.disabled = (flags & 2);
+	if(form.m0.type == 'checkbox' && weight > 0)
+		form.m0.checked = true;
 }

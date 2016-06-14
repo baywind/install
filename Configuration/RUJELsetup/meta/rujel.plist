@@ -44,20 +44,6 @@
 		</dict>
 		<dict>
 			<key>key</key>
-			<string>schoolNumber</string>
-			<key>type</key>
-			<string>Integer</string>
-			<key>title</key>
-			<string>ID школы</string>
-			<key>description</key>
-			<string>числовой идентификатор ОУ: Используется для размещения нескольких школ на одном сервере. Этот номер должен совпадать с номером SCHOOL_NUM в базе данных в таблицах RujelStatic.PL_CYCLE и RujelYear%s.CU_REASON</string>
-			<key>defaultValue</key>
-			<integer>0</integer>
-			<key>advanced</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>key</key>
 			<string>loggingProperties</string>
 			<key>type</key>
 			<string>String</string>

@@ -45,8 +45,8 @@ IsSelected : WOConditional {
 
 NameField : WOTextField {
   value = currSection.name;
-  length = 28;
-  maxlength = "20";
+  size = 30;
+  maxlength = 28;
   class = "required";
 }
 
@@ -71,8 +71,8 @@ Save : WOSubmitButton {
 
 NewNameField : WOTextField {
   value = newDict.name;
-  length = 28;
-  maxlength = "20";
+  size = 30;
+  maxlength = 28;
   class = "required";
   name = "sectionName";
 }
