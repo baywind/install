@@ -37,7 +37,7 @@ GroupTitle : WOString {
 }
 
 Sections : WORepetition {
- list = session.strings.sections.list;
+ list = session.sections.list;
  item = courseID;
 }
 
@@ -46,7 +46,7 @@ HasSections : WOConditional {
 }
 
 SectionTitle : WOString {
-  value = courseID.value;
+  value = courseID.name;
 }
 
 LI : WOGenericContainer {

@@ -25,7 +25,7 @@ StudentsList : WORepetition {
 }
 
 HasSections : WOConditional {
-  condition = session.strings.sections.hasSections;
+  condition = session.sections.hasSections;
 }
 StudentLink : WOGenericContainer {
   elementName = "a";
@@ -62,7 +62,7 @@ GroupView : WOGenericContainer {
 }
 
 Sections : WORepetition {
- list = session.strings.sections.list;
+ list = session.sections.list;
  item = grDict;
 }
 
@@ -74,7 +74,7 @@ SectionLink : WOGenericContainer {
 }
 
 SectionTitle : WOString {
-  value = grDict.value;
+  value = grDict.name;
 }
 
 LI : WOGenericContainer {

@@ -87,9 +87,9 @@ ExtValue : WOPopUpButton {
 }
 
 SectionPopup : WOPopUpButton {
-  list = session.strings.sections.list;
+  list = session.sections.list;
   item = item1;
-  displayString = item1.value;
+  displayString = item1.name;
   selection = section;
   noSelectionString = session.strings.RujelEduPlan_EduPlan.sections.showAll;
 }
