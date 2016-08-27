@@ -13,6 +13,11 @@ ClosePopup : OnClickContainer {
   style = "position:absolute;right:2pt;top:2pt;";
 }
 
+SectionsTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.sections;
+  escapeHTML = false;
+}
+
 SectionsList : WORepetition {
   list = sections;
   item = item;
@@ -34,9 +39,9 @@ SectionDiv : OnClickContainer {
   elementName = "div";
   onclick = session.ajaxPopupNoPos;
   invokeAction = selectSection;
-  class = "gerade";
+  class = sectionClass;
   hide = isSelected;
-  style = "margin:2pt;border:1px solid #cccccc;";
+  style = "margin:2pt;";
 }
 
 IsSelected : WOConditional {
@@ -61,12 +66,13 @@ MaxField : WOPopUpButton {
 }
 
 Form : WOForm {
+  style = "clear:both;";
 }
 
 Save : WOSubmitButton {
   value = session.strings.Reusables_Strings.uiElements.Save;
   action = save;
-  onclick = "return ajaxPost(this);";
+  onclick = "try{enumerate(form,'numerate',1);}catch(e){alert(e);};return ajaxPost(this);";
 }
 
 NewNameField : WOTextField {
@@ -99,10 +105,44 @@ SesMessage: WOString {
 AddSectionContainer : OnClickContainer {
   elementName = "div";
   onclick = "hideObj(this);showObj('newSection');parentNode.sectionName.focus();";
-  class = "ungerade";
+  class = "orange";
   style = "margin:2pt;border:1px solid #cccccc;";
 }
 
 AddSection : WOString {
   value = session.strings.RujelEduPlan_EduPlan.sections.addSection;
+}
+
+Disabled : WOCheckBox {
+  checked = currSection.namedFlags.disabled;
+  style = "float:right;";
+  onchange = "parentNode.className = (checked)?'grey':'selection';";
+}
+
+HasSelection : WOConditional {
+  condition = currSection;
+}
+
+CurrUp : WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	align = "left";
+	valign = "top";
+	onclick="up(document.getElementById('currSection'));";
+	style = "cursor:pointer;margin-bottom:2pt;";
+}
+
+CurrDown : WOImage {
+	align = "left";
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(document.getElementById('currSection'));";
+	style = "cursor:pointer;";
+}
+
+SortField : WOTextField {
+  value = item.sort;
+  style = "display:none;";
+  numberformat = "0";
+  class = "numerate";
 }

@@ -170,7 +170,7 @@ GroupsCell : WOGenericContainer {
 GroupsField : WOTextField {
   value = subjectItem.subjectEO.subgroupsPresent;
   numberformat = "0";
-  disabled = access._edit;
+  disabled = cantSetupSections;
   style = "width:2em;";
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";

@@ -1,16 +1,22 @@
 <div class="backfield1" id="ajaxPopup"><webobject name = "ClosePopup"><webobject name = "Cross"/></webobject>
 <div style = "border: 1px solid #999999;">
+<div style = "font-size:120%;text-align:center;">
+<webobject name = "SectionsTitle"/></div>
+<webobject name = "HasSelection"><webobject name = "CurrUp"/></webobject>
 <webobject name = "Form">
 <webobject name = "SectionsList">
 <webobject name = "SectionDiv">
-	<webobject name = "SectionName"/> 
+	<webobject name = "SortField"/> <webobject name = "SectionName"/> 
 		<em>(<webobject name = "MinGrade"/> - <webobject name = "MaxGrade"/>)</em>
 </webobject><webobject name = "IsSelected">
-<div class = "selection">
+<div class = "selection" id = "currSection">
+	<webobject name = "SortField"/>
 	<div><webobject name = "NameField"/></div>
+	<webobject name = "Disabled"/>
 	<div><webobject name = "MinField"/> - <webobject name = "MaxField"/></div>
 </div>
 </webobject></webobject>
+<webobject name = "HasSelection"><webobject name = "CurrDown"/></webobject>
 <webobject name = "IsSelected">
 <div class = "ungerade" id = "newSection" style = "display:none;">
 	<div><webobject name = "NewNameField"/></div>
