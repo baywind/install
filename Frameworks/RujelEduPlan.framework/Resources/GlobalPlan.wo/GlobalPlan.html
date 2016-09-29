@@ -11,7 +11,7 @@ function cancel() {
   var subjField = document.getElementsByName('subject')[0];
   if(subjField.defaultValue == null || subjField.defaultValue.length == 0) {
   	subjField.value = null;
-  	subjField.form.submit();
+  	if(tryLoad())subjField.form.submit();
   } else {
   	closePopup();
   }

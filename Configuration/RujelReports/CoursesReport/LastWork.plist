@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title</key>
+	<string>Последняя работа</string>
+	<key>id</key>
+	<string>lastWork</string>
+	<key>sort</key>
+	<string>62</string>
+	<key>active</key>
+	<false/>
+	<key>entity</key>
+	<string>Work</string>
+	<key>subParams</key>
+	<array>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>id</key>
+			<string>announce</string>
+			<key>title</key>
+			<string>Задано</string>
+			<key>hover</key>
+			<string>Дата, когда задание было дано</string>
+			<key>value</key>
+			<string>.announce</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>dateformat</key>
+				<string>$application.prefs.ui.dateFormat</string>
+			</dict>
+			<key>sort</key>
+			<string>01</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>id</key>
+			<string>date</string>
+			<key>title</key>
+			<string>Сдать</string>
+			<key>hover</key>
+			<string>Дата, когда задание нужно сдать</string>
+			<key>value</key>
+			<string>.date</string>
+			<key>presenterBindings</key>
+			<dict>
+				<key>dateformat</key>
+				<string>$application.prefs.ui.dateFormat</string>
+			</dict>
+			<key>sort</key>
+			<string>02</string>
+		</dict>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>id</key>
+			<string>type</string>
+			<key>title</key>
+			<string>Тип</string>
+			<key>hover</key>
+			<string>Тип работы</string>
+			<key>style</key>
+			<string>.font</string>
+			<key>value</key>
+			<string>.workType.typeName</string>
+			<key>sort</key>
+			<string>04</string>
+			<key>itemHover</key>
+			<string>.theme</string>
+		</dict>
+	</array>
+	<key>itemValue</key>
+	<dict>
+		<key>className</key>
+		<string>net.rujel.criterial.Work</string>
+		<key>methodName</key>
+		<string>lastWork</string>
+		<key>paramClasses</key>
+		<array>
+			<string>net.rujel.interfaces.EduCourse</string>
+		</array>
+		<key>paramValues</key>
+		<array>
+			<string>.</string>
+		</array>
+		<key>cacheResult</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

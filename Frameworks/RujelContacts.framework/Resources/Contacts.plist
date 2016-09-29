@@ -118,5 +118,31 @@
 	</dict>
 	<key>diaryLink</key>
 	<string>РУЖЭЛЬ-дневник: индивидуальное расписание и домашние задания для %2$s</string>
+	<key>adminModules</key>
+	<array>
+		<dict>
+			<key>sort</key>
+			<string>80</string>
+			<key>settingBase</key>
+			<string>SendMailWidget</string>
+			<key>grouping</key>
+			<string>Курсы</string>
+			<key>checkAccess</key>
+			<string>BroadcastFrontEnd</string>
+			<key>title</key>
+			<string>Рассылка с предметной страницы</string>
+			<key>description</key>
+			<string>Показывать на предметных страницах журнала иконку для рассылки почты всем ученикам за подписью преподавателя-предметника</string>
+			<key>settingTitle</key>
+			<string>показать</string>
+			<key>numericValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>numericValue</string>
+				<key>boolean</key>
+				<string>number</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

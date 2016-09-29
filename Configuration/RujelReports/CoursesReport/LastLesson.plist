@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>active</key>
+	<false/>
+	<key>entity</key>
+	<string>BaseLesson</string>
+	<key>id</key>
+	<string>lastLessson</string>
+	<key>presenterBindings</key>
+	<dict>
+		<key>dateformat</key>
+		<string>$application.prefs.ui.dateFormat</string>
+		<key>value</key>
+		<string>.date</string>
+	</dict>
+	<key>itemHover</key>
+	<string>.theme</string>
+	<key>sort</key>
+	<string>61</string>
+	<key>title</key>
+	<string>Последний урок</string>
+	<key>itemValue</key>
+	<string>.lastLesson</string>
+</dict>
+</plist>

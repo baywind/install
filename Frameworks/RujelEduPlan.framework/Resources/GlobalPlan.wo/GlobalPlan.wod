@@ -121,7 +121,7 @@ SubjectCell : OnClickContainer {
   elementName = "td";
   onclick = session.ajaxPopup;
   invokeAction = editSubject;
-  disabled = access._edit.subjectItem.subjectEO;
+  disabled = cantEditSubject;
   style = cellStyle;
   title = subjectItem.subjectEO.fullName;
 }

@@ -1,6 +1,6 @@
 -- Schema updates for BaseYearly model --
 
--- v4 (1.1) --
+  -- v4 (1.1) --
 
 ALTER TABLE BASE_QUALIFIED_SETTINGS
   ADD COLUMN SECTION_NUM smallint;
