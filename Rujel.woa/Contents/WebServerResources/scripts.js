@@ -349,7 +349,14 @@ function addOnsubmit(forms) {
 
 var timerID = null;
 var timeout = 1200;
+var deadline = null;
 function countdown() {
+	time = (new Date()).getTime();
+	if(deadline == null) {
+		deadline = time + timeout*1000;
+	} else {
+		timeout = Math.floor((deadline - time) / 1000)
+	}
 	if(timerID != null) {
 		clearTimeout(timerID);
 	}
@@ -361,8 +368,6 @@ function countdown() {
 	} else {
 		o.innerHTML = formatSeconds(timeout);
 	}
-	
-	timeout = timeout -1;
 	timerID = setTimeout("countdown()",1000);
 }
 
