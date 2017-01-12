@@ -8,6 +8,8 @@
 	<string>Подсчет установленных меток</string>
 	<key>entity</key>
 	<string>BaseNote</string>
+	<key>sort</key>
+	<integer>65</integer>
 	<key>params</key>
 	<array>
 		<dict>

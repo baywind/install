@@ -8,6 +8,8 @@
 	<string>Пропущенные уроки</string>
 	<key>entity</key>
 	<string>BaseNote</string>
+	<key>sort</key>
+	<integer>60</integer>
 	<key>params</key>
 	<array>
 		<dict>

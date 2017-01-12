@@ -6,6 +6,8 @@
 	<string>Выборка прогнозов итоговых отметок за период</string>
 	<key>entity</key>
 	<string>Prognosis</string>
+	<key>sort</key>
+	<integer>15</integer>
 	<key>params</key>
 	<array>
 		<dict>

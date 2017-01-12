@@ -8,6 +8,8 @@
 	<string>Проведенные работы</string>
 	<key>entity</key>
 	<string>Work</string>
+	<key>sort</key>
+	<integer>80</integer>
 	<key>params</key>
 	<array>
 		<dict>

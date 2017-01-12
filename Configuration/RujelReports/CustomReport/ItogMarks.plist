@@ -6,6 +6,8 @@
 	<string>Итоговые отметки</string>
 	<key>entity</key>
 	<string>ItogMark</string>
+	<key>sort</key>
+	<integer>10</integer>
 	<key>params</key>
 	<array>
 		<dict>

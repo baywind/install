@@ -8,6 +8,8 @@
 	<string>Закрытие учебного года</string>
 	<key>entity</key>
 	<string>Completion</string>
+	<key>sort</key>
+	<integer>30</integer>
 	<key>params</key>
 	<array>
 		<dict>

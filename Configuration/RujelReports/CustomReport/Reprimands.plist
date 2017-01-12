@@ -8,6 +8,8 @@
 	<string>Замечания к ведению журнала</string>
 	<key>entity</key>
 	<string>Reprimand</string>
+	<key>sort</key>
+	<integer>20</integer>
 	<key>params</key>
 	<array>
 		<dict>

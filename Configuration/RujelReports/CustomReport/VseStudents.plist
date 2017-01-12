@@ -11,6 +11,8 @@
 	<string>Поиск по списку учащихся</string>
 	<key>entity</key>
 	<string>VseList</string>
+	<key>sort</key>
+	<integer>40</integer>
 	<key>params</key>
 	<array>
 		<dict>

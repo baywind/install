@@ -6,6 +6,8 @@
 	<string>Поиск оценок</string>
 	<key>entity</key>
 	<string>Mark</string>
+	<key>sort</key>
+	<integer>83</integer>
 	<key>params</key>
 	<array>
 		<dict>

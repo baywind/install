@@ -8,6 +8,8 @@
 	<string>Отсрочки на выставление итоговых оценок за период</string>
 	<key>entity</key>
 	<string>StudentTimeout</string>
+	<key>sort</key>
+	<integer>50</integer>
 	<key>params</key>
 	<array>
 		<dict>

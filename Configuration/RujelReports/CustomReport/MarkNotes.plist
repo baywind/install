@@ -8,6 +8,8 @@
 	<string>Поиск текстовых комментариев к работам</string>
 	<key>entity</key>
 	<string>WorkNote</string>
+	<key>sort</key>
+	<integer>86</integer>
 	<key>params</key>
 	<array>
 		<dict>
