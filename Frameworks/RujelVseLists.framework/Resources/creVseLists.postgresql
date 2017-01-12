@@ -25,7 +25,7 @@ CREATE TABLE VSE_PERSON (
   LAST_NAME varchar(28) NOT NULL,
   FIRST_NAME varchar(28),
   SECOND_NAME varchar(28),
-  SEX_FLAG bit NOT NULL,
+  SEX_FLAG boolean NOT NULL,
   BIRTH_DATE date,
   PRIMARY KEY (P_ID)
 );

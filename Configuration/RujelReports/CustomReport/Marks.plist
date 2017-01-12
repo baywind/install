@@ -9,6 +9,31 @@
 	<key>params</key>
 	<array>
 		<dict>
+			<key>attribute</key>
+			<string>section</string>
+			<key>title</key>
+			<string>Отделение</string>
+			<key>active</key>
+			<true/>
+			<key>defaultValue</key>
+			<string>$session.state.section</string>
+			<key>in</key>
+			<dict>
+				<key>relationship</key>
+				<string>work.course.cycle</string>
+				<key>entity</key>
+				<string>PlanCycle</string>
+			</dict>
+			<key>qualifierSelector</key>
+			<string>=</string>
+			<key>select</key>
+			<string>$session.sections.list</string>
+			<key>displayString</key>
+			<string>.name</string>
+			<key>noSelectionString</key>
+			<string>все</string>
+		</dict>
+		<dict>
 			<key>active</key>
 			<false/>
 			<key>attribute</key>

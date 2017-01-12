@@ -39,6 +39,29 @@
 		</dict>
 		<dict>
 			<key>attribute</key>
+			<string>cycle.section</string>
+			<key>title</key>
+			<string>Отделение</string>
+			<key>active</key>
+			<true/>
+			<key>defaultValue</key>
+			<string>$session.state.section</string>
+			<key>_in</key>
+			<dict>
+				<key>relationship</key>
+				<string>cycle</string>
+			</dict>
+			<key>qualifierSelector</key>
+			<string>=</string>
+			<key>select</key>
+			<string>$session.sections.list</string>
+			<key>displayString</key>
+			<string>.name</string>
+			<key>noSelectionString</key>
+			<string>все</string>
+		</dict>
+		<dict>
+			<key>attribute</key>
 			<string>mark</string>
 			<key>fieldSize</key>
 			<integer>5</integer>
