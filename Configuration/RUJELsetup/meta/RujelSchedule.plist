@@ -75,11 +75,25 @@
 		</dict>
 		<dict>
 			<key>key</key>
-			<string>dbConnection.Stats</string>
+			<string>edu.hideFromDiary</string>
+			<key>type</key>
+			<string>Boolean</string>
+			<key>title</key>
+			<string>hideFromDiary</string>
+			<key>description</key>
+			<string>Не показывать расписание в дневнике</string>
+			<key>defaultValue</key>
+			<string>false</string>
+			<key>advanced</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>key</key>
+			<string>dbConnection.Schedule</string>
 			<key>type</key>
 			<string>Dictionary</string>
 			<key>title</key>
-			<string>dbConnection.Stats</string>
+			<string>dbConnection.Schedule</string>
 			<key>description</key>
 			<string></string>
 			<key>advanced</key>
