@@ -24,7 +24,7 @@
 			<key>in</key>
 			<dict>
 				<key>relationship</key>
-				<string>course.cycle</string>
+				<string>lesson.course.cycle</string>
 				<key>entity</key>
 				<string>PlanCycle</string>
 			</dict>
@@ -251,7 +251,7 @@
 					<string>Учитель, который ведет курс</string>
 					<key>sortKey</key>
 					<string>lesson.course.teacher</string>
-					<key>value</key>
+					<key>itemValue</key>
 					<dict>
 						<key>object</key>
 						<string>.lesson.course</string>
