@@ -14,7 +14,7 @@ CloseButton : OnClickContainer {
 }
 
 Title : WOString {
-  value = title;
+  value = cycleTitle;
   escapeHTML = false;
 }
 CommentField : WOTextField {
@@ -34,11 +34,11 @@ TeacherLabel: WOString {
 
 Changes : WORepetition {
   list = changes;
-  item = changeItem;
+  item = item;
 }
 
 ChangedTeacher : PersonDisplay {
-  person = changeItem.teacher;
+  person = item.teacher;
   last = 2;
   first = 1;
   second = 1;
@@ -48,18 +48,18 @@ ChangedTeacher : PersonDisplay {
 }
 
 ChangeDate : WOTextField {
-  value = changeItem.date;
+  value = item.date;
   onkeypress = "return isNumberInput(event,true);";
   style = "text-align:center;";
   dateformat = application.prefs.ui.dateFormat;
   size = 10;
   maxlength = 10;
-  disabled = session.readAccess._edit.changeItem;
+  disabled = session.readAccess._edit.item;
 }
 
 ChangeComment : WOTextField {
-  value = changeItem.comment;
-  disabled = session.readAccess._edit.changeItem;
+  value = item.comment;
+  disabled = session.readAccess._edit.item;
 }
 
 CourseTeacher : PersonDisplay {
@@ -92,7 +92,7 @@ ChangeTeacherCell : OnClickContainer {
   class = changeTeacherClass;
   onclick = "ajaxPost(getElementsByTagName('input')[0]);";
   style = "white-space:nowrap;";
-  disabled = session.readAccess._edit.changeItem;
+  disabled = session.readAccess._edit.item;
 }
 
 CourseTeacherCell : OnClickContainer {
@@ -133,7 +133,7 @@ NextTeacherButton : WOSubmitButton {
 ChangedTeacherButton : WOSubmitButton {
   action = chooseChangeTeacher;
   style = "display:none;";
-  disabled = session.readAccess._edit.changeItem;
+  disabled = session.readAccess._edit.item;
 }
 
 TBody : WOGenericContainer {
@@ -192,4 +192,26 @@ Delete : WOGenericElement {
   invokeAction = delete;
   onclick = session.tryLoad;
   omitTags = cantDelete;
+}
+
+GroupName : WOString {
+  value = course.eduGroup.name;
+  valueWhenEmpty = "???";
+}
+
+NoChoice : WOConditional {
+  condition = cycles.count;
+  negate = true;
+}
+
+HasChoice : WOConditional {
+  condition = cycles.count;
+}
+
+CycleSelection : WOPopUpButton {
+  list = cycles;
+  item = item;
+  displayString = cycleTitle;
+  selection = aCycle;
+  style = "font:inherit;";
 }

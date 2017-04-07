@@ -6,6 +6,7 @@
             name = areaID; 
             prototypeName = short; 
         }, 
+        {columnName = "EXT_NAME"; name = extName; prototypeName = word; }, 
         {columnName = "SPEC_FLAGS"; name = flags; prototypeName = short; }, 
         {columnName = "FULL_NAME"; name = fullName; prototypeName = string; }, 
         {
@@ -16,6 +17,12 @@
             valueType = i; 
         }, 
         {allowsNull = N; columnName = "SORT_NUM"; name = num; prototypeName = short; }, 
+        {
+            allowsNull = Y; 
+            columnName = "EDU_SECTION"; 
+            name = sectionID; 
+            prototypeName = short; 
+        }, 
         {allowsNull = N; columnName = "S_ID"; name = sID; prototypeName = short; }, 
         {
             allowsNull = N; 
@@ -29,11 +36,39 @@
             columnName = "SHORT_NAME"; 
             name = subject; 
             prototypeName = word; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "SUBJECT_GROUP"; 
+            name = subjectGroupID; 
+            prototypeName = short; 
         }
     ); 
-    attributesUsedForLocking = (areaID, flags, fullName, normalGroup, num, subgroups, subject); 
+    attributesUsedForLocking = (
+        areaID, 
+        extName, 
+        flags, 
+        fullName, 
+        normalGroup, 
+        num, 
+        sectionID, 
+        subgroups, 
+        subject
+    ); 
     className = "net.rujel.eduplan.Subject"; 
-    classProperties = (area, flags, fullName, normalGroup, num, subgroups, subject); 
+    classProperties = (
+        area, 
+        extName, 
+        flags, 
+        fullName, 
+        normalGroup, 
+        num, 
+        planHours, 
+        section, 
+        subgroups, 
+        subject, 
+        subjectGroup
+    ); 
     externalName = "PL_SUBJECT"; 
     fetchSpecificationDictionary = {}; 
     name = Subject; 
@@ -46,6 +81,29 @@
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = saID; sourceAttribute = areaID; }); 
             name = area; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PlanHours; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = subjectID; sourceAttribute = sID; }); 
+            name = planHours; 
+        }, 
+        {
+            destination = SchoolSection; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sectionID; }); 
+            name = section; 
+        }, 
+        {
+            destination = SubjectGroup; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = subjectGroupID; }); 
+            name = subjectGroup; 
         }
     ); 
 }

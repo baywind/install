@@ -1,0 +1,103 @@
+Name : WOString {
+  value = subjectGroup.name;
+}
+
+HasFullName : WOConditional {
+  condition = subjectGroup.fullName;
+}
+
+Full : WOString {
+  value = subjectGroup.fullName;
+}
+
+GroupRow: OnClickContainer {
+	elementName = "div";
+	invokeAction = select;
+	onclick = session.checkRun;
+	disabled = ^cantEdit;
+	class = "gerade";
+	style = "padding:6pt;";
+}
+
+ShowChildren : WOConditional {
+  condition = showChildren;
+}
+
+Children : WORepetition {
+  list = subjectGroup.sortedChildren;
+  item = item;
+}
+
+ChildLine : SubjectGroupLine {
+  subjectGroup = item;
+  selection = ^selection;
+  cantEdit = ^cantEdit;
+  parent = ^parent;
+}
+
+ShouldShow : WOConditional {
+  condition = shouldShow;
+}
+
+NotSelected : WOConditional {
+  condition = isSelected;
+  negate = true;
+}
+
+IsSelected : WOConditional {
+  condition = isSelected;
+}
+
+NameField : WOTextField {
+  value = selname;
+  size = 28;
+  title = session.strings.RujelEduPlan_EduPlan.properties.name;
+  class = "titled";
+}
+
+FullNameField : WOText {
+  value = subjectGroup.fullName;
+  cols = 28;
+  rows = 2;
+  title = session.strings.RujelEduPlan_EduPlan.properties.fullName;
+  class = "titled";
+}
+
+ShowNum : WOConditional {
+  condition = showNumerator;
+}
+
+Numerator : WOTextField {
+  value = subjectGroup.sort;
+  class = "grNum";
+  style = "display:none;";
+}
+
+ShowArrows : WOConditional {
+  condition = showSorter;
+}
+
+CurrUp : WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	onclick="up(document.getElementById('selectedSGroup').parentNode);";
+	style = "cursor:pointer;";
+}
+
+CurrDown : WOImage {
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(document.getElementById('selectedSGroup').parentNode);";
+	style = "cursor:pointer;";
+}
+ParentTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.properties.moveToGroup;
+}
+
+ParentPopup : WOPopUpButton {
+  list = parentList;
+  item = item;
+  displayString = item.paddedName;
+  selection = ^parent;
+  noSelectionString = session.strings.RujelEduPlan_EduPlan.properties.rootGroup;
+}

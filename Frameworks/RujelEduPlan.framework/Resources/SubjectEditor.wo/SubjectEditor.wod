@@ -18,13 +18,14 @@ AreaTitle : WOString {
 
 SubjectName : WOString {
   value = application.strings.RujelEduPlan_EduPlan.properties.subject;
+  escapeHTML = false;
   valueWhenEmpty = "Subject";
 }
 Subject : WOTextField {
   value = subject.subject;
-  style = "width:98%;";
   name = "subject";
   disabled = cantChange;
+  size = 16;
   maxlength = 28;
 }
 
@@ -41,8 +42,8 @@ FullNameInput : WOText {
 
 AreaPopUp : WOPopUpButton {
   list = areas;
-  item = areaItem;
-  displayString = areaItem.areaName;
+  item = item;
+  displayString = item.areaName;
   selection = subject.area;
   disabled = cantChange;
 }
@@ -54,4 +55,50 @@ Save: WOSubmitButton {
 ResetButton1: WOResetButton {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "cancel();";
+}
+
+SubjectGroupName : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.subjectGroup;
+  escapeHTML = false;
+  valueWhenEmpty = "SubjectGroup";
+}
+ExtNameTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.extName;
+  escapeHTML = false;
+  valueWhenEmpty = "SubjectGroup";
+}
+ExtSubjName : WOTextField {
+  value = subject.extName;
+  name = "extName";
+  disabled = cantChange;
+  size = 8;
+  maxlength = 28;
+}
+SubjGroupPopUp : WOPopUpButton {
+  list = sGroups;
+  item = item;
+  displayString = item.paddedName;
+  selection = subject.subjectGroup;
+  disabled = cantChange;
+}
+SectionsTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.eduSection;
+  escapeHTML = false;
+}
+SectionPopUp : WOPopUpButton {
+  list = sections;
+  item = item;
+  displayString = item.name;
+  selection = subject.section;
+  disabled = cantChange;
+  noSelectionString = noSectionTitle;
+}
+
+DontUseTitle : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.hidden;
+  escapeHTML = false;
+}
+DontUse : WOCheckBox {
+  checked = subject.namedFlags.hidden;
+  disabled = cantChange;
 }

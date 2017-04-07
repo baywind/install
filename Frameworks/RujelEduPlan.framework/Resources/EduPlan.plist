@@ -134,9 +134,19 @@
 	<key>properties</key>
 	<dict>
 		<key>area</key>
-		<string>Предметная область</string>
+		<string>Методическое объединение</string>
+		<key>subjectGroup</key>
+		<string>Предметная группа</string>
+		<key>subjectGroupsTitle</key>
+		<string>Полный перечень предметных групп</string>
+		<key>rootGroup</key>
+		<string>-=Основная группа=-</string>
 		<key>fullName</key>
-		<string>Полное название</string>
+		<string>Полное наименование</string>
+		<key>moveToGroup</key>
+		<string>Поместить в группу</string>
+		<key>addSubjectGroup</key>
+		<string>Добавить предметную группу</string>
 		<key>holidays</key>
 		<string>Каникулы и праздники</string>
 		<key>hours</key>
@@ -159,6 +169,8 @@
 		<string>групп</string>
 		<key>subject</key>
 		<string>Предмет</string>
+		<key>extName</key>
+		<string>Уточнение</string>
 		<key>subjects</key>
 		<string>Предметы</string>
 		<key>total</key>
@@ -167,6 +179,8 @@
 		<string>Для всех графиков</string>
 		<key>summary</key>
 		<string>Полное количество часов</string>
+		<key>hidden</key>
+		<string>Не использовать</string>
 	</dict>
 	<key>regimeTabs</key>
 	<array>
@@ -197,6 +211,8 @@
 		<string>настроить</string>
 		<key>showAll</key>
 		<string>показать все</string>
+		<key>forAll</key>
+		<string>-= Для всех =-</string>
 		<key>addSection</key>
 		<string>Добавить отделение</string>
 	</dict>

@@ -1,0 +1,28 @@
+<webobject name = "Form">
+<h1><webobject name = "SubjectGroupsTitle"/></h1>
+<div style = "margin: 0px 10em;">
+<webobject name = "ShowArrows">
+	<div><webobject name = "CurrUp"/></div></webobject><webobject name = "Groups">
+<webobject name = "GroupLine"/>
+</webobject>
+<webobject name = "ShowArrows">
+	<webobject name = "CurrDown"/></webobject>
+<webobject name = "NoSelection">
+	<webobject name = "CanCreate">
+		<webobject name = "CreateLine"><webobject name = "AddSubjectGroup"/></webobject>
+		<div id="newSGroup" style = "display:none;"> 
+		<div style = "border:1px solid #aaaaaa;padding: 4pt;margin: 2pt;" class = "green">
+				<div style = "float:right;"><webobject name = "ParentTitle"/>:<br/>
+					<webobject name = "ParentPopup"/></div>
+			<webobject name = "NameField"/><br/>
+			<webobject name = "FullNameField"/>
+		</div>
+		<div style = "text-align:center;"><webobject name = "Save"/><webobject name = "ResetButton"></webobject></div>
+		</div>
+		</webobject>
+	</webobject>
+
+</div>
+<webobject name = "HasSelection">
+<div style = "text-align:center;"><webobject name = "Save"/></div></webobject>
+</webobject>

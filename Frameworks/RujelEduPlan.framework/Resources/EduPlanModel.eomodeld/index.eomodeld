@@ -8,7 +8,8 @@
     entities = (
         {className = "net.rujel.eduplan.PlanCycle"; name = PlanCycle; }, 
         {className = "net.rujel.eduplan.Subject"; name = Subject; }, 
-        {className = EOGenericRecord; name = SubjectArea; }
+        {className = EOGenericRecord; name = SubjectArea; }, 
+        {className = "net.rujel.eduplan.SubjectGroup"; name = SubjectGroup; }
     ); 
-    userInfo = {framework = RujelEduPlan; schemaVersion = {number = 2; title = "1.1"; }; }; 
+    userInfo = {framework = RujelEduPlan; schemaVersion = {number = 3; title = "1.2"; }; }; 
 }

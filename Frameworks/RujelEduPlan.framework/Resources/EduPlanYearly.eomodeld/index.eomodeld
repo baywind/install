@@ -10,7 +10,7 @@
         {className = "net.rujel.eduplan.Holiday"; name = Holiday; }, 
         {className = EOGenericRecord; name = PeriodList; }, 
         {className = EOGenericRecord; name = PlanDetail; }, 
-        {className = EOGenericRecord; name = PlanHours; }
+        {className = "net.rujel.eduplan.PlanHours"; name = PlanHours; }
     ); 
-    userInfo = {framework = RujelEduPlan; schemaVersion = {number = 3; title = "0.9.5"; }; }; 
+    userInfo = {framework = RujelEduPlan; schemaVersion = {number = 4; title = "1.2"; }; }; 
 }

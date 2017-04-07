@@ -73,34 +73,14 @@ AreaNameField : WOTextField {
   value = areaName;
 }
 
-SubjectsRepetition : WORepetition {
-	list = subjectsList;
-	item = subjItem;
-}
-
-SubjectsTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.properties.subjects;
-  valueWhenEmpty = "Subjects";
-}
-
-SubjectNumField : WOTextField {
-  value = subjItem.num;
-  class = "subjNum";
-  numberformat = "0";
-}
-
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
-	onclick = "try{return enumAll();}catch(e){alert(e);}";
+	value = session.strings.Reusables_Strings.uiElements.Save;
+	onclick = "try{enumerate(form,'areaNum',1);}catch(e){alert(e);}";
 }
 ResetButton1: WOResetButton {
 	value = application.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
-}
-
-SubjectName : WOString {
-  value = subjItem.subject;
 }
 
 CurrUp : WOImage {
@@ -118,4 +98,30 @@ CurrDown : WOImage {
 	framework ="RujelBase";
 	onclick= "down(document.getElementById('currArea'));";
 	style = "cursor:pointer;";
+}
+
+SubjectGroupName : WOString {
+  value = application.strings.RujelEduPlan_EduPlan.properties.subjectGroup;
+  escapeHTML = false;
+  valueWhenEmpty = "SubjectGroup";
+}
+
+SubjGroupPopUp : WOPopUpButton {
+  list = subjectsList;
+  item = areaItem;
+  displayString = areaItem.paddedName;
+  selection = subjectGroup;
+  noSelectionString = "-=-";
+}
+
+DeleteLink : OnClickContainer {
+	elementName = "span";
+	invokeAction = delete;
+	onclick = session.tryLoad;
+	hide = cantDelete;
+	style = "text-decoration:underline;";
+}
+
+DeleteString : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Delete;
 }

@@ -2,15 +2,15 @@
     attributes = (
         {
             allowsNull = Y; 
-            columnName = "SPEC_CLASS"; 
-            name = classID; 
-            prototypeName = integer; 
-        }, 
-        {
-            allowsNull = N; 
             columnName = "CYCLE_ID"; 
             name = cycleID; 
             prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "GRADE_NUM"; 
+            name = grade; 
+            prototypeName = byte; 
         }, 
         {
             allowsNull = N; 
@@ -18,6 +18,18 @@
             name = phID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_SECTION"; 
+            name = sectionID; 
+            prototypeName = short; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = "EDU_PROGRAM"; 
+            name = subjectID; 
+            prototypeName = short; 
         }, 
         {
             allowsNull = N; 
@@ -33,21 +45,36 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }
     ); 
-    attributesUsedForLocking = (classID, cycleID, totalHours, weeklyHours); 
-    className = EOGenericRecord; 
-    classProperties = (planCycle, totalHours, weeklyHours); 
+    attributesUsedForLocking = (cycleID, grade, totalHours, weeklyHours); 
+    className = "net.rujel.eduplan.PlanHours"; 
+    classProperties = (eduSubject, grade, planCycle, section, totalHours, weeklyHours); 
     externalName = "PL_HOURS"; 
     fetchSpecificationDictionary = {}; 
     name = PlanHours; 
     primaryKeyAttributes = (phID); 
     relationships = (
         {
-            destination = PlanCycle; 
+            destination = Subject; 
             isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = subjectID; }); 
+            name = eduSubject; 
+        }, 
+        {
+            destination = PlanCycle; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = cID; sourceAttribute = cycleID; }); 
             name = planCycle; 
+        }, 
+        {
+            destination = SchoolSection; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = sectionID; }); 
+            name = section; 
         }
     ); 
 }

@@ -13,9 +13,9 @@ TotalToggle : Tabs {
   onClick = session.checkRun;
 }
 
-AreaTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.properties.area;
-  valueWhenEmpty = "Area";
+GroupTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.properties.subjectGroup;
+  valueWhenEmpty = "Subject Group";
 }
 
 SubjectName : WOString {
@@ -45,12 +45,15 @@ GroupsCell2 : WOGenericContainer {
   align = "center";
 }
 
-Area : WOString {
-  value = area.areaName;
+SubjPrefix : WOString {
+  value = subjectItem.subjectGroup.padding;
+  escapeHTML = false;
 }
-
+Area : WOString {
+  value = subjectItem.subjectGroup.name;
+}
 Subject : WOString {
-  value = subjectItem.subject;
+  value = subjectItem.Subject.subject;
 }
 
 Form : WOForm {
@@ -78,11 +81,11 @@ CycleHours : WOTextField {
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
+	value = session.strings.Reusables_Strings.uiElements.Save;
 }
 
 Cancel: WOResetButton {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	value = session.strings.Reusables_Strings.uiElements.Cancel;
 }
 CanEdit : WOConditional {
   condition = editable;
@@ -90,7 +93,7 @@ CanEdit : WOConditional {
 
 CntEdit : WOConditional {
   condition = editable;
-  negate = hasSection;
+  negate = true;
 }
 
 ReadHours : WOString {
@@ -105,55 +108,42 @@ PlusImage : WOImage {
 	style = "cursor:pointer;";
 }
 
-AddArea : WOGenericContainer {
-  elementName = "span";
+AddArea : OnClickContainer {
+  elementName = "th";
+  align = "left";
+  colspan = headerColspan;
   invokeAction = addArea;
-  onclick = session.ajaxPopup;
-  height = "20";
+  onclick = session.ajaxPopupNoPos;
+  class = "orange";
+  style = "font-style:italic;";
 }
 AddSuject : WOGenericContainer {
   elementName = "span";
-  invokeAction = addSubject;
-  onclick = session.ajaxPopup;
+  invokeAction = showUnusedSubjects;
+  onclick = session.ajaxPopupNoPos;
 }
 
 SubjectCell : OnClickContainer {
   elementName = "td";
   onclick = session.ajaxPopup;
   invokeAction = editSubject;
-  disabled = cantEditSubject;
   style = cellStyle;
-  title = subjectItem.subjectEO.fullName;
+  title = subjectItem.Subject.fullName;
 }
-AreaCell : OnClickContainer {
+AreaCell : WOGenericContainer {
   elementName = "td";
-  class = areaClass;
-  onclick = session.ajaxPopup;
-  invokeAction = editArea;
-  disabled = cantEditArea;
+  class = "highlight dimtext";
+  omitTags = subjectItem.noGroup;
+  rowspan = subjectItem.rowspan;
+  style = "font-size:small;text-align:left;";
+  title = subjectItem.subjectGroup.fullName;
 }
 CanAddArea : WOConditional {
-  condition = canAddArea;
+  condition = globalAccess.create.SubjectArea;
 }
 
 CanAddSubject : WOConditional {
-  condition = canAddSubject;
-}
-
-ShowRow : WOConditional {
-  condition = showRow;
-}
-
-TogleAllButton : OnClickContainer {
-  elementName = "td";
-  invokeAction = toggleAll;
-  class = "orange";
-  colspan = colspan;
-  onclick = session.checkRun;
-}
-
-ToggleAll : WOString {
-  value = toggleAllTitle;
+  condition = access.create.Subject;
 }
 
 GroupsTitle : WOString {
@@ -168,9 +158,9 @@ GroupsCell : WOGenericContainer {
 }
 
 GroupsField : WOTextField {
-  value = subjectItem.subjectEO.subgroupsPresent;
+  value = subjectItem.Subject.subgroupsPresent;
   numberformat = "0";
-  disabled = cantSetupSections;
+  disabled = globalAccess._edit.subjectItem.Subject;
   style = "width:2em;";
   onchange = "checkChanges(this);";
   onkeypress = "return isNumberInput(event,false);";
@@ -220,19 +210,8 @@ SectionTitle : WOString {
   value = item.name;
 }
 
-ShowAll : WOConditional {
-  condition = hasSection;
-  negate = true;
-}
-
 HasSection : WOConditional {
   condition = hasSection;
-}
-
-CycleLevel : WOTextField {
-  value = cycleLevel;
-  numberformat = "0";
-  style = "display:none;";
 }
 
 CanSave : WOConditional {
@@ -249,12 +228,7 @@ SetupSections : OnClickContainer {
   style = "font-size:120%;text-align:center;";
   invokeAction = setupSections;
   onclick = session.ajaxPopupNoPos;
-  disabled = cantSetupSections;
-}
-
-AllTitle : WOString {
-  value = session.strings.RujelEduPlan_EduPlan.sections.showAll;
-  escapeHTML = false;
+  disabled = globalAccess._edit;
 }
 
 SumValue : WOString {
@@ -266,4 +240,77 @@ SummaryTitle : WOString {
   value = application.strings.RujelEduPlan_EduPlan.properties.summary;
   escapeHTML = false;
   valueWhenEmpty = "Total hours";
+}
+
+HasExt : WOConditional {
+  condition = subjectItem.Subject.extName;
+}
+
+SubjectExt : WOString {
+  value = subjectItem.Subject.extName;
+}
+
+IsSubjectRow : WOConditional {
+  condition = subjectItem.noData;
+  negate = true;
+}
+
+IsHeaderRow : WOConditional {
+  condition = subjectItem.noData;
+}
+
+SubjectArea : WOString {
+  value = subjectItem.area.areaName;
+  align = "left";
+}
+
+EditArea : OnClickContainer {
+  elementName = "a";
+  name = subjectItem.anchor;
+  invokeAction = editArea;
+  onclick = session.ajaxPopupNoPos;
+  disabled = globalAccess._edit.SubjectArea;
+}
+
+IsArea : WOConditional {
+  condition = subjectItem.area;
+}
+
+AddTitle : WOString {
+  value = session.strings.Reusables_Strings.uiElements.Add;
+}
+
+AreaTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.properties.area;
+}
+
+EmptyDetails : WOGenericContainer {
+  elementName = "td";
+  style = "border-left:3px double #666666;";
+  omitTags = noDetails;
+}
+
+HeaderRow : WOGenericContainer {
+  elementName = "th";
+  colspan = headerColspan;
+  align = "left";
+  valign = "middle";
+}
+
+GradeCell : WOGenericContainer {
+  elementName = "th";
+  style="width:2em;";
+  title=gradeHover;
+}
+
+ShowAll : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.sections.showAll;
+  escapeHTML = false;
+}
+
+ReviewSubjectGroups : OnClickContainer {
+  elementName = "th";
+  style="padding: 2px 1ex;";
+  invokeAction = subjectGroups;
+  onclick = session.checkRun;
 }

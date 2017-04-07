@@ -18,13 +18,13 @@ Student : PersonDisplay {
 }
 
 YearCell : WOGenericContainer {
-  elementName = "th";
-  colspan = item.colspan;
+  elementName = "td";
+  colspan = item.itogs.count;
   style = "border-left:double 3px;";
 }
 
 YearTitle : WOString {
-  value = item.text;
+  value = item.presentYear;
   escapeHTML = false;
 }
 
@@ -39,12 +39,12 @@ TitleCell : WOGenericContainer {
 }
 
 PeriodList: WORepetition {
-	item = itog;
+	item = item;
 	list = containers;
 }
 
 PeriodTitle: WOString {
-	value = itog.titleHTML;
+	value = item.itog.titleHTML;
 	escapeHTML = false;
 }
 
@@ -72,4 +72,17 @@ SubjectName : WOString {
 GroupName : WOString {
   value = course.eduGroup.name;
   escapeHTML = false;
+}
+
+YearGrade : WOString {
+  value = item.grade;
+  escapeHTML = false;
+}
+YearSubject : WOString {
+  value = item.subject;
+  escapeHTML = false;
+}
+SubjectVaries : WOConditional {
+  condition = subject;
+  negate = true;
 }

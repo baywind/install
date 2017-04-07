@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+        <wo class="SubjectGroupLine.java" wocomponentcontent="false">
+
+        <binding name="subjectGroup"/>
+        <binding name="selection"/>
+    <validation message="'subjectGroup' is a required binding.">
+            <unbound name="subjectGroup"/>
+        </validation>
+        <validation message="'selection' must be bound to a settable value">
+            <unsettable name="selection"/>
+        </validation>
+    <binding defaults="Boolean" name="cantEdit"/>
+    <binding name="parent"/>
+        <validation message="'parent' must be bound to a settable value">
+            <unsettable name="parent"/>
+        </validation>
+    </wo>
+</wodefinitions>

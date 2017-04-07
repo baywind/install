@@ -41,6 +41,13 @@ SubjectsListing : DynamicTableRow {
 SubjectString : WOString {
   value = item.subject;
 }
+HasExt : WOConditional {
+  condition = item.extName;
+}
+
+SubjectExt : WOString {
+  value = item.extName;
+}
 
 CyclesRepetition : WORepetition {
   list = cycles;

@@ -1,0 +1,102 @@
+Form : WOForm {
+  class = "backfield2";
+  style = "text-align:left;padding:1em;";
+}
+
+Groups : WORepetition {
+  list = topGroups;
+  item = item;
+}
+
+GroupLine : SubjectGroupLine {
+  subjectGroup = item;
+  selection = selection;
+  cantEdit = access._edit.SubjectGroup;
+  parent = selectionParent;
+}
+
+Save : WOSubmitButton {
+	action = save;
+	value = session.strings.Reusables_Strings.uiElements.Save;
+	onclick = "try{enumerate(form,'grNum',1);}catch(e){alert(e);}";
+}
+
+HasSelection : WOConditional {
+  condition = selection;
+}
+
+ParentTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.properties.moveToGroup;
+}
+
+ParentPopup : WOPopUpButton {
+  list = allGroups;
+  item = item;
+  displayString = item.paddedName;
+  selection = newDict.parent;
+  noSelectionString = "=основная группа=";
+}
+
+NameField : WOTextField {
+  value = newDict.name;
+  size = 28;
+  title = session.strings.RujelEduPlan_EduPlan.properties.name;
+  class = "titled";
+}
+
+FullNameField : WOText {
+  value = newDict.fullName;
+  cols = 28;
+  rows = 2;
+  title = session.strings.RujelEduPlan_EduPlan.properties.fullName;
+  class = "titled";
+}
+CreateLine : OnClickContainer {
+  elementName = "div";
+  style = "border:1px solid #aaaaaa;padding: 6pt;margin: 2pt;font-style:italic;";
+  class = "green";
+  onclick = "showObj('newSGroup');hideObj(this);";
+  id = "addLine";
+}
+
+CanCreate : WOConditional {
+  condition = access.create.SubjectGroup;
+}
+
+ResetButton : OnClickContainer {
+  elementName = "input";
+  type = "reset";
+  value = session.strings.Reusables_Strings.uiElements.Cancel;
+  onclick = "showObj('addLine');hideObj('newSGroup');";
+}
+
+NoSelection : WOConditional {
+  condition = selection;
+  negate = true;
+}
+
+ShowArrows : WOConditional {
+  condition = showSorter;
+}
+
+CurrUp : WOImage {
+	filename = "up.png";
+	framework ="RujelBase";
+	onclick="up(document.getElementById('selectedSGroup').parentNode);";
+	style = "cursor:pointer;";
+}
+
+CurrDown : WOImage {
+	filename = "down.png";
+	framework ="RujelBase";
+	onclick= "down(document.getElementById('selectedSGroup').parentNode);";
+	style = "cursor:pointer;";
+}
+
+AddSubjectGroup : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.properties.addSubjectGroup;
+}
+
+SubjectGroupsTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.properties.subjectGroupsTitle;
+}

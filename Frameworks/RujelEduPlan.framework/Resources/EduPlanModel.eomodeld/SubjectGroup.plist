@@ -1,0 +1,43 @@
+{
+    attributes = (
+        {columnName = "FULL_NAME"; name = fullName; prototypeName = string; }, 
+        {
+            allowsNull = N; 
+            columnName = "SHORT_NAME"; 
+            name = name; 
+            prototypeName = word; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SUPER_ID"; 
+            name = parentID; 
+            prototypeName = short; 
+        }, 
+        {allowsNull = N; columnName = "S_ID"; name = sID; prototypeName = short; }, 
+        {allowsNull = N; columnName = "SORT_NUM"; name = sort; prototypeName = short; }
+    ); 
+    attributesUsedForLocking = (fullName, name, sort); 
+    className = "net.rujel.eduplan.SubjectGroup"; 
+    classProperties = (children, fullName, name, parent, sort); 
+    externalName = "PL_SUBJECT_GROUP"; 
+    fetchSpecificationDictionary = {}; 
+    name = SubjectGroup; 
+    primaryKeyAttributes = (sID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = SubjectGroup; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = parentID; sourceAttribute = sID; }); 
+            name = children; 
+        }, 
+        {
+            destination = SubjectGroup; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = sID; sourceAttribute = parentID; }); 
+            name = parent; 
+        }
+    ); 
+}
