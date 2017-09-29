@@ -451,6 +451,37 @@
 					<integer>5</integer>
 				</dict>
 			</dict>
+			<dict>
+				<key>sort</key>
+				<string>80</string>
+				<key>settingBase</key>
+				<string>worksLevel</string>
+				<key>grouping</key>
+				<string>Работы и оценки</string>
+				<key>checkAccess</key>
+				<string>Work</string>
+				<key>title</key>
+				<string>Фильтр работ по-умолчанию</string>
+				<key>description</key>
+				<string>Значение по-умолчанию фильтра на закладке "Работы"</string>
+				<key>settingTitle</key>
+				<string>текст</string>
+				<key>textValue</key>
+				<dict>
+					<key>attribute</key>
+					<string>textValue</string>
+					<key>select</key>
+					<array>
+						<string>все</string>
+						<string>оцениваемые</string>
+						<string>кроме домашних</string>
+						<string>с оценками</string>
+						<string>значимые</string>
+					</array>
+					<key>defaultValue</key>
+					<string>кроме домашних</string>
+				</dict>
+			</dict>
 		</array>
 	</dict>
 	<key>messages</key>

@@ -145,6 +145,8 @@
 		<string>15</string>
 		<key>teacher</key>
 		<string>15</string>
+		<key>tutor</key>
+		<string>15</string>
 	</dict>
 	<key>PrimitiveEduCycle</key>
 	<dict>

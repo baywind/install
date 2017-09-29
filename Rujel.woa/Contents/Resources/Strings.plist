@@ -328,8 +328,6 @@
 			<dict>
 				<key>attribute</key>
 				<string>numericValue</string>
-				<key>defaultValue</key>
-				<true/>
 				<key>boolean</key>
 				<string>number</string>
 			</dict>
@@ -337,6 +335,54 @@
 		<dict>
 			<key>sort</key>
 			<string>41</string>
+			<key>settingBase</key>
+			<string>reportTitle</string>
+			<key>grouping</key>
+			<string>Курсы</string>
+			<key>checkAccess</key>
+			<string>ReporterSetup</string>
+			<key>title</key>
+			<string>Форма для рассылки</string>
+			<key>description</key>
+			<string>Выбор формы и настройки для автоматической рассылки.</string>
+			<key>instructions</key>
+			<string>Формы рассылки настраиваются в режиме "Контроль успеваемости". Настройка действует по классам. Не пытайтесь настраивать отдельные предметы.</string>
+			<key>settingTitle</key>
+			<string>Используемая форма</string>
+			<key>textValue</key>
+			<dict>
+				<key>attribute</key>
+				<string>textValue</string>
+				<key>select</key>
+				<dict>
+					<key>className</key>
+					<string>net.rujel.reports.StudentReports</string>
+					<key>methodName</key>
+					<string>getPresets</string>
+					<key>cacheResult</key>
+					<true/>
+					<key>paramClasses</key>
+					<array>
+						<string>boolean</string>
+						<string>com.webobjects.appserver.WOSession</string>
+					</array>
+					<key>paramValues</key>
+					<array>
+						<true/>
+						<string>$session</string>
+					</array>
+				</dict>
+				<key>idAttribute</key>
+				<string>filename</string>
+				<key>displayString</key>
+				<string>.title</string>
+				<key>noSelectionString</key>
+				<string>Стандартная</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>sort</key>
+			<string>43</string>
 			<key>settingBase</key>
 			<string>coursesDone</string>
 			<key>grouping</key>
