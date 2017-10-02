@@ -105,6 +105,8 @@
 		<string>Пожалуйста, укажите адрес электронной почты, на который следует отправить отметки</string>
 		<key>wrongCode</key>
 		<string>Неверный код учащегося</string>
+		<key>badStudent</key>
+		<string>Не удалось найти информацию по данному коду учащегося</string>
 		<key>illegalMail</key>
 		<string>Указаный адрес не зарегистрирован для данного учащегося</string>
 		<key>initiated</key>
