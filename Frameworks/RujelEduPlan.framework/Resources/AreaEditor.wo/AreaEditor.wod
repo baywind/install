@@ -79,7 +79,7 @@ Save: WOSubmitButton {
 	onclick = "try{enumerate(form,'areaNum',1);}catch(e){alert(e);}";
 }
 ResetButton1: WOResetButton {
-	value = application.strings.Reusables_Strings.uiElements.Cancel;
+	value = session.strings.Reusables_Strings.uiElements.Cancel;
 	onclick = "closePopup();";
 }
 
@@ -101,7 +101,7 @@ CurrDown : WOImage {
 }
 
 SubjectGroupName : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.properties.subjectGroup;
+  value = session.strings.RujelEduPlan_EduPlan.properties.subjectGroup;
   escapeHTML = false;
   valueWhenEmpty = "SubjectGroup";
 }
