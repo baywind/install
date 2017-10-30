@@ -1,58 +1,29 @@
 <webobject name = "Form">
 <table><thead>
-<tr><th><webobject name = "ShortTitle"/></th>
-	<th><webobject name = "FullTitle"/></th>
-	<th style = "width:5em;"><webobject name = "BeginTitle"/></th>
-	<th style = "width:5em;"><webobject name = "EndTitle"/></th>
+<tr>
+<td colspan = "3"><strong><webobject name = "TypeTitle"/>:</strong>
+	<webobject name = "TypeSelector"/></td>
+</tr>
+</thead><webobject name = "HasType">
+<tbody><tr>
+	<th colspan = "2" align = "left"><webobject name = "BeginTitle"/></th>
 	<th><webobject name = "WeeksTitle"/></th>
-</tr></thead>
-<tbody style = "text-align:center;"><webobject name = "Periods"><webobject name = "NotCurrent">
-<webobject name = "Row"><td><webobject name = "Short"/></td>
-	<td><webobject name = "FullName"/></td>
-	<td><webobject name = "Begin"/></td>
-	<td><webobject name = "End"/></td>
+</tr><webobject name = "Periods">
+<tr><td><webobject name = "BeginField"/></td>
+	<td><webobject name = "Name"/></td>
 	<td style = "color:#666666;"><webobject name = "Weeks"/></td>
-</webobject></webobject>
-<webobject name = "IsCurent"><tr class = "green">
-	<td><webobject name = "ShortField"/></td>
-	<td><webobject name = "NameField"/></td>
-	<td><webobject name = "BeginField"/></td>
-	<td><webobject name = "EndField"/>
-<script type="text/javascript" charset="utf-8">
-	new Kalendae.Input('currPeriodBegin', {
-		side:'bottom',
-		offsetLeft:-90,
-		offsetTop:4
-	});
-	new Kalendae.Input('currPeriodEnd', {
-		side:'bottom',
-		offsetTop:4
-	});
+</tr></webobject>
+</tbody>
+<tfoot>
+<tr><th align = "left" colspan = "2" style = "white-space:nowrap;"><webobject name = "EndOfYear"/>:
+	<webobject name = "EndField"/></th>
+	<th style = "color:#666666;"><webobject name = "Weeks"/></th>
+</tr>
+<tr>
+	<td colspan = "3" align = "center"><webobject name = "Save"/></td>
+</tr></tfoot></webobject>
+</table></webobject><webobject name = "HasChanges">
+<script type = "text/javascript">
+	hasChanges=true;
 </script>
-	</td>
-	<td><webobject name = "Save"/><webobject name = "CanDelete">
-	<webobject name = "DeleteSpan"><webobject name = "Cross"/></webobject></webobject></td>
-</tr></webobject></webobject></tbody>
-<tfoot><webobject name = "CanCreate"><tr class = "grey">
-	<td><webobject name = "ShortField"/></td>
-	<td><webobject name = "NameField"/></td>
-	<td><webobject name = "BeginField"/></td>
-	<td><webobject name = "EndField"/>
-<script type="text/javascript" charset="utf-8">
-	new Kalendae.Input('currPeriodBegin', {
-		side:'bottom',
-		offsetLeft:-90,
-		offsetTop:4
-	});
-	new Kalendae.Input('currPeriodEnd', {
-		side:'bottom',
-		offsetTop:4
-	});
-</script>
-	</td>
-	<td><webobject name = "Save"/></td>
-</tr></webobject><tr>
-	<th colspan = "4" align = "right"><webobject name = "TotalTitle"/>:</th>
-	<td style = "color:#666666;text-align:center;"><webobject name = "Weeks"/></td>
-</tr></tfoot>
-</table></webobject>
+</webobject>

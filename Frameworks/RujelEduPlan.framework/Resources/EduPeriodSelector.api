@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
-    <wo class="PeriodSelector" wocomponentcontent="false">    <binding name="list"/>
+    <wo class="PeriodSelector" wocomponentcontent="false">    
         <binding name="listName"/>
         <binding name="ec"/>
         <validation message="'ec' is a required binding.">
             <unbound name="ec"/>
         </validation>
-        <binding name="currPeriod"/>
-        <binding name="selected"/>
-        <validation message="'selected' must be bound to a settable value">
-            <unsettable name="selected"/>
-        </validation>
-        <validation message="'currPeriod' must be bound to a settable value">
-            <unsettable name="currPeriod"/>
-        </validation>
-    <binding defaults="Actions" name="selectAction"/>
+        
+        
+        
+        
+    
     </wo>
 </wodefinitions>

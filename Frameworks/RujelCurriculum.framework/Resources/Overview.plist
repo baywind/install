@@ -74,6 +74,8 @@
 						<string>.to</string>
 						<key>selectAction</key>
 						<string>$search</string>
+						<key>showFor</key>
+						<string>$activeSection</string>
 					</dict>
 				</dict>
 			</array>
@@ -186,6 +188,8 @@
 						<string>.to</string>
 						<key>selectAction</key>
 						<string>$search</string>
+						<key>showFor</key>
+						<string>$activeSection</string>
 					</dict>
 				</dict>
 			</array>
@@ -393,6 +397,8 @@
 						<string>.to</string>
 						<key>selectAction</key>
 						<string>$search</string>
+						<key>showFor</key>
+						<string>$activeSection</string>
 					</dict>
 				</dict>
 			</array>

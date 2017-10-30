@@ -106,6 +106,8 @@ PeriodSelector: PeriodSelector {
 	period = period;
 	selectAction = updateLessonLists;
 	allowNone = true;
+	ec = ec;
+	showFor = currClass;
 }
 
 PersonSelector1: PersonSelector {

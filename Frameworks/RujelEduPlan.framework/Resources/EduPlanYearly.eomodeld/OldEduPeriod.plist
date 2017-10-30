@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {columnName = "DATE_BEGIN"; name = begin; prototypeName = date; }, 
+        {columnName = "EDU_YEAR"; name = eduYear; prototypeName = short; }, 
+        {columnName = "DATE_END"; name = end; prototypeName = date; }, 
+        {columnName = "FULL_NAME"; name = fullName; prototypeName = word; }, 
+        {
+            allowsNull = Y; 
+            columnName = "ITOG_ID"; 
+            name = itogID; 
+            prototypeName = short; 
+        }, 
+        {columnName = "P_ID"; name = pID; prototypeName = short; }, 
+        {
+            allowsNull = N; 
+            columnName = "SHORT_TITLE"; 
+            name = title; 
+            prototypeName = anagram; 
+            valueType = i; 
+            width = 9; 
+        }
+    ); 
+    attributesUsedForLocking = (begin, end, eduYear, fullName, title, itogID); 
+    className = EOGenericRecord; 
+    classProperties = (begin, eduYear, end, fullName, title); 
+    externalName = "PL_EDU_PERIOD"; 
+    fetchSpecificationDictionary = {}; 
+    name = OldEduPeriod; 
+    primaryKeyAttributes = (pID); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PeriodList; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = periodID; sourceAttribute = pID; }); 
+            name = periodLists; 
+            ownsDestination = Y; 
+        }
+    ); 
+}

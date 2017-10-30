@@ -8,8 +8,14 @@
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
         }, 
         {
+            allowsNull = Y; 
+            columnName = "NEW_PERIOD"; 
+            name = npID; 
+            prototypeName = short; 
+        }, 
+        {
             allowsNull = N; 
-            columnName = EDU_PERIOD; 
+            columnName = "EDU_PERIOD"; 
             name = periodID; 
             prototypeName = short; 
             userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
@@ -24,7 +30,7 @@
     ); 
     attributesUsedForLocking = (listName, periodID); 
     className = EOGenericRecord; 
-    classProperties = (listName, period); 
+    classProperties = (listName, newPeriod, oldPeriod); 
     externalName = "PL_PERIOD_LIST"; 
     fetchSpecificationDictionary = {}; 
     name = PeriodList; 
@@ -32,11 +38,18 @@
     relationships = (
         {
             destination = EduPeriod; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = pID; sourceAttribute = npID; }); 
+            name = newPeriod; 
+        }, 
+        {
+            destination = OldEduPeriod; 
             isMandatory = Y; 
             isToMany = N; 
             joinSemantic = EOInnerJoin; 
             joins = ({destinationAttribute = pID; sourceAttribute = periodID; }); 
-            name = period; 
+            name = oldPeriod; 
         }
     ); 
 }

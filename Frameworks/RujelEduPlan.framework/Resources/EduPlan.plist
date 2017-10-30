@@ -4,12 +4,16 @@
 <dict>
 	<key>EduPeriod</key>
 	<dict>
+		<key>type</key>
+		<string>Тип</string>
 		<key>begin</key>
-		<string>Начало</string>
+		<string>Начало периода</string>
 		<key>eduYear</key>
 		<string>Учебный год</string>
 		<key>end</key>
 		<string>Конец</string>
+		<key>endOfYear</key>
+		<string>Конец года</string>
 		<key>fullName</key>
 		<string>Полное название</string>
 		<key>this</key>
@@ -59,6 +63,8 @@
 		<string>всего</string>
 		<key>week</key>
 		<string>цикл</string>
+		<key>chooseType</key>
+		<string>-= Выберите тип =-</string>
 		<key>delete</key>
 		<string>Удалить активный график</string>
 		<key>createPrompt</key>
@@ -88,10 +94,6 @@
 		<string>Не описано ни одного учебного периода.&lt;br/&gt; Детализация невозможна.</string>
 		<key>periodsIntersect</key>
 		<string>Периоды в списке пересекаются</string>
-		<key>titleRequired</key>
-		<string>Необходимо указать краткое название периода</string>
-		<key>titleTooLong</key>
-		<string>Слишком длинное краткое название периода.&lt;br/&gt; Можно использовать не более двух слов длиной не более 4 букв каждое.</string>
 	</dict>
 	<key>planRegime</key>
 	<dict>

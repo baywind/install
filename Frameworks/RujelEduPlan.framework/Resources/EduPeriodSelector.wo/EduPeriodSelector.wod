@@ -1,141 +1,83 @@
-ShortTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.title;
-  escapeHTML = false;
-}
-
-FullTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.fullName;
-  escapeHTML = false;
-}
-
 BeginTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.begin;
+  value = session.strings.RujelEduPlan_EduPlan.EduPeriod.begin;
   escapeHTML = false;
 }
 
-EndTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.end;
-  escapeHTML = false;
-}
 
 WeeksTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
+  value = session.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
   escapeHTML = false;
-}
-
-
-Row : OnClickContainer {
-  elementName = "tr";
-  onclick = session.checkRun;
-  invokeAction = select;
-  disabled = cantSelect;
-  class = "ungerade";
 }
 
 Periods : WORepetition {
   list = list;
-  item = perItem;
+  item = item;
 }
 
-NotCurrent : WOConditional {
-  condition = isCurrent;
-  negate = true;
-}
-
-Short : WOString {
-  value = perItem.title;
-}
-
-FullName : WOString {
-  value = perItem.fullName;
-}
-
-Begin : WOString {
-  value = perItem.begin;
-  dateformat = application.prefs.ui.dateFormat;
-}
-
-End : WOString {
-  value = perItem.end;
-  dateformat = application.prefs.ui.dateFormat;
+Name : WOString {
+  value = item.relatedItog.name;
 }
 
 Weeks : WOString {
-  value = weeksDays;
-}
-
-IsCurent : WOConditional {
-  condition = isCurrent;
-}
-
-ShortField : WOTextField {
-  value = title;
-  size = 6;
-  maxlength = 9;
-  name = "shortName";
-}
-
-NameField : WOTextField {
-  value = fullName;
-  size = 16;
-  maxlength = 28;
-  name = "fullName";
-  onfocus = "if(!value){value=form.shortName.value;select();}";
+  value = item.weekDays;
+  valueWhenEmpty = totalDays;
 }
 
 BeginField : WOTextField {
-	value = begin;
+	value = item.begin;
 	dateformat = application.prefs.ui.dateFormat;
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	class = "date";
-	name = "begin";
-	id = "currPeriodBegin";
+	class = "date required auto-kal";
+	onchange="checkChanges(this);";
+	data-kal= "side:'left'";
 }
 
 EndField : WOTextField {
-	value = end;
+	value = lastDay;
 	dateformat = application.prefs.ui.dateFormat;
 	size = 10;
 	maxlength = 10;
 	style = "text-align:center;";
-	class = "date";
+	class = "date required auto-kal";
 	name = "end";
-	onfocus = "if(!value)value=form.begin.value;";
-	id = "currPeriodEnd";
+	id = "yearEnd";
+	data-kal= "side:'left'";
+	onchange="checkChanges(this);";	
 }
 
 Save: WOSubmitButton {
 	action = save;
-	value = application.strings.Reusables_Strings.uiElements.Save;
-}
-
-CanCreate: WOConditional {
-	condition = canCreate;
+	value = session.strings.Reusables_Strings.uiElements.Save;
 }
 
 Form : WOForm {
+  multipleSubmit = true;
+  action = generateList;
 }
 
-CanDelete : WOConditional {
-  condition = "";
+TypeTitle : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.EduPeriod.type;
 }
 
-DeleteSpan : OnClickContainer {
-  elementName = "span";
-  invokeAction = delete;
-  onclick = confirmDelete;
+TypeSelector : WOPopUpButton {
+  list = types;
+  selection = type;
+  item = item;
+  displayString = item.name;
+  onchange = "if(tryLoad())form.submit();";
+  noSelectionString = noType;
 }
 
-Cross : WOImage {
-  framework = "RujelBase";
-  filename = "cross.png";
-  height = 12;
-  width = 12;
+EndOfYear : WOString {
+  value = session.strings.RujelEduPlan_EduPlan.EduPeriod.endOfYear;
 }
 
-TotalTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.total;
-  escapeHTML = false;
+HasType : WOConditional {
+  condition = type;
+}
+
+HasChanges : WOConditional {
+  condition = hasChanges;
 }

@@ -5,7 +5,6 @@ BasicTitle : WOString {
 
 PeriodSelector : EduPeriodSelector {
   ec = ec;
-  currPeriod = currPeriod;
   listName = listName;
 }
 
@@ -23,7 +22,6 @@ ListSettings : ListSettings {
   extraLists = extraLists;
   checkAccess = "PeriodList";
   listAccess = access;
-  currNum = weekDays;
 }
 
 NoDetails: WOConditional {
@@ -44,103 +42,5 @@ ShowDetailsContainer : OnClickContainer {
 
 ShowDetailsTitle : WOString {
   value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.showDetails;
-  escapeHTML = false;
-}
-
-PeriodsList : WORepetition {
-  list = perList;
-  item = item;
-}
-
-PerName: WOString {
-  value = item.period.name;
-}
-
-Begin : WOString {
-  value = item.period.begin;
-  dateformat = application.prefs.ui.shortDateFormat;
-}
-
-End : WOString {
-  value = item.period.end;
-  dateformat = application.prefs.ui.shortDateFormat;
-}
-
-Weeks : WOString {
-  value = weeksDays;
-}
-
-TotalTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.total;
-  escapeHTML = false;
-}
-
-AddPeriod : OnClickContainer {
-  elementName = "td";
-  onclick = session.ajaxPopup;
-  invokeAction = addPeriodToList;
-  class = "green";
-  style = "padding:0px 4px;font-weight:bold;border:double 3px #33cc33;color:#33cc33;";
-  hide = access._create;
-}
-
-PeriodCell : OnClickContainer {
-  elementName = "td";
-  invokeAction = editPeriod;
-  onclick = session.ajaxPopup;
-  disabled = access._edit;
-  parent = "tr";
-}
-
-DeleteCell : OnClickContainer {
-  elementName = "td";
-  invokeAction = deletePeriod;
-  disabled = access._delete;
-  onclick = session.tryLoad;
-  hide = access._create;
-}
-
-Cross : WOImage {
-  framework = "RujelBase";
-  filename = "cross.png";
-  height = 12;
-  width = 12;
-}
-PeriodsTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.choosePeriod.title;
-  escapeHTML = false;
-}
-
-WeeksTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.EduPeriod.weeksDays;
-  escapeHTML = false;
-}
-
-EmptyCell : WOGenericElement {
-  elementName = "td";
-  omitTags = access._create;
-}
-
-WeekDaysForm : WOForm {
-  action = saveWeekDays;
-  style = "white-space:nowrap;";
-}
-
-WeekDaysField : WOTextField {
-  value = weekDays;
-  size = 2;
-  maxlength = 3;
-  numberformat = "0";
-  style = "text-align:center;";
-  disabled = access._edit;
-  onkeypress = "return isNumberInput(event,false);";
-}
-
-WeekTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.week;
-  escapeHTML = false;
-}
-DaysTitle : WOString {
-  value = application.strings.RujelEduPlan_EduPlan.SetupPeriods.days;
   escapeHTML = false;
 }

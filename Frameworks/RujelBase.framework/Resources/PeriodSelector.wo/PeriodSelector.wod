@@ -26,6 +26,7 @@ PeriodsPopUp: WOPopUpButton {
 	noSelectionString = application.strings.Reusables_Strings.dataTypes.period;
 	selection = period;
 	name = "periods";
+	onchange="form.submit();";
 }
 
 SinceField: WOTextField {

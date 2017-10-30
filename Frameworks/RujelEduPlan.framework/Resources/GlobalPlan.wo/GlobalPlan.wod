@@ -178,6 +178,7 @@ OpenDetails : OnClickContainer {
   invokeAction = details;
   style = "border-left:3px double #666666;color:#666666;";
   title = session.strings.RujelEduPlan_EduPlan.PlanDetails;
+  class = subjectItem.detailsStyle;
 }
 
 Colspan : WOGenericContainer {
