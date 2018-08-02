@@ -1,4 +1,4 @@
--- Schema updates for EduPlanModel model --
+-- Schema updates for EduPlanModel model for mysql --
 
 -- v1 (0.9) --
 
@@ -25,3 +25,108 @@ ALTER TABLE PL_CYCLE
 
 INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
   VALUES ('EduPlanModel',2,'1.1');
+
+-- v3 (1.2) --
+
+ALTER TABLE PL_SUBJECT
+  ADD COLUMN EXT_NAME varchar(28),
+  ADD COLUMN EDU_SECTION smallint,
+  ADD COLUMN SUBJECT_GROUP smallint NOT NULL DEFAULT 0;
+
+update PL_SUBJECT
+ set EDU_SECTION = (
+  select CASE 
+    WHEN count(*) = 0 THEN -99 
+    WHEN max(EDU_SECTION) = min(EDU_SECTION) THEN max(EDU_SECTION)
+    ELSE NULL END 
+  from PL_CYCLE where SUBJECT_ID = S_ID);
+
+delete from PL_SUBJECT where EDU_SECTION = -99;
+
+update PL_SUBJECT
+  set EXT_NAME = SUBSTRING(SHORT_NAME from position('(' in SHORT_NAME) +1 
+    for (position(')' in SHORT_NAME) - position('(' in SHORT_NAME) -1)),
+  SHORT_NAME = TRIM(both from SUBSTRING(SHORT_NAME FROM 1 for position('(' in SHORT_NAME) -1))
+  where SHORT_NAME like '%(%)%';
+
+CREATE TABLE PL_SUBJECT_GROUP (
+  S_ID smallint NOT NULL,
+  SUPER_ID smallint,
+  SHORT_NAME varchar(28) NOT NULL,
+  FULL_NAME varchar(255),
+  SORT_NUM smallint NOT NULL,
+  PRIMARY KEY (S_ID)
+) ENGINE=InnoDB;
+
+INSERT INTO PL_SUBJECT_GROUP
+ (S_ID,SUPER_ID,SHORT_NAME,FULL_NAME,SORT_NUM) VALUES 
+ (0,NULL,'Прочее','Предметы, не вошедшие в классификацию',999),
+ (1,NULL,'Филология',NULL,1),
+ (2,1,'Русский язык',NULL,1),
+ (3,1,'Родной язык',NULL,2),
+ (4,1,'Литература',NULL,3),
+ (5,1,'Родная Литература',NULL,4),
+ (6,NULL,'Иностранный язык',NULL,2),
+ (46,6,'Английский язык',NULL,1),
+ (7,6,'Второй ин. язык','Второй иностранный язык',2),
+ (8,NULL,'Общественные науки',NULL,3),
+ (32,8,'История',NULL,1),
+ (9,32,'История России',NULL,1),
+ (10,32,'Всеобщая история',NULL,2),
+ (11,8,'Обществознание',NULL,2),
+ (12,8,'География',NULL,3),
+ (33,8,'Экономика',NULL,4),
+ (34,8,'Право',NULL,5),
+ (35,8,'Россия в мире',NULL,6),
+ (13,NULL,'Математика и информатика',NULL,4), 
+ (14,13,'Математика',NULL,1),
+ (15,13,'Алгебра','Алгебра и начала анализа',2),
+ (16,13,'Геометрия',NULL,3),
+ (17,13,'Информатика','Информационные технологии',4),
+ (18,NULL,'Основы РК и СЭ','Основы духовно-нравственной культуры народов России',5),
+ (19,18,'Основы СЭ','Основы светской этики',1),
+ (20,18,'Основы ПК','Основы православной культуры',2),
+ (21,18,'Основы МРК','Основы мировых религиозных культур',3),
+ (22,NULL,'Естествознание','Естественные науки',6),
+ (23,22,'Физика',NULL,1),
+ (24,22,'Биология',NULL,2),
+ (25,22,'Химия',NULL,3),
+ (36,22,'Природоведение',NULL,4),
+ (26,NULL,'Искусство',NULL,7),
+ (27,26,'ИЗО','Изобразительное искусство',1),
+ (28,26,'Музыка',NULL,2),
+ (45,NULL,'Технология',NULL,8),
+ (29,NULL,'Физкультура и ОБЖ','Физическая культура и Основы безопасности жизнедеятельности',9),
+ (30,29,'Физкультура','Физическая культура',1),
+ (37,29,'Экология',NULL,2), 
+ (31,29,'ОБЖ','Основы безопасности жизнедеятельности',3),
+ (38,NULL,'Дополнительное образование',NULL,10),
+ (39,38,'Художественное','Художественная направленность',1),
+ (40,38,'Физкультурно-спортивное','Физкультурно-спортивная направленность',2),
+ (41,38,'Социально-педагогическое','Социально-педагогическая направленность',3),
+ (42,38,'Техническое','Техническая направленность',4),
+ (43,38,'Естественно-научное','Естественно-научная направленность',5),
+ (44,38,'Туристко-краеведческое','Туристко-краеведческая направленность',6);
+
+ALTER TABLE PL_SUBJ_AREA
+  ADD COLUMN SUBJECT_GROUP smallint;
+
+update PL_SUBJECT 
+  set SUBJECT_GROUP = (select COALESCE(min(S_ID),0) from PL_SUBJECT_GROUP
+  where PL_SUBJECT_GROUP.SHORT_NAME = PL_SUBJECT.SHORT_NAME 
+  	OR PL_SUBJECT_GROUP.SHORT_NAME = PL_SUBJECT.FULL_NAME
+  	OR PL_SUBJECT_GROUP.FULL_NAME = PL_SUBJECT.FULL_NAME
+  	OR PL_SUBJECT_GROUP.FULL_NAME = PL_SUBJECT.SHORT_NAME);
+
+update PL_SUBJECT 
+  set SUBJECT_GROUP = (select COALESCE(min(S_ID),0) from PL_SUBJECT_GROUP
+  where PL_SUBJECT_GROUP.SHORT_NAME like concat('%',PL_SUBJECT.SHORT_NAME,'%')
+  OR PL_SUBJECT_GROUP.FULL_NAME like concat('%',PL_SUBJECT.SHORT_NAME,'%'))
+  where SUBJECT_GROUP = 0;
+
+update PL_SUBJ_AREA 
+  set SUBJECT_GROUP = (select COALESCE(min(S_ID),0) from PL_SUBJECT_GROUP
+  where PL_SUBJECT_GROUP.SHORT_NAME = PL_SUBJ_AREA.AREA_NAME);
+  
+INSERT INTO SCHEMA_VERSION (MODEL_NAME,VERSION_NUMBER,VERSION_TITLE)
+  VALUES ('EduPlanModel',3,'1.2');

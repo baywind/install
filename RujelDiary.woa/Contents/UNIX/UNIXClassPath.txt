@@ -1,5 +1,5 @@
 # JVM              == java
-# JVMOptions       == 
+# JVMOptions       == -Djava.net.preferIPv4Stack=true
 # JDB              == jdb
 # JDBOptions       == 
 # ApplicationClass == net.rujel.diary.Application

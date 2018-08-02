@@ -397,18 +397,6 @@
 		</dict>
 		<dict>
 			<key>title</key>
-			<string>Осенние каникулы</string>
-			<key>startMonth</key>
-			<integer>11</integer>
-			<key>startDay</key>
-			<integer>4</integer>
-			<key>endMonth</key>
-			<integer>11</integer>
-			<key>endDay</key>
-			<integer>10</integer>
-		</dict>
-		<dict>
-			<key>title</key>
 			<string>День Победы</string>
 			<key>startMonth</key>
 			<integer>5</integer>
