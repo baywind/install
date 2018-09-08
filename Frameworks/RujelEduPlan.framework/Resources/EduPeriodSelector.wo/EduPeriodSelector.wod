@@ -31,7 +31,7 @@ BeginField : WOTextField {
 	style = "text-align:center;";
 	class = "date required auto-kal";
 	onchange="checkChanges(this);";
-	data-kal= "side:'left'";
+	data-kal= "side:'top', offsetLeft:70";
 }
 
 EndField : WOTextField {
