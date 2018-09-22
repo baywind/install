@@ -20,7 +20,7 @@ ListSettings : ListSettings {
   key = "EduPeriod";
   currList = listName;
   extraLists = extraLists;
-  checkAccess = "PeriodList";
+  checkAccess = "EduPeriod";
   listAccess = access;
 }
 

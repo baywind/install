@@ -284,7 +284,7 @@ MaskAvailable : WOConditional {
 AddMaskButton : OnClickContainer {
   elementName = "div";
   invokeAction = addMaskSettings;
-  onclick = session.ajaxPopup;
+  onclick = session.checkRun;
   class = "button";
   hide = maskSettings;
   style = "float:right;width:10em;padding:4pt;";
