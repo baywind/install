@@ -11,7 +11,7 @@ CREATE TABLE CR_BORDER_SET (
   BSET_NAME varchar(28),
   VALUE_TYPE smallint NOT NULL,
   ZERO_VALUE varchar(28),
-  EXCLUDE_MIN smallint NOT NULL,
+  EXCLUDE_MIN boolean NOT NULL,
   FORMAT_STRING varchar(255),
   USE_CLASS varchar(255),
   PRIMARY KEY (BS_ID)
