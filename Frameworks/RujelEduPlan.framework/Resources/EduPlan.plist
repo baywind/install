@@ -235,6 +235,8 @@
 			<string>border:double 3px #cccccc;</string>
 			<key>condFormat</key>
 			<true/>
+			<key>sectionInSession</key>
+			<true/>
 			<key>editorPresent</key>
 			<dict>
 				<key>invokeAction</key>
@@ -251,6 +253,8 @@
 					<string>$doneEditing</string>
 					<key>selection</key>
 					<string>.</string>
+					<key>existingOnly</key>
+					<string>$activeSection</string>
 				</dict>
 			</dict>
 			<key>escapeHTML</key>
